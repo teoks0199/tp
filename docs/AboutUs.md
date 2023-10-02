@@ -9,24 +9,23 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ## Project team
 
-### John Doe
+### Samuel Mui
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/samuelmui8.png" width="200px">
 
-[[homepage](http://www.comp.nus.edu.sg/~damithch)]
-[[github](https://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](https://github.com/samuelmui8)]
+[[portfolio](team/samuelmui.md)]
 
-* Role: Project Advisor
+* Role: Member
 
-### Jane Doe
+### Teo Kai Sheng
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/teoks0199.png" width="200px">
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](http://github.com/teoks0199)]
+[[portfolio](team/teoks0199.md)]
 
-* Role: Team Lead
+* Role: Developer
 * Responsibilities: UI
 
 ### Johnny Doe
@@ -39,22 +38,22 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 * Role: Developer
 * Responsibilities: Data
 
-### Jean Doe
+### Beatrice Chen
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/beatrice.png" width="200px">
 
 [[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[portfolio](team/beatrice.md)]
 
 * Role: Developer
 * Responsibilities: Dev Ops + Threading
 
-### James Doe
+### Du Kaixuan
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/jamesebond.png" width="200px">
 
-[[github](http://github.com/johndoe)]
+[[github](https://github.com/jamesebond)]
 [[portfolio](team/johndoe.md)]
 
-* Role: Developer
-* Responsibilities: UI
+* Role: Best Developer
+* Responsibilities: Best UI
