@@ -19,14 +19,14 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 * Role: Project Advisor
 
-### Jane Doe
+### Teo Kai Sheng
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/teoks0199.png" width="200px">
 
-[[github](http://github.com/johndoe)]
+[[github](http://github.com/teoks0199)]
 [[portfolio](team/johndoe.md)]
 
-* Role: Team Lead
+* Role: Developer
 * Responsibilities: UI
 
 ### Johnny Doe
