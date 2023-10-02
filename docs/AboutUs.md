@@ -24,7 +24,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 <img src="images/teoks0199.png" width="200px">
 
 [[github](http://github.com/teoks0199)]
-[[portfolio](team/johndoe.md)]
+[[portfolio](team/teoks0199.md)]
 
 * Role: Developer
 * Responsibilities: UI
