@@ -9,15 +9,14 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ## Project team
 
-### John Doe
+### Samuel Mui
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/samuelmui8.png" width="200px">
 
-[[homepage](http://www.comp.nus.edu.sg/~damithch)]
-[[github](https://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](https://github.com/samuelmui8)]
+[[portfolio](team/samuelmui.md)]
 
-* Role: Project Advisor
+* Role: Member
 
 ### Teo Kai Sheng
 
