@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RuiZhi's Project Portfolio Page
+title: Beatrice's Project Portfolio Page
 ---
 
 ### Project: FoodNotes

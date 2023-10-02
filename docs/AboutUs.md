@@ -38,12 +38,12 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 * Role: Developer
 * Responsibilities: Data
 
-### Jean Doe
+### Beatrice Chen
 
-<img src="images/jeandoe.png" width="200px">
+<img src="images/beatrice.png" width="200px">
 
 [[github](http://github.com/johndoe)]
-[[portfolio](team/jeandoe.md)]
+[[portfolio](team/beatrice.md)]
 
 * Role: Developer
 * Responsibilities: Dev Ops + Threading
