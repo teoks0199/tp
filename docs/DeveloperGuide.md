@@ -270,15 +270,29 @@ _{Explain here how the data archiving feature will be implemented}_
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
-| -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
-| `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person               |                                                                        |
-| `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
-
+| Priority | As a …​                           | I want to …​                                                             | So that I can…​                                                   |
+|----------|-----------------------------------|--------------------------------------------------------------------------|-------------------------------------------------------------------|
+| `* * *`  | new user                          | add reviews to stalls                                                    | remember what I think about the food stall.                       |
+| `* * *`  | new user                          | delete reviews from stalls                                               | delete review of the food stall if I change my mind about it      |
+| `* * *`  | new user                          | add restaurant                                                           | add restaurants if I want to                                      |
+| `* * *`  | new user                          | delete restaurant                                                        | change my mind about the restaurant                               |
+| `* * *`  | new user                          | add menu item                                                            | review specific food from a specific restaurant                   |
+| `* * *`  | new user                          | delete menu item                                                         | remove it if I changed my mind                                    |
+| `* * *`  | new user                          | view restaurants                                                         | see the list of restaurants I have saved                          |
+| `* * *`  | new user                          | view the user guide easily                                               | learn more about the product when needed                          |
+| `* * *`  | new user                          | add reviews to menu items                                                | so that I can remember what I think about the menu item           |
+| `* * *`  | new user                          | delete reviews from menu items                                           | delete review of the menu item if I change my mind about it       |
+| `* *`    | hungry university student         | browse the ‘discount’ page for nearby campus eateries offering discounts | save money on meals                                               |
+| `* *`    | busy student                      | browse the daily specials page                                           | find on-campus restaurants and quickly decide where to grab lunch |
+| `* *`    | experienced user                  | save my favorite places                                                  | easily access them                                                |
+| `* *`    | new user                          | look at menu items of each store                                         | know what I can order                                             |
+| `* *`    | vegetarian student                | filter food options to only show vegetarian choices                      | find what I can eat                                               |
+| `* *`    | student with allergies            | filter food options by allergen information                              | eat safely                                                        |
+| `* *`    | health-conscious student          | see nutritional information for menu items                               | make informed choices about what I eat                            |
+| `* *`    | new user                          | sort by the most highly rated stores                                     | see what is popular                                               |
+| `* *`    | student trying to save money      | sort food items of stores by price                                       | plan what to eat to save money                                    |
+| `* *`    | student who often studies late    | search for food places by filtering by opening hours                     | quickly find food places to go for late-night suppers             |
+| `*`      | see how to travel to the stalls   | See how to travel to the stalls                                          | find my way easily                                                |
 *{More to be added}*
 
 ### Use cases

@@ -6,7 +6,7 @@ title: User Guide
 FoodNotes is a **desktop app for managing food reviews, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, FoodNotes can get your food review tasks done faster than traditional GUI apps.
 
 * Table of Contents
-{:toc}
+  {:toc}
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -25,13 +25,13 @@ FoodNotes is a **desktop app for managing food reviews, optimized for use via a 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-   * `list` : Lists all stalls.
+    * `list` : Lists all stalls.
 
-   * `add-stall n/Japanese stall l/Deck` : Adds a stall named `Japanese stall` located at `Deck` to the list of stalls.
-   
-   * `view-stall s/3` : Shows the 3rd stall shown in the current list.
-   
-   * `delete-stall s/3` : Deletes the 3rd stall shown in the current list.
+    * `add-stall n/Japanese stall l/Deck` : Adds a stall named `Japanese stall` located at `Deck` to the list of stalls.
+
+    * `view-stall s/3` : Shows the 3rd stall shown in the current list.
+
+    * `delete-stall s/3` : Deletes the 3rd stall shown in the current list.
 
 
 1. Refer to the [Features](#features) below for details of each command.
@@ -99,7 +99,9 @@ re-enter in the format : view-stall s/<STALL_NUMBER>
 ```
 Japanese Stall ★★★★☆ has been deleted.
 ```
-**Expected output (Fail):**  
+  
+**Expected output (Fail):**
+
 ```
 re-enter in the format : delete-stall s/<STALL_NUMBER>
 ```
@@ -140,7 +142,9 @@ Yay! Chicken Rice is successfully added as a menu item for Japanese Stall at Dec
 re-enter in the format : add-item s/STALL_NUMBER i/ITEM
 ```
 **Acceptable values:**
-- s/: Positive Integer less than or equal to the size of list, 
+
+- s/: Positive Integer less than or equal to the size of list,
+
 - i/: String
 
 **2.2 Viewing an item from a stall:** view-item
@@ -154,7 +158,9 @@ re-enter in the format : add-item s/STALL_NUMBER i/ITEM
 Chicken Karage Rice ★★★☆☆
 Review: Great fried chicken that’s crunchy and juicy, but there’s only 3 pieces and everything is in dire need of sauce, meaning it’s not quite bang for buck and you might be hungry again in a few hours.
 ```
-**Expected output (Fail):**  
+
+**Expected output (Fail):**
+
 ```
 re-enter in the format : view-item s/STALL_NUMBER i/ITEM_NUMBER
 ```
