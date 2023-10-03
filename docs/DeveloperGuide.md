@@ -406,8 +406,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1.  User requests to list stalls
 2.  FoodNotes shows a list of stalls
 3.  User requests to view a stall
-4.  User requests to add a review to a menu item in the stall
-5.  FoodNotes add review to the menu item
+4.  FoodNotes shows the menu items and review of the stall
+5.  User requests to add a review to a menu item in the stall
+6.  FoodNotes add review to the menu item
 
     Use case ends.
 
