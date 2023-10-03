@@ -295,6 +295,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* *`    | student trying to save money      | sort food items of stores by price                                       | plan what to eat to save money                                    |
 | `* *`    | student who often studies late    | search for food places by filtering by opening hours                     | quickly find food places to go for late-night suppers             |
 | `*`      | see how to travel to the stalls   | See how to travel to the stalls                                          | find my way easily                                                |
+| `*`      | user interested in sustainability | identify local ingredients                                               | support environmentally conscious dining choices                  |
+| `*`      | student always on the move        | receive alerts about pop ups                                             |  seize food opportunities wherever I go.                          |
+| `*`      | Muslim student                    | know which halal certified                                               | eat halal food.                                                   |
 *{More to be added}*
 
 ### Use cases
@@ -375,6 +378,22 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 4.
 
+**Use Case: View All Stalls**
+
+**MSS**
+
+1. User requests to view all stalls using the command `list`.
+2. FoodNote retrieves and displays a list of all available stalls, including their names and locations.
+3. User reviews the list of stalls.
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. No stalls are available in the database:
+    * FoodNote displays a message indicating that there are no stalls available.
+
+  Use case ends.
 
 *{More to be added}*
 
