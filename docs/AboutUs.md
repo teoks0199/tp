@@ -14,7 +14,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 <img src="images/samuelmui8.png" width="200px">
 
 [[github](https://github.com/samuelmui8)]
-[[portfolio](team/samuelmui.md)]
+[[portfolio](team/samuelmui8.md)]
 
 * Role: Developer
 * Responsibilities: Testing
