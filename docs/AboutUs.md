@@ -31,10 +31,10 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ### Lim RuiZhi
 
-<img src="images/ruizhi.png" width="200px">
+<img src="images/ruizhi2001.png" width="200px">
 
 [[github](https://github.com/Ruizhi2001)] 
-[[portfolio](team/ruizhi.md)]
+[[portfolio](team/ruizhi2001.md)]
 
 * Role: Developer
 * Responsibilities: Data
