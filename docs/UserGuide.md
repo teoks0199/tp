@@ -99,7 +99,9 @@ re-enter in the format : view-stall s/<STALL_NUMBER>
 ```
 Japanese Stall ★★★★☆ has been deleted.
 ```
+  
 **Expected output (Fail):**
+
 ```
 re-enter in the format : delete-stall s/<STALL_NUMBER>
 ```
@@ -140,7 +142,9 @@ Yay! Chicken Rice is successfully added as a menu item for Japanese Stall at Dec
 re-enter in the format : add-item s/STALL_NUMBER i/ITEM
 ```
 **Acceptable values:**
+
 - s/: Positive Integer less than or equal to the size of list,
+
 - i/: String
 
 **2.2 Viewing an item from a stall:** view-item
@@ -154,7 +158,9 @@ re-enter in the format : add-item s/STALL_NUMBER i/ITEM
 Chicken Karage Rice ★★★☆☆
 Review: Great fried chicken that’s crunchy and juicy, but there’s only 3 pieces and everything is in dire need of sauce, meaning it’s not quite bang for buck and you might be hungry again in a few hours.
 ```
+
 **Expected output (Fail):**
+
 ```
 re-enter in the format : view-item s/STALL_NUMBER i/ITEM_NUMBER
 ```

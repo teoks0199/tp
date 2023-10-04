@@ -257,7 +257,9 @@ _{Explain here how the data archiving feature will be implemented}_
 
 **Target user profile**:
 
-* has a need to manage a significant number of contacts
+* student foodie from NUS
+* has a need to remember reviews of many food stores and food items
+* has a tight budget
 * prefer desktop apps over other types
 * can type fast
 * prefers typing to mouse interactions
@@ -293,41 +295,192 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* *`    | student trying to save money      | sort food items of stores by price                                       | plan what to eat to save money                                    |
 | `* *`    | student who often studies late    | search for food places by filtering by opening hours                     | quickly find food places to go for late-night suppers             |
 | `*`      | see how to travel to the stalls   | See how to travel to the stalls                                          | find my way easily                                                |
+| `*`      | user interested in sustainability | identify local ingredients                                               | support environmentally conscious dining choices                  |
+| `*`      | student always on the move        | receive alerts about pop ups                                             |  seize food opportunities wherever I go.                          |
+| `*`      | Muslim student                    | know which halal certified                                               | eat halal food.                                                   |
 *{More to be added}*
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is the `FoodNotes` and the **Actor** is the `user`, unless specified otherwise)
 
-**Use case: Delete a person**
+
+
+**Use case: Add a stall**
 
 **MSS**
 
-1.  User requests to list persons
-2.  AddressBook shows a list of persons
-3.  User requests to delete a specific person in the list
-4.  AddressBook deletes the person
+1.  User requests to list stalls
+2.  FoodNotes shows a list of stalls
+3.  User requests to add a stall to the list
+4.  FoodNotes add the stall
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 3a. The stall name and location is not specified
+
+    * 3a1. FoodNotes shows an error message.
+
+      Use case resumes at step 2.
+
+**Use case: Add a review to a stall**
+
+**MSS**
+
+1.  User requests to list stalls
+2.  FoodNotes shows a list of stalls
+3.  User requests to add a review to a stall
+4.  FoodNotes adds a review to the stall
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The list of stalls is empty.
 
   Use case ends.
 
 * 3a. The given index is invalid.
 
-    * 3a1. AddressBook shows an error message.
+    * 3a1. FoodNotes shows an error message.
 
       Use case resumes at step 2.
+
+* 3b. The star rating or description is not specified
+
+    * 3a1. FoodNotes shows an error message.
+
+      Use case resumes at step 2.
+
+**Use case: Delete a review from stall**
+
+**MSS**
+
+1.  User requests to list stalls
+2.  FoodNotes shows a list of stalls
+3.  User requests to view a stall
+4.  FoodNotes shows the review and menu of the stall
+5.  User requests to delete the review
+6.  FoodNotes deletes the review
+
+    Use case ends.
+
+**Extensions**
+
+* 3a. The given index is invalid.
+
+    * 3a1. FoodNotes shows an error message.
+
+      Use case resumes at step 2.
+
+* 4a. There are no reviews.
+    
+  Use case ends.
+
+*Use case: Add a menu item to a stall**
+
+**MSS**
+
+1.  User requests to list stalls
+2.  FoodNotes shows a list of stalls
+3.  User requests to add a menu item to a stall
+4.  FoodNotes add the menu item
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The list of stalls is empty.
+
+  Use case ends.
+
+* 3a. The given index is invalid
+
+    * 3a1. FoodNotes shows an error message.
+
+      Use case resumes at step 2.
+
+**Use case: Add a review to a menu item**
+
+**MSS**
+
+1.  User requests to list stalls
+2.  FoodNotes shows a list of stalls
+3.  User requests to view a stall
+4.  FoodNotes shows the menu items and review of the stall
+5.  User requests to add a review to a menu item in the stall
+6.  FoodNotes add review to the menu item
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The list of stalls is empty.
+
+  Use case ends.
+
+* 3a. The given index is invalid.
+
+    * 3a1. FoodNotes shows an error message.
+
+      Use case resumes at step 2.
+
+* 4a. The star rating or description is not specified
+
+    * 4a1. FoodNotes shows an error message.
+
+      Use case resumes at step 2.
+
+*Use case: Delete a menu item from stall**
+
+**MSS**
+
+1.  User requests to list stalls
+2.  FoodNotes shows a list of stalls
+3.  User requests to view a stall
+4.  FoodNotes shows the review and menu of the stall
+5.  User requests to delete a menu item
+6.  FoodNotes deletes the menu item
+
+    Use case ends.
+
+**Extensions**
+
+* 4a. There are no menu items.
+
+  Use case ends.
+
+* 5a. The given index is invalid.
+
+    * 5a1. FoodNotes shows an error message.
+
+      Use case resumes at step 4.
+
+**Use Case: View All Stalls**
+
+**MSS**
+
+1. User requests to view all stalls using the command `list`.
+2. FoodNote retrieves and displays a list of all available stalls, including their names and locations.
+3. User reviews the list of stalls.
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. No stalls are available in the database:
+    * FoodNote displays a message indicating that there are no stalls available.
+
+  Use case ends.
 
 *{More to be added}*
 
 ### Non-Functional Requirements
 
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
-2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
+2.  Should be able to hold up to 1000 stalls without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 
 *{More to be added}*
