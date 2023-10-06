@@ -41,9 +41,9 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ### Beatrice Chen
 
-<img src="images/beatrice.png" width="200px">
+<img src="images/beatricecst.png" width="200px">
 
-[[github](http://github.com/johndoe)]
+[[github](http://github.com/beatricecst)]
 [[portfolio](team/beatricecst.md)]
 
 * Role: Developer
