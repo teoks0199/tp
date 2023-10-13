@@ -32,7 +32,7 @@ public class DeleteCommandTest {
         Stall stallToDelete = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
         DeleteCommand deleteCommand = new DeleteCommand(INDEX_FIRST_STALL);
 
-        String expectedMessage = String.format(DeleteCommand.MESSAGE_DELETE_PERSON_SUCCESS,
+        String expectedMessage = String.format(DeleteCommand.MESSAGE_DELETE_STALL_SUCCESS,
                 Messages.format(stallToDelete));
 
         ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
@@ -56,7 +56,7 @@ public class DeleteCommandTest {
         Stall stallToDelete = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
         DeleteCommand deleteCommand = new DeleteCommand(INDEX_FIRST_STALL);
 
-        String expectedMessage = String.format(DeleteCommand.MESSAGE_DELETE_PERSON_SUCCESS,
+        String expectedMessage = String.format(DeleteCommand.MESSAGE_DELETE_STALL_SUCCESS,
                 Messages.format(stallToDelete));
 
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
