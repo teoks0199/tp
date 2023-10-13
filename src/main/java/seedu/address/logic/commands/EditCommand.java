@@ -6,7 +6,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_STALLS;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -48,58 +48,58 @@ public class EditCommand extends Command {
             + PREFIX_PHONE + "91234567 "
             + PREFIX_EMAIL + "johndoe@example.com";
 
-    public static final String MESSAGE_EDIT_PERSON_SUCCESS = "Edited Stall: %1$s";
+    public static final String MESSAGE_EDIT_STALL_SUCCESS = "Edited Stall: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
-    public static final String MESSAGE_DUPLICATE_PERSON = "This stall already exists in the address book.";
+    public static final String MESSAGE_DUPLICATE_STALL = "This stall already exists in the address book.";
 
     private final Index index;
-    private final EditPersonDescriptor editPersonDescriptor;
+    private final EditStallDescriptor editStallDescriptor;
 
     /**
      * @param index of the stall in the filtered stall list to edit
-     * @param editPersonDescriptor details to edit the stall with
+     * @param editStallDescriptor details to edit the stall with
      */
-    public EditCommand(Index index, EditPersonDescriptor editPersonDescriptor) {
+    public EditCommand(Index index, EditStallDescriptor editStallDescriptor) {
         requireNonNull(index);
-        requireNonNull(editPersonDescriptor);
+        requireNonNull(editStallDescriptor);
 
         this.index = index;
-        this.editPersonDescriptor = new EditPersonDescriptor(editPersonDescriptor);
+        this.editStallDescriptor = new EditStallDescriptor(editStallDescriptor);
     }
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
-        List<Stall> lastShownList = model.getFilteredPersonList();
+        List<Stall> lastShownList = model.getFilteredStallList();
 
         if (index.getZeroBased() >= lastShownList.size()) {
-            throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+            throw new CommandException(Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
         }
 
         Stall stallToEdit = lastShownList.get(index.getZeroBased());
-        Stall editedStall = createEditedPerson(stallToEdit, editPersonDescriptor);
+        Stall editedStall = createEditedStall(stallToEdit, editStallDescriptor);
 
-        if (!stallToEdit.isSamePerson(editedStall) && model.hasPerson(editedStall)) {
-            throw new CommandException(MESSAGE_DUPLICATE_PERSON);
+        if (!stallToEdit.isSameStall(editedStall) && model.hasStall(editedStall)) {
+            throw new CommandException(MESSAGE_DUPLICATE_STALL);
         }
 
-        model.setPerson(stallToEdit, editedStall);
-        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
-        return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedStall)));
+        model.setStall(stallToEdit, editedStall);
+        model.updateFilteredStallList(PREDICATE_SHOW_ALL_STALLS);
+        return new CommandResult(String.format(MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall)));
     }
 
     /**
      * Creates and returns a {@code Stall} with the details of {@code stallToEdit}
-     * edited with {@code editPersonDescriptor}.
+     * edited with {@code editStallDescriptor}.
      */
-    private static Stall createEditedPerson(Stall stallToEdit, EditPersonDescriptor editPersonDescriptor) {
+    private static Stall createEditedStall(Stall stallToEdit, EditStallDescriptor editStallDescriptor) {
         assert stallToEdit != null;
 
-        Name updatedName = editPersonDescriptor.getName().orElse(stallToEdit.getName());
-        Phone updatedPhone = editPersonDescriptor.getPhone().orElse(stallToEdit.getPhone());
-        Email updatedEmail = editPersonDescriptor.getEmail().orElse(stallToEdit.getEmail());
-        Address updatedAddress = editPersonDescriptor.getAddress().orElse(stallToEdit.getAddress());
-        Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(stallToEdit.getTags());
+        Name updatedName = editStallDescriptor.getName().orElse(stallToEdit.getName());
+        Phone updatedPhone = editStallDescriptor.getPhone().orElse(stallToEdit.getPhone());
+        Email updatedEmail = editStallDescriptor.getEmail().orElse(stallToEdit.getEmail());
+        Address updatedAddress = editStallDescriptor.getAddress().orElse(stallToEdit.getAddress());
+        Set<Tag> updatedTags = editStallDescriptor.getTags().orElse(stallToEdit.getTags());
 
         return new Stall(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedTags);
     }
@@ -117,14 +117,14 @@ public class EditCommand extends Command {
 
         EditCommand otherEditCommand = (EditCommand) other;
         return index.equals(otherEditCommand.index)
-                && editPersonDescriptor.equals(otherEditCommand.editPersonDescriptor);
+                && editStallDescriptor.equals(otherEditCommand.editStallDescriptor);
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
                 .add("index", index)
-                .add("editPersonDescriptor", editPersonDescriptor)
+                .add("editStallDescriptor", editStallDescriptor)
                 .toString();
     }
 
@@ -132,20 +132,20 @@ public class EditCommand extends Command {
      * Stores the details to edit the stall with. Each non-empty field value will replace the
      * corresponding field value of the stall.
      */
-    public static class EditPersonDescriptor {
+    public static class EditStallDescriptor {
         private Name name;
         private Phone phone;
         private Email email;
         private Address address;
         private Set<Tag> tags;
 
-        public EditPersonDescriptor() {}
+        public EditStallDescriptor() {}
 
         /**
          * Copy constructor.
          * A defensive copy of {@code tags} is used internally.
          */
-        public EditPersonDescriptor(EditPersonDescriptor toCopy) {
+        public EditStallDescriptor(EditStallDescriptor toCopy) {
             setName(toCopy.name);
             setPhone(toCopy.phone);
             setEmail(toCopy.email);
@@ -216,16 +216,16 @@ public class EditCommand extends Command {
             }
 
             // instanceof handles nulls
-            if (!(other instanceof EditPersonDescriptor)) {
+            if (!(other instanceof EditStallDescriptor)) {
                 return false;
             }
 
-            EditPersonDescriptor otherEditPersonDescriptor = (EditPersonDescriptor) other;
-            return Objects.equals(name, otherEditPersonDescriptor.name)
-                    && Objects.equals(phone, otherEditPersonDescriptor.phone)
-                    && Objects.equals(email, otherEditPersonDescriptor.email)
-                    && Objects.equals(address, otherEditPersonDescriptor.address)
-                    && Objects.equals(tags, otherEditPersonDescriptor.tags);
+            EditStallDescriptor otherEditStallDescriptor = (EditStallDescriptor) other;
+            return Objects.equals(name, otherEditStallDescriptor.name)
+                    && Objects.equals(phone, otherEditStallDescriptor.phone)
+                    && Objects.equals(email, otherEditStallDescriptor.email)
+                    && Objects.equals(address, otherEditStallDescriptor.address)
+                    && Objects.equals(tags, otherEditStallDescriptor.tags);
         }
 
         @Override

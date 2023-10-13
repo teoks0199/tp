@@ -2,7 +2,7 @@ package seedu.address.logic.commands;
 
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
+import static seedu.address.testutil.TypicalStalls.getTypicalAddressBook;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +12,7 @@ import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.stall.Stall;
-import seedu.address.testutil.PersonBuilder;
+import seedu.address.testutil.StallBuilder;
 
 /**
  * Contains integration tests (interaction with the Model) for {@code AddCommand}.
@@ -27,11 +27,11 @@ public class AddCommandIntegrationTest {
     }
 
     @Test
-    public void execute_newPerson_success() {
-        Stall validStall = new PersonBuilder().build();
+    public void execute_newStall_success() {
+        Stall validStall = new StallBuilder().build();
 
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
-        expectedModel.addPerson(validStall);
+        expectedModel.addStall(validStall);
 
         assertCommandSuccess(new AddCommand(validStall), model,
                 String.format(AddCommand.MESSAGE_SUCCESS, Messages.format(validStall)),
@@ -39,10 +39,10 @@ public class AddCommandIntegrationTest {
     }
 
     @Test
-    public void execute_duplicatePerson_throwsCommandException() {
+    public void execute_duplicateStall_throwsCommandException() {
         Stall stallInList = model.getAddressBook().getStallList().get(0);
         assertCommandFailure(new AddCommand(stallInList), model,
-                AddCommand.MESSAGE_DUPLICATE_PERSON);
+                AddCommand.MESSAGE_DUPLICATE_STALL);
     }
 
 }

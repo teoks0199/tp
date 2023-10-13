@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
 import static seedu.address.testutil.Assert.assertThrows;
-import static seedu.address.testutil.TypicalPersons.ALICE;
-import static seedu.address.testutil.TypicalPersons.BOB;
+import static seedu.address.testutil.TypicalStalls.ALICE;
+import static seedu.address.testutil.TypicalStalls.BOB;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,66 +15,66 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import seedu.address.model.stall.exceptions.DuplicatePersonException;
-import seedu.address.model.stall.exceptions.PersonNotFoundException;
-import seedu.address.testutil.PersonBuilder;
+import seedu.address.model.stall.exceptions.DuplicateStallException;
+import seedu.address.model.stall.exceptions.StallNotFoundException;
+import seedu.address.testutil.StallBuilder;
 
 public class UniqueStallListTest {
 
     private final UniqueStallList uniqueStallList = new UniqueStallList();
 
     @Test
-    public void contains_nullPerson_throwsNullPointerException() {
+    public void contains_nullStall_throwsNullPointerException() {
         assertThrows(NullPointerException.class, () -> uniqueStallList.contains(null));
     }
 
     @Test
-    public void contains_personNotInList_returnsFalse() {
+    public void contains_stallNotInList_returnsFalse() {
         assertFalse(uniqueStallList.contains(ALICE));
     }
 
     @Test
-    public void contains_personInList_returnsTrue() {
+    public void contains_stallInList_returnsTrue() {
         uniqueStallList.add(ALICE);
         assertTrue(uniqueStallList.contains(ALICE));
     }
 
     @Test
-    public void contains_personWithSameIdentityFieldsInList_returnsTrue() {
+    public void contains_stallWithSameIdentityFieldsInList_returnsTrue() {
         uniqueStallList.add(ALICE);
-        Stall editedAlice = new PersonBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND)
+        Stall editedAlice = new StallBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND)
                 .build();
         assertTrue(uniqueStallList.contains(editedAlice));
     }
 
     @Test
-    public void add_nullPerson_throwsNullPointerException() {
+    public void add_nullStall_throwsNullPointerException() {
         assertThrows(NullPointerException.class, () -> uniqueStallList.add(null));
     }
 
     @Test
-    public void add_duplicatePerson_throwsDuplicatePersonException() {
+    public void add_duplicateStall_throwsDuplicateStallException() {
         uniqueStallList.add(ALICE);
-        assertThrows(DuplicatePersonException.class, () -> uniqueStallList.add(ALICE));
+        assertThrows(DuplicateStallException.class, () -> uniqueStallList.add(ALICE));
     }
 
     @Test
-    public void setPerson_nullTargetPerson_throwsNullPointerException() {
+    public void setStall_nullTargetStall_throwsNullPointerException() {
         assertThrows(NullPointerException.class, () -> uniqueStallList.setStall(null, ALICE));
     }
 
     @Test
-    public void setPerson_nullEditedPerson_throwsNullPointerException() {
+    public void setStall_nullEditedStall_throwsNullPointerException() {
         assertThrows(NullPointerException.class, () -> uniqueStallList.setStall(ALICE, null));
     }
 
     @Test
-    public void setPerson_targetPersonNotInList_throwsPersonNotFoundException() {
-        assertThrows(PersonNotFoundException.class, () -> uniqueStallList.setStall(ALICE, ALICE));
+    public void setStall_targetStallNotInList_throwsStallNotFoundException() {
+        assertThrows(StallNotFoundException.class, () -> uniqueStallList.setStall(ALICE, ALICE));
     }
 
     @Test
-    public void setPerson_editedPersonIsSamePerson_success() {
+    public void setStall_editedStallIsSameStall_success() {
         uniqueStallList.add(ALICE);
         uniqueStallList.setStall(ALICE, ALICE);
         UniqueStallList expectedUniqueStallList = new UniqueStallList();
@@ -83,9 +83,9 @@ public class UniqueStallListTest {
     }
 
     @Test
-    public void setPerson_editedPersonHasSameIdentity_success() {
+    public void setStall_editedStallHasSameIdentity_success() {
         uniqueStallList.add(ALICE);
-        Stall editedAlice = new PersonBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND)
+        Stall editedAlice = new StallBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND)
                 .build();
         uniqueStallList.setStall(ALICE, editedAlice);
         UniqueStallList expectedUniqueStallList = new UniqueStallList();
@@ -94,7 +94,7 @@ public class UniqueStallListTest {
     }
 
     @Test
-    public void setPerson_editedPersonHasDifferentIdentity_success() {
+    public void setStall_editedStallHasDifferentIdentity_success() {
         uniqueStallList.add(ALICE);
         uniqueStallList.setStall(ALICE, BOB);
         UniqueStallList expectedUniqueStallList = new UniqueStallList();
@@ -103,24 +103,24 @@ public class UniqueStallListTest {
     }
 
     @Test
-    public void setPerson_editedPersonHasNonUniqueIdentity_throwsDuplicatePersonException() {
+    public void setStall_editedStallHasNonUniqueIdentity_throwsDuplicateStallException() {
         uniqueStallList.add(ALICE);
         uniqueStallList.add(BOB);
-        assertThrows(DuplicatePersonException.class, () -> uniqueStallList.setStall(ALICE, BOB));
+        assertThrows(DuplicateStallException.class, () -> uniqueStallList.setStall(ALICE, BOB));
     }
 
     @Test
-    public void remove_nullPerson_throwsNullPointerException() {
+    public void remove_nullStall_throwsNullPointerException() {
         assertThrows(NullPointerException.class, () -> uniqueStallList.remove(null));
     }
 
     @Test
-    public void remove_personDoesNotExist_throwsPersonNotFoundException() {
-        assertThrows(PersonNotFoundException.class, () -> uniqueStallList.remove(ALICE));
+    public void remove_stallDoesNotExist_throwsStallNotFoundException() {
+        assertThrows(StallNotFoundException.class, () -> uniqueStallList.remove(ALICE));
     }
 
     @Test
-    public void remove_existingPerson_removesPerson() {
+    public void remove_existingStall_removesStall() {
         uniqueStallList.add(ALICE);
         uniqueStallList.remove(ALICE);
         UniqueStallList expectedUniqueStallList = new UniqueStallList();
@@ -128,12 +128,12 @@ public class UniqueStallListTest {
     }
 
     @Test
-    public void setPersons_nullUniquePersonList_throwsNullPointerException() {
+    public void setStalls_nullUniqueStallList_throwsNullPointerException() {
         assertThrows(NullPointerException.class, () -> uniqueStallList.setStalls((UniqueStallList) null));
     }
 
     @Test
-    public void setPersons_uniquePersonList_replacesOwnListWithProvidedUniquePersonList() {
+    public void setStalls_uniqueStallList_replacesOwnListWithProvidedUniqueStallList() {
         uniqueStallList.add(ALICE);
         UniqueStallList expectedUniqueStallList = new UniqueStallList();
         expectedUniqueStallList.add(BOB);
@@ -142,12 +142,12 @@ public class UniqueStallListTest {
     }
 
     @Test
-    public void setPersons_nullList_throwsNullPointerException() {
+    public void setStalls_nullList_throwsNullPointerException() {
         assertThrows(NullPointerException.class, () -> uniqueStallList.setStalls((List<Stall>) null));
     }
 
     @Test
-    public void setPersons_list_replacesOwnListWithProvidedList() {
+    public void setStalls_list_replacesOwnListWithProvidedList() {
         uniqueStallList.add(ALICE);
         List<Stall> stallList = Collections.singletonList(BOB);
         uniqueStallList.setStalls(stallList);
@@ -157,9 +157,9 @@ public class UniqueStallListTest {
     }
 
     @Test
-    public void setPersons_listWithDuplicatePersons_throwsDuplicatePersonException() {
+    public void setStalls_listWithDuplicateStalls_throwsDuplicateStallException() {
         List<Stall> listWithDuplicateStalls = Arrays.asList(ALICE, ALICE);
-        assertThrows(DuplicatePersonException.class, () -> uniqueStallList.setStalls(listWithDuplicateStalls));
+        assertThrows(DuplicateStallException.class, () -> uniqueStallList.setStalls(listWithDuplicateStalls));
     }
 
     @Test

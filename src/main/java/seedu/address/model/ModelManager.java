@@ -88,24 +88,24 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public boolean hasPerson(Stall stall) {
+    public boolean hasStall(Stall stall) {
         requireNonNull(stall);
         return addressBook.hasStall(stall);
     }
 
     @Override
-    public void deletePerson(Stall target) {
+    public void deleteStall(Stall target) {
         addressBook.removeStall(target);
     }
 
     @Override
-    public void addPerson(Stall stall) {
+    public void addStall(Stall stall) {
         addressBook.addStall(stall);
-        updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        updateFilteredStallList(PREDICATE_SHOW_ALL_STALLS);
     }
 
     @Override
-    public void setPerson(Stall target, Stall editedStall) {
+    public void setStall(Stall target, Stall editedStall) {
         requireAllNonNull(target, editedStall);
 
         addressBook.setStall(target, editedStall);
@@ -118,12 +118,12 @@ public class ModelManager implements Model {
      * {@code versionedAddressBook}
      */
     @Override
-    public ObservableList<Stall> getFilteredPersonList() {
+    public ObservableList<Stall> getFilteredStallList() {
         return filteredStalls;
     }
 
     @Override
-    public void updateFilteredPersonList(Predicate<Stall> predicate) {
+    public void updateFilteredStallList(Predicate<Stall> predicate) {
         requireNonNull(predicate);
         filteredStalls.setPredicate(predicate);
     }

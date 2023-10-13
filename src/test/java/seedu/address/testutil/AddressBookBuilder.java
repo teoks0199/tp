@@ -23,7 +23,7 @@ public class AddressBookBuilder {
     /**
      * Adds a new {@code Stall} to the {@code AddressBook} that we are building.
      */
-    public AddressBookBuilder withPerson(Stall stall) {
+    public AddressBookBuilder withStall(Stall stall) {
         addressBook.addStall(stall);
         return this;
     }
