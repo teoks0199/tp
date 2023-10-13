@@ -2,13 +2,9 @@ package seedu.address.model.stall;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
-import seedu.address.model.tag.Tag;
 
 /**
  * Represents a Stall in the address book.
@@ -20,13 +16,6 @@ public class Stall {
     private final Name name;
     private final Location location;
 
-    private final Phone phone;
-    private final Email email;
-
-    // Data fields
-    private final Address address;
-    private final Set<Tag> tags = new HashSet<>();
-
     /**
      * Every field must be present and not null.
      */
@@ -34,10 +23,6 @@ public class Stall {
         requireAllNonNull(name, location);
         this.name = name;
         this.location = location;
-        this.phone = null;
-        this.email = null;
-        this.address = null;
-        this.tags.addAll(null);
     }
 
     public Name getName() {
@@ -48,25 +33,7 @@ public class Stall {
         return location;
     }
 
-    public Phone getPhone() {
-        return phone;
-    }
 
-    public Email getEmail() {
-        return email;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    /**
-     * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
-     * if modification is attempted.
-     */
-    public Set<Tag> getTags() {
-        return Collections.unmodifiableSet(tags);
-    }
     /**
      * Returns true if both stalls have the same name.
      * This defines a weaker notion of equality between two stalls.
