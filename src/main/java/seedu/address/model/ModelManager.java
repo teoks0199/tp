@@ -33,7 +33,7 @@ public class ModelManager implements Model {
 
         this.addressBook = new AddressBook(addressBook);
         this.userPrefs = new UserPrefs(userPrefs);
-        filteredStalls = new FilteredList<>(this.addressBook.getPersonList());
+        filteredStalls = new FilteredList<>(this.addressBook.getStallList());
     }
 
     public ModelManager() {
@@ -90,17 +90,17 @@ public class ModelManager implements Model {
     @Override
     public boolean hasPerson(Stall stall) {
         requireNonNull(stall);
-        return addressBook.hasPerson(stall);
+        return addressBook.hasStall(stall);
     }
 
     @Override
     public void deletePerson(Stall target) {
-        addressBook.removePerson(target);
+        addressBook.removeStall(target);
     }
 
     @Override
     public void addPerson(Stall stall) {
-        addressBook.addPerson(stall);
+        addressBook.addStall(stall);
         updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
     }
 
@@ -108,7 +108,7 @@ public class ModelManager implements Model {
     public void setPerson(Stall target, Stall editedStall) {
         requireAllNonNull(target, editedStall);
 
-        addressBook.setPerson(target, editedStall);
+        addressBook.setStall(target, editedStall);
     }
 
     //=========== Filtered Stall List Accessors =============================================================
