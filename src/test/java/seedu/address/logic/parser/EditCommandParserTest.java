@@ -66,7 +66,7 @@ public class EditCommandParserTest {
     @Test
     public void parse_allFieldsSpecified_success() {
         Index targetIndex = INDEX_SECOND_STALL;
-        String userInput = targetIndex.getOneBased() + LOCATION_DESC_AMY + NAME_DESC_AMY;
+        String userInput = targetIndex.getOneBased() + NAME_DESC_AMY + LOCATION_DESC_AMY;
 
         EditCommand.EditStallDescriptor descriptor = new EditStallDescriptorBuilder().withName(VALID_NAME_AMY)
                 .withLocation(VALID_LOCATION_AMY).build();

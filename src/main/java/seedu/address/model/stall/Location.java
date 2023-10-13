@@ -1,7 +1,7 @@
 package seedu.address.model.stall;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.AppUtil.checkArgument;
+//import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
  * Represents a Stall's location in the address book.
@@ -27,7 +27,7 @@ public class Location {
      */
     public Location(String name) {
         requireNonNull(name);
-        checkArgument(isValidLocation(name), MESSAGE_CONSTRAINTS);
+        //checkArgument(isValidLocation(name), MESSAGE_CONSTRAINTS);
         locationName = name;
     }
 

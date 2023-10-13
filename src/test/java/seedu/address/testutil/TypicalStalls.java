@@ -18,9 +18,9 @@ import seedu.address.model.stall.Stall;
 public class TypicalStalls {
 
     public static final Stall ALICE = new StallBuilder().withName("Alice Pauline")
-            .withLocation("123, Jurong West Ave 6, #08-111").build();
+            .withLocation("Deck").build();
     public static final Stall BENSON = new StallBuilder().withName("Benson Meier")
-            .withLocation("311, Clementi Ave 2, #02-25").build();
+            .withLocation("Deck").build();
     public static final Stall CARL = new StallBuilder().withName("Carl Kurz").withLocation("wall street").build();
     public static final Stall DANIEL = new StallBuilder().withName("Daniel Meier").withLocation("10th street").build();
     public static final Stall ELLE = new StallBuilder().withName("Elle Meyer").withLocation("michegan ave").build();
