@@ -3,4 +3,4 @@ package seedu.address.model.stall.exceptions;
 /**
  * Signals that the operation is unable to find the specified stall.
  */
-public class PersonNotFoundException extends RuntimeException {}
+public class StallNotFoundException extends RuntimeException {}

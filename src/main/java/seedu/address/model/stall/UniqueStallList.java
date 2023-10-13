@@ -8,8 +8,8 @@ import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import seedu.address.model.stall.exceptions.DuplicatePersonException;
-import seedu.address.model.stall.exceptions.PersonNotFoundException;
+import seedu.address.model.stall.exceptions.DuplicateStallException;
+import seedu.address.model.stall.exceptions.StallNotFoundException;
 
 /**
  * A list of persons that enforces uniqueness between its elements and does not allow nulls.
@@ -43,7 +43,7 @@ public class UniqueStallList implements Iterable<Stall> {
     public void add(Stall toAdd) {
         requireNonNull(toAdd);
         if (contains(toAdd)) {
-            throw new DuplicatePersonException();
+            throw new DuplicateStallException();
         }
         internalList.add(toAdd);
     }
@@ -58,11 +58,11 @@ public class UniqueStallList implements Iterable<Stall> {
 
         int index = internalList.indexOf(target);
         if (index == -1) {
-            throw new PersonNotFoundException();
+            throw new StallNotFoundException();
         }
 
         if (!target.isSamePerson(editedStall) && contains(editedStall)) {
-            throw new DuplicatePersonException();
+            throw new DuplicateStallException();
         }
 
         internalList.set(index, editedStall);
@@ -75,7 +75,7 @@ public class UniqueStallList implements Iterable<Stall> {
     public void remove(Stall toRemove) {
         requireNonNull(toRemove);
         if (!internalList.remove(toRemove)) {
-            throw new PersonNotFoundException();
+            throw new StallNotFoundException();
         }
     }
 
@@ -91,7 +91,7 @@ public class UniqueStallList implements Iterable<Stall> {
     public void setStalls(List<Stall> stalls) {
         requireAllNonNull(stalls);
         if (!stallsAreUnique(stalls)) {
-            throw new DuplicatePersonException();
+            throw new DuplicateStallException();
         }
 
         internalList.setAll(stalls);

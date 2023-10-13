@@ -15,9 +15,9 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import seedu.address.model.stall.exceptions.DuplicatePersonException;
-import seedu.address.model.stall.exceptions.PersonNotFoundException;
-import seedu.address.testutil.PersonBuilder;
+import seedu.address.model.stall.exceptions.DuplicateStallException;
+import seedu.address.model.stall.exceptions.StallNotFoundException;
+import seedu.address.testutil.StallBuilder;
 
 public class UniqueStallListTest {
 
@@ -42,7 +42,7 @@ public class UniqueStallListTest {
     @Test
     public void contains_personWithSameIdentityFieldsInList_returnsTrue() {
         uniqueStallList.add(ALICE);
-        Stall editedAlice = new PersonBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND)
+        Stall editedAlice = new StallBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND)
                 .build();
         assertTrue(uniqueStallList.contains(editedAlice));
     }
@@ -55,7 +55,7 @@ public class UniqueStallListTest {
     @Test
     public void add_duplicatePerson_throwsDuplicatePersonException() {
         uniqueStallList.add(ALICE);
-        assertThrows(DuplicatePersonException.class, () -> uniqueStallList.add(ALICE));
+        assertThrows(DuplicateStallException.class, () -> uniqueStallList.add(ALICE));
     }
 
     @Test
@@ -70,7 +70,7 @@ public class UniqueStallListTest {
 
     @Test
     public void setPerson_targetPersonNotInList_throwsPersonNotFoundException() {
-        assertThrows(PersonNotFoundException.class, () -> uniqueStallList.setStall(ALICE, ALICE));
+        assertThrows(StallNotFoundException.class, () -> uniqueStallList.setStall(ALICE, ALICE));
     }
 
     @Test
@@ -85,7 +85,7 @@ public class UniqueStallListTest {
     @Test
     public void setPerson_editedPersonHasSameIdentity_success() {
         uniqueStallList.add(ALICE);
-        Stall editedAlice = new PersonBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND)
+        Stall editedAlice = new StallBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND)
                 .build();
         uniqueStallList.setStall(ALICE, editedAlice);
         UniqueStallList expectedUniqueStallList = new UniqueStallList();
@@ -106,7 +106,7 @@ public class UniqueStallListTest {
     public void setPerson_editedPersonHasNonUniqueIdentity_throwsDuplicatePersonException() {
         uniqueStallList.add(ALICE);
         uniqueStallList.add(BOB);
-        assertThrows(DuplicatePersonException.class, () -> uniqueStallList.setStall(ALICE, BOB));
+        assertThrows(DuplicateStallException.class, () -> uniqueStallList.setStall(ALICE, BOB));
     }
 
     @Test
@@ -116,7 +116,7 @@ public class UniqueStallListTest {
 
     @Test
     public void remove_personDoesNotExist_throwsPersonNotFoundException() {
-        assertThrows(PersonNotFoundException.class, () -> uniqueStallList.remove(ALICE));
+        assertThrows(StallNotFoundException.class, () -> uniqueStallList.remove(ALICE));
     }
 
     @Test
@@ -159,7 +159,7 @@ public class UniqueStallListTest {
     @Test
     public void setPersons_listWithDuplicatePersons_throwsDuplicatePersonException() {
         List<Stall> listWithDuplicateStalls = Arrays.asList(ALICE, ALICE);
-        assertThrows(DuplicatePersonException.class, () -> uniqueStallList.setStalls(listWithDuplicateStalls));
+        assertThrows(DuplicateStallException.class, () -> uniqueStallList.setStalls(listWithDuplicateStalls));
     }
 
     @Test
