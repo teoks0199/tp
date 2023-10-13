@@ -20,7 +20,7 @@ import seedu.address.model.stall.exceptions.StallNotFoundException;
  *
  * Supports a minimal set of list operations.
  *
- * @see Stall#isSamePerson(Stall)
+ * @see Stall#isSameStall(Stall)
  */
 public class UniqueStallList implements Iterable<Stall> {
 
@@ -33,7 +33,7 @@ public class UniqueStallList implements Iterable<Stall> {
      */
     public boolean contains(Stall toCheck) {
         requireNonNull(toCheck);
-        return internalList.stream().anyMatch(toCheck::isSamePerson);
+        return internalList.stream().anyMatch(toCheck::isSameStall);
     }
 
     /**
@@ -61,7 +61,7 @@ public class UniqueStallList implements Iterable<Stall> {
             throw new StallNotFoundException();
         }
 
-        if (!target.isSamePerson(editedStall) && contains(editedStall)) {
+        if (!target.isSameStall(editedStall) && contains(editedStall)) {
             throw new DuplicateStallException();
         }
 
@@ -140,7 +140,7 @@ public class UniqueStallList implements Iterable<Stall> {
     private boolean stallsAreUnique(List<Stall> stalls) {
         for (int i = 0; i < stalls.size() - 1; i++) {
             for (int j = i + 1; j < stalls.size(); j++) {
-                if (stalls.get(i).isSamePerson(stalls.get(j))) {
+                if (stalls.get(i).isSameStall(stalls.get(j))) {
                     return false;
                 }
             }

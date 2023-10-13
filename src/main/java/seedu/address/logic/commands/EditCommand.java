@@ -70,7 +70,7 @@ public class EditCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
-        List<Stall> lastShownList = model.getFilteredPersonList();
+        List<Stall> lastShownList = model.getFilteredStallList();
 
         if (index.getZeroBased() >= lastShownList.size()) {
             throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
@@ -79,12 +79,12 @@ public class EditCommand extends Command {
         Stall stallToEdit = lastShownList.get(index.getZeroBased());
         Stall editedStall = createEditedPerson(stallToEdit, editStallDescriptor);
 
-        if (!stallToEdit.isSamePerson(editedStall) && model.hasStall(editedStall)) {
+        if (!stallToEdit.isSameStall(editedStall) && model.hasStall(editedStall)) {
             throw new CommandException(MESSAGE_DUPLICATE_PERSON);
         }
 
-        model.setPerson(stallToEdit, editedStall);
-        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        model.setStall(stallToEdit, editedStall);
+        model.updateFilteredStallList(PREDICATE_SHOW_ALL_PERSONS);
         return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedStall)));
     }
 

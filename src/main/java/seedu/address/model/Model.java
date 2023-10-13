@@ -61,7 +61,7 @@ public interface Model {
      * Deletes the given stall.
      * The stall must exist in the address book.
      */
-    void deletePerson(Stall target);
+    void deleteStall(Stall target);
 
     /**
      * Adds the given stall.
@@ -74,14 +74,14 @@ public interface Model {
      * {@code target} must exist in the address book.
      * The stall identity of {@code editedStall} must not be the same as another existing stall in the address book.
      */
-    void setPerson(Stall target, Stall editedStall);
+    void setStall(Stall target, Stall editedStall);
 
     /** Returns an unmodifiable view of the filtered stall list */
-    ObservableList<Stall> getFilteredPersonList();
+    ObservableList<Stall> getFilteredStallList();
 
     /**
      * Updates the filter of the filtered stall list to filter by the given {@code predicate}.
      * @throws NullPointerException if {@code predicate} is null.
      */
-    void updateFilteredPersonList(Predicate<Stall> predicate);
+    void updateFilteredStallList(Predicate<Stall> predicate);
 }

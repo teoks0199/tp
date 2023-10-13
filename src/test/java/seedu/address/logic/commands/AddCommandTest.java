@@ -34,14 +34,14 @@ public class AddCommandTest {
 
     @Test
     public void execute_personAcceptedByModel_addSuccessful() throws Exception {
-        ModelStubAcceptingPersonAdded modelStub = new ModelStubAcceptingPersonAdded();
+        ModelStubAcceptingStallAdded modelStub = new ModelStubAcceptingStallAdded();
         Stall validStall = new StallBuilder().build();
 
         CommandResult commandResult = new AddCommand(validStall).execute(modelStub);
 
         assertEquals(String.format(AddCommand.MESSAGE_SUCCESS, Messages.format(validStall)),
                 commandResult.getFeedbackToUser());
-        assertEquals(Arrays.asList(validStall), modelStub.personsAdded);
+        assertEquals(Arrays.asList(validStall), modelStub.stallsAdded);
     }
 
     @Test
@@ -139,22 +139,22 @@ public class AddCommandTest {
         }
 
         @Override
-        public void deletePerson(Stall target) {
+        public void deleteStall(Stall target) {
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
-        public void setPerson(Stall target, Stall editedStall) {
+        public void setStall(Stall target, Stall editedStall) {
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
-        public ObservableList<Stall> getFilteredPersonList() {
+        public ObservableList<Stall> getFilteredStallList() {
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
-        public void updateFilteredPersonList(Predicate<Stall> predicate) {
+        public void updateFilteredStallList(Predicate<Stall> predicate) {
             throw new AssertionError("This method should not be called.");
         }
     }
@@ -173,26 +173,26 @@ public class AddCommandTest {
         @Override
         public boolean hasStall(Stall stall) {
             requireNonNull(stall);
-            return this.stall.isSamePerson(stall);
+            return this.stall.isSameStall(stall);
         }
     }
 
     /**
      * A Model stub that always accept the stall being added.
      */
-    private class ModelStubAcceptingPersonAdded extends ModelStub {
-        final ArrayList<Stall> personsAdded = new ArrayList<>();
+    private class ModelStubAcceptingStallAdded extends ModelStub {
+        final ArrayList<Stall> stallsAdded = new ArrayList<>();
 
         @Override
         public boolean hasStall(Stall stall) {
             requireNonNull(stall);
-            return personsAdded.stream().anyMatch(stall::isSamePerson);
+            return stallsAdded.stream().anyMatch(stall::isSameStall);
         }
 
         @Override
         public void addStall(Stall stall) {
             requireNonNull(stall);
-            personsAdded.add(stall);
+            stallsAdded.add(stall);
         }
 
         @Override
