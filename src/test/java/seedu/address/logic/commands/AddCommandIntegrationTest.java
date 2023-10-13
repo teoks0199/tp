@@ -27,7 +27,7 @@ public class AddCommandIntegrationTest {
     }
 
     @Test
-    public void execute_newPerson_success() {
+    public void execute_newStall_success() {
         Stall validStall = new StallBuilder().build();
 
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
@@ -39,7 +39,7 @@ public class AddCommandIntegrationTest {
     }
 
     @Test
-    public void execute_duplicatePerson_throwsCommandException() {
+    public void execute_duplicateStall_throwsCommandException() {
         Stall stallInList = model.getAddressBook().getStallList().get(0);
         assertCommandFailure(new AddCommand(stallInList), model,
                 AddCommand.MESSAGE_DUPLICATE_STALL);

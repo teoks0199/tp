@@ -28,12 +28,12 @@ import seedu.address.testutil.StallBuilder;
 public class AddCommandTest {
 
     @Test
-    public void constructor_nullPerson_throwsNullPointerException() {
+    public void constructor_nullStall_throwsNullPointerException() {
         assertThrows(NullPointerException.class, () -> new AddCommand(null));
     }
 
     @Test
-    public void execute_personAcceptedByModel_addSuccessful() throws Exception {
+    public void execute_stallAcceptedByModel_addSuccessful() throws Exception {
         ModelStubAcceptingStallAdded modelStub = new ModelStubAcceptingStallAdded();
         Stall validStall = new StallBuilder().build();
 
@@ -45,7 +45,7 @@ public class AddCommandTest {
     }
 
     @Test
-    public void execute_duplicatePerson_throwsCommandException() {
+    public void execute_duplicateStall_throwsCommandException() {
         Stall validStall = new StallBuilder().build();
         AddCommand addCommand = new AddCommand(validStall);
         ModelStub modelStub = new ModelStubWithStall(validStall);

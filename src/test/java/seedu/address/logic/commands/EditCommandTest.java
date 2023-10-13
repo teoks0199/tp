@@ -10,7 +10,7 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.address.logic.commands.CommandTestUtil.showPersonAtIndex;
+import static seedu.address.logic.commands.CommandTestUtil.showStallAtIndex;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_STALL;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_STALL;
 import static seedu.address.testutil.TypicalStalls.getTypicalAddressBook;
@@ -84,7 +84,7 @@ public class EditCommandTest {
 
     @Test
     public void execute_filteredList_success() {
-        showPersonAtIndex(model, INDEX_FIRST_STALL);
+        showStallAtIndex(model, INDEX_FIRST_STALL);
 
         Stall stallInFilteredList = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
         Stall editedStall = new StallBuilder(stallInFilteredList).withName(VALID_NAME_BOB).build();
@@ -110,7 +110,7 @@ public class EditCommandTest {
 
     @Test
     public void execute_duplicatePersonFilteredList_failure() {
-        showPersonAtIndex(model, INDEX_FIRST_STALL);
+        showStallAtIndex(model, INDEX_FIRST_STALL);
 
         // edit stall in filtered list into a duplicate in address book
         Stall stallInList = model.getAddressBook().getStallList().get(INDEX_SECOND_STALL.getZeroBased());
@@ -135,7 +135,7 @@ public class EditCommandTest {
      */
     @Test
     public void execute_invalidPersonIndexFilteredList_failure() {
-        showPersonAtIndex(model, INDEX_FIRST_STALL);
+        showStallAtIndex(model, INDEX_FIRST_STALL);
         Index outOfBoundIndex = INDEX_SECOND_STALL;
         // ensures that outOfBoundIndex is still in bounds of address book list
         assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getStallList().size());

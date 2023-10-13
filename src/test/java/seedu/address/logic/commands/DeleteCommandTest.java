@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.address.logic.commands.CommandTestUtil.showPersonAtIndex;
+import static seedu.address.logic.commands.CommandTestUtil.showStallAtIndex;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_STALL;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_STALL;
 import static seedu.address.testutil.TypicalStalls.getTypicalAddressBook;
@@ -51,7 +51,7 @@ public class DeleteCommandTest {
 
     @Test
     public void execute_validIndexFilteredList_success() {
-        showPersonAtIndex(model, INDEX_FIRST_STALL);
+        showStallAtIndex(model, INDEX_FIRST_STALL);
 
         Stall stallToDelete = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
         DeleteCommand deleteCommand = new DeleteCommand(INDEX_FIRST_STALL);
@@ -68,7 +68,7 @@ public class DeleteCommandTest {
 
     @Test
     public void execute_invalidIndexFilteredList_throwsCommandException() {
-        showPersonAtIndex(model, INDEX_FIRST_STALL);
+        showStallAtIndex(model, INDEX_FIRST_STALL);
 
         Index outOfBoundIndex = INDEX_SECOND_STALL;
         // ensures that outOfBoundIndex is still in bounds of address book list
