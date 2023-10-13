@@ -51,16 +51,16 @@ public class EditCommandTest {
 
     @Test
     public void execute_someFieldsSpecifiedUnfilteredList_success() {
-        Index indexLastPerson = Index.fromOneBased(model.getFilteredStallList().size());
-        Stall lastStall = model.getFilteredStallList().get(indexLastPerson.getZeroBased());
+        Index indexLastStall = Index.fromOneBased(model.getFilteredStallList().size());
+        Stall lastStall = model.getFilteredStallList().get(indexLastStall.getZeroBased());
 
-        StallBuilder personInList = new StallBuilder(lastStall);
-        Stall editedStall = personInList.withName(VALID_NAME_BOB).withPhone(VALID_PHONE_BOB)
+        StallBuilder stallInList = new StallBuilder(lastStall);
+        Stall editedStall = stallInList.withName(VALID_NAME_BOB).withPhone(VALID_PHONE_BOB)
                 .withTags(VALID_TAG_HUSBAND).build();
 
         EditStallDescriptor descriptor = new EditStallDescriptorBuilder().withName(VALID_NAME_BOB)
                 .withPhone(VALID_PHONE_BOB).withTags(VALID_TAG_HUSBAND).build();
-        EditCommand editCommand = new EditCommand(indexLastPerson, descriptor);
+        EditCommand editCommand = new EditCommand(indexLastStall, descriptor);
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall));
 
@@ -100,7 +100,7 @@ public class EditCommandTest {
     }
 
     @Test
-    public void execute_duplicatePersonUnfilteredList_failure() {
+    public void execute_duplicateStallUnfilteredList_failure() {
         Stall firstStall = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
         EditStallDescriptor descriptor = new EditStallDescriptorBuilder(firstStall).build();
         EditCommand editCommand = new EditCommand(INDEX_SECOND_STALL, descriptor);
@@ -109,7 +109,7 @@ public class EditCommandTest {
     }
 
     @Test
-    public void execute_duplicatePersonFilteredList_failure() {
+    public void execute_duplicateStallFilteredList_failure() {
         showStallAtIndex(model, INDEX_FIRST_STALL);
 
         // edit stall in filtered list into a duplicate in address book
@@ -121,7 +121,7 @@ public class EditCommandTest {
     }
 
     @Test
-    public void execute_invalidPersonIndexUnfilteredList_failure() {
+    public void execute_invalidStallIndexUnfilteredList_failure() {
         Index outOfBoundIndex = Index.fromOneBased(model.getFilteredStallList().size() + 1);
         EditStallDescriptor descriptor = new EditStallDescriptorBuilder().withName(VALID_NAME_BOB).build();
         EditCommand editCommand = new EditCommand(outOfBoundIndex, descriptor);
@@ -134,7 +134,7 @@ public class EditCommandTest {
      * but smaller than size of address book
      */
     @Test
-    public void execute_invalidPersonIndexFilteredList_failure() {
+    public void execute_invalidStallIndexFilteredList_failure() {
         showStallAtIndex(model, INDEX_FIRST_STALL);
         Index outOfBoundIndex = INDEX_SECOND_STALL;
         // ensures that outOfBoundIndex is still in bounds of address book list
