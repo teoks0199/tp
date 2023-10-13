@@ -26,13 +26,13 @@ public class StallListPanel extends UiPart<Region> {
     public StallListPanel(ObservableList<Stall> stallList) {
         super(FXML);
         personListView.setItems(stallList);
-        personListView.setCellFactory(listView -> new PersonListViewCell());
+        personListView.setCellFactory(listView -> new StallListViewCell());
     }
 
     /**
      * Custom {@code ListCell} that displays the graphics of a {@code Stall} using a {@code StallCard}.
      */
-    class PersonListViewCell extends ListCell<Stall> {
+    class StallListViewCell extends ListCell<Stall> {
         @Override
         protected void updateItem(Stall stall, boolean empty) {
             super.updateItem(stall, empty);
