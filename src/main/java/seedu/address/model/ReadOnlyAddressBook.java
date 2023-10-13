@@ -9,8 +9,8 @@ import seedu.address.model.stall.Stall;
 public interface ReadOnlyAddressBook {
 
     /**
-     * Returns an unmodifiable view of the persons list.
-     * This list will not contain any duplicate persons.
+     * Returns an unmodifiable view of the stalls list.
+     * This list will not contain any duplicate stalls.
      */
     ObservableList<Stall> getStallList();
 
