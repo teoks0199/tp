@@ -1,15 +1,13 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.*;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_LOCATION;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_STALLS;
 
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.Set;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.CollectionUtil;
@@ -17,8 +15,9 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.stall.*;
-import seedu.address.model.tag.Tag;
+import seedu.address.model.stall.Location;
+import seedu.address.model.stall.Name;
+import seedu.address.model.stall.Stall;
 
 /**
  * Edits the details of an existing stall in the address book.
@@ -119,11 +118,6 @@ public class EditCommand extends Command {
     public static class EditStallDescriptor {
         private Name name;
         private Location location;
-        private Phone phone;
-        private Email email;
-        private Address address;
-        private Set<Tag> tags;
-
         public EditStallDescriptor() {}
 
         /**
@@ -132,17 +126,14 @@ public class EditCommand extends Command {
          */
         public EditStallDescriptor(EditStallDescriptor toCopy) {
             setName(toCopy.name);
-            setPhone(toCopy.phone);
-            setEmail(toCopy.email);
-            setAddress(toCopy.address);
-            setTags(toCopy.tags);
+            setLocation(toCopy.location);
         }
 
         /**
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(name, phone, email, address, tags);
+            return CollectionUtil.isAnyNonNull(name, location);
         }
 
         public void setName(Name name) {
@@ -161,46 +152,6 @@ public class EditCommand extends Command {
             return Optional.ofNullable(location);
         }
 
-        public void setPhone(Phone phone) {
-            this.phone = phone;
-        }
-
-        public Optional<Phone> getPhone() {
-            return Optional.ofNullable(phone);
-        }
-
-        public void setEmail(Email email) {
-            this.email = email;
-        }
-
-        public Optional<Email> getEmail() {
-            return Optional.ofNullable(email);
-        }
-
-        public void setAddress(Address address) {
-            this.address = address;
-        }
-
-        public Optional<Address> getAddress() {
-            return Optional.ofNullable(address);
-        }
-
-        /**
-         * Sets {@code tags} to this object's {@code tags}.
-         * A defensive copy of {@code tags} is used internally.
-         */
-        public void setTags(Set<Tag> tags) {
-            this.tags = (tags != null) ? new HashSet<>(tags) : null;
-        }
-
-        /**
-         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}
-         * if modification is attempted.
-         * Returns {@code Optional#empty()} if {@code tags} is null.
-         */
-        public Optional<Set<Tag>> getTags() {
-            return (tags != null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();
-        }
 
         @Override
         public boolean equals(Object other) {
@@ -215,20 +166,14 @@ public class EditCommand extends Command {
 
             EditStallDescriptor otherEditStallDescriptor = (EditStallDescriptor) other;
             return Objects.equals(name, otherEditStallDescriptor.name)
-                    && Objects.equals(phone, otherEditStallDescriptor.phone)
-                    && Objects.equals(email, otherEditStallDescriptor.email)
-                    && Objects.equals(address, otherEditStallDescriptor.address)
-                    && Objects.equals(tags, otherEditStallDescriptor.tags);
+                    && Objects.equals(location, otherEditStallDescriptor.location);
         }
 
         @Override
         public String toString() {
             return new ToStringBuilder(this)
                     .add("name", name)
-                    .add("phone", phone)
-                    .add("email", email)
-                    .add("address", address)
-                    .add("tags", tags)
+                    .add("location", location)
                     .toString();
         }
     }

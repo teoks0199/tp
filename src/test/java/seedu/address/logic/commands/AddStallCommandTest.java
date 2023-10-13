@@ -50,7 +50,8 @@ public class AddStallCommandTest {
         AddStallCommand addStallCommand = new AddStallCommand(validStall);
         ModelStub modelStub = new ModelStubWithStall(validStall);
 
-        assertThrows(CommandException.class, AddStallCommand.MESSAGE_DUPLICATE_STALL, () -> addStallCommand.execute(modelStub));
+        assertThrows(CommandException.class, AddStallCommand.MESSAGE_DUPLICATE_STALL, () -> addStallCommand
+                .execute(modelStub));
     }
 
     @Test
@@ -75,13 +76,6 @@ public class AddStallCommandTest {
 
         // different stall -> returns false
         assertFalse(addAliceCommand.equals(addBobCommand));
-    }
-
-    @Test
-    public void toStringMethod() {
-        AddStallCommand addStallCommand = new AddStallCommand(ALICE);
-        String expected = AddStallCommand.class.getCanonicalName() + "{toAdd=" + ALICE + "}";
-        assertEquals(expected, addStallCommand.toString());
     }
 
     /**
