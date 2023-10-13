@@ -19,7 +19,7 @@ import seedu.address.model.stall.Stall;
 @JsonRootName(value = "addressbook")
 class JsonSerializableAddressBook {
 
-    public static final String MESSAGE_DUPLICATE_PERSON = "Persons list contains duplicate stall(s).";
+    public static final String MESSAGE_DUPLICATE_STALL = "Persons list contains duplicate stall(s).";
 
     private final List<JsonAdaptedStall> persons = new ArrayList<>();
 
@@ -50,7 +50,7 @@ class JsonSerializableAddressBook {
         for (JsonAdaptedStall jsonAdaptedStall : persons) {
             Stall stall = jsonAdaptedStall.toModelType();
             if (addressBook.hasStall(stall)) {
-                throw new IllegalValueException(MESSAGE_DUPLICATE_PERSON);
+                throw new IllegalValueException(MESSAGE_DUPLICATE_STALL);
             }
             addressBook.addStall(stall);
         }

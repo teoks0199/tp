@@ -42,7 +42,7 @@ public class AddCommandIntegrationTest {
     public void execute_duplicatePerson_throwsCommandException() {
         Stall stallInList = model.getAddressBook().getStallList().get(0);
         assertCommandFailure(new AddCommand(stallInList), model,
-                AddCommand.MESSAGE_DUPLICATE_PERSON);
+                AddCommand.MESSAGE_DUPLICATE_STALL);
     }
 
 }

@@ -49,7 +49,7 @@ public class TestUtil {
     /**
      * Returns the stall in the {@code model}'s stall list at {@code index}.
      */
-    public static Stall getPerson(Model model, Index index) {
+    public static Stall getStall(Model model, Index index) {
         return model.getFilteredStallList().get(index.getZeroBased());
     }
 }
