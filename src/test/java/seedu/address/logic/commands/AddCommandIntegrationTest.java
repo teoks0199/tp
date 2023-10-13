@@ -31,7 +31,7 @@ public class AddCommandIntegrationTest {
         Stall validStall = new StallBuilder().build();
 
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
-        expectedModel.addPerson(validStall);
+        expectedModel.addStall(validStall);
 
         assertCommandSuccess(new AddCommand(validStall), model,
                 String.format(AddCommand.MESSAGE_SUCCESS, Messages.format(validStall)),

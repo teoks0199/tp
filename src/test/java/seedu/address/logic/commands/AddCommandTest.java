@@ -48,7 +48,7 @@ public class AddCommandTest {
     public void execute_duplicatePerson_throwsCommandException() {
         Stall validStall = new StallBuilder().build();
         AddCommand addCommand = new AddCommand(validStall);
-        ModelStub modelStub = new ModelStubWithPerson(validStall);
+        ModelStub modelStub = new ModelStubWithStall(validStall);
 
         assertThrows(CommandException.class, AddCommand.MESSAGE_DUPLICATE_PERSON, () -> addCommand.execute(modelStub));
     }
@@ -119,7 +119,7 @@ public class AddCommandTest {
         }
 
         @Override
-        public void addPerson(Stall stall) {
+        public void addStall(Stall stall) {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -134,7 +134,7 @@ public class AddCommandTest {
         }
 
         @Override
-        public boolean hasPerson(Stall stall) {
+        public boolean hasStall(Stall stall) {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -162,16 +162,16 @@ public class AddCommandTest {
     /**
      * A Model stub that contains a single stall.
      */
-    private class ModelStubWithPerson extends ModelStub {
+    private class ModelStubWithStall extends ModelStub {
         private final Stall stall;
 
-        ModelStubWithPerson(Stall stall) {
+        ModelStubWithStall(Stall stall) {
             requireNonNull(stall);
             this.stall = stall;
         }
 
         @Override
-        public boolean hasPerson(Stall stall) {
+        public boolean hasStall(Stall stall) {
             requireNonNull(stall);
             return this.stall.isSamePerson(stall);
         }
@@ -184,13 +184,13 @@ public class AddCommandTest {
         final ArrayList<Stall> personsAdded = new ArrayList<>();
 
         @Override
-        public boolean hasPerson(Stall stall) {
+        public boolean hasStall(Stall stall) {
             requireNonNull(stall);
             return personsAdded.stream().anyMatch(stall::isSamePerson);
         }
 
         @Override
-        public void addPerson(Stall stall) {
+        public void addStall(Stall stall) {
             requireNonNull(stall);
             personsAdded.add(stall);
         }

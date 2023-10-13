@@ -79,7 +79,7 @@ public class EditCommand extends Command {
         Stall stallToEdit = lastShownList.get(index.getZeroBased());
         Stall editedStall = createEditedPerson(stallToEdit, editStallDescriptor);
 
-        if (!stallToEdit.isSamePerson(editedStall) && model.hasPerson(editedStall)) {
+        if (!stallToEdit.isSamePerson(editedStall) && model.hasStall(editedStall)) {
             throw new CommandException(MESSAGE_DUPLICATE_PERSON);
         }
 

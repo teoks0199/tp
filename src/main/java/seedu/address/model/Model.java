@@ -55,7 +55,7 @@ public interface Model {
     /**
      * Returns true if a stall with the same identity as {@code stall} exists in the address book.
      */
-    boolean hasPerson(Stall stall);
+    boolean hasStall(Stall stall);
 
     /**
      * Deletes the given stall.
@@ -67,7 +67,7 @@ public interface Model {
      * Adds the given stall.
      * {@code stall} must not already exist in the address book.
      */
-    void addPerson(Stall stall);
+    void addStall(Stall stall);
 
     /**
      * Replaces the given stall {@code target} with {@code editedStall}.

@@ -169,7 +169,7 @@ public class LogicManagerTest {
                 + EMAIL_DESC_AMY + ADDRESS_DESC_AMY;
         Stall expectedStall = new StallBuilder(AMY).withTags().build();
         ModelManager expectedModel = new ModelManager();
-        expectedModel.addPerson(expectedStall);
+        expectedModel.addStall(expectedStall);
         assertCommandFailure(addCommand, CommandException.class, expectedMessage, expectedModel);
     }
 }
