@@ -8,7 +8,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 
 import java.util.Set;
 
-import seedu.address.logic.commands.AddCommand;
+import seedu.address.logic.commands.AddStallCommand;
 import seedu.address.logic.commands.EditCommand.EditStallDescriptor;
 import seedu.address.model.stall.Stall;
 import seedu.address.model.tag.Tag;
@@ -22,7 +22,7 @@ public class StallUtil {
      * Returns an add command string for adding the {@code stall}.
      */
     public static String getAddCommand(Stall stall) {
-        return AddCommand.COMMAND_WORD + " " + getStallDetails(stall);
+        return AddStallCommand.COMMAND_WORD + " " + getStallDetails(stall);
     }
 
     /**

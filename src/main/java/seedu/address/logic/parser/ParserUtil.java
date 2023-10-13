@@ -9,10 +9,7 @@ import java.util.Set;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.stall.Address;
-import seedu.address.model.stall.Email;
-import seedu.address.model.stall.Name;
-import seedu.address.model.stall.Phone;
+import seedu.address.model.stall.*;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -48,6 +45,15 @@ public class ParserUtil {
             throw new ParseException(Name.MESSAGE_CONSTRAINTS);
         }
         return new Name(trimmedName);
+    }
+
+    public static Location parseLocation(String location) throws ParseException {
+        requireNonNull(location);
+        String trimmedLocation = location.trim();
+        if (!Name.isValidName(trimmedLocation)) {
+            throw new ParseException(Name.MESSAGE_CONSTRAINTS);
+        }
+        return new Location(trimmedLocation);
     }
 
     /**

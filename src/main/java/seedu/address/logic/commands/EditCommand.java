@@ -21,11 +21,7 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.stall.Address;
-import seedu.address.model.stall.Email;
-import seedu.address.model.stall.Name;
-import seedu.address.model.stall.Phone;
-import seedu.address.model.stall.Stall;
+import seedu.address.model.stall.*;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -96,12 +92,13 @@ public class EditCommand extends Command {
         assert stallToEdit != null;
 
         Name updatedName = editStallDescriptor.getName().orElse(stallToEdit.getName());
+        Location updatedLocation = editStallDescriptor.getLocation().orElse(stallToEdit.getLocation());
         Phone updatedPhone = editStallDescriptor.getPhone().orElse(stallToEdit.getPhone());
         Email updatedEmail = editStallDescriptor.getEmail().orElse(stallToEdit.getEmail());
         Address updatedAddress = editStallDescriptor.getAddress().orElse(stallToEdit.getAddress());
         Set<Tag> updatedTags = editStallDescriptor.getTags().orElse(stallToEdit.getTags());
 
-        return new Stall(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedTags);
+        return new Stall(updatedName, updatedLocation);
     }
 
     @Override
@@ -134,6 +131,7 @@ public class EditCommand extends Command {
      */
     public static class EditStallDescriptor {
         private Name name;
+        private Location location;
         private Phone phone;
         private Email email;
         private Address address;
@@ -166,6 +164,14 @@ public class EditCommand extends Command {
 
         public Optional<Name> getName() {
             return Optional.ofNullable(name);
+        }
+
+        public void setLocation(Location location) {
+            this.location = location;
+        }
+
+        public Optional<Location> getLocation() {
+            return Optional.ofNullable(location);
         }
 
         public void setPhone(Phone phone) {
