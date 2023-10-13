@@ -61,7 +61,7 @@ public class DeleteCommandTest {
 
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.deleteStall(stallToDelete);
-        showNoPerson(expectedModel);
+        showNoStall(expectedModel);
 
         assertCommandSuccess(deleteCommand, model, expectedMessage, expectedModel);
     }
@@ -112,7 +112,7 @@ public class DeleteCommandTest {
     /**
      * Updates {@code model}'s filtered list to show no one.
      */
-    private void showNoPerson(Model model) {
+    private void showNoStall(Model model) {
         model.updateFilteredStallList(p -> false);
 
         assertTrue(model.getFilteredStallList().isEmpty());

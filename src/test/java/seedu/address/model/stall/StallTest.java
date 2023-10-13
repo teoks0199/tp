@@ -25,7 +25,7 @@ public class StallTest {
     }
 
     @Test
-    public void isSamePerson() {
+    public void isSameStall() {
         // same object -> returns true
         assertTrue(ALICE.isSameStall(ALICE));
 

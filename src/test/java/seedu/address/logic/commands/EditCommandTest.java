@@ -41,7 +41,7 @@ public class EditCommandTest {
         EditStallDescriptor descriptor = new EditStallDescriptorBuilder(editedStall).build();
         EditCommand editCommand = new EditCommand(INDEX_FIRST_PERSON, descriptor);
 
-        String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedStall));
+        String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall));
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setStall(model.getFilteredStallList().get(0), editedStall);
@@ -62,7 +62,7 @@ public class EditCommandTest {
                 .withPhone(VALID_PHONE_BOB).withTags(VALID_TAG_HUSBAND).build();
         EditCommand editCommand = new EditCommand(indexLastPerson, descriptor);
 
-        String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedStall));
+        String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall));
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setStall(lastStall, editedStall);
@@ -75,7 +75,7 @@ public class EditCommandTest {
         EditCommand editCommand = new EditCommand(INDEX_FIRST_PERSON, new EditStallDescriptor());
         Stall editedStall = model.getFilteredStallList().get(INDEX_FIRST_PERSON.getZeroBased());
 
-        String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedStall));
+        String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall));
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
 
@@ -91,7 +91,7 @@ public class EditCommandTest {
         EditCommand editCommand = new EditCommand(INDEX_FIRST_PERSON,
                 new EditStallDescriptorBuilder().withName(VALID_NAME_BOB).build());
 
-        String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedStall));
+        String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall));
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setStall(model.getFilteredStallList().get(0), editedStall);
@@ -105,7 +105,7 @@ public class EditCommandTest {
         EditStallDescriptor descriptor = new EditStallDescriptorBuilder(firstStall).build();
         EditCommand editCommand = new EditCommand(INDEX_SECOND_PERSON, descriptor);
 
-        assertCommandFailure(editCommand, model, EditCommand.MESSAGE_DUPLICATE_PERSON);
+        assertCommandFailure(editCommand, model, EditCommand.MESSAGE_DUPLICATE_STALL);
     }
 
     @Test
@@ -117,7 +117,7 @@ public class EditCommandTest {
         EditCommand editCommand = new EditCommand(INDEX_FIRST_PERSON,
                 new EditStallDescriptorBuilder(stallInList).build());
 
-        assertCommandFailure(editCommand, model, EditCommand.MESSAGE_DUPLICATE_PERSON);
+        assertCommandFailure(editCommand, model, EditCommand.MESSAGE_DUPLICATE_STALL);
     }
 
     @Test

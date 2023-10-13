@@ -48,9 +48,9 @@ public class EditCommand extends Command {
             + PREFIX_PHONE + "91234567 "
             + PREFIX_EMAIL + "johndoe@example.com";
 
-    public static final String MESSAGE_EDIT_PERSON_SUCCESS = "Edited Stall: %1$s";
+    public static final String MESSAGE_EDIT_STALL_SUCCESS = "Edited Stall: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
-    public static final String MESSAGE_DUPLICATE_PERSON = "This stall already exists in the address book.";
+    public static final String MESSAGE_DUPLICATE_STALL = "This stall already exists in the address book.";
 
     private final Index index;
     private final EditStallDescriptor editStallDescriptor;
@@ -77,22 +77,22 @@ public class EditCommand extends Command {
         }
 
         Stall stallToEdit = lastShownList.get(index.getZeroBased());
-        Stall editedStall = createEditedPerson(stallToEdit, editStallDescriptor);
+        Stall editedStall = createEditedStall(stallToEdit, editStallDescriptor);
 
         if (!stallToEdit.isSameStall(editedStall) && model.hasStall(editedStall)) {
-            throw new CommandException(MESSAGE_DUPLICATE_PERSON);
+            throw new CommandException(MESSAGE_DUPLICATE_STALL);
         }
 
         model.setStall(stallToEdit, editedStall);
         model.updateFilteredStallList(PREDICATE_SHOW_ALL_PERSONS);
-        return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedStall)));
+        return new CommandResult(String.format(MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall)));
     }
 
     /**
      * Creates and returns a {@code Stall} with the details of {@code stallToEdit}
      * edited with {@code editStallDescriptor}.
      */
-    private static Stall createEditedPerson(Stall stallToEdit, EditStallDescriptor editStallDescriptor) {
+    private static Stall createEditedStall(Stall stallToEdit, EditStallDescriptor editStallDescriptor) {
         assert stallToEdit != null;
 
         Name updatedName = editStallDescriptor.getName().orElse(stallToEdit.getName());
