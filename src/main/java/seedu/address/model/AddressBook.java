@@ -6,8 +6,8 @@ import java.util.List;
 
 import javafx.collections.ObservableList;
 import seedu.address.commons.util.ToStringBuilder;
-import seedu.address.model.person.Person;
-import seedu.address.model.person.UniquePersonList;
+import seedu.address.model.stall.Stall;
+import seedu.address.model.stall.UniquePersonList;
 
 /**
  * Wraps all data at the address-book level
@@ -41,11 +41,11 @@ public class AddressBook implements ReadOnlyAddressBook {
     //// list overwrite operations
 
     /**
-     * Replaces the contents of the person list with {@code persons}.
-     * {@code persons} must not contain duplicate persons.
+     * Replaces the contents of the stall list with {@code stalls}.
+     * {@code stalls} must not contain duplicate stalls.
      */
-    public void setPersons(List<Person> persons) {
-        this.persons.setPersons(persons);
+    public void setPersons(List<Stall> stalls) {
+        this.persons.setPersons(stalls);
     }
 
     /**
@@ -57,40 +57,40 @@ public class AddressBook implements ReadOnlyAddressBook {
         setPersons(newData.getPersonList());
     }
 
-    //// person-level operations
+    //// stall-level operations
 
     /**
-     * Returns true if a person with the same identity as {@code person} exists in the address book.
+     * Returns true if a stall with the same identity as {@code stall} exists in the address book.
      */
-    public boolean hasPerson(Person person) {
-        requireNonNull(person);
-        return persons.contains(person);
+    public boolean hasPerson(Stall stall) {
+        requireNonNull(stall);
+        return persons.contains(stall);
     }
 
     /**
-     * Adds a person to the address book.
-     * The person must not already exist in the address book.
+     * Adds a stall to the address book.
+     * The stall must not already exist in the address book.
      */
-    public void addPerson(Person p) {
+    public void addPerson(Stall p) {
         persons.add(p);
     }
 
     /**
-     * Replaces the given person {@code target} in the list with {@code editedPerson}.
+     * Replaces the given stall {@code target} in the list with {@code editedStall}.
      * {@code target} must exist in the address book.
-     * The person identity of {@code editedPerson} must not be the same as another existing person in the address book.
+     * The stall identity of {@code editedStall} must not be the same as another existing stall in the address book.
      */
-    public void setPerson(Person target, Person editedPerson) {
-        requireNonNull(editedPerson);
+    public void setPerson(Stall target, Stall editedStall) {
+        requireNonNull(editedStall);
 
-        persons.setPerson(target, editedPerson);
+        persons.setPerson(target, editedStall);
     }
 
     /**
      * Removes {@code key} from this {@code AddressBook}.
      * {@code key} must exist in the address book.
      */
-    public void removePerson(Person key) {
+    public void removePerson(Stall key) {
         persons.remove(key);
     }
 
@@ -104,7 +104,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     @Override
-    public ObservableList<Person> getPersonList() {
+    public ObservableList<Stall> getPersonList() {
         return persons.asUnmodifiableObservableList();
     }
 
