@@ -12,7 +12,7 @@ import seedu.address.model.stall.Stall;
  */
 public interface Model {
     /** {@code Predicate} that always evaluate to true */
-    Predicate<Stall> PREDICATE_SHOW_ALL_PERSONS = unused -> true;
+    Predicate<Stall> PREDICATE_SHOW_ALL_STALLS = unused -> true;
 
     /**
      * Replaces user prefs data with the data in {@code userPrefs}.

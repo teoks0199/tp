@@ -37,7 +37,7 @@ public class DeleteCommand extends Command {
         List<Stall> lastShownList = model.getFilteredStallList();
 
         if (targetIndex.getZeroBased() >= lastShownList.size()) {
-            throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+            throw new CommandException(Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
         }
 
         Stall stallToDelete = lastShownList.get(targetIndex.getZeroBased());

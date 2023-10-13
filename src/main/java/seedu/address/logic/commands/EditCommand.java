@@ -6,7 +6,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_STALLS;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -73,7 +73,7 @@ public class EditCommand extends Command {
         List<Stall> lastShownList = model.getFilteredStallList();
 
         if (index.getZeroBased() >= lastShownList.size()) {
-            throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+            throw new CommandException(Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
         }
 
         Stall stallToEdit = lastShownList.get(index.getZeroBased());
@@ -84,7 +84,7 @@ public class EditCommand extends Command {
         }
 
         model.setStall(stallToEdit, editedStall);
-        model.updateFilteredStallList(PREDICATE_SHOW_ALL_PERSONS);
+        model.updateFilteredStallList(PREDICATE_SHOW_ALL_STALLS);
         return new CommandResult(String.format(MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall)));
     }
 

@@ -101,7 +101,7 @@ public class ModelManager implements Model {
     @Override
     public void addStall(Stall stall) {
         addressBook.addStall(stall);
-        updateFilteredStallList(PREDICATE_SHOW_ALL_PERSONS);
+        updateFilteredStallList(PREDICATE_SHOW_ALL_STALLS);
     }
 
     @Override
