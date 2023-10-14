@@ -1,7 +1,7 @@
 package seedu.address.model.stall;
 
 import static java.util.Objects.requireNonNull;
-//import static seedu.address.commons.util.AppUtil.checkArgument;
+import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
  * Represents a Stall's location in the address book.
@@ -10,13 +10,15 @@ import static java.util.Objects.requireNonNull;
 public class Location {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Locations should only contain alphanumeric characters and spaces, and it should not be blank";
+            "Locations should not be blank";
 
     /*
      * The first character of the address must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
      */
-    public static final String VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
+    //public static final String VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
+
+    public static final String VALIDATION_REGEX = "^.+$"; // should not be blank
 
     public final String locationName;
 
@@ -27,7 +29,7 @@ public class Location {
      */
     public Location(String name) {
         requireNonNull(name);
-        //checkArgument(isValidLocation(name), MESSAGE_CONSTRAINTS);
+        checkArgument(isValidLocation(name), MESSAGE_CONSTRAINTS);
         locationName = name;
     }
 

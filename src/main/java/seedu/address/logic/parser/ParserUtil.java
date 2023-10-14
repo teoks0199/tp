@@ -52,8 +52,8 @@ public class ParserUtil {
     public static Location parseLocation(String location) throws ParseException {
         requireNonNull(location);
         String trimmedLocation = location.trim();
-        if (!Name.isValidName(trimmedLocation)) {
-            throw new ParseException(Name.MESSAGE_CONSTRAINTS);
+        if (!Location.isValidLocation(trimmedLocation)) {
+            throw new ParseException(Location.MESSAGE_CONSTRAINTS);
         }
         return new Location(trimmedLocation);
     }
