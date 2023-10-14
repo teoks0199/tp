@@ -3,7 +3,7 @@ package seedu.address.storage;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static seedu.address.storage.JsonAdaptedStall.MISSING_FIELD_MESSAGE_FORMAT;
 import static seedu.address.testutil.Assert.assertThrows;
-import static seedu.address.testutil.TypicalStalls.BENSON;
+import static seedu.address.testutil.TypicalStalls.BEVERAGES;
 
 import org.junit.jupiter.api.Test;
 
@@ -15,13 +15,13 @@ public class JsonAdaptedStallTest {
     private static final String INVALID_NAME = " ";
     private static final String INVALID_LOCATION = " ";
 
-    private static final String VALID_NAME = BENSON.getName().toString();
-    private static final String VALID_LOCATION = BENSON.getLocation().toString();
+    private static final String VALID_NAME = BEVERAGES.getName().toString();
+    private static final String VALID_LOCATION = BEVERAGES.getLocation().toString();
 
     @Test
     public void toModelType_validStallDetails_returnsStall() throws Exception {
-        JsonAdaptedStall stall = new JsonAdaptedStall(BENSON);
-        assertEquals(BENSON, stall.toModelType());
+        JsonAdaptedStall stall = new JsonAdaptedStall(BEVERAGES);
+        assertEquals(BEVERAGES, stall.toModelType());
     }
 
     @Test
