@@ -8,7 +8,7 @@ import static seedu.address.testutil.TypicalStalls.BENSON;
 import org.junit.jupiter.api.Test;
 
 import seedu.address.commons.exceptions.IllegalValueException;
-import seedu.address.model.stall.Address;
+import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Name;
 
 public class JsonAdaptedStallTest {
@@ -44,14 +44,14 @@ public class JsonAdaptedStallTest {
     public void toModelType_invalidLocation_throwsIllegalValueException() {
         JsonAdaptedStall person =
                 new JsonAdaptedStall(VALID_NAME, INVALID_LOCATION);
-        String expectedMessage = Address.MESSAGE_CONSTRAINTS;
+        String expectedMessage = Location.MESSAGE_CONSTRAINTS;
         assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
     }
 
     @Test
     public void toModelType_nullLocation_throwsIllegalValueException() {
         JsonAdaptedStall person = new JsonAdaptedStall(VALID_NAME, null);
-        String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Address.class.getSimpleName());
+        String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Location.class.getSimpleName());
         assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
     }
 }
