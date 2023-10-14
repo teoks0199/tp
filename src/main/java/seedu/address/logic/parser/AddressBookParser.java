@@ -79,7 +79,7 @@ public class AddressBookParser {
             return new HelpCommand();
 
         case ViewStallCommand.COMMAND_WORD:
-            return new ViewAStallCommandParser().parse(arguments);
+            return new ViewStallCommandParser().parse(arguments);
 
         default:
             logger.finer("This user input caused a ParseException: " + userInput);
