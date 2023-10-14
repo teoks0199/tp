@@ -39,11 +39,11 @@ public class UniqueStallListTest {
     }
 
     @Test
-    public void contains_stallWithSameIdentityFieldsInList_returnsTrue() {
+    public void contains_stallWithSameIdentityFieldsInList_returnsFalse() {
         uniqueStallList.add(ALICE);
         Stall editedAlice = new StallBuilder(ALICE).withLocation(VALID_LOCATION_BOB)
                 .build();
-        assertTrue(uniqueStallList.contains(editedAlice));
+        assertFalse(uniqueStallList.contains(editedAlice));
     }
 
     @Test

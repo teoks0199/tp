@@ -44,7 +44,7 @@ public class Stall {
         }
 
         return otherStall != null
-                && otherStall.getName().equals(getName());
+                && otherStall.getName().equals(getName()) && otherStall.getLocation().equals(getLocation());
     }
 
     /**

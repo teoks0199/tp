@@ -28,9 +28,9 @@ public class StallTest {
         // null -> returns false
         assertFalse(ALICE.isSameStall(null));
 
-        // same name, all other attributes different -> returns true
+        // same name, all other attributes different -> returns false
         Stall editedAlice = new StallBuilder(ALICE).withLocation(VALID_LOCATION_BOB).build();
-        assertTrue(ALICE.isSameStall(editedAlice));
+        assertFalse(ALICE.isSameStall(editedAlice));
 
         // different name, all other attributes same -> returns false
         editedAlice = new StallBuilder(ALICE).withName(VALID_NAME_BOB).build();
