@@ -23,26 +23,28 @@ import seedu.address.testutil.EditStallDescriptorBuilder;
  */
 public class CommandTestUtil {
 
-    public static final String VALID_NAME_AMY = "Amy Bee";
-    public static final String VALID_NAME_BOB = "Bob Choo";
-    public static final String VALID_LOCATION_AMY = "Block 312, Amy Street 1";
-    public static final String VALID_LOCATION_BOB = "Block 123, Bobby Street 3";
-    public static final String NAME_DESC_AMY = " " + PREFIX_NAME + VALID_NAME_AMY;
-    public static final String NAME_DESC_BOB = " " + PREFIX_NAME + VALID_NAME_BOB;
-    public static final String LOCATION_DESC_AMY = " " + PREFIX_LOCATION + VALID_LOCATION_AMY;
-    public static final String LOCATION_DESC_BOB = " " + PREFIX_LOCATION + VALID_LOCATION_BOB;
+    public static final String VALID_NAME_ASIAN = "Asian Cuisine";
+    public static final String VALID_NAME_BRITISH = "British Cuisine";
+    public static final String VALID_LOCATION_ASIAN = "Block 312, Amy Street 1";
+    public static final String VALID_LOCATION_BRITISH = "Block 123, Bobby Street 3";
+    public static final String NAME_DESC_ASIAN = " " + PREFIX_NAME + VALID_NAME_ASIAN;
+    public static final String NAME_DESC_BRITISH = " " + PREFIX_NAME + VALID_NAME_BRITISH;
+    public static final String LOCATION_DESC_ASIAN = " " + PREFIX_LOCATION + VALID_LOCATION_ASIAN;
+    public static final String LOCATION_DESC_BRITISH = " " + PREFIX_LOCATION + VALID_LOCATION_BRITISH;
     public static final String INVALID_NAME_DESC = " " + PREFIX_NAME + " "; // empty names not allowed
     public static final String INVALID_LOCATION_DESC = " " + PREFIX_LOCATION; // empty locations not allowed
 
     public static final String PREAMBLE_WHITESPACE = "\t  \r  \n";
     public static final String PREAMBLE_NON_EMPTY = "NonEmptyPreamble";
 
-    public static final EditCommand.EditStallDescriptor DESC_AMY;
-    public static final EditCommand.EditStallDescriptor DESC_BOB;
+    public static final EditCommand.EditStallDescriptor DESC_ASIAN;
+    public static final EditCommand.EditStallDescriptor DESC_BRITISH;
 
     static {
-        DESC_AMY = new EditStallDescriptorBuilder().withName(VALID_NAME_AMY).withLocation(VALID_LOCATION_AMY).build();
-        DESC_BOB = new EditStallDescriptorBuilder().withName(VALID_NAME_BOB).withLocation(VALID_LOCATION_BOB).build();
+        DESC_ASIAN = new EditStallDescriptorBuilder()
+                .withName(VALID_NAME_ASIAN).withLocation(VALID_LOCATION_ASIAN).build();
+        DESC_BRITISH = new EditStallDescriptorBuilder()
+                .withName(VALID_NAME_BRITISH).withLocation(VALID_LOCATION_BRITISH).build();
     }
 
     /**

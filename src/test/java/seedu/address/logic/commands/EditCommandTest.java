@@ -3,10 +3,10 @@ package seedu.address.logic.commands;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.DESC_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.DESC_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.DESC_ASIAN;
+import static seedu.address.logic.commands.CommandTestUtil.DESC_BRITISH;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_BRITISH;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BRITISH;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.logic.commands.CommandTestUtil.showStallAtIndex;
@@ -54,10 +54,10 @@ public class EditCommandTest {
         Stall lastStall = model.getFilteredStallList().get(indexLastStall.getZeroBased());
 
         StallBuilder stallInList = new StallBuilder(lastStall);
-        Stall editedStall = stallInList.withName(VALID_NAME_BOB).withLocation(VALID_LOCATION_BOB).build();
+        Stall editedStall = stallInList.withName(VALID_NAME_BRITISH).withLocation(VALID_LOCATION_BRITISH).build();
 
-        EditStallDescriptor descriptor = new EditStallDescriptorBuilder().withName(VALID_NAME_BOB)
-                .withLocation(VALID_LOCATION_BOB).build();
+        EditStallDescriptor descriptor = new EditStallDescriptorBuilder().withName(VALID_NAME_BRITISH)
+                .withLocation(VALID_LOCATION_BRITISH).build();
         EditCommand editCommand = new EditCommand(indexLastStall, descriptor);
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall));
@@ -84,9 +84,9 @@ public class EditCommandTest {
         showStallAtIndex(model, INDEX_FIRST_STALL);
 
         Stall stallInFilteredList = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
-        Stall editedStall = new StallBuilder(stallInFilteredList).withName(VALID_NAME_BOB).build();
+        Stall editedStall = new StallBuilder(stallInFilteredList).withName(VALID_NAME_BRITISH).build();
         EditCommand editCommand = new EditCommand(INDEX_FIRST_STALL,
-                new EditStallDescriptorBuilder().withName(VALID_NAME_BOB).build());
+                new EditStallDescriptorBuilder().withName(VALID_NAME_BRITISH).build());
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall));
 
@@ -120,7 +120,7 @@ public class EditCommandTest {
     @Test
     public void execute_invalidStallIndexUnfilteredList_failure() {
         Index outOfBoundIndex = Index.fromOneBased(model.getFilteredStallList().size() + 1);
-        EditStallDescriptor descriptor = new EditStallDescriptorBuilder().withName(VALID_NAME_BOB).build();
+        EditStallDescriptor descriptor = new EditStallDescriptorBuilder().withName(VALID_NAME_BRITISH).build();
         EditCommand editCommand = new EditCommand(outOfBoundIndex, descriptor);
 
         assertCommandFailure(editCommand, model, Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
@@ -138,17 +138,17 @@ public class EditCommandTest {
         assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getStallList().size());
 
         EditCommand editCommand = new EditCommand(outOfBoundIndex,
-                new EditStallDescriptorBuilder().withName(VALID_NAME_BOB).build());
+                new EditStallDescriptorBuilder().withName(VALID_NAME_BRITISH).build());
 
         assertCommandFailure(editCommand, model, Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
     }
 
     @Test
     public void equals() {
-        final EditCommand standardCommand = new EditCommand(INDEX_FIRST_STALL, DESC_AMY);
+        final EditCommand standardCommand = new EditCommand(INDEX_FIRST_STALL, DESC_ASIAN);
 
         // same values -> returns true
-        EditStallDescriptor copyDescriptor = new EditStallDescriptor(DESC_AMY);
+        EditStallDescriptor copyDescriptor = new EditStallDescriptor(DESC_ASIAN);
         EditCommand commandWithSameValues = new EditCommand(INDEX_FIRST_STALL, copyDescriptor);
         assertTrue(standardCommand.equals(commandWithSameValues));
 
@@ -162,10 +162,10 @@ public class EditCommandTest {
         assertFalse(standardCommand.equals(new ClearCommand()));
 
         // different index -> returns false
-        assertFalse(standardCommand.equals(new EditCommand(INDEX_SECOND_STALL, DESC_AMY)));
+        assertFalse(standardCommand.equals(new EditCommand(INDEX_SECOND_STALL, DESC_ASIAN)));
 
         // different descriptor -> returns false
-        assertFalse(standardCommand.equals(new EditCommand(INDEX_FIRST_STALL, DESC_BOB)));
+        assertFalse(standardCommand.equals(new EditCommand(INDEX_FIRST_STALL, DESC_BRITISH)));
     }
 
     @Test
