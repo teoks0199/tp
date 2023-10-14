@@ -6,6 +6,7 @@ import java.util.function.Predicate;
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.stall.Stall;
+import seedu.address.model.stall.StallReview;
 
 /**
  * The API of the Model component.
@@ -84,4 +85,6 @@ public interface Model {
      * @throws NullPointerException if {@code predicate} is null.
      */
     void updateFilteredStallList(Predicate<Stall> predicate);
+
+    void addStallReview(StallReview stallReview);
 }

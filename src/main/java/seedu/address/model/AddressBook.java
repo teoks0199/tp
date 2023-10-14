@@ -7,6 +7,7 @@ import java.util.List;
 import javafx.collections.ObservableList;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.stall.Stall;
+import seedu.address.model.stall.StallReview;
 import seedu.address.model.stall.UniqueStallList;
 
 /**
@@ -121,6 +122,10 @@ public class AddressBook implements ReadOnlyAddressBook {
 
         AddressBook otherAddressBook = (AddressBook) other;
         return stalls.equals(otherAddressBook.stalls);
+    }
+
+    public void addStallReview(StallReview stallReview) {
+
     }
 
     @Override
