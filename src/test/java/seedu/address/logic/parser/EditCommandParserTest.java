@@ -117,14 +117,14 @@ public class EditCommandParserTest {
 
         // valid followed by invalid
         Index targetIndex = INDEX_FIRST_STALL;
-        String userInput = targetIndex.getOneBased() + INVALID_NAME_DESC + LOCATION_DESC_AMY;
+        String userInput = targetIndex.getOneBased() + INVALID_NAME_DESC + NAME_DESC_AMY;
 
-        //assertParseFailure(parser, userInput, Messages.getErrorMessageForDuplicatePrefixes(PREFIX_NAME));
+        assertParseFailure(parser, userInput, Messages.getErrorMessageForDuplicatePrefixes(PREFIX_NAME));
 
         // invalid followed by valid
-        userInput = targetIndex.getOneBased() + NAME_DESC_BOB + INVALID_LOCATION_DESC;
+        userInput = targetIndex.getOneBased() + LOCATION_DESC_AMY + INVALID_LOCATION_DESC;
 
-        //assertParseFailure(parser, userInput, Messages.getErrorMessageForDuplicatePrefixes(PREFIX_LOCATION));
+        assertParseFailure(parser, userInput, Messages.getErrorMessageForDuplicatePrefixes(PREFIX_LOCATION));
 
         // mulltiple valid fields repeated
         userInput = targetIndex.getOneBased() + NAME_DESC_AMY + LOCATION_DESC_AMY
