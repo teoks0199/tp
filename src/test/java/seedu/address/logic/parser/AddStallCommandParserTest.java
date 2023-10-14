@@ -3,19 +3,19 @@ package seedu.address.logic.parser;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_LOCATION_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_NAME_DESC;
-import static seedu.address.logic.commands.CommandTestUtil.LOCATION_DESC_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.LOCATION_DESC_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.LOCATION_DESC_ASIAN;
+import static seedu.address.logic.commands.CommandTestUtil.LOCATION_DESC_BRITISH;
+import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_ASIAN;
+import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_BRITISH;
 import static seedu.address.logic.commands.CommandTestUtil.PREAMBLE_NON_EMPTY;
 import static seedu.address.logic.commands.CommandTestUtil.PREAMBLE_WHITESPACE;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_BRITISH;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BRITISH;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_LOCATION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
-import static seedu.address.testutil.TypicalStalls.BOB;
+import static seedu.address.testutil.TypicalStalls.BRITISH;
 
 import org.junit.jupiter.api.Test;
 
@@ -31,36 +31,36 @@ public class AddStallCommandParserTest {
 
     @Test
     public void parse_allFieldsPresent_success() {
-        Stall expectedStall = new StallBuilder(BOB).build();
+        Stall expectedStall = new StallBuilder(BRITISH).build();
 
         // whitespace only preamble
-        assertParseSuccess(parser, PREAMBLE_WHITESPACE + NAME_DESC_BOB
-                + LOCATION_DESC_BOB, new AddStallCommand(expectedStall));
+        assertParseSuccess(parser, PREAMBLE_WHITESPACE + NAME_DESC_BRITISH
+                + LOCATION_DESC_BRITISH, new AddStallCommand(expectedStall));
 
 
         // multiple tags - all accepted
-        Stall expectedStallMultipleTags = new StallBuilder(BOB).build();
+        Stall expectedStallMultipleTags = new StallBuilder(BRITISH).build();
         assertParseSuccess(parser,
-                NAME_DESC_BOB + LOCATION_DESC_BOB,
+                NAME_DESC_BRITISH + LOCATION_DESC_BRITISH,
                 new AddStallCommand(expectedStallMultipleTags));
     }
 
     @Test
     public void parse_repeatedNonTagValue_failure() {
-        String validExpectedPersonString = NAME_DESC_BOB + LOCATION_DESC_BOB;
+        String validExpectedPersonString = NAME_DESC_BRITISH + LOCATION_DESC_BRITISH;
 
         // multiple names
-        assertParseFailure(parser, NAME_DESC_AMY + validExpectedPersonString,
+        assertParseFailure(parser, NAME_DESC_ASIAN + validExpectedPersonString,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_NAME));
 
         // multiple locations
-        assertParseFailure(parser, LOCATION_DESC_AMY + validExpectedPersonString,
+        assertParseFailure(parser, LOCATION_DESC_ASIAN + validExpectedPersonString,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_LOCATION));
 
 
         // multiple fields repeated
         assertParseFailure(parser,
-                validExpectedPersonString + NAME_DESC_AMY + LOCATION_DESC_AMY
+                validExpectedPersonString + NAME_DESC_ASIAN + LOCATION_DESC_ASIAN
                         + validExpectedPersonString,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_NAME, PREFIX_LOCATION));
 
@@ -93,33 +93,33 @@ public class AddStallCommandParserTest {
         String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddStallCommand.MESSAGE_USAGE);
 
         // missing name prefix
-        assertParseFailure(parser, VALID_NAME_BOB + LOCATION_DESC_BOB,
+        assertParseFailure(parser, VALID_NAME_BRITISH + LOCATION_DESC_BRITISH,
                 expectedMessage);
 
         // missing location prefix
-        assertParseFailure(parser, NAME_DESC_BOB + VALID_LOCATION_BOB,
+        assertParseFailure(parser, NAME_DESC_BRITISH + VALID_LOCATION_BRITISH,
                 expectedMessage);
 
         // all prefixes missing
-        assertParseFailure(parser, VALID_NAME_BOB + VALID_LOCATION_BOB,
+        assertParseFailure(parser, VALID_NAME_BRITISH + VALID_LOCATION_BRITISH,
                 expectedMessage);
     }
 
     @Test
     public void parse_invalidValue_failure() {
         // invalid name
-        assertParseFailure(parser, INVALID_NAME_DESC + LOCATION_DESC_BOB, Name.MESSAGE_CONSTRAINTS);
+        assertParseFailure(parser, INVALID_NAME_DESC + LOCATION_DESC_BRITISH, Name.MESSAGE_CONSTRAINTS);
 
         // invalid location
-        assertParseFailure(parser, NAME_DESC_BOB + INVALID_LOCATION_DESC, Location.MESSAGE_CONSTRAINTS);
+        assertParseFailure(parser, NAME_DESC_BRITISH + INVALID_LOCATION_DESC, Location.MESSAGE_CONSTRAINTS);
 
         // two invalid values, only first invalid value reported
         assertParseFailure(parser, INVALID_NAME_DESC + INVALID_LOCATION_DESC,
                 Name.MESSAGE_CONSTRAINTS);
 
         // non-empty preamble
-        assertParseFailure(parser, PREAMBLE_NON_EMPTY + NAME_DESC_BOB
-                + LOCATION_DESC_BOB,
+        assertParseFailure(parser, PREAMBLE_NON_EMPTY + NAME_DESC_BRITISH
+                + LOCATION_DESC_BRITISH,
                 String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddStallCommand.MESSAGE_USAGE));
     }
 }

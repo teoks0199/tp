@@ -3,7 +3,7 @@ package seedu.address.model;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_BRITISH;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalStalls.AUNTIES_COOKING;
 import static seedu.address.testutil.TypicalStalls.getTypicalAddressBook;
@@ -45,8 +45,8 @@ public class AddressBookTest {
     @Test
     public void resetData_withDuplicateStalls_throwsDuplicateStallException() {
         // Two stalls with the same identity fields
-        Stall editedAlice1 = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BOB).build();
-        Stall editedAlice2 = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BOB).build();
+        Stall editedAlice1 = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).build();
+        Stall editedAlice2 = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).build();
         List<Stall> newStalls = Arrays.asList(editedAlice1, editedAlice2);
         AddressBookStub newData = new AddressBookStub(newStalls);
 
@@ -72,7 +72,7 @@ public class AddressBookTest {
     @Test
     public void hasStall_stallWithSameIdentityFieldsInAddressBook_returnsFalse() {
         addressBook.addStall(AUNTIES_COOKING);
-        Stall editedAlice = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BOB)
+        Stall editedAlice = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH)
                 .build();
         assertFalse(addressBook.hasStall(editedAlice));
     }
