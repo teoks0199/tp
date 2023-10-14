@@ -12,7 +12,7 @@ import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Name;
 
 public class JsonAdaptedStallTest {
-    private static final String INVALID_NAME = "R@chel";
+    private static final String INVALID_NAME = " ";
     private static final String INVALID_LOCATION = " ";
 
     private static final String VALID_NAME = BENSON.getName().toString();
