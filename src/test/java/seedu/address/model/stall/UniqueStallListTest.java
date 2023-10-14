@@ -3,8 +3,7 @@ package seedu.address.model.stall;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_BOB;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalStalls.ALICE;
 import static seedu.address.testutil.TypicalStalls.BOB;
@@ -42,7 +41,7 @@ public class UniqueStallListTest {
     @Test
     public void contains_stallWithSameIdentityFieldsInList_returnsTrue() {
         uniqueStallList.add(ALICE);
-        Stall editedAlice = new StallBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND)
+        Stall editedAlice = new StallBuilder(ALICE).withLocation(VALID_LOCATION_BOB)
                 .build();
         assertTrue(uniqueStallList.contains(editedAlice));
     }
@@ -85,7 +84,7 @@ public class UniqueStallListTest {
     @Test
     public void setStall_editedStallHasSameIdentity_success() {
         uniqueStallList.add(ALICE);
-        Stall editedAlice = new StallBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND)
+        Stall editedAlice = new StallBuilder(ALICE).withLocation(VALID_LOCATION_BOB)
                 .build();
         uniqueStallList.setStall(ALICE, editedAlice);
         UniqueStallList expectedUniqueStallList = new UniqueStallList();

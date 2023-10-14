@@ -37,14 +37,8 @@ public class Messages {
     public static String format(Stall stall) {
         final StringBuilder builder = new StringBuilder();
         builder.append(stall.getName())
-                .append("; Phone: ")
-                .append(stall.getPhone())
-                .append("; Email: ")
-                .append(stall.getEmail())
-                .append("; Address: ")
-                .append(stall.getAddress())
-                .append("; Tags: ");
-        stall.getTags().forEach(builder::append);
+                .append("; Location: ")
+                .append(stall.getLocation());
         return builder.toString();
     }
 

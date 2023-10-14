@@ -4,13 +4,13 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
- * Represents a Stall's name in the address book.
- * Guarantees: immutable; is valid as declared in {@link #isValidName(String)}
+ * Represents a Stall's location in the address book.
+ * Guarantees: immutable; is valid as declared in {@link #isValidLocation(String)}
  */
-public class Name {
+public class Location {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Names should not be blank";
+            "Locations should not be blank";
 
     /**
      * The first character of the address must not be a whitespace,
@@ -19,30 +19,30 @@ public class Name {
      */
     public static final String VALIDATION_REGEX = "(.|\\s)*\\S(.|\\s)*";
 
-    public final String fullName;
+    public final String locationName;
 
     /**
      * Constructs a {@code Name}.
      *
      * @param name A valid name.
      */
-    public Name(String name) {
+    public Location(String name) {
         requireNonNull(name);
-        checkArgument(isValidName(name), MESSAGE_CONSTRAINTS);
-        fullName = name;
+        checkArgument(isValidLocation(name), MESSAGE_CONSTRAINTS);
+        locationName = name;
     }
 
     /**
      * Returns true if a given string is a valid name.
      */
-    public static boolean isValidName(String test) {
+    public static boolean isValidLocation(String test) {
         return test.matches(VALIDATION_REGEX);
     }
 
 
     @Override
     public String toString() {
-        return fullName;
+        return locationName;
     }
 
     @Override
@@ -52,17 +52,17 @@ public class Name {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof Name)) {
+        if (!(other instanceof Location)) {
             return false;
         }
 
-        Name otherName = (Name) other;
-        return fullName.equals(otherName.fullName);
+        Location otherLocation = (Location) other;
+        return locationName.equals(otherLocation.locationName);
     }
 
     @Override
     public int hashCode() {
-        return fullName.hashCode();
+        return locationName.hashCode();
     }
 
 }

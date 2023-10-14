@@ -14,9 +14,9 @@ import seedu.address.model.stall.Stall;
 /**
  * Deletes a stall identified using it's displayed index from the address book.
  */
-public class DeleteCommand extends Command {
+public class DeleteStallCommand extends Command {
 
-    public static final String COMMAND_WORD = "delete";
+    public static final String COMMAND_WORD = "delete-stall";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Deletes the stall identified by the index number used in the displayed stall list.\n"
@@ -27,7 +27,7 @@ public class DeleteCommand extends Command {
 
     private final Index targetIndex;
 
-    public DeleteCommand(Index targetIndex) {
+    public DeleteStallCommand(Index targetIndex) {
         this.targetIndex = targetIndex;
     }
 
@@ -52,12 +52,12 @@ public class DeleteCommand extends Command {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof DeleteCommand)) {
+        if (!(other instanceof DeleteStallCommand)) {
             return false;
         }
 
-        DeleteCommand otherDeleteCommand = (DeleteCommand) other;
-        return targetIndex.equals(otherDeleteCommand.targetIndex);
+        DeleteStallCommand otherDeleteStallCommand = (DeleteStallCommand) other;
+        return targetIndex.equals(otherDeleteStallCommand.targetIndex);
     }
 
     @Override
