@@ -11,7 +11,6 @@ import static seedu.address.logic.commands.CommandTestUtil.PREAMBLE_NON_EMPTY;
 import static seedu.address.logic.commands.CommandTestUtil.PREAMBLE_WHITESPACE;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_LOCATION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
@@ -22,7 +21,7 @@ import org.junit.jupiter.api.Test;
 
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.AddStallCommand;
-import seedu.address.model.stall.Address;
+import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Name;
 import seedu.address.model.stall.Stall;
 import seedu.address.testutil.StallBuilder;
@@ -74,7 +73,7 @@ public class AddStallCommandParserTest {
 
         // invalid location
         assertParseFailure(parser, INVALID_LOCATION_DESC + validExpectedPersonString,
-                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_ADDRESS));
+                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_LOCATION));
 
         // valid value followed by invalid value
 
@@ -85,7 +84,7 @@ public class AddStallCommandParserTest {
 
         // invalid location
         assertParseFailure(parser, validExpectedPersonString + INVALID_LOCATION_DESC,
-                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_ADDRESS));
+                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_LOCATION));
     }
 
 
@@ -97,15 +96,7 @@ public class AddStallCommandParserTest {
         assertParseFailure(parser, VALID_NAME_BOB + LOCATION_DESC_BOB,
                 expectedMessage);
 
-        // missing phone prefix
-        assertParseFailure(parser, NAME_DESC_BOB + LOCATION_DESC_BOB,
-                expectedMessage);
-
-        // missing email prefix
-        assertParseFailure(parser, NAME_DESC_BOB + LOCATION_DESC_BOB,
-                expectedMessage);
-
-        // missing address prefix
+        // missing location prefix
         assertParseFailure(parser, NAME_DESC_BOB + VALID_LOCATION_BOB,
                 expectedMessage);
 
@@ -120,7 +111,7 @@ public class AddStallCommandParserTest {
         assertParseFailure(parser, INVALID_NAME_DESC + LOCATION_DESC_BOB, Name.MESSAGE_CONSTRAINTS);
 
         // invalid location
-        assertParseFailure(parser, NAME_DESC_BOB + INVALID_LOCATION_DESC, Address.MESSAGE_CONSTRAINTS);
+        assertParseFailure(parser, NAME_DESC_BOB + INVALID_LOCATION_DESC, Location.MESSAGE_CONSTRAINTS);
 
         // two invalid values, only first invalid value reported
         assertParseFailure(parser, INVALID_NAME_DESC + INVALID_LOCATION_DESC,
