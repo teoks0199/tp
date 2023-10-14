@@ -302,7 +302,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-(For all use cases below, the **System** is the `FoodNotes` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
 
 
 
@@ -311,9 +311,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
+2.  AddressBook shows a list of stalls
 3.  User requests to add a stall to the list
-4.  FoodNotes add the stall
+4.  AddressBook add the stall
 
     Use case ends.
 
@@ -321,7 +321,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. The stall name and location is not specified
 
-    * 3a1. FoodNotes shows an error message.
+    * 3a1. AddressBook shows an error message.
 
       Use case resumes at step 2.
 
@@ -330,9 +330,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
+2.  AddressBook shows a list of stalls
 3.  User requests to add a review to a stall
-4.  FoodNotes adds a review to the stall
+4.  AddressBook adds a review to the stall
 
     Use case ends.
 
@@ -344,13 +344,13 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. The given index is invalid.
 
-    * 3a1. FoodNotes shows an error message.
+    * 3a1. AddressBook shows an error message.
 
       Use case resumes at step 2.
 
 * 3b. The star rating or description is not specified
 
-    * 3a1. FoodNotes shows an error message.
+    * 3a1. AddressBook shows an error message.
 
       Use case resumes at step 2.
 
@@ -359,11 +359,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
+2.  AddressBook shows a list of stalls
 3.  User requests to view a stall
-4.  FoodNotes shows the review and menu of the stall
+4.  AddressBook shows the review and menu of the stall
 5.  User requests to delete the review
-6.  FoodNotes deletes the review
+6.  AddressBook deletes the review
 
     Use case ends.
 
@@ -371,7 +371,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. The given index is invalid.
 
-    * 3a1. FoodNotes shows an error message.
+    * 3a1. AddressBook shows an error message.
 
       Use case resumes at step 2.
 
@@ -384,9 +384,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
+2.  AddressBook shows a list of stalls
 3.  User requests to add a menu item to a stall
-4.  FoodNotes add the menu item
+4.  AddressBook add the menu item
 
     Use case ends.
 
@@ -398,7 +398,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. The given index is invalid
 
-    * 3a1. FoodNotes shows an error message.
+    * 3a1. AddressBook shows an error message.
 
       Use case resumes at step 2.
 
@@ -407,11 +407,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
+2.  AddressBook shows a list of stalls
 3.  User requests to view a stall
-4.  FoodNotes shows the menu items and review of the stall
+4.  AddressBook shows the menu items and review of the stall
 5.  User requests to add a review to a menu item in the stall
-6.  FoodNotes add review to the menu item
+6.  AddressBook add review to the menu item
 
     Use case ends.
 
@@ -423,13 +423,13 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. The given index is invalid.
 
-    * 3a1. FoodNotes shows an error message.
+    * 3a1. AddressBook shows an error message.
 
       Use case resumes at step 2.
 
 * 4a. The star rating or description is not specified
 
-    * 4a1. FoodNotes shows an error message.
+    * 4a1. AddressBook shows an error message.
 
       Use case resumes at step 2.
 
@@ -438,11 +438,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
+2.  AddressBook shows a list of stalls
 3.  User requests to view a stall
-4.  FoodNotes shows the review and menu of the stall
+4.  AddressBook shows the review and menu of the stall
 5.  User requests to delete a menu item
-6.  FoodNotes deletes the menu item
+6.  AddressBook deletes the menu item
 
     Use case ends.
 
@@ -454,7 +454,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 5a. The given index is invalid.
 
-    * 5a1. FoodNotes shows an error message.
+    * 5a1. AddressBook shows an error message.
 
       Use case resumes at step 4.
 
