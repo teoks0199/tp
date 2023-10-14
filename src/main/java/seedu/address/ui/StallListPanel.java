@@ -18,15 +18,15 @@ public class StallListPanel extends UiPart<Region> {
     private final Logger logger = LogsCenter.getLogger(StallListPanel.class);
 
     @FXML
-    private ListView<Stall> personListView;
+    private ListView<Stall> stallListView;
 
     /**
      * Creates a {@code StallListPanel} with the given {@code ObservableList}.
      */
     public StallListPanel(ObservableList<Stall> stallList) {
         super(FXML);
-        personListView.setItems(stallList);
-        personListView.setCellFactory(listView -> new StallListViewCell());
+        stallListView.setItems(stallList);
+        stallListView.setCellFactory(listView -> new StallListViewCell());
     }
 
     /**
