@@ -1,7 +1,7 @@
 {
   "stalls": [ {
     "name": "Valid Person",
-    "location": "Deck"
+    "locationName": "Deck"
   }, {
     "name": "Stall With Invalid Location Field",
     "locationName": " "
