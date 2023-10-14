@@ -12,7 +12,7 @@ import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Name;
 
 public class ParserUtilTest {
-    private static final String INVALID_NAME = "R@chel";
+    private static final String INVALID_NAME = " ";
 
     private static final String INVALID_LOCATION = " ";
 
