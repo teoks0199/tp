@@ -23,7 +23,7 @@ public class ViewStallCommand extends Command {
             + "Parameters: INDEX (must be a positive integer)\n"
             + "Example: " + COMMAND_WORD + " 1";
 
-    public static final String MESSAGE_VIEW_STALL_SUCCESS = "Here are the details of this stall";
+    public static final String MESSAGE_VIEW_STALL_SUCCESS = "Here are the details of this stall.";
 
     private final Index targetIndex;
 
