@@ -21,14 +21,14 @@ class JsonSerializableAddressBook {
 
     public static final String MESSAGE_DUPLICATE_STALL = "Stalls list contains duplicate stall(s).";
 
-    private final List<JsonAdaptedStall> persons = new ArrayList<>();
+    private final List<JsonAdaptedStall> stalls = new ArrayList<>();
 
     /**
      * Constructs a {@code JsonSerializableAddressBook} with the given persons.
      */
     @JsonCreator
-    public JsonSerializableAddressBook(@JsonProperty("persons") List<JsonAdaptedStall> persons) {
-        this.persons.addAll(persons);
+    public JsonSerializableAddressBook(@JsonProperty("stalls") List<JsonAdaptedStall> stalls) {
+        this.stalls.addAll(stalls);
     }
 
     /**
@@ -37,7 +37,7 @@ class JsonSerializableAddressBook {
      * @param source future changes to this will not affect the created {@code JsonSerializableAddressBook}.
      */
     public JsonSerializableAddressBook(ReadOnlyAddressBook source) {
-        persons.addAll(source.getStallList().stream().map(JsonAdaptedStall::new).collect(Collectors.toList()));
+        stalls.addAll(source.getStallList().stream().map(JsonAdaptedStall::new).collect(Collectors.toList()));
     }
 
     /**
@@ -47,7 +47,7 @@ class JsonSerializableAddressBook {
      */
     public AddressBook toModelType() throws IllegalValueException {
         AddressBook addressBook = new AddressBook();
-        for (JsonAdaptedStall jsonAdaptedStall : persons) {
+        for (JsonAdaptedStall jsonAdaptedStall : stalls) {
             Stall stall = jsonAdaptedStall.toModelType();
             if (addressBook.hasStall(stall)) {
                 throw new IllegalValueException(MESSAGE_DUPLICATE_STALL);

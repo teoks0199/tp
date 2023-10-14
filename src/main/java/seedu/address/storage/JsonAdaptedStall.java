@@ -28,7 +28,7 @@ class JsonAdaptedStall {
     }
 
     /**
-     * Converts a given {@code Stall} into this class for Jackson use.
+     * Converts a given {@code Stall} into this class for Json use.
      */
     public JsonAdaptedStall(Stall source) {
         name = source.getName().fullName;

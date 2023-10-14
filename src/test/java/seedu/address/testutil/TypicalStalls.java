@@ -17,15 +17,18 @@ import seedu.address.model.stall.Stall;
  */
 public class TypicalStalls {
 
-    public static final Stall ALICE = new StallBuilder().withName("Alice Pauline")
+    public static final Stall AUNTIES_COOKING = new StallBuilder().withName("Auntie's Cooking")
             .withLocation("Deck").build();
-    public static final Stall BENSON = new StallBuilder().withName("Benson Meier")
+    public static final Stall BEVERAGES = new StallBuilder().withName("Beverages")
             .withLocation("Deck").build();
-    public static final Stall CARL = new StallBuilder().withName("Carl Kurz").withLocation("wall street").build();
-    public static final Stall DANIEL = new StallBuilder().withName("Daniel Meier").withLocation("10th street").build();
-    public static final Stall ELLE = new StallBuilder().withName("Elle Meyer").withLocation("michegan ave").build();
-    public static final Stall FIONA = new StallBuilder().withName("Fiona Kunz").withLocation("little tokyo").build();
-    public static final Stall GEORGE = new StallBuilder().withName("George Best").withLocation("4th street").build();
+    public static final Stall CHINESE = new StallBuilder().withName("Chinese")
+            .withLocation("wall street").build();
+    public static final Stall DRINKS_STALL = new StallBuilder().withName("Drinks Stall")
+            .withLocation("10th street").build();
+    public static final Stall ECONOMIC_RICE = new StallBuilder().withName("Economic Rice")
+            .withLocation("michegan ave").build();
+    public static final Stall FRENCH = new StallBuilder().withName("French").withLocation("little tokyo").build();
+    public static final Stall GOODFOOD = new StallBuilder().withName("GoodFood").withLocation("4th street").build();
 
     // Manually added
     public static final Stall HOON = new StallBuilder().withName("Hoon Meier").withLocation("little india").build();
@@ -53,6 +56,7 @@ public class TypicalStalls {
     }
 
     public static List<Stall> getTypicalStalls() {
-        return new ArrayList<>(Arrays.asList(ALICE, BENSON, CARL, DANIEL, ELLE, FIONA, GEORGE));
+        return new ArrayList<>(Arrays
+                .asList(AUNTIES_COOKING, BEVERAGES, CHINESE, DRINKS_STALL, ECONOMIC_RICE, FRENCH, GOODFOOD));
     }
 }

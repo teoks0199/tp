@@ -26,7 +26,7 @@ public class AddStallCommand extends Command {
             + PREFIX_LOCATION + "Deck";
 
     public static final String MESSAGE_SUCCESS = "New stall added: %1$s";
-    public static final String MESSAGE_DUPLICATE_STALL = "This stall already exists";
+    public static final String MESSAGE_DUPLICATE_STALL = "This stall already exists in FoodNotes";
 
     private final Stall toAdd;
 

@@ -3,7 +3,7 @@ package seedu.address.storage;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static seedu.address.storage.JsonAdaptedStall.MISSING_FIELD_MESSAGE_FORMAT;
 import static seedu.address.testutil.Assert.assertThrows;
-import static seedu.address.testutil.TypicalStalls.BENSON;
+import static seedu.address.testutil.TypicalStalls.BEVERAGES;
 
 import org.junit.jupiter.api.Test;
 
@@ -15,43 +15,43 @@ public class JsonAdaptedStallTest {
     private static final String INVALID_NAME = " ";
     private static final String INVALID_LOCATION = " ";
 
-    private static final String VALID_NAME = BENSON.getName().toString();
-    private static final String VALID_LOCATION = BENSON.getLocation().toString();
+    private static final String VALID_NAME = BEVERAGES.getName().toString();
+    private static final String VALID_LOCATION = BEVERAGES.getLocation().toString();
 
     @Test
-    public void toModelType_validPersonDetails_returnsPerson() throws Exception {
-        JsonAdaptedStall person = new JsonAdaptedStall(BENSON);
-        assertEquals(BENSON, person.toModelType());
+    public void toModelType_validStallDetails_returnsStall() throws Exception {
+        JsonAdaptedStall stall = new JsonAdaptedStall(BEVERAGES);
+        assertEquals(BEVERAGES, stall.toModelType());
     }
 
     @Test
     public void toModelType_invalidName_throwsIllegalValueException() {
-        JsonAdaptedStall person =
+        JsonAdaptedStall stall =
                 new JsonAdaptedStall(INVALID_NAME, VALID_LOCATION);
         String expectedMessage = Name.MESSAGE_CONSTRAINTS;
-        assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
+        assertThrows(IllegalValueException.class, expectedMessage, stall::toModelType);
     }
 
     @Test
     public void toModelType_nullName_throwsIllegalValueException() {
-        JsonAdaptedStall person = new JsonAdaptedStall(null, VALID_LOCATION);
+        JsonAdaptedStall stall = new JsonAdaptedStall(null, VALID_LOCATION);
         String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Name.class.getSimpleName());
-        assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
+        assertThrows(IllegalValueException.class, expectedMessage, stall::toModelType);
     }
 
 
     @Test
     public void toModelType_invalidLocation_throwsIllegalValueException() {
-        JsonAdaptedStall person =
+        JsonAdaptedStall stall =
                 new JsonAdaptedStall(VALID_NAME, INVALID_LOCATION);
         String expectedMessage = Location.MESSAGE_CONSTRAINTS;
-        assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
+        assertThrows(IllegalValueException.class, expectedMessage, stall::toModelType);
     }
 
     @Test
     public void toModelType_nullLocation_throwsIllegalValueException() {
-        JsonAdaptedStall person = new JsonAdaptedStall(VALID_NAME, null);
+        JsonAdaptedStall stall = new JsonAdaptedStall(VALID_NAME, null);
         String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Location.class.getSimpleName());
-        assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
+        assertThrows(IllegalValueException.class, expectedMessage, stall::toModelType);
     }
 }
