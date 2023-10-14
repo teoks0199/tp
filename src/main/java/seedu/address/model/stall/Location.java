@@ -18,7 +18,7 @@ public class Location {
      */
     //public static final String VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
 
-    public static final String VALIDATION_REGEX = "^.+$"; // should not be blank
+    public static final String VALIDATION_REGEX = "(.|\\s)*\\S(.|\\s)*"; // should not be blank
 
     public final String locationName;
 
