@@ -63,6 +63,8 @@ public interface Model {
      */
     void deleteStall(Stall target);
 
+    void showStall(Stall stall);
+
     /**
      * Adds the given stall.
      * {@code stall} must not already exist in the address book.

@@ -94,6 +94,13 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public void showStall(Stall stall) {
+        requireNonNull(stall);
+        Predicate<Stall> predicate = stallll -> stallll == stall;
+        filteredStalls.setPredicate(predicate);
+    }
+
+    @Override
     public void deleteStall(Stall target) {
         addressBook.removeStall(target);
     }
