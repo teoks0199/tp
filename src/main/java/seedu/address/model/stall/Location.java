@@ -12,13 +12,12 @@ public class Location {
     public static final String MESSAGE_CONSTRAINTS =
             "Locations should not be blank";
 
-    /*
+    /**
      * The first character of the address must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
+     * This regex matches any string containing at least one non-whitespace character
      */
-    //public static final String VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
-
-    public static final String VALIDATION_REGEX = "(.|\\s)*\\S(.|\\s)*"; // should not be blank
+    public static final String VALIDATION_REGEX = "(.|\\s)*\\S(.|\\s)*";
 
     public final String locationName;
 
