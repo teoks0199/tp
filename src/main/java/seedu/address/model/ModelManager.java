@@ -96,7 +96,7 @@ public class ModelManager implements Model {
     @Override
     public void showStall(Stall stall) {
         requireNonNull(stall);
-        Predicate<Stall> predicate = stallll -> stallll == stall;
+        Predicate<Stall> predicate = stallll -> stallll.equals(stall);
         filteredStalls.setPredicate(predicate);
     }
 

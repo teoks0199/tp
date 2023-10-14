@@ -197,6 +197,11 @@ public class AddStallCommandTest {
         }
 
         @Override
+        public void showStall(Stall stall) {
+            requireNonNull(stall);
+        }
+
+        @Override
         public void addStall(Stall stall) {
             requireNonNull(stall);
             stallsAdded.add(stall);
