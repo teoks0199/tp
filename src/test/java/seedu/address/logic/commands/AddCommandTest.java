@@ -94,6 +94,11 @@ public class AddCommandTest {
         }
 
         @Override
+        public void showStall(Stall stall) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public ReadOnlyUserPrefs getUserPrefs() {
             throw new AssertionError("This method should not be called.");
         }
