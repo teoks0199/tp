@@ -1,10 +1,7 @@
 package seedu.address.ui;
 
-import java.util.Comparator;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.stall.Stall;
@@ -33,13 +30,7 @@ public class StallCard extends UiPart<Region> {
     @FXML
     private Label id;
     @FXML
-    private Label phone;
-    @FXML
-    private Label address;
-    @FXML
-    private Label email;
-    @FXML
-    private FlowPane tags;
+    private Label locationName;
 
     /**
      * Creates a {@code PersonCode} with the given {@code Stall} and index to display.
@@ -49,11 +40,6 @@ public class StallCard extends UiPart<Region> {
         this.stall = stall;
         id.setText(displayedIndex + ". ");
         name.setText(stall.getName().fullName);
-        phone.setText(stall.getPhone().value);
-        address.setText(stall.getAddress().value);
-        email.setText(stall.getEmail().value);
-        stall.getTags().stream()
-                .sorted(Comparator.comparing(tag -> tag.tagName))
-                .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+        locationName.setText(stall.getLocation().locationName);
     }
 }

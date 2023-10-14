@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.Assert.assertThrows;
-import static seedu.address.testutil.TypicalStalls.ALICE;
+import static seedu.address.testutil.TypicalStalls.AUNTIES_COOKING;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -25,11 +25,11 @@ import seedu.address.model.ReadOnlyUserPrefs;
 import seedu.address.model.stall.Stall;
 import seedu.address.testutil.StallBuilder;
 
-public class AddCommandTest {
+public class AddStallCommandTest {
 
     @Test
     public void constructor_nullStall_throwsNullPointerException() {
-        assertThrows(NullPointerException.class, () -> new AddCommand(null));
+        assertThrows(NullPointerException.class, () -> new AddStallCommand(null));
     }
 
     @Test
@@ -37,9 +37,9 @@ public class AddCommandTest {
         ModelStubAcceptingStallAdded modelStub = new ModelStubAcceptingStallAdded();
         Stall validStall = new StallBuilder().build();
 
-        CommandResult commandResult = new AddCommand(validStall).execute(modelStub);
+        CommandResult commandResult = new AddStallCommand(validStall).execute(modelStub);
 
-        assertEquals(String.format(AddCommand.MESSAGE_SUCCESS, Messages.format(validStall)),
+        assertEquals(String.format(AddStallCommand.MESSAGE_SUCCESS, Messages.format(validStall)),
                 commandResult.getFeedbackToUser());
         assertEquals(Arrays.asList(validStall), modelStub.stallsAdded);
     }
@@ -47,24 +47,25 @@ public class AddCommandTest {
     @Test
     public void execute_duplicateStall_throwsCommandException() {
         Stall validStall = new StallBuilder().build();
-        AddCommand addCommand = new AddCommand(validStall);
+        AddStallCommand addStallCommand = new AddStallCommand(validStall);
         ModelStub modelStub = new ModelStubWithStall(validStall);
 
-        assertThrows(CommandException.class, AddCommand.MESSAGE_DUPLICATE_STALL, () -> addCommand.execute(modelStub));
+        assertThrows(CommandException.class, AddStallCommand.MESSAGE_DUPLICATE_STALL, () -> addStallCommand
+                .execute(modelStub));
     }
 
     @Test
     public void equals() {
         Stall alice = new StallBuilder().withName("Alice").build();
         Stall bob = new StallBuilder().withName("Bob").build();
-        AddCommand addAliceCommand = new AddCommand(alice);
-        AddCommand addBobCommand = new AddCommand(bob);
+        AddStallCommand addAliceCommand = new AddStallCommand(alice);
+        AddStallCommand addBobCommand = new AddStallCommand(bob);
 
         // same object -> returns true
         assertTrue(addAliceCommand.equals(addAliceCommand));
 
         // same values -> returns true
-        AddCommand addAliceCommandCopy = new AddCommand(alice);
+        AddStallCommand addAliceCommandCopy = new AddStallCommand(alice);
         assertTrue(addAliceCommand.equals(addAliceCommandCopy));
 
         // different types -> returns false
@@ -79,8 +80,8 @@ public class AddCommandTest {
 
     @Test
     public void toStringMethod() {
-        AddCommand addCommand = new AddCommand(ALICE);
-        String expected = AddCommand.class.getCanonicalName() + "{toAdd=" + ALICE + "}";
+        AddStallCommand addCommand = new AddStallCommand(AUNTIES_COOKING);
+        String expected = AddStallCommand.class.getCanonicalName() + "{toAdd=" + AUNTIES_COOKING + "}";
         assertEquals(expected, addCommand.toString());
     }
 

@@ -21,32 +21,32 @@ import seedu.address.model.stall.Stall;
 
 /**
  * Contains integration tests (interaction with the Model) and unit tests for
- * {@code DeleteCommand}.
+ * {@code DeleteStallCommand}.
  */
-public class DeleteCommandTest {
+public class DeleteStallCommandTest {
 
     private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
 
     @Test
     public void execute_validIndexUnfilteredList_success() {
         Stall stallToDelete = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
-        DeleteCommand deleteCommand = new DeleteCommand(INDEX_FIRST_STALL);
+        DeleteStallCommand deleteStallCommand = new DeleteStallCommand(INDEX_FIRST_STALL);
 
-        String expectedMessage = String.format(DeleteCommand.MESSAGE_DELETE_STALL_SUCCESS,
+        String expectedMessage = String.format(DeleteStallCommand.MESSAGE_DELETE_STALL_SUCCESS,
                 Messages.format(stallToDelete));
 
         ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.deleteStall(stallToDelete);
 
-        assertCommandSuccess(deleteCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(deleteStallCommand, model, expectedMessage, expectedModel);
     }
 
     @Test
     public void execute_invalidIndexUnfilteredList_throwsCommandException() {
         Index outOfBoundIndex = Index.fromOneBased(model.getFilteredStallList().size() + 1);
-        DeleteCommand deleteCommand = new DeleteCommand(outOfBoundIndex);
+        DeleteStallCommand deleteStallCommand = new DeleteStallCommand(outOfBoundIndex);
 
-        assertCommandFailure(deleteCommand, model, Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
+        assertCommandFailure(deleteStallCommand, model, Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
     }
 
     @Test
@@ -54,16 +54,16 @@ public class DeleteCommandTest {
         showStallAtIndex(model, INDEX_FIRST_STALL);
 
         Stall stallToDelete = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
-        DeleteCommand deleteCommand = new DeleteCommand(INDEX_FIRST_STALL);
+        DeleteStallCommand deleteStallCommand = new DeleteStallCommand(INDEX_FIRST_STALL);
 
-        String expectedMessage = String.format(DeleteCommand.MESSAGE_DELETE_STALL_SUCCESS,
+        String expectedMessage = String.format(DeleteStallCommand.MESSAGE_DELETE_STALL_SUCCESS,
                 Messages.format(stallToDelete));
 
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.deleteStall(stallToDelete);
         showNoStall(expectedModel);
 
-        assertCommandSuccess(deleteCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(deleteStallCommand, model, expectedMessage, expectedModel);
     }
 
     @Test
@@ -74,21 +74,21 @@ public class DeleteCommandTest {
         // ensures that outOfBoundIndex is still in bounds of address book list
         assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getStallList().size());
 
-        DeleteCommand deleteCommand = new DeleteCommand(outOfBoundIndex);
+        DeleteStallCommand deleteStallCommand = new DeleteStallCommand(outOfBoundIndex);
 
-        assertCommandFailure(deleteCommand, model, Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
+        assertCommandFailure(deleteStallCommand, model, Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
     }
 
     @Test
     public void equals() {
-        DeleteCommand deleteFirstCommand = new DeleteCommand(INDEX_FIRST_STALL);
-        DeleteCommand deleteSecondCommand = new DeleteCommand(INDEX_SECOND_STALL);
+        DeleteStallCommand deleteFirstCommand = new DeleteStallCommand(INDEX_FIRST_STALL);
+        DeleteStallCommand deleteSecondCommand = new DeleteStallCommand(INDEX_SECOND_STALL);
 
         // same object -> returns true
         assertTrue(deleteFirstCommand.equals(deleteFirstCommand));
 
         // same values -> returns true
-        DeleteCommand deleteFirstCommandCopy = new DeleteCommand(INDEX_FIRST_STALL);
+        DeleteStallCommand deleteFirstCommandCopy = new DeleteStallCommand(INDEX_FIRST_STALL);
         assertTrue(deleteFirstCommand.equals(deleteFirstCommandCopy));
 
         // different types -> returns false
@@ -104,9 +104,9 @@ public class DeleteCommandTest {
     @Test
     public void toStringMethod() {
         Index targetIndex = Index.fromOneBased(1);
-        DeleteCommand deleteCommand = new DeleteCommand(targetIndex);
-        String expected = DeleteCommand.class.getCanonicalName() + "{targetIndex=" + targetIndex + "}";
-        assertEquals(expected, deleteCommand.toString());
+        DeleteStallCommand deleteStallCommand = new DeleteStallCommand(targetIndex);
+        String expected = DeleteStallCommand.class.getCanonicalName() + "{targetIndex=" + targetIndex + "}";
+        assertEquals(expected, deleteStallCommand.toString());
     }
 
     /**
