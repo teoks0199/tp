@@ -176,6 +176,12 @@ public class AddStallCommandTest {
             requireNonNull(stall);
             return this.stall.isSameStall(stall);
         }
+
+        @Override
+        public void showStall(Stall stall) {
+            requireNonNull(stall);
+
+        }
     }
 
     /**
