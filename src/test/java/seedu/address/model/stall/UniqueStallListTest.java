@@ -15,6 +15,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import seedu.address.model.stall.exceptions.DuplicateStallException;
+import seedu.address.model.stall.exceptions.StallNotFoundException;
 import seedu.address.testutil.StallBuilder;
 
 public class UniqueStallListTest {
@@ -57,6 +58,21 @@ public class UniqueStallListTest {
     }
 
     @Test
+    public void setStall_nullTargetStall_throwsNullPointerException() {
+        assertThrows(NullPointerException.class, () -> uniqueStallList.setStall(null, ALICE));
+    }
+
+    @Test
+    public void setStall_nullEditedStall_throwsNullPointerException() {
+        assertThrows(NullPointerException.class, () -> uniqueStallList.setStall(ALICE, null));
+    }
+
+    @Test
+    public void setStall_targetStallNotInList_throwsStallNotFoundException() {
+        assertThrows(StallNotFoundException.class, () -> uniqueStallList.setStall(ALICE, ALICE));
+    }
+
+    @Test
     public void setStall_editedStallIsSameStall_success() {
         uniqueStallList.add(ALICE);
         uniqueStallList.setStall(ALICE, ALICE);
@@ -95,6 +111,11 @@ public class UniqueStallListTest {
     @Test
     public void remove_nullStall_throwsNullPointerException() {
         assertThrows(NullPointerException.class, () -> uniqueStallList.remove(null));
+    }
+
+    @Test
+    public void remove_stallDoesNotExist_throwsStallNotFoundException() {
+        assertThrows(StallNotFoundException.class, () -> uniqueStallList.remove(ALICE));
     }
 
     @Test

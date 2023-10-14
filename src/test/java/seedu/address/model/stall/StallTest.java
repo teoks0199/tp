@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
+//import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalStalls.ALICE;
 import static seedu.address.testutil.TypicalStalls.BOB;
 
@@ -14,6 +15,11 @@ import seedu.address.testutil.StallBuilder;
 
 public class StallTest {
 
+    //    @Test
+    //    public void asObservableList_modifyList_throwsUnsupportedOperationException() {
+    //        Stall stall = new StallBuilder().build();
+    //        assertThrows(UnsupportedOperationException.class, () -> stall.getTags().remove(0));
+    //    }
     @Test
     public void isSameStall() {
         // same object -> returns true

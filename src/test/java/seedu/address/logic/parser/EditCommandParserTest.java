@@ -4,26 +4,29 @@ import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_LOCATION_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_NAME_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.LOCATION_DESC_AMY;
+import static seedu.address.logic.commands.CommandTestUtil.LOCATION_DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_AMY;
+import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_AMY;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_LOCATION;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
+import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_STALL;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_STALL;
 import static seedu.address.testutil.TypicalIndexes.INDEX_THIRD_STALL;
 
 import org.junit.jupiter.api.Test;
 
 import seedu.address.commons.core.index.Index;
+import seedu.address.logic.Messages;
 import seedu.address.logic.commands.EditCommand;
 import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Name;
 import seedu.address.testutil.EditStallDescriptorBuilder;
 
 public class EditCommandParserTest {
-
-    private static final String TAG_EMPTY = " " + PREFIX_TAG;
 
     private static final String MESSAGE_INVALID_FORMAT =
             String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditCommand.MESSAGE_USAGE);
@@ -61,6 +64,21 @@ public class EditCommandParserTest {
     public void parse_invalidValue_failure() {
         assertParseFailure(parser, "1" + INVALID_NAME_DESC, Name.MESSAGE_CONSTRAINTS); // invalid name
         assertParseFailure(parser, "1" + INVALID_LOCATION_DESC, Location.MESSAGE_CONSTRAINTS); // invalid address
+        // multiple invalid values, but only the first invalid value is captured
+        assertParseFailure(parser, "1" + INVALID_NAME_DESC + INVALID_LOCATION_DESC,
+                Name.MESSAGE_CONSTRAINTS);
+    }
+
+    @Test
+    public void parse_someFieldsSpecified_success() {
+        Index targetIndex = INDEX_FIRST_STALL;
+        String userInput = targetIndex.getOneBased() + LOCATION_DESC_AMY;
+
+        EditCommand.EditStallDescriptor descriptor = new EditStallDescriptorBuilder().withLocation(VALID_LOCATION_AMY)
+                .build();
+        EditCommand expectedCommand = new EditCommand(targetIndex, descriptor);
+
+        assertParseSuccess(parser, userInput, expectedCommand);
     }
 
     @Test
@@ -92,4 +110,34 @@ public class EditCommandParserTest {
         assertParseSuccess(parser, userInput, expectedCommand);
     }
 
+    @Test
+    public void parse_multipleRepeatedFields_failure() {
+        // More extensive testing of duplicate parameter detections is done in
+        // AddCommandParserTest#parse_repeatedNonTagValue_failure()
+
+        // valid followed by invalid
+        Index targetIndex = INDEX_FIRST_STALL;
+        String userInput = targetIndex.getOneBased() + INVALID_NAME_DESC + LOCATION_DESC_AMY;
+
+        //assertParseFailure(parser, userInput, Messages.getErrorMessageForDuplicatePrefixes(PREFIX_NAME));
+
+        // invalid followed by valid
+        userInput = targetIndex.getOneBased() + NAME_DESC_BOB + INVALID_LOCATION_DESC;
+
+        //assertParseFailure(parser, userInput, Messages.getErrorMessageForDuplicatePrefixes(PREFIX_LOCATION));
+
+        // mulltiple valid fields repeated
+        userInput = targetIndex.getOneBased() + NAME_DESC_AMY + LOCATION_DESC_AMY
+                + NAME_DESC_AMY + LOCATION_DESC_AMY + NAME_DESC_BOB + LOCATION_DESC_BOB;
+
+        assertParseFailure(parser, userInput,
+                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_NAME, PREFIX_LOCATION));
+
+        // multiple invalid values
+        userInput = targetIndex.getOneBased() + INVALID_NAME_DESC + INVALID_LOCATION_DESC
+                + INVALID_NAME_DESC + INVALID_LOCATION_DESC;
+
+        assertParseFailure(parser, userInput,
+                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_NAME, PREFIX_LOCATION));
+    }
 }
