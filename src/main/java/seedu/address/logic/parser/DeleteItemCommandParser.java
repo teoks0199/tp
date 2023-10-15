@@ -1,14 +1,14 @@
 package seedu.address.logic.parser;
 
-import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
-
-import java.util.stream.Stream;
-
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.DeleteItemCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
+
+import java.util.stream.Stream;
+
+import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
 
 /**
@@ -33,7 +33,7 @@ public class DeleteItemCommandParser implements Parser<DeleteItemCommand> {
         try {
             argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_STALL, PREFIX_ITEM);
             Index stallIndex = ParserUtil.parseStallIndex(argMultimap.getValue(PREFIX_STALL).get());
-            Index itemIndex = ParserUtil.parseItemIndex(argMultimap.getValue(PREFIX_STALL).get());
+            Index itemIndex = ParserUtil.parseItemIndex(argMultimap.getValue(PREFIX_ITEM).get());
             return new DeleteItemCommand(stallIndex, itemIndex);
         } catch (ParseException pe) {
             throw new ParseException(
