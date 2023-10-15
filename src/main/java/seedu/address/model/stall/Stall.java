@@ -5,6 +5,8 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import java.util.Objects;
 
 import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.model.item.Item;
+import seedu.address.model.item.UniqueItemList;
 
 /**
  * Represents a Stall in the address book.
@@ -15,6 +17,7 @@ public class Stall {
     // Identity fields
     private final Name name;
     private final Location location;
+    private final UniqueItemList menu;
 
     /**
      * Every field must be present and not null.
@@ -23,6 +26,7 @@ public class Stall {
         requireAllNonNull(name, location);
         this.name = name;
         this.location = location;
+        this.menu = new UniqueItemList();
     }
 
     public Name getName() {
@@ -33,6 +37,9 @@ public class Stall {
         return location;
     }
 
+    public UniqueItemList getMenu() {
+        return menu;
+    }
 
     /**
      * Returns true if both stalls have the same name.
@@ -46,6 +53,33 @@ public class Stall {
         return otherStall != null
                 && otherStall.getName().equals(getName()) && otherStall.getLocation().equals(getLocation());
     }
+
+    /**
+     * Returns true if both stalls have the same identity and data fields.
+     * This defines a stronger notion of equality between two stalls.
+     */
+    public boolean hasItem(Item item) {
+        return menu.contains(item);
+    }
+
+    /**
+     * Adds an item to the menu.
+     * The item must not already exist in the menu.
+     */
+    public void addItem(Item item) {
+        menu.add(item);
+        System.out.println(menu);
+    }
+
+    /**
+     * Deletes an item from the menu.
+     * The item must already exist in the menu.
+     */
+    public void deleteItem(Item item) {
+        menu.remove(item);
+        System.out.println(menu);
+    }
+
 
     /**
      * Returns true if both persons have the same identity and data fields.
@@ -80,5 +114,4 @@ public class Stall {
                 .add("location", location)
                 .toString();
     }
-
 }
