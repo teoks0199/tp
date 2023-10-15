@@ -28,8 +28,6 @@ public class StallDetailsCard extends UiPart<Region> {
     @FXML
     private Label name;
     @FXML
-    private Label id;
-    @FXML
     private Label locationName;
 
     @FXML
@@ -44,7 +42,6 @@ public class StallDetailsCard extends UiPart<Region> {
     public StallDetailsCard(Stall stall, int displayedIndex) {
         super(FXML);
         this.stall = stall;
-        id.setText(displayedIndex + ". ");
         name.setText(stall.getName().fullName);
         locationName.setText(stall.getLocation().locationName);
         // review.setText(stall.getReview().review);

@@ -82,6 +82,8 @@ public interface Model {
     /** Returns an unmodifiable view of the filtered stall list */
     ObservableList<Stall> getFilteredStallList();
 
+    ObservableList<Stall> getTempFilteredStallList();
+
     /**
      * Updates the filter of the filtered stall list to filter by the given {@code predicate}.
      * @throws NullPointerException if {@code predicate} is null.

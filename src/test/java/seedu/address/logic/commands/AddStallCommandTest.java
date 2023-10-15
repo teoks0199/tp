@@ -161,6 +161,11 @@ public class AddStallCommandTest {
         }
 
         @Override
+        public ObservableList<Stall> getTempFilteredStallList() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public void updateFilteredStallList(Predicate<Stall> predicate) {
             throw new AssertionError("This method should not be called.");
         }

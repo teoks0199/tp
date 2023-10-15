@@ -110,7 +110,7 @@ public class StallDetailsWindow extends UiPart<Stage> {
      * Fills up all the placeholders of this window.
      */
     void fillInnerParts() {
-        oneStallPanel = new OneStallPanel(logic.getFilteredStallList());
+        oneStallPanel = new OneStallPanel(logic.getTempFilteredStallList());
         stallListPanelPlaceholder.getChildren().add(oneStallPanel.getRoot());
 
         resultDisplay = new ResultDisplay();
