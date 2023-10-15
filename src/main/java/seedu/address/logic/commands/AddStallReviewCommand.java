@@ -1,5 +1,11 @@
 package seedu.address.logic.commands;
 
+import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
+
+import java.util.List;
+
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
@@ -7,12 +13,10 @@ import seedu.address.model.Model;
 import seedu.address.model.stall.Stall;
 import seedu.address.model.stall.StallReview;
 
-import java.util.List;
-
-import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.*;
-
-public class AddStallReviewCommand extends Command{
+/**
+ * Adds a review to a stall in the address book.
+ */
+public class AddStallReviewCommand extends Command {
     public static final String COMMAND_WORD = "review-stall";
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a stall review to the address book. "
             + "Parameters: "
@@ -28,7 +32,13 @@ public class AddStallReviewCommand extends Command{
     private final StallReview toAdd;
     private final Index index;
 
-    public AddStallReviewCommand (StallReview stallReview, Index index) {
+    /**
+     * Creates an AddStallReviewCommand to add a review to the specified stall.
+     *
+     * @param stallReview The review to be added.
+     * @param index       The index of the stall to which the review will be added.
+     */
+    public AddStallReviewCommand(StallReview stallReview, Index index) {
         requireNonNull(stallReview);
         this.toAdd = stallReview;
         this.index = index;

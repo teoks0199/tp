@@ -41,8 +41,8 @@ public class Messages {
         builder.append(stall.getName())
                 .append("; Location: ")
                 .append(stall.getLocation())
-                .append("; REVIEW: ")
-                .append(stall.getStallReview());
+                .append("; Review: ")
+                .append(stall.getStallReviewString());
         return builder.toString();
     }
 

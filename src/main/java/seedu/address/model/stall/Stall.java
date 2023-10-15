@@ -50,7 +50,7 @@ public class Stall {
         return stallReview;
     }
 
-    public void setStallReview (StallReview stallReview) {
+    public void setStallReview(StallReview stallReview) {
         this.stallReview = stallReview;
     }
 
@@ -89,6 +89,18 @@ public class Stall {
      */
     public void deleteItem(Item item) {
         menu.remove(item);
+    }
+
+    public void deleteReview() {
+        this.stallReview = null;
+    }
+
+    public String getStallReviewString() {
+        if (this.stallReview != null) {
+            return stallReview.toString();
+        } else {
+            return "No review added.";
+        }
     }
 
 
