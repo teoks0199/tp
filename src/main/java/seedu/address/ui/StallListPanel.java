@@ -25,8 +25,29 @@ public class StallListPanel extends UiPart<Region> {
      */
     public StallListPanel(ObservableList<Stall> stallList) {
         super(FXML);
+        if (stallList.size() == 1) {
+            stallListView.setItems(stallList);
+            stallListView.setCellFactory(listView -> new OneStallViewCell());
+        }
         stallListView.setItems(stallList);
         stallListView.setCellFactory(listView -> new StallListViewCell());
+    }
+
+    /**
+     * Custom {@code ListCell} that displays the graphics of a {@code Stall} using a {@code StallCard}.
+     */
+    class OneStallViewCell extends ListCell<Stall> {
+        @Override
+        protected void updateItem(Stall stall, boolean empty) {
+            super.updateItem(stall, empty);
+
+            if (empty || stall == null) {
+                setGraphic(null);
+                setText(null);
+            } else {
+                setGraphic(new StallDetailsCard(stall, getIndex() + 1).getRoot());
+            }
+        }
     }
 
     /**
