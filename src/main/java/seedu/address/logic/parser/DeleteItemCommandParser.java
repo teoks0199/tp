@@ -33,7 +33,7 @@ public class DeleteItemCommandParser implements Parser<DeleteItemCommand> {
         try {
             argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_STALL, PREFIX_ITEM);
             Index stallIndex = ParserUtil.parseStallIndex(argMultimap.getValue(PREFIX_STALL).get());
-            Index itemIndex = ParserUtil.parseItemIndex(argMultimap.getValue(PREFIX_STALL).get());
+            Index itemIndex = ParserUtil.parseItemIndex(argMultimap.getValue(PREFIX_ITEM).get());
             return new DeleteItemCommand(stallIndex, itemIndex);
         } catch (ParseException pe) {
             throw new ParseException(
