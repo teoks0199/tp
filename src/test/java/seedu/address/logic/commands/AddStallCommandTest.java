@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.Assert.assertThrows;
-import static seedu.address.testutil.TypicalStalls.ALICE;
+import static seedu.address.testutil.TypicalStalls.AUNTIES_COOKING;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -22,6 +22,7 @@ import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.ReadOnlyUserPrefs;
+import seedu.address.model.item.Item;
 import seedu.address.model.stall.Stall;
 import seedu.address.testutil.StallBuilder;
 
@@ -80,8 +81,8 @@ public class AddStallCommandTest {
 
     @Test
     public void toStringMethod() {
-        AddStallCommand addCommand = new AddStallCommand(ALICE);
-        String expected = AddStallCommand.class.getCanonicalName() + "{toAdd=" + ALICE + "}";
+        AddStallCommand addCommand = new AddStallCommand(AUNTIES_COOKING);
+        String expected = AddStallCommand.class.getCanonicalName() + "{toAdd=" + AUNTIES_COOKING + "}";
         assertEquals(expected, addCommand.toString());
     }
 
@@ -161,6 +162,21 @@ public class AddStallCommandTest {
 
         @Override
         public void updateFilteredStallList(Predicate<Stall> predicate) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void addItem(Stall stall, Item item) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void deleteItem(Stall stall, Item item) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public boolean hasItem(Stall stall, Item item) {
             throw new AssertionError("This method should not be called.");
         }
     }

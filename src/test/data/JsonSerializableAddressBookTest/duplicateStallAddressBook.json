@@ -1,9 +1,9 @@
 {
-  "persons": [ {
+  "stalls": [ {
     "name": "Alice Pauline",
-    "locationName": "Deck"
+    "location": "Deck"
   }, {
     "name": "Alice Pauline",
-    "locationName": "Deck"
+    "location": "Deck"
   } ]
 }

@@ -22,13 +22,13 @@ class JsonAdaptedStall {
      * Constructs a {@code JsonAdaptedStall} with the given stall details.
      */
     @JsonCreator
-    public JsonAdaptedStall(@JsonProperty("name") String name, @JsonProperty("locationName") String location) {
+    public JsonAdaptedStall(@JsonProperty("name") String name, @JsonProperty("location") String location) {
         this.name = name;
         this.location = location;
     }
 
     /**
-     * Converts a given {@code Stall} into this class for Jackson use.
+     * Converts a given {@code Stall} into this class for Json use.
      */
     public JsonAdaptedStall(Stall source) {
         name = source.getName().fullName;

@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_STALLS;
 import static seedu.address.testutil.Assert.assertThrows;
-import static seedu.address.testutil.TypicalStalls.ALICE;
-import static seedu.address.testutil.TypicalStalls.BENSON;
+import static seedu.address.testutil.TypicalStalls.AUNTIES_COOKING;
+import static seedu.address.testutil.TypicalStalls.BEVERAGES;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -79,13 +79,13 @@ public class ModelManagerTest {
 
     @Test
     public void hasStall_stallNotInAddressBook_returnsFalse() {
-        assertFalse(modelManager.hasStall(ALICE));
+        assertFalse(modelManager.hasStall(AUNTIES_COOKING));
     }
 
     @Test
     public void hasStall_stallInAddressBook_returnsTrue() {
-        modelManager.addStall(ALICE);
-        assertTrue(modelManager.hasStall(ALICE));
+        modelManager.addStall(AUNTIES_COOKING);
+        assertTrue(modelManager.hasStall(AUNTIES_COOKING));
     }
 
     @Test
@@ -95,7 +95,7 @@ public class ModelManagerTest {
 
     @Test
     public void equals() {
-        AddressBook addressBook = new AddressBookBuilder().withStall(ALICE).withStall(BENSON).build();
+        AddressBook addressBook = new AddressBookBuilder().withStall(AUNTIES_COOKING).withStall(BEVERAGES).build();
         AddressBook differentAddressBook = new AddressBook();
         UserPrefs userPrefs = new UserPrefs();
 
@@ -117,7 +117,7 @@ public class ModelManagerTest {
         assertFalse(modelManager.equals(new ModelManager(differentAddressBook, userPrefs)));
 
         // different filteredList -> returns false
-        String[] keywords = ALICE.getName().fullName.split("\\s+");
+        String[] keywords = AUNTIES_COOKING.getName().fullName.split("\\s+");
         modelManager.updateFilteredStallList(new NameContainsKeywordsPredicate(Arrays.asList(keywords)));
         assertFalse(modelManager.equals(new ModelManager(addressBook, userPrefs)));
 

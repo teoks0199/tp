@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.Messages.MESSAGE_STALLS_LISTED_OVERVIEW;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.address.testutil.TypicalStalls.CARL;
-import static seedu.address.testutil.TypicalStalls.ELLE;
-import static seedu.address.testutil.TypicalStalls.FIONA;
+import static seedu.address.testutil.TypicalStalls.AUNTIES_COOKING;
+import static seedu.address.testutil.TypicalStalls.DRINKS_STALL;
+import static seedu.address.testutil.TypicalStalls.ECONOMIC_RICE;
 import static seedu.address.testutil.TypicalStalls.getTypicalAddressBook;
 
 import java.util.Arrays;
@@ -67,11 +67,11 @@ public class FindCommandTest {
     @Test
     public void execute_multipleKeywords_multipleStallsFound() {
         String expectedMessage = String.format(MESSAGE_STALLS_LISTED_OVERVIEW, 3);
-        NameContainsKeywordsPredicate predicate = preparePredicate("Kurz Elle Kunz");
+        NameContainsKeywordsPredicate predicate = preparePredicate("Rice Drinks Cooking");
         FindCommand command = new FindCommand(predicate);
         expectedModel.updateFilteredStallList(predicate);
         assertCommandSuccess(command, model, expectedMessage, expectedModel);
-        assertEquals(Arrays.asList(CARL, ELLE, FIONA), model.getFilteredStallList());
+        assertEquals(Arrays.asList(AUNTIES_COOKING, DRINKS_STALL, ECONOMIC_RICE), model.getFilteredStallList());
     }
 
     @Test

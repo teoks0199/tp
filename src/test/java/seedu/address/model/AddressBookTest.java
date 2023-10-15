@@ -3,9 +3,9 @@ package seedu.address.model;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_BRITISH;
 import static seedu.address.testutil.Assert.assertThrows;
-import static seedu.address.testutil.TypicalStalls.ALICE;
+import static seedu.address.testutil.TypicalStalls.AUNTIES_COOKING;
 import static seedu.address.testutil.TypicalStalls.getTypicalAddressBook;
 
 import java.util.Arrays;
@@ -45,9 +45,9 @@ public class AddressBookTest {
     @Test
     public void resetData_withDuplicateStalls_throwsDuplicateStallException() {
         // Two stalls with the same identity fields
-        Stall editedAlice = new StallBuilder(ALICE).withLocation(VALID_LOCATION_BOB)
-                .build();
-        List<Stall> newStalls = Arrays.asList(ALICE, editedAlice);
+        Stall editedAlice1 = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).build();
+        Stall editedAlice2 = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).build();
+        List<Stall> newStalls = Arrays.asList(editedAlice1, editedAlice2);
         AddressBookStub newData = new AddressBookStub(newStalls);
 
         assertThrows(DuplicateStallException.class, () -> addressBook.resetData(newData));
@@ -60,21 +60,21 @@ public class AddressBookTest {
 
     @Test
     public void hasStall_stallNotInAddressBook_returnsFalse() {
-        assertFalse(addressBook.hasStall(ALICE));
+        assertFalse(addressBook.hasStall(AUNTIES_COOKING));
     }
 
     @Test
     public void hasStall_stallInAddressBook_returnsTrue() {
-        addressBook.addStall(ALICE);
-        assertTrue(addressBook.hasStall(ALICE));
+        addressBook.addStall(AUNTIES_COOKING);
+        assertTrue(addressBook.hasStall(AUNTIES_COOKING));
     }
 
     @Test
-    public void hasStall_stallWithSameIdentityFieldsInAddressBook_returnsTrue() {
-        addressBook.addStall(ALICE);
-        Stall editedAlice = new StallBuilder(ALICE).withLocation(VALID_LOCATION_BOB)
+    public void hasStall_stallWithSameIdentityFieldsInAddressBook_returnsFalse() {
+        addressBook.addStall(AUNTIES_COOKING);
+        Stall editedAlice = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH)
                 .build();
-        assertTrue(addressBook.hasStall(editedAlice));
+        assertFalse(addressBook.hasStall(editedAlice));
     }
 
     @Test

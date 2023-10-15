@@ -45,7 +45,7 @@ public class MainWindow extends UiPart<Stage> {
     private MenuItem helpMenuItem;
 
     @FXML
-    private StackPane personListPanelPlaceholder;
+    private StackPane stallListPanelPlaceholder;
 
     @FXML
     private StackPane resultDisplayPlaceholder;
@@ -115,7 +115,7 @@ public class MainWindow extends UiPart<Stage> {
      */
     void fillInnerParts() {
         stallListPanel = new StallListPanel(logic.getFilteredStallList());
-        personListPanelPlaceholder.getChildren().add(stallListPanel.getRoot());
+        stallListPanelPlaceholder.getChildren().add(stallListPanel.getRoot());
 
         resultDisplay = new ResultDisplay();
         resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());
@@ -178,7 +178,7 @@ public class MainWindow extends UiPart<Stage> {
     }
 
 
-    public StallListPanel getPersonListPanel() {
+    public StallListPanel getStallListPanel() {
         return stallListPanel;
     }
 
