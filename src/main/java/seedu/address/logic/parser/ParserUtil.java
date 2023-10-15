@@ -8,6 +8,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.item.ItemName;
 import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Name;
+import seedu.address.model.stall.StallReview;
 
 /**
  * Contains utility methods used for parsing strings in the various *Parser classes.
@@ -100,5 +101,19 @@ public class ParserUtil {
             throw new ParseException(MESSAGE_INVALID_INDEX);
         }
         return Index.fromOneBased(Integer.parseInt(trimmedIndex));
+    }
+
+    public static StallReview parseStallReview(String stallReview, String star) throws ParseException {
+        requireNonNull(stallReview);
+        String trimmedStallReview = stallReview.trim();
+        int trimmedStar = Integer.parseInt(star.trim());
+
+        if (!StallReview.isValidReview(stallReview)) {
+            throw new ParseException(StallReview.MESSAGE_CONSTRAINTS);
+        }
+        if (!StallReview.isValidStar(trimmedStar)) {
+            throw new ParseException(StallReview.MESSAGE_CONSTRAINTS);
+        }
+        return new StallReview(trimmedStallReview, trimmedStar);
     }
 }

@@ -17,7 +17,11 @@ public class Stall {
     // Identity fields
     private final Name name;
     private final Location location;
+
     private final UniqueItemList menu;
+
+    private StallReview stallReview;
+
 
     /**
      * Every field must be present and not null.
@@ -37,8 +41,17 @@ public class Stall {
         return location;
     }
 
+
     public UniqueItemList getMenu() {
         return menu;
+    }
+
+    public StallReview getStallReview() {
+        return stallReview;
+    }
+
+    public void setStallReview (StallReview stallReview) {
+        this.stallReview = stallReview;
     }
 
     /**
