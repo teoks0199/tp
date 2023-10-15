@@ -1,5 +1,11 @@
 package seedu.address.logic.commands;
 
+import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
+
+import java.util.List;
+
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
@@ -9,12 +15,10 @@ import seedu.address.model.item.Item;
 import seedu.address.model.item.UniqueItemList;
 import seedu.address.model.stall.Stall;
 
-import java.util.List;
 
-import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
-
+/**
+ * Deletes a review from an item from a stall.
+ */
 public class DeleteItemReviewCommand extends Command {
     public static final String COMMAND_WORD = "delete-item-review";
 
@@ -32,6 +36,9 @@ public class DeleteItemReviewCommand extends Command {
     private final Index stallIndex;
     private final Index itemIndex;
 
+    /**
+     * Creates an DeleteItemReviewCommand to delete the specified {@code ItemReview}
+     */
     public DeleteItemReviewCommand(Index stallIndex, Index itemIndex) {
         this.stallIndex = stallIndex;
         this.itemIndex = itemIndex;

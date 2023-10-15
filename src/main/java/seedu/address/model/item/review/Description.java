@@ -3,6 +3,10 @@ package seedu.address.model.item.review;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
+/**
+ * Represents a Review's description in the review list.
+ * Guarantees: immutable; is valid as declared in {@link #isValidDescription(String)}
+ */
 public class Description {
     public static final String MESSAGE_CONSTRAINTS =
             "Description should not be blank";
@@ -11,6 +15,9 @@ public class Description {
 
     public final String description;
 
+    /**
+     * Constructs a {@code Description}.
+     */
     public Description(String description) {
         requireNonNull(description);
         checkArgument(isValidDescription(description), MESSAGE_CONSTRAINTS);

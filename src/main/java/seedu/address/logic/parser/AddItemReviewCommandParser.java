@@ -1,21 +1,32 @@
 package seedu.address.logic.parser;
 
+import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
+
+import java.util.stream.Stream;
+
 import seedu.address.commons.core.index.Index;
-import seedu.address.logic.commands.AddItemCommand;
 import seedu.address.logic.commands.AddItemReviewCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.item.Item;
-import seedu.address.model.item.ItemName;
 import seedu.address.model.item.review.Description;
 import seedu.address.model.item.review.ItemReview;
 import seedu.address.model.item.review.Rating;
 
-import java.util.stream.Stream;
 
-import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CliSyntax.*;
 
+/**
+ * Parses input arguments and creates a new AddItemCommand object
+ */
 public class AddItemReviewCommandParser implements Parser<AddItemReviewCommand> {
+
+    /**
+     * Parses the given {@code String} of arguments in the context of the AddItemReviewCommand
+     * and returns an AddItemReviewCommand object for execution.
+     * @throws ParseException if the user input does not conform to the expected format
+     */
     public AddItemReviewCommand parse(String args) throws ParseException {
         ArgumentMultimap argMultimap =
                 ArgumentTokenizer.tokenize(args, PREFIX_STALL, PREFIX_ITEM, PREFIX_RATING, PREFIX_DESCRIPTION);

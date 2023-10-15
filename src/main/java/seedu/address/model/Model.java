@@ -92,6 +92,9 @@ public interface Model {
      */
     boolean hasItem(Stall stallIndex, Item item);
 
+    /**
+     * Returns true if an item review exists in the item.
+     */
     boolean hasItemReview(Stall stallIndex, Item item);
 
     /**

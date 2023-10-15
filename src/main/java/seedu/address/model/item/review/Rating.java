@@ -3,6 +3,10 @@ package seedu.address.model.item.review;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
+/**
+ * Represents a Review's rating in the review list.
+ * Guarantees: immutable; is valid as declared in {@link #isValidRating(String)}
+ */
 public class Rating {
     public static final String MESSAGE_CONSTRAINTS =
             "Rating should be a number from 1 to 5, inclusive";
@@ -11,6 +15,9 @@ public class Rating {
 
     public final String rating;
 
+    /**
+     * Constructs a {@code Rating}.
+     */
     public Rating(String rating) {
         requireNonNull(rating);
         checkArgument(isValidRating(rating), MESSAGE_CONSTRAINTS);

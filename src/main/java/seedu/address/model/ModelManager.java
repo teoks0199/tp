@@ -158,6 +158,7 @@ public class ModelManager implements Model {
         stall.deleteItem(item);
     }
 
+    @Override
     public void addItemReview(Stall stall, Item item, ItemReview itemReview) {
         requireNonNull(stall);
         requireNonNull(item);
@@ -165,6 +166,7 @@ public class ModelManager implements Model {
         stall.getMenu().getItem(item).addItemReview(itemReview);
     }
 
+    @Override
     public void deleteItemReview(Stall stall, Item item) {
         requireNonNull(stall);
         requireNonNull(item);

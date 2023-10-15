@@ -1,5 +1,13 @@
 package seedu.address.logic.commands;
 
+import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
+
+import java.util.List;
+
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
@@ -9,11 +17,6 @@ import seedu.address.model.item.Item;
 import seedu.address.model.item.UniqueItemList;
 import seedu.address.model.item.review.ItemReview;
 import seedu.address.model.stall.Stall;
-
-import java.util.List;
-
-import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.*;
 
 /**
  * Adds a review to an item of a stall.
@@ -31,8 +34,8 @@ public class AddItemReviewCommand extends Command {
             + PREFIX_STALL + "1 "
             + PREFIX_ITEM + "1 "
             + PREFIX_RATING + "5 "
-            + PREFIX_DESCRIPTION + "Tasty chicken rice with a good amount of meat and rice. " +
-            "The chilli is also very good.";
+            + PREFIX_DESCRIPTION + "Tasty chicken rice with a good amount of meat and rice. "
+            + "The chilli is also very good.";
 
     public static final String MESSAGE_SUCCESS = "Yay! You have added a review for the %1$s at %2$s.";
     public static final String MESSAGE_DUPLICATE_ITEM_REVIEW = "This item already has a review.";

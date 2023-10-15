@@ -1,15 +1,25 @@
 package seedu.address.model.item.review;
 
-import seedu.address.commons.util.ToStringBuilder;
+import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.Objects;
 
-import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
+import seedu.address.commons.util.ToStringBuilder;
 
+
+
+
+/**
+ * Represents a ItemReview in the address book.
+ * Guarantees: details are present and not null, field values are validated, immutable.
+ */
 public class ItemReview {
     private final Rating rating;
     private final Description description;
 
+    /**
+     * Constructs a {@code ItemReview}.
+     */
     public ItemReview(Rating rating, Description description) {
         requireAllNonNull(rating, description);
         this.rating = rating;

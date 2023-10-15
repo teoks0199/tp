@@ -32,6 +32,11 @@ public class Item {
         return itemName;
     }
 
+    /**
+     * Adds an item review to the item.
+     *
+     * @param itemReview the item review to be added.
+     */
     public void addItemReview(ItemReview itemReview) {
         requireAllNonNull(itemReview);
         if (hasItemReview()) {
@@ -40,6 +45,9 @@ public class Item {
         this.itemReview = itemReview;
     }
 
+    /**
+     * Deletes the item review from the item.
+     */
     public void deleteItemReview() {
         if (!hasItemReview()) {
             throw new ItemReviewNotFoundException();
@@ -47,6 +55,9 @@ public class Item {
         this.itemReview = null;
     }
 
+    /**
+     * Returns true if the item has an item review.
+     */
     public boolean hasItemReview() {
         return this.itemReview != null;
     }
