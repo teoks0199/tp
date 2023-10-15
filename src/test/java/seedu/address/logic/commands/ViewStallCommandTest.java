@@ -1,73 +1,93 @@
 package seedu.address.logic.commands;
 
-import static java.util.Objects.requireNonNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.testutil.Assert.assertThrows;
-
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Predicate;
+import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
+import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
+import static seedu.address.logic.commands.CommandTestUtil.showStallAtIndex;
+import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_STALL;
+import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_STALL;
+import static seedu.address.testutil.TypicalStalls.getTypicalAddressBook;
 
 import org.junit.jupiter.api.Test;
 
-import javafx.collections.ObservableList;
-import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
-import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.ReadOnlyAddressBook;
-import seedu.address.model.ReadOnlyUserPrefs;
-import seedu.address.model.stall.Location;
-import seedu.address.model.stall.Name;
+import seedu.address.model.ModelManager;
+import seedu.address.model.UserPrefs;
 import seedu.address.model.stall.Stall;
 
+/**
+ * Contains integration tests (interaction with the Model) and unit tests for
+ * {@code DeleteStallCommand}.
+ */
 public class ViewStallCommandTest {
 
+    private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
+
     @Test
-    public void constructor_nullIndex_throwsNullPointerException() {
-        assertThrows(NullPointerException.class, () -> new ViewStallCommand(null));
+    public void execute_validIndexUnfilteredList_success() {
+        Stall stallToView = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
+        ViewStallCommand viewStallCommand = new ViewStallCommand(INDEX_FIRST_STALL);
+
+        String expectedMessage = String.format(ViewStallCommand.MESSAGE_VIEW_STALL_SUCCESS,
+                Messages.format(stallToView));
+
+        ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
+        expectedModel.showStall(stallToView);
+
+        assertCommandSuccess(viewStallCommand, model, expectedMessage, expectedModel);
     }
 
     @Test
-    public void execute_validIndex_success() throws CommandException {
-        ModelStub modelStub = new ModelStub();
-        Name stallName = new Name("jap");
-        Location location = new Location("deck");
-        Stall validStall = new Stall(stallName, location);
-        modelStub.addStall(validStall);
+    public void execute_invalidIndexUnfilteredList_throwsCommandException() {
+        Index outOfBoundIndex = Index.fromOneBased(model.getFilteredStallList().size() + 1);
+        ViewStallCommand viewStallCommand = new ViewStallCommand(outOfBoundIndex);
 
-        ViewStallCommand viewStallCommand = new ViewStallCommand(Index.fromOneBased(1));
-
-        CommandResult commandResult = viewStallCommand.execute(modelStub);
-
-        assertEquals(String.format(ViewStallCommand.MESSAGE_VIEW_STALL_SUCCESS, Messages.format(validStall)),
-                commandResult.getFeedbackToUser());
+        assertCommandFailure(viewStallCommand, model, Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
     }
 
     @Test
-    public void execute_invalidIndex_throwsCommandException() {
-        ModelStub modelStub = new ModelStub();
+    public void execute_validIndexFilteredList_success() {
+        showStallAtIndex(model, INDEX_FIRST_STALL);
 
-        ViewStallCommand viewStallCommand = new ViewStallCommand(Index.fromOneBased(1));
+        Stall stallToView = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
+        ViewStallCommand viewStallCommand = new ViewStallCommand(INDEX_FIRST_STALL);
 
-        assertThrows(CommandException.class, Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX, () ->
-                viewStallCommand.execute(modelStub));
+        String expectedMessage = String.format(ViewStallCommand.MESSAGE_VIEW_STALL_SUCCESS,
+                Messages.format(stallToView));
+
+        Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
+        expectedModel.showStall(stallToView);
+
+        assertCommandSuccess(viewStallCommand, model, expectedMessage, expectedModel);
+    }
+
+    @Test
+    public void execute_invalidIndexFilteredList_throwsCommandException() {
+        showStallAtIndex(model, INDEX_FIRST_STALL);
+
+        Index outOfBoundIndex = INDEX_SECOND_STALL;
+        // ensures that outOfBoundIndex is still in bounds of address book list
+        assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getStallList().size());
+
+        ViewStallCommand viewStallCommand = new ViewStallCommand(outOfBoundIndex);
+
+        assertCommandFailure(viewStallCommand, model, Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
     }
 
     @Test
     public void equals() {
-        ViewStallCommand viewFirstCommand = new ViewStallCommand(Index.fromOneBased(1));
-        ViewStallCommand viewSecondCommand = new ViewStallCommand(Index.fromOneBased(2));
+        ViewStallCommand viewFirstCommand = new ViewStallCommand(INDEX_FIRST_STALL);
+        ViewStallCommand viewSecondCommand = new ViewStallCommand(INDEX_SECOND_STALL);
 
         // same object -> returns true
         assertTrue(viewFirstCommand.equals(viewFirstCommand));
 
         // same values -> returns true
-        ViewStallCommand viewFirstCommandCopy = new ViewStallCommand(Index.fromOneBased(1));
+        ViewStallCommand viewFirstCommandCopy = new ViewStallCommand(INDEX_FIRST_STALL);
         assertTrue(viewFirstCommand.equals(viewFirstCommandCopy));
 
         // different types -> returns false
@@ -76,87 +96,16 @@ public class ViewStallCommandTest {
         // null -> returns false
         assertFalse(viewFirstCommand.equals(null));
 
-        // different stall index -> returns false
+        // different stall -> returns false
         assertFalse(viewFirstCommand.equals(viewSecondCommand));
     }
 
-    // Create a ModelStub class to mock the Model component
-    private class ModelStub implements Model {
-        private final List<Stall> stalls = new ArrayList<>();
-
-        @Override
-        public void addStall(Stall stall) {
-            stalls.add(stall);
-        }
-
-        @Override
-        public void setStall(Stall target, Stall editedStall) {
-
-        }
-
-        @Override
-        public ObservableList<Stall> getFilteredStallList() {
-            return null;
-        }
-
-        @Override
-        public void updateFilteredStallList(Predicate<Stall> predicate) {
-
-        }
-
-        @Override
-        public void setUserPrefs(ReadOnlyUserPrefs userPrefs) {
-
-        }
-
-        @Override
-        public ReadOnlyUserPrefs getUserPrefs() {
-            return null;
-        }
-
-        @Override
-        public GuiSettings getGuiSettings() {
-            return null;
-        }
-
-        @Override
-        public void setGuiSettings(GuiSettings guiSettings) {
-
-        }
-
-        @Override
-        public Path getAddressBookFilePath() {
-            return null;
-        }
-
-        @Override
-        public void setAddressBookFilePath(Path addressBookFilePath) {
-
-        }
-
-        @Override
-        public void setAddressBook(ReadOnlyAddressBook addressBook) {
-
-        }
-
-        @Override
-        public ReadOnlyAddressBook getAddressBook() {
-            return null;
-        }
-
-        @Override
-        public boolean hasStall(Stall stall) {
-            return false;
-        }
-
-        @Override
-        public void deleteStall(Stall target) {
-            requireNonNull(target);
-        }
-
-        @Override
-        public void showStall(Stall stall) {
-            requireNonNull(stall);
-        }
+    @Test
+    public void toStringMethod() {
+        Index targetIndex = Index.fromOneBased(1);
+        ViewStallCommand viewStallCommand = new ViewStallCommand(targetIndex);
+        String expected = ViewStallCommand.class.getCanonicalName() + "{targetIndex=" + targetIndex + "}";
+        assertEquals(expected, viewStallCommand.toString());
     }
+
 }
