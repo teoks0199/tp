@@ -90,13 +90,10 @@ public class ViewStallCommandTest {
         ViewStallCommand viewFirstCommandCopy = new ViewStallCommand(INDEX_FIRST_STALL);
         assertTrue(viewFirstCommand.equals(viewFirstCommandCopy));
 
-        // different types -> returns false
         assertFalse(viewFirstCommand.equals(1));
 
-        // null -> returns false
         assertFalse(viewFirstCommand.equals(null));
 
-        // different stall -> returns false
         assertFalse(viewFirstCommand.equals(viewSecondCommand));
     }
 

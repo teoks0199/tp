@@ -52,7 +52,9 @@ public class CommandResult {
         return exit;
     }
 
-    public boolean isStallDetail() { return isStallDetail; }
+    public boolean isStallDetail() {
+        return isStallDetail;
+    }
 
     @Override
     public boolean equals(Object other) {

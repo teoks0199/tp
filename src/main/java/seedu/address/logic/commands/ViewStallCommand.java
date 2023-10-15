@@ -52,7 +52,6 @@ public class ViewStallCommand extends Command {
             return true;
         }
 
-        // instanceof handles nulls
         if (!(other instanceof ViewStallCommand)) {
             return false;
         }
