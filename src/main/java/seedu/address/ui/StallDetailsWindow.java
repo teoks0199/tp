@@ -43,7 +43,7 @@ public class StallDetailsWindow extends UiPart<Stage> {
     private MenuItem helpMenuItem;
 
     @FXML
-    private StackPane personListPanelPlaceholder;
+    private StackPane stallListPanelPlaceholder;
 
     @FXML
     private StackPane resultDisplayPlaceholder;
@@ -111,7 +111,7 @@ public class StallDetailsWindow extends UiPart<Stage> {
      */
     void fillInnerParts() {
         oneStallPanel = new OneStallPanel(logic.getFilteredStallList());
-        personListPanelPlaceholder.getChildren().add(oneStallPanel.getRoot());
+        stallListPanelPlaceholder.getChildren().add(oneStallPanel.getRoot());
 
         resultDisplay = new ResultDisplay();
         resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());
@@ -149,24 +149,6 @@ public class StallDetailsWindow extends UiPart<Stage> {
 
     public void show() {
         primaryStage.show();
-    }
-
-    public boolean isShowing() {
-        return getRoot().isShowing();
-    }
-
-    /**
-     * Hides the stall details window.
-     */
-    public void hide() {
-        getRoot().hide();
-    }
-
-    /**
-     * Focuses on the stall details window.
-     */
-    public void focus() {
-        getRoot().requestFocus();
     }
 
     /**

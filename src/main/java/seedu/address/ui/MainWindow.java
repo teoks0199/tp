@@ -175,6 +175,7 @@ public class MainWindow extends UiPart<Stage> {
         stallDetailsWindow = new StallDetailsWindow(primaryStage, logic);
         stallDetailsWindow.show();
         stallDetailsWindow.fillInnerParts();
+
     }
 
 
@@ -202,6 +203,7 @@ public class MainWindow extends UiPart<Stage> {
             }
 
             if (commandResult.isStallDetail()) {
+                System.out.println("go to stall detail");
                 handleIsStallDetail();
             }
 
