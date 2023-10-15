@@ -68,7 +68,6 @@ public class Stall {
      */
     public void addItem(Item item) {
         menu.add(item);
-        System.out.println(menu);
     }
 
     /**
@@ -77,7 +76,6 @@ public class Stall {
      */
     public void deleteItem(Item item) {
         menu.remove(item);
-        System.out.println(menu);
     }
 
 
