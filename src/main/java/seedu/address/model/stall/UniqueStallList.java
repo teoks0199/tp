@@ -14,7 +14,7 @@ import seedu.address.model.stall.exceptions.StallNotFoundException;
 /**
  * A list of persons that enforces uniqueness between its elements and does not allow nulls.
  * A stall is considered unique by comparing using {@code Stall#isSamePerson(Stall)}. As such, adding and updating of
- * persons uses Stall#isSamePerson(Stall) for equality so as to ensure that the stall being added or updated is
+ * persons uses Stall#isSamePerson(Stall) for equality to ensure that the stall being added or updated is
  * unique in terms of identity in the UniqueStallList. However, the removal of a stall uses Stall#equals(Object) so
  * as to ensure that the stall with exactly the same fields will be removed.
  *
