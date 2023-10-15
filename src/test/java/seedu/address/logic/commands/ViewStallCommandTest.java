@@ -71,7 +71,6 @@ public class ViewStallCommandTest {
         showStallAtIndex(model, INDEX_FIRST_STALL);
 
         Index outOfBoundIndex = INDEX_SECOND_STALL;
-        // ensures that outOfBoundIndex is still in bounds of address book list
         assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getStallList().size());
 
         ViewStallCommand viewStallCommand = new ViewStallCommand(outOfBoundIndex);
