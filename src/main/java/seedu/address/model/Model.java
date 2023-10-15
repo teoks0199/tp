@@ -85,6 +85,4 @@ public interface Model {
      * @throws NullPointerException if {@code predicate} is null.
      */
     void updateFilteredStallList(Predicate<Stall> predicate);
-
-    void addStallReview(StallReview stallReview);
 }

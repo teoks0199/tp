@@ -38,7 +38,9 @@ public class Messages {
         final StringBuilder builder = new StringBuilder();
         builder.append(stall.getName())
                 .append("; Location: ")
-                .append(stall.getLocation());
+                .append(stall.getLocation())
+                .append("; REVIEW: ")
+                .append(stall.getStallReview());
         return builder.toString();
     }
 

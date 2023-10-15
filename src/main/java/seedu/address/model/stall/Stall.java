@@ -15,6 +15,7 @@ public class Stall {
     // Identity fields
     private final Name name;
     private final Location location;
+    private StallReview stallReview;
 
     /**
      * Every field must be present and not null.
@@ -31,6 +32,14 @@ public class Stall {
 
     public Location getLocation() {
         return location;
+    }
+
+    public StallReview getStallReview() {
+        return stallReview;
+    }
+
+    public void setStallReview (StallReview stallReview) {
+        this.stallReview = stallReview;
     }
 
 

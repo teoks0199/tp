@@ -8,5 +8,7 @@ public class CliSyntax {
     /* Prefix definitions */
     public static final Prefix PREFIX_NAME = new Prefix("n/");
     public static final Prefix PREFIX_LOCATION = new Prefix("l/");
+    public static final Prefix PREFIX_RATING = new Prefix("r/");
+    public static final Prefix PREFIX_DESCRIPTION = new Prefix("d/");
 
 }

@@ -124,10 +124,6 @@ public class AddressBook implements ReadOnlyAddressBook {
         return stalls.equals(otherAddressBook.stalls);
     }
 
-    public void addStallReview(StallReview stallReview) {
-
-    }
-
     @Override
     public int hashCode() {
         return stalls.hashCode();

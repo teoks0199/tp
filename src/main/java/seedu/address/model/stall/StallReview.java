@@ -45,10 +45,9 @@ public class StallReview {
 
         }
 
-
     @Override
     public String toString() {
-        return "rating:" + this.star + "review:" + review;
+        return "rating: " + this.star+ "/5" + " Review: " + review;
     }
 
     @Override
