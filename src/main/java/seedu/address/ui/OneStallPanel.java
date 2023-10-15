@@ -13,7 +13,7 @@ import seedu.address.model.stall.Stall;
 /**
  * Panel containing the list of persons.
  */
-public class StallListPanel extends UiPart<Region> {
+public class OneStallPanel extends UiPart<Region> {
     private static final String FXML = "StallListPanel.fxml";
     private final Logger logger = LogsCenter.getLogger(StallListPanel.class);
 
@@ -23,16 +23,16 @@ public class StallListPanel extends UiPart<Region> {
     /**
      * Creates a {@code StallListPanel} with the given {@code ObservableList}.
      */
-    public StallListPanel(ObservableList<Stall> stallList) {
+    public OneStallPanel(ObservableList<Stall> stallList) {
         super(FXML);
         stallListView.setItems(stallList);
-        stallListView.setCellFactory(listView -> new StallListViewCell());
+        stallListView.setCellFactory(listView -> new OneStallViewCell());
     }
 
     /**
      * Custom {@code ListCell} that displays the graphics of a {@code Stall} using a {@code StallCard}.
      */
-    class StallListViewCell extends ListCell<Stall> {
+    class OneStallViewCell extends ListCell<Stall> {
         @Override
         protected void updateItem(Stall stall, boolean empty) {
             super.updateItem(stall, empty);
@@ -41,9 +41,8 @@ public class StallListPanel extends UiPart<Region> {
                 setGraphic(null);
                 setText(null);
             } else {
-                setGraphic(new StallCard(stall, getIndex() + 1).getRoot());
+                setGraphic(new StallDetailsCard(stall, getIndex() + 1).getRoot());
             }
         }
     }
-
 }

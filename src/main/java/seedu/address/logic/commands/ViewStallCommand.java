@@ -42,7 +42,8 @@ public class ViewStallCommand extends Command {
 
         Stall stallToView = lastShownList.get(targetIndex.getZeroBased());
         model.showStall(stallToView);
-        return new CommandResult(String.format(MESSAGE_VIEW_STALL_SUCCESS, Messages.format(stallToView)));
+        return new CommandResult(String.format(MESSAGE_VIEW_STALL_SUCCESS, Messages.format(stallToView)),
+                false, false, true);
     }
 
     @Override

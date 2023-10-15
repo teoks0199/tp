@@ -21,7 +21,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
  * The Main Window. Provides the basic application layout containing
  * a menu bar and space where other JavaFX elements can be placed.
  */
-public class MainWindow extends UiPart<Stage> {
+public class StallDetailsWindow extends UiPart<Stage> {
 
     private static final String FXML = "MainWindow.fxml";
 
@@ -31,12 +31,10 @@ public class MainWindow extends UiPart<Stage> {
     private Logic logic;
 
     // Independent Ui parts residing in this Ui container
-    private StallListPanel stallListPanel;
+    private OneStallPanel oneStallPanel;
 
     private ResultDisplay resultDisplay;
     private HelpWindow helpWindow;
-
-    private StallDetailsWindow stallDetailsWindow;
 
     @FXML
     private StackPane commandBoxPlaceholder;
@@ -53,10 +51,11 @@ public class MainWindow extends UiPart<Stage> {
     @FXML
     private StackPane statusbarPlaceholder;
 
+
     /**
-     * Creates a {@code MainWindow} with the given {@code Stage} and {@code Logic}.
+     * Creates a {@code StallDetailsWindow} with the given {@code Stage} and {@code Logic}.
      */
-    public MainWindow(Stage primaryStage, Logic logic) {
+    public StallDetailsWindow(Stage primaryStage, Logic logic) {
         super(FXML, primaryStage);
 
         // Set dependencies
@@ -69,12 +68,9 @@ public class MainWindow extends UiPart<Stage> {
         setAccelerators();
 
         helpWindow = new HelpWindow();
-
     }
 
-    public Stage getPrimaryStage() {
-        return primaryStage;
-    }
+
 
     private void setAccelerators() {
         setAccelerator(helpMenuItem, KeyCombination.valueOf("F1"));
@@ -114,8 +110,8 @@ public class MainWindow extends UiPart<Stage> {
      * Fills up all the placeholders of this window.
      */
     void fillInnerParts() {
-        stallListPanel = new StallListPanel(logic.getFilteredStallList());
-        personListPanelPlaceholder.getChildren().add(stallListPanel.getRoot());
+        oneStallPanel = new OneStallPanel(logic.getFilteredStallList());
+        personListPanelPlaceholder.getChildren().add(oneStallPanel.getRoot());
 
         resultDisplay = new ResultDisplay();
         resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());
@@ -151,8 +147,26 @@ public class MainWindow extends UiPart<Stage> {
         }
     }
 
-    void show() {
+    public void show() {
         primaryStage.show();
+    }
+
+    public boolean isShowing() {
+        return getRoot().isShowing();
+    }
+
+    /**
+     * Hides the stall details window.
+     */
+    public void hide() {
+        getRoot().hide();
+    }
+
+    /**
+     * Focuses on the stall details window.
+     */
+    public void focus() {
+        getRoot().requestFocus();
     }
 
     /**
@@ -167,19 +181,8 @@ public class MainWindow extends UiPart<Stage> {
         primaryStage.hide();
     }
 
-    /**
-     * Switches to the window with only one stall detail.
-     */
-    @FXML
-    public void handleIsStallDetail() {
-        stallDetailsWindow = new StallDetailsWindow(primaryStage, logic);
-        stallDetailsWindow.show();
-        stallDetailsWindow.fillInnerParts();
-    }
-
-
-    public StallListPanel getPersonListPanel() {
-        return stallListPanel;
+    public OneStallPanel getPersonListPanel() {
+        return oneStallPanel;
     }
 
     /**
@@ -199,10 +202,6 @@ public class MainWindow extends UiPart<Stage> {
 
             if (commandResult.isExit()) {
                 handleExit();
-            }
-
-            if (commandResult.isStallDetail()) {
-                handleIsStallDetail();
             }
 
             return commandResult;
