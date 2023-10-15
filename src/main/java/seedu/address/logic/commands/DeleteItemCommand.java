@@ -30,6 +30,9 @@ public class DeleteItemCommand extends Command {
     private final Index itemIndex;
     private final Index stallIndex;
 
+    /**
+     * Creates a DeleteItemCommand to delete the specified {@code Item}
+     */
     public DeleteItemCommand(Index stallIndex, Index itemIndex) {
         this.itemIndex = itemIndex;
         this.stallIndex = stallIndex;
