@@ -379,7 +379,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     
   Use case ends.
 
-*Use case: Add a menu item to a stall**
+**Use case: Add a menu item to a stall**
 
 **MSS**
 
@@ -433,7 +433,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 2.
 
-*Use case: Delete a menu item from stall**
+**Use case: Delete a menu item from stall**
 
 **MSS**
 

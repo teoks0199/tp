@@ -12,6 +12,7 @@ import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.item.Item;
+import seedu.address.model.item.review.ItemReview;
 import seedu.address.model.stall.Stall;
 
 /**
@@ -151,6 +152,13 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public boolean hasItemReview(Stall stall, Item item) {
+        requireNonNull(stall);
+        requireNonNull(item);
+        return stall.getMenu().getItem(item).hasItemReview();
+    }
+
+    @Override
     public void addItem(Stall stall, Item item) {
         requireNonNull(stall);
         requireNonNull(item);
@@ -162,6 +170,21 @@ public class ModelManager implements Model {
         requireNonNull(stall);
         requireNonNull(item);
         stall.deleteItem(item);
+    }
+
+    @Override
+    public void addItemReview(Stall stall, Item item, ItemReview itemReview) {
+        requireNonNull(stall);
+        requireNonNull(item);
+        requireNonNull(itemReview);
+        stall.getMenu().getItem(item).addItemReview(itemReview);
+    }
+
+    @Override
+    public void deleteItemReview(Stall stall, Item item) {
+        requireNonNull(stall);
+        requireNonNull(item);
+        stall.getMenu().getItem(item).deleteItemReview();
     }
 
     @Override
