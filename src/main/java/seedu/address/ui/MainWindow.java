@@ -38,8 +38,6 @@ public class MainWindow extends UiPart<Stage> {
     private ResultDisplay resultDisplay;
     private HelpWindow helpWindow;
 
-    private StallDetailsWindow stallDetailsWindow;
-
     @FXML
     private StackPane commandBoxPlaceholder;
 
@@ -150,7 +148,7 @@ public class MainWindow extends UiPart<Stage> {
     @FXML
     public void handleHelp() {
         if (!helpWindow.isShowing()) {
-            stallDetailsWindow.show();
+            helpWindow.show();
         } else {
             helpWindow.focus();
         }
