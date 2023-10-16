@@ -57,7 +57,7 @@
             <StackPane fx:id="stallListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
           </VBox>
 
-          <VBox fx:id="stallDetails" styleClass="pane-with-border" prefWidth="170" minHeight="100" prefHeight="100" VBox.vgrow="ALWAYS">
+          <VBox fx:id="stallDetails" styleClass="pane-with-border" prefWidth="170" minHeight="100" VBox.vgrow="ALWAYS">
             <padding>
               <Insets top="10" right="10" bottom="10" left="10" />
             </padding>
