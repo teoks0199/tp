@@ -10,7 +10,7 @@ import seedu.address.commons.util.AppUtil;
  */
 public class StallReview {
     public static final String MESSAGE_CONSTRAINTS =
-            "Review should only contain alphanumeric characters and spaces, and it should not be BLANK!";
+            "Review should only contain alphanumeric characters, punctuations and spaces, and it should not be BLANK!";
     public static final String STAR_CONSTRAINTS =
             "Rating should only be an integer between 0-5!";
 
@@ -39,7 +39,7 @@ public class StallReview {
      * @return True if the review is valid, false otherwise.
      */
     public static boolean isValidReview(String test) {
-        return test.matches("[\\p{Alnum}][\\p{Alnum} ]*");
+        return test.matches("[\\p{Alnum}][\\p{Alnum} \\p{Punct}]*");
     }
 
     /**
