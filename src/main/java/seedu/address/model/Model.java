@@ -5,6 +5,7 @@ import java.util.function.Predicate;
 
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
+import seedu.address.model.item.Item;
 import seedu.address.model.stall.Stall;
 
 /**
@@ -84,4 +85,22 @@ public interface Model {
      * @throws NullPointerException if {@code predicate} is null.
      */
     void updateFilteredStallList(Predicate<Stall> predicate);
+
+    /**
+     * Returns true if an item with the same identity as {@code item} exists in the menu.
+     */
+    boolean hasItem(Stall stallIndex, Item item);
+
+
+    /**
+     * Adds the given item.
+     * {@code item} must not already exist in the menu.
+     */
+    void addItem(Stall stallIndex, Item item);
+
+    /**
+     * Deletes the given item.
+     * The item must exist in the address book.
+     */
+    void deleteItem(Stall stallIndex, Item item);
 }

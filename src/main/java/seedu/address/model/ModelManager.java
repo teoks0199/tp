@@ -11,6 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
+import seedu.address.model.item.Item;
 import seedu.address.model.stall.Stall;
 
 /**
@@ -126,6 +127,27 @@ public class ModelManager implements Model {
     public void updateFilteredStallList(Predicate<Stall> predicate) {
         requireNonNull(predicate);
         filteredStalls.setPredicate(predicate);
+    }
+
+    @Override
+    public boolean hasItem(Stall stall, Item item) {
+        requireNonNull(stall);
+        requireNonNull(item);
+        return stall.hasItem(item);
+    }
+
+    @Override
+    public void addItem(Stall stall, Item item) {
+        requireNonNull(stall);
+        requireNonNull(item);
+        stall.addItem(item);
+    }
+
+    @Override
+    public void deleteItem(Stall stall, Item item) {
+        requireNonNull(stall);
+        requireNonNull(item);
+        stall.deleteItem(item);
     }
 
     @Override
