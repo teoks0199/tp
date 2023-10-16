@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 
 import seedu.address.logic.parser.Prefix;
 import seedu.address.model.item.Item;
+import seedu.address.model.item.review.ItemReview;
 import seedu.address.model.stall.Stall;
 
 /**
@@ -50,6 +51,17 @@ public class Messages {
     public static String format(Item item) {
         final StringBuilder builder = new StringBuilder();
         builder.append(item.getName());
+        return builder.toString();
+    }
+
+    /**
+     * Formats the {@code itemReview} for display to the user.
+     */
+    public static String format(ItemReview itemReview) {
+        final StringBuilder builder = new StringBuilder();
+        builder.append(itemReview.getRating())
+                .append("; Description: ")
+                .append(itemReview.getDescription());
         return builder.toString();
     }
 

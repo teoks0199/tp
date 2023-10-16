@@ -23,6 +23,7 @@ import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.ReadOnlyUserPrefs;
 import seedu.address.model.item.Item;
+import seedu.address.model.item.review.ItemReview;
 import seedu.address.model.stall.Stall;
 import seedu.address.testutil.StallBuilder;
 
@@ -172,6 +173,21 @@ public class AddStallCommandTest {
 
         @Override
         public boolean hasItem(Stall stall, Item item) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void addItemReview(Stall stall, Item item, ItemReview itemReview) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void deleteItemReview(Stall stall, Item item) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public boolean hasItemReview(Stall stall, Item item) {
             throw new AssertionError("This method should not be called.");
         }
     }

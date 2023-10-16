@@ -5,15 +5,19 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import java.util.Objects;
 
 import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.model.item.review.ItemReview;
+import seedu.address.model.item.review.exceptions.DuplicateItemReviewException;
+import seedu.address.model.item.review.exceptions.ItemReviewNotFoundException;
 
 /**
  * Represents an Item in the address book.
- * Guarantees: details are present and not null, field values are validated, immutable.
+ * Guarantees: details are present and not null, field values are validated.
  */
 public class Item {
 
     // Identity fields
     private final ItemName itemName;
+    private ItemReview itemReview;
 
     /**
      * Every field must be present and not null.
@@ -21,10 +25,41 @@ public class Item {
     public Item(ItemName itemName) {
         requireAllNonNull(itemName);
         this.itemName = itemName;
+        this.itemReview = null;
     }
 
     public ItemName getName() {
         return itemName;
+    }
+
+    /**
+     * Adds an item review to the item.
+     *
+     * @param itemReview the item review to be added.
+     */
+    public void addItemReview(ItemReview itemReview) {
+        requireAllNonNull(itemReview);
+        if (hasItemReview()) {
+            throw new DuplicateItemReviewException();
+        }
+        this.itemReview = itemReview;
+    }
+
+    /**
+     * Deletes the item review from the item.
+     */
+    public void deleteItemReview() {
+        if (!hasItemReview()) {
+            throw new ItemReviewNotFoundException();
+        }
+        this.itemReview = null;
+    }
+
+    /**
+     * Returns true if the item has an item review.
+     */
+    public boolean hasItemReview() {
+        return this.itemReview != null;
     }
 
 
@@ -42,8 +77,8 @@ public class Item {
     }
 
     /**
-     * Returns true if both persons have the same identity and data fields.
-     * This defines a stronger notion of equality between two persons.
+     * Returns true if both items have the same identity and data fields.
+     * This defines a stronger notion of equality between two items.
      */
     @Override
     public boolean equals(Object other) {

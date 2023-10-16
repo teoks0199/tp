@@ -46,6 +46,11 @@ public class UniqueItemList implements Iterable<Item> {
         return internalList.get(index);
     }
 
+    public Item getItem(Item item) {
+        requireNonNull(item);
+        return internalList.stream().filter(item::isSameItem).findFirst().get();
+    }
+
     /**
      * Returns true if the list contains an equivalent item as the given argument.
      */
