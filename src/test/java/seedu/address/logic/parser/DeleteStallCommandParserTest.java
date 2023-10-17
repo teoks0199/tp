@@ -1,6 +1,8 @@
 package seedu.address.logic.parser;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.commands.CommandTestUtil.PREAMBLE_WHITESPACE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_STALL;
@@ -18,16 +20,18 @@ import seedu.address.logic.commands.DeleteStallCommand;
  */
 public class DeleteStallCommandParserTest {
 
-    private DeleteCommandParser parser = new DeleteCommandParser();
+    private DeleteStallCommandParser parser = new DeleteStallCommandParser();
 
     @Test
     public void parse_validArgs_returnsDeleteCommand() {
-        assertParseSuccess(parser, "1", new DeleteStallCommand(INDEX_FIRST_STALL));
+        String userInput = PREAMBLE_WHITESPACE + " " + PREFIX_STALL + "1";
+        assertParseSuccess(parser, userInput, new DeleteStallCommand(INDEX_FIRST_STALL));
     }
 
     @Test
     public void parse_invalidArgs_throwsParseException() {
-        assertParseFailure(parser, "a", String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+        String userInput = PREAMBLE_WHITESPACE + " " + PREFIX_STALL + "a";
+        assertParseFailure(parser, userInput, String.format(MESSAGE_INVALID_COMMAND_FORMAT,
                 DeleteStallCommand.MESSAGE_USAGE));
     }
 }

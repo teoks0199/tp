@@ -1,7 +1,6 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
 import java.util.List;
 
@@ -15,22 +14,20 @@ import seedu.address.model.stall.Stall;
 /**
  * Deletes a stall identified using it's displayed index from the address book.
  */
-public class DeleteStallCommand extends Command {
+public class ViewStallCommand extends Command {
 
-    public static final String COMMAND_WORD = "delete-stall";
+    public static final String COMMAND_WORD = "view-stall";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Deletes the stall identified by the index number used in the displayed stall list.\n"
-            + "Parameters: "
-            + PREFIX_STALL + "STALL_INDEX (must be a positive integer)\n"
-            + "Example: " + COMMAND_WORD + " "
-            + PREFIX_STALL + "1";
+            + ": Displays the details of the stall identified by the index number used in the displayed stall list.\n"
+            + "Parameters: INDEX (must be a positive integer)\n"
+            + "Example: " + COMMAND_WORD + " 1";
 
-    public static final String MESSAGE_DELETE_STALL_SUCCESS = "Deleted Stall: %1$s";
+    public static final String MESSAGE_VIEW_STALL_SUCCESS = "Here are the details of this stall.";
 
     private final Index targetIndex;
 
-    public DeleteStallCommand(Index targetIndex) {
+    public ViewStallCommand(Index targetIndex) {
         this.targetIndex = targetIndex;
     }
 
@@ -43,9 +40,10 @@ public class DeleteStallCommand extends Command {
             throw new CommandException(Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
         }
 
-        Stall stallToDelete = lastShownList.get(targetIndex.getZeroBased());
-        model.deleteStall(stallToDelete);
-        return new CommandResult(String.format(MESSAGE_DELETE_STALL_SUCCESS, Messages.format(stallToDelete)));
+        Stall stallToView = lastShownList.get(targetIndex.getZeroBased());
+        model.showStall(stallToView);
+        return new CommandResult(String.format(MESSAGE_VIEW_STALL_SUCCESS, Messages.format(stallToView)),
+                false, false, true);
     }
 
     @Override
@@ -54,13 +52,12 @@ public class DeleteStallCommand extends Command {
             return true;
         }
 
-        // instanceof handles nulls
-        if (!(other instanceof DeleteStallCommand)) {
+        if (!(other instanceof ViewStallCommand)) {
             return false;
         }
 
-        DeleteStallCommand otherDeleteStallCommand = (DeleteStallCommand) other;
-        return targetIndex.equals(otherDeleteStallCommand.targetIndex);
+        ViewStallCommand otherViewStallCommand = (ViewStallCommand) other;
+        return targetIndex.equals(otherViewStallCommand.targetIndex);
     }
 
     @Override

@@ -23,6 +23,7 @@ import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.ReadOnlyUserPrefs;
 import seedu.address.model.item.Item;
+import seedu.address.model.item.review.ItemReview;
 import seedu.address.model.stall.Stall;
 import seedu.address.testutil.StallBuilder;
 
@@ -146,12 +147,22 @@ public class AddStallCommandTest {
         }
 
         @Override
+        public void showStall(Stall stall) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public void setStall(Stall target, Stall editedStall) {
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
         public ObservableList<Stall> getFilteredStallList() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public ObservableList<Stall> getTempFilteredStallList() {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -174,6 +185,21 @@ public class AddStallCommandTest {
         public boolean hasItem(Stall stall, Item item) {
             throw new AssertionError("This method should not be called.");
         }
+
+        @Override
+        public void addItemReview(Stall stall, Item item, ItemReview itemReview) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void deleteItemReview(Stall stall, Item item) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public boolean hasItemReview(Stall stall, Item item) {
+            throw new AssertionError("This method should not be called.");
+        }
     }
 
     /**
@@ -192,6 +218,12 @@ public class AddStallCommandTest {
             requireNonNull(stall);
             return this.stall.isSameStall(stall);
         }
+
+        @Override
+        public void showStall(Stall stall) {
+            requireNonNull(stall);
+
+        }
     }
 
     /**
@@ -204,6 +236,11 @@ public class AddStallCommandTest {
         public boolean hasStall(Stall stall) {
             requireNonNull(stall);
             return stallsAdded.stream().anyMatch(stall::isSameStall);
+        }
+
+        @Override
+        public void showStall(Stall stall) {
+            requireNonNull(stall);
         }
 
         @Override

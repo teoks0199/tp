@@ -46,12 +46,10 @@ public class AddItemCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
-
-        requireNonNull(model);
         List<Stall> lastShownList = model.getFilteredStallList();
 
         if (stallIndex.getZeroBased() >= lastShownList.size()) {
-            throw new CommandException(Messages.MESSAGE_INVALID_ITEM_DISPLAYED_INDEX);
+            throw new CommandException(Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
         }
 
         Stall stallToUpdate = lastShownList.get(stallIndex.getZeroBased());
