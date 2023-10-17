@@ -1,9 +1,9 @@
 package seedu.address.testutil;
 
-import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_ASIAN;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_BRITISH;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_ASIAN;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BRITISH;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,10 +35,10 @@ public class TypicalStalls {
     public static final Stall IDA = new StallBuilder().withName("Ida Mueller").withLocation("chicago ave").build();
 
     // Manually added - Stall's details found in {@code CommandTestUtil}
-    public static final Stall AMY = new StallBuilder().withName(VALID_NAME_AMY).withLocation(VALID_LOCATION_AMY)
-            .build();
-    public static final Stall BOB = new StallBuilder().withName(VALID_NAME_BOB).withLocation(VALID_LOCATION_BOB)
-            .build();
+    public static final Stall ASIAN = new StallBuilder()
+            .withName(VALID_NAME_ASIAN).withLocation(VALID_LOCATION_ASIAN).build();
+    public static final Stall BRITISH = new StallBuilder()
+            .withName(VALID_NAME_BRITISH).withLocation(VALID_LOCATION_BRITISH).build();
 
     public static final String KEYWORD_MATCHING_MEIER = "Meier"; // A keyword that matches MEIER
 

@@ -3,10 +3,10 @@ package seedu.address.model.stall;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_LOCATION_BRITISH;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalStalls.AUNTIES_COOKING;
-import static seedu.address.testutil.TypicalStalls.BOB;
+import static seedu.address.testutil.TypicalStalls.BRITISH;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -41,7 +41,7 @@ public class UniqueStallListTest {
     @Test
     public void contains_stallWithSameIdentityFieldsInList_returnsFalse() {
         uniqueStallList.add(AUNTIES_COOKING);
-        Stall editedAlice = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BOB)
+        Stall editedAlice = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH)
                 .build();
         assertFalse(uniqueStallList.contains(editedAlice));
     }
@@ -84,7 +84,7 @@ public class UniqueStallListTest {
     @Test
     public void setStall_editedStallHasSameIdentity_success() {
         uniqueStallList.add(AUNTIES_COOKING);
-        Stall editedAlice = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BOB)
+        Stall editedAlice = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH)
                 .build();
         uniqueStallList.setStall(AUNTIES_COOKING, editedAlice);
         UniqueStallList expectedUniqueStallList = new UniqueStallList();
@@ -95,17 +95,17 @@ public class UniqueStallListTest {
     @Test
     public void setStall_editedStallHasDifferentIdentity_success() {
         uniqueStallList.add(AUNTIES_COOKING);
-        uniqueStallList.setStall(AUNTIES_COOKING, BOB);
+        uniqueStallList.setStall(AUNTIES_COOKING, BRITISH);
         UniqueStallList expectedUniqueStallList = new UniqueStallList();
-        expectedUniqueStallList.add(BOB);
+        expectedUniqueStallList.add(BRITISH);
         assertEquals(expectedUniqueStallList, uniqueStallList);
     }
 
     @Test
     public void setStall_editedStallHasNonUniqueIdentity_throwsDuplicateStallException() {
         uniqueStallList.add(AUNTIES_COOKING);
-        uniqueStallList.add(BOB);
-        assertThrows(DuplicateStallException.class, () -> uniqueStallList.setStall(AUNTIES_COOKING, BOB));
+        uniqueStallList.add(BRITISH);
+        assertThrows(DuplicateStallException.class, () -> uniqueStallList.setStall(AUNTIES_COOKING, BRITISH));
     }
 
     @Test
@@ -135,7 +135,7 @@ public class UniqueStallListTest {
     public void setStalls_uniqueStallList_replacesOwnListWithProvidedUniqueStallList() {
         uniqueStallList.add(AUNTIES_COOKING);
         UniqueStallList expectedUniqueStallList = new UniqueStallList();
-        expectedUniqueStallList.add(BOB);
+        expectedUniqueStallList.add(BRITISH);
         uniqueStallList.setStalls(expectedUniqueStallList);
         assertEquals(expectedUniqueStallList, uniqueStallList);
     }
@@ -148,10 +148,10 @@ public class UniqueStallListTest {
     @Test
     public void setStalls_list_replacesOwnListWithProvidedList() {
         uniqueStallList.add(AUNTIES_COOKING);
-        List<Stall> stallList = Collections.singletonList(BOB);
+        List<Stall> stallList = Collections.singletonList(BRITISH);
         uniqueStallList.setStalls(stallList);
         UniqueStallList expectedUniqueStallList = new UniqueStallList();
-        expectedUniqueStallList.add(BOB);
+        expectedUniqueStallList.add(BRITISH);
         assertEquals(expectedUniqueStallList, uniqueStallList);
     }
 

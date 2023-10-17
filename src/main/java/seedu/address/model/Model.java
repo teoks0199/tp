@@ -3,6 +3,7 @@ package seedu.address.model;
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.item.Item;
+import seedu.address.model.item.review.ItemReview;
 import seedu.address.model.stall.Stall;
 
 import java.nio.file.Path;
@@ -91,6 +92,10 @@ public interface Model {
      */
     boolean hasItem(Stall stallIndex, Item item);
 
+    /**
+     * Returns true if an item review exists in the item.
+     */
+    boolean hasItemReview(Stall stallIndex, Item item);
 
     /**
      * Adds the given item.
@@ -103,4 +108,18 @@ public interface Model {
      * The item must exist in the stall menu.
      */
     void deleteItem(Stall stallIndex, Item item);
+
+    /**
+     * Adds the given item review.
+     *
+     * {@code itemReview} must not already exist in the item.
+     */
+    void addItemReview(Stall stallIndex, Item itemIndex, ItemReview itemReview);
+
+    /**
+     * Deletes the given item review.
+     *
+     * {@code itemReview} must exist in the item.
+     */
+    void deleteItemReview(Stall stallIndex, Item itemIndex);
 }

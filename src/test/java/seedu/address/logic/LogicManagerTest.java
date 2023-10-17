@@ -3,10 +3,10 @@ package seedu.address.logic;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX;
 import static seedu.address.logic.Messages.MESSAGE_UNKNOWN_COMMAND;
-import static seedu.address.logic.commands.CommandTestUtil.LOCATION_DESC_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_AMY;
+import static seedu.address.logic.commands.CommandTestUtil.LOCATION_DESC_ASIAN;
+import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_ASIAN;
 import static seedu.address.testutil.Assert.assertThrows;
-import static seedu.address.testutil.TypicalStalls.AMY;
+import static seedu.address.testutil.TypicalStalls.ASIAN;
 
 import java.io.IOException;
 import java.nio.file.AccessDeniedException;
@@ -163,8 +163,8 @@ public class LogicManagerTest {
         logic = new LogicManager(model, storage);
 
         // Triggers the saveAddressBook method by executing an add command
-        String addCommand = AddStallCommand.COMMAND_WORD + NAME_DESC_AMY + LOCATION_DESC_AMY;
-        Stall expectedStall = new StallBuilder(AMY).build();
+        String addCommand = AddStallCommand.COMMAND_WORD + NAME_DESC_ASIAN + LOCATION_DESC_ASIAN;
+        Stall expectedStall = new StallBuilder(ASIAN).build();
         ModelManager expectedModel = new ModelManager();
         expectedModel.addStall(expectedStall);
         assertCommandFailure(addCommand, CommandException.class, expectedMessage, expectedModel);

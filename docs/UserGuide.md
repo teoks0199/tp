@@ -105,11 +105,11 @@ Japanese Stall ★★★★☆ has been deleted.
 ```
 re-enter in the format : delete-stall s/<STALL_NUMBER>
 ```
-**1.4 Reviewing a stall:** rate-stall
+**1.4 Reviewing a stall:** review-stall
 
-**Command format:** rate-stall s/STALL_NUMBER r/STALL_RATING d/DESCRIPTION
+**Command format:** review-stall s/STALL_NUMBER r/STALL_RATING d/DESCRIPTION
 
-**Ex.:** rate-stall s/1 r/5 d/the auntie very chio
+**Ex.:** review-stall s/1 r/5 d/the auntie very chio
 
 **Expected output (Success):**
 ```
@@ -118,7 +118,7 @@ Review: the auntie very chio
 ```
 **Expected output (Fail):**
 ```
-re-enter in the format : rate-stall s/STALL_NUMBER r/STALL_RATING d/DESCRIPTION
+re-enter in the format : review-stall s/STALL_NUMBER r/STALL_RATING d/DESCRIPTION
 ```
 **Acceptable values:**
 - s/: Positive Integer less than or equal to the size of list
@@ -186,25 +186,45 @@ re-enter in the format : delete-item s/STALL_NUMBER i/ITEM_NUMBER
 - s/: Positive Integer less than or equal to the size of list
 - i/: Positive Integer less than or equal to the size of list
 
-**2.4 Reviewing an item:** rate-item
+**2.4 Reviewing an item:** review-item
 
-**Command format:** rate-item s/STALL_NUMBER i/ITEM_NUMBER r/ITEM_RATING d/DESCRIPTION
+**Command format:** review-item s/STALL_NUMBER i/ITEM_NUMBER r/ITEM_RATING d/DESCRIPTION
 
-**Ex.:** rate-item s/1 i/1 r/5 d/the auntie very chio
+**Ex.:** review-item s/1 i/1 r/5 d/Tasty chicken rice with a good amount of meat and rice. The chilli is also very good.
 
 **Expected output (Success):**
 ```
-Yay! You have added a rating of ★★★★★ for the Chicken Rice at the Japanese Stall
-Review: the auntie very chio
+Yay! You have added a review for the White Chicken Rice at the Chicken Rice Stall at Deck.
+Review: 
+★★★★★
+Tasty chicken rice with a good amount of meat and rice. The chilli is also very good.
 ```
 **Expected output (Fail):**
 ```
-re-enter in the format: rate-item s/STALL_NUMBER i/ITEM_NUMBER r/ITEM_RATING d/DESCRIPTION
+re-enter in the format: review-item s/STALL_NUMBER i/ITEM_NUMBER r/ITEM_RATING d/DESCRIPTION
 ```
 **Acceptable values:**
-- s/: Positive Integer less than or equal to the size of list
-- i/: Positive Integer less than or equal to the size of list
+- s/: Positive Integer less than or equal to the size of stall list
+- i/: Positive Integer less than or equal to the size of menu
 - r/: Integer from 0 to 5
 - d/: String
+
+**2.5 Deleting an item review:** delete-item-review
+
+**Command format:** delete-item-review s/STALL_NUMBER i/ITEM_NUMBER
+
+**Ex.:** delete-item-review s/1 i/1
+
+**Expected output (Success):**
+```You have deleted the review for the White Chicken Rice at the Chicken Rice Stall at Deck.```
+
+**Expected output (Fail):**
+```
+re-enter in the format: delete-item-review s/STALL_NUMBER i/ITEM_NUMBER
+```
+
+**Acceptable values:**
+- s/: Positive Integer less than or equal to the size of stall list
+- i/: Positive Integer less than or equal to the size of menu
 --------------------------------------------------------------------------------------------------------------------
 

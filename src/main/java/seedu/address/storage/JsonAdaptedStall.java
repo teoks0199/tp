@@ -22,7 +22,7 @@ class JsonAdaptedStall {
      * Constructs a {@code JsonAdaptedStall} with the given stall details.
      */
     @JsonCreator
-    public JsonAdaptedStall(@JsonProperty("name") String name, @JsonProperty("locationName") String location) {
+    public JsonAdaptedStall(@JsonProperty("name") String name, @JsonProperty("location") String location) {
         this.name = name;
         this.location = location;
     }
