@@ -32,6 +32,9 @@ public class MainWindow extends UiPart<Stage> {
 
     // Independent Ui parts residing in this Ui container
     private StallListPanel stallListPanel;
+
+    private OneStallPanel oneStallPanel;
+
     private ResultDisplay resultDisplay;
     private HelpWindow helpWindow;
 
@@ -43,6 +46,9 @@ public class MainWindow extends UiPart<Stage> {
 
     @FXML
     private StackPane stallListPanelPlaceholder;
+
+    @FXML
+    private StackPane stallDetailsPanelPlaceholder;
 
     @FXML
     private StackPane resultDisplayPlaceholder;
@@ -66,6 +72,7 @@ public class MainWindow extends UiPart<Stage> {
         setAccelerators();
 
         helpWindow = new HelpWindow();
+
     }
 
     public Stage getPrimaryStage() {
@@ -163,6 +170,16 @@ public class MainWindow extends UiPart<Stage> {
         primaryStage.hide();
     }
 
+    /**
+     * Switches to the window with only one stall detail.
+     */
+    @FXML
+    public void handleIsStallDetail() {
+        oneStallPanel = new OneStallPanel(logic.getTempFilteredStallList());
+        stallDetailsPanelPlaceholder.getChildren().add(oneStallPanel.getRoot());
+    }
+
+
     public StallListPanel getStallListPanel() {
         return stallListPanel;
     }
@@ -184,6 +201,10 @@ public class MainWindow extends UiPart<Stage> {
 
             if (commandResult.isExit()) {
                 handleExit();
+            }
+
+            if (commandResult.isStallDetail()) {
+                handleIsStallDetail();
             }
 
             return commandResult;

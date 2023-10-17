@@ -65,6 +65,8 @@ public interface Model {
      */
     void deleteStall(Stall target);
 
+    void showStall(Stall stall);
+
     /**
      * Adds the given stall.
      * {@code stall} must not already exist in the address book.
@@ -80,6 +82,8 @@ public interface Model {
 
     /** Returns an unmodifiable view of the filtered stall list */
     ObservableList<Stall> getFilteredStallList();
+
+    ObservableList<Stall> getTempFilteredStallList();
 
     /**
      * Updates the filter of the filtered stall list to filter by the given {@code predicate}.

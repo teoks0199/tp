@@ -24,6 +24,7 @@ public class ModelManager implements Model {
     private final AddressBook addressBook;
     private final UserPrefs userPrefs;
     private final FilteredList<Stall> filteredStalls;
+    private final FilteredList<Stall> tempFilteredStalls;
 
     /**
      * Initializes a ModelManager with the given addressBook and userPrefs.
@@ -36,6 +37,7 @@ public class ModelManager implements Model {
         this.addressBook = new AddressBook(addressBook);
         this.userPrefs = new UserPrefs(userPrefs);
         filteredStalls = new FilteredList<>(this.addressBook.getStallList());
+        tempFilteredStalls = new FilteredList<>(this.addressBook.getStallList());
     }
 
     public ModelManager() {
@@ -96,6 +98,13 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public void showStall(Stall stall) {
+        requireNonNull(stall);
+        Predicate<Stall> predicate = stallll -> stallll.equals(stall);
+        tempFilteredStalls.setPredicate(predicate);
+    }
+
+    @Override
     public void deleteStall(Stall target) {
         addressBook.removeStall(target);
     }
@@ -122,6 +131,11 @@ public class ModelManager implements Model {
     @Override
     public ObservableList<Stall> getFilteredStallList() {
         return filteredStalls;
+    }
+
+    @Override
+    public ObservableList<Stall> getTempFilteredStallList() {
+        return tempFilteredStalls;
     }
 
     @Override
