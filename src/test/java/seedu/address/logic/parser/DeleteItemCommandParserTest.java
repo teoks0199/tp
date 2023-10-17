@@ -11,6 +11,7 @@ import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_ITEM;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_STALL;
 
 import org.junit.jupiter.api.Test;
+
 import seedu.address.logic.commands.DeleteItemCommand;
 
 public class DeleteItemCommandParserTest {

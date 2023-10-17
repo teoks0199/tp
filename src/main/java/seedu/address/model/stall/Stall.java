@@ -4,6 +4,7 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.Objects;
 
+import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.item.Item;
 import seedu.address.model.item.UniqueItemList;
@@ -41,8 +42,12 @@ public class Stall {
         return menu;
     }
 
+    public Item getItem(Index index) {
+        return menu.getItem(index.getZeroBased());
+    }
+
     /**
-     * Returns true if both stalls have the same name.
+     * Returns true if both stalls have the same name and location.
      * This defines a weaker notion of equality between two stalls.
      */
     public boolean isSameStall(Stall otherStall) {
@@ -80,8 +85,8 @@ public class Stall {
 
 
     /**
-     * Returns true if both persons have the same identity and data fields.
-     * This defines a stronger notion of equality between two persons.
+     * Returns true if both stalls have the same identity and data fields.
+     * This defines a stronger notion of equality between two stalls.
      */
     @Override
     public boolean equals(Object other) {

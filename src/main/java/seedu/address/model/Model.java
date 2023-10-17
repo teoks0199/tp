@@ -1,13 +1,13 @@
 package seedu.address.model;
 
+import java.nio.file.Path;
+import java.util.function.Predicate;
+
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.item.Item;
 import seedu.address.model.item.review.ItemReview;
 import seedu.address.model.stall.Stall;
-
-import java.nio.file.Path;
-import java.util.function.Predicate;
 
 /**
  * The API of the Model component.
@@ -65,6 +65,8 @@ public interface Model {
      */
     void deleteStall(Stall target);
 
+    void showStall(Stall stall);
+
     /**
      * Adds the given stall.
      * {@code stall} must not already exist in the address book.
@@ -80,6 +82,15 @@ public interface Model {
 
     /** Returns an unmodifiable view of the filtered stall list */
     ObservableList<Stall> getFilteredStallList();
+
+    ObservableList<Stall> getTempFilteredStallList();
+    /** Returns the desired filtered item */
+    Item getFilteredItem();
+
+    /**
+     * Returns the item.
+     */
+    void setFilteredItem(Item item);
 
     /**
      * Updates the filter of the filtered stall list to filter by the given {@code predicate}.

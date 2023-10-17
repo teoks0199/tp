@@ -16,6 +16,7 @@ import seedu.address.logic.Logic;
 import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.item.Item;
 
 /**
  * The Main Window. Provides the basic application layout containing
@@ -32,6 +33,9 @@ public class MainWindow extends UiPart<Stage> {
 
     // Independent Ui parts residing in this Ui container
     private StallListPanel stallListPanel;
+
+    private OneStallPanel oneStallPanel;
+
     private ResultDisplay resultDisplay;
     private HelpWindow helpWindow;
 
@@ -42,8 +46,10 @@ public class MainWindow extends UiPart<Stage> {
     private MenuItem helpMenuItem;
 
     @FXML
-    private StackPane stallListPanelPlaceholder;
+    private StackPane leftPanelPlaceholder;
 
+    @FXML
+    private StackPane rightPanelPlaceholder;
     @FXML
     private StackPane resultDisplayPlaceholder;
 
@@ -66,6 +72,7 @@ public class MainWindow extends UiPart<Stage> {
         setAccelerators();
 
         helpWindow = new HelpWindow();
+
     }
 
     public Stage getPrimaryStage() {
@@ -111,10 +118,23 @@ public class MainWindow extends UiPart<Stage> {
      */
     void fillInnerParts() {
         stallListPanel = new StallListPanel(logic.getFilteredStallList());
-        stallListPanelPlaceholder.getChildren().add(stallListPanel.getRoot());
+        leftPanelPlaceholder.getChildren().add(stallListPanel.getRoot());
 
         resultDisplay = new ResultDisplay();
         resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());
+
+        StatusBarFooter statusBarFooter = new StatusBarFooter(logic.getAddressBookFilePath());
+        statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());
+
+        CommandBox commandBox = new CommandBox(this::executeCommand);
+        commandBoxPlaceholder.getChildren().add(commandBox.getRoot());
+    }
+
+    void backToHomePage() {
+        stallListPanel = new StallListPanel(logic.getFilteredStallList());
+        leftPanelPlaceholder.getChildren().add(stallListPanel.getRoot());
+
+        rightPanelPlaceholder.getChildren().clear();
 
         StatusBarFooter statusBarFooter = new StatusBarFooter(logic.getAddressBookFilePath());
         statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());
@@ -163,8 +183,28 @@ public class MainWindow extends UiPart<Stage> {
         primaryStage.hide();
     }
 
+    /**
+     * Switches to the window with only one stall detail.
+     */
+    @FXML
+    public void handleIsStallDetail() {
+        oneStallPanel = new OneStallPanel(logic.getTempFilteredStallList());
+        rightPanelPlaceholder.getChildren().add(oneStallPanel.getRoot());
+    }
+
+
     public StallListPanel getStallListPanel() {
         return stallListPanel;
+    }
+
+    private void handleItemSelectionChanged(Item item) {
+        ItemNamePanel itemNamePanel = new ItemNamePanel(item);
+        leftPanelPlaceholder.getChildren().clear();
+        leftPanelPlaceholder.getChildren().add(itemNamePanel.getRoot());
+
+        ItemReviewPanel itemReviewPanel = new ItemReviewPanel(item);
+        rightPanelPlaceholder.getChildren().clear();
+        rightPanelPlaceholder.getChildren().add(itemReviewPanel.getRoot());
     }
 
     /**
@@ -180,10 +220,14 @@ public class MainWindow extends UiPart<Stage> {
 
             if (commandResult.isShowHelp()) {
                 handleHelp();
-            }
-
-            if (commandResult.isExit()) {
+            } else if (commandResult.isExit()) {
                 handleExit();
+            } else if (commandResult.isStallDetail()) {
+                handleIsStallDetail();
+            } else if (commandResult.isViewItem()) {
+                handleItemSelectionChanged(logic.getFilteredItem());
+            } else {
+                this.backToHomePage();
             }
 
             return commandResult;

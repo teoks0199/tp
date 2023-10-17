@@ -2,9 +2,6 @@ package seedu.address.testutil;
 
 import seedu.address.model.item.Item;
 import seedu.address.model.item.ItemName;
-import seedu.address.model.stall.Location;
-import seedu.address.model.stall.Name;
-import seedu.address.model.stall.Stall;
 
 /**
  * A utility class to help with building Item objects.

@@ -147,12 +147,22 @@ public class AddStallCommandTest {
         }
 
         @Override
+        public void showStall(Stall stall) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public void setStall(Stall target, Stall editedStall) {
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
         public ObservableList<Stall> getFilteredStallList() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public ObservableList<Stall> getTempFilteredStallList() {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -190,6 +200,16 @@ public class AddStallCommandTest {
         public boolean hasItemReview(Stall stall, Item item) {
             throw new AssertionError("This method should not be called.");
         }
+
+        @Override
+        public void setFilteredItem(Item item) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public Item getFilteredItem() {
+            throw new AssertionError("This method should not be called.");
+        }
     }
 
     /**
@@ -208,6 +228,12 @@ public class AddStallCommandTest {
             requireNonNull(stall);
             return this.stall.isSameStall(stall);
         }
+
+        @Override
+        public void showStall(Stall stall) {
+            requireNonNull(stall);
+
+        }
     }
 
     /**
@@ -220,6 +246,11 @@ public class AddStallCommandTest {
         public boolean hasStall(Stall stall) {
             requireNonNull(stall);
             return stallsAdded.stream().anyMatch(stall::isSameStall);
+        }
+
+        @Override
+        public void showStall(Stall stall) {
+            requireNonNull(stall);
         }
 
         @Override

@@ -1,17 +1,20 @@
 package seedu.address.testutil;
 
-import seedu.address.model.AddressBook;
-import seedu.address.model.item.Item;
-import seedu.address.model.stall.Stall;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_NAME_CHICKEN_RICE;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_NAME_NASI_LEMAK;
+import static seedu.address.testutil.TypicalStalls.getTypicalStalls;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_NAME_CHICKEN_RICE;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_NAME_NASI_LEMAK;
-import static seedu.address.testutil.TypicalStalls.getTypicalStalls;
+import seedu.address.model.AddressBook;
+import seedu.address.model.item.Item;
+import seedu.address.model.stall.Stall;
 
+/**
+ * A utility class containing a list of {@code Item} objects to be used in tests.
+ */
 public class TypicalItems {
 
     public static final Item FRIED_RICE = new ItemBuilder().withName("Fried Rice").build();

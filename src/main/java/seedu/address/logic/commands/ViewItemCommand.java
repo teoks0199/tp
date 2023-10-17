@@ -18,33 +18,27 @@ import seedu.address.model.stall.Stall;
 /**
  * Deletes a item identified using it's displayed index from the address book.
  */
-public class DeleteItemCommand extends Command {
+public class ViewItemCommand extends Command {
 
-    public static final String COMMAND_WORD = "delete-item";
+    public static final String COMMAND_WORD = "view-item";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Deletes the item identified by the index number used in the displayed item list.\n"
+            + ": View the item identified by the stall and item index number used in the displayed item list.\n"
             + "Parameters: "
             + PREFIX_STALL
             + "STALL_INDEX "
             + PREFIX_ITEM
             + "ITEM_INDEX \n"
-            + "Example: "
-            + COMMAND_WORD
-            + PREFIX_STALL
-            + "1"
-            + PREFIX_ITEM
-            + "1";
+            + "Example: " + COMMAND_WORD + " s/1 i/1";
 
-    public static final String MESSAGE_DELETE_ITEM_SUCCESS = "Deleted Item: %1$s from Stall: %2$s";
-
+    public static final String MESSAGE_VIEW_ITEM_SUCCESS = "Viewing Item: %1$s from Stall: %2$s";
     private final Index itemIndex;
     private final Index stallIndex;
 
     /**
      * Creates a DeleteItemCommand to delete the specified {@code Item}
      */
-    public DeleteItemCommand(Index stallIndex, Index itemIndex) {
+    public ViewItemCommand(Index stallIndex, Index itemIndex) {
         this.itemIndex = itemIndex;
         this.stallIndex = stallIndex;
     }
@@ -58,18 +52,17 @@ public class DeleteItemCommand extends Command {
             throw new CommandException(Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
         }
 
-        Stall stallToDeleteFrom = lastShownList.get(stallIndex.getZeroBased());
-        UniqueItemList menu = stallToDeleteFrom.getMenu();
+        Stall stallToViewFrom = lastShownList.get(stallIndex.getZeroBased());
+        UniqueItemList menu = stallToViewFrom.getMenu();
 
         if (itemIndex.getZeroBased() >= menu.getSize()) {
             throw new CommandException(Messages.MESSAGE_INVALID_ITEM_DISPLAYED_INDEX);
         }
 
-        Item itemToDelete = stallToDeleteFrom.getItem(itemIndex);
-
-        model.deleteItem(stallToDeleteFrom, itemToDelete);
-        return new CommandResult(String.format(MESSAGE_DELETE_ITEM_SUCCESS, Messages.format(itemToDelete), Messages
-                .format(stallToDeleteFrom)));
+        Item itemToView = menu.getItem(itemIndex.getZeroBased());
+        model.setFilteredItem(itemToView);
+        return new CommandResult(String.format(MESSAGE_VIEW_ITEM_SUCCESS, Messages.format(itemToView), Messages
+                .format(stallToViewFrom)), false, false, false, true);
     }
 
     @Override
@@ -79,17 +72,19 @@ public class DeleteItemCommand extends Command {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof DeleteItemCommand)) {
+        if (!(other instanceof ViewItemCommand)) {
             return false;
         }
 
-        DeleteItemCommand otherDeleteItemCommand = (DeleteItemCommand) other;
-        return itemIndex.equals(otherDeleteItemCommand.itemIndex);
+        ViewItemCommand otherViewItemCommand = (ViewItemCommand) other;
+        return itemIndex.equals(otherViewItemCommand.itemIndex)
+                && stallIndex.equals(otherViewItemCommand.stallIndex);
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
+                .add("stallIndex", stallIndex)
                 .add("itemIndex", itemIndex)
                 .toString();
     }

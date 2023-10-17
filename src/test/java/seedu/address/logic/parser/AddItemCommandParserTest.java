@@ -19,6 +19,7 @@ import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_STALL;
 import static seedu.address.testutil.TypicalItems.NASI_LEMAK;
 
 import org.junit.jupiter.api.Test;
+
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.AddItemCommand;
 import seedu.address.model.item.Item;
@@ -26,16 +27,16 @@ import seedu.address.model.item.ItemName;
 import seedu.address.testutil.ItemBuilder;
 
 public class AddItemCommandParserTest {
+    private static final String TYPICAL_STALL_INDEX = VALID_STALL_INDEX_DESC;
     private AddItemCommandParser parser = new AddItemCommandParser();
-    private final String TYPICAL_STALL_INDEX = VALID_STALL_INDEX_DESC;
 
     @Test
     public void parse_allFieldsPresent_success() {
         Item expectedItem = new ItemBuilder(NASI_LEMAK).build();
 
         // whitespace only preamble
-        assertParseSuccess(parser, PREAMBLE_WHITESPACE + TYPICAL_STALL_INDEX + ITEM_DESC_NASI_LEMAK
-                , new AddItemCommand(INDEX_FIRST_STALL, expectedItem));
+        assertParseSuccess(parser, PREAMBLE_WHITESPACE + TYPICAL_STALL_INDEX + ITEM_DESC_NASI_LEMAK,
+                new AddItemCommand(INDEX_FIRST_STALL, expectedItem));
 
     }
 
@@ -66,7 +67,7 @@ public class AddItemCommandParserTest {
 
 
         // invalid item
-        assertParseFailure(parser,  INVALID_ITEM_NAME_DESC + validExpectedItemString,
+        assertParseFailure(parser, INVALID_ITEM_NAME_DESC + validExpectedItemString,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_ITEM));
 
         // valid value followed by invalid value
