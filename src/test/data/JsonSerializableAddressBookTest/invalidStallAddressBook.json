@@ -1,6 +1,7 @@
 {
   "stalls": [ {
     "name": "Hans Muster",
-    "location": ""
+    "location": "",
+    "menuItems" : [ "1" ]
   } ]
 }

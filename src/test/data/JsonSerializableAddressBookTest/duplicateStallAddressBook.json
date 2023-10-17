@@ -1,9 +1,11 @@
 {
   "stalls": [ {
     "name": "Alice Pauline",
-    "location": "Deck"
+    "location": "Deck",
+    "menuItems" : [ "1" ]
   }, {
     "name": "Alice Pauline",
-    "location": "Deck"
+    "location": "Deck",
+    "menuItems" : [ "1" ]
   } ]
 }

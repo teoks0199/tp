@@ -1,5 +1,6 @@
 package seedu.address.testutil;
 
+import seedu.address.model.item.UniqueItemList;
 import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Name;
 import seedu.address.model.stall.Stall;
@@ -11,8 +12,10 @@ public class StallBuilder {
 
     public static final String DEFAULT_NAME = "Chicken Rice";
     public static final String DEFAULT_LOCATION = "Deck";
+    public static final String DEFAULT_MENU = "Rice";
     private Name name;
     private Location location;
+    private UniqueItemList menu; //empty menu for now
 
 
     /**
@@ -21,6 +24,7 @@ public class StallBuilder {
     public StallBuilder() {
         name = new Name(DEFAULT_NAME);
         location = new Location(DEFAULT_LOCATION);
+        menu = new UniqueItemList();
     }
 
     /**
@@ -29,6 +33,7 @@ public class StallBuilder {
     public StallBuilder(Stall stallToCopy) {
         name = stallToCopy.getName();
         location = stallToCopy.getLocation();
+        menu = stallToCopy.getMenu();
     }
 
     /**
@@ -47,8 +52,16 @@ public class StallBuilder {
         return this;
     }
 
+    /**
+     * Sets the {@code Menu} of the {@code Stall} that we are building.
+     */
+    public StallBuilder withMenu(UniqueItemList menu) {
+        this.menu = menu;
+        return this;
+    }
+
     public Stall build() {
-        return new Stall(name, location, );
+        return new Stall(name, location, menu); //empty menu for now
     }
 
 }

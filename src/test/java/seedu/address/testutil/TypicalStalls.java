@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import seedu.address.model.AddressBook;
+import seedu.address.model.item.UniqueItemList;
 import seedu.address.model.stall.Stall;
 
 /**
@@ -18,27 +19,33 @@ import seedu.address.model.stall.Stall;
 public class TypicalStalls {
 
     public static final Stall AUNTIES_COOKING = new StallBuilder().withName("Auntie's Cooking")
-            .withLocation("Deck").build();
+            .withLocation("Deck").withMenu(new UniqueItemList()).build();
     public static final Stall BEVERAGES = new StallBuilder().withName("Beverages")
-            .withLocation("Deck").build();
+            .withLocation("Deck").withMenu(new UniqueItemList()).build();
     public static final Stall CHINESE = new StallBuilder().withName("Chinese")
-            .withLocation("wall street").build();
+            .withLocation("wall street").withMenu(new UniqueItemList()).build();
     public static final Stall DRINKS_STALL = new StallBuilder().withName("Drinks Stall")
-            .withLocation("10th street").build();
+            .withLocation("10th street").withMenu(new UniqueItemList()).build();
     public static final Stall ECONOMIC_RICE = new StallBuilder().withName("Economic Rice")
-            .withLocation("michegan ave").build();
-    public static final Stall FRENCH = new StallBuilder().withName("French").withLocation("little tokyo").build();
-    public static final Stall GOODFOOD = new StallBuilder().withName("GoodFood").withLocation("4th street").build();
+            .withLocation("michegan ave").withMenu(new UniqueItemList()).build();
+    public static final Stall FRENCH = new StallBuilder().withName("French")
+            .withLocation("little tokyo").withMenu(new UniqueItemList()).build();
+    public static final Stall GOODFOOD = new StallBuilder().withName("GoodFood")
+            .withLocation("4th street").withMenu(new UniqueItemList()).build();
 
     // Manually added
-    public static final Stall HOON = new StallBuilder().withName("Hoon Meier").withLocation("little india").build();
-    public static final Stall IDA = new StallBuilder().withName("Ida Mueller").withLocation("chicago ave").build();
+    public static final Stall HOON = new StallBuilder().withName("Hoon Meier")
+            .withLocation("little india").withMenu(new UniqueItemList()).build();
+    public static final Stall IDA = new StallBuilder().withName("Ida Mueller")
+            .withLocation("chicago ave").withMenu(new UniqueItemList()).build();
 
     // Manually added - Stall's details found in {@code CommandTestUtil}
     public static final Stall ASIAN = new StallBuilder()
-            .withName(VALID_NAME_ASIAN).withLocation(VALID_LOCATION_ASIAN).build();
+            .withName(VALID_NAME_ASIAN).withLocation(VALID_LOCATION_ASIAN)
+            .withMenu(new UniqueItemList()).build();
     public static final Stall BRITISH = new StallBuilder()
-            .withName(VALID_NAME_BRITISH).withLocation(VALID_LOCATION_BRITISH).build();
+            .withName(VALID_NAME_BRITISH).withLocation(VALID_LOCATION_BRITISH)
+            .withMenu(new UniqueItemList()).build();
 
     public static final String KEYWORD_MATCHING_MEIER = "Meier"; // A keyword that matches MEIER
 
