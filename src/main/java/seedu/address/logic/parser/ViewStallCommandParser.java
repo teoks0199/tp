@@ -11,7 +11,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
  */
 public class ViewStallCommandParser implements Parser<ViewStallCommand> {
 
-    /**
+    /*
      * Parses the given {@code String} of arguments in the context of the DeleteCommand
      * and returns a DeleteCommand object for execution.
      * @throws ParseException if the user input does not conform the expected format
