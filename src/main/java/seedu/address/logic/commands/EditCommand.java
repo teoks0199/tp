@@ -15,6 +15,8 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
+import seedu.address.model.item.Item;
+import seedu.address.model.item.UniqueItemList;
 import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Name;
 import seedu.address.model.stall.Stall;
@@ -83,8 +85,9 @@ public class EditCommand extends Command {
 
         Name updatedName = editStallDescriptor.getName().orElse(stallToEdit.getName());
         Location updatedLocation = editStallDescriptor.getLocation().orElse(stallToEdit.getLocation());
+        UniqueItemList updatedMenu = editStallDescriptor.getMenu().orElse(stallToEdit.getMenu());
 
-        return new Stall(updatedName, updatedLocation);
+        return new Stall(updatedName, updatedLocation, updatedMenu);
     }
 
     @Override
@@ -118,6 +121,7 @@ public class EditCommand extends Command {
     public static class EditStallDescriptor {
         private Name name;
         private Location location;
+        private UniqueItemList menu;
         public EditStallDescriptor() {}
 
         /**
@@ -127,6 +131,7 @@ public class EditCommand extends Command {
         public EditStallDescriptor(EditStallDescriptor toCopy) {
             setName(toCopy.name);
             setLocation(toCopy.location);
+            setMenu(toCopy.menu);
         }
 
         /**
@@ -150,6 +155,23 @@ public class EditCommand extends Command {
 
         public Optional<Location> getLocation() {
             return Optional.ofNullable(location);
+        }
+
+        /**
+         * Sets {@code tags} to this object's {@code tags}.
+         * A defensive copy of {@code tags} is used internally.
+         */
+        public void setMenu(UniqueItemList menu) {
+            this.menu = (menu != null) ? menu : null;
+        }
+
+        /**
+         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}
+         * if modification is attempted.
+         * Returns {@code Optional#empty()} if {@code tags} is null.
+         */
+        public Optional<UniqueItemList> getMenu() {
+            return (menu != null) ? Optional.of(menu) : Optional.empty();
         }
 
 

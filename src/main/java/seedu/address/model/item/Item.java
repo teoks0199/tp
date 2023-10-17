@@ -32,6 +32,11 @@ public class Item {
         return itemName;
     }
 
+    public ItemReview getItemReview() {
+        return itemReview;
+    }
+
+
     /**
      * Adds an item review to the item.
      *

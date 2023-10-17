@@ -4,9 +4,15 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.address.commons.exceptions.IllegalValueException;
+import seedu.address.model.item.Item;
+import seedu.address.model.item.UniqueItemList;
 import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Name;
 import seedu.address.model.stall.Stall;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Jackson-friendly version of {@link Stall}.
@@ -17,14 +23,17 @@ class JsonAdaptedStall {
 
     private final String name;
     private final String location;
+    private final List<JsonAdaptedItem> menuItems = new ArrayList<>();
 
     /**
      * Constructs a {@code JsonAdaptedStall} with the given stall details.
      */
     @JsonCreator
-    public JsonAdaptedStall(@JsonProperty("name") String name, @JsonProperty("location") String location) {
+    public JsonAdaptedStall(@JsonProperty("name") String name, @JsonProperty("location") String location,
+                            @JsonProperty("menuItems") List<JsonAdaptedItem> menuItems) {
         this.name = name;
         this.location = location;
+        this.menuItems.addAll(menuItems);
     }
 
     /**
@@ -33,6 +42,9 @@ class JsonAdaptedStall {
     public JsonAdaptedStall(Stall source) {
         name = source.getName().fullName;
         location = source.getLocation().locationName;
+        menuItems.addAll(source.getMenu().getInternalList().stream()
+                .map(JsonAdaptedItem::new)
+                .collect(Collectors.toList()));
     }
 
     /**
@@ -58,7 +70,18 @@ class JsonAdaptedStall {
         }
         final Location modelLocation = new Location(location);
 
-        return new Stall(modelName, modelLocation);
+        if (menuItems == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    UniqueItemList.class.getSimpleName()));
+        }
+
+        final List<Item> itemList = new ArrayList<>();
+        for (JsonAdaptedItem item : menuItems) {
+            itemList.add(item.toModelType());
+        }
+        final UniqueItemList modelMenu = new UniqueItemList(itemList);
+
+        return new Stall(modelName, modelLocation, modelMenu);
     }
 
 }

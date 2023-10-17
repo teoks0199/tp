@@ -8,6 +8,7 @@ import java.util.stream.Stream;
 
 import seedu.address.logic.commands.AddStallCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.item.UniqueItemList;
 import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Name;
 import seedu.address.model.stall.Stall;
@@ -34,8 +35,9 @@ public class AddStallCommandParser implements Parser<AddStallCommand> {
         argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_LOCATION);
         Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
         Location location = ParserUtil.parseLocation(argMultimap.getValue(PREFIX_LOCATION).get());
+        UniqueItemList menu = new UniqueItemList();
 
-        Stall stall = new Stall(name, location);
+        Stall stall = new Stall(name, location, menu);
 
         return new AddStallCommand(stall);
     }

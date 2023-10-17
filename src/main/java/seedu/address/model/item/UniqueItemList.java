@@ -23,10 +23,25 @@ import seedu.address.model.item.exceptions.ItemNotFoundException;
  * @see Item#isSameItem(Item)
  */
 public class UniqueItemList implements Iterable<Item> {
+    private final ObservableList<Item> internalList;
+    private final ObservableList<Item> internalUnmodifiableList;
 
-    private final ObservableList<Item> internalList = FXCollections.observableArrayList();
-    private final ObservableList<Item> internalUnmodifiableList =
-            FXCollections.unmodifiableObservableList(internalList);
+    public UniqueItemList() {
+        this.internalList = FXCollections.observableArrayList();
+        this.internalUnmodifiableList = FXCollections.unmodifiableObservableList(internalList);
+    }
+
+    public UniqueItemList(List<Item> toBeCopied) {
+        this();
+        requireAllNonNull(toBeCopied);
+        internalList.addAll(toBeCopied);
+
+        assert itemsAreUnique(internalList);
+    }
+
+    public ObservableList<Item> getInternalList() {
+        return internalList;
+    }
 
     /**
      * Returns size of list

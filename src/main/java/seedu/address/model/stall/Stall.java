@@ -22,7 +22,7 @@ public class Stall {
     /**
      * Every field must be present and not null.
      */
-    public Stall(Name name, Location location) {
+    public Stall(Name name, Location location, UniqueItemList menu) {
         requireAllNonNull(name, location);
         this.name = name;
         this.location = location;

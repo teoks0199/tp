@@ -48,7 +48,7 @@ public class StallBuilder {
     }
 
     public Stall build() {
-        return new Stall(name, location);
+        return new Stall(name, location, );
     }
 
 }
