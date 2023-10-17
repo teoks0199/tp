@@ -72,6 +72,11 @@ public class LogicManager implements Logic {
     }
 
     @Override
+    public ObservableList<Stall> getTempFilteredStallList() {
+        return model.getTempFilteredStallList();
+    }
+
+    @Override
     public Path getAddressBookFilePath() {
         return model.getAddressBookFilePath();
     }

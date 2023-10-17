@@ -11,6 +11,8 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <fx:root type="javafx.stage.Stage" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
          title="Address App" minWidth="450" minHeight="600" onCloseRequest="#handleExit">
   <icons>
@@ -46,12 +48,23 @@
           </padding>
         </StackPane>
 
-        <VBox fx:id="stallList" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="ALWAYS">
-          <padding>
-            <Insets top="10" right="10" bottom="10" left="10" />
-          </padding>
-          <StackPane fx:id="stallListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
-        </VBox>
+        <SplitPane orientation="HORIZONTAL">
+        <items>
+          <VBox fx:id="stallList" styleClass="pane-with-border" prefWidth="170" VBox.vgrow="ALWAYS">
+            <padding>
+              <Insets top="10" right="10" bottom="10" left="10" />
+            </padding>
+            <StackPane fx:id="stallListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
+          </VBox>
+
+          <VBox fx:id="stallDetails" styleClass="pane-with-border" prefWidth="170" minHeight="100" VBox.vgrow="ALWAYS">
+            <padding>
+              <Insets top="10" right="10" bottom="10" left="10" />
+            </padding>
+            <StackPane fx:id="stallDetailsPanelPlaceholder" VBox.vgrow="ALWAYS"/>
+          </VBox>
+        </items>
+        </SplitPane>
 
         <StackPane fx:id="statusbarPlaceholder" VBox.vgrow="NEVER" />
       </VBox>

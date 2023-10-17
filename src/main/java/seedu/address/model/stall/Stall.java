@@ -55,7 +55,7 @@ public class Stall {
     }
 
     /**
-     * Returns true if both stalls have the same name.
+     * Returns true if both stalls have the same name and location.
      * This defines a weaker notion of equality between two stalls.
      */
     public boolean isSameStall(Stall otherStall) {
@@ -105,8 +105,8 @@ public class Stall {
 
 
     /**
-     * Returns true if both persons have the same identity and data fields.
-     * This defines a stronger notion of equality between two persons.
+     * Returns true if both stalls have the same identity and data fields.
+     * This defines a stronger notion of equality between two stalls.
      */
     @Override
     public boolean equals(Object other) {
