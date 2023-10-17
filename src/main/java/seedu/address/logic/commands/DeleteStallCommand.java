@@ -1,6 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
 import java.util.List;
 
@@ -20,8 +21,10 @@ public class DeleteStallCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Deletes the stall identified by the index number used in the displayed stall list.\n"
-            + "Parameters: INDEX (must be a positive integer)\n"
-            + "Example: " + COMMAND_WORD + " 1";
+            + "Parameters: "
+            + PREFIX_STALL + "STALL_INDEX (must be a positive integer)\n"
+            + "Example: " + COMMAND_WORD + " "
+            + PREFIX_STALL + "1";
 
     public static final String MESSAGE_DELETE_STALL_SUCCESS = "Deleted Stall: %1$s";
 

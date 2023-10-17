@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.Messages.MESSAGE_UNKNOWN_COMMAND;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_STALL;
 
@@ -33,7 +34,7 @@ public class AddressBookParserTest {
     private final AddressBookParser parser = new AddressBookParser();
 
     @Test
-    public void parseCommand_add() throws Exception {
+    public void parseCommand_addStall() throws Exception {
         Stall stall = new StallBuilder().build();
         AddStallCommand command = (AddStallCommand) parser.parseCommand(StallUtil.getAddCommand(stall));
         assertEquals(new AddStallCommand(stall), command);
@@ -46,9 +47,9 @@ public class AddressBookParserTest {
     }
 
     @Test
-    public void parseCommand_delete() throws Exception {
+    public void parseCommand_deleteStall() throws Exception {
         DeleteStallCommand command = (DeleteStallCommand) parser.parseCommand(
-                DeleteStallCommand.COMMAND_WORD + " " + INDEX_FIRST_STALL.getOneBased());
+                DeleteStallCommand.COMMAND_WORD + " " + PREFIX_STALL + INDEX_FIRST_STALL.getOneBased());
         assertEquals(new DeleteStallCommand(INDEX_FIRST_STALL), command);
     }
 
