@@ -32,9 +32,9 @@ public class DeleteItemCommand extends Command {
             + "Example: "
             + COMMAND_WORD
             + PREFIX_STALL
-            + "1"
+            + " 1"
             + PREFIX_ITEM
-            + "1";
+            + " 1";
 
     public static final String MESSAGE_DELETE_ITEM_SUCCESS = "Deleted Item: %1$s from Stall: %2$s";
 

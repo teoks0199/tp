@@ -47,14 +47,10 @@ public class CommandTestUtil {
     public static final String VALID_ITEM_INDEX_DESC = " " + PREFIX_ITEM + VALID_STALL_INDEX_1;
     public static final String ITEM_DESC_NASI_LEMAK = " " + PREFIX_ITEM + VALID_ITEM_NAME_NASI_LEMAK;
     public static final String ITEM_DESC_CHICKEN_RICE = " " + PREFIX_ITEM + VALID_ITEM_NAME_CHICKEN_RICE;
-    // empty items not allowed
     public static final String INVALID_ITEM_NAME_DESC = " " + PREFIX_ITEM + " ";
-    // empty stall index not allowed
     public static final String INVALID_STALL_INDEX_DESC = " " + PREFIX_STALL + " ";
-    // empty item index not allowed
-    public static final String INVALID_ITEM_INDEX_DESC = " " + PREFIX_STALL + " ";
-    // negative item index not allowed
-    public static final String INVALID_ITEM_INDEX_DESC_NEGATIVE = " " + PREFIX_STALL + "-1";
+    public static final String INVALID_ITEM_INDEX_DESC = " " + PREFIX_ITEM + " ";
+    public static final String INVALID_ITEM_INDEX_DESC_NEGATIVE = " " + PREFIX_ITEM + "-1";
 
     //Others
     public static final String PREAMBLE_WHITESPACE = "\t  \r  \n";
