@@ -2,15 +2,16 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
+import static seedu.address.logic.parser.CliSyntax.*;
 
 import java.util.stream.Stream;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.AddStallReviewCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.stall.StallReview;
+import seedu.address.model.review.Description;
+import seedu.address.model.review.Rating;
+import seedu.address.model.stall.review.StallReview;
 
 /**
  * Parses input arguments and creates a new AddStallReviewCommand object
@@ -25,27 +26,21 @@ public class AddStallReviewCommandParser implements Parser<AddStallReviewCommand
     public AddStallReviewCommand parse(String args) throws ParseException {
         requireNonNull(args);
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_RATING, PREFIX_DESCRIPTION);
+                ArgumentTokenizer.tokenize(args, PREFIX_STALL, PREFIX_RATING, PREFIX_DESCRIPTION);
 
-        Index index;
-
-        try {
-            index = ParserUtil.parseIndex(argMultimap.getPreamble());
-        } catch (ParseException pe) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
-                    AddStallReviewCommand.MESSAGE_USAGE), pe);
-        }
-
-        if (!arePrefixesPresent(argMultimap, PREFIX_RATING, PREFIX_DESCRIPTION)) {
+        if (!arePrefixesPresent(argMultimap, PREFIX_STALL, PREFIX_RATING, PREFIX_DESCRIPTION)) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
                     AddStallReviewCommand.MESSAGE_USAGE));
         }
 
-        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_RATING, PREFIX_DESCRIPTION);
-        StallReview stallReview = ParserUtil.parseStallReview(argMultimap.getValue(PREFIX_DESCRIPTION).get(),
-                argMultimap.getValue(PREFIX_RATING).get());
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_STALL, PREFIX_RATING, PREFIX_DESCRIPTION);
+        Index stallIndex = ParserUtil.parseStallIndex(argMultimap.getValue(PREFIX_STALL).get());
+        Rating rating = ParserUtil.parseRating(argMultimap.getValue(PREFIX_RATING).get());
+        Description description = ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get());
 
-        return new AddStallReviewCommand(stallReview, index);
+        StallReview stallReview = new StallReview(description, rating);
+
+        return new AddStallReviewCommand(stallReview, stallIndex);
     }
 
     /**

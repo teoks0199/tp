@@ -6,11 +6,10 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.item.ItemName;
-import seedu.address.model.item.review.Description;
-import seedu.address.model.item.review.Rating;
+import seedu.address.model.review.Description;
+import seedu.address.model.review.Rating;
 import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Name;
-import seedu.address.model.stall.StallReview;
 
 /**
  * Contains utility methods used for parsing strings in the various *Parser classes.
@@ -131,25 +130,25 @@ public class ParserUtil {
      * @throws ParseException if the given {@code stallReview} or {@code star} is invalid.
      */
 
-    public static StallReview parseStallReview(String stallReview, String star) throws ParseException {
-        requireNonNull(stallReview);
-        requireNonNull(star);
-        String trimmedStallReview = stallReview.trim();
-        int trimmedStar;
-        try {
-            trimmedStar = Integer.parseInt(star.trim());
-        } catch (NumberFormatException e) {
-            throw new ParseException(StallReview.STAR_CONSTRAINTS);
-        }
-
-        if (!StallReview.isValidReview(trimmedStallReview)) {
-            throw new ParseException(StallReview.MESSAGE_CONSTRAINTS);
-        }
-        if (!StallReview.isValidStar(trimmedStar)) {
-            throw new ParseException(StallReview.STAR_CONSTRAINTS);
-        }
-        return new StallReview(trimmedStallReview, trimmedStar);
-    }
+//    public static StallReview parseStallReview(String stallReview, String star) throws ParseException {
+//        requireNonNull(stallReview);
+//        requireNonNull(star);
+//        String trimmedStallReview = stallReview.trim();
+//        int trimmedStar;
+//        try {
+//            trimmedStar = Integer.parseInt(star.trim());
+//        } catch (NumberFormatException e) {
+//            throw new ParseException(StallReview.STAR_CONSTRAINTS);
+//        }
+//
+//        if (!StallReview.isValidReview(trimmedStallReview)) {
+//            throw new ParseException(StallReview.MESSAGE_CONSTRAINTS);
+//        }
+//        if (!StallReview.isValidStar(trimmedStar)) {
+//            throw new ParseException(StallReview.STAR_CONSTRAINTS);
+//        }
+//        return new StallReview(trimmedStallReview, trimmedStar);
+//    }
 
     /**
      * Parses a {@code String rating} into a {@code Rating}.

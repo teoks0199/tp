@@ -11,9 +11,9 @@ import java.util.stream.Stream;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.AddItemReviewCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.item.review.Description;
+import seedu.address.model.review.Description;
 import seedu.address.model.item.review.ItemReview;
-import seedu.address.model.item.review.Rating;
+import seedu.address.model.review.Rating;
 
 
 

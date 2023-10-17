@@ -1,8 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
+import static seedu.address.logic.parser.CliSyntax.*;
 
 import java.util.List;
 
@@ -11,7 +10,7 @@ import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.stall.Stall;
-import seedu.address.model.stall.StallReview;
+import seedu.address.model.stall.review.StallReview;
 
 /**
  * Adds a review to a stall in the address book.
@@ -20,7 +19,7 @@ public class AddStallReviewCommand extends Command {
     public static final String COMMAND_WORD = "review-stall";
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a stall review to the address book. "
             + "Parameters: "
-            + "STALL INDEX (must be a positive integer) "
+            + PREFIX_STALL + "STALL NUMBER "
             + PREFIX_RATING + "RATING "
             + PREFIX_DESCRIPTION + "DESCRIPTION \n"
             + "Example: " + COMMAND_WORD + " "
@@ -53,6 +52,6 @@ public class AddStallReviewCommand extends Command {
         }
         Stall stallToAddReview = lastShownList.get(index.getZeroBased());
         stallToAddReview.setStallReview(toAdd);
-        return new CommandResult(String.format(MESSAGE_ADD_STALL_REVIEW_SUCCESS, Messages.format(stallToAddReview)));
+        return new CommandResult(String.format(MESSAGE_ADD_STALL_REVIEW_SUCCESS, Messages.format(toAdd)));
     }
 }

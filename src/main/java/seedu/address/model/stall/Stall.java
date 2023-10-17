@@ -7,6 +7,7 @@ import java.util.Objects;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.item.Item;
 import seedu.address.model.item.UniqueItemList;
+import seedu.address.model.stall.review.StallReview;
 
 /**
  * Represents a Stall in the address book.
