@@ -28,13 +28,19 @@ class JsonAdaptedItem {
     /**
      * Constructs a {@code JsonAdaptedTag} with the given {@code tagName}.
      */
-    @JsonCreator
-    public JsonAdaptedItem(@JsonProperty("itemName") String name) {
+//    @JsonCreator
+//    public JsonAdaptedItem(@JsonProperty("itemName") String name)
+//    {
 //    public JsonAdaptedItem(@JsonProperty("itemName") String name, @JsonProperty("review") String review,
 //                            @JsonProperty("rating") String rating) {
-        this.itemName = name;
+//        this.itemName = name;
 //        this.review = review;
 //        this.rating = rating;
+//    }
+
+    @JsonCreator
+    public JsonAdaptedItem(String name) {
+        this.itemName = name;
     }
 
     /**

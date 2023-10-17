@@ -70,10 +70,10 @@ class JsonAdaptedStall {
         }
         final Location modelLocation = new Location(location);
 
-        if (menuItems == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
-                    UniqueItemList.class.getSimpleName()));
-        }
+//        if (menuItems == null) {
+//            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+//                    UniqueItemList.class.getSimpleName()));
+//        }
 
         final List<Item> itemList = new ArrayList<>();
         for (JsonAdaptedItem item : menuItems) {
