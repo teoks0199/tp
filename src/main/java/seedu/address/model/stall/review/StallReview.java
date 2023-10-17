@@ -2,11 +2,11 @@ package seedu.address.model.stall.review;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.util.Objects;
+
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.review.Description;
 import seedu.address.model.review.Rating;
-
-import java.util.Objects;
 
 /**
  * Represents a review of a stall in the address book.
@@ -58,6 +58,6 @@ public class StallReview {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(rating,description);
+        return Objects.hash(rating, description);
     }
 }
