@@ -14,7 +14,6 @@ public class Item {
 
     // Identity fields
     private final ItemName itemName;
-
     /**
      * Every field must be present and not null.
      */

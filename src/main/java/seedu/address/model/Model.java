@@ -1,12 +1,12 @@
 package seedu.address.model;
 
-import java.nio.file.Path;
-import java.util.function.Predicate;
-
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.item.Item;
 import seedu.address.model.stall.Stall;
+
+import java.nio.file.Path;
+import java.util.function.Predicate;
 
 /**
  * The API of the Model component.
@@ -100,7 +100,7 @@ public interface Model {
 
     /**
      * Deletes the given item.
-     * The item must exist in the address book.
+     * The item must exist in the stall menu.
      */
     void deleteItem(Stall stallIndex, Item item);
 }

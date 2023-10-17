@@ -1,6 +1,8 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
 import java.util.List;
 
@@ -22,8 +24,17 @@ public class DeleteItemCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Deletes the item identified by the index number used in the displayed item list.\n"
-            + "Parameters: INDEX (must be a positive integer)\n"
-            + "Example: " + COMMAND_WORD + " s/1 i/1";
+            + "Parameters: "
+            + PREFIX_STALL
+            + "STALL_INDEX "
+            + PREFIX_ITEM
+            + "ITEM_INDEX \n"
+            + "Example: "
+            + COMMAND_WORD
+            + PREFIX_STALL
+            + "1"
+            + PREFIX_ITEM
+            + "1";
 
     public static final String MESSAGE_DELETE_ITEM_SUCCESS = "Deleted Item: %1$s from Stall: %2$s";
 
@@ -44,7 +55,7 @@ public class DeleteItemCommand extends Command {
         List<Stall> lastShownList = model.getFilteredStallList();
 
         if (stallIndex.getZeroBased() >= lastShownList.size()) {
-            throw new CommandException(Messages.MESSAGE_INVALID_ITEM_DISPLAYED_INDEX);
+            throw new CommandException(Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
         }
 
         Stall stallToDeleteFrom = lastShownList.get(stallIndex.getZeroBased());
