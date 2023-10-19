@@ -56,7 +56,7 @@ public class Stall {
     public void setStallReview(StallReview stallReview) {
         this.stallReview = stallReview;
     }
-  
+
     public Item getItem(Index index) {
         return menu.getItem(index.getZeroBased());
 
