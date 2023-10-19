@@ -6,7 +6,6 @@ import java.util.Objects;
 
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.item.Item;
-import seedu.address.model.item.UniqueItemList;
 
 /**
  * Represents a Stall in the address book.
@@ -17,7 +16,7 @@ public class Stall {
     // Identity fields
     private final Name name;
     private final Location location;
-    private final UniqueItemList menu;
+    private final Menu menu;
 
     /**
      * Every field must be present and not null.
@@ -26,7 +25,7 @@ public class Stall {
         requireAllNonNull(name, location);
         this.name = name;
         this.location = location;
-        this.menu = new UniqueItemList();
+        this.menu = new Menu();
     }
 
     public Name getName() {
@@ -37,7 +36,7 @@ public class Stall {
         return location;
     }
 
-    public UniqueItemList getMenu() {
+    public Menu getMenu() {
         return menu;
     }
 
@@ -59,7 +58,7 @@ public class Stall {
      * This defines a stronger notion of equality between two stalls.
      */
     public boolean hasItem(Item item) {
-        return menu.contains(item);
+        return menu.hasItem(item);
     }
 
     /**
@@ -67,7 +66,7 @@ public class Stall {
      * The item must not already exist in the menu.
      */
     public void addItem(Item item) {
-        menu.add(item);
+        menu.addItem(item);
     }
 
     /**
@@ -75,7 +74,7 @@ public class Stall {
      * The item must already exist in the menu.
      */
     public void deleteItem(Item item) {
-        menu.remove(item);
+        menu.removeItem(item);
     }
 
 
