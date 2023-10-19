@@ -1,6 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
 import java.util.List;
 
@@ -21,7 +22,9 @@ public class ViewStallCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Displays the details of the stall identified by the index number used in the displayed stall list.\n"
             + "Parameters: INDEX (must be a positive integer)\n"
-            + "Example: " + COMMAND_WORD + " 1";
+            + PREFIX_STALL + "STALL_INDEX (must be a positive integer)\n"
+            + "Example: " + COMMAND_WORD
+            + PREFIX_STALL + "1";
 
     public static final String MESSAGE_VIEW_STALL_SUCCESS = "Here are the details of this stall.";
 
@@ -43,7 +46,7 @@ public class ViewStallCommand extends Command {
         Stall stallToView = lastShownList.get(targetIndex.getZeroBased());
         model.showStall(stallToView);
         return new CommandResult(String.format(MESSAGE_VIEW_STALL_SUCCESS, Messages.format(stallToView)),
-                false, false, true);
+                false, false, true, false);
     }
 
     @Override

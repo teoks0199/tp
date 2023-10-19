@@ -49,21 +49,27 @@
         </StackPane>
 
         <SplitPane orientation="HORIZONTAL">
-        <items>
-          <VBox fx:id="stallList" styleClass="pane-with-border" prefWidth="170" VBox.vgrow="ALWAYS">
-            <padding>
-              <Insets top="10" right="10" bottom="10" left="10" />
-            </padding>
-            <StackPane fx:id="stallListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
-          </VBox>
 
-          <VBox fx:id="stallDetails" styleClass="pane-with-border" prefWidth="170" minHeight="100" VBox.vgrow="ALWAYS">
-            <padding>
-              <Insets top="10" right="10" bottom="10" left="10" />
-            </padding>
-            <StackPane fx:id="stallDetailsPanelPlaceholder" VBox.vgrow="ALWAYS"/>
-          </VBox>
-        </items>
+
+          <items>
+
+            <VBox fx:id="leftMainPanel" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="NEVER">
+              <padding>
+                <Insets top="10" right="10" bottom="10" left="10" />
+              </padding>
+              <StackPane fx:id="leftPanelPlaceholder" VBox.vgrow="ALWAYS"/>
+            </VBox>
+
+            <VBox fx:id="rightMainPanel" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="NEVER">
+              <padding>
+                <Insets top="10" right="10" bottom="10" left="10" />
+              </padding>
+              <StackPane fx:id="rightPanelPlaceholder" VBox.vgrow="ALWAYS"/>
+            </VBox>
+
+
+          </items>
+
         </SplitPane>
 
         <StackPane fx:id="statusbarPlaceholder" VBox.vgrow="NEVER" />

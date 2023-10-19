@@ -20,6 +20,8 @@ public class ParserUtil {
      * Error message for invalid index format.
      */
     public static final String MESSAGE_INVALID_INDEX = "Index is not a non-zero unsigned integer.";
+    public static final String MESSAGE_INVALID_STALL_INDEX = "Stall index is not a non-zero unsigned integer.";
+    public static final String MESSAGE_INVALID_ITEM_INDEX = "Item index is not a non-zero unsigned integer.";
 
     /**
      * Parses {@code oneBasedIndex} into an {@code Index} and returns it. Leading and trailing whitespaces will be
@@ -99,7 +101,7 @@ public class ParserUtil {
     public static Index parseStallIndex(String oneBasedIndex) throws ParseException {
         String trimmedIndex = oneBasedIndex.trim();
         if (!StringUtil.isNonZeroUnsignedInteger(trimmedIndex)) {
-            throw new ParseException(MESSAGE_INVALID_INDEX);
+            throw new ParseException(MESSAGE_INVALID_STALL_INDEX);
         }
         return Index.fromOneBased(Integer.parseInt(trimmedIndex));
     }
@@ -115,7 +117,7 @@ public class ParserUtil {
     public static Index parseItemIndex(String oneBasedIndex) throws ParseException {
         String trimmedIndex = oneBasedIndex.trim();
         if (!StringUtil.isNonZeroUnsignedInteger(trimmedIndex)) {
-            throw new ParseException(MESSAGE_INVALID_INDEX);
+            throw new ParseException(MESSAGE_INVALID_ITEM_INDEX);
         }
         return Index.fromOneBased(Integer.parseInt(trimmedIndex));
     }

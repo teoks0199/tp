@@ -30,6 +30,14 @@ public class ItemReview {
         return rating;
     }
 
+    public String getRatingString() {
+        return rating.toString();
+    }
+
+    public String getDescriptionString() {
+        return description.toString();
+    }
+
     public Description getDescription() {
         return description;
     }

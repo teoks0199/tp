@@ -34,7 +34,7 @@ public class ViewStallCommandTest {
 
         CommandResult expectedMessage = new CommandResult(
                 String.format(ViewStallCommand.MESSAGE_VIEW_STALL_SUCCESS,
-                Messages.format(stallToView)), false, false, true);
+                Messages.format(stallToView)), false, false, true, false);
         ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.showStall(stallToView);
 
@@ -58,7 +58,7 @@ public class ViewStallCommandTest {
 
         CommandResult expectedMessage = new CommandResult(String.format(
                 ViewStallCommand.MESSAGE_VIEW_STALL_SUCCESS,
-                Messages.format(stallToView)), false, false, true);
+                Messages.format(stallToView)), false, false, true, false);
 
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.showStall(stallToView);
