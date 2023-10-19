@@ -2,8 +2,10 @@ package seedu.address.logic.commands;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_LOCATION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 import static seedu.address.testutil.Assert.assertThrows;
 
 import java.util.ArrayList;
@@ -23,6 +25,7 @@ import seedu.address.testutil.EditStallDescriptorBuilder;
  */
 public class CommandTestUtil {
 
+
     public static final String VALID_NAME_ASIAN = "Asian Cuisine";
     public static final String VALID_NAME_BRITISH = "British Cuisine";
     public static final String VALID_LOCATION_ASIAN = "Block 312, Amy Street 1";
@@ -34,6 +37,22 @@ public class CommandTestUtil {
     public static final String INVALID_NAME_DESC = " " + PREFIX_NAME + " "; // empty names not allowed
     public static final String INVALID_LOCATION_DESC = " " + PREFIX_LOCATION; // empty locations not allowed
 
+    //Item related
+    public static final String VALID_STALL_INDEX_1 = "1";
+    public static final String VALID_ITEM_NAME_NASI_LEMAK = "Nasi Lemak";
+    public static final String VALID_ITEM_NAME_CHICKEN_RICE = "Chicken Rice";
+    // item index 1 is valid
+    public static final String VALID_STALL_INDEX_DESC = " " + PREFIX_STALL + VALID_STALL_INDEX_1;
+    // item index 1 is valid
+    public static final String VALID_ITEM_INDEX_DESC = " " + PREFIX_ITEM + VALID_STALL_INDEX_1;
+    public static final String ITEM_DESC_NASI_LEMAK = " " + PREFIX_ITEM + VALID_ITEM_NAME_NASI_LEMAK;
+    public static final String ITEM_DESC_CHICKEN_RICE = " " + PREFIX_ITEM + VALID_ITEM_NAME_CHICKEN_RICE;
+    public static final String INVALID_ITEM_NAME_DESC = " " + PREFIX_ITEM + " ";
+    public static final String INVALID_STALL_INDEX_DESC = " " + PREFIX_STALL + " ";
+    public static final String INVALID_ITEM_INDEX_DESC = " " + PREFIX_ITEM + " ";
+    public static final String INVALID_ITEM_INDEX_DESC_NEGATIVE = " " + PREFIX_ITEM + "-1";
+
+    //Others
     public static final String PREAMBLE_WHITESPACE = "\t  \r  \n";
     public static final String PREAMBLE_NON_EMPTY = "NonEmptyPreamble";
 

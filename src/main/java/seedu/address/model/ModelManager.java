@@ -25,6 +25,7 @@ public class ModelManager implements Model {
     private final UserPrefs userPrefs;
     private final FilteredList<Stall> filteredStalls;
     private final FilteredList<Stall> tempFilteredStalls;
+    private Item filteredItem;
 
     /**
      * Initializes a ModelManager with the given addressBook and userPrefs.
@@ -144,6 +145,7 @@ public class ModelManager implements Model {
         filteredStalls.setPredicate(predicate);
     }
 
+    //=========== Filtered Item List Accessors =============================================================
     @Override
     public boolean hasItem(Stall stall, Item item) {
         requireNonNull(stall);
@@ -185,6 +187,17 @@ public class ModelManager implements Model {
         requireNonNull(stall);
         requireNonNull(item);
         stall.getMenu().getItem(item).deleteItemReview();
+    }
+
+    @Override
+    public Item getFilteredItem() {
+        return filteredItem;
+    }
+
+    @Override
+    public void setFilteredItem(Item item) {
+        requireNonNull(item);
+        this.filteredItem = item;
     }
 
     @Override

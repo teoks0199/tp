@@ -17,6 +17,7 @@ public class Item {
 
     // Identity fields
     private final ItemName itemName;
+
     private ItemReview itemReview;
 
     /**
@@ -25,11 +26,30 @@ public class Item {
     public Item(ItemName itemName) {
         requireAllNonNull(itemName);
         this.itemName = itemName;
-        this.itemReview = null;
     }
 
     public ItemName getName() {
         return itemName;
+    }
+
+    public String getNameString() {
+        return itemName.toString();
+    }
+
+    public String getItemRatingString() {
+        if (itemReview == null) {
+            return "N/A";
+        } else {
+            return itemReview.getRatingString();
+        }
+    }
+
+    public String getItemDescriptionString() {
+        if (itemReview == null) {
+            return "N/A";
+        } else {
+            return itemReview.getDescriptionString();
+        }
     }
 
     /**

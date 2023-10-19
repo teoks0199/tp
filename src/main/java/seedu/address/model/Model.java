@@ -84,6 +84,13 @@ public interface Model {
     ObservableList<Stall> getFilteredStallList();
 
     ObservableList<Stall> getTempFilteredStallList();
+    /** Returns the desired filtered item */
+    Item getFilteredItem();
+
+    /**
+     * Returns the item.
+     */
+    void setFilteredItem(Item item);
 
     /**
      * Updates the filter of the filtered stall list to filter by the given {@code predicate}.
@@ -109,7 +116,7 @@ public interface Model {
 
     /**
      * Deletes the given item.
-     * The item must exist in the address book.
+     * The item must exist in the stall menu.
      */
     void deleteItem(Stall stallIndex, Item item);
 
