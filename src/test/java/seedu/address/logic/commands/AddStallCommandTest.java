@@ -200,6 +200,16 @@ public class AddStallCommandTest {
         public boolean hasItemReview(Stall stall, Item item) {
             throw new AssertionError("This method should not be called.");
         }
+
+        @Override
+        public void setFilteredItem(Item item) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public Item getFilteredItem() {
+            throw new AssertionError("This method should not be called.");
+        }
     }
 
     /**

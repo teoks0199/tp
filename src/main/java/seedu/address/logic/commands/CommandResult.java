@@ -13,23 +13,32 @@ public class CommandResult {
 
     private final String feedbackToUser;
 
-    /** Help information should be shown to the user. */
+    /**
+     * Help information should be shown to the user.
+     */
     private final boolean showHelp;
 
-    /** The application should exit. */
+    /**
+     * The application should exit.
+     */
     private final boolean exit;
 
-    /** The application should show the details of a particular stall. */
+    /**
+     * The application should show the details of a particular stall.
+     */
     private final boolean isStallDetail;
+    private final boolean viewItem;
 
     /**
      * Constructs a {@code CommandResult} with the specified fields.
      */
-    public CommandResult(String feedbackToUser, boolean showHelp, boolean exit, boolean isStallDetail) {
+    public CommandResult(String feedbackToUser, boolean showHelp, boolean exit, boolean isStallDetail,
+                         boolean viewItem) {
         this.feedbackToUser = requireNonNull(feedbackToUser);
         this.showHelp = showHelp;
         this.exit = exit;
         this.isStallDetail = isStallDetail;
+        this.viewItem = viewItem;
     }
 
     /**
@@ -37,7 +46,7 @@ public class CommandResult {
      * and other fields set to their default value.
      */
     public CommandResult(String feedbackToUser) {
-        this(feedbackToUser, false, false, false);
+        this(feedbackToUser, false, false, false, false);
     }
 
     public String getFeedbackToUser() {
@@ -54,6 +63,10 @@ public class CommandResult {
 
     public boolean isStallDetail() {
         return isStallDetail;
+    }
+
+    public boolean isViewItem() {
+        return viewItem;
     }
 
     @Override
@@ -76,7 +89,7 @@ public class CommandResult {
 
     @Override
     public int hashCode() {
-        return Objects.hash(feedbackToUser, showHelp, exit, isStallDetail);
+        return Objects.hash(feedbackToUser, showHelp, exit, isStallDetail, viewItem);
     }
 
     @Override

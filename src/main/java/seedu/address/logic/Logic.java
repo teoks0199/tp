@@ -8,6 +8,7 @@ import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.ReadOnlyAddressBook;
+import seedu.address.model.item.Item;
 import seedu.address.model.stall.Stall;
 
 /**
@@ -35,6 +36,8 @@ public interface Logic {
 
     ObservableList<Stall> getTempFilteredStallList();
 
+    /** Return the desired filtered item */
+    Item getFilteredItem();
     /**
      * Returns the user prefs' address book file path.
      */

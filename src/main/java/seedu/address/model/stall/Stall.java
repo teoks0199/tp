@@ -4,6 +4,7 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.Objects;
 
+import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.item.Item;
 import seedu.address.model.item.UniqueItemList;
@@ -39,6 +40,10 @@ public class Stall {
 
     public UniqueItemList getMenu() {
         return menu;
+    }
+
+    public Item getItem(Index index) {
+        return menu.getItem(index.getZeroBased());
     }
 
     /**
