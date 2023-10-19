@@ -26,7 +26,7 @@ public class Stall {
         requireAllNonNull(name, location);
         this.name = name;
         this.location = location;
-        this.menu = new UniqueItemList();
+        this.menu = menu;
     }
 
     public Name getName() {

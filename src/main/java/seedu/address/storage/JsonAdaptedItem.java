@@ -39,7 +39,7 @@ class JsonAdaptedItem {
 //    }
 
     @JsonCreator
-    public JsonAdaptedItem(String name) {
+    public JsonAdaptedItem(@JsonProperty("itemName") String name) {
         this.itemName = name;
     }
 

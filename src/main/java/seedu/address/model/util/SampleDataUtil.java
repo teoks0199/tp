@@ -1,9 +1,5 @@
 package seedu.address.model.util;
 
-import java.util.Arrays;
-import java.util.Set;
-import java.util.stream.Collectors;
-
 import seedu.address.model.AddressBook;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.item.ItemName;
@@ -19,12 +15,12 @@ import seedu.address.model.item.Item;
 public class SampleDataUtil {
     public static Stall[] getSampleStalls() {
         return new Stall[] {
-            new Stall(new Name("Alex Yeoh"), new Location("Deck"), getMenuItems()),
-            new Stall(new Name("Bernice Yu"), new Location("Deck"), getMenuItems()),
-            new Stall(new Name("Charlotte Oliveiro"), new Location("Deck"), getMenuItems()),
-            new Stall(new Name("David Li"), new Location("Deck"), getMenuItems()),
-            new Stall(new Name("Irfan Ibrahim"), new Location("Deck"), getMenuItems()),
-            new Stall(new Name("Roy Balakrishnan"), new Location("Deck"), getMenuItems())
+            new Stall(new Name("Alex Yeoh"), new Location("Deck"), getSampleMenuItems()),
+            new Stall(new Name("Bernice Yu"), new Location("Deck"), getSampleMenuItems()),
+            new Stall(new Name("Charlotte Oliveiro"), new Location("Deck"), getSampleMenuItems()),
+            new Stall(new Name("David Li"), new Location("Deck"), getSampleMenuItems()),
+            new Stall(new Name("Irfan Ibrahim"), new Location("Deck"), getSampleMenuItems()),
+            new Stall(new Name("Roy Balakrishnan"), new Location("Deck"), getSampleMenuItems())
         };
     }
 
@@ -45,7 +41,7 @@ public class SampleDataUtil {
 //                .collect(Collectors.toSet());
 //    }
 
-    public static UniqueItemList getMenuItems() {
+    public static UniqueItemList getSampleMenuItems() {
         UniqueItemList menu = new UniqueItemList();
         menu.add(new Item(new ItemName("Rice")));
         menu.add(new Item(new ItemName("Noodles")));
