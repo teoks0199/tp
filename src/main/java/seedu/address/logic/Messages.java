@@ -8,6 +8,7 @@ import seedu.address.logic.parser.Prefix;
 import seedu.address.model.item.Item;
 import seedu.address.model.item.review.ItemReview;
 import seedu.address.model.stall.Stall;
+import seedu.address.model.stall.review.StallReview;
 
 /**
  * Container for user visible messages.
@@ -65,5 +66,15 @@ public class Messages {
         return builder.toString();
     }
 
+    /**
+     * Formats the {@code stallReview} for display to the user.
+     */
+    public static String format(StallReview stallReview) {
+        final StringBuilder builder = new StringBuilder();
+        builder.append(stallReview.getRating())
+                .append("; Description: ")
+                .append(stallReview.getDescription());
+        return builder.toString();
+    }
 
 }
