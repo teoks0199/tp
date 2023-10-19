@@ -152,10 +152,9 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public boolean hasItemReview(Stall stall, Item item) {
-        requireNonNull(stall);
+    public boolean hasItemReview(Item item) {
         requireNonNull(item);
-        return stall.getMenu().getItem(item).hasItemReview();
+        return item.hasItemReview();
     }
 
     @Override
@@ -173,18 +172,17 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public void addItemReview(Stall stall, Item item, ItemReview itemReview) {
-        requireNonNull(stall);
+    public void addItemReview(Item item, ItemReview itemReview) {
         requireNonNull(item);
         requireNonNull(itemReview);
-        stall.getMenu().getItem(item).addItemReview(itemReview);
+
+        item.addItemReview(itemReview);
     }
 
     @Override
-    public void deleteItemReview(Stall stall, Item item) {
-        requireNonNull(stall);
+    public void deleteItemReview(Item item) {
         requireNonNull(item);
-        stall.getMenu().getItem(item).deleteItemReview();
+        item.deleteItemReview();
     }
 
     @Override
