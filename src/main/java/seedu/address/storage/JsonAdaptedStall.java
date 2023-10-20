@@ -8,6 +8,11 @@ import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Name;
 import seedu.address.model.stall.Stall;
 
+import java.io.IOException;
+import java.util.List;
+
+import static seedu.address.commons.util.JsonUtil.toJsonString;
+
 /**
  * Jackson-friendly version of {@link Stall}.
  */
@@ -17,14 +22,17 @@ class JsonAdaptedStall {
 
     private final String name;
     private final String location;
+    private String menu;
 
     /**
      * Constructs a {@code JsonAdaptedStall} with the given stall details.
      */
     @JsonCreator
-    public JsonAdaptedStall(@JsonProperty("name") String name, @JsonProperty("location") String location) {
+    public JsonAdaptedStall(@JsonProperty("name") String name, @JsonProperty("location") String location,
+                            @JsonProperty("items") List<JsonAdaptedItem> items) throws IOException {
         this.name = name;
         this.location = location;
+        this.menu = toJsonString(new JsonSerializableMenu(items));
     }
 
     /**
@@ -33,6 +41,12 @@ class JsonAdaptedStall {
     public JsonAdaptedStall(Stall source) {
         name = source.getName().fullName;
         location = source.getLocation().locationName;
+        try {
+            menu = toJsonString(new JsonSerializableMenu(source.getMenu()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**
