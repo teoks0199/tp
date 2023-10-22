@@ -28,6 +28,13 @@ public class Stall {
         this.menu = new Menu();
     }
 
+    public Stall(Name name, Location location, Menu menu) {
+        requireAllNonNull(name, location, menu);
+        this.name = name;
+        this.location = location;
+        this.menu = menu;
+    }
+
     public Name getName() {
         return name;
     }

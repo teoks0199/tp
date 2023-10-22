@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.stall.Location;
+import seedu.address.model.stall.Menu;
 import seedu.address.model.stall.Name;
 import seedu.address.model.stall.Stall;
 
@@ -22,17 +23,17 @@ class JsonAdaptedStall {
 
     private final String name;
     private final String location;
-    private String menu;
+    private JsonSerializableMenu menu;
 
     /**
      * Constructs a {@code JsonAdaptedStall} with the given stall details.
      */
     @JsonCreator
     public JsonAdaptedStall(@JsonProperty("name") String name, @JsonProperty("location") String location,
-                            @JsonProperty("items") List<JsonAdaptedItem> items) throws IOException {
+                            @JsonProperty("items") List<JsonAdaptedItem> items) {
         this.name = name;
         this.location = location;
-        this.menu = toJsonString(new JsonSerializableMenu(items));
+        this.menu = new JsonSerializableMenu(items);
     }
 
     /**
@@ -41,12 +42,7 @@ class JsonAdaptedStall {
     public JsonAdaptedStall(Stall source) {
         name = source.getName().fullName;
         location = source.getLocation().locationName;
-        try {
-            menu = toJsonString(new JsonSerializableMenu(source.getMenu()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        menu = new JsonSerializableMenu(source.getMenu());
     }
 
     /**
@@ -71,6 +67,10 @@ class JsonAdaptedStall {
             throw new IllegalValueException(Location.MESSAGE_CONSTRAINTS);
         }
         final Location modelLocation = new Location(location);
+
+        if (menu != null) {
+            return new Stall(modelName, modelLocation, new Menu(menu.toModelType()));
+        }
 
         return new Stall(modelName, modelLocation);
     }
