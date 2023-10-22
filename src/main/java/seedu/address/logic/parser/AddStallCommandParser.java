@@ -20,6 +20,7 @@ public class AddStallCommandParser implements Parser<AddStallCommand> {
     /**
      * Parses the given {@code String} of arguments in the context of the AddStallCommand
      * and returns an AddStallCommand object for execution.
+     *
      * @throws ParseException if the user input does not conform the expected format
      */
     public AddStallCommand parse(String args) throws ParseException {
