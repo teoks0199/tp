@@ -33,7 +33,9 @@ class JsonAdaptedStall {
                             @JsonProperty("items") List<JsonAdaptedItem> items) {
         this.name = name;
         this.location = location;
-        this.menu = new JsonSerializableMenu(items);
+        if (items != null) {
+            this.menu = new JsonSerializableMenu(items);
+        }
     }
 
     /**
