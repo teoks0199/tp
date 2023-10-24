@@ -28,6 +28,9 @@ public class Stall {
         this.menu = new Menu();
     }
 
+    /**
+     * Constructor with menu
+     */
     public Stall(Name name, Location location, Menu menu) {
         requireAllNonNull(name, location, menu);
         this.name = name;
@@ -57,7 +60,8 @@ public class Stall {
         }
 
         return otherStall != null
-                && otherStall.getName().equals(getName()) && otherStall.getLocation().equals(getLocation());
+                && otherStall.getName().equals(getName())
+                && otherStall.getLocation().equals(getLocation());
     }
 
     /**
@@ -102,7 +106,8 @@ public class Stall {
 
         Stall otherStall = (Stall) other;
         return name.equals(otherStall.name)
-                && location.equals(otherStall.location);
+                && location.equals(otherStall.location)
+                && menu.equals(otherStall.menu);
     }
 
     @Override

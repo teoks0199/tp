@@ -1,5 +1,7 @@
 package seedu.address.storage;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -8,11 +10,6 @@ import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Menu;
 import seedu.address.model.stall.Name;
 import seedu.address.model.stall.Stall;
-
-import java.io.IOException;
-import java.util.List;
-
-import static seedu.address.commons.util.JsonUtil.toJsonString;
 
 /**
  * Jackson-friendly version of {@link Stall}.
