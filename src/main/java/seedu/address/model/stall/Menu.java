@@ -126,4 +126,8 @@ public class Menu implements ReadOnlyMenu {
     public int hashCode() {
         return items.hashCode();
     }
+
+    public boolean containsKeywords(List<String> keywords) {
+        return items.containsKeywords(keywords);
+    }
 }
