@@ -12,7 +12,6 @@ import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.item.Item;
-import seedu.address.model.item.UniqueItemList;
 import seedu.address.model.stall.Stall;
 
 /**
