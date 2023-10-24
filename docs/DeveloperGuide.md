@@ -154,6 +154,33 @@ Classes used by multiple components are in the `seedu.FoodNotes.commons` package
 
 This section describes some noteworthy details on how certain features are implemented.
 
+### \[Proposed\] Sort price feature
+
+#### Proposed Implementation
+
+The proposed sort price functionality is facilitated by `SortedPriceCommand`.
+
+The following sequence diagram shows how the sort operation works:
+
+![SortPriceSequenceDiagram](images/SortPriceSequenceDiagram.png)
+
+`sortFilteredStoreList` is a method in `ModelManager` that sorts the filtered store list by price. 
+It makes use of `Comparator` to compare the prices of the stalls.
+
+#### Design considerations:
+**Aspect: How sort price executes:**
+
+* **Alternative 1 (current choice):** Displays the sorted list of stalls only.
+    * Pros: Easy to implement.
+    * Cons: User needs to re-sort stalls by price after every command if they want to view the sorted list.
+
+* **Alternative 2:** Saves the sorted list of stalls in FoodNotes.
+    * Pros: User does not need to re-sort list after every command.
+    * Cons: May have performance issues in terms of memory usage, original ordering of stalls will be lost.
+
+_{more aspects and alternatives to be added}_
+
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
