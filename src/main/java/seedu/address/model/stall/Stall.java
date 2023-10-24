@@ -52,6 +52,10 @@ public class Stall {
         return menu;
     }
 
+    public boolean hasStallReview() {
+        return stallReview != null;
+    }
+
     public StallReview getStallReview() {
         return stallReview;
     }

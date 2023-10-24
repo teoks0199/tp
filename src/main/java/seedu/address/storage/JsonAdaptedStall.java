@@ -10,6 +10,7 @@ import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Menu;
 import seedu.address.model.stall.Name;
 import seedu.address.model.stall.Stall;
+import seedu.address.model.stall.review.StallReview;
 
 /**
  * Jackson-friendly version of {@link Stall}.
@@ -20,6 +21,7 @@ class JsonAdaptedStall {
 
     private final String name;
     private final String location;
+    private JsonAdaptedStallReview stallReview;
     private JsonSerializableMenu menu;
 
     /**
@@ -27,9 +29,12 @@ class JsonAdaptedStall {
      */
     @JsonCreator
     public JsonAdaptedStall(@JsonProperty("name") String name, @JsonProperty("location") String location,
+                            @JsonProperty("review") JsonAdaptedStallReview stallReview,
                             @JsonProperty("items") List<JsonAdaptedItem> items) {
         this.name = name;
         this.location = location;
+        this.stallReview = stallReview;
+
         if (items != null) {
             this.menu = new JsonSerializableMenu(items);
         }
@@ -41,6 +46,7 @@ class JsonAdaptedStall {
     public JsonAdaptedStall(Stall source) {
         name = source.getName().fullName;
         location = source.getLocation().locationName;
+        stallReview = new JsonAdaptedStallReview(source.getStallReview());
         menu = new JsonSerializableMenu(source.getMenu());
     }
 
@@ -67,11 +73,20 @@ class JsonAdaptedStall {
         }
         final Location modelLocation = new Location(location);
 
+        Stall stall;
+
         if (menu != null) {
-            return new Stall(modelName, modelLocation, new Menu(menu.toModelType()));
+            stall = new Stall(modelName, modelLocation, new Menu(menu.toModelType()));
+        } else {
+            stall = new Stall(modelName, modelLocation);
         }
 
-        return new Stall(modelName, modelLocation);
+        if (stallReview != null) {
+            StallReview modelStallReview = stallReview.toModelType();
+            stall.setStallReview(modelStallReview);
+        }
+
+        return stall;
     }
 
 }

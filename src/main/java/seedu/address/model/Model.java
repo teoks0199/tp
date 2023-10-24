@@ -125,7 +125,7 @@ public interface Model {
      *
      * {@code itemReview} must not already exist in the item.
      */
-    void addItemReview(Item itemIndex, ItemReview itemReview);
+    void setItemReview(Item itemIndex, ItemReview itemReview);
 
     /**
      * Deletes the given item review.

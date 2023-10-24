@@ -36,6 +36,10 @@ public class Item {
         return itemName.toString();
     }
 
+    public ItemReview getItemReview() {
+        return itemReview;
+    }
+
     public String getItemRatingString() {
         if (itemReview == null) {
             return "N/A";
@@ -57,8 +61,7 @@ public class Item {
      *
      * @param itemReview the item review to be added.
      */
-    public void addItemReview(ItemReview itemReview) {
-        requireAllNonNull(itemReview);
+    public void setItemReview(ItemReview itemReview) {
         if (hasItemReview()) {
             throw new DuplicateItemReviewException();
         }

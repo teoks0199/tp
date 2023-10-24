@@ -14,13 +14,16 @@ public class JsonAdaptedItem {
     public static final String MISSING_FIELD_MESSAGE_FORMAT = "Item's %s field is missing!";
 
     private final String itemName;
+    private JsonAdaptedItemReview itemReview;
 
     /**
      * Constructs a {@code JsonAdaptedItem} with the given item details.
      */
     @JsonCreator
-    public JsonAdaptedItem(@JsonProperty("itemName") String itemName) {
+    public JsonAdaptedItem(@JsonProperty("itemName") String itemName,
+                           @JsonProperty("review") JsonAdaptedItemReview itemReview) {
         this.itemName = itemName;
+        this.itemReview = itemReview;
     }
 
     /**
@@ -28,6 +31,7 @@ public class JsonAdaptedItem {
      */
     public JsonAdaptedItem(Item source) {
         itemName = source.getName().fullName;
+        itemReview = new JsonAdaptedItemReview(source.getItemReview());
     }
 
     /**
@@ -44,6 +48,11 @@ public class JsonAdaptedItem {
             throw new IllegalValueException(ItemName.MESSAGE_CONSTRAINTS);
         }
         final ItemName modelName = new ItemName(itemName);
-        return new Item(modelName);
+        Item item = new Item(modelName);
+
+        if (itemReview != null) {
+            item.setItemReview(itemReview.toModelType());
+        }
+        return item;
     }
 }
