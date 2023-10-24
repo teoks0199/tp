@@ -238,11 +238,11 @@ _{more aspects and alternatives to be added}_
 
 _{Explain here how the data archiving feature will be implemented}_
 
-### \[Proposed\] Find Item feature
+### Find Item feature
 
-#### Proposed Implementation
+#### Implementation
 
-The proposed find item feature is facilitated by `FindItemCommand` that extends `Command`.
+The find item feature is facilitated by `FindItemCommand` that extends `Command`.
 
 The following sequence diagram shows how the find item operation works:
 
@@ -256,7 +256,7 @@ The `ItemsContainKeywordsPredicate` is used to filter the list of stalls in Food
 
 * **Alternative 2:** Only allow the user to search for one keyword at a time.
     * Pros: Easy to implement as parsing one keyword is more simple than parsing multiple keywords.
-    * Cons: Less user friendly.
+    * Cons: Less flexible for the user.
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Documentation, logging, testing, configuration, dev-ops**

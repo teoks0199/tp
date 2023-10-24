@@ -16,7 +16,7 @@ end box
 
 box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
-participant "predicate:ItemsContainKeywordsPredicate" as ItemsContainKeywordsPredicate MODEL_COLOR
+participant "predicate:MenuContainsKeywordsPredicate" as MenuContainsKeywordsPredicate MODEL_COLOR
 end box
 MainWindow -> LogicManager : execute("find-item chicken")
 activate LogicManager
@@ -36,17 +36,17 @@ deactivate FindItemCommandParser
 FoodNotesParser -> FindItemCommandParser :parse("chicken")
 activate FindItemCommandParser
 
-create ItemsContainKeywordsPredicate
-FindItemCommandParser -> ItemsContainKeywordsPredicate
+create MenuContainsKeywordsPredicate
+FindItemCommandParser -> MenuContainsKeywordsPredicate
 
 
-activate ItemsContainKeywordsPredicate
+activate MenuContainsKeywordsPredicate
 
-ItemsContainKeywordsPredicate --> FindItemCommandParser : predicate
+MenuContainsKeywordsPredicate --> FindItemCommandParser : predicate
 
-deactivate ItemsContainKeywordsPredicate
-ItemsContainKeywordsPredicate -[hidden]-> FindItemCommandParser : result
-destroy ItemsContainKeywordsPredicate
+deactivate MenuContainsKeywordsPredicate
+MenuContainsKeywordsPredicate -[hidden]-> FindItemCommandParser : result
+destroy MenuContainsKeywordsPredicate
 
 create FindItemCommand
 FindItemCommandParser -> FindItemCommand : FindItemCommand(predicate)
