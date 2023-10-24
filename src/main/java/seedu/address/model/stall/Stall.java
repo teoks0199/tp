@@ -95,8 +95,8 @@ public class Stall {
      * Deletes an item from the menu.
      * The item must already exist in the menu.
      */
-    public void deleteItem(Item item) {
-        menu.remove(item);
+    public void deleteItem(Index itemIndex) {
+        menu.remove(itemIndex);
     }
 
     public void deleteReview() {
