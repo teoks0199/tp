@@ -6,6 +6,7 @@ import java.util.Objects;
 
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.item.Item;
+import seedu.address.model.stall.review.StallReview;
 
 /**
  * Represents a Stall in the address book.
@@ -17,6 +18,7 @@ public class Stall {
     private final Name name;
     private final Location location;
     private final Menu menu;
+    private StallReview stallReview;
 
     /**
      * Every field must be present and not null.
@@ -48,6 +50,14 @@ public class Stall {
 
     public Menu getMenu() {
         return menu;
+    }
+
+    public StallReview getStallReview() {
+        return stallReview;
+    }
+
+    public void setStallReview(StallReview stallReview) {
+        this.stallReview = stallReview;
     }
 
     /**
@@ -86,6 +96,18 @@ public class Stall {
      */
     public void deleteItem(Item item) {
         menu.removeItem(item);
+    }
+
+    public void deleteReview() {
+        this.stallReview = null;
+    }
+
+    public String getStallReviewString() {
+        if (this.stallReview != null) {
+            return stallReview.toString();
+        } else {
+            return "No review added.";
+        }
     }
 
 

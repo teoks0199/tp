@@ -11,16 +11,19 @@ import seedu.address.commons.core.LogsCenter;
 import seedu.address.logic.commands.AddItemCommand;
 import seedu.address.logic.commands.AddItemReviewCommand;
 import seedu.address.logic.commands.AddStallCommand;
+import seedu.address.logic.commands.AddStallReviewCommand;
 import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.DeleteItemCommand;
 import seedu.address.logic.commands.DeleteItemReviewCommand;
 import seedu.address.logic.commands.DeleteStallCommand;
+import seedu.address.logic.commands.DeleteStallReviewCommand;
 import seedu.address.logic.commands.EditCommand;
 import seedu.address.logic.commands.ExitCommand;
 import seedu.address.logic.commands.FindCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.ListCommand;
+import seedu.address.logic.commands.ViewItemCommand;
 import seedu.address.logic.commands.ViewStallCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
@@ -68,6 +71,9 @@ public class AddressBookParser {
         case DeleteStallCommand.COMMAND_WORD:
             return new DeleteStallCommandParser().parse(arguments);
 
+        case ViewItemCommand.COMMAND_WORD:
+            return new ViewItemCommandParser().parse(arguments);
+
         case AddItemCommand.COMMAND_WORD:
             return new AddItemCommandParser().parse(arguments);
 
@@ -79,6 +85,9 @@ public class AddressBookParser {
 
         case DeleteItemReviewCommand.COMMAND_WORD:
             return new DeleteItemReviewCommandParser().parse(arguments);
+
+        case DeleteStallReviewCommand.COMMAND_WORD:
+            return new DeleteStallReviewCommandParser().parse(arguments);
 
         case ClearCommand.COMMAND_WORD:
             return new ClearCommand();
@@ -94,6 +103,9 @@ public class AddressBookParser {
 
         case HelpCommand.COMMAND_WORD:
             return new HelpCommand();
+
+        case AddStallReviewCommand.COMMAND_WORD:
+            return new AddStallReviewCommandParser().parse(arguments);
 
         case ViewStallCommand.COMMAND_WORD:
             return new ViewStallCommandParser().parse(arguments);
