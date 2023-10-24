@@ -2,21 +2,26 @@
 !include style.puml
 skinparam ArrowFontStyle plain
 
+box UI UI_COLOR_T1
+participant ":MainWindow" as MainWindow UI_COLOR
+end box
+
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
 participant ":FoodNotesParser" as FoodNotesParser LOGIC_COLOR
-participant "p:FindItemCommandParser" as FindItemCommandParser LOGIC_COLOR
+participant ":FindItemCommandParser" as FindItemCommandParser LOGIC_COLOR
 participant "f:FindItemCommand" as FindItemCommand LOGIC_COLOR
+participant ":CommandResult" as CommandResult LOGIC_COLOR
 end box
 
 box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 participant "predicate:ItemsContainKeywordsPredicate" as ItemsContainKeywordsPredicate MODEL_COLOR
 end box
-[-> LogicManager : execute(find-item chicken)
+MainWindow -> LogicManager : execute("find-item chicken")
 activate LogicManager
 
-LogicManager -> FoodNotesParser : parseCommand(find-item chicken)
+LogicManager -> FoodNotesParser : parseCommand("find-item chicken")
 activate FoodNotesParser
 
 create FindItemCommandParser
@@ -25,10 +30,10 @@ activate FindItemCommandParser
 
 
 
-FindItemCommandParser --> FoodNotesParser : p
+FindItemCommandParser --> FoodNotesParser
 deactivate FindItemCommandParser
 
-FoodNotesParser -> FindItemCommandParser :parse(chicken)
+FoodNotesParser -> FindItemCommandParser :parse("chicken")
 activate FindItemCommandParser
 
 create ItemsContainKeywordsPredicate
@@ -64,11 +69,16 @@ FindItemCommand -> Model : updateFilteredStallList(chicken)
 activate Model
 
 
-
-
-
 Model --> FindItemCommand
 deactivate Model
+
+create CommandResult
+FindItemCommand -> CommandResult
+activate CommandResult
+
+CommandResult --> FindItemCommand
+deactivate CommandResult
+
 
 FindItemCommand --> LogicManager : result
 deactivate FindItemCommand
@@ -77,6 +87,6 @@ destroy FindItemCommand
 
 
 
-[<--LogicManager
+MainWindow <--LogicManager
 deactivate LogicManager
 @enduml
