@@ -127,6 +127,10 @@ public class Menu implements ReadOnlyMenu {
         return items.hashCode();
     }
 
+
+    /**
+     * Returns true if the menu contains an item with the same name as any of the keywords.
+     */
     public boolean containsKeywords(List<String> keywords) {
         return items.containsKeywords(keywords);
     }

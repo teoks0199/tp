@@ -172,6 +172,9 @@ public class UniqueItemList implements Iterable<Item> {
         return true;
     }
 
+    /**
+     * Returns true if any item in the list contains any of the keywords.
+     */
     public boolean containsKeywords(List<String> keywords) {
         for (int i = 0; i < internalList.size(); i++) {
             Item item = this.getItem(i);
