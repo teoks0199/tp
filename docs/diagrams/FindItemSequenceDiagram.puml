@@ -65,7 +65,7 @@ deactivate FoodNotesParser
 LogicManager -> FindItemCommand : execute()
 activate FindItemCommand
 
-FindItemCommand -> Model : updateFilteredStallList(chicken)
+FindItemCommand -> Model : updateFilteredStallList(predicate)
 activate Model
 
 
