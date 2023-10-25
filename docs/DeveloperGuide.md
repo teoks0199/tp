@@ -154,83 +154,68 @@ Classes used by multiple components are in the `seedu.FoodNotes.commons` package
 
 This section describes some noteworthy details on how certain features are implemented.
 
-### \[Proposed\] Undo/redo feature
+### \[Proposed\] Sort price feature
 
 #### Proposed Implementation
 
-The proposed undo/redo mechanism is facilitated by `VersionedFoodNotes`. It extends `FoodNotes` with an undo/redo history, stored internally as an `FoodNotesStateList` and `currentStatePointer`. Additionally, it implements the following operations:
+The proposed sort price functionality is facilitated by `SortedPriceCommand`.
 
-* `VersionedFoodNotes#commit()` — Saves the current address book state in its history.
-* `VersionedFoodNotes#undo()` — Restores the previous address book state from its history.
-* `VersionedFoodNotes#redo()` — Restores a previously undone address book state from its history.
+The following sequence diagram shows how the sort operation works:
 
-These operations are exposed in the `Model` interface as `Model#commitFoodNotes()`, `Model#undoFoodNotes()` and `Model#redoFoodNotes()` respectively.
+![SortPriceSequenceDiagram](images/SortPriceSequenceDiagram.png)
 
-Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.
+`sortFilteredStoreList` is a method in `ModelManager` that sorts the filtered store list by price. 
+It makes use of `Comparator` to compare the prices of the stalls.
 
-Step 1. The user launches the application for the first time. The `VersionedFoodNotes` will be initialized with the initial address book state, and the `currentStatePointer` pointing to that single address book state.
+#### Design considerations:
+**Aspect: How sort price executes:**
 
-![UndoRedoState0](images/UndoRedoState0.png)
+* **Alternative 1 (current choice):** Displays the sorted list of stalls only.
+    * Pros: Easy to implement.
+    * Cons: User needs to re-sort stalls by price after every command if they want to view the sorted list.
 
-Step 2. The user executes `delete 5` command to delete the 5th stall in the address book. The `delete` command calls `Model#commitFoodNotes()`, causing the modified state of the address book after the `delete 5` command executes to be saved in the `FoodNotesStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state.
+* **Alternative 2:** Saves the sorted list of stalls in FoodNotes.
+    * Pros: User does not need to re-sort list after every command.
+    * Cons: May have performance issues in terms of memory usage, original ordering of stalls will be lost.
 
-![UndoRedoState1](images/UndoRedoState1.png)
+_{more aspects and alternatives to be added}_
 
-Step 3. The user executes `add n/David …​` to add a new stall. The `add` command also calls `Model#commitFoodNotes()`, causing another modified address book state to be saved into the `FoodNotesStateList`.
+### add-item/delete-item feature
 
-![UndoRedoState2](images/UndoRedoState2.png)
+#### Implementation:
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If a command fails its execution, it will not call `Model#commitFoodNotes()`, so the address book state will not be saved into the `FoodNotesStateList`.
+The add-item/delete-item mechanism is facilitated by `ModelManager`. It extends `Model`, stored internally as an `UniqueItemLis`.
 
-</div>
+These operations are exposed in the `Model` interface as `Model#addItem()` and `Model#deleteItem()` respectively with the addition of getters and setters.
 
-Step 4. The user now decides that adding the stall was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoFoodNotes()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state.
+The following sequence diagram shows how the add-item operation works:
 
-![UndoRedoState3](images/UndoRedoState3.png)
+![AddItemSequenceDiagram](images/AddItemSequenceDiagram.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index 0, pointing to the initial FoodNotes state, then there are no previous FoodNotes states to restore. The `undo` command uses `Model#canUndoFoodNotes()` to check if this is the case. If so, it will return an error to the user rather
-than attempting to perform the undo.
-
-</div>
-
-The following sequence diagram shows how the undo operation works:
-
-![UndoSequenceDiagram](images/UndoSequenceDiagram.png)
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `AddItemCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 </div>
 
-The `redo` command does the opposite — it calls `Model#redoFoodNotes()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the address book to that state.
+The `delete-item` command does the opposite — it calls `Model#deleteItem()`, which deletes the specified item from its specified stall.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index `FoodNotesStateList.size() - 1`, pointing to the latest address book state, then there are no undone FoodNotes states to restore. The `redo` command uses `Model#canRedoFoodNotes()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-
+<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `stallIndex` or `itemIndex` is at index out of range of `filteredStallList.size() - 1` or , then there are no stalls to delete the item from.
 </div>
-
-Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will usually not call `Model#commitFoodNotes()`, `Model#undoFoodNotes()` or `Model#redoFoodNotes()`. Thus, the `FoodNotesStateList` remains unchanged.
-
-![UndoRedoState4](images/UndoRedoState4.png)
-
-Step 6. The user executes `clear`, which calls `Model#commitFoodNotes()`. Since the `currentStatePointer` is not pointing at the end of the `FoodNotesStateList`, all address book states after the `currentStatePointer` will be purged. Reason: It no longer makes sense to redo the `add n/David …​` command. This is the behavior that most modern desktop applications follow.
-
-![UndoRedoState5](images/UndoRedoState5.png)
 
 The following activity diagram summarizes what happens when a user executes a new command:
 
-<img src="images/CommitActivityDiagram.png" width="250" />
+<img src="images/AddItemActivityDiagram.png" width="250" />
 
 #### Design considerations:
 
-**Aspect: How undo & redo executes:**
+**Aspect: Number of fields needed to be entered by the user:**
 
-* **Alternative 1 (current choice):** Saves the entire address book.
-  * Pros: Easy to implement.
-  * Cons: May have performance issues in terms of memory usage.
+* **Alternative 1 (current choice): Only require them to enter the stall they belong to and the name of the item**
+    * Pros: Users are not restricted to only adding items when they have a review.
+    * Cons: Causes some fields to be null when initialised (e.g. `rating` and `review`) and more code is needed to implement.
 
-* **Alternative 2:** Individual command knows how to undo/redo by
-  itself.
-  * Pros: Will use less memory (e.g. for `delete`, just save the stall being deleted).
-  * Cons: We must ensure that the implementation of each individual command are correct.
+* **Alternative 2: Require all fields required to be present when adding an item:**
+    * Pros: Less code is needed to implement.
+    * Cons: Users are restricted to only adding items when they have a review.
 
 _{more aspects and alternatives to be added}_
 
@@ -238,7 +223,25 @@ _{more aspects and alternatives to be added}_
 
 _{Explain here how the data archiving feature will be implemented}_
 
+### Find Item feature
 
+#### Implementation
+
+The find item feature is facilitated by `FindItemCommand` that extends `Command`.
+
+The following sequence diagram shows how the find item operation works:
+
+![FindItemSequenceDiagram](images/FindItemSequenceDiagram.png)
+
+The `ItemsContainKeywordsPredicate` is used to filter the list of stalls in FoodNotes. It is created with a list of keywords, and it checks if the menu items of a stall contains any of the keywords.
+
+* **Alternative 1 (current choice):** Allows the user to search for stalls containing any of the keywords.
+    * Pros: Users can search for multiple items at once, for example they can look for stalls that sell either "chicken" or "apple".
+    * Cons: More complicated to implement.
+
+* **Alternative 2:** Only allow the user to search for one keyword at a time.
+    * Pros: Easy to implement as parsing one keyword is more simple than parsing multiple keywords.
+    * Cons: Less flexible for the user.
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Documentation, logging, testing, configuration, dev-ops**
