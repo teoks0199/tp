@@ -12,8 +12,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.function.Predicate;
 
-import javafx.collections.ObservableList;
 import org.junit.jupiter.api.Test;
+
+import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
@@ -26,7 +27,6 @@ import seedu.address.model.item.Item;
 import seedu.address.model.item.review.ItemReview;
 import seedu.address.model.stall.Stall;
 import seedu.address.testutil.StallBuilder;
-
 public class AddStallCommandTest {
 
     @Test

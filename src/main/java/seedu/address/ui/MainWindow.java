@@ -191,6 +191,10 @@ public class MainWindow extends UiPart<Stage> {
     @FXML
     public void handleIsStallDetail() {
         oneStallPanel = new OneStallPanel(logic.getTempFilteredStallList());
+        stallListPanel = new StallListPanel(logic.getFilteredStallList());
+        leftMainPanel.getChildren().clear();
+        leftMainPanel.getChildren().add(stallListPanel.getRoot());
+        rightMainPanel.getChildren().clear();
         rightMainPanel.getChildren().add(oneStallPanel.getRoot());
     }
 

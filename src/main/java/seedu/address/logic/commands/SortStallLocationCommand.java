@@ -5,6 +5,9 @@ import static seedu.address.model.Model.PREDICATE_SHOW_ALL_STALLS;
 
 import seedu.address.model.Model;
 
+/**
+ * Sorts all stalls by location in alphabetical order.
+ */
 public class SortStallLocationCommand extends Command {
 
     public static final String COMMAND_WORD = "sort-stalls-locations";
