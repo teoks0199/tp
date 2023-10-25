@@ -28,6 +28,15 @@ public class Item {
         this.itemName = itemName;
     }
 
+    /**
+     * Constructor with review
+     */
+    public Item(ItemName itemName, ItemReview itemReview) {
+        requireAllNonNull(itemName, itemReview);
+        this.itemName = itemName;
+        this.itemReview = itemReview;
+    }
+
     public ItemName getName() {
         return itemName;
     }
@@ -62,6 +71,7 @@ public class Item {
      * @param itemReview the item review to be added.
      */
     public void setItemReview(ItemReview itemReview) {
+        requireAllNonNull(itemReview);
         if (hasItemReview()) {
             throw new DuplicateItemReviewException();
         }

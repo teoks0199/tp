@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.item.Item;
 import seedu.address.model.item.ItemName;
+import seedu.address.model.item.review.ItemReview;
 
 /**
  * Jackson-friendly version of {@link Item}.
@@ -50,8 +51,10 @@ public class JsonAdaptedItem {
         final ItemName modelName = new ItemName(itemName);
         Item item = new Item(modelName);
 
-        if (itemReview != null) {
-            item.setItemReview(itemReview.toModelType());
+        final ItemReview modelItemReview = itemReview.toModelType();
+
+        if (modelItemReview != null) {
+            item.setItemReview(modelItemReview);
         }
         return item;
     }

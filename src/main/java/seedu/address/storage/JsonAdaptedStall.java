@@ -34,10 +34,7 @@ class JsonAdaptedStall {
         this.name = name;
         this.location = location;
         this.stallReview = stallReview;
-
-        if (items != null) {
-            this.menu = new JsonSerializableMenu(items);
-        }
+        this.menu = new JsonSerializableMenu(items);
     }
 
     /**
@@ -73,20 +70,18 @@ class JsonAdaptedStall {
         }
         final Location modelLocation = new Location(location);
 
-        Stall stall;
-
-        if (menu != null) {
-            stall = new Stall(modelName, modelLocation, new Menu(menu.toModelType()));
-        } else {
-            stall = new Stall(modelName, modelLocation);
-        }
+        final Menu modelMenu = new Menu(menu.toModelType());
+        StallReview modelStallReview = null;
 
         if (stallReview != null) {
-            StallReview modelStallReview = stallReview.toModelType();
-            stall.setStallReview(modelStallReview);
+            modelStallReview = stallReview.toModelType();
         }
 
-        return stall;
+        if (modelStallReview != null) {
+            return new Stall(modelName, modelLocation, modelMenu, modelStallReview);
+        } else {
+            return new Stall(modelName, modelLocation, modelMenu);
+        }
     }
 
 }

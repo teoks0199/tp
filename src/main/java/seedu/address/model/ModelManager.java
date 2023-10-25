@@ -182,6 +182,7 @@ public class ModelManager implements Model {
     @Override
     public void setItemReview(Item item, ItemReview itemReview) {
         requireNonNull(item);
+        requireNonNull(itemReview);
 
         item.setItemReview(itemReview);
     }
