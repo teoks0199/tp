@@ -21,10 +21,10 @@ public class StallReview {
     /**
      * Constructs a StallReview object.
      *
-     * @param description A valid review.
      * @param rating   A rating representing the star rating.
+     * @param description A valid review.
      */
-    public StallReview(Description description, Rating rating) {
+    public StallReview(Rating rating, Description description) {
         requireAllNonNull(rating, description);
         this.rating = rating;
         this.description = description;
