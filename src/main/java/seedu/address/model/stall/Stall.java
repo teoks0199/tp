@@ -79,6 +79,15 @@ public class Stall {
         this.stallReview = stallReview;
     }
 
+    public String getMenuString() {
+        String str = "Menu Items:" + '\n';
+        for (int i = 0; i < this.getMenu().numOfItem(); i++) {
+            Index index = Index.fromZeroBased(i);
+            str = str + String.valueOf(i + 1) + ". " + this.getMenu().getItem(index).getNameString() + '\n';
+        }
+        return str;
+    }
+
     /**
      * Returns true if both stalls have the same name and location.
      * This defines a weaker notion of equality between two stalls.
