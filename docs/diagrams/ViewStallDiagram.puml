@@ -39,7 +39,7 @@ activate ViewStallCommandParser
 create ViewStallCommand
 ViewStallCommandParser -> ViewStallCommand : ViewStallCommand(predicate)
 activate ViewStallCommand
-ViewStallCommand -> ViewStallCommandParser : v
+ViewStallCommand --> ViewStallCommandParser : v
 deactivate ViewStallCommand
 
 ViewStallCommandParser --> FoodNotesParser: v
