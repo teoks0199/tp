@@ -16,16 +16,17 @@ public class ItemReviewPanel extends UiPart<Region> {
     private HBox cardPane;
 
     @FXML
-    private Label id;
+    private Label itemReview;
 
     @FXML
-    private Label itemReview;
+    private Label itemName;
 
     /**
      * Creates an {@code ItemNamePanel} with the given item.
      */
     public ItemReviewPanel(Item item) {
         super(FXML);
+        itemName.setText(item.getName().fullName);
         itemReview.setText(item.getItemDescriptionString());
     }
 }

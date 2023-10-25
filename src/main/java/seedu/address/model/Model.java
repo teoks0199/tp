@@ -132,17 +132,24 @@ public interface Model {
     void deleteItem(Index stallIndex, Index itemIndex);
 
     /**
-     * Deletes the given item review.
-     * The item review must exist in the item.
-     */
-    void deleteItemReview(Item itemIndex);
-
-    /**
      * Adds the given item review.
      *
      * {@code itemReview} must not already exist in the item.
      */
     void addItemReview(Item itemIndex, ItemReview itemReview);
 
+    /**
+     * Deletes the given item review.
+     *
+     * {@code itemReview} must exist in the item.
+     */
+    void deleteItemReview(Item itemIndex);
+
+    /**
+     * Returns an unmodifiable view of the filtered item list
+     */
+    void setFilteredItemList(Index stallIndex);
+
+    ObservableList<Item> getFilteredItemList();
 
 }

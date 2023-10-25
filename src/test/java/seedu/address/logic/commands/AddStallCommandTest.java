@@ -12,9 +12,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.function.Predicate;
 
-import org.junit.jupiter.api.Test;
-
 import javafx.collections.ObservableList;
+import org.junit.jupiter.api.Test;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
@@ -213,12 +212,21 @@ public class AddStallCommandTest {
         }
 
         @Override
+        public void setFilteredItemList(Index index) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public Item getFilteredItem() {
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
         public Item getFilteredItem(Index stallIndex, Index itemIndex) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        public ObservableList<Item> getFilteredItemList() {
             throw new AssertionError("This method should not be called.");
         }
     }

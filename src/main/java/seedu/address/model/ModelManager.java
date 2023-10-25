@@ -26,6 +26,8 @@ public class ModelManager implements Model {
     private final UserPrefs userPrefs;
     private final FilteredList<Stall> filteredStalls;
     private final FilteredList<Stall> tempFilteredStalls;
+
+    private ObservableList<Item> filteredItemList;
     private Item filteredItem;
 
     /**
@@ -207,6 +209,17 @@ public class ModelManager implements Model {
     public void setFilteredItem(Item item) {
         requireNonNull(item);
         this.filteredItem = item;
+    }
+
+    @Override
+    public void setFilteredItemList(Index stallIndex) {
+        requireNonNull(stallIndex);
+        filteredItemList = filteredStalls.get(stallIndex.getZeroBased()).getMenuList();
+    }
+
+    @Override
+    public ObservableList<Item> getFilteredItemList() {
+        return filteredItemList;
     }
 
     @Override
