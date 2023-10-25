@@ -8,10 +8,9 @@ start
 'Since the beta syntax does not support placing the condition outside the
 'diamond we place it as the true branch instead.
 
-if () then ([command commits FoodNotes])
     :Purge redundant states;
-    :Save FoodNotes to
-    foodNotesStateList;
+if () then ([Item is not a duplicate item in the stall])
+    :Save item to menu in the stall;
 else ([else])
 endif
 stop
