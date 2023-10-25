@@ -150,6 +150,20 @@ public interface Model {
      */
     void setFilteredItemList(Index stallIndex);
 
+    /**
+     * Sorts the stall list by rating in descending order.
+     */
+    void sortStallRating();
+
+    /**
+     * Sorts the stall list by location in alphabetical order.
+     */
+    void sortStallLocation();
+
+    /**
+     * Get the item list that is filtered by stall.
+     * @throws NullPointerException if {@code predicate} is null.
+     */
     ObservableList<Item> getFilteredItemList();
 
 }

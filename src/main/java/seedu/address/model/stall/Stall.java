@@ -63,6 +63,10 @@ public class Stall {
         return location;
     }
 
+    public String getLocationString() {
+        return location.toString();
+    }
+
     public Menu getMenu() {
         return menu;
     }
@@ -77,6 +81,13 @@ public class Stall {
 
     public StallReview getStallReview() {
         return stallReview;
+    }
+
+    public int getStallRatingValue() {
+        if (stallReview == null) {
+            return 0;
+        }
+        return stallReview.getRatingValue();
     }
 
     public void setStallReview(StallReview stallReview) {

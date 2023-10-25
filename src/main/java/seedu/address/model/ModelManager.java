@@ -153,6 +153,16 @@ public class ModelManager implements Model {
         return filteredStalls.get(stallIndex.getZeroBased());
     }
 
+    @Override
+    public void sortStallRating() {
+        addressBook.sortStallRating();
+    }
+
+    @Override
+    public void sortStallLocation() {
+        addressBook.sortStallLocation();
+    }
+
     //=========== Filtered Item List Accessors =============================================================
 
     @Override
@@ -221,6 +231,7 @@ public class ModelManager implements Model {
     public ObservableList<Item> getFilteredItemList() {
         return filteredItemList;
     }
+
 
     @Override
     public boolean equals(Object other) {

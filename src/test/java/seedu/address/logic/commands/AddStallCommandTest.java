@@ -226,9 +226,21 @@ public class AddStallCommandTest {
             throw new AssertionError("This method should not be called.");
         }
 
+        @Override
         public ObservableList<Item> getFilteredItemList() {
             throw new AssertionError("This method should not be called.");
         }
+
+        @Override
+        public void sortStallLocation() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void sortStallRating() {
+            throw new AssertionError("This method should not be called.");
+        }
+
     }
 
     /**
