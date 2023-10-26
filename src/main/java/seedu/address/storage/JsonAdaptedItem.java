@@ -49,13 +49,17 @@ public class JsonAdaptedItem {
             throw new IllegalValueException(ItemName.MESSAGE_CONSTRAINTS);
         }
         final ItemName modelName = new ItemName(itemName);
-        Item item = new Item(modelName);
 
-        final ItemReview modelItemReview = itemReview.toModelType();
+        ItemReview modelItemReview = null;
+
+        if (itemReview != null) {
+            modelItemReview = itemReview.toModelType();
+        }
 
         if (modelItemReview != null) {
-            item.setItemReview(modelItemReview);
+            return new Item(modelName, modelItemReview);
+        } else {
+            return new Item(modelName);
         }
-        return item;
     }
 }
