@@ -199,10 +199,7 @@ public class MainWindow extends UiPart<Stage> {
     }
 
 
-    public StallListPanel getstallListPanel() {
-        return this.stallListPanel;
-    }
-
+    @FXML
     private void handleItemSelectionChanged(Item item) {
         ItemListPanel itemListPanel = new ItemListPanel(logic.getFilteredItemList());
         leftMainPanel.getChildren().clear();
