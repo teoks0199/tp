@@ -13,6 +13,7 @@
 
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.HBox?>
 <fx:root type="javafx.stage.Stage" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
          title="Address App" minWidth="450" minHeight="600" onCloseRequest="#handleExit">
   <icons>
@@ -48,29 +49,29 @@
           </padding>
         </StackPane>
 
-        <SplitPane orientation="HORIZONTAL">
+        <VBox VBox.vgrow="ALWAYS">
+          <SplitPane orientation="HORIZONTAL" >
+
+            <items>
+
+              <VBox fx:id="leftMainPanel" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="NEVER">
+                <padding>
+                  <Insets top="10" right="10" bottom="10" left="10" />
+                </padding>
+              </VBox>
+
+              <VBox fx:id="rightMainPanel" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="NEVER">
+                <padding>
+                  <Insets top="10" right="10" bottom="10" left="10" />
+                </padding>
+              </VBox>
 
 
-          <items>
+            </items>
 
-            <VBox fx:id="leftMainPanel" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="NEVER">
-              <padding>
-                <Insets top="10" right="10" bottom="10" left="10" />
-              </padding>
-              <StackPane fx:id="leftPanelPlaceholder" VBox.vgrow="ALWAYS"/>
-            </VBox>
+          </SplitPane>
 
-            <VBox fx:id="rightMainPanel" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="NEVER">
-              <padding>
-                <Insets top="10" right="10" bottom="10" left="10" />
-              </padding>
-              <StackPane fx:id="rightPanelPlaceholder" VBox.vgrow="ALWAYS"/>
-            </VBox>
-
-
-          </items>
-
-        </SplitPane>
+        </VBox>
 
         <StackPane fx:id="statusbarPlaceholder" VBox.vgrow="NEVER" />
       </VBox>

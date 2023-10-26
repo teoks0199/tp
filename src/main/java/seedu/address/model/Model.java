@@ -132,17 +132,38 @@ public interface Model {
     void deleteItem(Index stallIndex, Index itemIndex);
 
     /**
-     * Deletes the given item review.
-     * The item review must exist in the item.
-     */
-    void deleteItemReview(Item itemIndex);
-
-    /**
      * Adds the given item review.
      *
      * {@code itemReview} must not already exist in the item.
      */
     void setItemReview(Item itemIndex, ItemReview itemReview);
 
+    /**
+     * Deletes the given item review.
+     *
+     * {@code itemReview} must exist in the item.
+     */
+    void deleteItemReview(Item itemIndex);
+
+    /**
+     * Returns an unmodifiable view of the filtered item list
+     */
+    void setFilteredItemList(Index stallIndex);
+
+    /**
+     * Sorts the stall list by rating in descending order.
+     */
+    void sortStallRating();
+
+    /**
+     * Sorts the stall list by location in alphabetical order.
+     */
+    void sortStallLocation();
+
+    /**
+     * Get the item list that is filtered by stall.
+     * @throws NullPointerException if {@code predicate} is null.
+     */
+    ObservableList<Item> getFilteredItemList();
 
 }

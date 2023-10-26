@@ -3,6 +3,7 @@ package seedu.address.model.stall;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -69,6 +70,17 @@ public class UniqueStallList implements Iterable<Stall> {
     }
 
     /**
+     * Sorts the stalls in the list by rating.
+     */
+    public void sortByRating() {
+        Collections.sort(internalList, new StallRatingComparator());
+    }
+
+    public void sortByLocation() {
+        Collections.sort(internalList, new StallLocationComparator());
+    }
+
+    /**
      * Removes the equivalent stall from the list.
      * The stall must exist in the list.
      */
@@ -95,6 +107,10 @@ public class UniqueStallList implements Iterable<Stall> {
         }
 
         internalList.setAll(stalls);
+    }
+
+    public void sortStallRating() {
+        Collections.sort(internalList, new StallRatingComparator());
     }
 
     /**

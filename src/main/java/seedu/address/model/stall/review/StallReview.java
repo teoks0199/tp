@@ -34,6 +34,10 @@ public class StallReview {
         return rating;
     }
 
+    public int getRatingValue() {
+        return Integer.parseInt(rating.rating);
+    }
+
     public Description getDescription() {
         return description;
     }

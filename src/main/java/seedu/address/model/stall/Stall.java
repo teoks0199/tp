@@ -4,6 +4,7 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.Objects;
 
+import javafx.collections.ObservableList;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.item.Item;
@@ -62,16 +63,31 @@ public class Stall {
         return location;
     }
 
+    public String getLocationString() {
+        return location.toString();
+    }
+
     public Menu getMenu() {
         return menu;
     }
 
+
+    public ObservableList<Item> getMenuList() {
+        return menu.getItemList();
+    }
     public boolean hasStallReview() {
         return stallReview != null;
     }
 
     public StallReview getStallReview() {
         return stallReview;
+    }
+
+    public int getStallRatingValue() {
+        if (stallReview == null) {
+            return 0;
+        }
+        return stallReview.getRatingValue();
     }
 
     public void setStallReview(StallReview stallReview) {

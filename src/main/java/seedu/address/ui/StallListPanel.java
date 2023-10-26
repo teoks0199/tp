@@ -14,19 +14,19 @@ import seedu.address.model.stall.Stall;
  * Panel containing the list of persons.
  */
 public class StallListPanel extends UiPart<Region> {
-    private static final String FXML = "StallListPanel.fxml";
+    private static final String FXML = "LeftListPanel.fxml";
     private final Logger logger = LogsCenter.getLogger(StallListPanel.class);
 
     @FXML
-    private ListView<Stall> stallListView;
+    private ListView<Stall> leftListView;
 
     /**
      * Creates a {@code StallListPanel} with the given {@code ObservableList}.
      */
     public StallListPanel(ObservableList<Stall> stallList) {
         super(FXML);
-        stallListView.setItems(stallList);
-        stallListView.setCellFactory(listView -> new StallListViewCell());
+        leftListView.setItems(stallList);
+        leftListView.setCellFactory(listView -> new StallListViewCell());
     }
 
     /**

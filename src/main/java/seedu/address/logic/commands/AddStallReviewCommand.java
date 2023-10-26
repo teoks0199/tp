@@ -25,6 +25,7 @@ public class AddStallReviewCommand extends Command {
             + PREFIX_RATING + "RATING "
             + PREFIX_DESCRIPTION + "DESCRIPTION \n"
             + "Example: " + COMMAND_WORD + " "
+            + PREFIX_STALL
             + "1 "
             + PREFIX_RATING + "2 "
             + PREFIX_DESCRIPTION + "The auntie is pretty and ambience good.";
