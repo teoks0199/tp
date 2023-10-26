@@ -12,6 +12,7 @@ title: User Guide
     - [2.2. Reading the User Guide](#22-reading-the-user-guide)
         * [2.2.1. Icons](#icons)
         * [2.2.2. Parameters](#parameters)
+        * [2.2.3. GUI](#GUI)
 3. [Quick Start](#3-quick-start)
 4. [Features](#4-features)
     - 4.1 [General](#41-general)
@@ -81,7 +82,21 @@ This section provides a summary of the parameters used when inputting commands i
 | `r/`   | `ITEM_RATING`    | Rating of the item                                 | Integer from 0 to 5 (inclusive)                                              |
 | `d/`   | `DESCRIPTION`    | Descriptive review for the stalls or items         | Alphanumeric value with 1 to 27 characters (inclusive)                       |
 
+#### 2.2.3. Terminology related to the _GUI_ <a id="GUI"></a>
+The following figure shows the _GUI_ of **FoodNotes**. It is annotated with the name of the _GUI_ components.
 
+<p align="center">
+<img src="images/userGuide/GUI.png" alt="Layout of GUI">
+<i>Figure 3.2.1.1 Annotated GUI of <b>FoodNotes</b>.</i>
+</p>
+
+What the main components of the _GUI_ do:
+
+* _Data Display_: This is where **FoodNotes** displays the information of the page that you are viewing.
+
+* _Result Display_: This is where **FoodNotes** displays guiding messages.
+
+* _Command Box_: This is where you type your commands.
 --------------------------------------------------------------------------------------------------------------------
 
 ## 3. Quick start (To be updated) <a id="3-quick-start"></a>
