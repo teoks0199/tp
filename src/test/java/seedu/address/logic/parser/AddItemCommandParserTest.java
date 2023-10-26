@@ -52,7 +52,7 @@ public class AddItemCommandParserTest {
 
     @Test
     public void parse_repeatedNonTagValue_failure() {
-        String validExpectedItemString = TYPICAL_STALL_INDEX + ITEM_DESC_NASI_LEMAK + VALID_ITEM_PRICE;
+        String validExpectedItemString = TYPICAL_STALL_INDEX + ITEM_DESC_NASI_LEMAK;
 
         // multiple names
         assertParseFailure(parser, validExpectedItemString + ITEM_DESC_CHICKEN_RICE + VALID_PRICE_DESC,
@@ -62,6 +62,9 @@ public class AddItemCommandParserTest {
         assertParseFailure(parser, TYPICAL_STALL_INDEX + validExpectedItemString + VALID_PRICE_DESC,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_STALL));
 
+        // multiple prices
+        assertParseFailure(parser, validExpectedItemString + VALID_PRICE_DESC + VALID_PRICE_DESC,
+                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_PRICE));
 
         // multiple fields repeated
         assertParseFailure(parser,
