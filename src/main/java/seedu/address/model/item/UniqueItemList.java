@@ -9,6 +9,7 @@ import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.index.Index;
+import seedu.address.commons.util.StringUtil;
 import seedu.address.model.item.exceptions.DuplicateItemException;
 import seedu.address.model.item.exceptions.ItemNotFoundException;
 
@@ -171,5 +172,20 @@ public class UniqueItemList implements Iterable<Item> {
             }
         }
         return true;
+    }
+
+    /**
+     * Returns true if any item in the list contains any of the keywords.
+     */
+    public boolean containsKeywords(List<String> keywords) {
+        for (int i = 0; i < internalList.size(); i++) {
+            Item item = this.getItem(i);
+            if (keywords.stream()
+                    .anyMatch(keyword -> StringUtil
+                            .containsWordIgnoreCase(item.getName().fullName, keyword))) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -12,6 +12,7 @@ title: User Guide
    - [2.2. Reading the User Guide](#22-reading-the-user-guide)
       * [2.2.1. Icons](#icons)
       * [2.2.2. Parameters](#parameters)
+      * [2.2.3. GUI](#GUI)
 3. [Quick Start](#3-quick-start)
 4. [Features](#4-features)
    - 4.1 [General](#41-general)
@@ -81,7 +82,21 @@ This section provides a summary of the parameters used when inputting commands i
 | `r/`   | `ITEM_RATING`    | Rating of the item                                 | Integer from 0 to 5 (inclusive)                                              |
 | `d/`   | `DESCRIPTION`    | Descriptive review for the stalls or items         | Alphanumeric value with 1 to 27 characters (inclusive)                       |
 
+#### 2.2.3. Terminology related to the _GUI_ <a id="GUI"></a>
+The following figure shows the _GUI_ of **FoodNotes**. It is annotated with the name of the _GUI_ components.
 
+<p align="center">
+<img src="images/userGuide/GUI.png" alt="Layout of GUI">
+<i>Figure 3.2.1.1 Annotated GUI of <b>FoodNotes</b>.</i>
+</p>
+
+What the main components of the _GUI_ do:
+
+* _Data Display_: This is where **FoodNotes** displays the information of the page that you are viewing.
+
+* _Result Display_: This is where **FoodNotes** displays guiding messages.
+
+* _Command Box_: This is where you type your commands.
 --------------------------------------------------------------------------------------------------------------------
 
 ## 3. Quick start (To be updated) <a id="3-quick-start"></a>
@@ -116,6 +131,7 @@ This section provides a summary of the parameters used when inputting commands i
 
 * For new users, the application will contain all the data of NUS food stalls and their menu items
 * If double-clicking `foodNotes.jar` does not work,
+
    1. Search for "Command Prompt" or "Terminal" on your computer.
    2. Navigate to the location where `foodNotes.jar` is saved via the terminal. (_Unsure how to navigate?_ You can try running this in your terminal: `cd Downloads`.)
    3. Run the following in the terminal: `java -jar foodNotes.jar`.
@@ -139,9 +155,10 @@ Upon launching the application, some files responsible for the storage of your d
 ## 4.1 General Features <a id="41-general"></a>
 
 -----
-**View all stalls:** list
+### 4.1.1 View all stalls
+**Command function:** list
 
-**Command format:** list
+**Command format:** `list`
 
 **Expected output (Success):**
 ```
@@ -153,12 +170,13 @@ Noodle stall at Frontier  ★★★★☆
 ```
 please enter list only
 ```
+---
+### 4.1.2 Find stall
+**Command function:** Find stalls by name
 
-**Find stalls by name:** find-stall
+**Command format:** `find-stall <KEYWORD>`
 
-**Command format:** find-stall <KEYWORD>
-
-**Ex.:** find-stall japan
+**Ex.:** `find-stall japan`
 
 **Expected output (Success):**
 ```
@@ -170,10 +188,12 @@ Japan Delights at Frontier  ★★★★☆
 ```
 re-enter in the format : find-stall <KEYWORD>
 ```
+---
+### 4.1.3 Find item
 
-**Find stalls by item:** find-item
+**Command function:** Find stalls by item
 
-**Command format:** find-item <KEYWORD>
+**Command format:** `find-item <KEYWORD>`
 
 **Ex.:** find-item chicken
 
@@ -194,12 +214,12 @@ re-enter in the format : find-item <KEYWORD>
 ## 4.2 Stall Features <a id="42-stalls"></a>
 
 ----
+### 4.2.1 Add Stall
+**Command function:** Adding a stall
 
-**1.1 Adding a stall:** add-stall
+**Command format:** `add-stall n/<STALL_NAME>  l/<LOCATION>`
 
-**Command format:** add-stall n/<STALL_NAME>  l/ <LOCATION>
-
-**Ex.:** add-stall n/Japanese stall l/Deck
+**Ex.:** `add-stall n/Japanese stall l/Deck`
 
 **Expected Output (Success):**
 ```
@@ -207,13 +227,15 @@ Yay! Japanese stall at Deck is successfully added to list of stalls.
 ```
 **Expected Output (Fail):**
 ```
-re-enter in the format : add-stall n/<STALL_NAME>  l/ <LOCATION>
+re-enter in the format : add-stall n/STALL_NAME  l/LOCATION
 ```
-**1.2 Viewing a stall:** view-stall
+---
+### 4.2.2 View Stall
+**Command function: Viewing a stall
 
-**Command format:** view-stall s/<STALL_NUMBER>
+**Command format:** `view-stall s/<STALL_NUMBER>`
 
-**Ex.:** view-stall s/1
+**Ex.:** `view-stall s/1`
 
 **Expected output (Success):**
 ```
@@ -225,13 +247,15 @@ Menu
 ```
 **Expected output (Fail)**:
 ```
-re-enter in the format : view-stall s/<STALL_NUMBER>
+re-enter in the format : view-stall s/STALL_NUMBER
 ```
-**1.3 Deleting a stall:** delete-stall
+---
+### 4.2.3 Delete Stall
+**Command function:** Deleting a stall
 
-**Command format:** delete-stall s/<STALL_NUMBER>
+**Command format:** `delete-stall s/<STALL_NUMBER>`
 
-**Ex.:** delete-stall s/1
+**Ex.:** `delete-stall s/1`
 
 **Expected output (Success):**
 ```
@@ -241,13 +265,15 @@ Japanese Stall ★★★★☆ has been deleted.
 **Expected output (Fail):**
 
 ```
-re-enter in the format : delete-stall s/<STALL_NUMBER>
+re-enter in the format : delete-stall s/STALL_NUMBER
 ```
-**1.4 Reviewing a stall:** review-stall
+---
+### 4.2.4 Review Stall
+**Command function:** Reviewing a stall
 
-**Command format:** review-stall s/STALL_NUMBER r/STALL_RATING d/DESCRIPTION
+**Command format:** `review-stall s/<STALL_NUMBER> r/<STALL_RATING> d/<DESCRIPTION>`
 
-**Ex.:** review-stall s/1 r/5 d/the auntie very chio
+**Ex.:** `review-stall s/1 r/5 d/the auntie very chio`
 
 **Expected output (Success):**
 ```
@@ -266,12 +292,12 @@ re-enter in the format : review-stall s/STALL_NUMBER r/STALL_RATING d/DESCRIPTIO
 ## 4.3 Item Features <a id="43-items"></a>
 
 ----
+### 4.3.1 View all items
+**Command function:** Adding an item to a stall
 
-**2.1 Adding an item to a stall:** add-item
+**Command format:** `add-item s/<STALL_NUMBER> i/<ITEM>`
 
-**Command format:** add-item s/STALL_NUMBER i/ITEM
-
-**Ex.:** add-item s/1 i/Chicken Rice
+**Ex.:** `add-item s/1 i/Chicken Rice`
 
 **Expected output (Success):**
 ```
@@ -286,12 +312,13 @@ re-enter in the format : add-item s/STALL_NUMBER i/ITEM
 - s/: Positive Integer less than or equal to the size of list,
 
 - i/: String
+---
+### 4.3.2 View all items
+**Command function:** Viewing an item from a stall
 
-**2.2 Viewing an item from a stall:** view-item
+**Command format:** `view-item s/<STALL_NUMBER> i/<ITEM_NUMBER>`
 
-**Command format:** view-item s/STALL_NUMBER i/ITEM_NUMBER
-
-**Ex.:** view-item s/1 i/1
+**Ex.:** `view-item s/1 i/1`
 
 **Expected output (Success):**
 ```
@@ -307,12 +334,13 @@ re-enter in the format : view-item s/STALL_NUMBER i/ITEM_NUMBER
 **Acceptable values:**
 - s/: Positive Integer less than or equal to the size of list,
 - i/: Positive Integer less than or equal to the size of list
+---
+### 4.3.3 Delete an item from a stall
+**Command function:** Deleting an item from a stall
 
-**2.3 Deleting an item from a stall:** delete-item
+**Command format:** `delete-item s/<STALL_NUMBER> i/<ITEM_NUMBER>`
 
-**Command format:** delete-item s/STALL_NUMBER i/ITEM_NUMBER
-
-**Ex.:** delete-item s/1 i/1
+**Ex.:** `delete-item s/1 i/1`
 
 **Expected output (Success):**
 ```
@@ -326,11 +354,13 @@ re-enter in the format : delete-item s/STALL_NUMBER i/ITEM_NUMBER
 - s/: Positive Integer less than or equal to the size of list
 - i/: Positive Integer less than or equal to the size of list
 
-**2.4 Reviewing an item:** review-item
+---
+### 4.3.4 Rate an item from a stall
+**Command function:** Reviewing an item
 
-**Command format:** review-item s/STALL_NUMBER i/ITEM_NUMBER r/ITEM_RATING d/DESCRIPTION
+**Command format:** `review-item s/<STALL_NUMBER> i/<ITEM_NUMBER> r/<ITEM_RATING> d/<DESCRIPTION>`
 
-**Ex.:** review-item s/1 i/1 r/5 d/Tasty chicken rice with a good amount of meat and rice. The chilli is also very good.
+**Ex.:** `review-item s/1 i/1 r/5 d/Tasty chicken rice with a good amount of meat and rice. The chilli is also very good.`
 
 **Expected output (Success):**
 ```
@@ -348,12 +378,13 @@ re-enter in the format: review-item s/STALL_NUMBER i/ITEM_NUMBER r/ITEM_RATING d
 - i/: Positive Integer less than or equal to the size of menu
 - r/: Integer from 0 to 5
 - d/: String
+---
+### 4.3.5 Delete an item review
+**Command function:** Deleting an item review
 
-**2.5 Deleting an item review:** delete-item-review
+**Command format:** `delete-item-review s/<STALL_NUMBER> i/<ITEM_NUMBER>`
 
-**Command format:** delete-item-review s/STALL_NUMBER i/ITEM_NUMBER
-
-**Ex.:** delete-item-review s/1 i/1
+**Ex.:** `delete-item-review s/1 i/1`
 
 **Expected output (Success):**
 ```You have deleted the review for the White Chicken Rice at the Chicken Rice Stall at Deck.```
