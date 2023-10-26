@@ -1,7 +1,6 @@
 package seedu.address.logic.parser;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
 import static seedu.address.logic.parser.ParserUtil.MESSAGE_INVALID_INDEX;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_STALL;
@@ -9,7 +8,6 @@ import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_STALL;
 import org.junit.jupiter.api.Test;
 
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.review.Description;
 import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Name;
 
@@ -99,5 +97,4 @@ public class ParserUtilTest {
     public void parseDescription_invalidDescriptionString_throwsParseException() {
         assertThrows(ParseException.class, () -> ParserUtil.parseDescription(""));
     }
-  }
-
+}
