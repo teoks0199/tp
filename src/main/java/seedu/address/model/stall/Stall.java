@@ -134,7 +134,8 @@ public class Stall {
 
     public String getStallReviewString() {
         if (this.stallReview != null) {
-            return stallReview.toString();
+            return stallReview.getRating().starRating
+                + stallReview.getDescription().description;
         } else {
             return "No review added.";
         }
