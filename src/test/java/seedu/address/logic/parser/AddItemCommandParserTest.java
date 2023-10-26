@@ -83,9 +83,6 @@ public class AddItemCommandParserTest {
         assertParseFailure(parser, INVALID_ITEM_NAME_DESC + validExpectedItemString + VALID_PRICE_DESC,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_ITEM));
 
-        // invalid price
-        assertParseFailure(parser, validExpectedItemString + INVALID_ITEM_PRICE_DESC,
-                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_PRICE));
         // valid value followed by invalid value
 
         // invalid stall
@@ -96,6 +93,10 @@ public class AddItemCommandParserTest {
         // invalid item
         assertParseFailure(parser, validExpectedItemString + INVALID_ITEM_NAME_DESC + VALID_PRICE_DESC,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_ITEM));
+
+        //invalid price
+        assertParseFailure(parser, validExpectedItemString + VALID_PRICE_DESC + INVALID_ITEM_PRICE_DESC,
+                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_PRICE));
     }
 
 
