@@ -34,12 +34,20 @@ public class StallReview {
         return rating;
     }
 
+    public String getStarRating() {
+        return this.rating.starRating;
+    }
+
     public int getRatingValue() {
         return Integer.parseInt(rating.rating);
     }
 
     public Description getDescription() {
         return description;
+    }
+
+    public String getDescriptionString() {
+        return description.description;
     }
 
     /**

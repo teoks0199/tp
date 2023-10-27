@@ -59,8 +59,23 @@ public class Stall {
         return name;
     }
 
+    public String getStallString() {
+        return "Stall Name: "
+                + name.toString()
+                + " Location: "
+                + location.toString();
+    }
+
     public Location getLocation() {
         return location;
+    }
+
+    public String getStallStarRating() {
+        return stallReview.getStarRating();
+    }
+
+    public String getStallDescription() {
+        return stallReview.getDescriptionString();
     }
 
     public String getLocationString() {
@@ -70,7 +85,6 @@ public class Stall {
     public Menu getMenu() {
         return menu;
     }
-
 
     public ObservableList<Item> getMenuList() {
         return menu.getItemList();

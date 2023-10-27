@@ -88,6 +88,11 @@ public class LogicManager implements Logic {
     }
 
     @Override
+    public Stall getFilteredStall() {
+        return model.getFilteredStall();
+    }
+
+    @Override
     public Path getAddressBookFilePath() {
         return model.getAddressBookFilePath();
     }

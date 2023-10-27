@@ -43,6 +43,12 @@ public interface Logic {
     ObservableList<Item> getFilteredItemList();
 
     /**
+     * Returns the filtered stall
+     * @return filtered stall
+     */
+    Stall getFilteredStall();
+
+    /**
      * Returns the user prefs' address book file path.
      */
     Path getAddressBookFilePath();

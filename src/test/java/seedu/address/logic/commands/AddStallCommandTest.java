@@ -127,6 +127,11 @@ public class AddStallCommandTest {
         }
 
         @Override
+        public Stall getFilteredStall() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public Stall getFilteredStall(Index stallIndex) {
             throw new AssertionError("This method should not be called.");
         }
@@ -213,6 +218,11 @@ public class AddStallCommandTest {
 
         @Override
         public void setFilteredItemList(Index index) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void setFilteredStall(Index stallIndex) {
             throw new AssertionError("This method should not be called.");
         }
 

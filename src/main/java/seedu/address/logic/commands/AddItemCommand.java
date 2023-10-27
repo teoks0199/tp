@@ -29,7 +29,7 @@ public class AddItemCommand extends Command {
             + PREFIX_STALL + "1 "
             + PREFIX_ITEM + "Chicken Rice";
 
-    public static final String MESSAGE_SUCCESS = "New Item added: %1$s";
+    public static final String MESSAGE_SUCCESS = "New Item: %1$s successfully added to stall: %2$s";
     public static final String MESSAGE_DUPLICATE_ITEM = "This Item already exists in this Stall";
     private final Item toAdd;
     private final Index stallIndex;
@@ -59,7 +59,7 @@ public class AddItemCommand extends Command {
         }
 
         model.addItem(stallIndex, toAdd);
-        return new CommandResult(String.format(MESSAGE_SUCCESS, Messages.format(toAdd)));
+        return new CommandResult(String.format(MESSAGE_SUCCESS, Messages.format(toAdd), stallToUpdate.getName()));
     }
 
     @Override
