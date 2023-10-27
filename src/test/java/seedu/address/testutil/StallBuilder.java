@@ -1,11 +1,14 @@
 package seedu.address.testutil;
 
+import static seedu.address.testutil.TypicalItems.CHICKEN_RICE;
+import static seedu.address.testutil.TypicalItems.NASI_LEMAK;
+
 import seedu.address.model.item.Item;
-import seedu.address.model.item.ItemName;
 import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Menu;
 import seedu.address.model.stall.Name;
 import seedu.address.model.stall.Stall;
+
 
 /**
  * A utility class to help with building Stall objects.
@@ -14,8 +17,8 @@ public class StallBuilder {
 
     public static final String DEFAULT_NAME = "Chicken Rice";
     public static final String DEFAULT_LOCATION = "Deck";
-    private static final Item VALID_ITEM_1 = new Item(new ItemName("Roasted Chicken Rice"));
-    private static final Item VALID_ITEM_2 = new Item(new ItemName("Steamed Chicken Rice"));
+    private static final Item VALID_ITEM_1 = CHICKEN_RICE;
+    private static final Item VALID_ITEM_2 = NASI_LEMAK;
     private static final Menu DEFAULT_MENU = new MenuBuilder().withItem(VALID_ITEM_1).withItem(VALID_ITEM_2).build();
     private Name name;
     private Location location;

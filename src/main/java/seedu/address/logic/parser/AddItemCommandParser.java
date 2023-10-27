@@ -39,9 +39,9 @@ public class AddItemCommandParser implements Parser<AddItemCommand> {
         ItemName itemName = ParserUtil.parseItemName(argMultimap.getValue(PREFIX_ITEM).get());
         Price price = ParserUtil.parsePrice(argMultimap.getValue(PREFIX_PRICE).get());
 
-        Item item = new Item(itemName);
+        Item item = new Item(itemName, price);
 
-        return new AddItemCommand(stallIndex, item, price);
+        return new AddItemCommand(stallIndex, item);
     }
 
     /**
