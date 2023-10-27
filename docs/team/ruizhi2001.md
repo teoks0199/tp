@@ -10,19 +10,19 @@ FoodNotes is a desktop address book application used to record reviews on food s
 Given below are my contributions to the project.
 
 * **New Feature**: TO BE ADDED
-    * What it does: 
-    * Justification: 
-    * Highlights: 
-    * Credits: 
+    * What it does:
+    * Justification:
+    * Highlights:
+    * Credits:
 
 * **Code contributed**:
 
 * **Project management**:
 
 * **Enhancements to existing features**:
-    
+
 * **Documentation**:
     
 * **Community**:
-    
+
 * **Tools**:
