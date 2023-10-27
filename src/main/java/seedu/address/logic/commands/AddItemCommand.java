@@ -13,7 +13,6 @@ import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.item.Item;
-import seedu.address.model.item.Price;
 import seedu.address.model.stall.Stall;
 
 /**
@@ -26,26 +25,25 @@ public class AddItemCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds an item to the address book. "
         + "Parameters: "
         + PREFIX_STALL + "STALL_INDEX "
-        + PREFIX_ITEM + "ITEM_NAME \n"
+        + PREFIX_ITEM + "ITEM_NAME "
+            + PREFIX_PRICE + "ITEM_PRICE \n"
         + "Example: " + COMMAND_WORD + " "
         + PREFIX_STALL + "1 "
-        + PREFIX_ITEM + "Chicken Rice"
+        + PREFIX_ITEM + "Chicken Rice "
         + PREFIX_PRICE + "5.50 ";
 
     public static final String MESSAGE_SUCCESS = "New Item added: %1$s";
     public static final String MESSAGE_DUPLICATE_ITEM = "This Item already exists in this Stall";
     private final Item toAdd;
     private final Index stallIndex;
-    private final Price price;
 
     /**
      * Creates an AddItemCommand to add the specified {@code Item}
      */
-    public AddItemCommand(Index stallIndex, Item item, Price price) {
+    public AddItemCommand(Index stallIndex, Item item) {
         requireNonNull(item);
         this.toAdd = item;
         this.stallIndex = stallIndex;
-        this.price = price;
     }
 
     @Override

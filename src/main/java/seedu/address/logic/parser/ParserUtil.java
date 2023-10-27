@@ -23,8 +23,6 @@ public class ParserUtil {
     public static final String MESSAGE_INVALID_INDEX = "Index is not a non-zero unsigned integer.";
     public static final String MESSAGE_INVALID_STALL_INDEX = "Stall index is not a non-zero unsigned integer.";
     public static final String MESSAGE_INVALID_ITEM_INDEX = "Item index is not a non-zero unsigned integer.";
-    public static final String MESSAGE_INVALID_ITEM_PRICE = "Item price is not a non-zero "
-        + "unsigned double with 2 decimal places.";
 
 
     /**
@@ -111,7 +109,7 @@ public class ParserUtil {
     }
 
     /**
-     * Parses a {@code String stallIndex} into an {@code Index}.
+     * Parses a {@code String price} into an {@code Price}.
      * Leading and trailing whitespaces will be trimmed.
      *
      * @param price The price of the item.
@@ -119,12 +117,12 @@ public class ParserUtil {
      * @throws ParseException if the given {@code price} is invalid.
      */
     public static Price parsePrice(String price) throws ParseException {
+        requireNonNull(price);
         String trimmedPrice = price.trim();
-        double value = Double.parseDouble(trimmedPrice);
-        if (!StringUtil.isNonZeroUnsignedDouble(trimmedPrice)) {
-            throw new ParseException(MESSAGE_INVALID_ITEM_PRICE);
+        if (!Price.isValidPrice(trimmedPrice)) {
+            throw new ParseException(Price.MESSAGE_CONSTRAINTS);
         }
-        return new Price(value);
+        return new Price(price);
     }
 
     /**
