@@ -1,13 +1,14 @@
 package seedu.address.testutil;
 
+import static seedu.address.testutil.TypicalItems.CHICKEN_RICE;
+import static seedu.address.testutil.TypicalItems.NASI_LEMAK;
+
 import seedu.address.model.item.Item;
 import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Menu;
 import seedu.address.model.stall.Name;
 import seedu.address.model.stall.Stall;
 
-import static seedu.address.testutil.TypicalItems.CHICKEN_RICE;
-import static seedu.address.testutil.TypicalItems.NASI_LEMAK;
 
 /**
  * A utility class to help with building Stall objects.

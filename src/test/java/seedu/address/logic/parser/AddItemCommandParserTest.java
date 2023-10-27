@@ -1,7 +1,18 @@
 package seedu.address.logic.parser;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.commands.CommandTestUtil.*;
+import static seedu.address.logic.commands.CommandTestUtil.INVALID_ITEM_NAME_DESC;
+import static seedu.address.logic.commands.CommandTestUtil.INVALID_ITEM_PRICE_DESC;
+import static seedu.address.logic.commands.CommandTestUtil.INVALID_STALL_INDEX_DESC;
+import static seedu.address.logic.commands.CommandTestUtil.ITEM_DESC_CHICKEN_RICE;
+import static seedu.address.logic.commands.CommandTestUtil.ITEM_DESC_NASI_LEMAK;
+import static seedu.address.logic.commands.CommandTestUtil.PREAMBLE_NON_EMPTY;
+import static seedu.address.logic.commands.CommandTestUtil.PREAMBLE_WHITESPACE;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_NAME_NASI_LEMAK;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_PRICE_1;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_PRICE_DESC;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_STALL_INDEX_1;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_STALL_INDEX_DESC;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PRICE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;

@@ -1,11 +1,12 @@
 package seedu.address.testutil;
 
-import seedu.address.model.stall.Menu;
-
 import static seedu.address.testutil.TypicalItems.CHICKEN_RICE;
 import static seedu.address.testutil.TypicalItems.FRIED_RICE;
 import static seedu.address.testutil.TypicalItems.LAKSA;
 import static seedu.address.testutil.TypicalItems.NASI_LEMAK;
+
+import seedu.address.model.stall.Menu;
+
 
 /**
  * A utility class containing a list of {@code Menu} objects to be used in tests.

@@ -1,6 +1,9 @@
 package seedu.address.testutil;
 
-import static seedu.address.logic.commands.CommandTestUtil.*;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_NAME_CHICKEN_RICE;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_NAME_NASI_LEMAK;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_PRICE_1;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_PRICE_2;
 import static seedu.address.testutil.TypicalStalls.getTypicalStalls;
 
 import java.util.ArrayList;
