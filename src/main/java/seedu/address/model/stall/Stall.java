@@ -113,7 +113,7 @@ public class Stall {
         String str = "Menu Items:" + '\n';
         for (int i = 0; i < this.getMenu().numOfItem(); i++) {
             Index index = Index.fromZeroBased(i);
-            str = str + String.valueOf(i + 1) + ". " + this.getMenu().getItem(index).getNameString() + '\n';
+            str = str + (i + 1) + ". " + this.getMenu().getItem(index).getNameString() + '\n';
         }
         return str;
     }
@@ -164,7 +164,8 @@ public class Stall {
 
     public String getStallReviewString() {
         if (this.stallReview != null) {
-            return stallReview.toString();
+            return stallReview.getRating().starRating
+                + stallReview.getDescription().description;
         } else {
             return "No review added.";
         }
