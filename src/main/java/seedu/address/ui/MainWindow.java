@@ -9,6 +9,7 @@ import javafx.scene.control.TextInputControl;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
@@ -44,17 +45,17 @@ public class MainWindow extends UiPart<Stage> {
 
     @FXML
     private MenuItem helpMenuItem;
-
-    @FXML
-    private StackPane leftPanelPlaceholder;
-
-    @FXML
-    private StackPane rightPanelPlaceholder;
     @FXML
     private StackPane resultDisplayPlaceholder;
 
     @FXML
     private StackPane statusbarPlaceholder;
+
+    @FXML
+    private VBox leftMainPanel;
+
+    @FXML
+    private VBox rightMainPanel;
 
     /**
      * Creates a {@code MainWindow} with the given {@code Stage} and {@code Logic}.
@@ -118,7 +119,7 @@ public class MainWindow extends UiPart<Stage> {
      */
     void fillInnerParts() {
         stallListPanel = new StallListPanel(logic.getFilteredStallList());
-        leftPanelPlaceholder.getChildren().add(stallListPanel.getRoot());
+        leftMainPanel.getChildren().add(stallListPanel.getRoot());
 
         resultDisplay = new ResultDisplay();
         resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());
@@ -132,9 +133,10 @@ public class MainWindow extends UiPart<Stage> {
 
     void backToHomePage() {
         stallListPanel = new StallListPanel(logic.getFilteredStallList());
-        leftPanelPlaceholder.getChildren().add(stallListPanel.getRoot());
+        leftMainPanel.getChildren().clear();
+        leftMainPanel.getChildren().add(stallListPanel.getRoot());
 
-        rightPanelPlaceholder.getChildren().clear();
+        rightMainPanel.getChildren().clear();
 
         StatusBarFooter statusBarFooter = new StatusBarFooter(logic.getAddressBookFilePath());
         statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());
@@ -189,22 +191,26 @@ public class MainWindow extends UiPart<Stage> {
     @FXML
     public void handleIsStallDetail() {
         oneStallPanel = new OneStallPanel(logic.getTempFilteredStallList());
-        rightPanelPlaceholder.getChildren().add(oneStallPanel.getRoot());
+        stallListPanel = new StallListPanel(logic.getFilteredStallList());
+        leftMainPanel.getChildren().clear();
+        leftMainPanel.getChildren().add(stallListPanel.getRoot());
+        rightMainPanel.getChildren().clear();
+        rightMainPanel.getChildren().add(oneStallPanel.getRoot());
     }
 
 
-    public StallListPanel getStallListPanel() {
-        return stallListPanel;
+    public StallListPanel getstallListPanel() {
+        return this.stallListPanel;
     }
 
     private void handleItemSelectionChanged(Item item) {
-        ItemNamePanel itemNamePanel = new ItemNamePanel(item);
-        leftPanelPlaceholder.getChildren().clear();
-        leftPanelPlaceholder.getChildren().add(itemNamePanel.getRoot());
+        ItemListPanel itemListPanel = new ItemListPanel(logic.getFilteredItemList());
+        leftMainPanel.getChildren().clear();
+        leftMainPanel.getChildren().add(itemListPanel.getRoot());
 
         ItemReviewPanel itemReviewPanel = new ItemReviewPanel(item);
-        rightPanelPlaceholder.getChildren().clear();
-        rightPanelPlaceholder.getChildren().add(itemReviewPanel.getRoot());
+        rightMainPanel.getChildren().clear();
+        rightMainPanel.getChildren().add(itemReviewPanel.getRoot());
     }
 
     /**

@@ -27,6 +27,7 @@ import seedu.address.logic.commands.DeleteStallCommand;
 import seedu.address.logic.commands.EditCommand;
 import seedu.address.logic.commands.ExitCommand;
 //import seedu.address.logic.commands.FindItemCommand;
+//import seedu.address.logic.commands.FindLocationCommand;
 import seedu.address.logic.commands.FindStallCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.ListCommand;

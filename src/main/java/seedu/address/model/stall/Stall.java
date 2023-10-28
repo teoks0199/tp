@@ -4,6 +4,7 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.Objects;
 
+import javafx.collections.ObservableList;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.item.Item;
@@ -62,16 +63,31 @@ public class Stall {
         return location;
     }
 
+    public String getLocationString() {
+        return location.toString();
+    }
+
     public Menu getMenu() {
         return menu;
     }
 
+
+    public ObservableList<Item> getMenuList() {
+        return menu.getItemList();
+    }
     public boolean hasStallReview() {
         return stallReview != null;
     }
 
     public StallReview getStallReview() {
         return stallReview;
+    }
+
+    public int getStallRatingValue() {
+        if (stallReview == null) {
+            return 0;
+        }
+        return stallReview.getRatingValue();
     }
 
     public void setStallReview(StallReview stallReview) {
@@ -83,7 +99,7 @@ public class Stall {
         String str = "Menu Items:" + '\n';
         for (int i = 0; i < this.getMenu().numOfItem(); i++) {
             Index index = Index.fromZeroBased(i);
-            str = str + String.valueOf(i + 1) + ". " + this.getMenu().getItem(index).getNameString() + '\n';
+            str = str + (i + 1) + ". " + this.getMenu().getItem(index).getNameString() + '\n';
         }
         return str;
     }
@@ -134,7 +150,8 @@ public class Stall {
 
     public String getStallReviewString() {
         if (this.stallReview != null) {
-            return stallReview.toString();
+            return stallReview.getRating().starRating
+                + stallReview.getDescription().description;
         } else {
             return "No review added.";
         }

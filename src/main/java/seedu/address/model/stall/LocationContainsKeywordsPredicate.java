@@ -3,21 +3,23 @@ package seedu.address.model.stall;
 import java.util.List;
 import java.util.function.Predicate;
 
+import seedu.address.commons.util.StringUtil;
 import seedu.address.commons.util.ToStringBuilder;
 
 /**
  * Tests that a {@code Stall}'s {@code Name} matches any of the keywords given.
  */
-public class MenuContainsKeywordsPredicate implements Predicate<Stall> {
+public class LocationContainsKeywordsPredicate implements Predicate<Stall> {
     private final List<String> keywords;
 
-    public MenuContainsKeywordsPredicate(List<String> keywords) {
+    public LocationContainsKeywordsPredicate(List<String> keywords) {
         this.keywords = keywords;
     }
 
     @Override
     public boolean test(Stall stall) {
-        return stall.getMenu().containsKeywords(keywords);
+        return keywords.stream()
+                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(stall.getLocation().locationName, keyword));
     }
 
     @Override
@@ -27,12 +29,13 @@ public class MenuContainsKeywordsPredicate implements Predicate<Stall> {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof MenuContainsKeywordsPredicate)) {
+        if (!(other instanceof LocationContainsKeywordsPredicate)) {
             return false;
         }
 
-        MenuContainsKeywordsPredicate otherMenuContainsKeywordsPredicate = (MenuContainsKeywordsPredicate) other;
-        return keywords.equals(otherMenuContainsKeywordsPredicate.keywords);
+        LocationContainsKeywordsPredicate otherLocationContainsKeywordsPredicate =
+                (LocationContainsKeywordsPredicate) other;
+        return keywords.equals(otherLocationContainsKeywordsPredicate.keywords);
     }
 
     @Override

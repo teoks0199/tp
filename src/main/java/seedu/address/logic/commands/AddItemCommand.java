@@ -2,6 +2,7 @@ package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PRICE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
 import java.util.List;
@@ -22,12 +23,14 @@ public class AddItemCommand extends Command {
     public static final String COMMAND_WORD = "add-item";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds an item to the address book. "
-            + "Parameters: "
-            + PREFIX_STALL + "STALL_INDEX "
-            + PREFIX_ITEM + "ITEM_NAME \n"
-            + "Example: " + COMMAND_WORD + " "
-            + PREFIX_STALL + "1 "
-            + PREFIX_ITEM + "Chicken Rice";
+        + "Parameters: "
+        + PREFIX_STALL + "STALL_INDEX "
+        + PREFIX_ITEM + "ITEM_NAME "
+            + PREFIX_PRICE + "ITEM_PRICE \n"
+        + "Example: " + COMMAND_WORD + " "
+        + PREFIX_STALL + "1 "
+        + PREFIX_ITEM + "Chicken Rice "
+        + PREFIX_PRICE + "5.50 ";
 
     public static final String MESSAGE_SUCCESS = "New Item added: %1$s";
     public static final String MESSAGE_DUPLICATE_ITEM = "This Item already exists in this Stall";
@@ -80,7 +83,7 @@ public class AddItemCommand extends Command {
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .add("toAdd", toAdd)
-                .toString();
+          .add("toAdd", toAdd)
+          .toString();
     }
 }

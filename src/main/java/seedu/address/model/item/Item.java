@@ -17,23 +17,25 @@ public class Item {
 
     // Identity fields
     private final ItemName itemName;
-
+    private final Price price;
     private ItemReview itemReview;
 
     /**
      * Every field must be present and not null.
      */
-    public Item(ItemName itemName) {
-        requireAllNonNull(itemName);
+    public Item(ItemName itemName, Price price) {
+        requireAllNonNull(itemName, price);
         this.itemName = itemName;
+        this.price = price;
     }
 
     /**
      * Constructor with review
      */
-    public Item(ItemName itemName, ItemReview itemReview) {
-        requireAllNonNull(itemName, itemReview);
+    public Item(ItemName itemName, Price price, ItemReview itemReview) {
+        requireAllNonNull(itemName, price, itemReview);
         this.itemName = itemName;
+        this.price = price;
         this.itemReview = itemReview;
     }
 
@@ -43,6 +45,13 @@ public class Item {
 
     public String getNameString() {
         return itemName.toString();
+    }
+
+    public Price getPrice() {
+        return price;
+    }
+    public String getPriceString() {
+        return price.toString();
     }
 
     public ItemReview getItemReview() {
@@ -106,7 +115,8 @@ public class Item {
         }
 
         return otherItem != null
-                && otherItem.getName().equals(getName());
+                && otherItem.getName().equals(getName())
+                && otherItem.getPrice().equals(getPrice());
     }
 
     /**
@@ -125,7 +135,7 @@ public class Item {
         }
 
         Item otherItem = (Item) other;
-        return itemName.equals(otherItem.itemName);
+        return itemName.equals(otherItem.itemName) && price.equals(otherItem.price);
     }
 
     @Override
@@ -138,6 +148,7 @@ public class Item {
     public String toString() {
         return new ToStringBuilder(this)
                 .add("itemName", itemName)
+                .add("price", price)
                 .toString();
     }
 

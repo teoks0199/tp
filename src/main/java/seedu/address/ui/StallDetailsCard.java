@@ -37,7 +37,7 @@ public class StallDetailsCard extends UiPart<Region> {
     private Label menuItem;
 
     /**
-     * Creates a {@code PersonCode} with the given {@code Stall} and index to display.
+     * Creates a {@code StallDetailsCard} with the given {@code Stall} and index to display.
      */
     public StallDetailsCard(Stall stall, int displayedIndex) {
         super(FXML);

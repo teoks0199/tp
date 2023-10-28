@@ -67,6 +67,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         return stalls.contains(stall);
     }
 
+
     /**
      * Adds a stall to the address book.
      * The stall must not already exist in the address book.
@@ -93,6 +94,15 @@ public class AddressBook implements ReadOnlyAddressBook {
     public void removeStall(Stall key) {
         stalls.remove(key);
     }
+
+    public void sortStallRating() {
+        stalls.sortByRating();
+    }
+
+    public void sortStallLocation() {
+        stalls.sortByLocation();
+    }
+
 
     //// util methods
 

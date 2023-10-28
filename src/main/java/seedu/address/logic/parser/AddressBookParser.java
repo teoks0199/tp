@@ -21,9 +21,12 @@ import seedu.address.logic.commands.DeleteStallReviewCommand;
 import seedu.address.logic.commands.EditCommand;
 import seedu.address.logic.commands.ExitCommand;
 import seedu.address.logic.commands.FindItemCommand;
+import seedu.address.logic.commands.FindLocationCommand;
 import seedu.address.logic.commands.FindStallCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.ListCommand;
+import seedu.address.logic.commands.SortStallLocationCommand;
+import seedu.address.logic.commands.SortStallRatingCommand;
 import seedu.address.logic.commands.ViewItemCommand;
 import seedu.address.logic.commands.ViewStallCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -93,14 +96,23 @@ public class AddressBookParser {
         case ClearCommand.COMMAND_WORD:
             return new ClearCommand();
 
-        case FindStallCommand.COMMAND_WORD:
-            return new FindStallCommandParser().parse(arguments);
-
         case FindItemCommand.COMMAND_WORD:
             return new FindItemCommandParser().parse(arguments);
 
+        case FindLocationCommand.COMMAND_WORD:
+            return new FindLocationCommandParser().parse(arguments);
+
+        case FindStallCommand.COMMAND_WORD:
+            return new FindStallCommandParser().parse(arguments);
+
         case ListCommand.COMMAND_WORD:
             return new ListCommand();
+
+        case SortStallRatingCommand.COMMAND_WORD:
+            return new SortStallRatingCommand();
+
+        case SortStallLocationCommand.COMMAND_WORD:
+            return new SortStallLocationCommand();
 
         case ExitCommand.COMMAND_WORD:
             return new ExitCommand();
@@ -113,6 +125,7 @@ public class AddressBookParser {
 
         case ViewStallCommand.COMMAND_WORD:
             return new ViewStallCommandParser().parse(arguments);
+
 
         default:
             logger.finer("This user input caused a ParseException: " + userInput);
