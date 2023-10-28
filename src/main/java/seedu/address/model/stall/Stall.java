@@ -61,7 +61,7 @@ public class Stall {
 
     public String getAveragePriceString() {
         if (getAveragePrice() == null) {
-            return "No items in menu.";
+            return "No items in menu yet.";
         } else {
             return getAveragePrice().toString();
         }

@@ -38,6 +38,6 @@ public class AveragePrice implements Comparable<AveragePrice> {
 
     @Override
     public String toString() {
-        return String.format("$%.2f", averagePrice);
+        return "Average Price: " + String.format("$%.2f", averagePrice);
     }
 }

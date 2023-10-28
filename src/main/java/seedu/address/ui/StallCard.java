@@ -30,7 +30,10 @@ public class StallCard extends UiPart<Region> {
     @FXML
     private Label id;
     @FXML
-    private Label locationName;
+    private Label details;
+
+    @FXML
+    private Label price;
 
     /**
      * Creates a {@code PersonCode} with the given {@code Stall} and index to display.
@@ -40,6 +43,7 @@ public class StallCard extends UiPart<Region> {
         this.stall = stall;
         id.setText(displayedIndex + ". ");
         name.setText(stall.getName().fullName);
-        locationName.setText(stall.getLocation().locationName);
+        details.setText(stall.getLocation().locationName);
+        price.setText(stall.getAveragePriceString());
     }
 }
