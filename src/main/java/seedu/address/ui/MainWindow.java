@@ -8,6 +8,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextInputControl;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -34,9 +35,7 @@ public class MainWindow extends UiPart<Stage> {
 
     // Independent Ui parts residing in this Ui container
     private StallListPanel stallListPanel;
-
     private OneStallPanel oneStallPanel;
-
     private ResultDisplay resultDisplay;
     private HelpWindow helpWindow;
 
@@ -119,6 +118,7 @@ public class MainWindow extends UiPart<Stage> {
      */
     void fillInnerParts() {
         stallListPanel = new StallListPanel(logic.getFilteredStallList());
+        VBox.setVgrow(stallListPanel.getRoot(), Priority.ALWAYS);
         leftMainPanel.getChildren().add(stallListPanel.getRoot());
 
         resultDisplay = new ResultDisplay();
@@ -190,21 +190,19 @@ public class MainWindow extends UiPart<Stage> {
      */
     @FXML
     public void handleIsStallDetail() {
-        oneStallPanel = new OneStallPanel(logic.getTempFilteredStallList());
-        stallListPanel = new StallListPanel(logic.getFilteredStallList());
+        ItemListPanel itemListPanel = new ItemListPanel(logic.getFilteredItemList(), logic.getFilteredStall());
         leftMainPanel.getChildren().clear();
-        leftMainPanel.getChildren().add(stallListPanel.getRoot());
+        leftMainPanel.getChildren().add(itemListPanel.getRoot());
+
+        oneStallPanel = new OneStallPanel(logic.getFilteredStall());
         rightMainPanel.getChildren().clear();
         rightMainPanel.getChildren().add(oneStallPanel.getRoot());
     }
 
 
-    public StallListPanel getstallListPanel() {
-        return this.stallListPanel;
-    }
-
+    @FXML
     private void handleItemSelectionChanged(Item item) {
-        ItemListPanel itemListPanel = new ItemListPanel(logic.getFilteredItemList());
+        ItemListPanel itemListPanel = new ItemListPanel(logic.getFilteredItemList(), logic.getFilteredStall());
         leftMainPanel.getChildren().clear();
         leftMainPanel.getChildren().add(itemListPanel.getRoot());
 

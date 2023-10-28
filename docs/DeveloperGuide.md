@@ -164,7 +164,7 @@ The following sequence diagram shows how the sort operation works:
 
 ![SortPriceSequenceDiagram](images/SortPriceSequenceDiagram.png)
 
-`sortFilteredStoreList` is a method in `ModelManager` that sorts the filtered store list by price. 
+`sortFilteredStoreList` is a method in `ModelManager` that sorts the filtered store list by price.
 It makes use of `Comparator` to compare the prices of the stalls.
 
 #### Design considerations:
@@ -379,7 +379,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
       Use case resumes at step 2.
 
 * 4a. There are no reviews.
-    
+
   Use case ends.
 
 **Use case: Add a menu item to a stall**

@@ -26,9 +26,9 @@ public class ModelManager implements Model {
     private final UserPrefs userPrefs;
     private final FilteredList<Stall> filteredStalls;
     private final FilteredList<Stall> tempFilteredStalls;
-
     private ObservableList<Item> filteredItemList;
     private Item filteredItem;
+    private Stall filteredStall;
 
     /**
      * Initializes a ModelManager with the given addressBook and userPrefs.
@@ -147,6 +147,10 @@ public class ModelManager implements Model {
         requireNonNull(predicate);
         filteredStalls.setPredicate(predicate);
     }
+    @Override
+    public Stall getFilteredStall() {
+        return this.filteredStall;
+    }
 
     @Override
     public Stall getFilteredStall(Index stallIndex) {
@@ -209,6 +213,7 @@ public class ModelManager implements Model {
     public Item getFilteredItem() {
         return filteredItem;
     }
+
     @Override
     public Item getFilteredItem(Index stallIndex, Index itemIndex) {
         requireAllNonNull(stallIndex, itemIndex);
@@ -226,6 +231,12 @@ public class ModelManager implements Model {
         requireNonNull(stallIndex);
         filteredItemList = filteredStalls.get(stallIndex.getZeroBased()).getMenuList();
     }
+
+    @Override
+    public void setFilteredStall(Index stallIndex) {
+        filteredStall = filteredStalls.get(stallIndex.getZeroBased());
+    }
+
 
     @Override
     public ObservableList<Item> getFilteredItemList() {

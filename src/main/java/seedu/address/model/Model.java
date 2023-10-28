@@ -75,6 +75,12 @@ public interface Model {
     void addStall(Stall stall);
 
     /**
+     * Get stall that is filtered out
+     * @return filtered stall
+     */
+    Stall getFilteredStall();
+
+    /**
      * Returns the filtered stall.
      */
     Stall getFilteredStall(Index stallIndex);
@@ -146,9 +152,16 @@ public interface Model {
     void deleteItemReview(Item itemIndex);
 
     /**
-     * Returns an unmodifiable view of the filtered item list
+     * Sets the item list to be that of the chosen stall
      */
     void setFilteredItemList(Index stallIndex);
+
+    /**
+     * Sets filtered stall to be the chosen stall
+     * @param stallIndex index of the chosen stall
+     */
+    void setFilteredStall(Index stallIndex);
+
 
     /**
      * Sorts the stall list by rating in descending order.
