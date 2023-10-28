@@ -55,6 +55,17 @@ public class Stall {
         this.stallReview = stallReview;
     }
 
+    public AveragePrice getAveragePrice() {
+        return menu.getAveragePrice();
+    }
+
+    public String getAveragePriceString() {
+        if (getAveragePrice() == null) {
+            return "No items in menu.";
+        } else {
+            return getAveragePrice().toString();
+        }
+    }
     public Name getName() {
         return name;
     }
@@ -88,6 +99,10 @@ public class Stall {
 
     public ObservableList<Item> getMenuList() {
         return menu.getItemList();
+    }
+
+    public boolean hasMenuItems() {
+        return !menu.isEmpty();
     }
     public boolean hasStallReview() {
         return stallReview != null;
