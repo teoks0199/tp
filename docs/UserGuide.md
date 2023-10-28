@@ -288,6 +288,26 @@ re-enter in the format : review-stall s/STALL_NUMBER r/STALL_RATING d/DESCRIPTIO
 - s/: Positive Integer less than or equal to the size of list
 - r/: Integer from 0 to 5
 - d/: String
+
+**1.5 Sort stalls by location:** sort-stalls-locations
+
+**Command format:** sort-stalls-locations
+
+**Ex.:** sort-stalls-locations
+
+**Expected output (Success):**
+```
+Sorted all stalls by location in alphabetical order.
+```
+**Expected output (Fail):**
+```
+
+```
+**Acceptable values:**
+- s/: Positive Integer less than or equal to the size of list
+- r/: Integer from 0 to 5
+- d/: String
+
 --------------------------------------------------------------------------------------------------------------------
 ## 4.3 Item Features <a id="43-items"></a>
 

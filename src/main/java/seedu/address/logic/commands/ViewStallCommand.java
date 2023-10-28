@@ -28,10 +28,10 @@ public class ViewStallCommand extends Command {
 
     public static final String MESSAGE_VIEW_STALL_SUCCESS = "Here are the details of this stall.";
 
-    private final Index targetIndex;
+    private final Index stallIndex;
 
-    public ViewStallCommand(Index targetIndex) {
-        this.targetIndex = targetIndex;
+    public ViewStallCommand(Index stallIndex) {
+        this.stallIndex = stallIndex;
     }
 
     @Override
@@ -39,12 +39,14 @@ public class ViewStallCommand extends Command {
         requireNonNull(model);
         List<Stall> lastShownList = model.getFilteredStallList();
 
-        if (targetIndex.getZeroBased() >= lastShownList.size()) {
+        if (stallIndex.getZeroBased() >= lastShownList.size()) {
             throw new CommandException(Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
         }
 
-        Stall stallToView = lastShownList.get(targetIndex.getZeroBased());
+        Stall stallToView = lastShownList.get(stallIndex.getZeroBased());
         model.showStall(stallToView);
+        model.setFilteredStall(stallIndex);
+        model.setFilteredItemList(stallIndex);
         return new CommandResult(String.format(MESSAGE_VIEW_STALL_SUCCESS, Messages.format(stallToView)),
                 false, false, true, false);
     }
@@ -60,13 +62,13 @@ public class ViewStallCommand extends Command {
         }
 
         ViewStallCommand otherViewStallCommand = (ViewStallCommand) other;
-        return targetIndex.equals(otherViewStallCommand.targetIndex);
+        return stallIndex.equals(otherViewStallCommand.stallIndex);
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .add("targetIndex", targetIndex)
+                .add("stallIndex", stallIndex)
                 .toString();
     }
 }

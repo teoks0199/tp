@@ -4,11 +4,13 @@ import java.util.logging.Logger;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Region;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.item.Item;
+import seedu.address.model.stall.Stall;
 
 /**
  * Panel containing the list of persons.
@@ -20,11 +22,15 @@ public class ItemListPanel extends UiPart<Region> {
     @FXML
     private ListView<Item> leftListView;
 
+    @FXML
+    private Label stallName;
+
     /**
      * Creates a {@code itemListPanel} with the given {@code ObservableList}.
      */
-    public ItemListPanel(ObservableList<Item> itemList) {
+    public ItemListPanel(ObservableList<Item> itemList, Stall stall) {
         super(FXML);
+        stallName.setText(stall.getStallString());
         leftListView.setItems(itemList);
         leftListView.setCellFactory(listView -> new ItemListViewCell());
     }
