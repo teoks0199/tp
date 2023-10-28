@@ -21,12 +21,18 @@ public class OneStallPanel extends UiPart<Region> {
     private Label stallDescription;
 
 
+
     /**
      * Creates a {@code StallListPanel} with the given {@code ObservableList}.
      */
     public OneStallPanel(Stall stall) {
         super(FXML);
-        stallRating.setText(stall.getStallStarRating());
-        stallDescription.setText(stall.getStallDescription());
+        if (stall.hasStallReview()) {
+            stallRating.setText(stall.getStallStarRating());
+            stallDescription.setText(stall.getStallDescription());
+        } else {
+            stallRating.setText("N/A");
+            stallDescription.setText("No reviews yet!");
+        }
     }
 }
