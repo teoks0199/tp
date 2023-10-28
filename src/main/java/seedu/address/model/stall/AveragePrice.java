@@ -1,8 +1,5 @@
 package seedu.address.model.stall;
 
-import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.AppUtil.checkArgument;
-
 /**
  * Represents the average price of the items in a stall.
  */

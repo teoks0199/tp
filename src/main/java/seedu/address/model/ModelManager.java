@@ -167,6 +167,11 @@ public class ModelManager implements Model {
         addressBook.sortStallLocation();
     }
 
+    @Override
+    public void sortStallPrice() {
+        addressBook.sortStallPrice();
+    }
+
     //=========== Filtered Item List Accessors =============================================================
 
     @Override
