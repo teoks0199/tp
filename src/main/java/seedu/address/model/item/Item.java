@@ -51,7 +51,7 @@ public class Item {
         return price;
     }
     public String getPriceString() {
-        return price.toString();
+        return "$" + price.toString();
     }
 
     public ItemReview getItemReview() {
@@ -60,7 +60,7 @@ public class Item {
 
     public String getItemRatingString() {
         if (itemReview == null) {
-            return "N/A";
+            return "No ratings yet.";
         } else {
             return itemReview.getRatingString();
         }
@@ -68,7 +68,7 @@ public class Item {
 
     public String getItemDescriptionString() {
         if (itemReview == null) {
-            return "N/A";
+            return "No review yet.";
         } else {
             return itemReview.getDescriptionString();
         }

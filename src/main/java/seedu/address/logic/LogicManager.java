@@ -93,6 +93,11 @@ public class LogicManager implements Logic {
     }
 
     @Override
+    public int getFilteredStallIndex() {
+        return model.getFilteredStallIndex();
+    }
+
+    @Override
     public Path getAddressBookFilePath() {
         return model.getAddressBookFilePath();
     }

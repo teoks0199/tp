@@ -26,6 +26,7 @@ import seedu.address.logic.commands.FindStallCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.ListCommand;
 import seedu.address.logic.commands.SortStallLocationCommand;
+import seedu.address.logic.commands.SortStallPriceCommand;
 import seedu.address.logic.commands.SortStallRatingCommand;
 import seedu.address.logic.commands.ViewItemCommand;
 import seedu.address.logic.commands.ViewStallCommand;
@@ -113,6 +114,9 @@ public class AddressBookParser {
 
         case SortStallLocationCommand.COMMAND_WORD:
             return new SortStallLocationCommand();
+
+        case SortStallPriceCommand.COMMAND_WORD:
+            return new SortStallPriceCommand();
 
         case ExitCommand.COMMAND_WORD:
             return new ExitCommand();
