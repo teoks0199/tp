@@ -179,4 +179,8 @@ public interface Model {
      */
     ObservableList<Item> getFilteredItemList();
 
+    /**
+     * Sorts the stall list by price in ascending order.
+     */
+    void sortStallPrice();
 }

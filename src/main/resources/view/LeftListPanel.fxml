@@ -7,5 +7,6 @@
 
 <VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <Label fx:id="stallName" />
+    <Label fx:id="stallLocation" />
     <ListView fx:id="leftListView" />
 </VBox>

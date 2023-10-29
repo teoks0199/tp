@@ -30,7 +30,10 @@ public class ItemCard extends UiPart<Region> {
     @FXML
     private Label id;
     @FXML
-    private Label locationName;
+    private Label details;
+
+    @FXML
+    private Label price;
 
     /**
      * Creates a {@code PersonCode} with the given {@code Stall} and index to display.
@@ -40,6 +43,7 @@ public class ItemCard extends UiPart<Region> {
         this.item = item;
         id.setText(displayedIndex + ". ");
         name.setText(item.getName().fullName);
-        locationName.setText(item.getItemRatingString());
+        details.setText(item.getItemRatingString());
+        price.setText(item.getPriceString());
     }
 }

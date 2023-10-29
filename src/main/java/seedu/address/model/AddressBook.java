@@ -103,6 +103,10 @@ public class AddressBook implements ReadOnlyAddressBook {
         stalls.sortByLocation();
     }
 
+    public void sortStallPrice() {
+        stalls.sortByPrice();
+    }
+
 
     //// util methods
 
@@ -137,4 +141,6 @@ public class AddressBook implements ReadOnlyAddressBook {
     public int hashCode() {
         return stalls.hashCode();
     }
+
+
 }
