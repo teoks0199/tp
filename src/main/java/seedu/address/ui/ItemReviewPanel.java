@@ -26,7 +26,7 @@ public class ItemReviewPanel extends UiPart<Region> {
      */
     public ItemReviewPanel(Item item) {
         super(FXML);
-        itemName.setText(item.getName().fullName);
+        itemName.setText(item.getName().fullName.concat(item.getItemRatingString()));
         itemReview.setText(item.getItemDescriptionString());
     }
 }
