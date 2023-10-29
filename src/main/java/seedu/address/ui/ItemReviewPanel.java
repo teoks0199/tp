@@ -29,7 +29,7 @@ public class ItemReviewPanel extends UiPart<Region> {
     public ItemReviewPanel(Item item) {
         super(FXML);
         itemPrice.setText(item.getPriceString());
-        itemName.setText(item.getName().fullName);
+        itemName.setText(item.getName().fullName.concat(" ").concat(item.getItemRatingString()));
         itemReview.setText(item.getItemDescriptionString());
     }
 }

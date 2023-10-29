@@ -60,7 +60,7 @@ public class Item {
 
     public String getItemRatingString() {
         if (itemReview == null) {
-            return "No review yet.";
+            return "No ratings yet.";
         } else {
             return itemReview.getRatingString();
         }

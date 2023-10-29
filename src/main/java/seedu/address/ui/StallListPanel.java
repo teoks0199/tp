@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Region;
@@ -20,11 +21,15 @@ public class StallListPanel extends UiPart<Region> {
     @FXML
     private ListView<Stall> leftListView;
 
+    @FXML
+    private Label name;
+
     /**
      * Creates a {@code StallListPanel} with the given {@code ObservableList}.
      */
     public StallListPanel(ObservableList<Stall> stallList) {
         super(FXML);
+        name.setText("List of Stalls:");
         leftListView.setItems(stallList);
         leftListView.setCellFactory(listView -> new StallListViewCell());
     }

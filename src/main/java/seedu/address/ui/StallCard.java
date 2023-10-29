@@ -11,7 +11,7 @@ import seedu.address.model.stall.Stall;
  */
 public class StallCard extends UiPart<Region> {
 
-    private static final String FXML = "StallListCard.fxml";
+    private static final String FXML = "ListCard.fxml";
 
     /**
      * Note: Certain keywords such as "location" and "resources" are reserved keywords in JavaFX.
@@ -30,7 +30,10 @@ public class StallCard extends UiPart<Region> {
     @FXML
     private Label id;
     @FXML
-    private Label details;
+    private Label cardDetails;
+
+    @FXML
+    private Label rating;
 
     @FXML
     private Label price;
@@ -43,7 +46,8 @@ public class StallCard extends UiPart<Region> {
         this.stall = stall;
         id.setText(displayedIndex + ". ");
         name.setText(stall.getName().fullName);
-        details.setText(stall.getLocation().locationName);
+        rating.setText(stall.getStallStarRating());
+        cardDetails.setText("Location: ".concat(stall.getLocation().locationName));
         price.setText(stall.getAveragePriceString());
     }
 }

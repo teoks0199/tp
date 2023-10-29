@@ -256,6 +256,11 @@ public class AddStallCommandTest {
             throw new AssertionError("This method should not be called.");
         }
 
+        @Override
+        public int getFilteredStallIndex() {
+            throw new AssertionError("This method should not be called.");
+        }
+
     }
 
     /**

@@ -172,6 +172,12 @@ public class ModelManager implements Model {
         addressBook.sortStallPrice();
     }
 
+    @Override
+    public int getFilteredStallIndex() {
+        return filteredStalls.indexOf(filteredStall) + 1;
+    }
+
+
     //=========== Filtered Item List Accessors =============================================================
 
     @Override

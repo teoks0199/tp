@@ -79,7 +79,11 @@ public class Stall {
     }
 
     public String getStallStarRating() {
-        return stallReview.getStarRating();
+        if (stallReview == null) {
+            return "No ratings yet.";
+        } else {
+            return stallReview.getStarRating();
+        }
     }
 
     public String getStallDescription() {

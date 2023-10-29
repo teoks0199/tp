@@ -86,6 +86,12 @@ public interface Model {
     Stall getFilteredStall(Index stallIndex);
 
     /**
+     * Returns the filtered stall index.
+     */
+    int getFilteredStallIndex();
+
+
+    /**
      * Replaces the given stall {@code target} with {@code editedStall}.
      * {@code target} must exist in the address book.
      * The stall identity of {@code editedStall} must not be the same as another existing stall in the address book.

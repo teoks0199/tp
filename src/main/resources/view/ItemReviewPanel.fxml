@@ -19,30 +19,37 @@
             <Label fx:id="itemName" style="-fx-font-size: 30px;" />
         </HBox>
         <VBox alignment="CENTER_LEFT" minHeight="105" prefHeight="169.0" prefWidth="150.0" GridPane.columnIndex="0">
-            <HBox alignment="CENTER_LEFT" spacing="2">
-                <ImageView>
+
+            <HBox alignment="CENTER_LEFT">
+
+                <ImageView fitHeight="30" preserveRatio="true">
                     <image>
                         <Image url="@/images/money.png" />
                     </image>
                 </ImageView>
+
                 <Label text="Price:">
-               <font>
-                  <Font name="DIN Alternate Bold" size="13.0" />
-               </font></Label>
+                   <font>
+                      <Font name="DIN Alternate Bold" size="13.0" />
+                   </font>
+                </Label>
                 <Label fx:id="itemPrice" styleClass="cell_big_label" />
             </HBox>
-            <HBox alignment="CENTER_LEFT" spacing="5">
-                <ImageView>
+
+            <HBox alignment="CENTER_LEFT">
+                <ImageView fitWidth="30" fitHeight="30">
                     <image>
                         <Image url="@/images/review.png" />
                     </image>
                 </ImageView>
                <Label styleClass="header-label" text="Review:">
-               <font>
-                  <Font name="DIN Alternate Bold" size="13.0" />
-               </font></Label>
+                   <font>
+                      <Font name="DIN Alternate Bold" size="13.0" />
+                   </font>
+               </Label>
                 <Label fx:id="itemReview" styleClass="cell_big_label" />
             </HBox>
+
         </VBox>
         <rowConstraints>
             <RowConstraints />

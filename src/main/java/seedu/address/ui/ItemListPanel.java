@@ -23,18 +23,22 @@ public class ItemListPanel extends UiPart<Region> {
     private ListView<Item> leftListView;
 
     @FXML
-    private Label stallName;
+    private Label name;
 
     @FXML
-    private Label stallLocation;
+    private Label details;
+
+    @FXML
+    private Label stallIndex;
 
     /**
      * Creates a {@code itemListPanel} with the given {@code ObservableList}.
      */
-    public ItemListPanel(ObservableList<Item> itemList, Stall stall) {
+    public ItemListPanel(ObservableList<Item> itemList, Stall stall, int stallIndex) {
         super(FXML);
-        stallName.setText(stall.getStallString());
-        stallLocation.setText(stall.getLocationString());
+        this.stallIndex.setText("Stall Index: " + stallIndex);
+        name.setText(stall.getStallString());
+        details.setText(stall.getLocationString());
         leftListView.setItems(itemList);
         leftListView.setCellFactory(listView -> new ItemListViewCell());
     }
@@ -46,7 +50,6 @@ public class ItemListPanel extends UiPart<Region> {
         @Override
         protected void updateItem(Item item, boolean empty) {
             super.updateItem(item, empty);
-
             if (empty || item == null) {
                 setGraphic(null);
                 setText(null);
