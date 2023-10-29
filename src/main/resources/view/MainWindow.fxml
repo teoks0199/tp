@@ -76,8 +76,10 @@
                 <padding>
                   <Insets bottom="10" left="10" right="10" top="10" />
                 </padding>
-                <ImageView>
-                  <Image url="@/images/commands.png" />
+                <ImageView fitWidth="340" fitHeight="480">
+                  <image>
+                    <Image url="@/images/commands.png" />
+                  </image>
                 </ImageView>
               </VBox>
 
