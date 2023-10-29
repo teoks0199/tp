@@ -21,12 +21,15 @@ public class ItemReviewPanel extends UiPart<Region> {
     @FXML
     private Label itemName;
 
+    @FXML
+    private Label itemPrice;
     /**
      * Creates an {@code ItemNamePanel} with the given item.
      */
     public ItemReviewPanel(Item item) {
         super(FXML);
-        itemName.setText(item.getName().fullName.concat(item.getItemRatingString()));
+        itemPrice.setText(item.getPriceString());
+        itemName.setText(item.getName().fullName.concat(" ").concat(item.getItemRatingString()));
         itemReview.setText(item.getItemDescriptionString());
     }
 }

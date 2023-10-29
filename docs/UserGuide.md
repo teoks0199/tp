@@ -6,23 +6,23 @@ title: User Guide
 
 ---
 1. [Introduction](#1-introduction)
-    - [1.1. Purpose](#11-purpose)
+   - [1.1. Purpose](#11-purpose)
 2. [About the User Guide](#2-about-the-user-guide)
-    - [2.1. Navigating the User Guide](#21-navigating-the-user-guide)
-    - [2.2. Reading the User Guide](#22-reading-the-user-guide)
-        * [2.2.1. Icons](#icons)
-        * [2.2.2. Parameters](#parameters)
-        * [2.2.3. GUI](#GUI)
+   - [2.1. Navigating the User Guide](#21-navigating-the-user-guide)
+   - [2.2. Reading the User Guide](#22-reading-the-user-guide)
+      * [2.2.1. Icons](#icons)
+      * [2.2.2. Parameters](#parameters)
+      * [2.2.3. GUI](#GUI)
 3. [Quick Start](#3-quick-start)
 4. [Features](#4-features)
-    - 4.1 [General](#41-general)
-    - 4.2 [Stalls](#42-stalls)
-    - 4.3 [Items](#43-items)
+   - 4.1 [General](#41-general)
+   - 4.2 [Stalls](#42-stalls)
+   - 4.3 [Items](#43-items)
 5. [Glossary](#5-glossary)
 6. [Command summary](#6-glossary)
-    - 6.1 [Stall Commands](#61-stall-commands)
-    - 6.2 [Item Commands](#62-item-commands)
-    - 6.3 [General Commands](#63-general-commands)
+   - 6.1 [Stall Commands](#61-stall-commands)
+   - 6.2 [Item Commands](#62-item-commands)
+   - 6.3 [General Commands](#63-general-commands)
 
 <div style="page-break-after: always;"></div>
 
@@ -114,13 +114,13 @@ What the main components of the _GUI_ do:
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-    * `list` : Lists all stalls.
+   * `list` : Lists all stalls.
 
-    * `add-stall n/Japanese stall l/Deck` : Adds a stall named `Japanese stall` located at `Deck` to the list of stalls.
+   * `add-stall n/Japanese stall l/Deck` : Adds a stall named `Japanese stall` located at `Deck` to the list of stalls.
 
-    * `view-stall s/3` : Shows the 3rd stall shown in the current list.
+   * `view-stall s/3` : Shows the 3rd stall shown in the current list.
 
-    * `delete-stall s/3` : Deletes the 3rd stall shown in the current list.
+   * `delete-stall s/3` : Deletes the 3rd stall shown in the current list.
 
 
 1. Refer to the [Features](#features) below for details of each command.
@@ -131,9 +131,10 @@ What the main components of the _GUI_ do:
 
 * For new users, the application will contain all the data of NUS food stalls and their menu items
 * If double-clicking `foodNotes.jar` does not work,
-    1. Search for "Command Prompt" or "Terminal" on your computer.
-    2. Navigate to the location where `foodNotes.jar` is saved via the terminal. (_Unsure how to navigate?_ You can try running this in your terminal: `cd Downloads`.)
-    3. Run the following in the terminal: `java -jar foodNotes.jar`.
+
+   1. Search for "Command Prompt" or "Terminal" on your computer.
+   2. Navigate to the location where `foodNotes.jar` is saved via the terminal. (_Unsure how to navigate?_ You can try running this in your terminal: `cd Downloads`.)
+   3. Run the following in the terminal: `java -jar foodNotes.jar`.
 
 </div>
 

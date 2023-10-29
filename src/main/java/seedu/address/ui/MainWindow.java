@@ -85,6 +85,7 @@ public class MainWindow extends UiPart<Stage> {
 
     /**
      * Sets the accelerator of a MenuItem.
+     *
      * @param keyCombination the KeyCombination value of the accelerator
      */
     private void setAccelerator(MenuItem menuItem, KeyCombination keyCombination) {
@@ -190,7 +191,8 @@ public class MainWindow extends UiPart<Stage> {
      */
     @FXML
     public void handleIsStallDetail() {
-        ItemListPanel itemListPanel = new ItemListPanel(logic.getFilteredItemList(), logic.getFilteredStall());
+        ItemListPanel itemListPanel = new ItemListPanel(logic.getFilteredItemList(), logic.getFilteredStall(),
+                logic.getFilteredStallIndex());
         leftMainPanel.getChildren().clear();
         leftMainPanel.getChildren().add(itemListPanel.getRoot());
 
@@ -202,7 +204,8 @@ public class MainWindow extends UiPart<Stage> {
 
     @FXML
     private void handleItemSelectionChanged(Item item) {
-        ItemListPanel itemListPanel = new ItemListPanel(logic.getFilteredItemList(), logic.getFilteredStall());
+        ItemListPanel itemListPanel = new ItemListPanel(logic.getFilteredItemList(), logic.getFilteredStall(),
+                logic.getFilteredStallIndex());
         leftMainPanel.getChildren().clear();
         leftMainPanel.getChildren().add(itemListPanel.getRoot());
 

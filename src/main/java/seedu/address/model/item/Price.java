@@ -15,6 +15,7 @@ public class Price {
     public static final String VALIDATION_REGEX = "^(0\\.\\d{2}|[1-9]\\d*\\.\\d{2})$";
 
     public final String price;
+    public final double priceDouble;
 
     /**
      * Constructs a {@code Price}.
@@ -25,6 +26,7 @@ public class Price {
         requireNonNull(price);
         checkArgument(isValidPrice(price), MESSAGE_CONSTRAINTS);
         this.price = price;
+        this.priceDouble = Double.parseDouble(price);
     }
 
     public static boolean isValidPrice(String test) {

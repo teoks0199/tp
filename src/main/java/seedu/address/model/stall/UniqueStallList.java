@@ -80,6 +80,10 @@ public class UniqueStallList implements Iterable<Stall> {
         Collections.sort(internalList, new StallLocationComparator());
     }
 
+    public void sortByPrice() {
+        Collections.sort(internalList, new StallPriceComparator());
+    }
+
     /**
      * Removes the equivalent stall from the list.
      * The stall must exist in the list.
@@ -163,4 +167,6 @@ public class UniqueStallList implements Iterable<Stall> {
         }
         return true;
     }
+
+
 }

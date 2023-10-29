@@ -12,6 +12,7 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.model.item.exceptions.DuplicateItemException;
 import seedu.address.model.item.exceptions.ItemNotFoundException;
+import seedu.address.model.stall.AveragePrice;
 
 /**
  * A list of persons that enforces uniqueness between its elements and does not allow nulls.
@@ -29,6 +30,21 @@ public class UniqueItemList implements Iterable<Item> {
     private final ObservableList<Item> internalList = FXCollections.observableArrayList();
     private final ObservableList<Item> internalUnmodifiableList =
             FXCollections.unmodifiableObservableList(internalList);
+
+    public AveragePrice getAveragePrice() {
+        double averagePrice = internalList.stream()
+                .mapToDouble(item -> item.getPrice().priceDouble).average().orElse(-1.0);
+        if (averagePrice < 0) {
+            // no items in list
+            return null;
+        } else {
+            return new AveragePrice(averagePrice);
+        }
+    }
+
+    public boolean isEmpty() {
+        return internalList.isEmpty();
+    }
 
     /**
      * Returns size of list
