@@ -25,12 +25,16 @@ public class ItemListPanel extends UiPart<Region> {
     @FXML
     private Label stallName;
 
+    @FXML
+    private Label stallLocation;
+
     /**
      * Creates a {@code itemListPanel} with the given {@code ObservableList}.
      */
     public ItemListPanel(ObservableList<Item> itemList, Stall stall) {
         super(FXML);
         stallName.setText(stall.getStallString());
+        stallLocation.setText(stall.getLocationString());
         leftListView.setItems(itemList);
         leftListView.setCellFactory(listView -> new ItemListViewCell());
     }

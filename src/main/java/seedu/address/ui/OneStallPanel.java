@@ -28,11 +28,11 @@ public class OneStallPanel extends UiPart<Region> {
     public OneStallPanel(Stall stall) {
         super(FXML);
         if (stall.hasStallReview()) {
-            stallRating.setText(stall.getStallStarRating());
-            stallDescription.setText(stall.getStallDescription());
+            stallRating.setText("Rating: " + stall.getStallStarRating());
+            stallDescription.setText("Description: " + stall.getStallDescription());
         } else {
-            stallRating.setText("N/A");
-            stallDescription.setText("No reviews yet!");
+            stallRating.setText("Rating: N/A");
+            stallDescription.setText("Add a review to see it here!");
         }
     }
 }

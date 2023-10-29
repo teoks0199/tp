@@ -60,7 +60,7 @@ public class Item {
 
     public String getItemRatingString() {
         if (itemReview == null) {
-            return "No reviews yet.";
+            return "No review yet.";
         } else {
             return itemReview.getRatingString();
         }
@@ -68,7 +68,7 @@ public class Item {
 
     public String getItemDescriptionString() {
         if (itemReview == null) {
-            return "N/A";
+            return "No review yet.";
         } else {
             return itemReview.getDescriptionString();
         }

@@ -71,10 +71,7 @@ public class Stall {
     }
 
     public String getStallString() {
-        return "Stall Name: "
-                + name.toString()
-                + " Location: "
-                + location.toString();
+        return "Stall Name: " + name.toString();
     }
 
     public Location getLocation() {
@@ -90,7 +87,7 @@ public class Stall {
     }
 
     public String getLocationString() {
-        return location.toString();
+        return "Location: " + location.toString();
     }
 
     public Menu getMenu() {
