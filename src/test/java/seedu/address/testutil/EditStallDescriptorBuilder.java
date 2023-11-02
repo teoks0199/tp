@@ -1,7 +1,7 @@
 package seedu.address.testutil;
 
-import seedu.address.logic.commands.EditCommand;
-import seedu.address.logic.commands.EditCommand.EditStallDescriptor;
+import seedu.address.logic.commands.EditStallCommand;
+import seedu.address.logic.commands.EditStallCommand.EditStallDescriptor;
 import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Name;
 import seedu.address.model.stall.Stall;
@@ -14,11 +14,11 @@ public class EditStallDescriptorBuilder {
     private EditStallDescriptor descriptor;
 
     public EditStallDescriptorBuilder() {
-        descriptor = new EditCommand.EditStallDescriptor();
+        descriptor = new EditStallCommand.EditStallDescriptor();
     }
 
     public EditStallDescriptorBuilder(EditStallDescriptor descriptor) {
-        this.descriptor = new EditCommand.EditStallDescriptor(descriptor);
+        this.descriptor = new EditStallCommand.EditStallDescriptor(descriptor);
     }
 
     /**
