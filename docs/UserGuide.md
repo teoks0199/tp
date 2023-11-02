@@ -193,7 +193,7 @@ Requesting for help:
 1. Type `help` into the *Command Box*.
 1. Press `Enter` to execute.
 1. A new window will appear as shown below. Click on the `Copy URL` button to copy the URL containing the **FoodNotes** user guide.
-   ![HelpOutcome](images/userGUide/HelpOutcome.png)
+   ![HelpOutcome](images/userGUide/helpOutcome.png)
 1. Open your preferred web browser on your computer and paste the link into the address bar.
 1. Press `Enter` to load the website.
 
@@ -268,7 +268,7 @@ You can use this command to view details from a specific stall from the database
 
 **Format:**
 
-`view-stall s/[STALL_NUMBER]`
+`view-stall s/STALL_NUMBER`
 
 **Example:**
 
@@ -293,7 +293,7 @@ You can use this command to add a new stall to the database.
 
 **Format:**
 
-`add-stall n/[STALL_NAME] l/[LOCATION]`
+`add-stall n/STALL_NAME l/LOCATION`
 
 **Example:**
 
@@ -318,7 +318,7 @@ You can use this command to delete a stall from the database.
 
 **Format:**
 
-`delete-stall s/[STALL_INDEX]`
+`delete-stall s/STALL_INDEX`
 
 **Example:**
 
@@ -339,183 +339,78 @@ Outcome:
 
 ### 4.2.5 Editing a stall : `edit-stall`
 
-You can use this command to edit existing stall name and location from the database.
+You can use this command to edit existing stall, and change either the name, location, rating and description or change all.
 
 **Format:**
 
-`edit-stall s/[STALL_INDEX]`
+`edit-stall s/STALL_INDEX [n/NAME] [l/LOCATION] [r/RATING] [d/DESCRIPTION] `
 
 **Example:**
 
 <div markdown="block" class="alert alert-white">
 
-Editing the third stall from the list:
+Editing the name and location of the first stall from the list:
 
-1. Type `delete-stall s/3` into the *Command Box*.
+1. Type `edit-stall s/1 n/Katsu Don l/Deck` into the *Command Box*.
 1. Press `Enter` to execute.
 
 Outcome:
 
 1. The Result Display will show a success message.
-1. You have now deleted the third stall from the list, and the list of stalls will be updated.
+1. You have now edited the first stall from the list, and the list of stalls will be updated.
 </div>
 
-![ListOutcome](images/userGuide/deleteStallOutcome.png)
+![ListOutcome](images/userGuide/editStallOutcome.png)
 
+### 4.2.6 Reviewing a stall : `review-stall`
 
+You can use this command to review an existing stall, and add your own rating and description for it.
 
-### 4.1.1 View all stalls
-**Command function:** list
+**Format:**
 
-**Command format:** `list`
+`review-stall s/STALL_INDEX r/STALL_RATING d/STALL_DESCRIPTION`
 
-**Expected output (Success):**
-```
-Here is the list of all stalls,
-sorted by price!
-```
-**Expected output (Fail):**
-```
-please enter list only
-```
----
-### 4.1.2 Find stall
-**Command function:** Find stalls by name
+**Example:**
 
-**Command format:** `find-stall <KEYWORD>`
+<div markdown="block" class="alert alert-white">
 
-**Ex.:** `find-stall japan`
+Reviewing the stall:
 
-**Expected output (Success):**
-```
-Here is the list of stalls containing the keyword
-```
-**Expected output (Fail):**
-```
-re-enter in the format : find-stall <KEYWORD>
-```
----
-### 4.1.3 Find item
+1. Type `review-stall s/2 r/3 d/Ambience is great` into the *Command Box*.
+1. Press `Enter` to execute.
 
-**Command function:** Find stalls by item
+Outcome:
 
-**Command format:** `find-item <KEYWORD>`
-
-**Ex.:** find-item chicken
-
-**Expected output (Success):**
-```
-Here is the list of stall containing the food items with this keyword
-```
-Chicken Rice at Deck has an item called Chicken Rice, and Western Food at Deck has an item called Chicken Chop,
-thus both will be shown when you search for chicken.
-
-
-**Expected output (Fail):**
-```
-re-enter in the format : find-item <KEYWORD>
-```
---------------------------------------------------------------------------------------------------------------------
-## 4.2 Stall Features <a id="42-stalls"></a>
-
-----
-### 4.2.1 Add Stall
-**Command function:** Adding a stall
-
-**Command format:** `add-stall n/<STALL_NAME>  l/<LOCATION>`
-
-**Ex.:** `add-stall n/Japanese stall l/Deck`
-
-**Expected Output (Success):**
-```
-Yay! Japanese stall at Deck is successfully added to list of stalls.
-```
-**Expected Output (Fail):**
-```
-re-enter in the format : add-stall n/STALL_NAME  l/LOCATION
-```
----
-### 4.2.2 View Stall
-**Command function: Viewing a stall
-
-**Command format:** `view-stall s/<STALL_NUMBER>`
-
-**Ex.:** `view-stall s/1`
-
-**Expected output (Success):**
-```
-Here are the stall details
-```
-<div markdown="block" class="alert alert-info">
-
-:bulb: **Note:**<br>
-
-The stall review and list of menu items will be shown on the right panel
-
+1. The Result Display will show a success message.
+1. You have now reviewed the specific stall from the list, and the star ratings will be reflected.
 </div>
 
-**Expected output (Fail)**:
-```
-re-enter in the format : view-stall s/STALL_NUMBER
-```
----
-### 4.2.3 Delete Stall
-**Command function:** Deleting a stall
+![ListOutcome](images/userGuide/reviewStallOutcome.png)
 
-**Command format:** `delete-stall s/<STALL_NUMBER>`
+### 4.2.7 Deleting a stall review: `delete-stall-review`
 
-**Ex.:** `delete-stall s/1`
+You can use this command to delete a review of an existing stall
 
-**Expected output (Success):**
-```
-Japanese Stall ★★★★☆ has been deleted.
-```
+**Format:**
 
-**Expected output (Fail):**
+`delete-stall-review s/STALL_INDEX`
 
-```
-re-enter in the format : delete-stall s/STALL_NUMBER
-```
----
-### 4.2.4 Review Stall
-**Command function:** Reviewing a stall
+**Example:**
 
-**Command format:** `review-stall s/<STALL_NUMBER> r/<STALL_RATING> d/<DESCRIPTION>`
+<div markdown="block" class="alert alert-white">
 
-**Ex.:** `review-stall s/1 r/5 d/the auntie very chio`
+Reviewing the stall:
 
-**Expected output (Success):**
-```
-Yay! You have added a rating of ★★★★★ for the Japanese Stall
-Review: the auntie very chio
-```
-**Expected output (Fail):**
-```
-re-enter in the format : review-stall s/STALL_NUMBER r/STALL_RATING d/DESCRIPTION
-```
-**Acceptable values:**
-- s/: Positive Integer less than or equal to the size of list
-- r/: Integer from 0 to 5
-- d/: String
+1. Type `delete-stall-review s/2` into the *Command Box*.
+1. Press `Enter` to execute.
 
-**1.5 Sort stalls by location:** sort-stalls-locations
+Outcome:
 
-**Command format:** sort-stalls-locations
+1. The Result Display will show a success message.
+1. You have now deleted the review of the specified stall from the list, and the list will be updated.
+</div>
 
-**Ex.:** sort-stalls-locations
-
-**Expected output (Success):**
-```
-Sorted all stalls by location in alphabetical order.
-```
-**Expected output (Fail):**
-```
-
-```
-**Acceptable values:**
-- s/: Positive Integer less than or equal to the size of list
-- r/: Integer from 0 to 5
-- d/: String
+![ListOutcome](images/userGuide/deleteStallReviewOutcome.png)
 
 --------------------------------------------------------------------------------------------------------------------
 ## 4.3 Item Features <a id="43-items"></a>
