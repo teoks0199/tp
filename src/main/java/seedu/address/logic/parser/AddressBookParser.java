@@ -18,7 +18,8 @@ import seedu.address.logic.commands.DeleteItemCommand;
 import seedu.address.logic.commands.DeleteItemReviewCommand;
 import seedu.address.logic.commands.DeleteStallCommand;
 import seedu.address.logic.commands.DeleteStallReviewCommand;
-import seedu.address.logic.commands.EditCommand;
+import seedu.address.logic.commands.EditItemCommand;
+import seedu.address.logic.commands.EditStallCommand;
 import seedu.address.logic.commands.ExitCommand;
 import seedu.address.logic.commands.FindItemCommand;
 import seedu.address.logic.commands.FindLocationCommand;
@@ -70,8 +71,8 @@ public class AddressBookParser {
         case AddStallCommand.COMMAND_WORD:
             return new AddStallCommandParser().parse(arguments);
 
-        case EditCommand.COMMAND_WORD:
-            return new EditCommandParser().parse(arguments);
+        case EditStallCommand.COMMAND_WORD:
+            return new EditStallCommandParser().parse(arguments);
 
         case DeleteStallCommand.COMMAND_WORD:
             return new DeleteStallCommandParser().parse(arguments);
@@ -81,6 +82,9 @@ public class AddressBookParser {
 
         case AddItemCommand.COMMAND_WORD:
             return new AddItemCommandParser().parse(arguments);
+
+        case EditItemCommand.COMMAND_WORD:
+            return new EditItemCommandParser().parse(arguments);
 
         case DeleteItemCommand.COMMAND_WORD:
             return new DeleteItemCommandParser().parse(arguments);

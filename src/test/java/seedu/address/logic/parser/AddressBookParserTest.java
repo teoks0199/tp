@@ -24,13 +24,16 @@ import seedu.address.logic.commands.ClearCommand;
 //import seedu.address.logic.commands.DeleteItemReviewCommand;
 import seedu.address.logic.commands.DeleteStallCommand;
 //import seedu.address.logic.commands.DeleteStallReviewCommand;
-import seedu.address.logic.commands.EditCommand;
+import seedu.address.logic.commands.EditStallCommand;
 import seedu.address.logic.commands.ExitCommand;
 //import seedu.address.logic.commands.FindItemCommand;
 //import seedu.address.logic.commands.FindLocationCommand;
 import seedu.address.logic.commands.FindStallCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.ListCommand;
+//import seedu.address.logic.commands.SortStallLocationCommand;
+//import seedu.address.logic.commands.SortStallPriceCommand;
+//import seedu.address.logic.commands.SortStallRatingCommand;
 //import seedu.address.logic.commands.ViewItemCommand;
 //import seedu.address.logic.commands.ViewStallCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -65,12 +68,13 @@ public class AddressBookParserTest {
     }
 
     @Test
-    public void parseCommand_edit() throws Exception {
+    public void parseCommand_editStall() throws Exception {
         Stall stall = new StallBuilder().build();
-        EditCommand.EditStallDescriptor descriptor = new EditStallDescriptorBuilder(stall).build();
-        EditCommand command = (EditCommand) parser.parseCommand(EditCommand.COMMAND_WORD + " "
-                + INDEX_FIRST_STALL.getOneBased() + " " + StallUtil.getEditStallDescriptorDetails(descriptor));
-        assertEquals(new EditCommand(INDEX_FIRST_STALL, descriptor), command);
+        EditStallCommand.EditStallDescriptor descriptor = new EditStallDescriptorBuilder(stall).build();
+        EditStallCommand command = (EditStallCommand) parser.parseCommand(EditStallCommand.COMMAND_WORD + " "
+                + PREFIX_STALL + INDEX_FIRST_STALL.getOneBased()
+                + " " + StallUtil.getEditStallDescriptorDetails(descriptor));
+        assertEquals(new EditStallCommand(INDEX_FIRST_STALL, descriptor), command);
     }
 
     @Test

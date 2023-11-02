@@ -64,8 +64,8 @@ public class CommandTestUtil {
     public static final String PREAMBLE_WHITESPACE = "\t  \r  \n";
     public static final String PREAMBLE_NON_EMPTY = "NonEmptyPreamble";
 
-    public static final EditCommand.EditStallDescriptor DESC_ASIAN;
-    public static final EditCommand.EditStallDescriptor DESC_BRITISH;
+    public static final EditStallCommand.EditStallDescriptor DESC_ASIAN;
+    public static final EditStallCommand.EditStallDescriptor DESC_BRITISH;
 
     static {
         DESC_ASIAN = new EditStallDescriptorBuilder()
