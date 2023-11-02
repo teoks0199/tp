@@ -37,4 +37,11 @@ public class Description {
     public int hashCode() {
         return description.hashCode();
     }
+
+    @Override
+    public boolean equals(Object other) {
+        return other == this // short circuit if same object
+                || (other instanceof Description // instanceof handles nulls
+                && description.equals(((Description) other).description)); // state check
+    }
 }
