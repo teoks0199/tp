@@ -1,7 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PRICE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
@@ -25,11 +25,11 @@ public class AddItemCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds an item to the address book. "
         + "Parameters: "
         + PREFIX_STALL + "STALL_INDEX "
-        + PREFIX_ITEM + "ITEM_NAME "
+        + PREFIX_NAME + "ITEM_NAME "
             + PREFIX_PRICE + "ITEM_PRICE \n"
         + "Example: " + COMMAND_WORD + " "
         + PREFIX_STALL + "1 "
-        + PREFIX_ITEM + "Chicken Rice "
+        + PREFIX_NAME + "Chicken Rice "
         + PREFIX_PRICE + "5.50 ";
 
     public static final String MESSAGE_SUCCESS = "New Item: %1$s successfully added to stall: %2$s";
