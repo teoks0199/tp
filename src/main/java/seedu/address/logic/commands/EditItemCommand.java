@@ -108,7 +108,12 @@ public class EditItemCommand extends Command {
         }
 
         model.setItem(stallIndex, itemIndex, editedItem);
-        return new CommandResult(String.format(MESSAGE_EDIT_ITEM_SUCCESS, Messages.format(editedItem)));
+
+        model.setFilteredItem(editedItem);
+        model.setFilteredItemList(stallIndex);
+        model.setFilteredStall(stallIndex);
+        return new CommandResult(String.format(MESSAGE_EDIT_ITEM_SUCCESS, Messages.format(editedItem)),
+                CommandResult.ViewType.VIEW_ITEM);
     }
 
     /**

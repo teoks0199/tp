@@ -75,6 +75,11 @@ public interface Model {
     void addStall(Stall stall);
 
     /**
+     * Returns the index of the given stall.
+     */
+    public Index getStallIndex(Stall stall);
+
+    /**
      * Get stall that is filtered out
      * @return filtered stall
      */
