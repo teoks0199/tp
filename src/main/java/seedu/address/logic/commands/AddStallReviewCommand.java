@@ -19,6 +19,7 @@ import seedu.address.model.stall.review.StallReview;
  */
 public class AddStallReviewCommand extends Command {
     public static final String COMMAND_WORD = "review-stall";
+    
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a review to a stall "
             + "Parameters: "
             + PREFIX_STALL + "STALL_INDEX "
