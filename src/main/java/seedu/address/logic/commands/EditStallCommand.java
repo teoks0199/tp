@@ -3,6 +3,7 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_LOCATION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_STALLS;
 
 import java.util.List;
@@ -20,16 +21,17 @@ import seedu.address.model.stall.Name;
 import seedu.address.model.stall.Stall;
 
 /**
- * Edits the details of an existing stall in the address book.
+ * Edits the details of an existing stall in FoodNotes.
  */
-public class EditCommand extends Command {
+public class EditStallCommand extends Command {
 
-    public static final String COMMAND_WORD = "edit";
+    public static final String COMMAND_WORD = "edit-stall";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the stall identified "
             + "by the index number used in the displayed stall list. "
             + "Existing values will be overwritten by the input values.\n"
-            + "Parameters: INDEX (must be a positive integer) "
+            + "Parameters: "
+            + PREFIX_STALL + "STALL_INDEX (must be a positive integer)\n"
             + "[" + PREFIX_NAME + "NAME] "
             + "[" + PREFIX_LOCATION + "LOCATION] ";
 
@@ -45,7 +47,7 @@ public class EditCommand extends Command {
      * @param index of the stall in the filtered stall list to edit
      * @param editStallDescriptor details to edit the stall with
      */
-    public EditCommand(Index index, EditStallDescriptor editStallDescriptor) {
+    public EditStallCommand(Index index, EditStallDescriptor editStallDescriptor) {
         requireNonNull(index);
         requireNonNull(editStallDescriptor);
 
@@ -94,13 +96,13 @@ public class EditCommand extends Command {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof EditCommand)) {
+        if (!(other instanceof EditStallCommand)) {
             return false;
         }
 
-        EditCommand otherEditCommand = (EditCommand) other;
-        return index.equals(otherEditCommand.index)
-                && editStallDescriptor.equals(otherEditCommand.editStallDescriptor);
+        EditStallCommand otherEditStallCommand = (EditStallCommand) other;
+        return index.equals(otherEditStallCommand.index)
+                && editStallDescriptor.equals(otherEditStallCommand.editStallDescriptor);
     }
 
     @Override

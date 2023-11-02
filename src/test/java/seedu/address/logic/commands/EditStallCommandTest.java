@@ -18,7 +18,7 @@ import org.junit.jupiter.api.Test;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
-import seedu.address.logic.commands.EditCommand.EditStallDescriptor;
+import seedu.address.logic.commands.EditStallCommand.EditStallDescriptor;
 import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
@@ -28,9 +28,9 @@ import seedu.address.testutil.EditStallDescriptorBuilder;
 import seedu.address.testutil.StallBuilder;
 
 /**
- * Contains integration tests (interaction with the Model) and unit tests for EditCommand.
+ * Contains integration tests (interaction with the Model) and unit tests for EditStallCommand.
  */
-public class EditCommandTest {
+public class EditStallCommandTest {
 
     private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
 
@@ -38,14 +38,15 @@ public class EditCommandTest {
     public void execute_allFieldsSpecifiedUnfilteredList_success() {
         Stall editedStall = new StallBuilder().build();
         EditStallDescriptor descriptor = new EditStallDescriptorBuilder(editedStall).build();
-        EditCommand editCommand = new EditCommand(INDEX_FIRST_STALL, descriptor);
+        EditStallCommand editStallCommand = new EditStallCommand(INDEX_FIRST_STALL, descriptor);
 
-        String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall));
+        String expectedMessage = String
+                .format(EditStallCommand.MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall));
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setStall(model.getFilteredStallList().get(0), editedStall);
 
-        assertCommandSuccess(editCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(editStallCommand, model, expectedMessage, expectedModel);
     }
 
     @Test
@@ -58,25 +59,27 @@ public class EditCommandTest {
 
         EditStallDescriptor descriptor = new EditStallDescriptorBuilder().withName(VALID_NAME_BRITISH)
                 .withLocation(VALID_LOCATION_BRITISH).build();
-        EditCommand editCommand = new EditCommand(indexLastStall, descriptor);
+        EditStallCommand editStallCommand = new EditStallCommand(indexLastStall, descriptor);
 
-        String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall));
+        String expectedMessage = String
+                .format(EditStallCommand.MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall));
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setStall(lastStall, editedStall);
 
-        assertCommandSuccess(editCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(editStallCommand, model, expectedMessage, expectedModel);
     }
     @Test
     public void execute_noFieldSpecifiedUnfilteredList_success() {
-        EditCommand editCommand = new EditCommand(INDEX_FIRST_STALL, new EditStallDescriptor());
+        EditStallCommand editStallCommand = new EditStallCommand(INDEX_FIRST_STALL, new EditStallDescriptor());
         Stall editedStall = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
 
-        String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall));
+        String expectedMessage = String
+                .format(EditStallCommand.MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall));
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
 
-        assertCommandSuccess(editCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(editStallCommand, model, expectedMessage, expectedModel);
     }
 
     @Test
@@ -85,24 +88,25 @@ public class EditCommandTest {
 
         Stall stallInFilteredList = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
         Stall editedStall = new StallBuilder(stallInFilteredList).withName(VALID_NAME_BRITISH).build();
-        EditCommand editCommand = new EditCommand(INDEX_FIRST_STALL,
+        EditStallCommand editStallCommand = new EditStallCommand(INDEX_FIRST_STALL,
                 new EditStallDescriptorBuilder().withName(VALID_NAME_BRITISH).build());
 
-        String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall));
+        String expectedMessage = String
+                .format(EditStallCommand.MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall));
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setStall(model.getFilteredStallList().get(0), editedStall);
 
-        assertCommandSuccess(editCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(editStallCommand, model, expectedMessage, expectedModel);
     }
 
     @Test
     public void execute_duplicateStallUnfilteredList_failure() {
         Stall firstStall = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
         EditStallDescriptor descriptor = new EditStallDescriptorBuilder(firstStall).build();
-        EditCommand editCommand = new EditCommand(INDEX_SECOND_STALL, descriptor);
+        EditStallCommand editStallCommand = new EditStallCommand(INDEX_SECOND_STALL, descriptor);
 
-        assertCommandFailure(editCommand, model, EditCommand.MESSAGE_DUPLICATE_STALL);
+        assertCommandFailure(editStallCommand, model, EditStallCommand.MESSAGE_DUPLICATE_STALL);
     }
 
     @Test
@@ -111,19 +115,19 @@ public class EditCommandTest {
 
         // edit stall in filtered list into a duplicate in address book
         Stall stallInList = model.getAddressBook().getStallList().get(INDEX_SECOND_STALL.getZeroBased());
-        EditCommand editCommand = new EditCommand(INDEX_FIRST_STALL,
+        EditStallCommand editStallCommand = new EditStallCommand(INDEX_FIRST_STALL,
                 new EditStallDescriptorBuilder(stallInList).build());
 
-        assertCommandFailure(editCommand, model, EditCommand.MESSAGE_DUPLICATE_STALL);
+        assertCommandFailure(editStallCommand, model, EditStallCommand.MESSAGE_DUPLICATE_STALL);
     }
 
     @Test
     public void execute_invalidStallIndexUnfilteredList_failure() {
         Index outOfBoundIndex = Index.fromOneBased(model.getFilteredStallList().size() + 1);
         EditStallDescriptor descriptor = new EditStallDescriptorBuilder().withName(VALID_NAME_BRITISH).build();
-        EditCommand editCommand = new EditCommand(outOfBoundIndex, descriptor);
+        EditStallCommand editStallCommand = new EditStallCommand(outOfBoundIndex, descriptor);
 
-        assertCommandFailure(editCommand, model, Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
+        assertCommandFailure(editStallCommand, model, Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
     }
 
     /**
@@ -137,19 +141,19 @@ public class EditCommandTest {
         // ensures that outOfBoundIndex is still in bounds of address book list
         assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getStallList().size());
 
-        EditCommand editCommand = new EditCommand(outOfBoundIndex,
+        EditStallCommand editStallCommand = new EditStallCommand(outOfBoundIndex,
                 new EditStallDescriptorBuilder().withName(VALID_NAME_BRITISH).build());
 
-        assertCommandFailure(editCommand, model, Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
+        assertCommandFailure(editStallCommand, model, Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
     }
 
     @Test
     public void equals() {
-        final EditCommand standardCommand = new EditCommand(INDEX_FIRST_STALL, DESC_ASIAN);
+        final EditStallCommand standardCommand = new EditStallCommand(INDEX_FIRST_STALL, DESC_ASIAN);
 
         // same values -> returns true
         EditStallDescriptor copyDescriptor = new EditStallDescriptor(DESC_ASIAN);
-        EditCommand commandWithSameValues = new EditCommand(INDEX_FIRST_STALL, copyDescriptor);
+        EditStallCommand commandWithSameValues = new EditStallCommand(INDEX_FIRST_STALL, copyDescriptor);
         assertTrue(standardCommand.equals(commandWithSameValues));
 
         // same object -> returns true
@@ -162,20 +166,20 @@ public class EditCommandTest {
         assertFalse(standardCommand.equals(new ClearCommand()));
 
         // different index -> returns false
-        assertFalse(standardCommand.equals(new EditCommand(INDEX_SECOND_STALL, DESC_ASIAN)));
+        assertFalse(standardCommand.equals(new EditStallCommand(INDEX_SECOND_STALL, DESC_ASIAN)));
 
         // different descriptor -> returns false
-        assertFalse(standardCommand.equals(new EditCommand(INDEX_FIRST_STALL, DESC_BRITISH)));
+        assertFalse(standardCommand.equals(new EditStallCommand(INDEX_FIRST_STALL, DESC_BRITISH)));
     }
 
     @Test
     public void toStringMethod() {
         Index index = Index.fromOneBased(1);
         EditStallDescriptor editStallDescriptor = new EditStallDescriptor();
-        EditCommand editCommand = new EditCommand(index, editStallDescriptor);
-        String expected = EditCommand.class.getCanonicalName() + "{index=" + index + ", editStallDescriptor="
+        EditStallCommand editStallCommand = new EditStallCommand(index, editStallDescriptor);
+        String expected = EditStallCommand.class.getCanonicalName() + "{index=" + index + ", editStallDescriptor="
                 + editStallDescriptor + "}";
-        assertEquals(expected, editCommand.toString());
+        assertEquals(expected, editStallCommand.toString());
     }
 
 }
