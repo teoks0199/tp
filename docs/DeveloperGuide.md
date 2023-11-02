@@ -154,29 +154,30 @@ Classes used by multiple components are in the `seedu.FoodNotes.commons` package
 
 This section describes some noteworthy details on how certain features are implemented.
 
-### \[Proposed\] Sort price feature
+### Sort Stalls Price feature
 
-#### Proposed Implementation
+#### Implementation
 
-The proposed sort price functionality is facilitated by `SortedPriceCommand`.
+The proposed sort stalls price functionality is facilitated by `SortStallsPriceCommand`.
 
 The following sequence diagram shows how the sort operation works:
 
 ![SortPriceSequenceDiagram](images/SortPriceSequenceDiagram.png)
 
-`sortFilteredStoreList` is a method in `ModelManager` that sorts the filtered store list by price.
-It makes use of `Comparator` to compare the prices of the stalls.
+`sortStallPrice` is a method in `ModelManager` that sorts the filtered stall list by price. 
+It calls `sortByPrice` in `UniqueStallList` which sorts the list of stalls by price which makes use of 
+`StallPriceComparator` to compare the prices of the stalls.
 
 #### Design considerations:
-**Aspect: How sort price executes:**
+**Aspect: How sort stalls price executes:**
 
-* **Alternative 1 (current choice):** Displays the sorted list of stalls only.
+* **Alternative 1 (Current choice):** Saves the sorted list of stalls in FoodNotes.
+    * Pros: User does not need to re-sort list after every command.
+    * Cons: Original ordering of stalls will be lost.
+
+* **Alternative 2:** Displays the sorted list of stalls only.
     * Pros: Easy to implement.
     * Cons: User needs to re-sort stalls by price after every command if they want to view the sorted list.
-
-* **Alternative 2:** Saves the sorted list of stalls in FoodNotes.
-    * Pros: User does not need to re-sort list after every command.
-    * Cons: May have performance issues in terms of memory usage, original ordering of stalls will be lost.
 
 _{more aspects and alternatives to be added}_
 
@@ -218,10 +219,6 @@ The following activity diagram summarizes what happens when a user executes a ne
     * Cons: Users are restricted to only adding items when they have a review.
 
 _{more aspects and alternatives to be added}_
-
-### \[Proposed\] Data archiving
-
-_{Explain here how the data archiving feature will be implemented}_
 
 ### Find Item feature
 
