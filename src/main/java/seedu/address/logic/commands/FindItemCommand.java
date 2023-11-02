@@ -15,7 +15,7 @@ import seedu.address.model.stall.MenuContainsKeywordsPredicate;
  */
 public class FindItemCommand extends Command {
 
-    public static final String COMMAND_WORD = "find-item";
+    public static final String COMMAND_WORD = "find-by-item";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all stalls whose menu items contain any of "
             + "the specified keywords (case-insensitive) and displays them as a list with index numbers.\n"
