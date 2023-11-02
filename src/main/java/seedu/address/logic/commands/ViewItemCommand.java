@@ -64,7 +64,7 @@ public class ViewItemCommand extends Command {
         model.setFilteredItemList(stallIndex);
         model.setFilteredStall(stallIndex);
         return new CommandResult(String.format(MESSAGE_VIEW_ITEM_SUCCESS, Messages.format(itemToView), Messages
-                .format(stallToViewFrom)), false, false, false, true);
+                .format(stallToViewFrom)), CommandResult.ViewType.VIEW_ITEM);
     }
 
     @Override
