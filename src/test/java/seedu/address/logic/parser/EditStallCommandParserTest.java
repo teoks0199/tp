@@ -1,6 +1,7 @@
 package seedu.address.logic.parser;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_LOCATION_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_NAME_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.LOCATION_DESC_ASIAN;
@@ -52,19 +53,19 @@ public class EditStallCommandParserTest {
     public void parse_invalidStallIndex_failure() {
         // negative index
         assertParseFailure(parser, PREAMBLE_WHITESPACE + " "
-                + PREFIX_STALL + "-5" + NAME_DESC_ASIAN, MESSAGE_INVALID_FORMAT);
+                + PREFIX_STALL + "-5" + NAME_DESC_ASIAN, MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
 
         // zero index
         assertParseFailure(parser, PREAMBLE_WHITESPACE + " "
-                + PREFIX_STALL + "0" + NAME_DESC_ASIAN, MESSAGE_INVALID_FORMAT);
+                + PREFIX_STALL + "0" + NAME_DESC_ASIAN, MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
 
         // invalid arguments being parsed as preamble
         assertParseFailure(parser, PREAMBLE_WHITESPACE + " "
-                + PREFIX_STALL + "1 some random string", MESSAGE_INVALID_FORMAT);
+                + PREFIX_STALL + "1 some random string", MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
 
         // invalid prefix being parsed as preamble
         assertParseFailure(parser, PREAMBLE_WHITESPACE + " "
-                + PREFIX_STALL + "1 i/ string", MESSAGE_INVALID_FORMAT);
+                + PREFIX_STALL + "1 i/ string", MESSAGE_INVALID_STALL_DISPLAYED_INDEX);
     }
 
     @Test

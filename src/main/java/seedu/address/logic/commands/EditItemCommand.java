@@ -38,7 +38,7 @@ public class EditItemCommand extends Command {
     public static final String COMMAND_WORD = "edit-item";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the item identified "
-            + "by the stallIndex number used in the displayed item list. "
+            + "by the index number used in the displayed item list. "
             + "Existing values will be overwritten by the input values.\n"
             + "Item must have a review before rating and description can be edited.\n"
             + "Parameters: "

@@ -2,6 +2,7 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_LOCATION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
@@ -44,7 +45,8 @@ public class EditStallCommandParser implements Parser<EditStallCommand> {
         try {
             index = ParserUtil.parseIndex(argMultimap.getValue(PREFIX_STALL).get());
         } catch (ParseException pe) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditStallCommand.MESSAGE_USAGE), pe);
+            throw new ParseException(String.format(MESSAGE_INVALID_STALL_DISPLAYED_INDEX,
+                    EditStallCommand.MESSAGE_USAGE), pe);
         }
         EditStallCommand.EditStallDescriptor editStallDescriptor = new EditStallCommand.EditStallDescriptor();
 
