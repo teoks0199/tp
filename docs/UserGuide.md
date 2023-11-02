@@ -130,9 +130,8 @@ What the main components of the _GUI_ do:
 
 <div markdown="block" class="alert alert-info">
 
-:bulb: **Note:**<br>
+:bulb: **Tip:**<br>
 
-* For new users, the application will contain all the data of NUS food stalls and their menu items
 * If double-clicking `foodNotes.jar` does not work,
 
    1. Search for "Command Prompt" or "Terminal" on your computer.
