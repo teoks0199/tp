@@ -7,7 +7,7 @@ import javafx.scene.layout.Region;
 import seedu.address.model.item.Item;
 
 /**
- * An UI component that displays information of a {@code Stall}.
+ * An UI component that displays information of an {@code Item}.
  */
 public class ItemCard extends UiPart<Region> {
 
@@ -37,7 +37,7 @@ public class ItemCard extends UiPart<Region> {
     private Label cardDetails;
 
     /**
-     * Creates a {@code PersonCode} with the given {@code Stall} and index to display.
+     * Creates a {@code PersonCode} with the given {@code Item} and index to display.
      */
     public ItemCard(Item item, int displayedIndex) {
         super(FXML);

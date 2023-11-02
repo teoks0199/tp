@@ -14,7 +14,7 @@ import seedu.address.model.item.Item;
 import seedu.address.model.stall.Stall;
 
 /**
- * Panel containing the list of persons.
+ * Panel containing the list of menu items.
  */
 public class ItemListPanel extends UiPart<Region> {
     private static final String FXML = "LeftListPanel.fxml";

@@ -18,7 +18,7 @@ import seedu.address.model.review.Rating;
 
 
 /**
- * Parses input arguments and creates a new AddItemCommand object
+ * Parses input arguments and creates a new AddItemReviewCommand object
  */
 public class AddItemReviewCommandParser implements Parser<AddItemReviewCommand> {
 
