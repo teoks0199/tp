@@ -428,7 +428,7 @@ The command is a powerful tool for quickly locating specific food stalls based o
 
 **Command function:** Finds all stalls whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
 
-**Command format:** `find-by-name <KEYWORD>`
+**Command format:** `find-by-name NAME_KEYWORD`
 
 Suppose you want to find stalls that serve Japanese and Western noodles. You can use the command as follows:
 
@@ -459,7 +459,7 @@ The command is a powerful tool for quickly locating specific food stalls based o
 
 **Command function:** Finds all stalls whose location contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
 
-**Command format:** `find-by-location <KEYWORD>`
+**Command format:** `find-by-location LOCATION_KEYWORD`
 
 Suppose you want to find stalls that are located at the Deck. You can use the command as follows:
 
@@ -490,7 +490,7 @@ The command is a powerful tool for quickly locating specific food stalls based o
 
 **Command function:** Finds all stalls whose menu items contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
 
-**Command format:** `find-by-item <KEYWORD>`
+**Command format:** `find-by-item ITEM_KEYWORD`
 
 Suppose you want to find stalls that sells chicken rice. You can use the command as follows:
 
