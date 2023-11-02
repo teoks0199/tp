@@ -15,20 +15,22 @@ import seedu.address.model.item.Item;
 import seedu.address.model.stall.Stall;
 
 /**
- * View an item detail identified using it's displayed index from FoodNotes.
+ * View an item's details identified using it's displayed index from FoodNotes.
  */
 public class ViewItemCommand extends Command {
 
     public static final String COMMAND_WORD = "view-item";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": View the item identified by the stall and item index number used in the displayed item list.\n"
+            + ": Displays the details of the item identified by the index number used in the displayed item list.\n"
             + "Parameters: "
             + PREFIX_STALL
             + "STALL_INDEX "
             + PREFIX_ITEM
             + "ITEM_INDEX \n"
-            + "Example: " + COMMAND_WORD + " s/1 i/1";
+            + "Example: " + COMMAND_WORD + " "
+            + PREFIX_STALL + "1 "
+            + PREFIX_ITEM + "1";
 
     public static final String MESSAGE_VIEW_ITEM_SUCCESS = "Viewing Item: %1$s from Stall: %2$s";
     private final Index itemIndex;

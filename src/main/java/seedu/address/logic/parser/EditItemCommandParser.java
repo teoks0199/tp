@@ -2,6 +2,8 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.Messages.MESSAGE_INVALID_ITEM_DISPLAYED_INDEX;
+import static seedu.address.logic.Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
@@ -48,14 +50,16 @@ public class EditItemCommandParser implements Parser<EditItemCommand> {
         try {
             stallIndex = ParserUtil.parseIndex(argMultimap.getValue(PREFIX_STALL).get());
         } catch (ParseException pe) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditItemCommand.MESSAGE_USAGE), pe);
+            throw new ParseException(String.format(MESSAGE_INVALID_STALL_DISPLAYED_INDEX,
+                    EditItemCommand.MESSAGE_USAGE), pe);
         }
 
         Index itemIndex;
         try {
             itemIndex = ParserUtil.parseIndex(argMultimap.getValue(PREFIX_ITEM).get());
         } catch (ParseException pe) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditItemCommand.MESSAGE_USAGE), pe);
+            throw new ParseException(String.format(MESSAGE_INVALID_ITEM_DISPLAYED_INDEX,
+                    EditItemCommand.MESSAGE_USAGE), pe);
         }
 
         EditItemCommand.EditItemDescriptor editItemDescriptor = new EditItemCommand.EditItemDescriptor();

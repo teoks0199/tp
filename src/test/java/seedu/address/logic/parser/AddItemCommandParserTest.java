@@ -13,7 +13,7 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_PRICE_1;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PRICE_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_STALL_INDEX_1;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_STALL_INDEX_DESC;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PRICE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
@@ -51,7 +51,7 @@ public class AddItemCommandParserTest {
 
         // multiple names
         assertParseFailure(parser, validExpectedItemString + ITEM_DESC_CHICKEN_RICE + VALID_PRICE_DESC,
-                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_ITEM));
+                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_NAME));
 
         // multiple indexes
         assertParseFailure(parser, TYPICAL_STALL_INDEX + validExpectedItemString + VALID_PRICE_DESC,
@@ -65,7 +65,7 @@ public class AddItemCommandParserTest {
         assertParseFailure(parser,
                 validExpectedItemString + ITEM_DESC_CHICKEN_RICE + TYPICAL_STALL_INDEX
                         + validExpectedItemString + VALID_PRICE_DESC,
-                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_STALL, PREFIX_ITEM));
+                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_STALL, PREFIX_NAME));
 
         // invalid value followed by valid value
 
@@ -76,7 +76,7 @@ public class AddItemCommandParserTest {
 
         // invalid item
         assertParseFailure(parser, INVALID_ITEM_NAME_DESC + validExpectedItemString + VALID_PRICE_DESC,
-                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_ITEM));
+                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_NAME));
 
         // valid value followed by invalid value
 
@@ -87,7 +87,7 @@ public class AddItemCommandParserTest {
 
         // invalid item
         assertParseFailure(parser, validExpectedItemString + INVALID_ITEM_NAME_DESC + VALID_PRICE_DESC,
-                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_ITEM));
+                Messages.getErrorMessageForDuplicatePrefixes(PREFIX_NAME));
 
         //invalid price
         assertParseFailure(parser, validExpectedItemString + VALID_PRICE_DESC + INVALID_ITEM_PRICE_DESC,

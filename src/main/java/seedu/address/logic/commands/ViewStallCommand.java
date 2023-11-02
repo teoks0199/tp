@@ -21,9 +21,9 @@ public class ViewStallCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Displays the details of the stall identified by the index number used in the displayed stall list.\n"
-            + "Parameters: INDEX (must be a positive integer)\n"
-            + PREFIX_STALL + "STALL_INDEX (must be a positive integer)\n"
-            + "Example: " + COMMAND_WORD
+            + "Parameters: "
+            + PREFIX_STALL + "STALL_INDEX \n"
+            + "Example: " + COMMAND_WORD + " "
             + PREFIX_STALL + "1";
 
     public static final String MESSAGE_VIEW_STALL_SUCCESS = "Here are the details of this stall.";
