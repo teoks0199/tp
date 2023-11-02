@@ -36,7 +36,7 @@ Given below is a quick overview of main components and how they interact with ea
 
 **Main components of the architecture**
 
-**`Main`** (consisting of classes [`Main`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
+**`Main`** (consisting of classes [`Main`](https://github.com/se-edu/FoodNotes-level3/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/se-edu/FoodNotes-level3/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
 * At app launch, it initializes the other components in the correct sequence, and connects them up with each other.
 * At shut down, it shuts down the other components and invokes cleanup methods where necessary.
 
@@ -68,13 +68,13 @@ The sections below give more details of each component.
 
 ### UI component
 
-The **API** of this component is specified in [`Ui.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java)
+The **API** of this component is specified in [`Ui.java`](https://github.com/se-edu/FoodNotes-level3/tree/master/src/main/java/seedu/address/ui/Ui.java)
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
 The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
 
-The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml)
+The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/se-edu/FoodNotes-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/se-edu/FoodNotes-level3/tree/master/src/main/resources/view/MainWindow.fxml)
 
 The `UI` component,
 
@@ -85,7 +85,7 @@ The `UI` component,
 
 ### Logic component
 
-**API** : [`Logic.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java)
+**API** : [`Logic.java`](https://github.com/se-edu/FoodNotes-level3/tree/master/src/main/java/seedu/address/logic/Logic.java)
 
 Here's a (partial) class diagram of the `Logic` component:
 
@@ -100,9 +100,9 @@ The sequence diagram below illustrates the interactions within the `Logic` compo
 
 How the `Logic` component works:
 
-1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
+1. When `Logic` is called upon to execute a command, it is passed to an `FoodNotesParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
 1. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
-1. The command can communicate with the `Model` when it is executed (e.g. to delete a person).
+1. The command can communicate with the `Model` when it is executed (e.g. to delete a stall).
 1. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
 
 Here are the other classes in `Logic` (omitted from the class diagram above) that are used for parsing a user command:
@@ -110,11 +110,11 @@ Here are the other classes in `Logic` (omitted from the class diagram above) tha
 <img src="images/ParserClasses.png" width="600"/>
 
 How the parsing works:
-* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
+* When called upon to parse a user command, the `FoodNotesParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `FoodNotesParser` returns back as a `Command` object.
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 ### Model component
-**API** : [`Model.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java)
+**API** : [`Model.java`](https://github.com/se-edu/FoodNotes-level3/tree/master/src/main/java/seedu/address/model/Model.java)
 
 <img src="images/ModelClassDiagram.png" width="450" />
 
@@ -126,7 +126,7 @@ The `Model` component,
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `AddressBook`, which `Person` references. This allows `AddressBook` to only require one `Tag` object per unique tag, instead of each `Person` needing their own `Tag` objects.<br>
+<div markdown="span" class="alert alert-info">:information_source: **Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `FoodNotes`, which `Person` references. This allows `FoodNotes` to only require one `Tag` object per unique tag, instead of each `Person` needing their own `Tag` objects.<br>
 
 <img src="images/BetterModelClassDiagram.png" width="450" />
 
@@ -135,18 +135,18 @@ The `Model` component,
 
 ### Storage component
 
-**API** : [`Storage.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java)
+**API** : [`Storage.java`](https://github.com/se-edu/FoodNotes-level3/tree/master/src/main/java/seedu/address/storage/Storage.java)
 
 <img src="images/StorageClassDiagram.png" width="550" />
 
 The `Storage` component,
 * can save both address book data and user preference data in JSON format, and read them back into corresponding objects.
-* inherits from both `AddressBookStorage` and `UserPrefStorage`, which means it can be treated as either one (if only the functionality of only one is needed).
+* inherits from both `FoodNotesStorage` and `UserPrefStorage`, which means it can be treated as either one (if only the functionality of only one is needed).
 * depends on some classes in the `Model` component (because the `Storage` component's job is to save/retrieve objects that belong to the `Model`)
 
 ### Common classes
 
-Classes used by multiple components are in the `seedu.addressbook.commons` package.
+Classes used by multiple components are in the `seedu.FoodNotes.commons` package.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -154,91 +154,91 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 This section describes some noteworthy details on how certain features are implemented.
 
-### \[Proposed\] Undo/redo feature
+### Sort Stalls Price feature
 
-#### Proposed Implementation
+#### Implementation
 
-The proposed undo/redo mechanism is facilitated by `VersionedAddressBook`. It extends `AddressBook` with an undo/redo history, stored internally as an `addressBookStateList` and `currentStatePointer`. Additionally, it implements the following operations:
+The proposed sort stalls price functionality is facilitated by `SortStallsPriceCommand`.
 
-* `VersionedAddressBook#commit()` — Saves the current address book state in its history.
-* `VersionedAddressBook#undo()` — Restores the previous address book state from its history.
-* `VersionedAddressBook#redo()` — Restores a previously undone address book state from its history.
+The following sequence diagram shows how the sort operation works:
 
-These operations are exposed in the `Model` interface as `Model#commitAddressBook()`, `Model#undoAddressBook()` and `Model#redoAddressBook()` respectively.
+![SortPriceSequenceDiagram](images/SortPriceSequenceDiagram.png)
 
-Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.
-
-Step 1. The user launches the application for the first time. The `VersionedAddressBook` will be initialized with the initial address book state, and the `currentStatePointer` pointing to that single address book state.
-
-![UndoRedoState0](images/UndoRedoState0.png)
-
-Step 2. The user executes `delete 5` command to delete the 5th person in the address book. The `delete` command calls `Model#commitAddressBook()`, causing the modified state of the address book after the `delete 5` command executes to be saved in the `addressBookStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state.
-
-![UndoRedoState1](images/UndoRedoState1.png)
-
-Step 3. The user executes `add n/David …​` to add a new person. The `add` command also calls `Model#commitAddressBook()`, causing another modified address book state to be saved into the `addressBookStateList`.
-
-![UndoRedoState2](images/UndoRedoState2.png)
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If a command fails its execution, it will not call `Model#commitAddressBook()`, so the address book state will not be saved into the `addressBookStateList`.
-
-</div>
-
-Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state.
-
-![UndoRedoState3](images/UndoRedoState3.png)
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index 0, pointing to the initial AddressBook state, then there are no previous AddressBook states to restore. The `undo` command uses `Model#canUndoAddressBook()` to check if this is the case. If so, it will return an error to the user rather
-than attempting to perform the undo.
-
-</div>
-
-The following sequence diagram shows how the undo operation works:
-
-![UndoSequenceDiagram](images/UndoSequenceDiagram.png)
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-
-</div>
-
-The `redo` command does the opposite — it calls `Model#redoAddressBook()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the address book to that state.
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index `addressBookStateList.size() - 1`, pointing to the latest address book state, then there are no undone AddressBook states to restore. The `redo` command uses `Model#canRedoAddressBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-
-</div>
-
-Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will usually not call `Model#commitAddressBook()`, `Model#undoAddressBook()` or `Model#redoAddressBook()`. Thus, the `addressBookStateList` remains unchanged.
-
-![UndoRedoState4](images/UndoRedoState4.png)
-
-Step 6. The user executes `clear`, which calls `Model#commitAddressBook()`. Since the `currentStatePointer` is not pointing at the end of the `addressBookStateList`, all address book states after the `currentStatePointer` will be purged. Reason: It no longer makes sense to redo the `add n/David …​` command. This is the behavior that most modern desktop applications follow.
-
-![UndoRedoState5](images/UndoRedoState5.png)
-
-The following activity diagram summarizes what happens when a user executes a new command:
-
-<img src="images/CommitActivityDiagram.png" width="250" />
+`sortStallPrice` is a method in `ModelManager` that sorts the filtered stall list by price. 
+It calls `sortByPrice` in `UniqueStallList` which sorts the list of stalls by price which makes use of 
+`StallPriceComparator` to compare the prices of the stalls.
 
 #### Design considerations:
+**Aspect: How sort stalls price executes:**
 
-**Aspect: How undo & redo executes:**
+* **Alternative 1 (Current choice):** Saves the sorted list of stalls in FoodNotes.
+    * Pros: User does not need to re-sort list after every command.
+    * Cons: Original ordering of stalls will be lost.
 
-* **Alternative 1 (current choice):** Saves the entire address book.
-  * Pros: Easy to implement.
-  * Cons: May have performance issues in terms of memory usage.
-
-* **Alternative 2:** Individual command knows how to undo/redo by
-  itself.
-  * Pros: Will use less memory (e.g. for `delete`, just save the person being deleted).
-  * Cons: We must ensure that the implementation of each individual command are correct.
+* **Alternative 2:** Displays the sorted list of stalls only.
+    * Pros: Easy to implement.
+    * Cons: User needs to re-sort stalls by price after every command if they want to view the sorted list.
 
 _{more aspects and alternatives to be added}_
 
-### \[Proposed\] Data archiving
+### add-item/delete-item feature
 
-_{Explain here how the data archiving feature will be implemented}_
+#### Implementation:
 
+The add-item/delete-item mechanism is facilitated by `ModelManager`. It extends `Model`, stored internally as an `UniqueItemLis`.
 
+These operations are exposed in the `Model` interface as `Model#addItem()` and `Model#deleteItem()` respectively with the addition of getters and setters.
+
+The following sequence diagram shows how the add-item operation works:
+
+![AddItemSequenceDiagram](images/AddItemSequenceDiagram.png)
+
+<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `AddItemCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+
+</div>
+
+The `delete-item` command does the opposite — it calls `Model#deleteItem()`, which deletes the specified item from its specified stall.
+
+<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `stallIndex` or `itemIndex` is at index out of range of `filteredStallList.size() - 1` or , then there are no stalls to delete the item from.
+</div>
+
+The following activity diagram summarizes what happens when a user executes a new command:
+
+<img src="images/AddItemActivityDiagram.png" width="250" />
+
+#### Design considerations:
+
+**Aspect: Number of fields needed to be entered by the user:**
+
+* **Alternative 1 (current choice): Only require them to enter the stall they belong to and the name of the item**
+    * Pros: Users are not restricted to only adding items when they have a review.
+    * Cons: Causes some fields to be null when initialised (e.g. `rating` and `review`) and more code is needed to implement.
+
+* **Alternative 2: Require all fields required to be present when adding an item:**
+    * Pros: Less code is needed to implement.
+    * Cons: Users are restricted to only adding items when they have a review.
+
+_{more aspects and alternatives to be added}_
+
+### Find Item feature
+
+#### Implementation
+
+The find item feature is facilitated by `FindItemCommand` that extends `Command`.
+
+The following sequence diagram shows how the find item operation works:
+
+![FindItemSequenceDiagram](images/FindItemSequenceDiagram.png)
+
+The `ItemsContainKeywordsPredicate` is used to filter the list of stalls in FoodNotes. It is created with a list of keywords, and it checks if the menu items of a stall contains any of the keywords.
+
+* **Alternative 1 (current choice):** Allows the user to search for stalls containing any of the keywords.
+    * Pros: Users can search for multiple items at once, for example they can look for stalls that sell either "chicken" or "apple".
+    * Cons: More complicated to implement.
+
+* **Alternative 2:** Only allow the user to search for one keyword at a time.
+    * Pros: Easy to implement as parsing one keyword is more simple than parsing multiple keywords.
+    * Cons: Less flexible for the user.
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Documentation, logging, testing, configuration, dev-ops**
@@ -257,7 +257,9 @@ _{Explain here how the data archiving feature will be implemented}_
 
 **Target user profile**:
 
-* has a need to manage a significant number of contacts
+* student foodie from NUS
+* has a need to remember reviews of many food stores and food items
+* has a tight budget
 * prefer desktop apps over other types
 * can type fast
 * prefers typing to mouse interactions
@@ -270,50 +272,215 @@ _{Explain here how the data archiving feature will be implemented}_
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
-| -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
-| `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person               |                                                                        |
-| `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
-
+| Priority | As a …​                           | I want to …​                                                             | So that I can…​                                                   |
+|----------|-----------------------------------|--------------------------------------------------------------------------|-------------------------------------------------------------------|
+| `* * *`  | new user                          | add reviews to stalls                                                    | remember what I think about the food stall.                       |
+| `* * *`  | new user                          | delete reviews from stalls                                               | delete review of the food stall if I change my mind about it      |
+| `* * *`  | new user                          | add restaurant                                                           | add restaurants if I want to                                      |
+| `* * *`  | new user                          | delete restaurant                                                        | change my mind about the restaurant                               |
+| `* * *`  | new user                          | add menu item                                                            | review specific food from a specific restaurant                   |
+| `* * *`  | new user                          | delete menu item                                                         | remove it if I changed my mind                                    |
+| `* * *`  | new user                          | view restaurants                                                         | see the list of restaurants I have saved                          |
+| `* * *`  | new user                          | view the user guide easily                                               | learn more about the product when needed                          |
+| `* * *`  | new user                          | add reviews to menu items                                                | so that I can remember what I think about the menu item           |
+| `* * *`  | new user                          | delete reviews from menu items                                           | delete review of the menu item if I change my mind about it       |
+| `* *`    | hungry university student         | browse the ‘discount’ page for nearby campus eateries offering discounts | save money on meals                                               |
+| `* *`    | busy student                      | browse the daily specials page                                           | find on-campus restaurants and quickly decide where to grab lunch |
+| `* *`    | experienced user                  | save my favorite places                                                  | easily access them                                                |
+| `* *`    | new user                          | look at menu items of each store                                         | know what I can order                                             |
+| `* *`    | vegetarian student                | filter food options to only show vegetarian choices                      | find what I can eat                                               |
+| `* *`    | student with allergies            | filter food options by allergen information                              | eat safely                                                        |
+| `* *`    | health-conscious student          | see nutritional information for menu items                               | make informed choices about what I eat                            |
+| `* *`    | new user                          | sort by the most highly rated stores                                     | see what is popular                                               |
+| `* *`    | student trying to save money      | sort food items of stores by price                                       | plan what to eat to save money                                    |
+| `* *`    | student who often studies late    | search for food places by filtering by opening hours                     | quickly find food places to go for late-night suppers             |
+| `*`      | see how to travel to the stalls   | See how to travel to the stalls                                          | find my way easily                                                |
+| `*`      | user interested in sustainability | identify local ingredients                                               | support environmentally conscious dining choices                  |
+| `*`      | student always on the move        | receive alerts about pop ups                                             |  seize food opportunities wherever I go.                          |
+| `*`      | Muslim student                    | know which halal certified                                               | eat halal food.                                                   |
 *{More to be added}*
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is the `FoodNotes` and the **Actor** is the `user`, unless specified otherwise)
 
-**Use case: Delete a person**
+
+
+**Use case: Add a stall**
 
 **MSS**
 
-1.  User requests to list persons
-2.  AddressBook shows a list of persons
-3.  User requests to delete a specific person in the list
-4.  AddressBook deletes the person
+1.  User requests to list stalls
+2.  FoodNotes shows a list of stalls
+3.  User requests to add a stall to the list
+4.  FoodNotes add the stall
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 3a. The stall name and location is not specified
+
+    * 3a1. FoodNotes shows an error message.
+
+      Use case resumes at step 2.
+
+**Use case: Add a review to a stall**
+
+**MSS**
+
+1.  User requests to list stalls
+2.  FoodNotes shows a list of stalls
+3.  User requests to add a review to a stall
+4.  FoodNotes adds a review to the stall
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The list of stalls is empty.
 
   Use case ends.
 
 * 3a. The given index is invalid.
 
-    * 3a1. AddressBook shows an error message.
+    * 3a1. FoodNotes shows an error message.
 
       Use case resumes at step 2.
+
+* 3b. The star rating or description is not specified
+
+    * 3a1. FoodNotes shows an error message.
+
+      Use case resumes at step 2.
+
+**Use case: Delete a review from stall**
+
+**MSS**
+
+1.  User requests to list stalls
+2.  FoodNotes shows a list of stalls
+3.  User requests to view a stall
+4.  FoodNotes shows the review and menu of the stall
+5.  User requests to delete the review
+6.  FoodNotes deletes the review
+
+    Use case ends.
+
+**Extensions**
+
+* 3a. The given index is invalid.
+
+    * 3a1. FoodNotes shows an error message.
+
+      Use case resumes at step 2.
+
+* 4a. There are no reviews.
+
+  Use case ends.
+
+**Use case: Add a menu item to a stall**
+
+**MSS**
+
+1.  User requests to list stalls
+2.  FoodNotes shows a list of stalls
+3.  User requests to add a menu item to a stall
+4.  FoodNotes add the menu item
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The list of stalls is empty.
+
+  Use case ends.
+
+* 3a. The given index is invalid
+
+    * 3a1. FoodNotes shows an error message.
+
+      Use case resumes at step 2.
+
+**Use case: Add a review to a menu item**
+
+**MSS**
+
+1.  User requests to list stalls
+2.  FoodNotes shows a list of stalls
+3.  User requests to view a stall
+4.  FoodNotes shows the menu items and review of the stall
+5.  User requests to add a review to a menu item in the stall
+6.  FoodNotes add review to the menu item
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The list of stalls is empty.
+
+  Use case ends.
+
+* 3a. The given index is invalid.
+
+    * 3a1. FoodNotes shows an error message.
+
+      Use case resumes at step 2.
+
+* 4a. The star rating or description is not specified
+
+    * 4a1. FoodNotes shows an error message.
+
+      Use case resumes at step 2.
+
+**Use case: Delete a menu item from stall**
+
+**MSS**
+
+1.  User requests to list stalls
+2.  FoodNotes shows a list of stalls
+3.  User requests to view a stall
+4.  FoodNotes shows the review and menu of the stall
+5.  User requests to delete a menu item
+6.  FoodNotes deletes the menu item
+
+    Use case ends.
+
+**Extensions**
+
+* 4a. There are no menu items.
+
+  Use case ends.
+
+* 5a. The given index is invalid.
+
+    * 5a1. FoodNotes shows an error message.
+
+      Use case resumes at step 4.
+
+**Use Case: View All Stalls**
+
+**MSS**
+
+1. User requests to view all stalls using the command `list`.
+2. FoodNote retrieves and displays a list of all available stalls, including their names and locations.
+3. User reviews the list of stalls.
+
+   Use case ends.
+
+**Extensions**
+
+* 1a. No stalls are available in the database:
+    * FoodNote displays a message indicating that there are no stalls available.
+
+  Use case ends.
 
 *{More to be added}*
 
 ### Non-Functional Requirements
 
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
-2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
+2.  Should be able to hold up to 1000 stalls without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 
 *{More to be added}*
@@ -351,17 +518,17 @@ testers are expected to do more *exploratory* testing.
 
 1. _{ more test cases …​ }_
 
-### Deleting a person
+### Deleting a stall
 
-1. Deleting a person while all persons are being shown
+1. Deleting a stall while all stalls are being shown
 
-   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+   1. Prerequisites: List all stalls using the `list` command. Multiple stalls in the list.
 
    1. Test case: `delete 1`<br>
       Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
 
    1. Test case: `delete 0`<br>
-      Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
+      Expected: No stall is deleted. Error details shown in the status message. Status bar remains the same.
 
    1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
       Expected: Similar to previous.

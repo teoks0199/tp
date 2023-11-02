@@ -2,21 +2,125 @@
 layout: page
 title: User Guide
 ---
+## Table of Contents <a id="toc"></a>
 
-FoodNotes is a **desktop app for managing food reviews, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, FoodNotes can get your food review tasks done faster than traditional GUI apps.
+---
+1. [Introduction](#1-introduction)
+   - [1.1. Purpose](#11-purpose)
+2. [About the User Guide](#2-about-the-user-guide)
+    - [2.1. Navigating the User Guide](#21-navigating-the-user-guide)
+    - [2.2. Reading the User Guide](#22-reading-the-user-guide)
+        * [2.2.1. Icons](#icons)
+        * [2.2.2. Parameters](#parameters)
+        * [2.2.3. GUI](#GUI)
+3. [Quick Start](#3-quick-start)
+4. [Features](#4-features)
+   - 4.1 [General](#41-general)
+   - 4.2 [Stalls](#42-stalls)
+   - 4.3 [Items](#43-items)
+5. [Glossary](#5-glossary)
+6. [Command summary](#6-glossary)
+   - 6.1 [Stall Commands](#61-stall-commands)
+   - 6.2 [Item Commands](#62-item-commands)
+   - 6.3 [General Commands](#63-general-commands)
 
-* Table of Contents
-{:toc}
+<div style="page-break-after: always;"></div>
+
+# 1. Introduction <a id="1-introduction"></a>
+Welcome to the User Guide of **FoodNotes**!
+
+Ever find yourself forgetting the delightful dishes you savored? Hungry for a way to recall your favorite food experiences? FoodNotes has the solution.
+
+FoodNotes is a quick, simple and beautiful food diary made specifically for you, NUS student foodies. With FoodNotes, you can add stalls that you want to keep track of and manage your reviews for them.
+
+This application is optimised for use via a Command Line Interface (CLI) this means that you operate the application by typing commands into a Command Box. If you are fast at typing, you can manage your food reviews faster than other Graphical User Interface (GUI) applications; GUI applications allow users to interact with the application through graphical icons such as buttons.
+FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems.
+<div markdown="block" class="index">
+
+<div style="page-break-after: always;"></div>
+
+
+# 2. About the user guide <a id="2-about-the-user-guide"></a>
+## 2.1 Navigating the user guide <a id="21-navigating-the-user-guide"></a>
+
+**For first time users**: 
+
+1) the [Quick start](#quick-start) section provides instructions for you on how to get started. 
+2) Once you have set up FoodNotes, you can check out the [Screen layout](#screen-layout) section to get familiar with the different components of FoodNotes. To learn the basics of using FoodNotes, head over to the [Features](#features) section.
+
+**For experienced users:**
+1) you can refer to the [Command summary](#command-summary) section for an overview of FoodNotes' commands.
+
+If you have any queries about using FoodNotes, you can check out the [FAQ](#faq) section.
+
+## 2.2 Reading the User Guide <a id="22-reading-the-user-guide"></a>
+Before you jump into the next section, take a moment to familiarise yourself with the technical terms, symbols, and syntax used throughout this document. This subsection contains all the essential information you need to understand the content better.
+
+### 2.2.1 Terminology related to the Graphical User Interface (GUI)
+The following figure shows the GUI of FoodNotes. It is annotated with the name of the GUI components.
+
+<p align="center">
+<img src="images/userGuide/Frame.png" alt="Layout of GUI">
+</p>
+What the main components of the GUI do:
+
+* _Data Display_: This is where **FoodNotes** displays the information of the page that you are viewing.
+
+* _Result Display_: This is where **FoodNotes** displays guiding messages.
+
+* _Command Box_: This is where you type your commands.
+
+### 2.2.2 Icons <a id="icons"></a>
+
+This section will run you through the icons used in this guide.
+
+| Icon                 | Meaning                                                          |
+|----------------------|------------------------------------------------------------------|
+| `command`            |  A light blue highlight (called a code-block markup) indicates that this is a command that can be typed into the command box and executed by the application.        |              
+| :information_source: | An information icon indicates that the enclosed text are notes regarding this section. |
+| :warning:            | A warning sign indicates that the enclosed text is important, and usually entails details about potential errors. |
+|  :bulb:              | A light bulb indicates that the enclosed text is a tip.|
+
+<div style="page-break-after: always;"></div>
+
+### 2.2.3 Command Syntax and Usage <a id="icons"></a>
+Since FoodNotes is a CLI application, knowing how to use commands is very important. The following subsection will teach you how to read and use commands in FoodNotes. All commands in FoodNotes follow similar formats as described below and examples will be provided to help you understand their usage. Examples of commands and their formats will be written in code-blocks.
+
+The table below explains some important technical terms. An example will be provided to help you visualize these terms.
+
+|**Technical Term** | **Meaning**                                                                                                                |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------|
+| Command word | The first word of a command. It determines the action that **FoodNotes** should perform.                                   |
+| Parameter | The word or group of words following the command word. They are values given to a command to perform the specified action. |
+| Prefix | A prefix is a word that precedes a parameter. It is used to identify the type of parameter that is being inputted.         |
+
+### 2.2.2 Input parameters <a id="parameters"></a>
+
+This section provides a summary of the parameters used when inputting commands into the application.
+
+| Prefix | Parameter          | Meaning                                    | Input                                                                        |
+|--------|--------------------|--------------------------------------------|------------------------------------------------------------------------------|
+| `n/`   | `STALL_NAME`       | Name of the stall                          | Alphanumeric value with 1 to 27 characters (inclusive)                       |
+| `s/`   | `STALL_INDEX`      | Index of the stall in the list             | Integer from 0 to 2147483647 (inclusive)                                     |
+| `l/`   | `STALL_LOCATION`   | Location of the stall                      | Alphanumeric value with 1 to 27 characters (inclusive)                       |
+| `i/`   | `ITEM_NAME`        | Name of the item                           | Alphanumeric value with 1 to 27 characters (inclusive)                       |
+| `r/`   | `STALL_RATING`     | Rating of the stall                        | Integer from 0 to 5 (inclusive)                                              |
+| `r/`   | `ITEM_RATING`      | Rating of the item                         | Integer from 0 to 5 (inclusive)                                              |
+| `d/`   | `DESCRIPTION`      | Descriptive review for the stalls or items | Alphanumeric value with 1 to 27 characters (inclusive)                       |
+| N/A    | `NAME_KEYWORD`     | Keyword of the stall name                  | Alphanumeric value with 1 to 27 characters (inclusive)                       |
+| N/A    | `LOCATION_KEYWORD` | Keyword of the stall location              | Alphanumeric value with 1 to 27 characters (inclusive)                       |
+| N/A    | `ITEM_KEYWORD`     | Keyword of the menu items in the stall     | Alphanumeric value with 1 to 27 characters (inclusive)                       |
+
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Quick start (To be updated)
+## 3. Quick start (To be updated) <a id="3-quick-start"></a>
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-1. Download the latest `foodnotes.jar` from [here](https://github.com/se-edu/addressbook-level3/releases).
+1. Download the latest `FoodNotes.jar` from [here](https://github.com/se-edu/FoodNotes-level3/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_ for your AddressBook.
+1. Copy the file to the folder you want to use as the _home folder_ for your FoodNotes.
 
 1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar foodnotes.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
@@ -25,111 +129,302 @@ FoodNotes is a **desktop app for managing food reviews, optimized for use via a 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-   * `list` : Lists all stalls.
 
    * `add-stall n/Japanese stall l/Deck` : Adds a stall named `Japanese stall` located at `Deck` to the list of stalls.
-   
-   * `view-stall s/3` : Shows the 3rd stall shown in the current list.
-   
-   * `delete-stall s/3` : Deletes the 3rd stall shown in the current list.
+
+   * `view-stall s/1` : Shows the 1st stall shown in the current list.
+
+   * `list` : Lists all stalls.
+
 
 
 1. Refer to the [Features](#features) below for details of each command.
 
+<div markdown="block" class="alert alert-info">
+
+:bulb: **Tip:**<br>
+
+* If double-clicking `foodNotes.jar` does not work,
+
+    1. Search for "Command Prompt" or "Terminal" on your computer.
+    2. Navigate to the location where `foodNotes.jar` is saved via the terminal. (_Unsure how to navigate?_ You can try running this in your terminal: `cd Downloads`.)
+    3. Run the following in the terminal: `java -jar foodNotes.jar`.
+
+
+</div>
+
+<div markdown="block" class="alert alert-warning">
+
+:exclamation: **Warning:**<br>
+
+Upon launching the application, some files responsible for the storage of your data will be created in a folder called `data` located in the same folder as `foodNotes.jar`. If you are a new user, you are advised not to edit these files. If the changes you made to the data file invalidates its format, FoodNotes will discard all your data and start with an empty data file.
+
+</div>
+</div>
+
 --------------------------------------------------------------------------------------------------------------------
 
-# Features
+# 4. Features <a id="4-features"></a>
 
-**View all stalls:** list
+----
+## 4.1 General Features <a id="41-general"></a>
 
-**Command format:** list
+-----
 
-**Expected output (Success):**
-```
-Japanese Stall at Deck  ★★★★☆
-Cake shop at Engine  ★★★★☆
-Noodle stall at Frontier  ★★★★☆
-```
-**Expected output (Fail):**
-```
-please enter list only
-```
+### 4.1.1 Viewing help : `help`
+
+You can use this command to view the online user guide, which contains information about all the instructions in **FoodNotes**.
+
+<div markdown="block" class="alert alert-info">
+
+:information_source: Ensure that you have a stable internet connection and have a web browser on your computer in order to access the user guide.
+
+</div>
+
+**Format:**
+
+`help`
+
+**Example:**
+
+In this example, you want to view the user guide to get information about the various commands in **FoodNotes**.
+
+<div markdown="block" class="alert alert-white">
+
+Requesting for help:
+
+1. Type `help` into the *Command Box*.
+1. Press `Enter` to execute.
+1. A new window will appear as shown below. Click on the `Copy URL` button to copy the URL containing the **FoodNotes** user guide.
+   ![HelpOutcome](images/userGUide/helpOutcome.png)
+1. Open your preferred web browser on your computer and paste the link into the address bar.
+1. Press `Enter` to load the website.
+
+Outcome:
+
+1. Your browser will now show the user guide of **FoodNotes**. 
+2. You can now access information about all commands in **FoodNotes** via the browser.
+
+</div>
+
+ ### 4.1.2 Exiting from the application: `exit`
+
+You can use this command to exit **FoodNotes**.
+
+<div markdown="block" class="alert alert-info">
+
+**:information_source: This command will exit the application immediately. All data is saved automatically and will be reloaded upon restart of the application**
+
+</div>
+
+**Format:**
+
+`exit`
+
+**Example:**
+
+In this example, you want to exit **FoodNotes**.
+
+<div markdown="block" class="alert alert-white">
+
+Exiting the application:
+
+1. Type `exit` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The **FoodNotes** application window is now closed.
+
+----
+## 4.2 Stall Management <a id="41-general"></a>
+
+-----
+### 4.2.1 Listing all stalls : `list`
+
+You can use this command to show a list of all stalls in the database.
+
+**Format:**
+
+`list`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Listing all your stalls:
+
+1. Type `list` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You can now see all your stalls in the *lsit Panel*.
+</div>
+
+![ListOutcome](images/userGuide/listOutcome.png)
+
+### 4.2.2 Viewing a stall : `view-stall`
+
+You can use this command to view details from a specific stall from the database.
+
+**Format:**
+
+`view-stall s/STALL_NUMBER`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Viewing a specific stall:
+
+1. Type `view-stall s/1` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You can now see the details of the specific stall you entered.
+</div>
+
+![ListOutcome](images/userGuide/viewStallOutcome.png)
+
+### 4.2.3 Adding a stall : `add-stall`
+
+You can use this command to add a new stall to the database.
+
+**Format:**
+
+`add-stall n/STALL_NAME l/LOCATION`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Adding a new stall:
+
+1. Type `add-stall n/Subway l/Utown` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now added a new stall with the specified name and location.
+</div>
+
+![ListOutcome](images/userGuide/addStallOutcome.png)
+
+### 4.2.4 Deleting a stall : `delete-stall`
+
+You can use this command to delete a stall from the database.
+
+**Format:**
+
+`delete-stall s/STALL_INDEX`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Deleting the third stall from the list:
+
+1. Type `delete-stall s/3` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now deleted the third stall from the list, and the list of stalls will be updated.
+</div>
+
+![ListOutcome](images/userGuide/deleteStallOutcome.png)
+
+### 4.2.5 Editing a stall : `edit-stall`
+
+You can use this command to edit existing stall, and change either the name, location, rating and description or change all.
+
+**Format:**
+
+`edit-stall s/STALL_INDEX [n/NAME] [l/LOCATION] [r/RATING] [d/DESCRIPTION] `
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Editing the name and location of the first stall from the list:
+
+1. Type `edit-stall s/1 n/Katsu Don l/Deck` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now edited the first stall from the list, and the list of stalls will be updated.
+</div>
+
+![ListOutcome](images/userGuide/editStallOutcome.png)
+
+### 4.2.6 Reviewing a stall : `review-stall`
+
+You can use this command to review an existing stall, and add your own rating and description for it.
+
+**Format:**
+
+`review-stall s/STALL_INDEX r/STALL_RATING d/STALL_DESCRIPTION`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Reviewing the stall:
+
+1. Type `review-stall s/2 r/3 d/Ambience is great` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now reviewed the specific stall from the list, and the star ratings will be reflected.
+</div>
+
+![ListOutcome](images/userGuide/reviewStallOutcome.png)
+
+### 4.2.7 Deleting a stall review: `delete-stall-review`
+
+You can use this command to delete a review of an existing stall
+
+**Format:**
+
+`delete-stall-review s/STALL_INDEX`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Reviewing the stall:
+
+1. Type `delete-stall-review s/2` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now deleted the review of the specified stall from the list, and the list will be updated.
+</div>
+
+![ListOutcome](images/userGuide/deleteStallReviewOutcome.png)
+
 --------------------------------------------------------------------------------------------------------------------
-## Stall Features
+## 4.3 Item Features <a id="43-items"></a>
 
-**1.1 Adding a stall:** add-stall
+----
+### 4.3.1 Add item to a stall
+**Command function:** Adding an item to a stall
 
-**Command format:** add-stall n/<STALL_NAME>  l/ <LOCATION>
+**Command format:** `add-item s/<STALL_NUMBER> i/<ITEM>`
 
-**Ex.:** add-stall n/Japanese stall l/Deck
-
-**Expected Output (Success):**
-```
-Yay! Japanese stall at Deck is successfully added to list of stalls.
-```
-**Expected Output (Fail):**
-```
-re-enter in the format : add-stall n/<STALL_NAME>  l/ <LOCATION>
-```
-**1.2 Viewing a stall:** view-stall
-
-**Command format:** view-stall s/<STALL_NUMBER>
-
-**Ex.:** view-stall s/1
-
-**Expected output (Success):**
-```
-Japanese stall: ★★★★☆
-Review: the auntie very chio
-Menu
-1. Chicken Karage Rice ★★★★☆
-2. Chicken Katsu Curry Rice ★★★★★
-```
-**Expected output (Fail)**:
-```
-re-enter in the format : view-stall s/<STALL_NUMBER>
-```
-**1.3 Deleting a stall:** delete-stall
-
-**Command format:** delete-stall s/<STALL_NUMBER>
-
-**Ex.:** delete-stall s/1
-
-**Expected output (Success):**
-```
-Japanese Stall ★★★★☆ has been deleted.
-```
-**Expected output (Fail):**  
-```
-re-enter in the format : delete-stall s/<STALL_NUMBER>
-```
-**1.4 Reviewing a stall:** rate-stall
-
-**Command format:** rate-stall s/STALL_NUMBER r/STALL_RATING d/DESCRIPTION
-
-**Ex.:** rate-stall s/1 r/5 d/the auntie very chio
-
-**Expected output (Success):**
-```
-Yay! You have added a rating of ★★★★★ for the Japanese Stall
-Review: the auntie very chio
-```
-**Expected output (Fail):**
-```
-re-enter in the format : rate-stall s/STALL_NUMBER r/STALL_RATING d/DESCRIPTION
-```
-**Acceptable values:**
-- s/: Positive Integer less than or equal to the size of list
-- r/: Integer from 0 to 5
-- d/: String
---------------------------------------------------------------------------------------------------------------------
-## Item Features
-
-**2.1 Adding an item to a stall:** add-item
-
-**Command format:** add-item s/STALL_NUMBER i/ITEM
-
-**Ex.:** add-item s/1 i/Chicken Rice
+**Ex.:** `add-item s/1 i/Chicken Rice`
 
 **Expected output (Success):**
 ```
@@ -140,33 +435,38 @@ Yay! Chicken Rice is successfully added as a menu item for Japanese Stall at Dec
 re-enter in the format : add-item s/STALL_NUMBER i/ITEM
 ```
 **Acceptable values:**
-- s/: Positive Integer less than or equal to the size of list, 
+
+- s/: Positive Integer less than or equal to the size of list,
+
 - i/: String
+---
+### 4.3.2 View item
+**Command function:** Viewing an item from a stall
 
-**2.2 Viewing an item from a stall:** view-item
+**Command format:** `view-item s/<STALL_NUMBER> i/<ITEM_NUMBER>`
 
-**Command format:** view-item s/STALL_NUMBER i/ITEM_NUMBER
-
-**Ex.:** view-item s/1 i/1
+**Ex.:** `view-item s/1 i/1`
 
 **Expected output (Success):**
 ```
-Chicken Karage Rice ★★★☆☆
-Review: Great fried chicken that’s crunchy and juicy, but there’s only 3 pieces and everything is in dire need of sauce, meaning it’s not quite bang for buck and you might be hungry again in a few hours.
+Here are the details of this menu item
 ```
-**Expected output (Fail):**  
+
+**Expected output (Fail):**
+
 ```
 re-enter in the format : view-item s/STALL_NUMBER i/ITEM_NUMBER
 ```
 **Acceptable values:**
 - s/: Positive Integer less than or equal to the size of list,
 - i/: Positive Integer less than or equal to the size of list
+---
+### 4.3.3 Delete an item from a stall
+**Command function:** Deleting an item from a stall
 
-**2.3 Deleting an item from a stall:** delete-item
+**Command format:** `delete-item s/<STALL_NUMBER> i/<ITEM_NUMBER>`
 
-**Command format:** delete-item s/STALL_NUMBER i/ITEM_NUMBER
-
-**Ex.:** delete-item s/1 i/1
+**Ex.:** `delete-item s/1 i/1`
 
 **Expected output (Success):**
 ```
@@ -180,25 +480,191 @@ re-enter in the format : delete-item s/STALL_NUMBER i/ITEM_NUMBER
 - s/: Positive Integer less than or equal to the size of list
 - i/: Positive Integer less than or equal to the size of list
 
-**2.4 Reviewing an item:** rate-item
+---
+### 4.3.4 Reviewing an item from a stall
+**Command function:** Reviewing an item
 
-**Command format:** rate-item s/STALL_NUMBER i/ITEM_NUMBER r/ITEM_RATING d/DESCRIPTION
+**Command format:** `review-item s/<STALL_NUMBER> i/<ITEM_NUMBER> r/<ITEM_RATING> d/<DESCRIPTION>`
 
-**Ex.:** rate-item s/1 i/1 r/5 d/the auntie very chio
+**Ex.:** `review-item s/1 i/1 r/5 d/Tasty chicken rice with a good amount of meat and rice. The chilli is also very good.`
 
 **Expected output (Success):**
 ```
-Yay! You have added a rating of ★★★★★ for the Chicken Rice at the Japanese Stall
-Review: the auntie very chio
+Yay! You have added a review for the White Chicken Rice at the Chicken Rice Stall at Deck.
+Review:
+★★★★★
+Tasty chicken rice with a good amount of meat and rice. The chilli is also very good.
 ```
 **Expected output (Fail):**
 ```
-re-enter in the format: rate-item s/STALL_NUMBER i/ITEM_NUMBER r/ITEM_RATING d/DESCRIPTION
+re-enter in the format: review-item s/STALL_NUMBER i/ITEM_NUMBER r/ITEM_RATING d/DESCRIPTION
 ```
 **Acceptable values:**
-- s/: Positive Integer less than or equal to the size of list
-- i/: Positive Integer less than or equal to the size of list
+- s/: Positive Integer less than or equal to the size of stall list
+- i/: Positive Integer less than or equal to the size of menu
 - r/: Integer from 0 to 5
 - d/: String
+---
+### 4.3.5 Delete an item review
+**Command function:** Deleting an item review
+
+**Command format:** `delete-item-review s/<STALL_NUMBER> i/<ITEM_NUMBER>`
+
+**Ex.:** `delete-item-review s/1 i/1`
+
+**Expected output (Success):**
+```You have deleted the review for the White Chicken Rice at the Chicken Rice Stall at Deck.```
+
+**Expected output (Fail):**
+```
+re-enter in the format: delete-item-review s/STALL_NUMBER i/ITEM_NUMBER
+```
+
+**Acceptable values:**
+- s/: Positive Integer less than or equal to the size of stall list
+- i/: Positive Integer less than or equal to the size of menu
+
+----
+## 4.4 Stall Finding <a id="41-general"></a>
+
+-----
+### 4.4.1 Finding stalls by name
+The command is a powerful tool for quickly locating specific food stalls based on their names. Even if you can only remember part of the stall name, this command can help you narrow down your choices effectively.
+
+**Command function:** Finds all stalls whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
+
+**Command format:** `find-by-name NAME_KEYWORD`
+
+Suppose you want to find stalls that serve Japanese and Western noodles. You can use the command as follows:
+
+**Example:** `find-by-name Japanese Western noodles`
+
+**Expected output (Success):**
+```
+2 stalls listed!
+```
+**Expected output (Fail):**
+```
+Invalid command format!
+find-by-name: Finds all stalls whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
+Parameters: KEYWORD [MORE_KEYWORDS]...
+Example: find-stall japanese western noodle
+```
+
+<div markdown="block" class="alert alert-info">
+
+:bulb: **Tip:**<br>
+
+* You can enter more than one keyword, separated by a space, and all the stalls containing any of the keywords will be listed!
+
+</div>
+---
+### 4.1.2 Find stalls by location
+The command is a powerful tool for quickly locating specific food stalls based on their locations. If you want to find the nearest food options, this command can help you narrow down your choices effectively.
+
+**Command function:** Finds all stalls whose location contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
+
+**Command format:** `find-by-location LOCATION_KEYWORD`
+
+Suppose you want to find stalls that are located at the Deck. You can use the command as follows:
+
+**Example:** `find-by-location deck`
+
+**Expected output (Success):**
+```
+2 stalls listed!
+```
+**Expected output (Fail):**
+```
+Invalid command format!
+find-by-location: Finds all stalls whose location contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
+Parameters: KEYWORD [MORE_KEYWORDS]...
+Example: find-location deck techno terrace
+```
+
+<div markdown="block" class="alert alert-info">
+
+:bulb: **Tip:**<br>
+
+* You can enter more than one keyword, separated by a space, and all the stalls containing any of the keywords will be listed!
+
+</div>
+---
+### 4.1.3 Find stalls by menu items
+The command is a powerful tool for quickly locating specific food stalls based on the items on their menu. If you are craving for a specific dish, this command can help you narrow down your choices effectively.
+
+**Command function:** Finds all stalls whose menu items contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
+
+**Command format:** `find-by-item ITEM_KEYWORD`
+
+Suppose you want to find stalls that sells chicken rice. You can use the command as follows:
+
+**Example:** `find-by-item chicken rice`
+
+**Expected output (Success):**
+```
+2 stalls listed!
+```
+**Expected output (Fail):**
+```
+Invalid command format!
+find-item: Finds all stalls whose menu items contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
+Parameters: KEYWORD [MORE_KEYWORDS]...
+Example: find-item chicken apple beef
+```
+
+<div markdown="block" class="alert alert-info">
+
+:bulb: **Tip:**<br>
+
+* You can enter more than one keyword, separated by a space, and all the stalls containing any of the keywords will be listed!
+
+</div>
+---
 --------------------------------------------------------------------------------------------------------------------
+
+  
+# 5. Glossary <a id="5-glossary"></a>
+
+| Term              | Explanation                                                                                                                                             |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **FoodNotes**     | Can refer to name of the application as a whole or to the app’s storage file.<br>                                                                       |
+| **Stalls**        | Refers to the name of the food stall.<br>                                                                                                               |
+| **Item**          | Refers to a specific food item. <br>                                                                                                                    |
+| **CLI**           | A Command Line Interface (CLI) is a text-based user interface that allows users to type text commands instructing the program to do specific tasks.     |
+| **GUI**           | A Graphical User Interface (GUI) is a form of user interface that allows users to interact with the program through graphical icons instead of text-based user interfaces. |
+| **Absolute Path** | The complete details needed to locate a file or folder, starting from the root element.                                                                 |
+
+--------------------------
+# 6. Command summary <a id="6-command-summary"></a>
+
+## 6.1 Stall-Related Commands <a id="61-stall-commands"></a>
+
+| Features                 | Format, Examples                                                                                                                                                     |
+|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add stall**            | `add-stall n/<STALL_NAME> l/<LOCATION>` <br> e.g.`add-stall` n/Japanese Stall l/Deck                                                                                 |
+| **View stall**           | `view-stall s/<STALL_NUMBER>` <br> e.g. `view-stall` s/1                                                                                                             |
+| **Delete stall**         | `delete-stall s/<STALL_NUMBER>` <br> e.g. `delete-stall` s/1                                                                                                         |
+| **Review stall**         | `review-stall s/<STALL_NUMBER> r/<STALL_RATING> d/<DESCRIPTION>` <br> e.g. review-stall s/1 r/5 d/the auntie very chio                                               |                                                                                                                                                             |
+
+## 6.2 Item-Related Commands <a id="62-item-commands"></a>
+
+| Features                                  | Format, Examples                                                                                                         |
+|-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| **Add item**                              | `add-item s/<STALL_NUMBER> i/<ITEM>`<br> e.g. `add-item` add-item s/1 i/ChickenRice                                      |
+|
+| **View item**                             | `view-item s/<STALL_NUMBER> i/<ITEM_NUMBER>`<br> e.g. `view-item` s/1 i/1                                                |
+|
+|
+| **Delete item**                           | `delete-item s/<STALL_NUMBER> i/<ITEM_NUMBER>`<br> e.g. `delete-item` s/1 i/1                                            |
+| **Rate item**                             | `rate-item s/STALL_NUMBER i/ITEM_NUMBER r/ITEM_RATING d/DESCRIPTION` <br> e.g. `rate-item` s/1 i/1 r/5 d/th chicken good |
+|
+
+## 6.3 General Commands <a id="63-general-commands"></a>
+
+| Features | Format, Examples |
+|----------|------------------|
+| **Help** | `help`           |
+| **Exit** | `exit`           |
+| **list** | `list`           |
 

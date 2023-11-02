@@ -14,9 +14,10 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 <img src="images/samuelmui8.png" width="200px">
 
 [[github](https://github.com/samuelmui8)]
-[[portfolio](team/samuelmui.md)]
+[[portfolio](team/samuelmui8.md)]
 
-* Role: Member
+* Role: Developer
+* Responsibilities: Testing
 
 ### Teo Kai Sheng
 
@@ -28,22 +29,22 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 * Role: Developer
 * Responsibilities: UI
 
-### Johnny Doe
+### Lim RuiZhi
 
-<img src="images/ruizhi.png" width="200px">
+<img src="images/ruizhi2001.png" width="200px">
 
 [[github](https://github.com/Ruizhi2001)] 
-[[portfolio](team/ruizhi.md)]
+[[portfolio](team/ruizhi2001.md)]
 
 * Role: Developer
 * Responsibilities: Data
 
 ### Beatrice Chen
 
-<img src="images/beatrice.png" width="200px">
+<img src="images/beatricecst.png" width="200px">
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/beatrice.md)]
+[[github](http://github.com/beatricecst)]
+[[portfolio](team/beatricecst.md)]
 
 * Role: Developer
 * Responsibilities: Dev Ops + Threading
@@ -53,7 +54,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 <img src="images/jamesebond.png" width="200px">
 
 [[github](https://github.com/jamesebond)]
-[[portfolio](team/johndoe.md)]
+[[portfolio](team/jamesebond.md)]
 
 * Role: Best Developer
 * Responsibilities: Best UI
