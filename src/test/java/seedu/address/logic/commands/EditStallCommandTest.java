@@ -46,7 +46,11 @@ public class EditStallCommandTest {
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setStall(model.getFilteredStallList().get(0), editedStall);
 
-        assertCommandSuccess(editStallCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(editStallCommand,
+                model,
+                expectedMessage,
+                CommandResult.ViewType.STALL_DETAIL,
+                expectedModel);
     }
 
     @Test
@@ -67,7 +71,11 @@ public class EditStallCommandTest {
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setStall(lastStall, editedStall);
 
-        assertCommandSuccess(editStallCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(editStallCommand,
+                model,
+                expectedMessage,
+                CommandResult.ViewType.STALL_DETAIL,
+                expectedModel);
     }
     @Test
     public void execute_noFieldSpecifiedUnfilteredList_success() {
@@ -79,7 +87,11 @@ public class EditStallCommandTest {
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
 
-        assertCommandSuccess(editStallCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(editStallCommand,
+                model,
+                expectedMessage,
+                CommandResult.ViewType.STALL_DETAIL,
+                expectedModel);
     }
 
     @Test
@@ -97,7 +109,11 @@ public class EditStallCommandTest {
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setStall(model.getFilteredStallList().get(0), editedStall);
 
-        assertCommandSuccess(editStallCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(editStallCommand,
+                model,
+                expectedMessage,
+                CommandResult.ViewType.STALL_DETAIL,
+                expectedModel);
     }
 
     @Test
