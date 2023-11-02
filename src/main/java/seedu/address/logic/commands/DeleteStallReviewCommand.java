@@ -21,7 +21,7 @@ public class DeleteStallReviewCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Deletes the stall review identified by the index number used in the displayed stall list.\n"
-            + PREFIX_STALL + "STALL NUMBER "
+            + PREFIX_STALL + "STALL_INDEX "
             + "Example: " + COMMAND_WORD + ""
             + PREFIX_STALL + "1";
 

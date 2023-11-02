@@ -38,16 +38,20 @@ public class EditItemCommand extends Command {
     public static final String COMMAND_WORD = "edit-item";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the item identified "
-            + "by the index number used in the displayed item list. "
+            + "by the index number used in the displayed item list.\n"
             + "Existing values will be overwritten by the input values.\n"
             + "Item must have a review before rating and description can be edited.\n"
             + "Parameters: "
-            + PREFIX_STALL + "STALL_INDEX (must be a positive integer)\n"
-            + PREFIX_ITEM + "ITEM_INDEX (must be a positive integer)\n"
+            + PREFIX_STALL + "STALL_INDEX "
+            + PREFIX_ITEM + "ITEM_INDEX "
             + "[" + PREFIX_NAME + "NAME] "
             + "[" + PREFIX_LOCATION + "LOCATION] "
             + "[" + PREFIX_RATING + "RATING] "
-            + "[" + PREFIX_DESCRIPTION + "DESCRIPTION] ";
+            + "[" + PREFIX_DESCRIPTION + "DESCRIPTION] \n"
+            + "Example: " + COMMAND_WORD + " "
+            + PREFIX_STALL + "1 "
+            + PREFIX_ITEM + "1 "
+            + PREFIX_NAME + "Chicken Rice ";
 
 
     public static final String MESSAGE_EDIT_ITEM_SUCCESS = "Edited Item: %1$s";

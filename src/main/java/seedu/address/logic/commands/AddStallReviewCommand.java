@@ -15,15 +15,15 @@ import seedu.address.model.stall.Stall;
 import seedu.address.model.stall.review.StallReview;
 
 /**
- * Adds a review to a stall in the address book.
+ * Adds a review to a stall.
  */
 public class AddStallReviewCommand extends Command {
     public static final String COMMAND_WORD = "review-stall";
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a stall review to the address book. "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a review to a stall "
             + "Parameters: "
-            + PREFIX_STALL + "STALL NUMBER "
-            + PREFIX_RATING + "RATING "
-            + PREFIX_DESCRIPTION + "DESCRIPTION \n"
+            + PREFIX_STALL + "STALL_INDEX "
+            + PREFIX_RATING + "STALL_RATING "
+            + PREFIX_DESCRIPTION + "STALL_DESCRIPTION \n"
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_STALL
             + "1 "

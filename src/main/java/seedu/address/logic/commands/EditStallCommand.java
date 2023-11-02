@@ -34,15 +34,18 @@ public class EditStallCommand extends Command {
     public static final String COMMAND_WORD = "edit-stall";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the stall identified "
-            + "by the index number used in the displayed stall list. "
+            + "by the index number used in the displayed stall list.\n"
             + "Existing values will be overwritten by the input values.\n"
             + "Stall must have a review before rating and description can be edited.\n"
             + "Parameters: "
-            + PREFIX_STALL + "STALL_INDEX (must be a positive integer)\n"
+            + PREFIX_STALL + "STALL_INDEX "
             + "[" + PREFIX_NAME + "NAME] "
             + "[" + PREFIX_LOCATION + "LOCATION] "
             + "[" + PREFIX_RATING + "RATING] "
-            + "[" + PREFIX_DESCRIPTION + "DESCRIPTION] ";
+            + "[" + PREFIX_DESCRIPTION + "DESCRIPTION] \n"
+            + "Example: " + COMMAND_WORD + " "
+            + PREFIX_STALL + "1 "
+            + PREFIX_NAME + "Chicken Rice ";
 
 
     public static final String MESSAGE_EDIT_STALL_SUCCESS = "Edited Stall: %1$s";

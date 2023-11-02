@@ -16,13 +16,13 @@ import seedu.address.model.item.Item;
 import seedu.address.model.stall.Stall;
 
 /**
- * Adds a Item to the address book.
+ * Adds an item to a stall's menu.
  */
 public class AddItemCommand extends Command {
 
     public static final String COMMAND_WORD = "add-item";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds an item to the address book. "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds an item to a stall's menu. "
         + "Parameters: "
         + PREFIX_STALL + "STALL_INDEX "
         + PREFIX_NAME + "ITEM_NAME "
