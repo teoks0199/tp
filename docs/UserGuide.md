@@ -205,7 +205,6 @@ Outcome:
 1. Your browser will now show the user guide of **FoodNotes**. 
 2. You can now access information about all commands in **FoodNotes** via the browser.
 
-<<<<<<< Updated upstream
 </div>
 
  ### 4.1.2 Exiting from the application: `exit`
@@ -663,7 +662,7 @@ Parameters: KEYWORD [MORE_KEYWORDS]...
 Example: find-item chicken apple beef
 ```
 
-<<div markdown="block" class="alert alert-info">
+<div markdown="block" class="alert alert-info">
 
 :bulb: **Tip:**<br>
 
