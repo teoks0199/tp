@@ -1,9 +1,11 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_LOCATION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
 import java.util.List;
@@ -19,6 +21,9 @@ import seedu.address.model.Model;
 import seedu.address.model.item.Item;
 import seedu.address.model.item.ItemName;
 import seedu.address.model.item.Price;
+import seedu.address.model.item.review.ItemReview;
+import seedu.address.model.review.Description;
+import seedu.address.model.review.Rating;
 import seedu.address.model.stall.Stall;
 
 
@@ -35,16 +40,20 @@ public class EditItemCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the item identified "
             + "by the stallIndex number used in the displayed item list. "
             + "Existing values will be overwritten by the input values.\n"
+            + "Item must have a review before rating and description can be edited.\n"
             + "Parameters: "
             + PREFIX_STALL + "STALL_INDEX (must be a positive integer)\n"
             + PREFIX_ITEM + "ITEM_INDEX (must be a positive integer)\n"
             + "[" + PREFIX_NAME + "NAME] "
-            + "[" + PREFIX_LOCATION + "LOCATION] ";
+            + "[" + PREFIX_LOCATION + "LOCATION] "
+            + "[" + PREFIX_RATING + "RATING] "
+            + "[" + PREFIX_DESCRIPTION + "DESCRIPTION] ";
 
 
     public static final String MESSAGE_EDIT_ITEM_SUCCESS = "Edited Item: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
     public static final String MESSAGE_DUPLICATE_ITEM = "This item already exists in the menu.";
+    public static final String MESSAGE_NO_REVIEW_FOUND = "This item has no review to edit.";
 
     private final Index stallIndex;
     private final Index itemIndex;
@@ -83,6 +92,11 @@ public class EditItemCommand extends Command {
         }
 
         Item itemToEdit = model.getFilteredItem(stallIndex, itemIndex);
+
+        if (!itemToEdit.hasItemReview() && editItemDescriptor.isReviewEdited()) {
+            throw new CommandException(MESSAGE_NO_REVIEW_FOUND);
+        }
+
         Item editedItem = createEditedItem(itemToEdit, editItemDescriptor);
 
         if (!itemToEdit.isSameItem(editedItem) && model.hasItem(stallToEdit, editedItem)) {
@@ -102,8 +116,17 @@ public class EditItemCommand extends Command {
 
         ItemName updatedItemName = editItemDescriptor.getItemName().orElse(itemToEdit.getName());
         Price updatedPrice = editItemDescriptor.getPrice().orElse(itemToEdit.getPrice());
-
-        return new Item(updatedItemName, updatedPrice);
+        try {
+            Rating updatedRating = editItemDescriptor.getRating().orElse(itemToEdit.getItemReview().getRating());
+            Description updatedDescription = editItemDescriptor.getDescription()
+                    .orElse(itemToEdit.getItemReview().getDescription());
+            ItemReview updatedItemReview = new ItemReview(updatedRating, updatedDescription);
+            Item editedItem = new Item(updatedItemName, updatedPrice, updatedItemReview);
+            return editedItem;
+        } catch (NullPointerException e) {
+            Item editedItem = new Item(updatedItemName, updatedPrice);
+            return editedItem;
+        }
     }
 
     @Override
@@ -139,6 +162,8 @@ public class EditItemCommand extends Command {
     public static class EditItemDescriptor {
         private ItemName name;
         private Price price;
+        private Rating rating;
+        private Description description;
         public EditItemDescriptor() {}
 
         /**
@@ -148,13 +173,19 @@ public class EditItemCommand extends Command {
         public EditItemDescriptor(EditItemDescriptor toCopy) {
             setItemName(toCopy.name);
             setPrice(toCopy.price);
+            setRating(toCopy.rating);
+            setDescription(toCopy.description);
         }
 
         /**
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(name, price);
+            return CollectionUtil.isAnyNonNull(name, price, rating, description);
+        }
+
+        public boolean isReviewEdited() {
+            return CollectionUtil.isAnyNonNull(rating, description);
         }
 
         public void setItemName(ItemName name) {
@@ -173,6 +204,21 @@ public class EditItemCommand extends Command {
             return Optional.ofNullable(price);
         }
 
+        public void setRating(Rating rating) {
+            this.rating = rating;
+        }
+
+        public Optional<Rating> getRating() {
+            return Optional.ofNullable(rating);
+        }
+
+        public void setDescription(Description description) {
+            this.description = description;
+        }
+
+        public Optional<Description> getDescription() {
+            return Optional.ofNullable(description);
+        }
 
         @Override
         public boolean equals(Object other) {
@@ -187,7 +233,9 @@ public class EditItemCommand extends Command {
 
             EditItemDescriptor otherEditItemDescriptor = (EditItemDescriptor) other;
             return Objects.equals(name, otherEditItemDescriptor.name)
-                    && Objects.equals(price, otherEditItemDescriptor.price);
+                    && Objects.equals(price, otherEditItemDescriptor.price)
+                    && Objects.equals(rating, otherEditItemDescriptor.rating)
+                    && Objects.equals(description, otherEditItemDescriptor.description);
         }
 
         @Override
@@ -195,6 +243,8 @@ public class EditItemCommand extends Command {
             return new ToStringBuilder(this)
                     .add("name", name)
                     .add("price", price)
+                    .add("rating", rating)
+                    .add("description", description)
                     .toString();
         }
     }

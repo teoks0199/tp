@@ -2,9 +2,11 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PRICE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
 import java.util.stream.Stream;
@@ -31,14 +33,16 @@ public class EditItemCommandParser implements Parser<EditItemCommand> {
     public EditItemCommand parse(String args) throws ParseException {
         requireNonNull(args);
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_STALL, PREFIX_ITEM, PREFIX_NAME, PREFIX_PRICE);
+                ArgumentTokenizer.tokenize(args, PREFIX_STALL, PREFIX_ITEM, PREFIX_NAME, PREFIX_PRICE, PREFIX_RATING,
+                        PREFIX_DESCRIPTION);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_STALL, PREFIX_ITEM)
                 || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditItemCommand.MESSAGE_USAGE));
         }
 
-        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_STALL, PREFIX_ITEM, PREFIX_NAME, PREFIX_PRICE);
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_STALL, PREFIX_ITEM, PREFIX_NAME, PREFIX_PRICE, PREFIX_RATING,
+                PREFIX_DESCRIPTION);
 
         Index stallIndex;
         try {
@@ -62,6 +66,15 @@ public class EditItemCommandParser implements Parser<EditItemCommand> {
 
         if (argMultimap.getValue(PREFIX_PRICE).isPresent()) {
             editItemDescriptor.setPrice(ParserUtil.parsePrice(argMultimap.getValue(PREFIX_PRICE).get()));
+        }
+
+        if (argMultimap.getValue(PREFIX_RATING).isPresent()) {
+            editItemDescriptor.setRating(ParserUtil.parseRating(argMultimap.getValue(PREFIX_RATING).get()));
+        }
+
+        if (argMultimap.getValue(PREFIX_DESCRIPTION).isPresent()) {
+            editItemDescriptor.setDescription(ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION)
+                    .get()));
         }
 
         if (!editItemDescriptor.isAnyFieldEdited()) {
