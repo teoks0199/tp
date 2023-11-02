@@ -166,10 +166,13 @@ Upon launching the application, some files responsible for the storage of your d
 
 # 4. Features <a id="4-features"></a>
 
-----
+---- 
+
 ## 4.1 General Features <a id="41-general"></a>
 
------
+Essential functionalities of the application.
+
+------------------------
 
 ### 4.1.1 Viewing help : `help`
 
@@ -238,6 +241,15 @@ Outcome:
 
 ----
 ## 4.2 Stall Management <a id="41-general"></a>
+
+This feature allows you to manage information about the stalls in the database. You can record and perform the following actions:
+- list
+- view stalls
+- add
+- delete
+- edit
+- review
+- delete stall review
 
 -----
 ### 4.2.1 Listing all stalls : `list`
