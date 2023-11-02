@@ -52,4 +52,11 @@ public class Rating {
         return rating.hashCode();
     }
 
+    @Override
+    public boolean equals(Object other) {
+        return other == this // short circuit if same object
+                || (other instanceof Rating // instanceof handles nulls
+                && rating.equals(((Rating) other).rating)); // state check
+    }
+
 }

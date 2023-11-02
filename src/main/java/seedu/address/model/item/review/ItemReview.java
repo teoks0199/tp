@@ -55,4 +55,12 @@ public class ItemReview {
                 .add("description", description)
                 .toString();
     }
+
+    @Override
+    public boolean equals(Object other) {
+        return other == this // short circuit if same object
+                || (other instanceof ItemReview // instanceof handles nulls
+                && rating.equals(((ItemReview) other).rating)
+                && description.equals(((ItemReview) other).description)); // state check
+    }
 }
