@@ -117,13 +117,13 @@ What the main components of the _GUI_ do:
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-   * `list` : Lists all stalls.
 
    * `add-stall n/Japanese stall l/Deck` : Adds a stall named `Japanese stall` located at `Deck` to the list of stalls.
 
-   * `view-stall s/3` : Shows the 3rd stall shown in the current list.
+   * `view-stall s/1` : Shows the 1st stall shown in the current list.
 
-   * `delete-stall s/3` : Deletes the 3rd stall shown in the current list.
+   * `list` : Lists all stalls.
+
 
 
 1. Refer to the [Features](#features) below for details of each command.
