@@ -138,6 +138,13 @@ public interface Model {
     void addItem(Index stallIndex, Item item);
 
     /**
+     * Replaces the given item {@code target} with {@code editedItem}.
+     * {@code target} must exist in the menu.
+     * The item identity of {@code editedItem} must not be the same as another existing item in the menu.
+     */
+    void setItem(Index stallIndex, Index itemIndex, Item editedItem);
+
+    /**
      * Deletes the given item.
      * The item must exist in the stall menu.
      */

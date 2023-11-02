@@ -14,6 +14,7 @@ import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.core.index.Index;
 import seedu.address.model.item.Item;
 import seedu.address.model.item.review.ItemReview;
+import seedu.address.model.stall.Menu;
 import seedu.address.model.stall.Stall;
 
 /**
@@ -197,6 +198,17 @@ public class ModelManager implements Model {
         requireNonNull(stallIndex);
         requireNonNull(item);
         this.getFilteredStall(stallIndex).addItem(item);
+    }
+
+    @Override
+    public void setItem(Index stallIndex, Index itemIndex, Item editedItem) {
+        requireNonNull(stallIndex);
+        requireNonNull(itemIndex);
+        requireNonNull(editedItem);
+        Stall stallToEdit = this.getFilteredStall(stallIndex);
+        Menu menuToEdit = stallToEdit.getMenu();
+        Item itemToEdit = menuToEdit.getItem(itemIndex);
+        menuToEdit.setItem(itemToEdit, editedItem);
     }
 
     @Override
