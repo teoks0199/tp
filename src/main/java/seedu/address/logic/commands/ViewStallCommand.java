@@ -48,7 +48,7 @@ public class ViewStallCommand extends Command {
         model.setFilteredStall(stallIndex);
         model.setFilteredItemList(stallIndex);
         return new CommandResult(String.format(MESSAGE_VIEW_STALL_SUCCESS, Messages.format(stallToView)),
-                false, false, true, false);
+                CommandResult.ViewType.STALL_DETAIL);
     }
 
     @Override

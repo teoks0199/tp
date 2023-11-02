@@ -22,7 +22,7 @@ public class SortStallPriceCommand extends Command {
         requireNonNull(model);
         model.updateFilteredStallList(PREDICATE_SHOW_ALL_STALLS);
         model.sortStallPrice();
-        return new CommandResult(MESSAGE_SUCCESS, false, false, false, false);
+        return new CommandResult(MESSAGE_SUCCESS, CommandResult.ViewType.DEFAULT);
     }
 
 }

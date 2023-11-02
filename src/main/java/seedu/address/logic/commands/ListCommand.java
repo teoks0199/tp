@@ -18,6 +18,6 @@ public class ListCommand extends Command {
     public CommandResult execute(Model model) {
         requireNonNull(model);
         model.updateFilteredStallList(PREDICATE_SHOW_ALL_STALLS);
-        return new CommandResult(MESSAGE_SUCCESS, false, false, false, false);
+        return new CommandResult(MESSAGE_SUCCESS, CommandResult.ViewType.DEFAULT);
     }
 }
