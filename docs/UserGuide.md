@@ -205,6 +205,7 @@ Outcome:
 1. Your browser will now show the user guide of **FoodNotes**. 
 2. You can now access information about all commands in **FoodNotes** via the browser.
 
+<<<<<<< Updated upstream
 </div>
 
  ### 4.1.2 Exiting from the application: `exit`
@@ -414,6 +415,55 @@ Outcome:
 </div>
 
 ![ListOutcome](images/userGuide/deleteStallReviewOutcome.png)
+=======
+---------------------------------------------------------------------------------------------------------------------
+## 4.3 Stall Sorting 
+This feature allows you to sort the stalls by their location, rating and price.
+
+### 4.3.1 Sort stalls by location: `sort-stalls-location`
+
+You can use this command to sort the stalls by their location in alphabetical order.
+
+**Command format:** `sort-stalls-location`
+
+**Example:** Type `sort-stalls-location` in the command box and press Enter.
+
+**Outcome:**
+1. The `Result Display` will display a success message.
+2. You will now see that the stalls are sorted by location in alphabetical order in the `Data Display`, as illustrated 
+   in the screenshot below.
+<img src="images/userGuide/sort-stalls-location.png" alt="sort-stalls-location" width="600"/>
+
+### 4.3.2 Sort stalls by rating: `sort-stalls-rating`
+
+You can use this command to sort the stalls by their rating in descending order.
+
+**Command format:** sort-stalls-rating
+
+**Example:** Type `sort-stalls-rating` in the command box and press Enter.
+
+**Outcome:**
+1. The `Result Display` will display a success message.
+2. You will now see that the stalls are sorted by rating in descending order in the `Data Display`, as illustrated 
+   in the screenshot below.
+<img src="images/userGuide/sort-stalls-rating.png" alt="sort-stalls-rating" width="600"/>
+
+### 4.3.3 Sort stalls by price: `sort-stalls-price`
+
+You can use this command to sort the stalls by their price in ascending order.
+
+**Command format:** sort-stalls-price
+
+**Example:** Type `sort-stalls-price` in the command box and press Enter.
+
+**Outcome:**
+1. The `Result Display` will display a success message.
+2. You will now see that the stalls are sorted by price in ascending order in the `Data Display`, as illustrated 
+   in the screenshot below.
+<img src="images/userGuide/sort-stalls-price.png" alt="sort-stalls-price" width="600"/>
+
+
+
 
 --------------------------------------------------------------------------------------------------------------------
 ## 4.3 Item Features <a id="43-items"></a>
@@ -613,7 +663,7 @@ Parameters: KEYWORD [MORE_KEYWORDS]...
 Example: find-item chicken apple beef
 ```
 
-<div markdown="block" class="alert alert-info">
+<<div markdown="block" class="alert alert-info">
 
 :bulb: **Tip:**<br>
 
