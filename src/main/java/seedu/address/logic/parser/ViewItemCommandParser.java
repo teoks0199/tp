@@ -11,13 +11,13 @@ import seedu.address.logic.commands.ViewItemCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
 /**
- * Parses input arguments and creates a new ViewStallCommand object
+ * Parses input arguments and creates a new ViewItemCommand object
  */
 public class ViewItemCommandParser implements Parser<ViewItemCommand> {
 
     /**
-     * Parses the given {@code String} of arguments in the context of the ViewStallCommand
-     * and returns a ViewStallCommand object for execution.
+     * Parses the given {@code String} of arguments in the context of the ViewItemCommand
+     * and returns a ViewItemCommand object for execution.
      * @throws ParseException if the user input does not conform the expected format
      */
     public ViewItemCommand parse(String args) throws ParseException {

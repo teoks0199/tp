@@ -4,7 +4,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_LOCATION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 
 import seedu.address.logic.commands.AddStallCommand;
-import seedu.address.logic.commands.EditCommand.EditStallDescriptor;
+import seedu.address.logic.commands.EditStallCommand.EditStallDescriptor;
 import seedu.address.model.stall.Stall;
 
 

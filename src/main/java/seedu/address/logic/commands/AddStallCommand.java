@@ -11,16 +11,16 @@ import seedu.address.model.Model;
 import seedu.address.model.stall.Stall;
 
 /**
- * Adds a stall to the address book.
+ * Adds a stall to FoodNotes.
  */
 public class AddStallCommand extends Command {
 
     public static final String COMMAND_WORD = "add-stall";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a stall to the address book. "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a stall to FoodNotes. "
             + "Parameters: "
-            + PREFIX_NAME + "NAME "
-            + PREFIX_LOCATION + "LOCATION \n"
+            + PREFIX_NAME + "STALL_NAME "
+            + PREFIX_LOCATION + "STALL_LOCATION \n"
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_NAME + "Japanese Stall "
             + PREFIX_LOCATION + "Deck";

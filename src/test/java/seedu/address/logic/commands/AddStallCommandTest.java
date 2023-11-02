@@ -197,6 +197,11 @@ public class AddStallCommandTest {
         }
 
         @Override
+        public void setItem(Index stallIndex, Index itemIndex, Item editedItem) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public void setItemReview(Item item, ItemReview itemReview) {
             throw new AssertionError("This method should not be called.");
         }

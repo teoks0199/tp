@@ -8,11 +8,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Region;
+import javafx.scene.text.Text;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.stall.Stall;
 
 /**
- * Panel containing the list of persons.
+ * Panel containing the list of stalls.
  */
 public class StallListPanel extends UiPart<Region> {
     private static final String FXML = "LeftListPanel.fxml";
@@ -22,7 +23,13 @@ public class StallListPanel extends UiPart<Region> {
     private ListView<Stall> leftListView;
 
     @FXML
-    private Label name;
+    private Text name;
+
+    @FXML
+    private Label stallIndex;
+
+    @FXML
+    private Label details;
 
     /**
      * Creates a {@code StallListPanel} with the given {@code ObservableList}.

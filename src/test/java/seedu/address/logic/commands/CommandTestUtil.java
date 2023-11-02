@@ -52,9 +52,9 @@ public class CommandTestUtil {
     // item index 1 is valid
     public static final String VALID_ITEM_INDEX_DESC = " " + PREFIX_ITEM + VALID_STALL_INDEX_1;
     public static final String VALID_PRICE_DESC = " " + PREFIX_PRICE + VALID_ITEM_PRICE_1;
-    public static final String ITEM_DESC_NASI_LEMAK = " " + PREFIX_ITEM + VALID_ITEM_NAME_NASI_LEMAK;
-    public static final String ITEM_DESC_CHICKEN_RICE = " " + PREFIX_ITEM + VALID_ITEM_NAME_CHICKEN_RICE;
-    public static final String INVALID_ITEM_NAME_DESC = " " + PREFIX_ITEM + " ";
+    public static final String ITEM_DESC_NASI_LEMAK = " " + PREFIX_NAME + VALID_ITEM_NAME_NASI_LEMAK;
+    public static final String ITEM_DESC_CHICKEN_RICE = " " + PREFIX_NAME + VALID_ITEM_NAME_CHICKEN_RICE;
+    public static final String INVALID_ITEM_NAME_DESC = " " + PREFIX_NAME + " ";
     public static final String INVALID_STALL_INDEX_DESC = " " + PREFIX_STALL + " ";
     public static final String INVALID_ITEM_INDEX_DESC = " " + PREFIX_ITEM + " ";
     public static final String INVALID_ITEM_INDEX_DESC_NEGATIVE = " " + PREFIX_ITEM + "-1";
@@ -64,8 +64,8 @@ public class CommandTestUtil {
     public static final String PREAMBLE_WHITESPACE = "\t  \r  \n";
     public static final String PREAMBLE_NON_EMPTY = "NonEmptyPreamble";
 
-    public static final EditCommand.EditStallDescriptor DESC_ASIAN;
-    public static final EditCommand.EditStallDescriptor DESC_BRITISH;
+    public static final EditStallCommand.EditStallDescriptor DESC_ASIAN;
+    public static final EditStallCommand.EditStallDescriptor DESC_BRITISH;
 
     static {
         DESC_ASIAN = new EditStallDescriptorBuilder()

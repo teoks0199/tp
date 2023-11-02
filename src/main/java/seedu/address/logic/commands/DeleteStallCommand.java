@@ -13,7 +13,7 @@ import seedu.address.model.Model;
 import seedu.address.model.stall.Stall;
 
 /**
- * Deletes a stall identified using it's displayed index from the address book.
+ * Deletes a stall identified using it's displayed index from FoodNotes.
  */
 public class DeleteStallCommand extends Command {
 

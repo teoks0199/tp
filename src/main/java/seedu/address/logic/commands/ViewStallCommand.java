@@ -13,7 +13,7 @@ import seedu.address.model.Model;
 import seedu.address.model.stall.Stall;
 
 /**
- * Deletes a stall identified using it's displayed index from the address book.
+ * View a stall's detail identified using it's displayed index from Food Notes.
  */
 public class ViewStallCommand extends Command {
 
@@ -21,15 +21,18 @@ public class ViewStallCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Displays the details of the stall identified by the index number used in the displayed stall list.\n"
-            + "Parameters: INDEX (must be a positive integer)\n"
-            + PREFIX_STALL + "STALL_INDEX (must be a positive integer)\n"
-            + "Example: " + COMMAND_WORD
+            + "Parameters: "
+            + PREFIX_STALL + "STALL_INDEX \n"
+            + "Example: " + COMMAND_WORD + " "
             + PREFIX_STALL + "1";
 
     public static final String MESSAGE_VIEW_STALL_SUCCESS = "Here are the details of this stall.";
 
     private final Index stallIndex;
 
+    /**
+     * Creates a ViewStallCommand to view the specified {@code Stall}
+     */
     public ViewStallCommand(Index stallIndex) {
         this.stallIndex = stallIndex;
     }
@@ -48,7 +51,7 @@ public class ViewStallCommand extends Command {
         model.setFilteredStall(stallIndex);
         model.setFilteredItemList(stallIndex);
         return new CommandResult(String.format(MESSAGE_VIEW_STALL_SUCCESS, Messages.format(stallToView)),
-                false, false, true, false);
+                CommandResult.ViewType.STALL_DETAIL);
     }
 
     @Override

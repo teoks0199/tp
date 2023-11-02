@@ -10,7 +10,7 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BRITISH;
 
 import org.junit.jupiter.api.Test;
 
-import seedu.address.logic.commands.EditCommand.EditStallDescriptor;
+import seedu.address.logic.commands.EditStallCommand.EditStallDescriptor;
 import seedu.address.testutil.EditStallDescriptorBuilder;
 
 public class EditStallDescriptorTest {
@@ -18,7 +18,7 @@ public class EditStallDescriptorTest {
     @Test
     public void equals() {
         // same values -> returns true
-        EditCommand.EditStallDescriptor descriptorWithSameValues = new EditStallDescriptor(DESC_ASIAN);
+        EditStallCommand.EditStallDescriptor descriptorWithSameValues = new EditStallDescriptor(DESC_ASIAN);
         assertTrue(DESC_ASIAN.equals(descriptorWithSameValues));
 
         // same object -> returns true
@@ -46,10 +46,13 @@ public class EditStallDescriptorTest {
 
     @Test
     public void toStringMethod() {
-        EditCommand.EditStallDescriptor editStallDescriptor = new EditCommand.EditStallDescriptor();
-        String expected = EditCommand.EditStallDescriptor.class.getCanonicalName() + "{name="
+        EditStallCommand.EditStallDescriptor editStallDescriptor = new EditStallCommand.EditStallDescriptor();
+        String expected = EditStallCommand.EditStallDescriptor.class.getCanonicalName() + "{name="
                 + editStallDescriptor.getName().orElse(null) + ", location="
-                + editStallDescriptor.getLocation().orElse(null) + "}";
+                + editStallDescriptor.getLocation().orElse(null) + ", rating="
+                + editStallDescriptor.getRating().orElse(null) + ", description="
+                + editStallDescriptor.getDescription().orElse(null)
+                + "}";
         assertEquals(expected, editStallDescriptor.toString());
     }
 }

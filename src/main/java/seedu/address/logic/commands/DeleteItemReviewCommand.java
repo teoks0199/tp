@@ -21,10 +21,10 @@ import seedu.address.model.stall.Stall;
 public class DeleteItemReviewCommand extends Command {
     public static final String COMMAND_WORD = "delete-item-review";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Deletes a review from an item from a stall."
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Deletes a review from an item."
             + "Parameters: "
-            + PREFIX_STALL + "STALL NUMBER "
-            + PREFIX_ITEM + "ITEM NUMBER \n"
+            + PREFIX_STALL + "STALL_INDEX "
+            + PREFIX_ITEM + "ITEM_INDEX \n"
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_STALL + "1 "
             + PREFIX_ITEM + "1 ";

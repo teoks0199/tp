@@ -8,12 +8,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Region;
+import javafx.scene.text.Text;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.item.Item;
 import seedu.address.model.stall.Stall;
 
 /**
- * Panel containing the list of persons.
+ * Panel containing the list of menu items.
  */
 public class ItemListPanel extends UiPart<Region> {
     private static final String FXML = "LeftListPanel.fxml";
@@ -23,7 +24,7 @@ public class ItemListPanel extends UiPart<Region> {
     private ListView<Item> leftListView;
 
     @FXML
-    private Label name;
+    private Text name;
 
     @FXML
     private Label details;

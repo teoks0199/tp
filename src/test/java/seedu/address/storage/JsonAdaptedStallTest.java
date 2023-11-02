@@ -5,6 +5,7 @@ import static seedu.address.storage.JsonAdaptedStall.MISSING_FIELD_MESSAGE_FORMA
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalStalls.BEVERAGES;
 import static seedu.address.testutil.TypicalStalls.CHICKEN_RICE;
+import static seedu.address.testutil.TypicalStalls.JAPANESE;
 
 import org.junit.jupiter.api.Test;
 
@@ -19,6 +20,7 @@ public class JsonAdaptedStallTest {
     private static final String VALID_NAME = BEVERAGES.getName().toString();
     private static final String VALID_LOCATION = BEVERAGES.getLocation().toString();
 
+    // Heuristic: Each Valid Input at Least Once in a Positive Test Case
     @Test
     public void toModelType_validStallDetails_returnsStall() throws Exception {
         JsonAdaptedStall stall = new JsonAdaptedStall(BEVERAGES);
@@ -31,6 +33,13 @@ public class JsonAdaptedStallTest {
         assertEquals(CHICKEN_RICE, stall.toModelType());
     }
 
+    @Test
+    public void toModelType_validStallDetailsWithItemsAndReview_returnsStall() throws Exception {
+        JsonAdaptedStall stall = new JsonAdaptedStall(JAPANESE);
+        assertEquals(JAPANESE, stall.toModelType());
+    }
+
+    // Heuristic: No More Than One Invalid Input In A Test Case
     @Test
     public void toModelType_invalidName_throwsIllegalValueException() {
         JsonAdaptedStall stall =

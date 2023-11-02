@@ -8,12 +8,12 @@ import seedu.address.model.Model;
 import seedu.address.model.stall.LocationContainsKeywordsPredicate;
 
 /**
- * Finds and lists all stalls in address book whose location contains any of the argument keywords.
+ * Finds and lists all stalls in FoodNotes whose location contains any of the argument keywords.
  * Keyword matching is case insensitive.
  */
 public class FindLocationCommand extends Command {
 
-    public static final String COMMAND_WORD = "find-location";
+    public static final String COMMAND_WORD = "find-by-location";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all stalls whose location contain any of "
             + "the specified keywords (case-insensitive) and displays them as a list with index numbers.\n"
