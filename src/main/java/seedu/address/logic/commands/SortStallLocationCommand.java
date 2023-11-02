@@ -23,6 +23,6 @@ public class SortStallLocationCommand extends Command {
         requireNonNull(model);
         model.updateFilteredStallList(PREDICATE_SHOW_ALL_STALLS);
         model.sortStallLocation();
-        return new CommandResult(MESSAGE_SUCCESS, false, false, false, false);
+        return new CommandResult(MESSAGE_SUCCESS, CommandResult.ViewType.DEFAULT);
     }
 }
