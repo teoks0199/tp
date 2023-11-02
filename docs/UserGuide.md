@@ -72,15 +72,18 @@ This section will run you through the icons used in this guide.
 
 This section provides a summary of the parameters used when inputting commands into the application.
 
-| Prefix | Parameter        | Meaning                                            | Input                                                                        |
-|--------|------------------|----------------------------------------------------|------------------------------------------------------------------------------|
-| `n/`   | `STALL_NAME`     | Name of the stall                                  | Alphanumeric value with 1 to 27 characters (inclusive)                       |
-| `s/`   | `STALL_INDEX`    | Index of the stall in the list                     | Integer from 0 to 2147483647 (inclusive)                                     |
-| `l/`   | `STALL_LOCATION` | Location of the stall                              | Alphanumeric value with 1 to 27 characters (inclusive)                       |
-| `i/`   | `ITEM_NAME`      | Name of the item                                   | Alphanumeric value with 1 to 27 characters (inclusive)                       |
-| `r/`   | `STALL_RATING`   | Rating of the stall                                | Integer from 0 to 5 (inclusive)                                              |
-| `r/`   | `ITEM_RATING`    | Rating of the item                                 | Integer from 0 to 5 (inclusive)                                              |
-| `d/`   | `DESCRIPTION`    | Descriptive review for the stalls or items         | Alphanumeric value with 1 to 27 characters (inclusive)                       |
+| Prefix | Parameter          | Meaning                                    | Input                                                                        |
+|--------|--------------------|--------------------------------------------|------------------------------------------------------------------------------|
+| `n/`   | `STALL_NAME`       | Name of the stall                          | Alphanumeric value with 1 to 27 characters (inclusive)                       |
+| `s/`   | `STALL_INDEX`      | Index of the stall in the list             | Integer from 0 to 2147483647 (inclusive)                                     |
+| `l/`   | `STALL_LOCATION`   | Location of the stall                      | Alphanumeric value with 1 to 27 characters (inclusive)                       |
+| `i/`   | `ITEM_NAME`        | Name of the item                           | Alphanumeric value with 1 to 27 characters (inclusive)                       |
+| `r/`   | `STALL_RATING`     | Rating of the stall                        | Integer from 0 to 5 (inclusive)                                              |
+| `r/`   | `ITEM_RATING`      | Rating of the item                         | Integer from 0 to 5 (inclusive)                                              |
+| `d/`   | `DESCRIPTION`      | Descriptive review for the stalls or items | Alphanumeric value with 1 to 27 characters (inclusive)                       |
+| N/A    | `NAME_KEYWORD`     | Keyword of the stall name                  | Alphanumeric value with 1 to 27 characters (inclusive)                       |
+| N/A    | `LOCATION_KEYWORD` | Keyword of the stall location              | Alphanumeric value with 1 to 27 characters (inclusive)                       |
+| N/A    | `ITEM_KEYWORD`     | Keyword of the menu items in the stall     | Alphanumeric value with 1 to 27 characters (inclusive)                       |
 
 #### 2.2.3. Terminology related to the _GUI_ <a id="GUI"></a>
 The following figure shows the _GUI_ of **FoodNotes**. It is annotated with the name of the _GUI_ components.
@@ -416,6 +419,104 @@ re-enter in the format: delete-item-review s/STALL_NUMBER i/ITEM_NUMBER
 **Acceptable values:**
 - s/: Positive Integer less than or equal to the size of stall list
 - i/: Positive Integer less than or equal to the size of menu
+
+----
+## 4.4 Stall Finding <a id="41-general"></a>
+
+-----
+### 4.4.1 Finding stalls by name
+The command is a powerful tool for quickly locating specific food stalls based on their names. Even if you can only remember part of the stall name, this command can help you narrow down your choices effectively.
+
+**Command function:** Finds all stalls whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
+
+**Command format:** `find-by-name <KEYWORD>`
+
+Suppose you want to find stalls that serve Japanese and Western noodles. You can use the command as follows:
+
+**Example:** `find-by-name Japanese Western noodles`
+
+**Expected output (Success):**
+```
+2 stalls listed!
+```
+**Expected output (Fail):**
+```
+Invalid command format!
+find-by-name: Finds all stalls whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
+Parameters: KEYWORD [MORE_KEYWORDS]...
+Example: find-stall japanese western noodle
+```
+
+<div markdown="block" class="alert alert-info">
+
+:bulb: **Tip:**<br>
+
+* You can enter more than one keyword, separated by a space, and all the stalls containing any of the keywords will be listed!
+
+</div>
+---
+### 4.1.2 Find stalls by location
+The command is a powerful tool for quickly locating specific food stalls based on their locations. If you want to find the nearest food options, this command can help you narrow down your choices effectively.
+
+**Command function:** Finds all stalls whose location contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
+
+**Command format:** `find-by-location <KEYWORD>`
+
+Suppose you want to find stalls that are located at the Deck. You can use the command as follows:
+
+**Example:** `find-by-location deck`
+
+**Expected output (Success):**
+```
+2 stalls listed!
+```
+**Expected output (Fail):**
+```
+Invalid command format!
+find-by-location: Finds all stalls whose location contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
+Parameters: KEYWORD [MORE_KEYWORDS]...
+Example: find-location deck techno terrace
+```
+
+<div markdown="block" class="alert alert-info">
+
+:bulb: **Tip:**<br>
+
+* You can enter more than one keyword, separated by a space, and all the stalls containing any of the keywords will be listed!
+
+</div>
+---
+### 4.1.3 Find stalls by menu items
+The command is a powerful tool for quickly locating specific food stalls based on the items on their menu. If you are craving for a specific dish, this command can help you narrow down your choices effectively.
+
+**Command function:** Finds all stalls whose menu items contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
+
+**Command format:** `find-by-item <KEYWORD>`
+
+Suppose you want to find stalls that sells chicken rice. You can use the command as follows:
+
+**Example:** `find-by-item chicken rice`
+
+**Expected output (Success):**
+```
+2 stalls listed!
+```
+**Expected output (Fail):**
+```
+Invalid command format!
+find-item: Finds all stalls whose menu items contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
+Parameters: KEYWORD [MORE_KEYWORDS]...
+Example: find-item chicken apple beef
+```
+
+<div markdown="block" class="alert alert-info">
+
+:bulb: **Tip:**<br>
+
+* You can enter more than one keyword, separated by a space, and all the stalls containing any of the keywords will be listed!
+
+</div>
+---
 --------------------------------------------------------------------------------------------------------------------
 
 
