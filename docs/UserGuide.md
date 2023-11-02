@@ -680,6 +680,159 @@ Example: find-item chicken apple beef
 
 * You can enter more than one keyword, separated by a space, and all the stalls containing any of the keywords will be listed!
 
+-----
+## 4.5 Item Management <a id="43-general"></a>
+
+-----
+### 4.5.1 Viewing an item : `view-item`
+
+You can use this command to view details of a specific item from the database.
+
+**Format:**
+
+`view-item s/STALL_INDEX i/ITEM_INDEX`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Viewing a specific item:
+
+1. Type `view-item s/1 i/1` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You can now see the details of the specific item you entered.
+</div>
+
+![ListOutcome](images/userGuide/viewItemOutcome.png)
+
+### 4.5.2 Adding an item : `add-item`
+
+You can use this command to add a new item to the database.
+
+**Format:**
+
+`add-item s/STALL_INDEX n/ITEM_NAME p/ITEM_PRICE`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Adding a new item:
+
+1. Type `add-item s/1 n/Pork Chop p/5.50` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now added a new item with the specified name and price.
+</div>
+
+![ListOutcome](images/userGuide/addItemOutcome.png)
+
+### 4.5.3 Deleting an item : `delete-item`
+
+You can use this command to delete an item from the database.
+
+**Format:**
+
+`delete-item s/STALL_INDEX i/ITEM_INDEX`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Deleting the third item from the menu:
+
+1. Type `delete-item s/1 i/2` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now deleted the second menu item of the first stall, and the list of items will be updated.
+</div>
+
+![ListOutcome](images/userGuide/deleteItemOutcome.png)
+
+### 4.5.4 Editing an item : `edit-item`
+
+You can use this command to edit an existing item, and change either the name, price, rating and description or change all.
+
+**Format:**
+
+`edit-item s/STALL_INDEX i/ITEM_INDEX [n/ITEM_NAME] [p/ITEM_PRICE] [r/ITEM_RATING] [d/ITEM_DESCRIPTION] `
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Editing the name and location of the first stall from the list:
+
+1. Type `edit-item s/1 i/1 n/Chicken Cutlet p/4.00` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now edited the first menu item of the first stall, and the list of items will be updated.
+</div>
+
+![ListOutcome](images/userGuide/editItemOutcome.png)
+
+### 4.5.5 Reviewing an item : `review-item`
+
+You can use this command to review an existing item, and add your own rating and description for it.
+
+**Format:**
+
+`review-item s/STALL_INDEX i/ITEM_INDEX r/STALL_RATING d/STALL_DESCRIPTION`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Reviewing the item:
+
+1. Type `review-item s/1 i/1 r/4 d/Very Flavourful` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now reviewed the first menu item of the first stall, and the star ratings will be reflected.
+</div>
+
+![ListOutcome](images/userGuide/reviewItemOutcome.png)
+
+### 4.5.6 Deleting an item review: `delete-item-review`
+
+You can use this command to delete a review of an existing item.
+
+**Format:**
+
+`delete-item-review s/STALL_INDEX i/ITEM_INDEX`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Deleting the review:
+
+1. Type `delete-item-review s/1 i/1` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now deleted the review of the first menu item of the first stall, and the menu will be updated.
+</div>
+
+![ListOutcome](images/userGuide/deleteItemReviewOutcome.png)
 </div>
 ---
 --------------------------------------------------------------------------------------------------------------------
