@@ -20,8 +20,6 @@ public class OneStallPanel extends UiPart<Region> {
     @FXML
     private Label stallDescription;
 
-
-
     /**
      * Creates a {@code StallListPanel} with the given {@code ObservableList}.
      */
