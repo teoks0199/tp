@@ -13,7 +13,7 @@ import seedu.address.model.Model;
 import seedu.address.model.stall.Stall;
 
 /**
- * Deletes a stall identified using it's displayed index from the address book.
+ * View a stall's detail identified using it's displayed index from Food Notes.
  */
 public class ViewStallCommand extends Command {
 
@@ -30,6 +30,9 @@ public class ViewStallCommand extends Command {
 
     private final Index stallIndex;
 
+    /**
+     * Creates a ViewStallCommand to view the specified {@code Stall}
+     */
     public ViewStallCommand(Index stallIndex) {
         this.stallIndex = stallIndex;
     }

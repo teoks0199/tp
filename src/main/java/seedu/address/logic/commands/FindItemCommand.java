@@ -10,7 +10,7 @@ import seedu.address.model.stall.MenuContainsKeywordsPredicate;
 
 
 /**
- * Finds and lists all stalls in address book whose menu items contains any of the argument keywords.
+ * Finds and lists all stalls in FoodNotes whose menu items contains any of the argument keywords.
  * Keyword matching is case insensitive.
  */
 public class FindItemCommand extends Command {

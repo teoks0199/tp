@@ -12,7 +12,7 @@ import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.stall.Stall;
 
 /**
- * Panel containing the list of persons.
+ * Panel containing the list of stalls.
  */
 public class StallListPanel extends UiPart<Region> {
     private static final String FXML = "LeftListPanel.fxml";

@@ -15,7 +15,7 @@ import seedu.address.model.item.Item;
 import seedu.address.model.stall.Stall;
 
 /**
- * Deletes a item identified using it's displayed index from the address book.
+ * Deletes an item identified using it's displayed index from FoodNotes.
  */
 public class DeleteItemCommand extends Command {
 
