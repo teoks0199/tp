@@ -9,7 +9,7 @@ import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.stall.Stall;
 
 /**
- * Panel containing the list of persons.
+ * Panel containing the list of menu items in a stall.
  */
 public class OneStallPanel extends UiPart<Region> {
     private static final String FXML = "StallDetailsPanel.fxml";
@@ -19,8 +19,6 @@ public class OneStallPanel extends UiPart<Region> {
 
     @FXML
     private Label stallDescription;
-
-
 
     /**
      * Creates a {@code StallListPanel} with the given {@code ObservableList}.

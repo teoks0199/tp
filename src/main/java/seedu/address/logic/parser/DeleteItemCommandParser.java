@@ -11,13 +11,13 @@ import seedu.address.logic.commands.DeleteItemCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
 /**
- * Parses input arguments and creates a new DeleteStallCommand object
+ * Parses input arguments and creates a new DeleteItemCommand object
  */
 public class DeleteItemCommandParser implements Parser<DeleteItemCommand> {
 
     /**
-     * Parses the given {@code String} of arguments in the context of the DeleteStallCommand
-     * and returns a DeleteStallCommand object for execution.
+     * Parses the given {@code String} of arguments in the context of the DeleteItemCommand
+     * and returns a DeleteItemCommand object for execution.
      * @throws ParseException if the user input does not conform the expected format
      */
     public DeleteItemCommand parse(String args) throws ParseException {

@@ -11,7 +11,7 @@ import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
 
 /**
- * Contains integration tests (interaction with the Model) and unit tests for SortStallLocationCommand.
+ * Contains integration tests (interaction with the Model) and unit tests for SortStallRatingCommand.
  */
 public class SortStallRatingCommandTest {
 

@@ -4,6 +4,7 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_NAME_CHICK
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_NAME_NASI_LEMAK;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_PRICE_1;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_PRICE_2;
+import static seedu.address.testutil.TypicalItemReviews.ITEM_REVIEW_2;
 import static seedu.address.testutil.TypicalStalls.getTypicalStalls;
 
 import java.util.ArrayList;
@@ -25,6 +26,9 @@ public class TypicalItems {
             .withName(VALID_ITEM_NAME_NASI_LEMAK).withPrice(VALID_ITEM_PRICE_1).build();
     public static final Item CHICKEN_RICE = new ItemBuilder()
             .withName(VALID_ITEM_NAME_CHICKEN_RICE).withPrice(VALID_ITEM_PRICE_2).build();
+    public static final Item DUCK_RICE = new ItemBuilder()
+            .withName("Duck Rice").withPrice("3.50").withItemReview(ITEM_REVIEW_2)
+            .build();
 
     private TypicalItems() {} // prevents instantiation
 

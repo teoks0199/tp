@@ -15,7 +15,7 @@ import seedu.address.model.item.Item;
 import seedu.address.model.stall.Stall;
 
 /**
- * Deletes a item identified using it's displayed index from the address book.
+ * View an item detail identified using it's displayed index from FoodNotes.
  */
 public class ViewItemCommand extends Command {
 
@@ -35,7 +35,7 @@ public class ViewItemCommand extends Command {
     private final Index stallIndex;
 
     /**
-     * Creates a DeleteItemCommand to delete the specified {@code Item}
+     * Creates a ViewItemCommand to view the specified {@code Item}
      */
     public ViewItemCommand(Index stallIndex, Index itemIndex) {
         this.itemIndex = itemIndex;
@@ -64,7 +64,7 @@ public class ViewItemCommand extends Command {
         model.setFilteredItemList(stallIndex);
         model.setFilteredStall(stallIndex);
         return new CommandResult(String.format(MESSAGE_VIEW_ITEM_SUCCESS, Messages.format(itemToView), Messages
-                .format(stallToViewFrom)), false, false, false, true);
+                .format(stallToViewFrom)), CommandResult.ViewType.VIEW_ITEM);
     }
 
     @Override

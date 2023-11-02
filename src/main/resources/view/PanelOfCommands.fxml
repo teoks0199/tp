@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?stylesheet src="view/MainWindow.css"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <Text fx:id="commandText" styleClass="command-headers" text="Commands:" />
+    <HBox>
+        <VBox HBox.hgrow="ALWAYS">
+
+            <VBox HBox.hgrow="ALWAYS">
+                <Label text="Adding:" />
+                <Text text="add-stall" />
+                <Text text="add-item" />
+                <padding>
+                   <Insets bottom="5.0" />
+                </padding>
+            </VBox>
+
+            <VBox HBox.hgrow="ALWAYS">
+                <Label text="Finding:" />
+                <Text text="find-stall" />
+                <Text text="find-location" />
+                <Text text="find-item" />
+                <padding>
+                    <Insets bottom="5.0" />
+                </padding>
+            </VBox>
+
+            <VBox HBox.hgrow="ALWAYS">
+                <Label text="Deleting:" />
+                <Text text="delete-stall" />
+                <Text text="delete-item" />
+                <Text text="delete-stall-review" />
+                <Text text="delete-item-review" />
+            <padding>
+               <Insets bottom="5.0" right="20.0"/>
+            </padding>
+            </VBox>
+
+            <VBox HBox.hgrow="ALWAYS">
+                <Label text="Others:" />
+                <Text text="list" />
+                <Text text="help" />
+                <Text text="exit" />
+                <padding>
+                    <Insets bottom="5.0" />
+                </padding>
+            </VBox>
+
+        </VBox>
+
+        <VBox HBox.hgrow="ALWAYS">
+            <VBox styleClass="panel-of-command">
+                <Label text="Viewing:" />
+                <Text text="view-stall" />
+                <Text text="view-item" />
+                <padding>
+                   <Insets bottom="5.0" />
+                </padding>
+            </VBox>
+
+            <VBox>
+                <Label text="Sorting:" />
+                <Text text="sort-stalls-locations" />
+                <Text text="sort-stalls-ratings" />
+                <Text text="sort-stalls-price" />
+                <padding>
+                   <Insets bottom="5.0" />
+                </padding>
+            </VBox>
+
+            <VBox>
+                <Label text="Reviewing:" />
+                <Text text="review-stall" />
+                <Text text="review-item" />
+                <padding>
+                    <Insets bottom="5.0" />
+                </padding>
+            </VBox>
+
+            <VBox>
+                <Label text="Editing:" />
+                <Text text="edit-stall" />
+                <Text text="edit-item" />
+                <Text text=""/>
+                <Text text=""/>
+                <padding>
+                    <Insets bottom="5.0" />
+                </padding>
+            </VBox>
+
+        </VBox>
+
+        <padding>
+            <Insets top="10.0" />
+        </padding>
+
+    </HBox>
+
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <padding>
+      <Insets left="5.0" />
+   </padding>
+</VBox>

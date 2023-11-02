@@ -72,4 +72,12 @@ public class StallReview {
     public int hashCode() {
         return Objects.hash(rating, description);
     }
+
+    @Override
+    public boolean equals(Object other) {
+        return other == this // short circuit if same object
+                || (other instanceof StallReview // instanceof handles nulls
+                && rating.equals(((StallReview) other).rating)
+                && description.equals(((StallReview) other).description)); // state check
+    }
 }

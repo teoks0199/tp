@@ -19,6 +19,28 @@ public class RatingTest {
     }
 
     @Test
+    public void equals() {
+        Rating rating = new Rating("5");
+        Rating ratingCopy = new Rating("5");
+        Rating rating2 = new Rating("1");
+
+        // same object -> returns true
+        assertTrue(rating.equals(rating));
+
+        // same values -> returns true
+        assertTrue(rating.equals(ratingCopy));
+
+        // different types -> returns false
+        assertFalse(rating.equals(1));
+
+        // null -> returns false
+        assertFalse(rating.equals(null));
+
+        // different rating -> returns false
+        assertFalse(rating.equals(rating2));
+    }
+
+    @Test
     public void isValidRating() {
         // null rating
         assertThrows(NullPointerException.class, () -> Rating.isValidRating(null));
