@@ -19,6 +19,28 @@ public class DescriptionTest {
     }
 
     @Test
+    public void equals() {
+        Description description = new Description("very good");
+        Description descriptionCopy = new Description("very good");
+        Description description2 = new Description("very nice");
+
+        // same object -> returns true
+        assertTrue(description.equals(description));
+
+        // same values -> returns true
+        assertTrue(description.equals(descriptionCopy));
+
+        // different types -> returns false
+        assertFalse(description.equals(1));
+
+        // null -> returns false
+        assertFalse(description.equals(null));
+
+        // different description -> returns false
+        assertFalse(description.equals(description2));
+    }
+
+    @Test
     public void isValidDescription() {
         // null description
         assertThrows(NullPointerException.class, () -> Description.isValidDescription(null));
