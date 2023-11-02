@@ -73,6 +73,11 @@ public class LogicManager implements Logic {
     }
 
     @Override
+    public ObservableList<Item> getFilteredItemList() {
+        return model.getFilteredItemList();
+    }
+
+    @Override
     public ObservableList<Stall> getFilteredStallList() {
         return model.getFilteredStallList();
     }
@@ -80,6 +85,16 @@ public class LogicManager implements Logic {
     @Override
     public ObservableList<Stall> getTempFilteredStallList() {
         return model.getTempFilteredStallList();
+    }
+
+    @Override
+    public Stall getFilteredStall() {
+        return model.getFilteredStall();
+    }
+
+    @Override
+    public int getFilteredStallIndex() {
+        return model.getFilteredStallIndex();
     }
 
     @Override

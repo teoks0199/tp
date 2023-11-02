@@ -17,15 +17,26 @@ public class Item {
 
     // Identity fields
     private final ItemName itemName;
-
+    private final Price price;
     private ItemReview itemReview;
 
     /**
      * Every field must be present and not null.
      */
-    public Item(ItemName itemName) {
-        requireAllNonNull(itemName);
+    public Item(ItemName itemName, Price price) {
+        requireAllNonNull(itemName, price);
         this.itemName = itemName;
+        this.price = price;
+    }
+
+    /**
+     * Constructor with review
+     */
+    public Item(ItemName itemName, Price price, ItemReview itemReview) {
+        requireAllNonNull(itemName, price, itemReview);
+        this.itemName = itemName;
+        this.price = price;
+        this.itemReview = itemReview;
     }
 
     public ItemName getName() {
@@ -36,9 +47,20 @@ public class Item {
         return itemName.toString();
     }
 
+    public Price getPrice() {
+        return price;
+    }
+    public String getPriceString() {
+        return "$" + price.toString();
+    }
+
+    public ItemReview getItemReview() {
+        return itemReview;
+    }
+
     public String getItemRatingString() {
         if (itemReview == null) {
-            return "N/A";
+            return "No ratings yet.";
         } else {
             return itemReview.getRatingString();
         }
@@ -46,7 +68,7 @@ public class Item {
 
     public String getItemDescriptionString() {
         if (itemReview == null) {
-            return "N/A";
+            return "No review yet.";
         } else {
             return itemReview.getDescriptionString();
         }
@@ -57,7 +79,7 @@ public class Item {
      *
      * @param itemReview the item review to be added.
      */
-    public void addItemReview(ItemReview itemReview) {
+    public void setItemReview(ItemReview itemReview) {
         requireAllNonNull(itemReview);
         if (hasItemReview()) {
             throw new DuplicateItemReviewException();
@@ -93,7 +115,8 @@ public class Item {
         }
 
         return otherItem != null
-                && otherItem.getName().equals(getName());
+                && otherItem.getName().equals(getName())
+                && otherItem.getPrice().equals(getPrice());
     }
 
     /**
@@ -112,7 +135,7 @@ public class Item {
         }
 
         Item otherItem = (Item) other;
-        return itemName.equals(otherItem.itemName);
+        return itemName.equals(otherItem.itemName) && price.equals(otherItem.price);
     }
 
     @Override
@@ -125,6 +148,7 @@ public class Item {
     public String toString() {
         return new ToStringBuilder(this)
                 .add("itemName", itemName)
+                .add("price", price)
                 .toString();
     }
 

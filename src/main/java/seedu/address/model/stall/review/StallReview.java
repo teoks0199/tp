@@ -21,10 +21,10 @@ public class StallReview {
     /**
      * Constructs a StallReview object.
      *
-     * @param description A valid review.
      * @param rating   A rating representing the star rating.
+     * @param description A valid review.
      */
-    public StallReview(Description description, Rating rating) {
+    public StallReview(Rating rating, Description description) {
         requireAllNonNull(rating, description);
         this.rating = rating;
         this.description = description;
@@ -34,8 +34,20 @@ public class StallReview {
         return rating;
     }
 
+    public String getStarRating() {
+        return this.rating.starRating;
+    }
+
+    public int getRatingValue() {
+        return Integer.parseInt(rating.rating);
+    }
+
     public Description getDescription() {
         return description;
+    }
+
+    public String getDescriptionString() {
+        return description.description;
     }
 
     /**

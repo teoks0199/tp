@@ -38,6 +38,19 @@ public interface Logic {
 
     /** Return the desired filtered item */
     Item getFilteredItem();
+
+    /** Returns an unmodifiable view of the filtered list of items */
+    ObservableList<Item> getFilteredItemList();
+
+
+    int getFilteredStallIndex();
+
+    /**
+     * Returns the filtered stall
+     * @return filtered stall
+     */
+    Stall getFilteredStall();
+
     /**
      * Returns the user prefs' address book file path.
      */

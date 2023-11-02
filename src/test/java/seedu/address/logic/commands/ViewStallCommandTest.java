@@ -100,7 +100,7 @@ public class ViewStallCommandTest {
     public void toStringMethod() {
         Index targetIndex = Index.fromOneBased(1);
         ViewStallCommand viewStallCommand = new ViewStallCommand(targetIndex);
-        String expected = ViewStallCommand.class.getCanonicalName() + "{targetIndex=" + targetIndex + "}";
+        String expected = ViewStallCommand.class.getCanonicalName() + "{stallIndex=" + targetIndex + "}";
         assertEquals(expected, viewStallCommand.toString());
     }
 

@@ -75,9 +75,21 @@ public interface Model {
     void addStall(Stall stall);
 
     /**
+     * Get stall that is filtered out
+     * @return filtered stall
+     */
+    Stall getFilteredStall();
+
+    /**
      * Returns the filtered stall.
      */
     Stall getFilteredStall(Index stallIndex);
+
+    /**
+     * Returns the filtered stall index.
+     */
+    int getFilteredStallIndex();
+
 
     /**
      * Replaces the given stall {@code target} with {@code editedStall}.
@@ -132,17 +144,49 @@ public interface Model {
     void deleteItem(Index stallIndex, Index itemIndex);
 
     /**
-     * Deletes the given item review.
-     * The item review must exist in the item.
-     */
-    void deleteItemReview(Item itemIndex);
-
-    /**
      * Adds the given item review.
      *
      * {@code itemReview} must not already exist in the item.
      */
-    void addItemReview(Item itemIndex, ItemReview itemReview);
+    void setItemReview(Item itemIndex, ItemReview itemReview);
+
+    /**
+     * Deletes the given item review.
+     *
+     * {@code itemReview} must exist in the item.
+     */
+    void deleteItemReview(Item itemIndex);
+
+    /**
+     * Sets the item list to be that of the chosen stall
+     */
+    void setFilteredItemList(Index stallIndex);
+
+    /**
+     * Sets filtered stall to be the chosen stall
+     * @param stallIndex index of the chosen stall
+     */
+    void setFilteredStall(Index stallIndex);
 
 
+    /**
+     * Sorts the stall list by rating in descending order.
+     */
+    void sortStallRating();
+
+    /**
+     * Sorts the stall list by location in alphabetical order.
+     */
+    void sortStallLocation();
+
+    /**
+     * Get the item list that is filtered by stall.
+     * @throws NullPointerException if {@code predicate} is null.
+     */
+    ObservableList<Item> getFilteredItemList();
+
+    /**
+     * Sorts the stall list by price in ascending order.
+     */
+    void sortStallPrice();
 }

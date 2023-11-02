@@ -27,7 +27,6 @@ import seedu.address.model.item.Item;
 import seedu.address.model.item.review.ItemReview;
 import seedu.address.model.stall.Stall;
 import seedu.address.testutil.StallBuilder;
-
 public class AddStallCommandTest {
 
     @Test
@@ -128,6 +127,11 @@ public class AddStallCommandTest {
         }
 
         @Override
+        public Stall getFilteredStall() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public Stall getFilteredStall(Index stallIndex) {
             throw new AssertionError("This method should not be called.");
         }
@@ -193,7 +197,7 @@ public class AddStallCommandTest {
         }
 
         @Override
-        public void addItemReview(Item item, ItemReview itemReview) {
+        public void setItemReview(Item item, ItemReview itemReview) {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -213,6 +217,16 @@ public class AddStallCommandTest {
         }
 
         @Override
+        public void setFilteredItemList(Index index) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void setFilteredStall(Index stallIndex) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public Item getFilteredItem() {
             throw new AssertionError("This method should not be called.");
         }
@@ -221,6 +235,32 @@ public class AddStallCommandTest {
         public Item getFilteredItem(Index stallIndex, Index itemIndex) {
             throw new AssertionError("This method should not be called.");
         }
+
+        @Override
+        public ObservableList<Item> getFilteredItemList() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void sortStallLocation() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void sortStallRating() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void sortStallPrice() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public int getFilteredStallIndex() {
+            throw new AssertionError("This method should not be called.");
+        }
+
     }
 
     /**

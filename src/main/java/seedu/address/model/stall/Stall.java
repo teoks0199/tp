@@ -4,6 +4,7 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.Objects;
 
+import javafx.collections.ObservableList;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.item.Item;
@@ -29,36 +30,108 @@ public class Stall {
         this.name = name;
         this.location = location;
         this.menu = new Menu();
+        this.stallReview = null;
     }
 
     /**
-     * Constructor with menu
+     * Constructor with menu and no review
      */
     public Stall(Name name, Location location, Menu menu) {
         requireAllNonNull(name, location, menu);
         this.name = name;
         this.location = location;
         this.menu = menu;
+        this.stallReview = null;
     }
 
+    /**
+     * Constructor with menu and review
+     */
+    public Stall(Name name, Location location, Menu menu, StallReview stallReview) {
+        requireAllNonNull(name, location, menu, stallReview);
+        this.name = name;
+        this.location = location;
+        this.menu = menu;
+        this.stallReview = stallReview;
+    }
+
+    public AveragePrice getAveragePrice() {
+        return menu.getAveragePrice();
+    }
+
+    public String getAveragePriceString() {
+        if (getAveragePrice() == null) {
+            return "No items in menu yet.";
+        } else {
+            return getAveragePrice().toString();
+        }
+    }
     public Name getName() {
         return name;
+    }
+
+    public String getStallString() {
+        return "Stall Name: " + name.toString();
     }
 
     public Location getLocation() {
         return location;
     }
 
+    public String getStallStarRating() {
+        if (stallReview == null) {
+            return "No ratings yet.";
+        } else {
+            return stallReview.getStarRating();
+        }
+    }
+
+    public String getStallDescription() {
+        return stallReview.getDescriptionString();
+    }
+
+    public String getLocationString() {
+        return "Location: " + location.toString();
+    }
+
     public Menu getMenu() {
         return menu;
+    }
+
+    public ObservableList<Item> getMenuList() {
+        return menu.getItemList();
+    }
+
+    public boolean hasMenuItems() {
+        return !menu.isEmpty();
+    }
+    public boolean hasStallReview() {
+        return stallReview != null;
     }
 
     public StallReview getStallReview() {
         return stallReview;
     }
 
+    public int getStallRatingValue() {
+        if (stallReview == null) {
+            return 0;
+        }
+        return stallReview.getRatingValue();
+    }
+
     public void setStallReview(StallReview stallReview) {
+        requireAllNonNull(stallReview);
         this.stallReview = stallReview;
+    }
+
+    public String getMenuString() {
+        String str = "Menu Items:" + '\n';
+        for (int i = 0; i < this.getMenu().numOfItem(); i++) {
+            Index index = Index.fromZeroBased(i);
+            str = str + (i + 1) + ". " + this.getMenu().getItem(index).getNameString() + '\n';
+        }
+        return str;
     }
 
     /**
@@ -107,7 +180,8 @@ public class Stall {
 
     public String getStallReviewString() {
         if (this.stallReview != null) {
-            return stallReview.toString();
+            return stallReview.getRating().starRating
+                + stallReview.getDescription().description;
         } else {
             return "No review added.";
         }

@@ -2,6 +2,8 @@ package seedu.address.testutil;
 
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_NAME_CHICKEN_RICE;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_NAME_NASI_LEMAK;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_PRICE_1;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_ITEM_PRICE_2;
 import static seedu.address.testutil.TypicalStalls.getTypicalStalls;
 
 import java.util.ArrayList;
@@ -17,10 +19,12 @@ import seedu.address.model.stall.Stall;
  */
 public class TypicalItems {
 
-    public static final Item FRIED_RICE = new ItemBuilder().withName("Fried Rice").build();
-    public static final Item LAKSA = new ItemBuilder().withName("Laksa").build();
-    public static final Item NASI_LEMAK = new ItemBuilder().withName(VALID_ITEM_NAME_NASI_LEMAK).build();
-    public static final Item CHICKEN_RICE = new ItemBuilder().withName(VALID_ITEM_NAME_CHICKEN_RICE).build();
+    public static final Item FRIED_RICE = new ItemBuilder().withName("Fried Rice").withPrice("5.50").build();
+    public static final Item LAKSA = new ItemBuilder().withName("Laksa").withPrice("4.50").build();
+    public static final Item NASI_LEMAK = new ItemBuilder()
+            .withName(VALID_ITEM_NAME_NASI_LEMAK).withPrice(VALID_ITEM_PRICE_1).build();
+    public static final Item CHICKEN_RICE = new ItemBuilder()
+            .withName(VALID_ITEM_NAME_CHICKEN_RICE).withPrice(VALID_ITEM_PRICE_2).build();
 
     private TypicalItems() {} // prevents instantiation
 

@@ -29,28 +29,28 @@ public class StallTest {
         assertFalse(AUNTIES_COOKING.isSameStall(null));
 
         // same name, all other attributes different -> returns false
-        Stall editedAlice = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).build();
-        assertFalse(AUNTIES_COOKING.isSameStall(editedAlice));
+        Stall editedAuntiesCooking = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).build();
+        assertFalse(AUNTIES_COOKING.isSameStall(editedAuntiesCooking));
 
         // different name, all other attributes same -> returns false
-        editedAlice = new StallBuilder(AUNTIES_COOKING).withName(VALID_NAME_BRITISH).build();
-        assertFalse(AUNTIES_COOKING.isSameStall(editedAlice));
+        editedAuntiesCooking = new StallBuilder(AUNTIES_COOKING).withName(VALID_NAME_BRITISH).build();
+        assertFalse(AUNTIES_COOKING.isSameStall(editedAuntiesCooking));
 
         // name differs in case, all other attributes same -> returns false
-        Stall editedBob = new StallBuilder(BRITISH).withName(VALID_NAME_BRITISH.toLowerCase()).build();
-        assertFalse(BRITISH.isSameStall(editedBob));
+        Stall editedBritish = new StallBuilder(BRITISH).withName(VALID_NAME_BRITISH.toLowerCase()).build();
+        assertFalse(BRITISH.isSameStall(editedBritish));
 
         // name has trailing spaces, all other attributes same -> returns false
         String nameWithTrailingSpaces = VALID_NAME_BRITISH + " ";
-        editedBob = new StallBuilder(BRITISH).withName(nameWithTrailingSpaces).build();
-        assertFalse(BRITISH.isSameStall(editedBob));
+        editedBritish = new StallBuilder(BRITISH).withName(nameWithTrailingSpaces).build();
+        assertFalse(BRITISH.isSameStall(editedBritish));
     }
 
     @Test
     public void equals() {
         // same values -> returns true
-        Stall aliceCopy = new StallBuilder(AUNTIES_COOKING).build();
-        assertTrue(AUNTIES_COOKING.equals(aliceCopy));
+        Stall auntiesCookingCopy = new StallBuilder(AUNTIES_COOKING).build();
+        assertTrue(AUNTIES_COOKING.equals(auntiesCookingCopy));
 
         // same object -> returns true
         assertTrue(AUNTIES_COOKING.equals(AUNTIES_COOKING));
@@ -65,12 +65,12 @@ public class StallTest {
         assertFalse(AUNTIES_COOKING.equals(BRITISH));
 
         // different name -> returns false
-        Stall editedAlice = new StallBuilder(AUNTIES_COOKING).withName(VALID_NAME_BRITISH).build();
-        assertFalse(AUNTIES_COOKING.equals(editedAlice));
+        Stall editedAuntiesCooking = new StallBuilder(AUNTIES_COOKING).withName(VALID_NAME_BRITISH).build();
+        assertFalse(AUNTIES_COOKING.equals(editedAuntiesCooking));
 
         // different location -> returns false
-        editedAlice = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).build();
-        assertFalse(AUNTIES_COOKING.equals(editedAlice));
+        editedAuntiesCooking = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).build();
+        assertFalse(AUNTIES_COOKING.equals(editedAuntiesCooking));
 
     }
 

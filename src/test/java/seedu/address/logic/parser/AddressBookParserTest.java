@@ -14,14 +14,25 @@ import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Test;
 
+//import seedu.address.logic.commands.AddItemCommand;
+//import seedu.address.logic.commands.AddItemReviewCommand;
 import seedu.address.logic.commands.AddStallCommand;
+//import seedu.address.logic.commands.AddStallReviewCommand;
 import seedu.address.logic.commands.ClearCommand;
+//import seedu.address.logic.commands.Command;
+//import seedu.address.logic.commands.DeleteItemCommand;
+//import seedu.address.logic.commands.DeleteItemReviewCommand;
 import seedu.address.logic.commands.DeleteStallCommand;
+//import seedu.address.logic.commands.DeleteStallReviewCommand;
 import seedu.address.logic.commands.EditCommand;
 import seedu.address.logic.commands.ExitCommand;
-import seedu.address.logic.commands.FindCommand;
+//import seedu.address.logic.commands.FindItemCommand;
+//import seedu.address.logic.commands.FindLocationCommand;
+import seedu.address.logic.commands.FindStallCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.ListCommand;
+//import seedu.address.logic.commands.ViewItemCommand;
+//import seedu.address.logic.commands.ViewStallCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.stall.NameContainsKeywordsPredicate;
 import seedu.address.model.stall.Stall;
@@ -71,9 +82,9 @@ public class AddressBookParserTest {
     @Test
     public void parseCommand_find() throws Exception {
         List<String> keywords = Arrays.asList("foo", "bar", "baz");
-        FindCommand command = (FindCommand) parser.parseCommand(
-                FindCommand.COMMAND_WORD + " " + keywords.stream().collect(Collectors.joining(" ")));
-        assertEquals(new FindCommand(new NameContainsKeywordsPredicate(keywords)), command);
+        FindStallCommand command = (FindStallCommand) parser.parseCommand(
+                FindStallCommand.COMMAND_WORD + " " + keywords.stream().collect(Collectors.joining(" ")));
+        assertEquals(new FindStallCommand(new NameContainsKeywordsPredicate(keywords)), command);
     }
 
     @Test

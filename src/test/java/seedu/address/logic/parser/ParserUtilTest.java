@@ -88,4 +88,13 @@ public class ParserUtilTest {
         assertEquals(expectedLocation, ParserUtil.parseLocation(locationWithWhitespace));
     }
 
+    @Test
+    public void parseRating_invalidRatingString_throwsParseException() {
+        assertThrows(ParseException.class, () -> ParserUtil.parseRating("6"));
+    }
+
+    @Test
+    public void parseDescription_invalidDescriptionString_throwsParseException() {
+        assertThrows(ParseException.class, () -> ParserUtil.parseDescription(""));
+    }
 }

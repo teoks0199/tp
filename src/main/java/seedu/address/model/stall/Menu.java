@@ -100,6 +100,18 @@ public class Menu implements ReadOnlyMenu {
 
     //// util methods
 
+    public int numOfItem() {
+        return this.items.getSize();
+    }
+
+    public boolean isEmpty() {
+        return this.items.isEmpty();
+    }
+
+    public AveragePrice getAveragePrice() {
+        return this.items.getAveragePrice();
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this)
@@ -130,5 +142,13 @@ public class Menu implements ReadOnlyMenu {
     @Override
     public int hashCode() {
         return items.hashCode();
+    }
+
+
+    /**
+     * Returns true if the menu contains an item with the same name as any of the keywords.
+     */
+    public boolean containsKeywords(List<String> keywords) {
+        return items.containsKeywords(keywords);
     }
 }

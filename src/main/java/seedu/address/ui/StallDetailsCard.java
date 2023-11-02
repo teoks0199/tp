@@ -37,18 +37,20 @@ public class StallDetailsCard extends UiPart<Region> {
     private Label menuItem;
 
     /**
-     * Creates a {@code PersonCode} with the given {@code Stall} and index to display.
+     * Creates a {@code StallDetailsCard} with the given {@code Stall} and index to display.
      */
     public StallDetailsCard(Stall stall, int displayedIndex) {
         super(FXML);
         this.stall = stall;
         name.setText(stall.getName().fullName);
         locationName.setText(stall.getLocation().locationName);
-        if (stall.getMenu().getItemList().size() == 0) {
+        if (!stall.hasMenuItems()) {
             String str = "No menu item added to this stall yet";
             menuItem.setText(str);
+            review.setText(stall.getStallReviewString());
         } else {
-            menuItem.setText(stall.getMenu().toString());
+            menuItem.setText(stall.getMenuString());
+            review.setText(stall.getStallReviewString());
         }
 
     }

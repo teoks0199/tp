@@ -132,10 +132,16 @@ What the main components of the _GUI_ do:
 * For new users, the application will contain all the data of NUS food stalls and their menu items
 * If double-clicking `foodNotes.jar` does not work,
 
+<<<<<<< HEAD
     1. Search for "Command Prompt" or "Terminal" on your computer.
     2. Navigate to the location where `foodNotes.jar` is saved via the terminal. (_Unsure how to navigate?_ You can try running this in your terminal: `cd Downloads`.)
     3. Run the following in the terminal: `java -jar foodNotes.jar`.
 
+=======
+   1. Search for "Command Prompt" or "Terminal" on your computer.
+   2. Navigate to the location where `foodNotes.jar` is saved via the terminal. (_Unsure how to navigate?_ You can try running this in your terminal: `cd Downloads`.)
+   3. Run the following in the terminal: `java -jar foodNotes.jar`.
+>>>>>>> master
 
 </div>
 
@@ -163,9 +169,8 @@ Upon launching the application, some files responsible for the storage of your d
 
 **Expected output (Success):**
 ```
-Japanese Stall at Deck  ★★★★☆
-Cake shop at Engine  ★★★★☆
-Noodle stall at Frontier  ★★★★☆
+Here is the list of all stalls,
+sorted by price!
 ```
 **Expected output (Fail):**
 ```
@@ -181,9 +186,7 @@ please enter list only
 
 **Expected output (Success):**
 ```
-Japanese Stall at Deck  ★★★★☆
-Japanese Stall at Engine  ★★★★☆
-Japan Delights at Frontier  ★★★★☆
+Here is the list of stalls containing the keyword
 ```
 **Expected output (Fail):**
 ```
@@ -200,8 +203,7 @@ re-enter in the format : find-stall <KEYWORD>
 
 **Expected output (Success):**
 ```
-Chicken Rice at Deck  ★★★★☆
-Western Food at Deck  ★★★★☆
+Here is the list of stall containing the food items with this keyword
 ```
 Chicken Rice at Deck has an item called Chicken Rice, and Western Food at Deck has an item called Chicken Chop,
 thus both will be shown when you search for chicken.
@@ -240,12 +242,16 @@ re-enter in the format : add-stall n/STALL_NAME  l/LOCATION
 
 **Expected output (Success):**
 ```
-Japanese stall: ★★★★☆
-Review: the auntie very chio
-Menu
-1. Chicken Karage Rice ★★★★☆
-2. Chicken Katsu Curry Rice ★★★★★
+Here are the stall details
 ```
+<div markdown="block" class="alert alert-info">
+
+:bulb: **Note:**<br>
+
+The stall review and list of menu items will be shown on the right panel
+
+</div>
+
 **Expected output (Fail)**:
 ```
 re-enter in the format : view-stall s/STALL_NUMBER
@@ -289,11 +295,31 @@ re-enter in the format : review-stall s/STALL_NUMBER r/STALL_RATING d/DESCRIPTIO
 - s/: Positive Integer less than or equal to the size of list
 - r/: Integer from 0 to 5
 - d/: String
+
+**1.5 Sort stalls by location:** sort-stalls-locations
+
+**Command format:** sort-stalls-locations
+
+**Ex.:** sort-stalls-locations
+
+**Expected output (Success):**
+```
+Sorted all stalls by location in alphabetical order.
+```
+**Expected output (Fail):**
+```
+
+```
+**Acceptable values:**
+- s/: Positive Integer less than or equal to the size of list
+- r/: Integer from 0 to 5
+- d/: String
+
 --------------------------------------------------------------------------------------------------------------------
 ## 4.3 Item Features <a id="43-items"></a>
 
 ----
-### 4.3.1 View all items
+### 4.3.1 Add item to a stall
 **Command function:** Adding an item to a stall
 
 **Command format:** `add-item s/<STALL_NUMBER> i/<ITEM>`
@@ -314,7 +340,7 @@ re-enter in the format : add-item s/STALL_NUMBER i/ITEM
 
 - i/: String
 ---
-### 4.3.2 View all items
+### 4.3.2 View item
 **Command function:** Viewing an item from a stall
 
 **Command format:** `view-item s/<STALL_NUMBER> i/<ITEM_NUMBER>`
@@ -323,8 +349,7 @@ re-enter in the format : add-item s/STALL_NUMBER i/ITEM
 
 **Expected output (Success):**
 ```
-Chicken Karage Rice ★★★☆☆
-Review: Great fried chicken that’s crunchy and juicy, but there’s only 3 pieces and everything is in dire need of sauce, meaning it’s not quite bang for buck and you might be hungry again in a few hours.
+Here are the details of this menu item
 ```
 
 **Expected output (Fail):**
@@ -356,7 +381,7 @@ re-enter in the format : delete-item s/STALL_NUMBER i/ITEM_NUMBER
 - i/: Positive Integer less than or equal to the size of list
 
 ---
-### 4.3.4 Rate an item from a stall
+### 4.3.4 Reviewing an item from a stall
 **Command function:** Reviewing an item
 
 **Command format:** `review-item s/<STALL_NUMBER> i/<ITEM_NUMBER> r/<ITEM_RATING> d/<DESCRIPTION>`

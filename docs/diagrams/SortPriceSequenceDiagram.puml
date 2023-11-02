@@ -9,17 +9,17 @@ end box
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
 participant ":FoodNotesParser" as FoodNotesParser LOGIC_COLOR
-participant "s:SortPriceCommand" as SortPriceCommand LOGIC_COLOR
+participant "s:SortStallPriceCommand" as SortPriceCommand LOGIC_COLOR
 participant ":CommandResult" as CommandResult LOGIC_COLOR
 end box
 
 box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
-MainWindow -> LogicManager : execute(sort-price)
+MainWindow -> LogicManager : execute(sort-stalls-price)
 activate LogicManager
 
-LogicManager -> FoodNotesParser : parseCommand(sort-price)
+LogicManager -> FoodNotesParser : parseCommand(sort-stalls-price)
 activate FoodNotesParser
 
 create SortPriceCommand
@@ -35,7 +35,7 @@ deactivate FoodNotesParser
 LogicManager -> SortPriceCommand : execute()
 activate SortPriceCommand
 
-SortPriceCommand -> Model : sortFilteredStoreList()
+SortPriceCommand -> Model : sortStallPrice()
 activate Model
 
 

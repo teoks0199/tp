@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Region;
@@ -14,19 +15,23 @@ import seedu.address.model.stall.Stall;
  * Panel containing the list of persons.
  */
 public class StallListPanel extends UiPart<Region> {
-    private static final String FXML = "StallListPanel.fxml";
+    private static final String FXML = "LeftListPanel.fxml";
     private final Logger logger = LogsCenter.getLogger(StallListPanel.class);
 
     @FXML
-    private ListView<Stall> stallListView;
+    private ListView<Stall> leftListView;
+
+    @FXML
+    private Label name;
 
     /**
      * Creates a {@code StallListPanel} with the given {@code ObservableList}.
      */
     public StallListPanel(ObservableList<Stall> stallList) {
         super(FXML);
-        stallListView.setItems(stallList);
-        stallListView.setCellFactory(listView -> new StallListViewCell());
+        name.setText("List of Stalls:");
+        leftListView.setItems(stallList);
+        leftListView.setCellFactory(listView -> new StallListViewCell());
     }
 
     /**
