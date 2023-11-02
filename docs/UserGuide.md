@@ -166,10 +166,13 @@ Upon launching the application, some files responsible for the storage of your d
 
 # 4. Features <a id="4-features"></a>
 
-----
+---- 
+
 ## 4.1 General Features <a id="41-general"></a>
 
------
+Essential functionalities of the application.
+
+------------------------
 
 ### 4.1.1 Viewing help : `help`
 
@@ -238,6 +241,15 @@ Outcome:
 
 ----
 ## 4.2 Stall Management <a id="41-general"></a>
+
+This feature allows you to manage information about the stalls in the database. You can record and perform the following actions:
+- list
+- view stalls
+- add
+- delete
+- edit
+- review
+- delete stall review
 
 -----
 ### 4.2.1 Listing all stalls : `list`
@@ -354,7 +366,7 @@ You can use this command to edit existing stall, and change either the name, loc
 
 Editing the name and location of the first stall from the list:
 
-1. Type `edit-stall s/1 n/Katsu Don l/Deck` into the *Command Box*.
+1. Type `edit-stall s/1 n/Japanese Stall l/Deck` into the *Command Box*.
 1. Press `Enter` to execute.
 
 Outcome:
@@ -379,7 +391,7 @@ You can use this command to review an existing stall, and add your own rating an
 
 Reviewing the stall:
 
-1. Type `review-stall s/2 r/3 d/Ambience is great` into the *Command Box*.
+1. Type `review-stall s/2 r/5 d/Ambience is great` into the *Command Box*.
 1. Press `Enter` to execute.
 
 Outcome:
@@ -388,7 +400,7 @@ Outcome:
 1. You have now reviewed the specific stall from the list, and the star ratings will be reflected.
 </div>
 
-![ListOutcome](images/userGuide/reviewStallOutcome.png)
+![ListOutcome](images/userGuide/stallReviewOutcome.png)
 
 ### 4.2.7 Deleting a stall review: `delete-stall-review`
 
@@ -414,6 +426,55 @@ Outcome:
 </div>
 
 ![ListOutcome](images/userGuide/deleteStallReviewOutcome.png)
+=======
+---------------------------------------------------------------------------------------------------------------------
+## 4.3 Stall Sorting 
+This feature allows you to sort the stalls by their location, rating and price.
+
+### 4.3.1 Sort stalls by location: `sort-stalls-location`
+
+You can use this command to sort the stalls by their location in alphabetical order.
+
+**Command format:** `sort-stalls-location`
+
+**Example:** Type `sort-stalls-location` in the command box and press Enter.
+
+**Outcome:**
+1. The `Result Display` will display a success message.
+2. You will now see that the stalls are sorted by location in alphabetical order in the `Data Display`, as illustrated 
+   in the screenshot below.
+<img src="images/userGuide/sort-stalls-location.png" alt="sort-stalls-location" width="600"/>
+
+### 4.3.2 Sort stalls by rating: `sort-stalls-rating`
+
+You can use this command to sort the stalls by their rating in descending order.
+
+**Command format:** sort-stalls-rating
+
+**Example:** Type `sort-stalls-rating` in the command box and press Enter.
+
+**Outcome:**
+1. The `Result Display` will display a success message.
+2. You will now see that the stalls are sorted by rating in descending order in the `Data Display`, as illustrated 
+   in the screenshot below.
+<img src="images/userGuide/sort-stalls-rating.png" alt="sort-stalls-rating" width="600"/>
+
+### 4.3.3 Sort stalls by price: `sort-stalls-price`
+
+You can use this command to sort the stalls by their price in ascending order.
+
+**Command format:** sort-stalls-price
+
+**Example:** Type `sort-stalls-price` in the command box and press Enter.
+
+**Outcome:**
+1. The `Result Display` will display a success message.
+2. You will now see that the stalls are sorted by price in ascending order in the `Data Display`, as illustrated 
+   in the screenshot below.
+<img src="images/userGuide/sort-stalls-price.png" alt="sort-stalls-price" width="600"/>
+
+
+
 
 --------------------------------------------------------------------------------------------------------------------
 ## 4.3 Item Features <a id="43-items"></a>
@@ -619,6 +680,159 @@ Example: find-item chicken apple beef
 
 * You can enter more than one keyword, separated by a space, and all the stalls containing any of the keywords will be listed!
 
+-----
+## 4.5 Item Management <a id="43-general"></a>
+
+-----
+### 4.5.1 Viewing an item : `view-item`
+
+You can use this command to view details of a specific item from the database.
+
+**Format:**
+
+`view-item s/STALL_INDEX i/ITEM_INDEX`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Viewing a specific item:
+
+1. Type `view-item s/1 i/1` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You can now see the details of the specific item you entered.
+</div>
+
+![ListOutcome](images/userGuide/viewItemOutcome.png)
+
+### 4.5.2 Adding an item : `add-item`
+
+You can use this command to add a new item to the database.
+
+**Format:**
+
+`add-item s/STALL_INDEX n/ITEM_NAME p/ITEM_PRICE`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Adding a new item:
+
+1. Type `add-item s/1 n/Pork Chop p/5.50` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now added a new item with the specified name and price.
+</div>
+
+![ListOutcome](images/userGuide/addItemOutcome.png)
+
+### 4.5.3 Deleting an item : `delete-item`
+
+You can use this command to delete an item from the database.
+
+**Format:**
+
+`delete-item s/STALL_INDEX i/ITEM_INDEX`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Deleting the third item from the menu:
+
+1. Type `delete-item s/1 i/2` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now deleted the second menu item of the first stall, and the list of items will be updated.
+</div>
+
+![ListOutcome](images/userGuide/deleteItemOutcome.png)
+
+### 4.5.4 Editing an item : `edit-item`
+
+You can use this command to edit an existing item, and change either the name, price, rating and description or change all.
+
+**Format:**
+
+`edit-item s/STALL_INDEX i/ITEM_INDEX [n/ITEM_NAME] [p/ITEM_PRICE] [r/ITEM_RATING] [d/ITEM_DESCRIPTION] `
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Editing the name and location of the first stall from the list:
+
+1. Type `edit-item s/1 i/1 n/Chicken Cutlet p/4.00` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now edited the first menu item of the first stall, and the list of items will be updated.
+</div>
+
+![ListOutcome](images/userGuide/editItemOutcome.png)
+
+### 4.5.5 Reviewing an item : `review-item`
+
+You can use this command to review an existing item, and add your own rating and description for it.
+
+**Format:**
+
+`review-item s/STALL_INDEX i/ITEM_INDEX r/STALL_RATING d/STALL_DESCRIPTION`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Reviewing the item:
+
+1. Type `review-item s/1 i/1 r/4 d/Very Flavourful` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now reviewed the first menu item of the first stall, and the star ratings will be reflected.
+</div>
+
+![ListOutcome](images/userGuide/reviewItemOutcome.png)
+
+### 4.5.6 Deleting an item review: `delete-item-review`
+
+You can use this command to delete a review of an existing item.
+
+**Format:**
+
+`delete-item-review s/STALL_INDEX i/ITEM_INDEX`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Deleting the review:
+
+1. Type `delete-item-review s/1 i/1` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now deleted the review of the first menu item of the first stall, and the menu will be updated.
+</div>
+
+![ListOutcome](images/userGuide/deleteItemReviewOutcome.png)
 </div>
 ---
 --------------------------------------------------------------------------------------------------------------------
