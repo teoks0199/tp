@@ -2,8 +2,10 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_LOCATION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
 import java.util.stream.Stream;
@@ -11,7 +13,6 @@ import java.util.stream.Stream;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.EditStallCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-
 
 
 /**
@@ -28,14 +29,16 @@ public class EditStallCommandParser implements Parser<EditStallCommand> {
     public EditStallCommand parse(String args) throws ParseException {
         requireNonNull(args);
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_STALL, PREFIX_NAME, PREFIX_LOCATION);
+                ArgumentTokenizer.tokenize(args, PREFIX_STALL, PREFIX_NAME, PREFIX_LOCATION, PREFIX_RATING,
+                        PREFIX_DESCRIPTION);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_STALL)
                 || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditStallCommand.MESSAGE_USAGE));
         }
 
-        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_STALL, PREFIX_NAME, PREFIX_LOCATION);
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_STALL, PREFIX_NAME, PREFIX_LOCATION, PREFIX_RATING,
+                PREFIX_DESCRIPTION);
 
         Index index;
         try {
@@ -51,6 +54,15 @@ public class EditStallCommandParser implements Parser<EditStallCommand> {
 
         if (argMultimap.getValue(PREFIX_LOCATION).isPresent()) {
             editStallDescriptor.setLocation(ParserUtil.parseLocation(argMultimap.getValue(PREFIX_LOCATION).get()));
+        }
+
+        if (argMultimap.getValue(PREFIX_RATING).isPresent()) {
+            editStallDescriptor.setRating(ParserUtil.parseRating(argMultimap.getValue(PREFIX_RATING).get()));
+        }
+
+        if (argMultimap.getValue(PREFIX_DESCRIPTION).isPresent()) {
+            editStallDescriptor.setDescription(ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION)
+                    .get()));
         }
 
         if (!editStallDescriptor.isAnyFieldEdited()) {

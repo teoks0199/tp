@@ -97,7 +97,6 @@ public class Stall {
     public Menu getMenu() {
         return menu;
     }
-
     public ObservableList<Item> getMenuList() {
         return menu.getItemList();
     }
