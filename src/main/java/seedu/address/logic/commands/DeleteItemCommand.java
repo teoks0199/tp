@@ -66,9 +66,13 @@ public class DeleteItemCommand extends Command {
 
         Item itemToDelete = model.getFilteredItem(stallIndex, itemIndex);
 
+        model.showStall(stallToDeleteFrom);
+        model.setFilteredStall(stallIndex);
+        model.setFilteredItemList(stallIndex);
+
         model.deleteItem(stallIndex, itemIndex);
         return new CommandResult(String.format(MESSAGE_DELETE_ITEM_SUCCESS, Messages.format(itemToDelete), Messages
-                .format(stallToDeleteFrom)));
+                .format(stallToDeleteFrom)), CommandResult.ViewType.STALL_DETAIL);
     }
 
     @Override

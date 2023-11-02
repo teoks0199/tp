@@ -44,8 +44,13 @@ public class DeleteStallReviewCommand extends Command {
 
         Stall stallToDeleteReview = lastShownList.get(targetIndex.getZeroBased());
         stallToDeleteReview.deleteReview();
+
+        model.showStall(stallToDeleteReview);
+        model.setFilteredStall(targetIndex);
+        model.setFilteredItemList(targetIndex);
+
         return new CommandResult(String.format(MESSAGE_DELETE_STALL_REVIEW_SUCCESS,
-                Messages.format(stallToDeleteReview)));
+                Messages.format(stallToDeleteReview)), CommandResult.ViewType.STALL_DETAIL);
     }
 
     @Override

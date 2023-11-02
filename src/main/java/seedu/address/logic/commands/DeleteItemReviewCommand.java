@@ -66,8 +66,12 @@ public class DeleteItemReviewCommand extends Command {
         }
 
         model.deleteItemReview(itemToUpdate);
+
+        model.setFilteredItem(itemToUpdate);
+        model.setFilteredItemList(stallIndex);
+        model.setFilteredStall(stallIndex);
         return new CommandResult(String.format(MESSAGE_SUCCESS, Messages.format(itemToUpdate), Messages
-                .format(stallToUpdate)));
+                .format(stallToUpdate)), CommandResult.ViewType.VIEW_ITEM);
     }
 
     @Override

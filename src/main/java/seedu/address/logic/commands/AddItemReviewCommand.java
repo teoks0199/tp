@@ -77,8 +77,13 @@ public class AddItemReviewCommand extends Command {
             throw new CommandException(MESSAGE_DUPLICATE_ITEM_REVIEW);
         }
 
+        model.setFilteredItem(itemToUpdate);
+        model.setFilteredItemList(stallIndex);
+        model.setFilteredStall(stallIndex);
+
         model.setItemReview(itemToUpdate, toAdd);
-        return new CommandResult(String.format(MESSAGE_SUCCESS, itemToUpdate.getName(), stallToUpdate.getName()));
+        return new CommandResult(String.format(MESSAGE_SUCCESS, itemToUpdate.getName(), stallToUpdate.getName()),
+                CommandResult.ViewType.VIEW_ITEM);
     }
 
     @Override

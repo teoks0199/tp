@@ -62,7 +62,12 @@ public class AddItemCommand extends Command {
         }
 
         model.addItem(stallIndex, toAdd);
-        return new CommandResult(String.format(MESSAGE_SUCCESS, Messages.format(toAdd), stallToUpdate.getName()));
+
+        model.setFilteredItem(toAdd);
+        model.setFilteredItemList(stallIndex);
+        model.setFilteredStall(stallIndex);
+        return new CommandResult(String.format(MESSAGE_SUCCESS, Messages.format(toAdd), stallToUpdate.getName()),
+                CommandResult.ViewType.VIEW_ITEM);
     }
 
     @Override

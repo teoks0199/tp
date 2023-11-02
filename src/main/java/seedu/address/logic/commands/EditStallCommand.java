@@ -89,7 +89,13 @@ public class EditStallCommand extends Command {
 
         model.setStall(stallToEdit, editedStall);
         model.updateFilteredStallList(PREDICATE_SHOW_ALL_STALLS);
-        return new CommandResult(String.format(MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall)));
+
+        model.showStall(stallToEdit);
+        model.setFilteredStall(index);
+        model.setFilteredItemList(index);
+
+        return new CommandResult(String.format(MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall)),
+                CommandResult.ViewType.STALL_DETAIL);
     }
 
     /**
