@@ -26,6 +26,7 @@ public class DeleteStallReviewCommand extends Command {
             + PREFIX_STALL + "1";
 
     public static final String MESSAGE_DELETE_STALL_REVIEW_SUCCESS = "Deleted Stall Review: %1$s";
+    private static final String MESSAGE_ITEM_REVIEW_NOT_FOUND = "This stall does not have a review.";
 
     private final Index targetIndex;
 
@@ -43,6 +44,11 @@ public class DeleteStallReviewCommand extends Command {
         }
 
         Stall stallToDeleteReview = lastShownList.get(targetIndex.getZeroBased());
+
+        if (!stallToDeleteReview.hasStallReview()) {
+            throw new CommandException(MESSAGE_ITEM_REVIEW_NOT_FOUND);
+        }
+
         stallToDeleteReview.deleteReview();
         return new CommandResult(String.format(MESSAGE_DELETE_STALL_REVIEW_SUCCESS,
                 Messages.format(stallToDeleteReview)));
