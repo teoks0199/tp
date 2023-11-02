@@ -59,7 +59,13 @@ public class AddStallReviewCommand extends Command {
         if (stallToAddReview.hasStallReview()) {
             throw new CommandException(MESSAGE_DUPLICATE_STALL_REVIEW);
         }
+
+        model.showStall(stallToAddReview);
+        model.setFilteredStall(index);
+        model.setFilteredItemList(index);
+
         stallToAddReview.setStallReview(toAdd);
-        return new CommandResult(String.format(MESSAGE_ADD_STALL_REVIEW_SUCCESS, Messages.format(toAdd)));
+        return new CommandResult(String.format(MESSAGE_ADD_STALL_REVIEW_SUCCESS, Messages.format(toAdd)),
+                CommandResult.ViewType.STALL_DETAIL);
     }
 }
