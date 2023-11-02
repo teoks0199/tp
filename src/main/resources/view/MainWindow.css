@@ -8,6 +8,17 @@
      -fx-background-radius: 15;
 }
 
+.command-headers {
+    -fx-border-color: #808080;
+    -fx-font-weight: bold;
+    -fx-font-size: 18pt;
+}
+
+.colored-label {
+    -fx-background-color: #ffcc00;
+    -fx-text-fill: #000000;
+}
+
 .label {
     -fx-font-size: 11pt;
     -fx-font-family: "Segoe UI Semibold";
