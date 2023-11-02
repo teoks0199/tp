@@ -31,12 +31,9 @@ Welcome to the User Guide of **FoodNotes**!
 
 Ever find yourself forgetting the delightful dishes you savored? Hungry for a way to recall your favorite food experiences? FoodNotes has the solution.
 
+FoodNotes is a quick, simple and beautiful food diary made specifically for you, NUS student foodies. With FoodNotes, you can add stalls that you want to keep track of and manage your reviews for them.
 
-
-## **1.1 Purpose** <a id="11-purpose"></a>
-
-FoodNotes is a desktop app made for foodies like you to **manage food reviews**, optimized for use via a **Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, foodnotes can get your food review tasks done faster than traditional GUI apps.
-
+This application is optimised for use via a Command Line Interface (CLI) this means that you operate the application by typing commands into a Command Box. If you are fast at typing, you can manage your food reviews faster than other Graphical User Interface (GUI) applications; GUI applications allow users to interact with the application through graphical icons such as buttons.
 FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems.
 <div markdown="block" class="index">
 
@@ -46,27 +43,56 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 # 2. About the user guide <a id="2-about-the-user-guide"></a>
 ## 2.1 Navigating the user guide <a id="21-navigating-the-user-guide"></a>
 
-* If you are a **new user**, the [Quick start](#quick-start) section provides instructions for you on how to get started.
+**For first time users**: 
 
-* Once you have set up FoodNotes, you can check out the [Screen layout](#screen-layout) section to get familiar with the different components of FoodNotes. To learn the basics of using FoodNotes, head over to the [Features](#features) section.
+1) the [Quick start](#quick-start) section provides instructions for you on how to get started. 
+2) Once you have set up FoodNotes, you can check out the [Screen layout](#screen-layout) section to get familiar with the different components of FoodNotes. To learn the basics of using FoodNotes, head over to the [Features](#features) section.
 
-* If you are an **experienced user**, you can refer to the [Command summary](#command-summary) section for an overview of FoodNotes' commands.
+**For experienced users:**
+1) you can refer to the [Command summary](#command-summary) section for an overview of FoodNotes' commands.
 
-* If you have any queries about using FoodNotes, you can check out the [FAQ](#faq) section.
+If you have any queries about using FoodNotes, you can check out the [FAQ](#faq) section.
 
 ## 2.2 Reading the User Guide <a id="22-reading-the-user-guide"></a>
+Before you jump into the next section, take a moment to familiarise yourself with the technical terms, symbols, and syntax used throughout this document. This subsection contains all the essential information you need to understand the content better.
 
-### 2.2.1 Icons <a id="icons"></a>
+### 2.2.1 Terminology related to the Graphical User Interface (GUI)
+The following figure shows the GUI of FoodNotes. It is annotated with the name of the GUI components.
+
+<p align="center">
+<img src="images/userGuide/Frame.png" alt="Layout of GUI">
+</p>
+What the main components of the GUI do:
+
+* _Data Display_: This is where **FoodNotes** displays the information of the page that you are viewing.
+
+* _Result Display_: This is where **FoodNotes** displays guiding messages.
+
+* _Command Box_: This is where you type your commands.
+
+### 2.2.2 Icons <a id="icons"></a>
 
 This section will run you through the icons used in this guide.
 
-| Icon           | Meaning                                                          |
-|----------------|------------------------------------------------------------------|
-| :bulb:         | Extra information that you may find useful.                      |
-| :exclamation:  | Information you should be aware of to avoid running into errors. |
-| :fast_forward: | Information about future updates to a feature.                   |
+| Icon                 | Meaning                                                          |
+|----------------------|------------------------------------------------------------------|
+| `command`            |  A light blue highlight (called a code-block markup) indicates that this is a command that can be typed into the command box and executed by the application.        |              
+| :information_source: | An information icon indicates that the enclosed text are notes regarding this section. |
+| :warning:            | A warning sign indicates that the enclosed text is important, and usually entails details about potential errors. |
+|  :bulb:              | A light bulb indicates that the enclosed text is a tip.|
 
 <div style="page-break-after: always;"></div>
+
+### 2.2.3 Command Syntax and Usage <a id="icons"></a>
+Since FoodNotes is a CLI application, knowing how to use commands is very important. The following subsection will teach you how to read and use commands in FoodNotes. All commands in FoodNotes follow similar formats as described below and examples will be provided to help you understand their usage. Examples of commands and their formats will be written in code-blocks.
+
+The table below explains some important technical terms. An example will be provided to help you visualize these terms.
+
+|**Technical Term** | **Meaning**                                                                                                                |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------|
+| Command word | The first word of a command. It determines the action that **FoodNotes** should perform.                                   |
+| Parameter | The word or group of words following the command word. They are values given to a command to perform the specified action. |
+| Prefix | A prefix is a word that precedes a parameter. It is used to identify the type of parameter that is being inputted.         |
 
 ### 2.2.2 Input parameters <a id="parameters"></a>
 
@@ -77,26 +103,11 @@ This section provides a summary of the parameters used when inputting commands i
 | `n/`   | `STALL_NAME`     | Name of the stall                                  | Alphanumeric value with 1 to 27 characters (inclusive)                       |
 | `s/`   | `STALL_INDEX`    | Index of the stall in the list                     | Integer from 0 to 2147483647 (inclusive)                                     |
 | `l/`   | `STALL_LOCATION` | Location of the stall                              | Alphanumeric value with 1 to 27 characters (inclusive)                       |
-| `i/`   | `ITEM_NAME`      | Name of the item                                   | Alphanumeric value with 1 to 27 characters (inclusive)                       |
+| `n/`   | `ITEM_NAME`      | Name of the item                                   | Alphanumeric value with 1 to 27 characters (inclusive)                       |
 | `r/`   | `STALL_RATING`   | Rating of the stall                                | Integer from 0 to 5 (inclusive)                                              |
 | `r/`   | `ITEM_RATING`    | Rating of the item                                 | Integer from 0 to 5 (inclusive)                                              |
 | `d/`   | `DESCRIPTION`    | Descriptive review for the stalls or items         | Alphanumeric value with 1 to 27 characters (inclusive)                       |
 
-#### 2.2.3. Terminology related to the _GUI_ <a id="GUI"></a>
-The following figure shows the _GUI_ of **FoodNotes**. It is annotated with the name of the _GUI_ components.
-
-<p align="center">
-<img src="images/userGuide/GUI.png" alt="Layout of GUI">
-<i>Figure 3.2.1.1 Annotated GUI of <b>FoodNotes</b>.</i>
-</p>
-
-What the main components of the _GUI_ do:
-
-* _Data Display_: This is where **FoodNotes** displays the information of the page that you are viewing.
-
-* _Result Display_: This is where **FoodNotes** displays guiding messages.
-
-* _Command Box_: This is where you type your commands.
 --------------------------------------------------------------------------------------------------------------------
 
 ## 3. Quick start (To be updated) <a id="3-quick-start"></a>
@@ -132,16 +143,10 @@ What the main components of the _GUI_ do:
 * For new users, the application will contain all the data of NUS food stalls and their menu items
 * If double-clicking `foodNotes.jar` does not work,
 
-<<<<<<< HEAD
     1. Search for "Command Prompt" or "Terminal" on your computer.
     2. Navigate to the location where `foodNotes.jar` is saved via the terminal. (_Unsure how to navigate?_ You can try running this in your terminal: `cd Downloads`.)
     3. Run the following in the terminal: `java -jar foodNotes.jar`.
 
-=======
-   1. Search for "Command Prompt" or "Terminal" on your computer.
-   2. Navigate to the location where `foodNotes.jar` is saved via the terminal. (_Unsure how to navigate?_ You can try running this in your terminal: `cd Downloads`.)
-   3. Run the following in the terminal: `java -jar foodNotes.jar`.
->>>>>>> master
 
 </div>
 
@@ -162,6 +167,203 @@ Upon launching the application, some files responsible for the storage of your d
 ## 4.1 General Features <a id="41-general"></a>
 
 -----
+
+### 4.1.1 Viewing help : `help`
+
+You can use this command to view the online user guide, which contains information about all the instructions in **FoodNotes**.
+
+<div markdown="block" class="alert alert-info">
+
+:information_source: Ensure that you have a stable internet connection and have a web browser on your computer in order to access the user guide.
+
+</div>
+
+**Format:**
+
+`help`
+
+**Example:**
+
+In this example, you want to view the user guide to get information about the various commands in **FoodNotes**.
+
+<div markdown="block" class="alert alert-white">
+
+Requesting for help:
+
+1. Type `help` into the *Command Box*.
+1. Press `Enter` to execute.
+1. A new window will appear as shown below. Click on the `Copy URL` button to copy the URL containing the **FoodNotes** user guide.
+   ![HelpOutcome](images/userGUide/HelpOutcome.png)
+1. Open your preferred web browser on your computer and paste the link into the address bar.
+1. Press `Enter` to load the website.
+
+Outcome:
+
+1. Your browser will now show the user guide of **FoodNotes**. 
+2. You can now access information about all commands in **FoodNotes** via the browser.
+
+</div>
+
+ ### 4.1.2 Exiting from the application: `exit`
+
+You can use this command to exit **FoodNotes**.
+
+<div markdown="block" class="alert alert-info">
+
+**:information_source: This command will exit the application immediately. All data is saved automatically and will be reloaded upon restart of the application**
+
+</div>
+
+**Format:**
+
+`exit`
+
+**Example:**
+
+In this example, you want to exit **FoodNotes**.
+
+<div markdown="block" class="alert alert-white">
+
+Exiting the application:
+
+1. Type `exit` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The **FoodNotes** application window is now closed.
+
+----
+## 4.2 Stall Management <a id="41-general"></a>
+
+-----
+### 4.2.1 Listing all stalls : `list`
+
+You can use this command to show a list of all stalls in the database.
+
+**Format:**
+
+`list`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Listing all your stalls:
+
+1. Type `list` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You can now see all your stalls in the *lsit Panel*.
+</div>
+
+![ListOutcome](images/userGuide/listOutcome.png)
+
+### 4.2.2 Viewing a stall : `view-stall`
+
+You can use this command to view details from a specific stall from the database.
+
+**Format:**
+
+`view-stall s/[STALL_NUMBER]`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Viewing a specific stall:
+
+1. Type `view-stall s/1` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You can now see the details of the specific stall you entered.
+</div>
+
+![ListOutcome](images/userGuide/viewStallOutcome.png)
+
+### 4.2.3 Adding a stall : `add-stall`
+
+You can use this command to add a new stall to the database.
+
+**Format:**
+
+`add-stall n/[STALL_NAME] l/[LOCATION]`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Adding a new stall:
+
+1. Type `add-stall n/Subway l/Utown` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now added a new stall with the specified name and location.
+</div>
+
+![ListOutcome](images/userGuide/addStallOutcome.png)
+
+### 4.2.4 Deleting a stall : `delete-stall`
+
+You can use this command to delete a stall from the database.
+
+**Format:**
+
+`delete-stall s/[STALL_INDEX]`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Deleting the third stall from the list:
+
+1. Type `delete-stall s/3` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now deleted the third stall from the list, and the list of stalls will be updated.
+</div>
+
+![ListOutcome](images/userGuide/deleteStallOutcome.png)
+
+### 4.2.5 Editing a stall : `edit-stall`
+
+You can use this command to edit existing stall name and location from the database.
+
+**Format:**
+
+`edit-stall s/[STALL_INDEX]`
+
+**Example:**
+
+<div markdown="block" class="alert alert-white">
+
+Editing the third stall from the list:
+
+1. Type `delete-stall s/3` into the *Command Box*.
+1. Press `Enter` to execute.
+
+Outcome:
+
+1. The Result Display will show a success message.
+1. You have now deleted the third stall from the list, and the list of stalls will be updated.
+</div>
+
+![ListOutcome](images/userGuide/deleteStallOutcome.png)
+
+
+
 ### 4.1.1 View all stalls
 **Command function:** list
 
