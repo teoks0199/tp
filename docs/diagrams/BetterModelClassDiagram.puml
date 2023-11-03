@@ -4,7 +4,7 @@ skinparam arrowThickness 1.1
 skinparam arrowColor MODEL_COLOR
 skinparam classBackgroundColor MODEL_COLOR
 
-Foodnotes *-down-> "1" UniqueStallList
+AddressBook *-down-> "1" UniqueStallList
 UniqueStallList *-right-> "*" Stall
 Stall *-down-> "1" Name
 Stall *-down-> "1" StallReview
@@ -12,6 +12,8 @@ Stall *-right-> "0...1" Menu
 Menu *-right-> "1" UniqueItemList
 UniqueItemList *-down-> "*" Item
 Item *-down-> "1" ItemReview
+Item *-down-> "1" ItemName
+Item *-down-> "1" Price
 ItemReview *-down-> "1" ItemRating
 ItemReview *-down-> "1" ItemDescription
 

@@ -8,7 +8,7 @@ end box
 
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
-participant ":FoodNotesParser" as FoodNotesParser LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
 participant "s:SortStallPriceCommand" as SortPriceCommand LOGIC_COLOR
 participant ":CommandResult" as CommandResult LOGIC_COLOR
 end box
@@ -19,18 +19,18 @@ end box
 MainWindow -> LogicManager : execute(sort-stalls-price)
 activate LogicManager
 
-LogicManager -> FoodNotesParser : parseCommand(sort-stalls-price)
-activate FoodNotesParser
+LogicManager -> AddressBookParser : parseCommand(sort-stalls-price)
+activate AddressBookParser
 
 create SortPriceCommand
-FoodNotesParser -> SortPriceCommand
+AddressBookParser -> SortPriceCommand
 activate SortPriceCommand
 
-SortPriceCommand --> FoodNotesParser : s
+SortPriceCommand --> AddressBookParser : s
 deactivate SortPriceCommand
 
-FoodNotesParser --> LogicManager : s
-deactivate FoodNotesParser
+AddressBookParser --> LogicManager : s
+deactivate AddressBookParser
 
 LogicManager -> SortPriceCommand : execute()
 activate SortPriceCommand

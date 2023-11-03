@@ -166,10 +166,13 @@ Upon launching the application, some files responsible for the storage of your d
 
 # 4. Features <a id="4-features"></a>
 
-----
+---- 
+
 ## 4.1 General Features <a id="41-general"></a>
 
------
+Essential functionalities of the application.
+
+------------------------
 
 ### 4.1.1 Viewing help : `help`
 
@@ -238,6 +241,15 @@ Outcome:
 
 ----
 ## 4.2 Stall Management <a id="41-general"></a>
+
+This feature allows you to manage information about the stalls in the database. You can record and perform the following actions:
+- list
+- view stalls
+- add
+- delete
+- edit
+- review
+- delete stall review
 
 -----
 ### 4.2.1 Listing all stalls : `list`
@@ -354,7 +366,7 @@ You can use this command to edit existing stall, and change either the name, loc
 
 Editing the name and location of the first stall from the list:
 
-1. Type `edit-stall s/1 n/Katsu Don l/Deck` into the *Command Box*.
+1. Type `edit-stall s/1 n/Japanese Stall l/Deck` into the *Command Box*.
 1. Press `Enter` to execute.
 
 Outcome:
@@ -379,7 +391,7 @@ You can use this command to review an existing stall, and add your own rating an
 
 Reviewing the stall:
 
-1. Type `review-stall s/2 r/3 d/Ambience is great` into the *Command Box*.
+1. Type `review-stall s/2 r/5 d/Ambience is great` into the *Command Box*.
 1. Press `Enter` to execute.
 
 Outcome:
@@ -388,7 +400,7 @@ Outcome:
 1. You have now reviewed the specific stall from the list, and the star ratings will be reflected.
 </div>
 
-![ListOutcome](images/userGuide/reviewStallOutcome.png)
+![ListOutcome](images/userGuide/stallReviewOutcome.png)
 
 ### 4.2.7 Deleting a stall review: `delete-stall-review`
 
@@ -414,6 +426,55 @@ Outcome:
 </div>
 
 ![ListOutcome](images/userGuide/deleteStallReviewOutcome.png)
+=======
+---------------------------------------------------------------------------------------------------------------------
+## 4.3 Stall Sorting 
+This feature allows you to sort the stalls by their location, rating and price.
+
+### 4.3.1 Sort stalls by location: `sort-stalls-location`
+
+You can use this command to sort the stalls by their location in alphabetical order.
+
+**Command format:** `sort-stalls-location`
+
+**Example:** Type `sort-stalls-location` in the command box and press Enter.
+
+**Outcome:**
+1. The `Result Display` will display a success message.
+2. You will now see that the stalls are sorted by location in alphabetical order in the `Data Display`, as illustrated 
+   in the screenshot below.
+<img src="images/userGuide/sort-stalls-location.png" alt="sort-stalls-location" width="600"/>
+
+### 4.3.2 Sort stalls by rating: `sort-stalls-rating`
+
+You can use this command to sort the stalls by their rating in descending order.
+
+**Command format:** sort-stalls-rating
+
+**Example:** Type `sort-stalls-rating` in the command box and press Enter.
+
+**Outcome:**
+1. The `Result Display` will display a success message.
+2. You will now see that the stalls are sorted by rating in descending order in the `Data Display`, as illustrated 
+   in the screenshot below.
+<img src="images/userGuide/sort-stalls-rating.png" alt="sort-stalls-rating" width="600"/>
+
+### 4.3.3 Sort stalls by price: `sort-stalls-price`
+
+You can use this command to sort the stalls by their price in ascending order.
+
+**Command format:** sort-stalls-price
+
+**Example:** Type `sort-stalls-price` in the command box and press Enter.
+
+**Outcome:**
+1. The `Result Display` will display a success message.
+2. You will now see that the stalls are sorted by price in ascending order in the `Data Display`, as illustrated 
+   in the screenshot below.
+<img src="images/userGuide/sort-stalls-price.png" alt="sort-stalls-price" width="600"/>
+
+
+
 
 --------------------------------------------------------------------------------------------------------------------
 ## 4.3 Item Features <a id="43-items"></a>

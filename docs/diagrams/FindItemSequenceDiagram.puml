@@ -8,7 +8,7 @@ end box
 
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
-participant ":FoodNotesParser" as FoodNotesParser LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
 participant ":FindItemCommandParser" as FindItemCommandParser LOGIC_COLOR
 participant "f:FindItemCommand" as FindItemCommand LOGIC_COLOR
 participant ":CommandResult" as CommandResult LOGIC_COLOR
@@ -21,19 +21,19 @@ end box
 MainWindow -> LogicManager : execute("find-item chicken")
 activate LogicManager
 
-LogicManager -> FoodNotesParser : parseCommand("find-item chicken")
-activate FoodNotesParser
+LogicManager -> AddressBookParser : parseCommand("find-item chicken")
+activate AddressBookParser
 
 create FindItemCommandParser
-FoodNotesParser -> FindItemCommandParser :FindItemCommandParser()
+AddressBookParser -> FindItemCommandParser :FindItemCommandParser()
 activate FindItemCommandParser
 
 
 
-FindItemCommandParser --> FoodNotesParser
+FindItemCommandParser --> AddressBookParser
 deactivate FindItemCommandParser
 
-FoodNotesParser -> FindItemCommandParser :parse("chicken")
+AddressBookParser -> FindItemCommandParser :parse("chicken")
 activate FindItemCommandParser
 
 create MenuContainsKeywordsPredicate
@@ -54,13 +54,13 @@ activate FindItemCommand
 FindItemCommand --> FindItemCommandParser : f
 deactivate FindItemCommand
 
-FindItemCommandParser --> FoodNotesParser: f
+FindItemCommandParser --> AddressBookParser: f
 deactivate FindItemCommandParser
-FindItemCommandParser -[hidden]-> FoodNotesParser : result
+FindItemCommandParser -[hidden]-> AddressBookParser : result
 destroy FindItemCommandParser
 
-FoodNotesParser --> LogicManager : f
-deactivate FoodNotesParser
+AddressBookParser --> LogicManager : f
+deactivate AddressBookParser
 
 LogicManager -> FindItemCommand : execute()
 activate FindItemCommand
