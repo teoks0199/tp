@@ -16,8 +16,10 @@ title: User Guide
 3. [Quick Start](#3-quick-start)
 4. [Features](#4-features)
    - 4.1 [General](#41-general)
-   - 4.2 [Stalls](#42-stalls)
-   - 4.3 [Items](#43-items)
+   - 4.2 [Stall Management](#42-stalls)
+   - 4.3 [Stall Sorting](#43-sorting)
+   - 4.4 [Stall Finding](#44-finding)
+   - 4.5 [Item Management](#45-items)
 5. [Glossary](#5-glossary)
 6. [Command summary](#6-glossary)
    - 6.1 [Stall Commands](#61-stall-commands)
@@ -98,18 +100,20 @@ The table below explains some important technical terms. An example will be prov
 
 This section provides a summary of the parameters used when inputting commands into the application.
 
-| Prefix | Parameter          | Meaning                                    | Input                                                                        |
-|--------|--------------------|--------------------------------------------|------------------------------------------------------------------------------|
-| `n/`   | `STALL_NAME`       | Name of the stall                          | Alphanumeric value with 1 to 27 characters (inclusive)                       |
-| `s/`   | `STALL_INDEX`      | Index of the stall in the list             | Integer from 0 to 2147483647 (inclusive)                                     |
-| `l/`   | `STALL_LOCATION`   | Location of the stall                      | Alphanumeric value with 1 to 27 characters (inclusive)                       |
-| `i/`   | `ITEM_NAME`        | Name of the item                           | Alphanumeric value with 1 to 27 characters (inclusive)                       |
-| `r/`   | `STALL_RATING`     | Rating of the stall                        | Integer from 0 to 5 (inclusive)                                              |
-| `r/`   | `ITEM_RATING`      | Rating of the item                         | Integer from 0 to 5 (inclusive)                                              |
-| `d/`   | `DESCRIPTION`      | Descriptive review for the stalls or items | Alphanumeric value with 1 to 27 characters (inclusive)                       |
-| N/A    | `NAME_KEYWORD`     | Keyword of the stall name                  | Alphanumeric value with 1 to 27 characters (inclusive)                       |
-| N/A    | `LOCATION_KEYWORD` | Keyword of the stall location              | Alphanumeric value with 1 to 27 characters (inclusive)                       |
-| N/A    | `ITEM_KEYWORD`     | Keyword of the menu items in the stall     | Alphanumeric value with 1 to 27 characters (inclusive)                       |
+| Prefix | Parameter          | Meaning                                    | Input                                                  |
+|--------|--------------------|--------------------------------------------|--------------------------------------------------------|
+| `n/`   | `STALL_NAME`       | Name of the stall                          | Alphanumeric value with 1 to 27 characters (inclusive) |
+| `s/`   | `STALL_INDEX`      | Index of the stall in the list             | Integer from 0 to 2147483647 (inclusive)               |
+| `l/`   | `STALL_LOCATION`   | Location of the stall                      | Alphanumeric value with 1 to 27 characters (inclusive) |
+| `n/`   | `ITEM_NAME`        | Name of the item                           | Alphanumeric value with 1 to 27 characters (inclusive) |
+| `i/`   | `ITEM_INDEX`       | Index of the item in the menu              | Integer from 0 to 2147483647 (inclusive)               |
+| `p/`   | `ITEM_PRICE`       | Price of the item                          | Non-negative number with 2 decimal places              |
+| `r/`   | `STALL_RATING`     | Rating of the stall                        | Integer from 0 to 5 (inclusive)                        |
+| `r/`   | `ITEM_RATING`      | Rating of the item                         | Integer from 0 to 5 (inclusive)                        |
+| `d/`   | `DESCRIPTION`      | Descriptive review for the stalls or items | Alphanumeric value with 1 to 27 characters (inclusive) |
+| N/A    | `NAME_KEYWORD`     | Keyword of the stall name                  | Alphanumeric value with 1 to 27 characters (inclusive) |
+| N/A    | `LOCATION_KEYWORD` | Keyword of the stall location              | Alphanumeric value with 1 to 27 characters (inclusive) |
+| N/A    | `ITEM_KEYWORD`     | Keyword of the menu items in the stall     | Alphanumeric value with 1 to 27 characters (inclusive) |
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -144,11 +148,11 @@ This section provides a summary of the parameters used when inputting commands i
 
 :bulb: **Tip:**<br>
 
-* If double-clicking `foodNotes.jar` does not work,
+* If double-clicking `FoodNotes.jar` does not work,
 
     1. Search for "Command Prompt" or "Terminal" on your computer.
-    2. Navigate to the location where `foodNotes.jar` is saved via the terminal. (_Unsure how to navigate?_ You can try running this in your terminal: `cd Downloads`.)
-    3. Run the following in the terminal: `java -jar foodNotes.jar`.
+    2. Navigate to the location where `FoodNotes.jar` is saved via the terminal. (_Unsure how to navigate?_ You can try running this in your terminal: `cd Downloads`.)
+    3. Run the following in the terminal: `java -jar FoodNotes.jar`.
 
 
 </div>
@@ -157,7 +161,7 @@ This section provides a summary of the parameters used when inputting commands i
 
 :exclamation: **Warning:**<br>
 
-Upon launching the application, some files responsible for the storage of your data will be created in a folder called `data` located in the same folder as `foodNotes.jar`. If you are a new user, you are advised not to edit these files. If the changes you made to the data file invalidates its format, FoodNotes will discard all your data and start with an empty data file.
+Upon launching the application, some files responsible for the storage of your data will be created in a folder called `data` located in the same folder as `FoodNotes.jar`. If you are a new user, you are advised not to edit these files. If the changes you made to the data file invalidates its format, FoodNotes will discard all your data and start with an empty data file.
 
 </div>
 </div>
@@ -283,7 +287,7 @@ You can use this command to view details from a specific stall from the database
 
 **Format:**
 
-`view-stall s/STALL_NUMBER`
+`view-stall s/STALL_INDEX`
 
 **Example:**
 
@@ -354,11 +358,11 @@ Outcome:
 
 ### 4.2.5 Editing a stall : `edit-stall`
 
-You can use this command to edit existing stall, and change either the name, location, rating and description or change all.
+You can use this command to edit an existing stall, and update its name, location, rating and/or description.
 
 **Format:**
 
-`edit-stall s/STALL_INDEX [n/NAME] [l/LOCATION] [r/RATING] [d/DESCRIPTION] `
+`edit-stall s/STALL_INDEX [n/STALL_NAME] [l/LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION] `
 
 **Example:**
 
@@ -404,7 +408,7 @@ Outcome:
 
 ### 4.2.7 Deleting a stall review: `delete-stall-review`
 
-You can use this command to delete a review of an existing stall
+You can use this command to delete a review of an existing stall.
 
 **Format:**
 
@@ -477,116 +481,9 @@ You can use this command to sort the stalls by their price in ascending order.
 
 
 --------------------------------------------------------------------------------------------------------------------
-## 4.3 Item Features <a id="43-items"></a>
 
 ----
-### 4.3.1 Add item to a stall
-**Command function:** Adding an item to a stall
-
-**Command format:** `add-item s/<STALL_NUMBER> i/<ITEM>`
-
-**Ex.:** `add-item s/1 i/Chicken Rice`
-
-**Expected output (Success):**
-```
-Yay! Chicken Rice is successfully added as a menu item for Japanese Stall at Deck
-```
-**Expected output (Fail):**
-```
-re-enter in the format : add-item s/STALL_NUMBER i/ITEM
-```
-**Acceptable values:**
-
-- s/: Positive Integer less than or equal to the size of list,
-
-- i/: String
----
-### 4.3.2 View item
-**Command function:** Viewing an item from a stall
-
-**Command format:** `view-item s/<STALL_NUMBER> i/<ITEM_NUMBER>`
-
-**Ex.:** `view-item s/1 i/1`
-
-**Expected output (Success):**
-```
-Here are the details of this menu item
-```
-
-**Expected output (Fail):**
-
-```
-re-enter in the format : view-item s/STALL_NUMBER i/ITEM_NUMBER
-```
-**Acceptable values:**
-- s/: Positive Integer less than or equal to the size of list,
-- i/: Positive Integer less than or equal to the size of list
----
-### 4.3.3 Delete an item from a stall
-**Command function:** Deleting an item from a stall
-
-**Command format:** `delete-item s/<STALL_NUMBER> i/<ITEM_NUMBER>`
-
-**Ex.:** `delete-item s/1 i/1`
-
-**Expected output (Success):**
-```
-Chicken Karaage Rice ★★★★☆ has been deleted from Japanese Stall
-```
-**Expected output (Fail):**
-```
-re-enter in the format : delete-item s/STALL_NUMBER i/ITEM_NUMBER
-```
-**Acceptable values:**
-- s/: Positive Integer less than or equal to the size of list
-- i/: Positive Integer less than or equal to the size of list
-
----
-### 4.3.4 Reviewing an item from a stall
-**Command function:** Reviewing an item
-
-**Command format:** `review-item s/<STALL_NUMBER> i/<ITEM_NUMBER> r/<ITEM_RATING> d/<DESCRIPTION>`
-
-**Ex.:** `review-item s/1 i/1 r/5 d/Tasty chicken rice with a good amount of meat and rice. The chilli is also very good.`
-
-**Expected output (Success):**
-```
-Yay! You have added a review for the White Chicken Rice at the Chicken Rice Stall at Deck.
-Review:
-★★★★★
-Tasty chicken rice with a good amount of meat and rice. The chilli is also very good.
-```
-**Expected output (Fail):**
-```
-re-enter in the format: review-item s/STALL_NUMBER i/ITEM_NUMBER r/ITEM_RATING d/DESCRIPTION
-```
-**Acceptable values:**
-- s/: Positive Integer less than or equal to the size of stall list
-- i/: Positive Integer less than or equal to the size of menu
-- r/: Integer from 0 to 5
-- d/: String
----
-### 4.3.5 Delete an item review
-**Command function:** Deleting an item review
-
-**Command format:** `delete-item-review s/<STALL_NUMBER> i/<ITEM_NUMBER>`
-
-**Ex.:** `delete-item-review s/1 i/1`
-
-**Expected output (Success):**
-```You have deleted the review for the White Chicken Rice at the Chicken Rice Stall at Deck.```
-
-**Expected output (Fail):**
-```
-re-enter in the format: delete-item-review s/STALL_NUMBER i/ITEM_NUMBER
-```
-
-**Acceptable values:**
-- s/: Positive Integer less than or equal to the size of stall list
-- i/: Positive Integer less than or equal to the size of menu
-
-----
-## 4.4 Stall Finding <a id="41-general"></a>
+## 4.4 Stall Finding <a id="44-finding"></a>
 
 -----
 ### 4.4.1 Finding stalls by name
@@ -620,7 +517,7 @@ Example: find-stall japanese western noodle
 
 </div>
 ---
-### 4.1.2 Find stalls by location
+### 4.4.2 Find stalls by location
 The command is a powerful tool for quickly locating specific food stalls based on their locations. If you want to find the nearest food options, this command can help you narrow down your choices effectively.
 
 **Command function:** Finds all stalls whose location contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
@@ -651,7 +548,7 @@ Example: find-location deck techno terrace
 
 </div>
 ---
-### 4.1.3 Find stalls by menu items
+### 4.4.3 Find stalls by menu items
 The command is a powerful tool for quickly locating specific food stalls based on the items on their menu. If you are craving for a specific dish, this command can help you narrow down your choices effectively.
 
 **Command function:** Finds all stalls whose menu items contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
@@ -679,9 +576,9 @@ Example: find-item chicken apple beef
 :bulb: **Tip:**<br>
 
 * You can enter more than one keyword, separated by a space, and all the stalls containing any of the keywords will be listed!
-
+</div>
 -----
-## 4.5 Item Management <a id="43-general"></a>
+## 4.5 Item Management <a id="45-items"></a>
 
 -----
 ### 4.5.1 Viewing an item : `view-item`
@@ -761,7 +658,7 @@ Outcome:
 
 ### 4.5.4 Editing an item : `edit-item`
 
-You can use this command to edit an existing item, and change either the name, price, rating and description or change all.
+You can use this command to edit an existing item, and update its name, location, rating and/or description.
 
 **Format:**
 
@@ -833,7 +730,7 @@ Outcome:
 </div>
 
 ![ListOutcome](images/userGuide/deleteItemReviewOutcome.png)
-</div>
+
 ---
 --------------------------------------------------------------------------------------------------------------------
 
