@@ -3,8 +3,8 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_LOCATION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PRICE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
@@ -45,7 +45,7 @@ public class EditItemCommand extends Command {
             + PREFIX_STALL + "STALL_INDEX "
             + PREFIX_ITEM + "ITEM_INDEX "
             + "[" + PREFIX_NAME + "NAME] "
-            + "[" + PREFIX_LOCATION + "LOCATION] "
+            + "[" + PREFIX_PRICE + "PRICE] "
             + "[" + PREFIX_RATING + "RATING] "
             + "[" + PREFIX_DESCRIPTION + "DESCRIPTION] \n"
             + "Example: " + COMMAND_WORD + " "
