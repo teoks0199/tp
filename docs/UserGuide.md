@@ -6,25 +6,45 @@ title: User Guide
 
 ---
 1. [Introduction](#1-introduction)
-   - [1.1. Purpose](#11-purpose)
 2. [About the User Guide](#2-about-the-user-guide)
-    - [2.1. Navigating the User Guide](#21-navigating-the-user-guide)
-    - [2.2. Reading the User Guide](#22-reading-the-user-guide)
-        * [2.2.1. Icons](#icons)
-        * [2.2.2. Parameters](#parameters)
-        * [2.2.3. GUI](#GUI)
+    - [2.1 Navigating the User Guide](#2.1-navigating-the-user-guide)
+    - [2.2 Reading the User Guide](#2.2-reading-the-user-guide)
+      * [2.2.1 Icons](#icons)
+      * [2.2.2 Parameters](#parameters)
+      * [2.2.3 GUI](#GUI)
 3. [Quick Start](#3-quick-start)
 4. [Features](#4-features)
-   - 4.1 [General](#41-general)
-   - 4.2 [Stall Management](#42-stall-management)
-   - 4.3 [Stall Sorting](#43-stall-sorting)
+   - 4.1 [General](#4.1-general)
+      * 4.1.1 [Viewing help :`help`](#4.1.1-viewing-help)
+      * 4.1.2 [Exiting from the application :`exit`](#4.1.2-exiting-from-the-application)
+   - 4.2 [Stall Management](#4.2-stall-management) 
+      * 4.2.1 [Listing all stalls :`list`](#4.2.1-listing-all-stalls)
+      * 4.2.2 [Viewing a stall :`view-stall`](#4.2.2-viewing-a-stall)
+      * 4.2.3 [Adding a stall :`add-stall`](#4.2.3-adding-a-stall)
+      * 4.2.4 [Deleting a stall :`delete-stall`](#4.2.4-deleting-a-stall)
+      * 4.2.5 [Editing a stall :`edit-stall`](#4.2.5-editing-a-stall)
+      * 4.2.6 [Reviewing a stall :`review-stall`](#4.2.6-reviewing-a-stall)
+      * 4.2.7 [Deleting a stall review :`delete-stall-review`](#4.2.7-deleting-a-stall-review)
+   - 4.3 [Stall Sorting](#4.3-stall-sorting)
+     * 4.3.1 [Sort stalls by locations :`sort-stalls-locations`](#4.3.1-sort-stalls-by-location)
+     * 4.3.2 [Sort stalls by ratings :`sort-stalls-ratings`](#4.3.2-sort-stalls-by-rating)
+     * 4.3.3 [Sort stalls by price :`sort-stalls-price`](#4.3.3-sort-stalls-by-price)
    - 4.4 [Stall Finding](#44-stall-finding)
+     * 4.4.1 [Find stalls by name :`find-by-name`](#4.4.1-find-stalls-by-name)
+     * 4.4.2 [Find stalls by location :`find-by-location`](#4.4.2-find-stalls-by-location)
+     * 4.4.3 [Find stalls by menu items :`find-by-item`](#4.4.3-find-stalls-by-menu-items)
    - 4.5 [Item Management](#45-item-management)
+     * 4.5.1 [Viewing an item :`view-item`](#4.5.1-viewing-an-item)
+     * 4.5.2 [Adding an item :`add-item`](#4.5.2-adding-an-item)
+     * 4.5.3 [Deleting an item :`delete-item`](#4.5.3-deleting-an-item)
+     * 4.5.4 [Editing an item :`edit-item`](#4.5.4-editing-an-item)
+     * 4.5.5 [Reviewing an item :`review-item`](#4.5.5-reviewing-an-item)
+     * 4.5.6 [Deleting an item review :`delete-item-review`](#4.5.6-deleting-an-item-review)
 5. [Glossary](#5-glossary)
 6. [Command summary](#6-glossary)
-   - 6.1 [Stall Commands](#61-stall-commands)
-   - 6.2 [Item Commands](#62-item-commands)
-   - 6.3 [General Commands](#63-general-commands)
+   - 6.1 [Stall Related Commands](#6.1-stall-commands)
+   - 6.2 [Item Related Commands](#6.2-item-commands)
+   - 6.3 [General Commands](#6.3-general-commands)
 
 <div style="page-break-after: always;"></div>
 
@@ -43,7 +63,7 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 
 
 # 2. About the user guide <a id="2-about-the-user-guide"></a>
-## 2.1 Navigating the user guide <a id="21-navigating-the-user-guide"></a>
+## 2.1 Navigating the user guide <a id="2.1-navigating-the-user-guide"></a>
 
 **For first time users**: 
 
@@ -55,7 +75,7 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 
 If you have any queries about using FoodNotes, you can check out the [FAQ](#faq) section.
 
-## 2.2 Reading the User Guide <a id="22-reading-the-user-guide"></a>
+## 2.2 Reading the User Guide <a id="2.2-reading-the-user-guide"></a>
 Before you jump into the next section, take a moment to familiarise yourself with the technical terms, symbols, and syntax used throughout this document. This subsection contains all the essential information you need to understand the content better.
 
 ### 2.2.1 Terminology related to the Graphical User Interface (GUI)
@@ -172,13 +192,13 @@ Upon launching the application, some files responsible for the storage of your d
 
 ---- 
 
-## 4.1 General Features <a id="41-general"></a>
+## 4.1 General Features <a id="4.1-general"></a>
 
 Essential functionalities of the application.
 
 ------------------------
 
-### 4.1.1 Viewing help : `help`
+### 4.1.1 Viewing help : `help` <a id="4.1.1-viewing-help"></a>
 
 You can use this command to view the online user guide, which contains information about all the instructions in **FoodNotes**.
 
@@ -214,7 +234,7 @@ Outcome:
 
 </div>
 
- ### 4.1.2 Exiting from the application: `exit`
+ ### 4.1.2 Exiting from the application: `exit` <a id="4.1.2-exiting-from-the-application"></a>
 
 You can use this command to exit **FoodNotes**.
 
@@ -244,7 +264,7 @@ Outcome:
 1. The **FoodNotes** application window is now closed.
 
 ----
-## 4.2 Stall Management <a id="42-stall-management"></a>
+## 4.2 Stall Management <a id="4.2-stall-management"></a>
 
 This feature allows you to manage information about the stalls in the database. You can record and perform the following actions:
 - list
@@ -256,7 +276,7 @@ This feature allows you to manage information about the stalls in the database. 
 - delete stall review
 
 -----
-### 4.2.1 Listing all stalls : `list`
+### 4.2.1 Listing all stalls : `list` <a id="4.2.1-listing-all-stalls"></a>
 
 You can use this command to show a list of all stalls in the database.
 
@@ -281,7 +301,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/listOutcome.png)
 
-### 4.2.2 Viewing a stall : `view-stall`
+### 4.2.2 Viewing a stall : `view-stall` <a id="4.2.2-viewing-a-stall"></a>
 
 You can use this command to view details from a specific stall from the database.
 
@@ -306,7 +326,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/viewStallOutcome.png)
 
-### 4.2.3 Adding a stall : `add-stall`
+### 4.2.3 Adding a stall : `add-stall` <a id="4.2.3-adding-a-stall"></a>
 
 You can use this command to add a new stall to the database.
 
@@ -331,7 +351,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/addStallOutcome.png)
 
-### 4.2.4 Deleting a stall : `delete-stall`
+### 4.2.4 Deleting a stall : `delete-stall` <a id="4.2.4-deleting-a-stall"></a>
 
 You can use this command to delete a stall from the database.
 
@@ -356,7 +376,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/deleteStallOutcome.png)
 
-### 4.2.5 Editing a stall : `edit-stall`
+### 4.2.5 Editing a stall : `edit-stall` <a id="4.2.5-editing-a-stall"></a>
 
 You can use this command to edit an existing stall, and update its name, location, rating and/or description.
 
@@ -381,7 +401,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/editStallOutcome.png)
 
-### 4.2.6 Reviewing a stall : `review-stall`
+### 4.2.6 Reviewing a stall : `review-stall` <a id="4.2.6-reviewing-a-stall"></a>
 
 You can use this command to review an existing stall, and add your own rating and description for it.
 
@@ -406,7 +426,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/stallReviewOutcome.png)
 
-### 4.2.7 Deleting a stall review: `delete-stall-review`
+### 4.2.7 Deleting a stall review: `delete-stall-review` <a id="4.2.7-deleting-a-stall-review"></a>
 
 You can use this command to delete a review of an existing stall.
 
@@ -432,12 +452,12 @@ Outcome:
 ![ListOutcome](images/userGuide/deleteStallReviewOutcome.png)
 =======
 ---------------------------------------------------------------------------------------------------------------------
-## 4.3 Stall Sorting <a id="43-stall-sorting"></a>
+## 4.3 Stall Sorting <a id="4.3-stall-sorting"></a>
 This feature allows you to sort the stalls by their location, rating and price.
 
 --------------------------------------------------------------------------------------------------------------------
 
-### 4.3.1 Sort stalls by location: `sort-stalls-locations`
+### 4.3.1 Sort stalls by location: `sort-stalls-locations` <a id="4.3.1-sort-stalls-by-location"></a>
 
 You can use this command to sort the stalls by their location in alphabetical order.
 
@@ -451,7 +471,7 @@ You can use this command to sort the stalls by their location in alphabetical or
    in the screenshot below.
 <img src="images/userGuide/sort-stalls-location.png" alt="sort-stalls-location" width="600"/>
 
-### 4.3.2 Sort stalls by rating: `sort-stalls-ratings`
+### 4.3.2 Sort stalls by rating: `sort-stalls-ratings` <a id="4.3.2-sort-stalls-by-rating"></a>
 
 You can use this command to sort the stalls by their rating in descending order.
 
@@ -465,7 +485,7 @@ You can use this command to sort the stalls by their rating in descending order.
    in the screenshot below.
 <img src="images/userGuide/sort-stalls-rating.png" alt="sort-stalls-rating" width="600"/>
 
-### 4.3.3 Sort stalls by price: `sort-stalls-price`
+### 4.3.3 Sort stalls by price: `sort-stalls-price` <a id="4.3.3-sort-stalls-by-price"></a>
 
 You can use this command to sort the stalls by their price in ascending order.
 
@@ -485,10 +505,10 @@ You can use this command to sort the stalls by their price in ascending order.
 --------------------------------------------------------------------------------------------------------------------
 
 ----
-## 4.4 Stall Finding <a id="44-stall-finding"></a>
+## 4.4 Stall Finding <a id="4.4-stall-finding"></a>
 
 -----
-### 4.4.1 Finding stalls by name
+### 4.4.1 Finding stalls by name <a id="4.4.1-find-stalls-by-name"></a>
 The command is a powerful tool for quickly locating specific food stalls based on their names. Even if you can only remember part of the stall name, this command can help you narrow down your choices effectively.
 
 **Command function:** Finds all stalls whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
@@ -519,7 +539,7 @@ Example: find-stall japanese western noodle
 
 </div>
 ---
-### 4.4.2 Find stalls by location
+### 4.4.2 Find stalls by location <a id="4.4.2-find-stalls-by-location"></a>
 The command is a powerful tool for quickly locating specific food stalls based on their locations. If you want to find the nearest food options, this command can help you narrow down your choices effectively.
 
 **Command function:** Finds all stalls whose location contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
@@ -550,7 +570,7 @@ Example: find-location deck techno terrace
 
 </div>
 ---
-### 4.4.3 Find stalls by menu items
+### 4.4.3 Find stalls by menu items <a id="4.4.3-find-stalls-by-menu-items"></a>
 The command is a powerful tool for quickly locating specific food stalls based on the items on their menu. If you are craving for a specific dish, this command can help you narrow down your choices effectively.
 
 **Command function:** Finds all stalls whose menu items contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
@@ -580,10 +600,10 @@ Example: find-item chicken apple beef
 * You can enter more than one keyword, separated by a space, and all the stalls containing any of the keywords will be listed!
 </div>
 -----
-## 4.5 Item Management <a id="45-item-management"></a>
+## 4.5 Item Management <a id="4.5-item-management"></a>
 
 -----
-### 4.5.1 Viewing an item : `view-item`
+### 4.5.1 Viewing an item : `view-item` <a id="4.5.1-viewing-an-item"></a>
 
 You can use this command to view details of a specific item from the database.
 
@@ -608,7 +628,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/viewItemOutcome.png)
 
-### 4.5.2 Adding an item : `add-item`
+### 4.5.2 Adding an item : `add-item` <a id="4.5.2-adding-an-item"></a>
 
 You can use this command to add a new item to the database.
 
@@ -633,7 +653,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/addItemOutcome.png)
 
-### 4.5.3 Deleting an item : `delete-item`
+### 4.5.3 Deleting an item : `delete-item` <a id="4.5.3-deleting-an-item"></a>
 
 You can use this command to delete an item from the database.
 
@@ -658,7 +678,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/deleteItemOutcome.png)
 
-### 4.5.4 Editing an item : `edit-item`
+### 4.5.4 Editing an item : `edit-item` <a id="4.5.4-editing-an-item"></a>
 
 You can use this command to edit an existing item, and update its name, location, rating and/or description.
 
@@ -683,7 +703,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/editItemOutcome.png)
 
-### 4.5.5 Reviewing an item : `review-item`
+### 4.5.5 Reviewing an item : `review-item` <a id="4.5.5-reviewing-an-item"></a>
 
 You can use this command to review an existing item, and add your own rating and description for it.
 
@@ -708,7 +728,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/reviewItemOutcome.png)
 
-### 4.5.6 Deleting an item review: `delete-item-review`
+### 4.5.6 Deleting an item review: `delete-item-review` <a id="4.5.6-deleting-an-item-review"></a>
 
 You can use this command to delete a review of an existing item.
 
@@ -733,7 +753,6 @@ Outcome:
 
 ![ListOutcome](images/userGuide/deleteItemReviewOutcome.png)
 
----
 --------------------------------------------------------------------------------------------------------------------
 
   
@@ -751,7 +770,7 @@ Outcome:
 --------------------------
 # 6. Command summary <a id="6-command-summary"></a>
 
-## 6.1 Stall-Related Commands <a id="61-stall-commands"></a>
+## 6.1 Stall-Related Commands <a id="6.1-stall-commands"></a>
 
 | Features                 | Format, Examples                                                                                                                                                     |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -760,7 +779,7 @@ Outcome:
 | **Delete stall**         | `delete-stall s/<STALL_NUMBER>` <br> e.g. `delete-stall` s/1                                                                                                         |
 | **Review stall**         | `review-stall s/<STALL_NUMBER> r/<STALL_RATING> d/<DESCRIPTION>` <br> e.g. review-stall s/1 r/5 d/the auntie very chio                                               |                                                                                                                                                             |
 
-## 6.2 Item-Related Commands <a id="62-item-commands"></a>
+## 6.2 Item-Related Commands <a id="6.2-item-commands"></a>
 
 | Features                                  | Format, Examples                                                                                                         |
 |-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -773,7 +792,7 @@ Outcome:
 | **Rate item**                             | `rate-item s/STALL_NUMBER i/ITEM_NUMBER r/ITEM_RATING d/DESCRIPTION` <br> e.g. `rate-item` s/1 i/1 r/5 d/th chicken good |
 |
 
-## 6.3 General Commands <a id="63-general-commands"></a>
+## 6.3 General Commands <a id="6.3-general-commands"></a>
 
 | Features | Format, Examples |
 |----------|------------------|
