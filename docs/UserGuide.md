@@ -21,7 +21,7 @@ title: User Guide
    - 4.4 [Stall Finding](#44-stall-finding)
    - 4.5 [Item Management](#45-item-management)
 5. [Glossary](#5-glossary)
-6. [Command summary](#6-glossary)
+6. [Command summary](#6-command-summary)
    - 6.1 [Stall Commands](#61-stall-commands)
    - 6.2 [Item Commands](#62-item-commands)
    - 6.3 [General Commands](#63-general-commands)
@@ -76,12 +76,11 @@ What the main components of the GUI do:
 
 This section will run you through the icons used in this guide.
 
-| Icon                 | Meaning                                                          |
-|----------------------|------------------------------------------------------------------|
-| `command`            |  A light blue highlight (called a code-block markup) indicates that this is a command that can be typed into the command box and executed by the application.        |              
+| Icon                | Meaning                                                          |
+|---------------------|------------------------------------------------------------------|
 | :information_source: | An information icon indicates that the enclosed text are notes regarding this section. |
-| :warning:            | A warning sign indicates that the enclosed text is important, and usually entails details about potential errors. |
-|  :bulb:              | A light bulb indicates that the enclosed text is a tip.|
+| :warning:           | A warning sign indicates that the enclosed text is important, and usually entails details about potential errors. |
+|  :bulb:             | A light bulb indicates that the enclosed text is a tip.|
 
 <div style="page-break-after: always;"></div>
 
@@ -174,9 +173,10 @@ Upon launching the application, some files responsible for the storage of your d
 
 ## 4.1 General Features <a id="41-general"></a>
 
-Essential functionalities of the application.
+The commands in this section allow you to perform operations on the entire system. They include:
+- Viewing help
+- Exiting from the application
 
-------------------------
 
 ### 4.1.1 Viewing help : `help`
 
@@ -200,12 +200,11 @@ In this example, you want to view the user guide to get information about the va
 
 Requesting for help:
 
-1. Type `help` into the *Command Box*.
-1. Press `Enter` to execute.
-1. A new window will appear as shown below. Click on the `Copy URL` button to copy the URL containing the **FoodNotes** user guide.
-   ![HelpOutcome](images/userGUide/helpOutcome.png)
-1. Open your preferred web browser on your computer and paste the link into the address bar.
-1. Press `Enter` to load the website.
+1. Type `help` into the *Command Box* and press `Enter` to execute.
+2. A new window will appear as shown below. Click on the `Copy URL` button to copy the URL containing the **FoodNotes** user guide.
+   ![HelpOutcome](images/userGuide/helpOutcome.png)
+3. Open your preferred web browser on your computer and paste the link into the address bar.
+4. Press `Enter` to load the website.
 
 Outcome:
 
@@ -236,29 +235,28 @@ In this example, you want to exit **FoodNotes**.
 
 Exiting the application:
 
-1. Type `exit` into the *Command Box*.
-1. Press `Enter` to execute.
+Type `exit` into the *Command Box* and press `Enter` to execute.
 
 Outcome:
 
-1. The **FoodNotes** application window is now closed.
+The **FoodNotes** application window is now closed.
 
 ----
 ## 4.2 Stall Management <a id="42-stall-management"></a>
 
-This feature allows you to manage information about the stalls in the database. You can record and perform the following actions:
-- list
-- view stalls
-- add
-- delete
-- edit
-- review
-- delete stall review
+This feature allows you to manage information about the stalls in **FoodNotes**. You can record and perform the following actions:
+- Listing all stalls
+- Viewing a stall
+- Adding a stall
+- Deleting a stall
+- Editing a stall
+- Reviewing a stall
+- Deleting a stall review
 
------
+
 ### 4.2.1 Listing all stalls : `list`
 
-You can use this command to show a list of all stalls in the database.
+You can use this command to show a list of all stalls in **FoodNotes**.
 
 **Format:**
 
@@ -269,21 +267,19 @@ You can use this command to show a list of all stalls in the database.
 <div markdown="block" class="alert alert-white">
 
 Listing all your stalls:
-
-1. Type `list` into the *Command Box*.
-1. Press `Enter` to execute.
+Type `list` into the *Command Box* and press `Enter` to execute.
 
 Outcome:
 
 1. The Result Display will show a success message.
-1. You can now see all your stalls in the *lsit Panel*.
+1. You can now see all your stalls in the *List Panel*.
 </div>
 
 ![ListOutcome](images/userGuide/listOutcome.png)
 
 ### 4.2.2 Viewing a stall : `view-stall`
 
-You can use this command to view details from a specific stall from the database.
+You can use this command to view details from a specific stall from **FoodNotes**.
 
 **Format:**
 
@@ -300,7 +296,7 @@ Viewing a specific stall:
 
 Outcome:
 
-1. The Result Display will show a success message.
+1. The *Result Display* will show a success message.
 1. You can now see the details of the specific stall you entered.
 </div>
 
@@ -308,7 +304,7 @@ Outcome:
 
 ### 4.2.3 Adding a stall : `add-stall`
 
-You can use this command to add a new stall to the database.
+You can use this command to add a new stall to **FoodNotes**.
 
 **Format:**
 
@@ -325,7 +321,7 @@ Adding a new stall:
 
 Outcome:
 
-1. The Result Display will show a success message.
+1. The *Result Display* will show a success message.
 1. You have now added a new stall with the specified name and location.
 </div>
 
@@ -333,7 +329,7 @@ Outcome:
 
 ### 4.2.4 Deleting a stall : `delete-stall`
 
-You can use this command to delete a stall from the database.
+You can use this command to delete a stall from **FoodNotes**.
 
 **Format:**
 
@@ -350,7 +346,7 @@ Deleting the third stall from the list:
 
 Outcome:
 
-1. The Result Display will show a success message.
+1. The *Result Display* will show a success message.
 1. You have now deleted the third stall from the list, and the list of stalls will be updated.
 </div>
 
@@ -358,7 +354,8 @@ Outcome:
 
 ### 4.2.5 Editing a stall : `edit-stall`
 
-You can use this command to edit an existing stall, and update its name, location, rating and/or description.
+You can use this command to edit an existing stall, and update its name, location. If the stall has a review, 
+you may edit its rating and/or description.
 
 **Format:**
 
@@ -375,7 +372,7 @@ Editing the name and location of the first stall from the list:
 
 Outcome:
 
-1. The Result Display will show a success message.
+1. The *Result Display* will show a success message.
 1. You have now edited the first stall from the list, and the list of stalls will be updated.
 </div>
 
@@ -400,7 +397,7 @@ Reviewing the stall:
 
 Outcome:
 
-1. The Result Display will show a success message.
+1. The *Result Display* will show a success message.
 1. You have now reviewed the specific stall from the list, and the star ratings will be reflected.
 </div>
 
@@ -425,7 +422,7 @@ Reviewing the stall:
 
 Outcome:
 
-1. The Result Display will show a success message.
+1. The *Result Display* will show a success message.
 1. You have now deleted the review of the specified stall from the list, and the list will be updated.
 </div>
 
@@ -434,8 +431,6 @@ Outcome:
 ---------------------------------------------------------------------------------------------------------------------
 ## 4.3 Stall Sorting <a id="43-stall-sorting"></a>
 This feature allows you to sort the stalls by their location, rating and price.
-
---------------------------------------------------------------------------------------------------------------------
 
 ### 4.3.1 Sort stalls by location: `sort-stalls-locations`
 
@@ -484,32 +479,25 @@ You can use this command to sort the stalls by their price in ascending order.
 
 --------------------------------------------------------------------------------------------------------------------
 
-----
 ## 4.4 Stall Finding <a id="44-stall-finding"></a>
+This feature allows you to find stalls by their name, location and menu items.
 
------
-### 4.4.1 Finding stalls by name
+### 4.4.1 Finding stalls by name: `find-by-stall`
 The command is a powerful tool for quickly locating specific food stalls based on their names. Even if you can only remember part of the stall name, this command can help you narrow down your choices effectively.
+You need to type in the entire word instead of part of the word for it to find the stall.
 
 **Command function:** Finds all stalls whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
 
-**Command format:** `find-by-name NAME_KEYWORD`
+**Command format:** `find-by-stall NAME_KEYWORD`
 
 Suppose you want to find stalls that serve Japanese and Western noodles. You can use the command as follows:
 
-**Example:** `find-by-name Japanese Western noodles`
+**Example:** `find-by-stall Japanese Western noodles`
 
-**Expected output (Success):**
-```
-2 stalls listed!
-```
-**Expected output (Fail):**
-```
-Invalid command format!
-find-by-name: Finds all stalls whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
-Parameters: KEYWORD [MORE_KEYWORDS]...
-Example: find-stall japanese western noodle
-```
+Outcome:
+1. The `Result Display` will display a success message.
+2. You will now see the matching stalls in the `Data Display`, as illustrated in the screenshot below.
+<img src="images/userGuide/find-by-stall.png" alt="find-by-name" width="600"/>
 
 <div markdown="block" class="alert alert-info">
 
@@ -519,7 +507,7 @@ Example: find-stall japanese western noodle
 
 </div>
 ---
-### 4.4.2 Find stalls by location
+### 4.4.2 Find stalls by location: `find-by-location`
 The command is a powerful tool for quickly locating specific food stalls based on their locations. If you want to find the nearest food options, this command can help you narrow down your choices effectively.
 
 **Command function:** Finds all stalls whose location contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
@@ -530,17 +518,10 @@ Suppose you want to find stalls that are located at the Deck. You can use the co
 
 **Example:** `find-by-location deck`
 
-**Expected output (Success):**
-```
-2 stalls listed!
-```
-**Expected output (Fail):**
-```
-Invalid command format!
-find-by-location: Finds all stalls whose location contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
-Parameters: KEYWORD [MORE_KEYWORDS]...
-Example: find-location deck techno terrace
-```
+Outcome:
+1. The `Result Display` will display a success message.
+2. You will now see the matching stalls in the `Data Display`, as illustrated in the screenshot below.
+<img src="images/userGuide/find-by-location.png" alt="find-by-location" width="600"/>
 
 <div markdown="block" class="alert alert-info">
 
@@ -550,7 +531,7 @@ Example: find-location deck techno terrace
 
 </div>
 ---
-### 4.4.3 Find stalls by menu items
+### 4.4.3 Find stalls by menu items: `find-by-item`
 The command is a powerful tool for quickly locating specific food stalls based on the items on their menu. If you are craving for a specific dish, this command can help you narrow down your choices effectively.
 
 **Command function:** Finds all stalls whose menu items contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
@@ -561,17 +542,10 @@ Suppose you want to find stalls that sells chicken rice. You can use the command
 
 **Example:** `find-by-item chicken rice`
 
-**Expected output (Success):**
-```
-2 stalls listed!
-```
-**Expected output (Fail):**
-```
-Invalid command format!
-find-item: Finds all stalls whose menu items contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
-Parameters: KEYWORD [MORE_KEYWORDS]...
-Example: find-item chicken apple beef
-```
+Outcome:
+1. The `Result Display` will display a success message.
+2. You will now see the matching stalls in the `Data Display`, as illustrated in the screenshot below.
+<img src="images/userGuide/find-by-item.png" alt="find-by-item" width="600"/>
 
 <div markdown="block" class="alert alert-info">
 
@@ -581,8 +555,14 @@ Example: find-item chicken apple beef
 </div>
 -----
 ## 4.5 Item Management <a id="45-item-management"></a>
+This feature allows you to manage information about the items in **FoodNotes**. You can record and perform the following actions:
+- Viewing an item: `view-item`
+- Adding an item: `add-item`
+- Deleting an item: `delete-item`
+- Editing an item: `edit-item`
+- Reviewing an item: `review-item`
+- Deleting an item review: `delete-item-review`
 
------
 ### 4.5.1 Viewing an item : `view-item`
 
 You can use this command to view details of a specific item from the database.
