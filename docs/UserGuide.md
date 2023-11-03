@@ -16,10 +16,10 @@ title: User Guide
 3. [Quick Start](#3-quick-start)
 4. [Features](#4-features)
    - 4.1 [General](#41-general)
-   - 4.2 [Stall Management](#42-stalls)
-   - 4.3 [Stall Sorting](#43-sorting)
-   - 4.4 [Stall Finding](#44-finding)
-   - 4.5 [Item Management](#45-items)
+   - 4.2 [Stall Management](#42-stall-management)
+   - 4.3 [Stall Sorting](#43-stall-sorting)
+   - 4.4 [Stall Finding](#44-stall-finding)
+   - 4.5 [Item Management](#45-item-management)
 5. [Glossary](#5-glossary)
 6. [Command summary](#6-glossary)
    - 6.1 [Stall Commands](#61-stall-commands)
@@ -244,7 +244,7 @@ Outcome:
 1. The **FoodNotes** application window is now closed.
 
 ----
-## 4.2 Stall Management <a id="41-general"></a>
+## 4.2 Stall Management <a id="42-stall-management"></a>
 
 This feature allows you to manage information about the stalls in the database. You can record and perform the following actions:
 - list
@@ -432,16 +432,18 @@ Outcome:
 ![ListOutcome](images/userGuide/deleteStallReviewOutcome.png)
 =======
 ---------------------------------------------------------------------------------------------------------------------
-## 4.3 Stall Sorting 
+## 4.3 Stall Sorting <a id="43-stall-sorting"></a>
 This feature allows you to sort the stalls by their location, rating and price.
 
-### 4.3.1 Sort stalls by location: `sort-stalls-location`
+--------------------------------------------------------------------------------------------------------------------
+
+### 4.3.1 Sort stalls by location: `sort-stalls-locations`
 
 You can use this command to sort the stalls by their location in alphabetical order.
 
-**Command format:** `sort-stalls-location`
+**Command format:** `sort-stalls-locations`
 
-**Example:** Type `sort-stalls-location` in the command box and press Enter.
+**Example:** Type `sort-stalls-locations` in the command box and press Enter.
 
 **Outcome:**
 1. The `Result Display` will display a success message.
@@ -449,13 +451,13 @@ You can use this command to sort the stalls by their location in alphabetical or
    in the screenshot below.
 <img src="images/userGuide/sort-stalls-location.png" alt="sort-stalls-location" width="600"/>
 
-### 4.3.2 Sort stalls by rating: `sort-stalls-rating`
+### 4.3.2 Sort stalls by rating: `sort-stalls-ratings`
 
 You can use this command to sort the stalls by their rating in descending order.
 
-**Command format:** sort-stalls-rating
+**Command format:** `sort-stalls-ratings`
 
-**Example:** Type `sort-stalls-rating` in the command box and press Enter.
+**Example:** Type `sort-stalls-ratings` in the command box and press Enter.
 
 **Outcome:**
 1. The `Result Display` will display a success message.
@@ -483,7 +485,7 @@ You can use this command to sort the stalls by their price in ascending order.
 --------------------------------------------------------------------------------------------------------------------
 
 ----
-## 4.4 Stall Finding <a id="44-finding"></a>
+## 4.4 Stall Finding <a id="44-stall-finding"></a>
 
 -----
 ### 4.4.1 Finding stalls by name
@@ -578,7 +580,7 @@ Example: find-item chicken apple beef
 * You can enter more than one keyword, separated by a space, and all the stalls containing any of the keywords will be listed!
 </div>
 -----
-## 4.5 Item Management <a id="45-items"></a>
+## 4.5 Item Management <a id="45-item-management"></a>
 
 -----
 ### 4.5.1 Viewing an item : `view-item`
