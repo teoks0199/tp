@@ -42,9 +42,11 @@ title: User Guide
      * 4.5.6 [Deleting an item review :`delete-item-review`](#4.5.6-deleting-an-item-review)
 5. [Glossary](#5-glossary)
 6. [Command summary](#6-glossary)
-   - 6.1 [Stall Related Commands](#6.1-stall-commands)
-   - 6.2 [Item Related Commands](#6.2-item-commands)
-   - 6.3 [General Commands](#6.3-general-commands)
+   - 6.1 [General Commands](#61-general-commands-summary)
+   - 6.2 [Stall Management Commands](#62-stall-management-summary)
+   - 6.3 [Stall Sorting Commands](#63-stall-sorting-summary)
+   - 6.4 [Stall Finding Commands](#64-stall-finding-summary)
+   - 6.5 [Item Management Commands](#65-item-management-summary)
 
 <div style="page-break-after: always;"></div>
 
@@ -380,6 +382,8 @@ Outcome:
 
 You can use this command to edit an existing stall, and update its name, location, rating and/or description.
 
+:information_source: You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the stall already has an existing review.
+
 **Format:**
 
 `edit-stall s/STALL_INDEX [n/STALL_NAME] [l/LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION] `
@@ -682,6 +686,8 @@ Outcome:
 
 You can use this command to edit an existing item, and update its name, location, rating and/or description.
 
+:information_source: You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the item already has an existing review.
+
 **Format:**
 
 `edit-item s/STALL_INDEX i/ITEM_INDEX [n/ITEM_NAME] [p/ITEM_PRICE] [r/ITEM_RATING] [d/ITEM_DESCRIPTION] `
@@ -770,33 +776,50 @@ Outcome:
 --------------------------
 # 6. Command summary <a id="6-command-summary"></a>
 
-## 6.1 Stall-Related Commands <a id="6.1-stall-commands"></a>
+## 6.1 General Commands <a id="61-general-commands-summary"></a>
 
-| Features                 | Format, Examples                                                                                                                                                     |
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add stall**            | `add-stall n/<STALL_NAME> l/<LOCATION>` <br> e.g.`add-stall` n/Japanese Stall l/Deck                                                                                 |
-| **View stall**           | `view-stall s/<STALL_NUMBER>` <br> e.g. `view-stall` s/1                                                                                                             |
-| **Delete stall**         | `delete-stall s/<STALL_NUMBER>` <br> e.g. `delete-stall` s/1                                                                                                         |
-| **Review stall**         | `review-stall s/<STALL_NUMBER> r/<STALL_RATING> d/<DESCRIPTION>` <br> e.g. review-stall s/1 r/5 d/the auntie very chio                                               |                                                                                                                                                             |
+| Features  | Format, Examples |
+|-----------|------------------|
+| **Help**  | `help`           |
+| **Exit**  | `exit`           |
 
-## 6.2 Item-Related Commands <a id="6.2-item-commands"></a>
+## 6.2 Stall Management Commands <a id="62-stall-management-summary"></a>
 
-| Features                                  | Format, Examples                                                                                                         |
-|-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| **Add item**                              | `add-item s/<STALL_NUMBER> i/<ITEM>`<br> e.g. `add-item` add-item s/1 i/ChickenRice                                      |
-|
-| **View item**                             | `view-item s/<STALL_NUMBER> i/<ITEM_NUMBER>`<br> e.g. `view-item` s/1 i/1                                                |
-|
-|
-| **Delete item**                           | `delete-item s/<STALL_NUMBER> i/<ITEM_NUMBER>`<br> e.g. `delete-item` s/1 i/1                                            |
-| **Rate item**                             | `rate-item s/STALL_NUMBER i/ITEM_NUMBER r/ITEM_RATING d/DESCRIPTION` <br> e.g. `rate-item` s/1 i/1 r/5 d/th chicken good |
-|
+| Features                | Format, Examples                                                                                                                   |
+|-------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| **List**                | `list` <br> e.g. `list`                                                                                                            |
+| **View stall**          | `view-stall s/STALL_INDEX` <br> e.g. `view-stall` s/1                                                                              |
+| **Add stall**           | `add-stall n/STALL_NAME l/LOCATION` <br> e.g.`add-stall` n/Japanese Stall l/Deck                                                   |
+| **Delete stall**        | `delete-stall s/STALL_INDEX` <br> e.g. `delete-stall` s/1                                                                          |
+| **Edit stall**          | `edit-stall s/STALL_INDEX [n/STALL_NAME] [l/LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION]` <br> e.g. `edit-stall` s/1 l/Terrace |
+| **Review stall**        | `review-stall s/STALL_INDEX r/STALL_RATING d/DESCRIPTION` <br> e.g. `review-stall` s/1 r/5 d/Good food and service                 |                                                                                                                                                             |
+| **Delete stall review** | `delete-stall-review s/STALL_INDEX` <br> e.g. `delete-stall-review` s/1                                                            |
 
-## 6.3 General Commands <a id="6.3-general-commands"></a>
+## 6.3 Stall Sorting Commands <a id="63-stall-sorting-summary"></a>
 
-| Features | Format, Examples |
-|----------|------------------|
-| **Help** | `help`           |
-| **Exit** | `exit`           |
-| **list** | `list`           |
+| Features                    | Format, Examples                                          |
+|-----------------------------|-----------------------------------------------------------|
+| **Sort stalls by location** | `sort-stalls-locations` <br> e.g. `sort-stalls-locations` |
+| **Sort stalls by rating**   | `sort-stalls-ratings` <br> e.g. `sort-stalls-ratings`     |
+| **Sort stalls by price**    | `sort-stalls-price` <br> e.g. `sort-stalls-price`         |
 
+## 6.4 Stall Finding Commands <a id="64-stall-finding-summary"></a>
+
+| Features                    | Format, Examples                                             |
+|-----------------------------|--------------------------------------------------------------|
+| **Find stalls by name**     | `find-by-stall` <br> e.g. `find-by-stall` western japanese   |
+| **Find stalls by location** | `find-by-location` <br> e.g. `find-by-location` deck terrace |
+| **Find stalls by item**     | `find-by-item` <br> e.g. `find-by-item` chicken              |
+
+## 6.5 Item-Related Commands <a id="65-item-management-summary"></a>
+
+| Features               | Format, Examples                                                                                                                              |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| **View item**          | `view-item s/STALL_INDEX i/ITEM_INDEX` <br> e.g. `view-item` s/1 i/1                                                                          |
+| **Add item**           | `add-item s/STALL_INDEX n/ITEM_NAME p/ITEM_PRICE` <br> e.g.`add-item` s/1 n/Chicken Rice l/4.50                                               |
+| **Delete item**        | `delete-item s/STALL_INDEX i/ITEM_INDEX` <br> e.g. `delete-item` s/1 i/1                                                                      |
+| **Edit item**          | `edit-item s/STALL_INDEX i/ITEM_INDEX [n/ITEM_NAME] [p/ITEM_PRICE] [r/ITEM_RATING] [d/ITEM_DESCRIPTION]` <br> e.g. `edit-item` s/1 i/1 p/5.00 |
+| **Review item**        | `review-item s/STALL_INDEX i/ITEM_INDEX r/ITEM_RATING d/ITEM_DESCRIPTION` <br> e.g. `review-item` s/1 i/1 r/5 d/Flavorful                     |                                                                                                                                                             |
+| **Delete item review** | `delete-item-review s/STALL_INDEX i/ITEM_INDEX` <br> e.g. `delete-item-review` s/1 i/1                                                        |
+
+--------------------------------------------------------------------------------------------------------------------
