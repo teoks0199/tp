@@ -91,7 +91,6 @@ public class EditStallCommand extends Command {
         }
 
         model.setStall(stallToEdit, editedStall);
-        model.updateFilteredStallList(PREDICATE_SHOW_ALL_STALLS);
 
         model.showStall(stallToEdit);
         model.setFilteredStall(index);
