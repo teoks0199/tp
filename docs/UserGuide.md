@@ -490,7 +490,7 @@ The command is a powerful tool for quickly locating specific food stalls based o
 
 **Command function:** Finds all stalls whose menu items contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
 
-**Command format:** `find-by-item ITEM_KEYWORD`
+**Command format:** `find-by-item ITEM_ainKEYWORD`
 
 Suppose you want to find stalls that sells chicken rice. You can use the command as follows:
 
