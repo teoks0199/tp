@@ -9,8 +9,10 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
+import java.util.logging.Logger;
 import java.util.stream.Stream;
 
+import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.EditStallCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -20,6 +22,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
  * Parses input arguments and creates a new EditStallCommand object
  */
 public class EditStallCommandParser implements Parser<EditStallCommand> {
+    private final Logger logger = LogsCenter.getLogger(getClass());
 
     /**
      * Parses the given {@code String} of arguments in the context of the EditStallCommand
@@ -68,6 +71,7 @@ public class EditStallCommandParser implements Parser<EditStallCommand> {
         }
 
         if (!editStallDescriptor.isAnyFieldEdited()) {
+            logger.warning("Attempted to edit a stall without any fields edited.");
             throw new ParseException(EditStallCommand.MESSAGE_NOT_EDITED);
         }
 
