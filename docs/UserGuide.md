@@ -263,6 +263,16 @@ Outcome:
 
 The **FoodNotes** application window is now closed.
 
+<div markdown="block" class="alert alert-info">
+
+:warning: **Warning:**<br>
+
+* Please do not edit the json file directly, as unexpected behaviour will occur in the application.
+* Any edits to the database should be made via the commands.
+
+
+</div>
+
 ----
 ## 4.2 Stall Management <a id="4.2-stall-management"></a>
 
@@ -349,6 +359,16 @@ Outcome:
 </div>
 
 ![ListOutcome](images/userGuide/addStallOutcome.png)
+
+<div markdown="block" class="alert alert-info">
+
+:warning: **Take note:**<br>
+
+* If a stall already exist, you are not allowed to add another stall of the same name.
+
+
+</div>
+
 
 ### 4.2.4 Deleting a stall : `delete-stall` <a id="4.2.4-deleting-a-stall"></a>
 
