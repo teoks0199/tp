@@ -29,15 +29,17 @@ public class ViewItemCommandParser implements Parser<ViewItemCommand> {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ViewItemCommand.MESSAGE_USAGE));
         }
 
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_STALL, PREFIX_ITEM);
+        Index stallIndex;
+        Index itemIndex;
         try {
-            argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_STALL, PREFIX_ITEM);
-            Index stallIndex = ParserUtil.parseStallIndex(argMultimap.getValue(PREFIX_STALL).get());
-            Index itemIndex = ParserUtil.parseItemIndex(argMultimap.getValue(PREFIX_ITEM).get());
-            return new ViewItemCommand(stallIndex, itemIndex);
+            stallIndex = ParserUtil.parseStallIndex(argMultimap.getValue(PREFIX_STALL).get());
+            itemIndex = ParserUtil.parseItemIndex(argMultimap.getValue(PREFIX_ITEM).get());
         } catch (ParseException pe) {
             throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, ViewItemCommand.MESSAGE_USAGE), pe);
+                    String.format(pe.getMessage(), ViewItemCommand.MESSAGE_USAGE), pe);
         }
+        return new ViewItemCommand(stallIndex, itemIndex);
     }
 
     /**
