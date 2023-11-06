@@ -21,8 +21,9 @@ public class DeleteStallReviewCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Deletes the stall review identified by the index number used in the displayed stall list.\n"
-            + PREFIX_STALL + "STALL_INDEX "
-            + "Example: " + COMMAND_WORD + ""
+            + "Parameters: "
+            + PREFIX_STALL + "STALL_INDEX \n"
+            + "Example: " + COMMAND_WORD + " "
             + PREFIX_STALL + "1";
 
     public static final String MESSAGE_DELETE_STALL_REVIEW_SUCCESS = "Deleted Stall Review: %1$s";
@@ -50,8 +51,13 @@ public class DeleteStallReviewCommand extends Command {
         }
 
         stallToDeleteReview.deleteReview();
+
+        model.showStall(stallToDeleteReview);
+        model.setFilteredStall(targetIndex);
+        model.setFilteredItemList(targetIndex);
+
         return new CommandResult(String.format(MESSAGE_DELETE_STALL_REVIEW_SUCCESS,
-                Messages.format(stallToDeleteReview)));
+                Messages.format(stallToDeleteReview)), CommandResult.ViewType.STALL_DETAIL);
     }
 
     @Override

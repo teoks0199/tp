@@ -3,15 +3,17 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_LOCATION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PRICE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.logging.Logger;
 
+import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.CollectionUtil;
 import seedu.address.commons.util.ToStringBuilder;
@@ -45,7 +47,7 @@ public class EditItemCommand extends Command {
             + PREFIX_STALL + "STALL_INDEX "
             + PREFIX_ITEM + "ITEM_INDEX "
             + "[" + PREFIX_NAME + "NAME] "
-            + "[" + PREFIX_LOCATION + "LOCATION] "
+            + "[" + PREFIX_PRICE + "PRICE] "
             + "[" + PREFIX_RATING + "RATING] "
             + "[" + PREFIX_DESCRIPTION + "DESCRIPTION] \n"
             + "Example: " + COMMAND_WORD + " "
@@ -62,10 +64,11 @@ public class EditItemCommand extends Command {
     private final Index stallIndex;
     private final Index itemIndex;
     private final EditItemDescriptor editItemDescriptor;
+    private final Logger logger = LogsCenter.getLogger(getClass());
 
     /**
-     * @param stallIndex         of the item in the filtered item list to edit
-     * @param itemIndex
+     * @param stallIndex of the item in the filtered item list to edit
+     * @param itemIndex of the item in the filtered item list to edit
      * @param editItemDescriptor details to edit the item with
      */
     public EditItemCommand(Index stallIndex, Index itemIndex, EditItemDescriptor editItemDescriptor) {
@@ -81,6 +84,9 @@ public class EditItemCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
+
+        logger.entering(getClass().getName(), "execute");
+
         List<Stall> lastShownList = model.getFilteredStallList();
 
         if (stallIndex.getZeroBased() >= lastShownList.size()) {
@@ -97,18 +103,28 @@ public class EditItemCommand extends Command {
 
         Item itemToEdit = model.getFilteredItem(stallIndex, itemIndex);
 
+        // only allow editing of review if item has a review
         if (!itemToEdit.hasItemReview() && editItemDescriptor.isReviewEdited()) {
+            logger.warning("Attempted to edit a review that doesn't exist.");
             throw new CommandException(MESSAGE_NO_REVIEW_FOUND);
         }
 
         Item editedItem = createEditedItem(itemToEdit, editItemDescriptor);
 
         if (!itemToEdit.isSameItem(editedItem) && model.hasItem(stallToEdit, editedItem)) {
+            logger.warning("Attempted to add a duplicate item.");
             throw new CommandException(MESSAGE_DUPLICATE_ITEM);
         }
 
         model.setItem(stallIndex, itemIndex, editedItem);
-        return new CommandResult(String.format(MESSAGE_EDIT_ITEM_SUCCESS, Messages.format(editedItem)));
+
+        model.setFilteredItem(editedItem);
+        model.setFilteredItemList(stallIndex);
+        model.setFilteredStall(stallIndex);
+
+        logger.exiting(getClass().getName(), "execute");
+        return new CommandResult(String.format(MESSAGE_EDIT_ITEM_SUCCESS, Messages.format(editedItem)),
+                CommandResult.ViewType.VIEW_ITEM);
     }
 
     /**
@@ -116,21 +132,22 @@ public class EditItemCommand extends Command {
      * edited with {@code editItemDescriptor}.
      */
     private static Item createEditedItem(Item itemToEdit, EditItemDescriptor editItemDescriptor) {
-        assert itemToEdit != null;
+        assert itemToEdit != null : "itemToEdit should not be null at this point";
 
         ItemName updatedItemName = editItemDescriptor.getItemName().orElse(itemToEdit.getName());
         Price updatedPrice = editItemDescriptor.getPrice().orElse(itemToEdit.getPrice());
-        try {
-            Rating updatedRating = editItemDescriptor.getRating().orElse(itemToEdit.getItemReview().getRating());
-            Description updatedDescription = editItemDescriptor.getDescription()
-                    .orElse(itemToEdit.getItemReview().getDescription());
-            ItemReview updatedItemReview = new ItemReview(updatedRating, updatedDescription);
-            Item editedItem = new Item(updatedItemName, updatedPrice, updatedItemReview);
-            return editedItem;
-        } catch (NullPointerException e) {
+
+        // guard clause to prevent null pointer exception
+        if (itemToEdit.getItemReview() == null) {
             Item editedItem = new Item(updatedItemName, updatedPrice);
             return editedItem;
         }
+        Rating updatedRating = editItemDescriptor.getRating().orElse(itemToEdit.getItemReview().getRating());
+        Description updatedDescription = editItemDescriptor.getDescription()
+                .orElse(itemToEdit.getItemReview().getDescription());
+        ItemReview updatedItemReview = new ItemReview(updatedRating, updatedDescription);
+        Item editedItem = new Item(updatedItemName, updatedPrice, updatedItemReview);
+        return editedItem;
     }
 
     @Override

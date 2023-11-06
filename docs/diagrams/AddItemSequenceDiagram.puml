@@ -4,7 +4,7 @@ skinparam ArrowFontStyle plain
 
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
-participant ":FoodNotesParser" as FoodNotesParser LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
 participant ":AddItemCommandParser" as AddItemCommandParser LOGIC_COLOR
 participant "a:AddItemCommand" as AddItemCommand LOGIC_COLOR
 participant "result:CommandResult" as CommandResult LOGIC_COLOR
@@ -17,17 +17,17 @@ end box
 [-> LogicManager : execute("add-item s/1 i/Japanese")
 activate LogicManager
 
-LogicManager -> FoodNotesParser : parseCommand("add-item s/1 i/Japanese")
-activate FoodNotesParser
+LogicManager -> AddressBookParser : parseCommand("add-item s/1 i/Japanese")
+activate AddressBookParser
 
 create AddItemCommandParser
-FoodNotesParser -> AddItemCommandParser : AddItemReviewCommandParser()
+AddressBookParser -> AddItemCommandParser : AddItemReviewCommandParser()
 activate AddItemCommandParser
 
-AddItemCommandParser --> FoodNotesParser
+AddItemCommandParser --> AddressBookParser
 deactivate AddItemCommandParser
 
-FoodNotesParser -> AddItemCommandParser : parse("s/1 i/Japanese")
+AddressBookParser -> AddItemCommandParser : parse("s/1 i/Japanese")
 activate AddItemCommandParser
 
 create AddItemCommand
@@ -37,14 +37,14 @@ activate AddItemCommand
 AddItemCommand --> AddItemCommandParser : a
 deactivate AddItemCommand
 
-AddItemCommandParser --> FoodNotesParser : a
+AddItemCommandParser --> AddressBookParser : a
 deactivate AddItemCommandParser
 'Hidden arrow to position the destroy marker below the end of the activation bar.
-AddItemCommandParser -[hidden]-> FoodNotesParser
+AddItemCommandParser -[hidden]-> AddressBookParser
 destroy AddItemCommandParser
 
-FoodNotesParser --> LogicManager : a
-deactivate FoodNotesParser
+AddressBookParser --> LogicManager : a
+deactivate AddressBookParser
 
 LogicManager -> AddItemCommand : execute()
 activate AddItemCommand

@@ -29,11 +29,11 @@ public class DeleteItemCommand extends Command {
             + PREFIX_ITEM
             + "ITEM_INDEX \n"
             + "Example: "
-            + COMMAND_WORD
+            + COMMAND_WORD + " "
             + PREFIX_STALL
-            + " 1"
+            + "1 "
             + PREFIX_ITEM
-            + " 1";
+            + "1";
 
     public static final String MESSAGE_DELETE_ITEM_SUCCESS = "Deleted Item: %1$s from Stall: %2$s";
 
@@ -66,9 +66,13 @@ public class DeleteItemCommand extends Command {
 
         Item itemToDelete = model.getFilteredItem(stallIndex, itemIndex);
 
+        model.showStall(stallToDeleteFrom);
+        model.setFilteredStall(stallIndex);
+        model.setFilteredItemList(stallIndex);
+
         model.deleteItem(stallIndex, itemIndex);
         return new CommandResult(String.format(MESSAGE_DELETE_ITEM_SUCCESS, Messages.format(itemToDelete), Messages
-                .format(stallToDeleteFrom)));
+                .format(stallToDeleteFrom)), CommandResult.ViewType.STALL_DETAIL);
     }
 
     @Override

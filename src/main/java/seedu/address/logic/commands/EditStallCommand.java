@@ -11,7 +11,9 @@ import static seedu.address.model.Model.PREDICATE_SHOW_ALL_STALLS;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.logging.Logger;
 
+import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.CollectionUtil;
 import seedu.address.commons.util.ToStringBuilder;
@@ -55,6 +57,7 @@ public class EditStallCommand extends Command {
 
     private final Index index;
     private final EditStallDescriptor editStallDescriptor;
+    private final Logger logger = LogsCenter.getLogger(getClass());
 
     /**
      * @param index of the stall in the filtered stall list to edit
@@ -72,6 +75,9 @@ public class EditStallCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
+
+        logger.entering(getClass().getName(), "execute");
+
         List<Stall> lastShownList = model.getFilteredStallList();
 
         if (index.getZeroBased() >= lastShownList.size()) {
@@ -80,19 +86,29 @@ public class EditStallCommand extends Command {
 
         Stall stallToEdit = lastShownList.get(index.getZeroBased());
 
+        // only allow editing of review if stall has a review
         if (!stallToEdit.hasStallReview() && editStallDescriptor.isReviewEdited()) {
+            logger.warning("Attempted to edit a review that doesn't exist.");
             throw new CommandException(MESSAGE_NO_REVIEW_FOUND);
         }
 
         Stall editedStall = createEditedStall(stallToEdit, editStallDescriptor);
 
         if (!stallToEdit.isSameStall(editedStall) && model.hasStall(editedStall)) {
+            logger.warning("Attempted to add a duplicate stall.");
             throw new CommandException(MESSAGE_DUPLICATE_STALL);
         }
 
         model.setStall(stallToEdit, editedStall);
         model.updateFilteredStallList(PREDICATE_SHOW_ALL_STALLS);
-        return new CommandResult(String.format(MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall)));
+
+        model.showStall(stallToEdit);
+        model.setFilteredStall(index);
+        model.setFilteredItemList(index);
+
+        logger.exiting(getClass().getName(), "execute");
+        return new CommandResult(String.format(MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall)),
+                CommandResult.ViewType.STALL_DETAIL);
     }
 
     /**
@@ -100,22 +116,23 @@ public class EditStallCommand extends Command {
      * edited with {@code editStallDescriptor}.
      */
     private static Stall createEditedStall(Stall stallToEdit, EditStallDescriptor editStallDescriptor) {
-        assert stallToEdit != null;
+        assert stallToEdit != null : "stallToEdit should not be null at this point";
 
         Name updatedName = editStallDescriptor.getName().orElse(stallToEdit.getName());
         Location updatedLocation = editStallDescriptor.getLocation().orElse(stallToEdit.getLocation());
         Menu updatedMenu = editStallDescriptor.getMenu().orElse(stallToEdit.getMenu());
-        try {
-            Rating updatedRating = editStallDescriptor.getRating().orElse(stallToEdit.getStallReview().getRating());
-            Description updatedDescription = editStallDescriptor.getDescription()
-                    .orElse(stallToEdit.getStallReview().getDescription());
-            StallReview updatedStallReview = new StallReview(updatedRating, updatedDescription);
-            Stall editedStall = new Stall(updatedName, updatedLocation, updatedMenu, updatedStallReview);
-            return editedStall;
-        } catch (NullPointerException e) {
+
+        // guard clause to prevent null pointer exception
+        if (stallToEdit.getStallReview() == null) {
             Stall editedStall = new Stall(updatedName, updatedLocation, updatedMenu);
             return editedStall;
         }
+        Rating updatedRating = editStallDescriptor.getRating().orElse(stallToEdit.getStallReview().getRating());
+        Description updatedDescription = editStallDescriptor.getDescription()
+                .orElse(stallToEdit.getStallReview().getDescription());
+        StallReview updatedStallReview = new StallReview(updatedRating, updatedDescription);
+        Stall editedStall = new Stall(updatedName, updatedLocation, updatedMenu, updatedStallReview);
+        return editedStall;
     }
 
     @Override

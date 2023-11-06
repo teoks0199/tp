@@ -10,7 +10,7 @@ import seedu.address.model.Model;
  */
 public class SortStallRatingCommand extends Command {
 
-    public static final String COMMAND_WORD = "sort-stalls-ratings";
+    public static final String COMMAND_WORD = "sort-stalls-rating";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Sorts all stalls by rating in descending order."
             + "and displays them as a list with index number.\n"
