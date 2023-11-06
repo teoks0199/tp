@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 import seedu.address.logic.commands.FindLocationCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.stall.LocationContainsKeywordsPredicate;
+import seedu.address.model.util.LocationContainsKeywordsPredicate;
 
 
 /**

@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 import seedu.address.logic.commands.FindItemCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.stall.MenuContainsKeywordsPredicate;
+import seedu.address.model.util.MenuContainsKeywordsPredicate;
 
 
 

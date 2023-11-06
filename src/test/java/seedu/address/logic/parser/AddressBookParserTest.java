@@ -37,7 +37,7 @@ import seedu.address.logic.commands.ListCommand;
 //import seedu.address.logic.commands.ViewItemCommand;
 //import seedu.address.logic.commands.ViewStallCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.stall.NameContainsKeywordsPredicate;
+import seedu.address.model.util.NameContainsKeywordsPredicate;
 import seedu.address.model.stall.Stall;
 import seedu.address.testutil.EditStallDescriptorBuilder;
 import seedu.address.testutil.StallBuilder;
