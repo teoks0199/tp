@@ -116,7 +116,7 @@ public interface Model {
     Item getFilteredItem();
 
     /**
-     * Returns the item.
+     * Sets the item.
      */
     void setFilteredItem(Item item);
 
