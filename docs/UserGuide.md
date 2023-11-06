@@ -17,7 +17,7 @@ title: User Guide
    - 4.1 [General](#4.1-general)
       * 4.1.1 [Viewing help :`help`](#4.1.1-viewing-help)
       * 4.1.2 [Exiting from the application :`exit`](#4.1.2-exiting-from-the-application)
-   - 4.2 [Stall Management](#4.2-stall-management) 
+   - 4.2 [Stall Management](#4.2-stall-management)
       * 4.2.1 [Listing all stalls :`list`](#4.2.1-listing-all-stalls)
       * 4.2.2 [Viewing a stall :`view-stall`](#4.2.2-viewing-a-stall)
       * 4.2.3 [Adding a stall :`add-stall`](#4.2.3-adding-a-stall)
@@ -67,9 +67,9 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 # 2. About the user guide <a id="2-about-the-user-guide"></a>
 ## 2.1 Navigating the user guide <a id="2.1-navigating-the-user-guide"></a>
 
-**For first time users**: 
+**For first time users**:
 
-1) the [Quick start](#quick-start) section provides instructions for you on how to get started. 
+1) the [Quick start](#quick-start) section provides instructions for you on how to get started.
 2) Once you have set up FoodNotes, you can check out the [Screen layout](#screen-layout) section to get familiar with the different components of FoodNotes. To learn the basics of using FoodNotes, head over to the [Features](#features) section.
 
 **For experienced users:**
@@ -121,20 +121,20 @@ The table below explains some important technical terms. An example will be prov
 
 This section provides a summary of the parameters used when inputting commands into the application.
 
-| Prefix | Parameter          | Meaning                                    | Input                                                  |
-|--------|--------------------|--------------------------------------------|--------------------------------------------------------|
-| `n/`   | `STALL_NAME`       | Name of the stall                          | Alphanumeric value with 1 to 27 characters (inclusive) |
-| `s/`   | `STALL_INDEX`      | Index of the stall in the list             | Integer from 0 to 2147483647 (inclusive)               |
-| `l/`   | `STALL_LOCATION`   | Location of the stall                      | Alphanumeric value with 1 to 27 characters (inclusive) |
-| `n/`   | `ITEM_NAME`        | Name of the item                           | Alphanumeric value with 1 to 27 characters (inclusive) |
-| `i/`   | `ITEM_INDEX`       | Index of the item in the menu              | Integer from 0 to 2147483647 (inclusive)               |
-| `p/`   | `ITEM_PRICE`       | Price of the item                          | Non-negative number with 2 decimal places              |
-| `r/`   | `STALL_RATING`     | Rating of the stall                        | Integer from 0 to 5 (inclusive)                        |
-| `r/`   | `ITEM_RATING`      | Rating of the item                         | Integer from 0 to 5 (inclusive)                        |
-| `d/`   | `DESCRIPTION`      | Descriptive review for the stalls or items | Alphanumeric value with 1 to 27 characters (inclusive) |
-| N/A    | `NAME_KEYWORD`     | Keyword of the stall name                  | Alphanumeric value with 1 to 27 characters (inclusive) |
-| N/A    | `LOCATION_KEYWORD` | Keyword of the stall location              | Alphanumeric value with 1 to 27 characters (inclusive) |
-| N/A    | `ITEM_KEYWORD`     | Keyword of the menu items in the stall     | Alphanumeric value with 1 to 27 characters (inclusive) |
+| Prefix | Parameter          | Meaning                                    | Input                                     |
+|--------|--------------------|--------------------------------------------|-------------------------------------------|
+| `n/`   | `STALL_NAME`       | Name of the stall                          | Alphanumeric values                       |
+| `s/`   | `STALL_INDEX`      | Index of the stall in the list             | Integer from 1 to 2147483647 (inclusive)  |
+| `l/`   | `STALL_LOCATION`   | Location of the stall                      | Alphanumeric values                       |
+| `n/`   | `ITEM_NAME`        | Name of the item                           | Alphanumeric values                       |
+| `i/`   | `ITEM_INDEX`       | Index of the item in the menu              | Integer from 1 to 2147483647 (inclusive)  |
+| `p/`   | `ITEM_PRICE`       | Price of the item                          | Non-negative number with 2 decimal places |
+| `r/`   | `STALL_RATING`     | Rating of the stall                        | Integer from 1 to 5 (inclusive)           |
+| `r/`   | `ITEM_RATING`      | Rating of the item                         | Integer from 1 to 5 (inclusive)           |
+| `d/`   | `DESCRIPTION`      | Descriptive review for the stalls or items | Alphanumeric values                       |
+| N/A    | `NAME_KEYWORD`     | Keyword of the stall name                  | Alphanumeric values                       |
+| N/A    | `LOCATION_KEYWORD` | Keyword of the stall location              | Alphanumeric values                       |
+| N/A    | `ITEM_KEYWORD`     | Keyword of the menu items in the stall     | Alphanumeric values                       |
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -191,7 +191,7 @@ Upon launching the application, some files responsible for the storage of your d
 
 # 4. Features <a id="4-features"></a>
 
----- 
+----
 
 ## 4.1 General Features <a id="4.1-general"></a>
 
@@ -230,7 +230,7 @@ Requesting for help:
 
 Outcome:
 
-1. Your browser will now show the user guide of **FoodNotes**. 
+1. Your browser will now show the user guide of **FoodNotes**.
 2. You can now access information about all commands in **FoodNotes** via the browser.
 
 </div>
@@ -377,7 +377,7 @@ Outcome:
 
 ### 4.2.5 Editing a stall : `edit-stall` <a id="4.2.5-editing-a-stall"></a>
 
-You can use this command to edit an existing stall, and update its name, location. If the stall has a review, 
+You can use this command to edit an existing stall, and update its name, location. If the stall has a review,
 you may edit its rating and/or description.
 
 :information_source: You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the stall already has an existing review.
@@ -470,7 +470,7 @@ You can use this command to sort the stalls by their location in alphabetical or
 
 **Outcome:**
 1. The `Result Display` will display a success message.
-2. You will now see that the stalls are sorted by location in alphabetical order in the `Data Display`, as illustrated 
+2. You will now see that the stalls are sorted by location in alphabetical order in the `Data Display`, as illustrated
    in the screenshot below.
 <img src="images/userGuide/sort-stalls-location.png" alt="sort-stalls-location" width="600"/>
 
@@ -484,7 +484,7 @@ You can use this command to sort the stalls by their rating in descending order.
 
 **Outcome:**
 1. The `Result Display` will display a success message.
-2. You will now see that the stalls are sorted by rating in descending order in the `Data Display`, as illustrated 
+2. You will now see that the stalls are sorted by rating in descending order in the `Data Display`, as illustrated
    in the screenshot below.
 <img src="images/userGuide/sort-stalls-rating.png" alt="sort-stalls-rating" width="600"/>
 
@@ -498,7 +498,7 @@ You can use this command to sort the stalls by their price in ascending order.
 
 **Outcome:**
 1. The `Result Display` will display a success message.
-2. You will now see that the stalls are sorted by price in ascending order in the `Data Display`, as illustrated 
+2. You will now see that the stalls are sorted by price in ascending order in the `Data Display`, as illustrated
    in the screenshot below.
 <img src="images/userGuide/sort-stalls-price.png" alt="sort-stalls-price" width="600"/>
 
@@ -746,7 +746,7 @@ Outcome:
 
 --------------------------------------------------------------------------------------------------------------------
 
-  
+
 # 5. Glossary <a id="5-glossary"></a>
 
 | Term              | Explanation                                                                                                                                             |
