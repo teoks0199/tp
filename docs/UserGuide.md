@@ -460,13 +460,13 @@ This feature allows you to sort the stalls by their location, rating and price.
 
 --------------------------------------------------------------------------------------------------------------------
 
-### 4.3.1 Sort stalls by location: `sort-stalls-locations` <a id="4.3.1-sort-stalls-by-location"></a>
+### 4.3.1 Sort stalls by location: `sort-stalls-location` <a id="4.3.1-sort-stalls-by-location"></a>
 
 You can use this command to sort the stalls by their location in alphabetical order.
 
-**Command format:** `sort-stalls-locations`
+**Command format:** `sort-stalls-location`
 
-**Example:** Type `sort-stalls-locations` in the command box and press Enter.
+**Example:** Type `sort-stalls-location` in the command box and press Enter.
 
 **Outcome:**
 1. The `Result Display` will display a success message.
@@ -474,13 +474,13 @@ You can use this command to sort the stalls by their location in alphabetical or
    in the screenshot below.
 <img src="images/userGuide/sort-stalls-location.png" alt="sort-stalls-location" width="600"/>
 
-### 4.3.2 Sort stalls by rating: `sort-stalls-ratings` <a id="4.3.2-sort-stalls-by-rating"></a>
+### 4.3.2 Sort stalls by rating: `sort-stalls-rating` <a id="4.3.2-sort-stalls-by-rating"></a>
 
 You can use this command to sort the stalls by their rating in descending order.
 
-**Command format:** `sort-stalls-ratings`
+**Command format:** `sort-stalls-rating`
 
-**Example:** Type `sort-stalls-ratings` in the command box and press Enter.
+**Example:** Type `sort-stalls-rating` in the command box and press Enter.
 
 **Outcome:**
 1. The `Result Display` will display a success message.
@@ -510,17 +510,17 @@ You can use this command to sort the stalls by their price in ascending order.
 ## 4.4 Stall Finding <a id="44-stall-finding"></a>
 This feature allows you to find stalls by their name, location and menu items.
 
-### 4.4.1 Finding stalls by name: `find-by-stall`<a id="4.4.1-find-stalls-by-name"></a>
+### 4.4.1 Finding stalls by name: `find-by-name`<a id="4.4.1-find-stalls-by-name"></a>
 The command is a powerful tool for quickly locating specific food stalls based on their names. Even if you can only remember part of the stall name, this command can help you narrow down your choices effectively.
 You need to type in the entire word instead of part of the word for it to find the stall.
 
 **Command function:** Finds all stalls whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
 
-**Command format:** `find-by-stall NAME_KEYWORD`
+**Command format:** `find-by-name NAME_KEYWORD`
 
 Suppose you want to find stalls that serve Japanese and Western noodles. You can use the command as follows:
 
-**Example:** `find-by-stall Japanese Western noodles`
+**Example:** `find-by-name Japanese Western noodles`
 
 Outcome:
 1. The `Result Display` will display a success message.
@@ -700,7 +700,7 @@ You can use this command to review an existing item, and add your own rating and
 
 **Format:**
 
-`review-item s/STALL_INDEX i/ITEM_INDEX r/STALL_RATING d/STALL_DESCRIPTION`
+`review-item s/STALL_INDEX i/ITEM_INDEX r/ITEM_RATING d/ITEM_DESCRIPTION`
 
 **Example:**
 
@@ -782,17 +782,17 @@ Outcome:
 
 ## 6.3 Stall Sorting Commands <a id="63-stall-sorting-summary"></a>
 
-| Features                    | Format, Examples                                          |
-|-----------------------------|-----------------------------------------------------------|
-| **Sort stalls by location** | `sort-stalls-locations` <br> e.g. `sort-stalls-locations` |
-| **Sort stalls by rating**   | `sort-stalls-ratings` <br> e.g. `sort-stalls-ratings`     |
-| **Sort stalls by price**    | `sort-stalls-price` <br> e.g. `sort-stalls-price`         |
+| Features                    | Format, Examples                                        |
+|-----------------------------|---------------------------------------------------------|
+| **Sort stalls by location** | `sort-stalls-location` <br> e.g. `sort-stalls-location` |
+| **Sort stalls by rating**   | `sort-stalls-rating` <br> e.g. `sort-stalls-rating`     |
+| **Sort stalls by price**    | `sort-stalls-price` <br> e.g. `sort-stalls-price`       |
 
 ## 6.4 Stall Finding Commands <a id="64-stall-finding-summary"></a>
 
 | Features                    | Format, Examples                                             |
 |-----------------------------|--------------------------------------------------------------|
-| **Find stalls by name**     | `find-by-stall` <br> e.g. `find-by-stall` western japanese   |
+| **Find stalls by name**     | `find-by-name` <br> e.g. `find-by-name` western japanese     |
 | **Find stalls by location** | `find-by-location` <br> e.g. `find-by-location` deck terrace |
 | **Find stalls by item**     | `find-by-item` <br> e.g. `find-by-item` chicken              |
 

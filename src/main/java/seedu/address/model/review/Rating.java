@@ -9,7 +9,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class Rating {
     public static final String MESSAGE_CONSTRAINTS =
-            "Rating should be a number from 1 to 5, inclusive";
+            "Rating should be an integer from 1 to 5, inclusive";
 
     public static final String VALIDATION_REGEX = "[1-5]";
 
