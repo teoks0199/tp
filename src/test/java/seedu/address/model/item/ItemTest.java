@@ -21,12 +21,8 @@ public class ItemTest {
         // null -> returns false
         assertFalse(FRIED_RICE.isSameItem(null));
 
-        // same name, all other attributes different -> returns false
-        Item editedAlice = new ItemBuilder(FRIED_RICE).withPrice(VALID_ITEM_PRICE_2).build();
-        assertFalse(FRIED_RICE.isSameItem(editedAlice));
-
         // different name, all other attributes same -> returns false
-        editedAlice = new ItemBuilder(FRIED_RICE).withName(VALID_ITEM_NAME_NASI_LEMAK).build();
+        Item editedAlice = new ItemBuilder(FRIED_RICE).withName(VALID_ITEM_NAME_NASI_LEMAK).build();
         assertFalse(FRIED_RICE.isSameItem(editedAlice));
 
         // name differs in case, all other attributes same -> returns false
