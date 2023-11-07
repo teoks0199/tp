@@ -2,6 +2,8 @@ package seedu.address.testutil;
 
 import seedu.address.logic.commands.EditStallCommand;
 import seedu.address.logic.commands.EditStallCommand.EditStallDescriptor;
+import seedu.address.model.review.Description;
+import seedu.address.model.review.Rating;
 import seedu.address.model.stall.Location;
 import seedu.address.model.stall.Name;
 import seedu.address.model.stall.Stall;
@@ -48,6 +50,22 @@ public class EditStallDescriptorBuilder {
      */
     public EditStallDescriptorBuilder withLocation(String location) {
         descriptor.setLocation(new Location(location));
+        return this;
+    }
+
+    /**
+     * Sets the {@code Rating} of the {@code EditStallDescriptor} that we are building.
+     */
+    public EditStallDescriptorBuilder withRating(String rating) {
+        descriptor.setRating(new Rating(rating));
+        return this;
+    }
+
+    /**
+     * Sets the {@code Description} of the {@code EditStallDescriptor} that we are building.
+     */
+    public EditStallDescriptorBuilder withDescription(String description) {
+        descriptor.setDescription(new Description(description));
         return this;
     }
 

@@ -2,10 +2,12 @@ package seedu.address.logic.commands;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_LOCATION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PRICE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 import static seedu.address.testutil.Assert.assertThrows;
 
@@ -31,12 +33,18 @@ public class CommandTestUtil {
     public static final String VALID_NAME_BRITISH = "British Cuisine";
     public static final String VALID_LOCATION_ASIAN = "Block 312, Amy Street 1";
     public static final String VALID_LOCATION_BRITISH = "Block 123, Bobby Street 3";
+    public static final String VALID_RATING = "4";
+    public static final String VALID_DESCRIPTION = "Good";
     public static final String NAME_DESC_ASIAN = " " + PREFIX_NAME + VALID_NAME_ASIAN;
     public static final String NAME_DESC_BRITISH = " " + PREFIX_NAME + VALID_NAME_BRITISH;
     public static final String LOCATION_DESC_ASIAN = " " + PREFIX_LOCATION + VALID_LOCATION_ASIAN;
     public static final String LOCATION_DESC_BRITISH = " " + PREFIX_LOCATION + VALID_LOCATION_BRITISH;
+    public static final String RATING_DESC = " " + PREFIX_RATING + VALID_RATING;
+    public static final String DESCRIPTION_DESC = " " + PREFIX_DESCRIPTION + VALID_DESCRIPTION;
     public static final String INVALID_NAME_DESC = " " + PREFIX_NAME + " "; // empty names not allowed
     public static final String INVALID_LOCATION_DESC = " " + PREFIX_LOCATION; // empty locations not allowed
+    public static final String INVALID_RATING_DESC = " " + PREFIX_RATING + "a"; // 'a' not allowed in ratings
+    public static final String INVALID_DESCRIPTION_DESC = " " + PREFIX_DESCRIPTION; // empty description not allowed
 
     //Item related
     public static final String VALID_STALL_INDEX_1 = "1";
