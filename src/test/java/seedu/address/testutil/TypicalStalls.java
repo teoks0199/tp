@@ -24,40 +24,44 @@ public class TypicalStalls {
             .withLocation("wall street")
             .withMenu(VALID_MENU_2)
             .withStallReview(STALL_REVIEW_2)
-            .build();
+            .buildWithNameAndLocation();
 
     public static final Stall CHICKEN_RICE = new StallBuilder().withName("Chicken Rice")
-            .withLocation("Deck").withMenu(VALID_MENU_1).build();
+            .withLocation("Deck").withMenu(VALID_MENU_1).buildWithNameAndLocation();
 
     public static final Stall AUNTIES_COOKING = new StallBuilder().withName("Auntie's Cooking")
-            .withLocation("Deck").build();
+            .withLocation("Deck").buildWithNameAndLocation();
     public static final Stall BEVERAGES = new StallBuilder().withName("Beverages")
-            .withLocation("Deck").build();
+            .withLocation("Deck").buildWithNameAndLocation();
     public static final Stall CHINESE = new StallBuilder().withName("Chinese")
-            .withLocation("wall street").build();
+            .withLocation("wall street").buildWithNameAndLocation();
     public static final Stall DRINKS_STALL = new StallBuilder().withName("Drinks Stall")
-            .withLocation("10th street").build();
+            .withLocation("10th street").buildWithNameAndLocation();
     public static final Stall ECONOMIC_RICE = new StallBuilder().withName("Economic Rice")
-            .withLocation("michegan ave").build();
-    public static final Stall FRENCH = new StallBuilder().withName("French").withLocation("little tokyo").build();
-    public static final Stall GOODFOOD = new StallBuilder().withName("GoodFood").withLocation("4th street").build();
+            .withLocation("michegan ave").buildWithNameAndLocation();
+    public static final Stall FRENCH =
+            new StallBuilder().withName("French").withLocation("little tokyo").buildWithNameAndLocation();
+    public static final Stall GOODFOOD =
+            new StallBuilder().withName("GoodFood").withLocation("4th street").buildWithNameAndLocation();
 
     // Manually added
-    public static final Stall HOON = new StallBuilder().withName("Hoon Meier").withLocation("little india").build();
-    public static final Stall IDA = new StallBuilder().withName("Ida Mueller").withLocation("chicago ave").build();
+    public static final Stall HOON =
+            new StallBuilder().withName("Hoon Meier").withLocation("little india").buildWithAllFields();
+    public static final Stall IDA =
+            new StallBuilder().withName("Ida Mueller").withLocation("chicago ave").buildWithAllFields();
 
     // Manually added - Stall's details found in {@code CommandTestUtil}
     public static final Stall ASIAN = new StallBuilder()
-            .withName(VALID_NAME_ASIAN).withLocation(VALID_LOCATION_ASIAN).build();
+            .withName(VALID_NAME_ASIAN).withLocation(VALID_LOCATION_ASIAN).buildWithAllFields();
     public static final Stall BRITISH = new StallBuilder()
-            .withName(VALID_NAME_BRITISH).withLocation(VALID_LOCATION_BRITISH).build();
+            .withName(VALID_NAME_BRITISH).withLocation(VALID_LOCATION_BRITISH).buildWithAllFields();
 
     public static final String KEYWORD_MATCHING_MEIER = "Meier"; // A keyword that matches MEIER
 
     private TypicalStalls() {} // prevents instantiation
 
     /**
-     * Returns an {@code AddressBook} with all the typical persons.
+     * Returns an {@code AddressBook} with all the typical stalls.
      */
     public static AddressBook getTypicalAddressBook() {
         AddressBook ab = new AddressBook();
@@ -67,8 +71,30 @@ public class TypicalStalls {
         return ab;
     }
 
+    /**
+     * Returns a list of typical stalls.
+     */
     public static List<Stall> getTypicalStalls() {
         return new ArrayList<>(Arrays
                 .asList(AUNTIES_COOKING, BEVERAGES, CHINESE, DRINKS_STALL, ECONOMIC_RICE, FRENCH, GOODFOOD));
+    }
+
+    /**
+     * Returns an {@code AddressBook} with all the typical stalls with menu and review.
+     */
+    public static AddressBook getTypicalAddressBookWithMenuAndReview() {
+        AddressBook ab = new AddressBook();
+        for (Stall stall : getTypicalStallsWithMenuAndReview()) {
+            ab.addStall(stall);
+        }
+        return ab;
+    }
+
+    /**
+     * Returns a list of typical stalls with menu and review.
+     */
+    public static List<Stall> getTypicalStallsWithMenuAndReview() {
+        return new ArrayList<>(Arrays
+                .asList(HOON, IDA, ASIAN, BRITISH));
     }
 }

@@ -37,7 +37,7 @@ public class AddStallCommandTest {
     @Test
     public void execute_stallAcceptedByModel_addSuccessful() throws Exception {
         ModelStubAcceptingStallAdded modelStub = new ModelStubAcceptingStallAdded();
-        Stall validStall = new StallBuilder().build();
+        Stall validStall = new StallBuilder().buildWithNameAndLocation();
 
         CommandResult commandResult = new AddStallCommand(validStall).execute(modelStub);
 
@@ -48,7 +48,7 @@ public class AddStallCommandTest {
 
     @Test
     public void execute_duplicateStall_throwsCommandException() {
-        Stall validStall = new StallBuilder().build();
+        Stall validStall = new StallBuilder().buildWithNameAndLocation();
         AddStallCommand addStallCommand = new AddStallCommand(validStall);
         ModelStub modelStub = new ModelStubWithStall(validStall);
 
@@ -58,8 +58,8 @@ public class AddStallCommandTest {
 
     @Test
     public void equals() {
-        Stall alice = new StallBuilder().withName("Alice").build();
-        Stall bob = new StallBuilder().withName("Bob").build();
+        Stall alice = new StallBuilder().withName("Alice").buildWithNameAndLocation();
+        Stall bob = new StallBuilder().withName("Bob").buildWithNameAndLocation();
         AddStallCommand addAliceCommand = new AddStallCommand(alice);
         AddStallCommand addBobCommand = new AddStallCommand(bob);
 

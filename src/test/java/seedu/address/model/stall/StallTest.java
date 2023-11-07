@@ -14,12 +14,6 @@ import org.junit.jupiter.api.Test;
 import seedu.address.testutil.StallBuilder;
 
 public class StallTest {
-
-    //    @Test
-    //    public void asObservableList_modifyList_throwsUnsupportedOperationException() {
-    //        Stall stall = new StallBuilder().build();
-    //        assertThrows(UnsupportedOperationException.class, () -> stall.getTags().remove(0));
-    //    }
     @Test
     public void isSameStall() {
         // same object -> returns true
@@ -29,27 +23,30 @@ public class StallTest {
         assertFalse(AUNTIES_COOKING.isSameStall(null));
 
         // same name, all other attributes different -> returns false
-        Stall editedAuntiesCooking = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).build();
+        Stall editedAuntiesCooking =
+                new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).buildWithNameAndLocation();
         assertFalse(AUNTIES_COOKING.isSameStall(editedAuntiesCooking));
 
         // different name, all other attributes same -> returns false
-        editedAuntiesCooking = new StallBuilder(AUNTIES_COOKING).withName(VALID_NAME_BRITISH).build();
+        editedAuntiesCooking =
+                new StallBuilder(AUNTIES_COOKING).withName(VALID_NAME_BRITISH).buildWithNameAndLocation();
         assertFalse(AUNTIES_COOKING.isSameStall(editedAuntiesCooking));
 
         // name differs in case, all other attributes same -> returns false
-        Stall editedBritish = new StallBuilder(BRITISH).withName(VALID_NAME_BRITISH.toLowerCase()).build();
+        Stall editedBritish =
+                new StallBuilder(BRITISH).withName(VALID_NAME_BRITISH.toLowerCase()).buildWithNameAndLocation();
         assertFalse(BRITISH.isSameStall(editedBritish));
 
         // name has trailing spaces, all other attributes same -> returns false
         String nameWithTrailingSpaces = VALID_NAME_BRITISH + " ";
-        editedBritish = new StallBuilder(BRITISH).withName(nameWithTrailingSpaces).build();
+        editedBritish = new StallBuilder(BRITISH).withName(nameWithTrailingSpaces).buildWithNameAndLocation();
         assertFalse(BRITISH.isSameStall(editedBritish));
     }
 
     @Test
     public void equals() {
         // same values -> returns true
-        Stall auntiesCookingCopy = new StallBuilder(AUNTIES_COOKING).build();
+        Stall auntiesCookingCopy = new StallBuilder(AUNTIES_COOKING).buildWithNameAndLocation();
         assertTrue(AUNTIES_COOKING.equals(auntiesCookingCopy));
 
         // same object -> returns true
@@ -65,11 +62,13 @@ public class StallTest {
         assertFalse(AUNTIES_COOKING.equals(BRITISH));
 
         // different name -> returns false
-        Stall editedAuntiesCooking = new StallBuilder(AUNTIES_COOKING).withName(VALID_NAME_BRITISH).build();
+        Stall editedAuntiesCooking =
+                new StallBuilder(AUNTIES_COOKING).withName(VALID_NAME_BRITISH).buildWithNameAndLocation();
         assertFalse(AUNTIES_COOKING.equals(editedAuntiesCooking));
 
         // different location -> returns false
-        editedAuntiesCooking = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).build();
+        editedAuntiesCooking =
+                new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).buildWithNameAndLocation();
         assertFalse(AUNTIES_COOKING.equals(editedAuntiesCooking));
 
     }
@@ -77,7 +76,9 @@ public class StallTest {
     @Test
     public void toStringMethod() {
         String expected = Stall.class.getCanonicalName() + "{name=" + AUNTIES_COOKING.getName() + ", location="
-                + AUNTIES_COOKING.getLocation() + "}";
+                + AUNTIES_COOKING.getLocation() + ", menu=" + AUNTIES_COOKING.getMenu() + ", stallReview="
+                + AUNTIES_COOKING.getStallReview()
+                + "}";
         assertEquals(expected, AUNTIES_COOKING.toString());
     }
 }

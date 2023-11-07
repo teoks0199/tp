@@ -12,7 +12,7 @@ import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.logic.commands.CommandTestUtil.showStallAtIndex;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_STALL;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_STALL;
-import static seedu.address.testutil.TypicalStalls.getTypicalAddressBook;
+import static seedu.address.testutil.TypicalStalls.getTypicalAddressBookWithMenuAndReview;
 
 import org.junit.jupiter.api.Test;
 
@@ -32,11 +32,11 @@ import seedu.address.testutil.StallBuilder;
  */
 public class EditStallCommandTest {
 
-    private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
+    private Model model = new ModelManager(getTypicalAddressBookWithMenuAndReview(), new UserPrefs());
 
     @Test
     public void execute_allFieldsSpecifiedUnfilteredList_success() {
-        Stall editedStall = new StallBuilder().build();
+        Stall editedStall = new StallBuilder().buildWithAllFields();
         EditStallDescriptor descriptor = new EditStallDescriptorBuilder(editedStall).build();
         EditStallCommand editStallCommand = new EditStallCommand(INDEX_FIRST_STALL, descriptor);
 
@@ -59,7 +59,8 @@ public class EditStallCommandTest {
         Stall lastStall = model.getFilteredStallList().get(indexLastStall.getZeroBased());
 
         StallBuilder stallInList = new StallBuilder(lastStall);
-        Stall editedStall = stallInList.withName(VALID_NAME_BRITISH).withLocation(VALID_LOCATION_BRITISH).build();
+        Stall editedStall = stallInList
+                .withName(VALID_NAME_BRITISH).withLocation(VALID_LOCATION_BRITISH).buildWithAllFields();
 
         EditStallDescriptor descriptor = new EditStallDescriptorBuilder().withName(VALID_NAME_BRITISH)
                 .withLocation(VALID_LOCATION_BRITISH).build();
@@ -99,7 +100,8 @@ public class EditStallCommandTest {
         showStallAtIndex(model, INDEX_FIRST_STALL);
 
         Stall stallInFilteredList = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
-        Stall editedStall = new StallBuilder(stallInFilteredList).withName(VALID_NAME_BRITISH).build();
+        Stall editedStall = new StallBuilder(stallInFilteredList)
+                .withName(VALID_NAME_BRITISH).buildWithAllFields();
         EditStallCommand editStallCommand = new EditStallCommand(INDEX_FIRST_STALL,
                 new EditStallDescriptorBuilder().withName(VALID_NAME_BRITISH).build());
 

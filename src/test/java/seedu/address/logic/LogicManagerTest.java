@@ -164,7 +164,7 @@ public class LogicManagerTest {
 
         // Triggers the saveAddressBook method by executing an add command
         String addCommand = AddStallCommand.COMMAND_WORD + NAME_DESC_ASIAN + LOCATION_DESC_ASIAN;
-        Stall expectedStall = new StallBuilder(ASIAN).build();
+        Stall expectedStall = new StallBuilder(ASIAN).buildWithNameAndLocation();
         ModelManager expectedModel = new ModelManager();
         expectedModel.addStall(expectedStall);
         assertCommandFailure(addCommand, CommandException.class, expectedMessage, expectedModel);

@@ -28,6 +28,11 @@ public class EditStallDescriptorBuilder {
         descriptor = new EditStallDescriptor();
         descriptor.setName(stall.getName());
         descriptor.setLocation(stall.getLocation());
+        descriptor.setMenu(stall.getMenu());
+        if (stall.hasStallReview()) {
+            descriptor.setRating(stall.getStallReview().getRating());
+            descriptor.setDescription(stall.getStallReview().getDescription());
+        }
     }
 
     /**

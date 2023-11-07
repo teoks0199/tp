@@ -219,6 +219,8 @@ public class Stall {
         return new ToStringBuilder(this)
                 .add("name", name)
                 .add("location", location)
+                .add("menu", menu)
+                .add("stallReview", stallReview)
                 .toString();
     }
 }

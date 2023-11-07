@@ -85,9 +85,17 @@ public class StallBuilder {
     }
 
 
-
-    public Stall build() {
+    /**
+     * Builds a stall with the given parameters.
+     */
+    public Stall buildWithNameAndLocation() {
         return new Stall(name, location);
     }
 
+    /**
+     * Builds a stall with the given parameters.
+     */
+    public Stall buildWithAllFields() {
+        return new Stall(name, location, VALID_MENU_1, VALID_STALL_REVIEW_1);
+    }
 }
