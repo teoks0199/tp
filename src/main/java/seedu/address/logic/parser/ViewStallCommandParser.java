@@ -1,6 +1,7 @@
 package seedu.address.logic.parser;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
@@ -28,14 +29,16 @@ public class ViewStallCommandParser implements Parser<ViewStallCommand> {
                 || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ViewStallCommand.MESSAGE_USAGE));
         }
+
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_STALL, PREFIX_ITEM);
+        Index index;
         try {
-            argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_STALL, PREFIX_ITEM);
-            Index index = ParserUtil.parseStallIndex(argMultimap.getValue(PREFIX_STALL).get());
-            return new ViewStallCommand(index);
+            index = ParserUtil.parseStallIndex(argMultimap.getValue(PREFIX_STALL).get());
         } catch (ParseException pe) {
             throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, ViewStallCommand.MESSAGE_USAGE), pe);
+                    String.format(MESSAGE_INVALID_STALL_DISPLAYED_INDEX, ViewStallCommand.MESSAGE_USAGE), pe);
         }
+        return new ViewStallCommand(index);
     }
 
     /**

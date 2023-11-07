@@ -218,7 +218,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 _{more aspects and alternatives to be added}_
 
-### Find Item feature
+### Find-by-item feature
 
 #### Implementation
 
@@ -228,7 +228,7 @@ The following sequence diagram shows how the find item operation works:
 
 ![FindItemSequenceDiagram](images/FindItemSequenceDiagram.png)
 
-The `ItemsContainKeywordsPredicate` is used to filter the list of stalls in FoodNotes. It is created with a list of keywords, and it checks if the menu items of a stall contains any of the keywords.
+The `MenuContainsKeywordsPredicate` is used to filter the list of stalls in FoodNotes. It is created with a list of keywords, and it checks if the menu items of a stall contains any of the keywords.
 
 * **Alternative 1 (current choice):** Allows the user to search for stalls containing any of the keywords.
     * Pros: Users can search for multiple items at once, for example they can look for stalls that sell either "chicken" or "apple".
