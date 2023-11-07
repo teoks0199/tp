@@ -9,9 +9,9 @@ title: User Guide
 2. [About the User Guide](#2-about-the-user-guide)
     - [2.1 Navigating the User Guide](#2.1-navigating-the-user-guide)
     - [2.2 Reading the User Guide](#2.2-reading-the-user-guide)
-      * [2.2.1 Icons](#icons)
-      * [2.2.2 Parameters](#parameters)
-      * [2.2.3 GUI](#GUI)
+      * [2.2.1 GUI Terminology](#2.2.1-gui-terminology)
+      * [2.2.2 Icons](#2.2.2-icons)
+      * [2.2.3 Command Syntax and Usage](#2.2.3-command-syntax-and-usage)
 3. [Quick Start](#3-quick-start)
 4. [Features](#4-features)
    - 4.1 [General](#4.1-general)
@@ -42,13 +42,13 @@ title: User Guide
      * 4.5.5 [Reviewing an item :`review-item`](#4.5.5-reviewing-an-item)
      * 4.5.6 [Deleting an item review :`delete-item-review`](#4.5.6-deleting-an-item-review)
 5. [Glossary](#5-glossary)
-6. [Command summary](#6-glossary)
+6. [Command summary](#6-command-summary)
    - 6.1 [General Commands](#61-general-commands-summary)
    - 6.2 [Stall Management Commands](#62-stall-management-summary)
    - 6.3 [Stall Sorting Commands](#63-stall-sorting-summary)
    - 6.4 [Stall Finding Commands](#64-stall-finding-summary)
    - 6.5 [Item Management Commands](#65-item-management-summary)
-
+7. [FAQ](#7-faq)
 <div style="page-break-after: always;"></div>
 
 # 1. Introduction <a id="1-introduction"></a>
@@ -68,21 +68,20 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 # 2. About the user guide <a id="2-about-the-user-guide"></a>
 ## 2.1 Navigating the user guide <a id="2.1-navigating-the-user-guide"></a>
 
-**For first time users**:
+**If you are a first time user**:
 
-1) the [Quick start](#quick-start) section provides instructions for you on how to get started.
-2) Once you have set up FoodNotes, you can check out the [Screen layout](#screen-layout) section to get familiar with the different components of FoodNotes. To learn the basics of using FoodNotes, head over to the [Features](#features) section.
+1. the [Quick start](#3-quick-start) section provides instructions for you on how to get started.
+2. Once you have set up FoodNotes, you can check out the [Screen layout](#2.2.1-GUI-terminology) section to get familiar with the different components of FoodNotes. To learn the basics of using FoodNotes, head over to the [Features](#features) section.
 
-**For experienced users:**:
-
-1) you can refer to the [Command summary](#command-summary) section for an overview of FoodNotes' commands.
+**If you are an experienced user:**:
+you can refer to the [Command summary](#6-command-summary) section for an overview of FoodNotes' commands.
 
 If you have any queries about using FoodNotes, you can check out the [FAQ](#faq) section.
 
 ## 2.2 Reading the User Guide <a id="2.2-reading-the-user-guide"></a>
 Before you jump into the next section, take a moment to familiarise yourself with the technical terms, symbols, and syntax used throughout this document. This subsection contains all the essential information you need to understand the content better.
 
-### 2.2.1 Terminology related to the Graphical User Interface (GUI)
+### 2.2.1 Terminology related to the Graphical User Interface (GUI) <a id="2.2.1-gui-terminology"></a>
 The following figure shows the GUI of FoodNotes. It is annotated with the name of the GUI components.
 
 <p align="center">
@@ -96,7 +95,7 @@ What the main components of the GUI do:
 
 * _Command Box_: This is where you type your commands.
 
-### 2.2.2 Icons <a id="icons"></a>
+### 2.2.2 Icons <a id="2.2.2-icons"></a>
 
 This section will run you through the icons used in this guide.
 
@@ -108,7 +107,7 @@ This section will run you through the icons used in this guide.
 
 <div style="page-break-after: always;"></div>
 
-### 2.2.3 Command Syntax and Usage <a id="icons"></a>
+### 2.2.3 Command Syntax and Usage <a id="2.2.3-command-syntax-and-usage"></a>
 Since FoodNotes is a CLI application, knowing how to use commands is very important. The following subsection will teach you how to read and use commands in FoodNotes. All commands in FoodNotes follow similar formats as described below and examples will be provided to help you understand their usage. Examples of commands and their formats will be written in code-blocks.
 
 The table below explains some important technical terms. An example will be provided to help you visualize these terms.
@@ -145,15 +144,15 @@ This section provides a summary of the parameters used when inputting commands i
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-1. Download the latest `FoodNotes.jar` from [here](https://github.com/se-edu/FoodNotes-level3/releases).
+2. Download the latest `FoodNotes.jar` from [here](https://github.com/AY2324S1-CS2103T-W10-4/tp/releases/download/v1.3.1/FoodNotes.jar).
 
-1. Copy the file to the folder you want to use as the _home folder_ for your FoodNotes.
+3. Copy the file to the folder you want to use as the _home folder_ for your FoodNotes.
 
-1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar foodnotes.jar` command to run the application.<br>
+4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar foodnotes.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
-1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
 
@@ -163,9 +162,7 @@ This section provides a summary of the parameters used when inputting commands i
 
    * `list` : Lists all stalls.
 
-
-
-1. Refer to the [Features](#features) below for details of each command.
+6. Refer to the [Features](#4-features) below for details of each command.
 
 <div markdown="block" class="alert alert-info">
 
@@ -191,6 +188,7 @@ This section provides a summary of the parameters used when inputting commands i
 The commands in this section allow you to perform operations on the entire system. They include:
 - Viewing help
 - Exiting from the application
+- Clearing the FoodNotes database
 
 
 ### 4.1.1 Viewing help : `help` <a id="4.1.1-viewing-help"></a>
@@ -479,13 +477,10 @@ Outcome:
 1. You have now deleted the review of the specified stall from the list, and the list will be updated.
 </div>
 
-=======
 ---------------------------------------------------------------------------------------------------------------------
 ## 4.3 Stall Sorting <a id="4.3-stall-sorting"></a>
 This feature allows you to sort the stalls by their location, rating and price, so you can now easily find the stalls based on these criterias.
 
-
---------------------------------------------------------------------------------------------------------------------
 
 ### 4.3.1 Sort stalls by location: `sort-stalls-location` <a id="4.3.1-sort-stalls-by-location"></a>
 
@@ -500,7 +495,8 @@ You can use this command to sort the stalls by their location in alphabetical or
 1. The `Result Display` will display a success message.
 2. You will now see that the stalls are sorted by location in alphabetical order in the `Data Display`, as illustrated
    in the screenshot below.
-<img src="images/userGuide/sort-stalls-location.png" alt="sort-stalls-location" width="600"/>
+
+![ListOutcome](images/userGuide/sort-stalls-location.png)
 
 ### 4.3.2 Sort stalls by rating: `sort-stalls-rating` <a id="4.3.2-sort-stalls-by-rating"></a>
 
@@ -515,7 +511,8 @@ You can use this command to sort the stalls by their rating in descending order,
 1. The `Result Display` will display a success message.
 2. You will now see that the stalls are sorted by rating in descending order in the `Data Display`, as illustrated
    in the screenshot below.
-<img src="images/userGuide/sort-stalls-rating.png" alt="sort-stalls-rating" width="600"/>
+
+![ListOutcome](images/userGuide/sort-stalls-rating.png)
 
 ### 4.3.3 Sort stalls by price: `sort-stalls-price` <a id="4.3.3-sort-stalls-by-price"></a>
 
@@ -530,7 +527,8 @@ You can use this command to sort the stalls by their price in ascending order, a
 1. The `Result Display` will display a success message.
 2. You will now see that the stalls are sorted by price in ascending order in the `Data Display`, as illustrated
    in the screenshot below.
-<img src="images/userGuide/sort-stalls-price.png" alt="sort-stalls-price" width="600"/>
+
+![ListOutcome](images/userGuide/sort-stalls-price.png)
 
 
 
@@ -556,7 +554,8 @@ You wish to find stalls that serve Japanese and Western noodles. You can use the
 Outcome:
 1. The `Result Display` will display a success message.
 2. You will now see the matching stalls in the `Data Display`, as illustrated in the screenshot below.
-<img src="images/userGuide/find-by-stall.png" alt="find-by-name" width="600"/>
+
+![ListOutcome](images/userGuide/find-by-name.png)
 
 <div markdown="block" class="alert alert-info">
 
@@ -581,7 +580,8 @@ You wish to find stalls that are located at the Deck. You can use the command as
 Outcome:
 1. The `Result Display` will display a success message.
 2. You will now see the matching stalls in the `Data Display`, as illustrated in the screenshot below.
-<img src="images/userGuide/find-by-location.png" alt="find-by-location" width="600"/>
+
+![ListOutcome](images/userGuide/find-by-location.png)
 
 <div markdown="block" class="alert alert-info">
 
@@ -606,7 +606,8 @@ You wish to find stalls that sells chicken rice. You can use the command as foll
 Outcome:
 1. The `Result Display` will display a success message.
 2. You will now see the matching stalls in the `Data Display`, as illustrated in the screenshot below.
-<img src="images/userGuide/find-by-item.png" alt="find-by-item" width="600"/>
+
+![ListOutcome](images/userGuide/find-by-item.png)
 
 <div markdown="block" class="alert alert-info">
 
@@ -627,7 +628,8 @@ This feature allows you to manage information about the items in **FoodNotes**. 
 ### 4.5.1 Viewing an item : `view-item` <a id="4.5.1-viewing-an-item"></a>
 
 
-You can use this command to view details of a specific item from the database.
+You can use this command to view details of a specific item from a specific stall in **FoodNotes**, 
+which includes the price, rating and description of the item.
 
 **Format:**
 
@@ -841,3 +843,4 @@ Outcome:
 | **Delete item review** | `delete-item-review s/STALL_INDEX i/ITEM_INDEX` <br> e.g. `delete-item-review` s/1 i/1                                                        |
 
 --------------------------------------------------------------------------------------------------------------------
+# 7. FAQ <a id="7-faq"></a>
