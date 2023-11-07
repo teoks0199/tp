@@ -17,6 +17,7 @@ title: User Guide
    - 4.1 [General](#4.1-general)
       * 4.1.1 [Viewing help :`help`](#4.1.1-viewing-help)
       * 4.1.2 [Exiting from the application :`exit`](#4.1.2-exiting-from-the-application)
+      * 4.1.3 [Clearing the FoodNotes database :`clear`](#4.1.3-clearing-foodnotes)
    - 4.2 [Stall Management](#4.2-stall-management) 
       * 4.2.1 [Listing all stalls :`list`](#4.2.1-listing-all-stalls)
       * 4.2.2 [Viewing a stall :`view-stall`](#4.2.2-viewing-a-stall)
@@ -235,7 +236,7 @@ Outcome:
 
 </div>
 
- ### 4.1.2 Exiting from the application: `exit` <a id="4.1.2-exiting-from-the-application"></a>
+### 4.1.2 Exiting from the application: `exit` <a id="4.1.2-exiting-from-the-application"></a>
 
 You can use this command to exit **FoodNotes**.
 
@@ -262,6 +263,34 @@ Type `exit` into the *Command Box* and press `Enter` to execute.
 Outcome:
 
 The **FoodNotes** application window is now closed.
+
+### 4.1.3 Clearing the FoodNotes database: `clear` <a id="4.1.3-clearing-foodnotes"></a>
+
+You can use this command to clear the database in **FoodNotes**.
+
+<div markdown="block" class="alert alert-info">
+
+**:warning: This command will permanently delete all data stored in FoodNotes. You should make a backup of `addressbook.json` if you still want to keep your old data.**
+
+</div>
+
+**Format:**
+
+`clear`
+
+**Example:**
+
+In this example, you want to clear all data stored in **FoodNotes**.
+
+<div markdown="block" class="alert alert-white">
+
+Exiting the application:
+
+Type `clear` into the *Command Box* and press `Enter` to execute.
+
+Outcome:
+
+The **FoodNotes** database is now empty.
 
 ----
 ## 4.2 Stall Management <a id="4.2-stall-management"></a>
@@ -749,14 +778,14 @@ Outcome:
   
 # 5. Glossary <a id="5-glossary"></a>
 
-| Term              | Explanation                                                                                                                                             |
-|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **FoodNotes**     | Can refer to name of the application as a whole or to the app’s storage file.<br>                                                                       |
-| **Stalls**        | Refers to the name of the food stall.<br>                                                                                                               |
-| **Item**          | Refers to a specific food item. <br>                                                                                                                    |
-| **CLI**           | A Command Line Interface (CLI) is a text-based user interface that allows users to type text commands instructing the program to do specific tasks.     |
+| Term              | Explanation                                                                                                                                                                |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **FoodNotes**     | Can refer to name of the application as a whole or to the app’s storage file.<br>                                                                                          |
+| **Stalls**        | Refers to the name of the food stall.<br>                                                                                                                                  |
+| **Item**          | Refers to a specific food item. <br>                                                                                                                                       |
+| **CLI**           | A Command Line Interface (CLI) is a text-based user interface that allows users to type text commands instructing the program to do specific tasks.                        |
 | **GUI**           | A Graphical User Interface (GUI) is a form of user interface that allows users to interact with the program through graphical icons instead of text-based user interfaces. |
-| **Absolute Path** | The complete details needed to locate a file or folder, starting from the root element.                                                                 |
+
 
 --------------------------
 # 6. Command summary <a id="6-command-summary"></a>
@@ -767,6 +796,7 @@ Outcome:
 |-----------|------------------|
 | **Help**  | `help`           |
 | **Exit**  | `exit`           |
+| **Clear** | `clear`          |
 
 ## 6.2 Stall Management Commands <a id="62-stall-management-summary"></a>
 
