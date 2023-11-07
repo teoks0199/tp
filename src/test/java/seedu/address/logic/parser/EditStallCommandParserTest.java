@@ -145,7 +145,7 @@ public class EditStallCommandParserTest {
 
         // name and location specified
         String userInput = PREAMBLE_WHITESPACE + " "
-                + PREFIX_STALL + String.valueOf(targetIndex.getOneBased()) + NAME_DESC_ASIAN + LOCATION_DESC_ASIAN;
+                + PREFIX_STALL + targetIndex.getOneBased() + NAME_DESC_ASIAN + LOCATION_DESC_ASIAN;
         EditStallCommand.EditStallDescriptor descriptor = new EditStallDescriptorBuilder()
                 .withName(VALID_NAME_ASIAN)
                 .withLocation(VALID_LOCATION_ASIAN).build();
@@ -154,7 +154,7 @@ public class EditStallCommandParserTest {
 
         // rating and description specified
         userInput = PREAMBLE_WHITESPACE + " "
-                + PREFIX_STALL + String.valueOf(targetIndex.getOneBased()) + RATING_DESC + DESCRIPTION_DESC;
+                + PREFIX_STALL + targetIndex.getOneBased() + RATING_DESC + DESCRIPTION_DESC;
         descriptor = new EditStallDescriptorBuilder().withRating(VALID_RATING)
                 .withDescription(VALID_DESCRIPTION).build();
         expectedCommand = new EditStallCommand(targetIndex, descriptor);
@@ -166,7 +166,7 @@ public class EditStallCommandParserTest {
         Index targetIndex = INDEX_SECOND_STALL;
         String userInput = PREAMBLE_WHITESPACE + " "
                 + PREFIX_STALL
-                + String.valueOf(targetIndex.getOneBased()) + NAME_DESC_ASIAN + LOCATION_DESC_ASIAN
+                + targetIndex.getOneBased() + NAME_DESC_ASIAN + LOCATION_DESC_ASIAN
                 + RATING_DESC + DESCRIPTION_DESC;
 
         EditStallCommand.EditStallDescriptor descriptor = new EditStallDescriptorBuilder().withName(VALID_NAME_ASIAN)
@@ -183,7 +183,7 @@ public class EditStallCommandParserTest {
         // name
         Index targetIndex = INDEX_THIRD_STALL;
         String userInput = PREAMBLE_WHITESPACE + " "
-                + PREFIX_STALL + String.valueOf(targetIndex.getOneBased()) + NAME_DESC_ASIAN;
+                + PREFIX_STALL + targetIndex.getOneBased() + NAME_DESC_ASIAN;
         EditStallCommand.EditStallDescriptor descriptor = new EditStallDescriptorBuilder()
                 .withName(VALID_NAME_ASIAN).build();
         EditStallCommand expectedCommand = new EditStallCommand(targetIndex, descriptor);
@@ -191,21 +191,21 @@ public class EditStallCommandParserTest {
 
         // location
         userInput = PREAMBLE_WHITESPACE + " "
-                + PREFIX_STALL + String.valueOf(targetIndex.getOneBased()) + LOCATION_DESC_ASIAN;
+                + PREFIX_STALL + targetIndex.getOneBased() + LOCATION_DESC_ASIAN;
         descriptor = new EditStallDescriptorBuilder().withLocation(VALID_LOCATION_ASIAN).build();
         expectedCommand = new EditStallCommand(targetIndex, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
 
         // rating
         userInput = PREAMBLE_WHITESPACE + " "
-                + PREFIX_STALL + String.valueOf(targetIndex.getOneBased()) + RATING_DESC;
+                + PREFIX_STALL + targetIndex.getOneBased() + RATING_DESC;
         descriptor = new EditStallDescriptorBuilder().withRating(VALID_RATING).build();
         expectedCommand = new EditStallCommand(targetIndex, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
 
         // description
         userInput = PREAMBLE_WHITESPACE + " "
-                + PREFIX_STALL + String.valueOf(targetIndex.getOneBased()) + DESCRIPTION_DESC;
+                + PREFIX_STALL + targetIndex.getOneBased() + DESCRIPTION_DESC;
         descriptor = new EditStallDescriptorBuilder().withDescription(VALID_DESCRIPTION).build();
         expectedCommand = new EditStallCommand(targetIndex, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
@@ -220,20 +220,20 @@ public class EditStallCommandParserTest {
         Index targetIndex = INDEX_FIRST_STALL;
         String userInput = PREAMBLE_WHITESPACE + " "
                 + PREFIX_STALL
-                + String.valueOf(targetIndex.getOneBased()) + INVALID_NAME_DESC + NAME_DESC_ASIAN;
+                + targetIndex.getOneBased() + INVALID_NAME_DESC + NAME_DESC_ASIAN;
 
         assertParseFailure(parser, userInput, Messages.getErrorMessageForDuplicatePrefixes(PREFIX_NAME));
 
         // valid followed by invalid
         userInput = PREAMBLE_WHITESPACE + " "
                 + PREFIX_STALL
-                + String.valueOf(targetIndex.getOneBased()) + LOCATION_DESC_ASIAN + INVALID_LOCATION_DESC;
+                + targetIndex.getOneBased() + LOCATION_DESC_ASIAN + INVALID_LOCATION_DESC;
 
         assertParseFailure(parser, userInput, Messages.getErrorMessageForDuplicatePrefixes(PREFIX_LOCATION));
 
         // mulltiple valid fields repeated
         userInput = PREAMBLE_WHITESPACE + " "
-                + PREFIX_STALL + String.valueOf(targetIndex.getOneBased()) + NAME_DESC_ASIAN + LOCATION_DESC_ASIAN
+                + PREFIX_STALL + targetIndex.getOneBased() + NAME_DESC_ASIAN + LOCATION_DESC_ASIAN
                 + NAME_DESC_ASIAN + LOCATION_DESC_ASIAN + NAME_DESC_BRITISH + LOCATION_DESC_BRITISH;
 
         assertParseFailure(parser, userInput,
@@ -242,7 +242,7 @@ public class EditStallCommandParserTest {
         // multiple invalid values
         userInput = PREAMBLE_WHITESPACE + " "
                 + PREFIX_STALL
-                + String.valueOf(targetIndex.getOneBased()) + INVALID_NAME_DESC + INVALID_LOCATION_DESC
+                + targetIndex.getOneBased() + INVALID_NAME_DESC + INVALID_LOCATION_DESC
                 + INVALID_NAME_DESC + INVALID_LOCATION_DESC;
 
         assertParseFailure(parser, userInput,

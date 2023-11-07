@@ -46,9 +46,12 @@ public class TypicalStalls {
 
     // Manually added
     public static final Stall HOON =
-            new StallBuilder().withName("Hoon Meier").withLocation("little india").build();
+            new StallBuilder().withName("Hoon Meier").withLocation("little india")
+                    .withMenu(VALID_MENU_1).withStallReview(STALL_REVIEW_2)
+                    .build();
     public static final Stall IDA =
-            new StallBuilder().withName("Ida Mueller").withLocation("chicago ave").build();
+            new StallBuilder().withName("Ida Mueller").withLocation("chicago ave")
+                    .withMenu(VALID_MENU_1).withStallReview(STALL_REVIEW_2).build();
 
     // Manually added - Stall's details found in {@code CommandTestUtil}
     public static final Stall ASIAN = new StallBuilder()
@@ -95,6 +98,6 @@ public class TypicalStalls {
      */
     public static List<Stall> getTypicalStallsWithMenuAndReview() {
         return new ArrayList<>(Arrays
-                .asList(HOON, IDA, ASIAN, BRITISH));
+                .asList(HOON, IDA));
     }
 }

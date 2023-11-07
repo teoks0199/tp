@@ -21,6 +21,7 @@ import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.stall.NameContainsKeywordsPredicate;
 import seedu.address.model.stall.Stall;
+import seedu.address.testutil.EditItemDescriptorBuilder;
 import seedu.address.testutil.EditStallDescriptorBuilder;
 
 /**
@@ -75,11 +76,18 @@ public class CommandTestUtil {
     public static final EditStallCommand.EditStallDescriptor DESC_ASIAN;
     public static final EditStallCommand.EditStallDescriptor DESC_BRITISH;
 
+    public static final EditItemCommand.EditItemDescriptor DESC_NASI_LEMAK;
+    public static final EditItemCommand.EditItemDescriptor DESC_CHICKEN_RICE;
+
     static {
         DESC_ASIAN = new EditStallDescriptorBuilder()
                 .withName(VALID_NAME_ASIAN).withLocation(VALID_LOCATION_ASIAN).build();
         DESC_BRITISH = new EditStallDescriptorBuilder()
                 .withName(VALID_NAME_BRITISH).withLocation(VALID_LOCATION_BRITISH).build();
+        DESC_NASI_LEMAK = new EditItemDescriptorBuilder()
+                .withName(VALID_ITEM_NAME_NASI_LEMAK).withPrice(VALID_ITEM_PRICE_1).build();
+        DESC_CHICKEN_RICE = new EditItemDescriptorBuilder()
+                .withName(VALID_ITEM_NAME_CHICKEN_RICE).withPrice(VALID_ITEM_PRICE_2).build();
     }
 
     /**

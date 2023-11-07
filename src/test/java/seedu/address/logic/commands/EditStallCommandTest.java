@@ -10,6 +10,8 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BRITISH;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.logic.commands.CommandTestUtil.showStallAtIndex;
+import static seedu.address.testutil.StallBuilder.VALID_MENU_1;
+import static seedu.address.testutil.StallBuilder.VALID_STALL_REVIEW_1;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_STALL;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_STALL;
 import static seedu.address.testutil.TypicalStalls.getTypicalAddressBookWithMenuAndReview;
@@ -36,7 +38,7 @@ public class EditStallCommandTest {
 
     @Test
     public void execute_allFieldsSpecifiedUnfilteredList_success() {
-        Stall editedStall = new StallBuilder().build();
+        Stall editedStall = new StallBuilder().withMenu(VALID_MENU_1).withStallReview(VALID_STALL_REVIEW_1).build();
         EditStallDescriptor descriptor = new EditStallDescriptorBuilder(editedStall).build();
         EditStallCommand editStallCommand = new EditStallCommand(INDEX_FIRST_STALL, descriptor);
 
@@ -55,16 +57,16 @@ public class EditStallCommandTest {
 
     @Test
     public void execute_someFieldsSpecifiedUnfilteredList_success() {
+        // Only stall name is edited
         Index indexLastStall = Index.fromOneBased(model.getFilteredStallList().size());
         Stall lastStall = model.getFilteredStallList().get(indexLastStall.getZeroBased());
         StallBuilder stallInList = new StallBuilder(lastStall);
 
-        // Only stall name is edited
         Stall editedStall = stallInList
                 .withName(VALID_NAME_BRITISH).build();
 
-        EditStallDescriptor descriptor = new EditStallDescriptorBuilder().withName(VALID_NAME_BRITISH)
-                .withLocation(VALID_LOCATION_BRITISH).build();
+        EditStallDescriptor descriptor = new EditStallDescriptorBuilder(editedStall).withName(VALID_NAME_BRITISH)
+                .build();
         EditStallCommand editStallCommand = new EditStallCommand(indexLastStall, descriptor);
 
         String expectedMessage = String
@@ -80,10 +82,14 @@ public class EditStallCommandTest {
                 expectedModel);
 
         // Only stall location is edited
+        indexLastStall = Index.fromOneBased(model.getFilteredStallList().size());
+        lastStall = model.getFilteredStallList().get(indexLastStall.getZeroBased());
+        stallInList = new StallBuilder(lastStall);
+
         editedStall = stallInList
                 .withLocation(VALID_LOCATION_BRITISH).build();
 
-        descriptor = new EditStallDescriptorBuilder().withName(VALID_NAME_BRITISH)
+        descriptor = new EditStallDescriptorBuilder(editedStall)
                 .withLocation(VALID_LOCATION_BRITISH).build();
         editStallCommand = new EditStallCommand(indexLastStall, descriptor);
 

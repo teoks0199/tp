@@ -19,13 +19,13 @@ public class StallBuilder {
 
     public static final String DEFAULT_NAME = "Chicken Rice";
     public static final String DEFAULT_LOCATION = "Deck";
+    public static final StallReview VALID_STALL_REVIEW_1 = STALL_REVIEW_1;
     private static final Item VALID_ITEM_1 = CHICKEN_RICE;
     private static final Item VALID_ITEM_2 = NASI_LEMAK;
     private static final Menu DEFAULT_MENU = null;
-    private static final Menu VALID_MENU_1 = new MenuBuilder()
+    public static final Menu VALID_MENU_1 = new MenuBuilder()
             .withItem(VALID_ITEM_1).withItem(VALID_ITEM_2).build();
     private static final StallReview DEFAULT_STALL_REVIEW = null;
-    private static final StallReview VALID_STALL_REVIEW_1 = STALL_REVIEW_1;
     private Name name;
     private Location location;
     private Menu menu;
