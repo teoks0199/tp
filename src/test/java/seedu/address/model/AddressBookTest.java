@@ -46,9 +46,9 @@ public class AddressBookTest {
     public void resetData_withDuplicateStalls_throwsDuplicateStallException() {
         // Two stalls with the same identity fields
         Stall editedAuntiesCooking1 = new StallBuilder(AUNTIES_COOKING)
-                .withLocation(VALID_LOCATION_BRITISH).buildWithNameAndLocation();
+                .withLocation(VALID_LOCATION_BRITISH).build();
         Stall editedAuntiesCooking2 = new StallBuilder(AUNTIES_COOKING)
-                .withLocation(VALID_LOCATION_BRITISH).buildWithNameAndLocation();
+                .withLocation(VALID_LOCATION_BRITISH).build();
         List<Stall> newStalls = Arrays.asList(editedAuntiesCooking1, editedAuntiesCooking2);
         AddressBookStub newData = new AddressBookStub(newStalls);
 
@@ -75,7 +75,7 @@ public class AddressBookTest {
     public void hasStall_stallWithSameIdentityFieldsInAddressBook_returnsFalse() {
         addressBook.addStall(AUNTIES_COOKING);
         Stall editedAlice = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH)
-                .buildWithNameAndLocation();
+                .build();
         assertFalse(addressBook.hasStall(editedAlice));
     }
 

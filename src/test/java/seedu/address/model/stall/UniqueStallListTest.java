@@ -42,7 +42,7 @@ public class UniqueStallListTest {
     public void contains_stallWithSameIdentityFieldsInList_returnsFalse() {
         uniqueStallList.add(AUNTIES_COOKING);
         Stall editedAlice = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH)
-                .buildWithNameAndLocation();
+                .build();
         assertFalse(uniqueStallList.contains(editedAlice));
     }
 
@@ -85,7 +85,7 @@ public class UniqueStallListTest {
     public void setStall_editedStallHasSameIdentity_success() {
         uniqueStallList.add(AUNTIES_COOKING);
         Stall editedAlice = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH)
-                .buildWithNameAndLocation();
+                .build();
         uniqueStallList.setStall(AUNTIES_COOKING, editedAlice);
         UniqueStallList expectedUniqueStallList = new UniqueStallList();
         expectedUniqueStallList.add(editedAlice);

@@ -49,7 +49,7 @@ public class AddressBookParserTest {
 
     @Test
     public void parseCommand_addStall() throws Exception {
-        Stall stall = new StallBuilder().buildWithNameAndLocation();
+        Stall stall = new StallBuilder().build();
         AddStallCommand command = (AddStallCommand) parser.parseCommand(StallUtil.getAddCommand(stall));
         assertEquals(new AddStallCommand(stall), command);
     }
@@ -69,7 +69,7 @@ public class AddressBookParserTest {
 
     @Test
     public void parseCommand_editStall() throws Exception {
-        Stall stall = new StallBuilder().buildWithNameAndLocation();
+        Stall stall = new StallBuilder().build();
         EditStallCommand.EditStallDescriptor descriptor = new EditStallDescriptorBuilder(stall).build();
         EditStallCommand command = (EditStallCommand) parser.parseCommand(EditStallCommand.COMMAND_WORD + " "
                 + PREFIX_STALL + INDEX_FIRST_STALL.getOneBased()

@@ -27,7 +27,7 @@ public class AddStallCommandIntegrationTest {
     }
     @Test
     public void execute_newStall_success() {
-        Stall validStall = new StallBuilder().buildWithNameAndLocation();
+        Stall validStall = new StallBuilder().build();
 
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.addStall(validStall);

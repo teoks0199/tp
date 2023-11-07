@@ -31,7 +31,7 @@ public class AddStallCommandParserTest {
 
     @Test
     public void parse_allFieldsPresent_success() {
-        Stall expectedStall = new StallBuilder(BRITISH).buildWithNameAndLocation();
+        Stall expectedStall = new StallBuilder(BRITISH).build();
 
         // whitespace only preamble
         assertParseSuccess(parser, PREAMBLE_WHITESPACE + NAME_DESC_BRITISH
@@ -39,7 +39,7 @@ public class AddStallCommandParserTest {
 
 
         // multiple tags - all accepted
-        Stall expectedStallMultipleTags = new StallBuilder(BRITISH).buildWithNameAndLocation();
+        Stall expectedStallMultipleTags = new StallBuilder(BRITISH).build();
         assertParseSuccess(parser,
                 NAME_DESC_BRITISH + LOCATION_DESC_BRITISH,
                 new AddStallCommand(expectedStallMultipleTags));

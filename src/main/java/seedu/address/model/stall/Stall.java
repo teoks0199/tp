@@ -45,6 +45,17 @@ public class Stall {
     }
 
     /**
+     * Constructor with review and no menu
+     */
+    public Stall(Name name, Location location, StallReview stallReview) {
+        requireAllNonNull(name, location, stallReview);
+        this.name = name;
+        this.location = location;
+        this.menu = new Menu();
+        this.stallReview = stallReview;
+    }
+
+    /**
      * Constructor with menu and review
      */
     public Stall(Name name, Location location, Menu menu, StallReview stallReview) {

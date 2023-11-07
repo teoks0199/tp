@@ -36,7 +36,7 @@ public class EditStallCommandTest {
 
     @Test
     public void execute_allFieldsSpecifiedUnfilteredList_success() {
-        Stall editedStall = new StallBuilder().buildWithAllFields();
+        Stall editedStall = new StallBuilder().build();
         EditStallDescriptor descriptor = new EditStallDescriptorBuilder(editedStall).build();
         EditStallCommand editStallCommand = new EditStallCommand(INDEX_FIRST_STALL, descriptor);
 
@@ -60,7 +60,7 @@ public class EditStallCommandTest {
 
         StallBuilder stallInList = new StallBuilder(lastStall);
         Stall editedStall = stallInList
-                .withName(VALID_NAME_BRITISH).withLocation(VALID_LOCATION_BRITISH).buildWithAllFields();
+                .withName(VALID_NAME_BRITISH).withLocation(VALID_LOCATION_BRITISH).build();
 
         EditStallDescriptor descriptor = new EditStallDescriptorBuilder().withName(VALID_NAME_BRITISH)
                 .withLocation(VALID_LOCATION_BRITISH).build();
@@ -101,7 +101,7 @@ public class EditStallCommandTest {
 
         Stall stallInFilteredList = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
         Stall editedStall = new StallBuilder(stallInFilteredList)
-                .withName(VALID_NAME_BRITISH).buildWithAllFields();
+                .withName(VALID_NAME_BRITISH).build();
         EditStallCommand editStallCommand = new EditStallCommand(INDEX_FIRST_STALL,
                 new EditStallDescriptorBuilder().withName(VALID_NAME_BRITISH).build());
 

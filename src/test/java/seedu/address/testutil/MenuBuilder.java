@@ -6,7 +6,7 @@ import seedu.address.model.stall.Menu;
 /**
  * A utility class to help with building Menu objects.
  * Example usage: <br>
- *    {@code Menu ab = new MenuBuilder().withItem("Chicken Rice", "Duck Rice").buildWithNameAndLocation();}
+ *    {@code Menu ab = new MenuBuilder().withItem("Chicken Rice", "Duck Rice").build();}
  */
 public class MenuBuilder {
     private Menu menu;

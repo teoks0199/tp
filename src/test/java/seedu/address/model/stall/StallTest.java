@@ -24,29 +24,29 @@ public class StallTest {
 
         // same name, all other attributes different -> returns false
         Stall editedAuntiesCooking =
-                new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).buildWithNameAndLocation();
+                new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).build();
         assertFalse(AUNTIES_COOKING.isSameStall(editedAuntiesCooking));
 
         // different name, all other attributes same -> returns false
         editedAuntiesCooking =
-                new StallBuilder(AUNTIES_COOKING).withName(VALID_NAME_BRITISH).buildWithNameAndLocation();
+                new StallBuilder(AUNTIES_COOKING).withName(VALID_NAME_BRITISH).build();
         assertFalse(AUNTIES_COOKING.isSameStall(editedAuntiesCooking));
 
         // name differs in case, all other attributes same -> returns false
         Stall editedBritish =
-                new StallBuilder(BRITISH).withName(VALID_NAME_BRITISH.toLowerCase()).buildWithNameAndLocation();
+                new StallBuilder(BRITISH).withName(VALID_NAME_BRITISH.toLowerCase()).build();
         assertFalse(BRITISH.isSameStall(editedBritish));
 
         // name has trailing spaces, all other attributes same -> returns false
         String nameWithTrailingSpaces = VALID_NAME_BRITISH + " ";
-        editedBritish = new StallBuilder(BRITISH).withName(nameWithTrailingSpaces).buildWithNameAndLocation();
+        editedBritish = new StallBuilder(BRITISH).withName(nameWithTrailingSpaces).build();
         assertFalse(BRITISH.isSameStall(editedBritish));
     }
 
     @Test
     public void equals() {
         // same values -> returns true
-        Stall auntiesCookingCopy = new StallBuilder(AUNTIES_COOKING).buildWithNameAndLocation();
+        Stall auntiesCookingCopy = new StallBuilder(AUNTIES_COOKING).build();
         assertTrue(AUNTIES_COOKING.equals(auntiesCookingCopy));
 
         // same object -> returns true
@@ -63,12 +63,12 @@ public class StallTest {
 
         // different name -> returns false
         Stall editedAuntiesCooking =
-                new StallBuilder(AUNTIES_COOKING).withName(VALID_NAME_BRITISH).buildWithNameAndLocation();
+                new StallBuilder(AUNTIES_COOKING).withName(VALID_NAME_BRITISH).build();
         assertFalse(AUNTIES_COOKING.equals(editedAuntiesCooking));
 
         // different location -> returns false
         editedAuntiesCooking =
-                new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).buildWithNameAndLocation();
+                new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).build();
         assertFalse(AUNTIES_COOKING.equals(editedAuntiesCooking));
 
     }
