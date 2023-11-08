@@ -25,7 +25,7 @@ public class FindStallCommandParserTest {
     }
 
     @Test
-    public void parse_validArgs_returnsFindCommand() {
+    public void parse_validArgs_returnsFindStallCommand() {
         // EP: One keyword
         FindStallCommand expectedFindStallCommand =
                 new FindStallCommand(new NameContainsKeywordsPredicate(Arrays.asList("Alice")));
