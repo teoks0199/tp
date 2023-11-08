@@ -1,6 +1,7 @@
 package seedu.address.logic.parser;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.Messages.MESSAGE_INVALID_STALL_DISPLAYED_INDEX;
 import static seedu.address.logic.commands.CommandTestUtil.PREAMBLE_WHITESPACE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
@@ -31,7 +32,7 @@ public class DeleteStallCommandParserTest {
     @Test
     public void parse_invalidArgs_throwsParseException() {
         String userInput = PREAMBLE_WHITESPACE + " " + PREFIX_STALL + "a";
-        assertParseFailure(parser, userInput, String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+        assertParseFailure(parser, userInput, String.format(MESSAGE_INVALID_STALL_DISPLAYED_INDEX,
                 DeleteStallCommand.MESSAGE_USAGE));
     }
 }
