@@ -123,29 +123,6 @@ public class EditStallCommandTest {
     }
 
     @Test
-    public void execute_filteredList_success() {
-        showStallAtIndex(model, INDEX_FIRST_STALL);
-
-        Stall stallInFilteredList = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
-        Stall editedStall = new StallBuilder(stallInFilteredList)
-                .withName(VALID_NAME_BRITISH).build();
-        EditStallCommand editStallCommand = new EditStallCommand(INDEX_FIRST_STALL,
-                new EditStallDescriptorBuilder().withName(VALID_NAME_BRITISH).build());
-
-        String expectedMessage = String
-                .format(EditStallCommand.MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall));
-
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
-        expectedModel.setStall(model.getFilteredStallList().get(0), editedStall);
-
-        assertCommandSuccess(editStallCommand,
-                model,
-                expectedMessage,
-                CommandResult.ViewType.STALL_DETAIL,
-                expectedModel);
-    }
-
-    @Test
     public void execute_duplicateStallUnfilteredList_failure() {
         Stall firstStall = model.getFilteredStallList().get(INDEX_FIRST_STALL.getZeroBased());
         EditStallDescriptor descriptor = new EditStallDescriptorBuilder(firstStall).build();

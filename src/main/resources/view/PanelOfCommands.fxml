@@ -13,92 +13,70 @@
         <VBox HBox.hgrow="ALWAYS">
 
             <VBox HBox.hgrow="ALWAYS">
-                <Label text="Adding:" />
-                <Text text="add-stall" />
-                <Text text="add-item" />
+                <Label text="General:" />
+                <Text text="help" />
+                <Text text="exit" />
+                <Text text="clear" />
                 <padding>
                    <Insets bottom="5.0" />
                 </padding>
             </VBox>
 
             <VBox HBox.hgrow="ALWAYS">
-                <Label text="Finding:" />
-                <Text text="find-stall" />
-                <Text text="find-location" />
-                <Text text="find-item" />
+                <Label text="Stall Sorting" />
+                <Text text="sort-stalls-location" />
+                <Text text="sort-stalls-ratings" />
+                <Text text="sort-stalls-price" />
                 <padding>
                     <Insets bottom="5.0" />
                 </padding>
             </VBox>
 
             <VBox HBox.hgrow="ALWAYS">
-                <Label text="Deleting:" />
-                <Text text="delete-stall" />
-                <Text text="delete-item" />
-                <Text text="delete-stall-review" />
-                <Text text="delete-item-review" />
-            <padding>
-               <Insets bottom="5.0" right="20.0"/>
-            </padding>
+                <Label text="Stall Finding" />
+                <Text text="find-by-name" />
+                <Text text="find-by-location" />
+                <Text text="find-by-item" />
+                <padding>
+                   <Insets bottom="5.0" right="20.0"/>
+                </padding>
             </VBox>
 
-            <VBox HBox.hgrow="ALWAYS">
-                <Label text="Others:" />
-                <Text text="list" />
-                <Text text="help" />
-                <Text text="exit" />
                 <padding>
                     <Insets bottom="5.0" />
                 </padding>
-            </VBox>
 
         </VBox>
 
         <VBox HBox.hgrow="ALWAYS">
             <VBox styleClass="panel-of-command">
-                <Label text="Viewing:" />
+                <Label text="Stall Management:" />
+                <Text text="list" />
                 <Text text="view-stall" />
-                <Text text="view-item" />
-                <padding>
-                   <Insets bottom="5.0" />
-                </padding>
-            </VBox>
-
-            <VBox>
-                <Label text="Sorting:" />
-                <Text text="sort-stalls-location" />
-                <Text text="sort-stalls-rating" />
-                <Text text="sort-stalls-price" />
-                <padding>
-                   <Insets bottom="5.0" />
-                </padding>
-            </VBox>
-
-            <VBox>
-                <Label text="Reviewing:" />
-                <Text text="review-stall" />
-                <Text text="review-item" />
-                <padding>
-                    <Insets bottom="5.0" />
-                </padding>
-            </VBox>
-
-            <VBox>
-                <Label text="Editing:" />
+                <Text text="add-stall" />
+                <Text text="delete-stall" />
                 <Text text="edit-stall" />
-                <Text text="edit-item" />
-                <Text text=""/>
-                <Text text=""/>
+                <Text text="review-stall" />
+                <Text text="delete-stall-review" />
                 <padding>
-                    <Insets bottom="5.0" />
+                   <Insets bottom="5.0" />
+                </padding>
+            </VBox>
+
+            <VBox styleClass="panel-of-command">
+                <Label text="Item Management:" />
+                <Text text="view-item" />
+                <Text text="add-item" />
+                <Text text="delete-item" />
+                <Text text="edit-item" />
+                <Text text="review-item" />
+                <Text text="delete-item-review" />
+                <padding>
+                   <Insets bottom="5.0" />
                 </padding>
             </VBox>
 
         </VBox>
-
-        <padding>
-            <Insets top="10.0" />
-        </padding>
 
     </HBox>
 

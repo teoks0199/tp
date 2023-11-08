@@ -6,7 +6,6 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_LOCATION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_STALLS;
 
 import java.util.List;
 import java.util.Objects;
@@ -102,8 +101,8 @@ public class EditStallCommand extends Command {
         model.setStall(stallToEdit, editedStall);
 
         model.showStall(stallToEdit);
-        model.setFilteredStall(index);
-        model.setFilteredItemList(index);
+        model.setFilteredStall(this.index);
+        model.setFilteredItemList(this.index);
 
         logger.exiting(getClass().getName(), "execute");
         return new CommandResult(String.format(MESSAGE_EDIT_STALL_SUCCESS, Messages.format(editedStall)),
