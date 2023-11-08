@@ -51,7 +51,7 @@ public class TypicalStalls {
                     .build();
     public static final Stall IDA =
             new StallBuilder().withName("Ida Mueller").withLocation("chicago ave")
-                    .withMenu(VALID_MENU_1).withStallReview(STALL_REVIEW_2).build();
+                    .withMenu(VALID_MENU_2).withStallReview(STALL_REVIEW_2).build();
 
     // Manually added - Stall's details found in {@code CommandTestUtil}
     public static final Stall ASIAN = new StallBuilder()

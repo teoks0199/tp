@@ -32,7 +32,7 @@ import seedu.address.testutil.ItemBuilder;
 
 
 /**
- * Contains integration tests (interaction with the Model) and unit tests for EditStallCommand.
+ * Contains integration tests (interaction with the Model) and unit tests for EditItemCommand.
  */
 public class EditItemCommandTest {
 
