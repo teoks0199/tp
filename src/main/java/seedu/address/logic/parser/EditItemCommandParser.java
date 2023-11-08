@@ -11,8 +11,10 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_PRICE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
+import java.util.logging.Logger;
 import java.util.stream.Stream;
 
+import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.EditItemCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -25,6 +27,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
  * Parses input arguments and creates a new EditItemCommand object
  */
 public class EditItemCommandParser implements Parser<EditItemCommand> {
+    private final Logger logger = LogsCenter.getLogger(getClass());
 
     /**
      * Parses the given {@code String} of arguments in the context of the EditItemCommand
@@ -82,6 +85,7 @@ public class EditItemCommandParser implements Parser<EditItemCommand> {
         }
 
         if (!editItemDescriptor.isAnyFieldEdited()) {
+            logger.warning("Attempted to edit an item without any fields edited.");
             throw new ParseException(EditItemCommand.MESSAGE_NOT_EDITED);
         }
 
