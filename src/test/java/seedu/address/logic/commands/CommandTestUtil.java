@@ -2,10 +2,12 @@ package seedu.address.logic.commands;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_LOCATION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PRICE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 import static seedu.address.testutil.Assert.assertThrows;
 
@@ -19,6 +21,7 @@ import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.stall.NameContainsKeywordsPredicate;
 import seedu.address.model.stall.Stall;
+import seedu.address.testutil.EditItemDescriptorBuilder;
 import seedu.address.testutil.EditStallDescriptorBuilder;
 
 /**
@@ -31,12 +34,18 @@ public class CommandTestUtil {
     public static final String VALID_NAME_BRITISH = "British Cuisine";
     public static final String VALID_LOCATION_ASIAN = "Block 312, Amy Street 1";
     public static final String VALID_LOCATION_BRITISH = "Block 123, Bobby Street 3";
+    public static final String VALID_RATING = "4";
+    public static final String VALID_DESCRIPTION = "Good";
     public static final String NAME_DESC_ASIAN = " " + PREFIX_NAME + VALID_NAME_ASIAN;
     public static final String NAME_DESC_BRITISH = " " + PREFIX_NAME + VALID_NAME_BRITISH;
     public static final String LOCATION_DESC_ASIAN = " " + PREFIX_LOCATION + VALID_LOCATION_ASIAN;
     public static final String LOCATION_DESC_BRITISH = " " + PREFIX_LOCATION + VALID_LOCATION_BRITISH;
+    public static final String RATING_DESC = " " + PREFIX_RATING + VALID_RATING;
+    public static final String DESCRIPTION_DESC = " " + PREFIX_DESCRIPTION + VALID_DESCRIPTION;
     public static final String INVALID_NAME_DESC = " " + PREFIX_NAME + " "; // empty names not allowed
     public static final String INVALID_LOCATION_DESC = " " + PREFIX_LOCATION; // empty locations not allowed
+    public static final String INVALID_RATING_DESC = " " + PREFIX_RATING + "a"; // 'a' not allowed in ratings
+    public static final String INVALID_DESCRIPTION_DESC = " " + PREFIX_DESCRIPTION; // empty description not allowed
 
     //Item related
     public static final String VALID_STALL_INDEX_1 = "1";
@@ -67,11 +76,18 @@ public class CommandTestUtil {
     public static final EditStallCommand.EditStallDescriptor DESC_ASIAN;
     public static final EditStallCommand.EditStallDescriptor DESC_BRITISH;
 
+    public static final EditItemCommand.EditItemDescriptor DESC_NASI_LEMAK;
+    public static final EditItemCommand.EditItemDescriptor DESC_CHICKEN_RICE;
+
     static {
         DESC_ASIAN = new EditStallDescriptorBuilder()
                 .withName(VALID_NAME_ASIAN).withLocation(VALID_LOCATION_ASIAN).build();
         DESC_BRITISH = new EditStallDescriptorBuilder()
                 .withName(VALID_NAME_BRITISH).withLocation(VALID_LOCATION_BRITISH).build();
+        DESC_NASI_LEMAK = new EditItemDescriptorBuilder()
+                .withName(VALID_ITEM_NAME_NASI_LEMAK).withPrice(VALID_ITEM_PRICE_1).build();
+        DESC_CHICKEN_RICE = new EditItemDescriptorBuilder()
+                .withName(VALID_ITEM_NAME_CHICKEN_RICE).withPrice(VALID_ITEM_PRICE_2).build();
     }
 
     /**

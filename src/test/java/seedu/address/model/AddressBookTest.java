@@ -45,8 +45,10 @@ public class AddressBookTest {
     @Test
     public void resetData_withDuplicateStalls_throwsDuplicateStallException() {
         // Two stalls with the same identity fields
-        Stall editedAuntiesCooking1 = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).build();
-        Stall editedAuntiesCooking2 = new StallBuilder(AUNTIES_COOKING).withLocation(VALID_LOCATION_BRITISH).build();
+        Stall editedAuntiesCooking1 = new StallBuilder(AUNTIES_COOKING)
+                .withLocation(VALID_LOCATION_BRITISH).build();
+        Stall editedAuntiesCooking2 = new StallBuilder(AUNTIES_COOKING)
+                .withLocation(VALID_LOCATION_BRITISH).build();
         List<Stall> newStalls = Arrays.asList(editedAuntiesCooking1, editedAuntiesCooking2);
         AddressBookStub newData = new AddressBookStub(newStalls);
 

@@ -259,6 +259,7 @@ public class EditStallCommand extends Command {
             return new ToStringBuilder(this)
                     .add("name", name)
                     .add("location", location)
+                    .add("menu", menu)
                     .add("rating", rating)
                     .add("description", description)
                     .toString();

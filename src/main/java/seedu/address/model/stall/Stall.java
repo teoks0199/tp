@@ -45,6 +45,17 @@ public class Stall {
     }
 
     /**
+     * Constructor with review and no menu
+     */
+    public Stall(Name name, Location location, StallReview stallReview) {
+        requireAllNonNull(name, location, stallReview);
+        this.name = name;
+        this.location = location;
+        this.menu = new Menu();
+        this.stallReview = stallReview;
+    }
+
+    /**
      * Constructor with menu and review
      */
     public Stall(Name name, Location location, Menu menu, StallReview stallReview) {
@@ -219,6 +230,8 @@ public class Stall {
         return new ToStringBuilder(this)
                 .add("name", name)
                 .add("location", location)
+                .add("menu", menu)
+                .add("stallReview", stallReview)
                 .toString();
     }
 }

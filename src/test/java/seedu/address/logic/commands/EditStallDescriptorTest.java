@@ -49,7 +49,8 @@ public class EditStallDescriptorTest {
         EditStallCommand.EditStallDescriptor editStallDescriptor = new EditStallCommand.EditStallDescriptor();
         String expected = EditStallCommand.EditStallDescriptor.class.getCanonicalName() + "{name="
                 + editStallDescriptor.getName().orElse(null) + ", location="
-                + editStallDescriptor.getLocation().orElse(null) + ", rating="
+                + editStallDescriptor.getLocation().orElse(null) + ", menu="
+                + editStallDescriptor.getMenu().orElse(null) + ", rating="
                 + editStallDescriptor.getRating().orElse(null) + ", description="
                 + editStallDescriptor.getDescription().orElse(null)
                 + "}";
