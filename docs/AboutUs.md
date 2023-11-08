@@ -37,7 +37,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 [[portfolio](team/ruizhi2001.md)]
 
 * Role: Developer
-* Responsibilities: Data
+* Responsibilities: UIUX
 
 ### Beatrice Chen
 
