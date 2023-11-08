@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.Messages.MESSAGE_STALLS_LISTED_OVERVIEW;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.testutil.TypicalStalls.AUNTIES_COOKING;
-import static seedu.address.testutil.TypicalStalls.DRINKS_STALL;
-import static seedu.address.testutil.TypicalStalls.ECONOMIC_RICE;
+import static seedu.address.testutil.TypicalStalls.BEVERAGES;
+import static seedu.address.testutil.TypicalStalls.CHINESE;
 import static seedu.address.testutil.TypicalStalls.getTypicalAddressBook;
 
 import java.util.Arrays;
@@ -18,30 +18,31 @@ import org.junit.jupiter.api.Test;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.util.NameContainsKeywordsPredicate;
+import seedu.address.model.util.LocationContainsKeywordsPredicate;
+
 
 /**
- * Contains integration tests (interaction with the Model) for {@code FindStallCommand}.
+ * Contains integration tests (interaction with the Model) for {@code FindLocationCommand}.
  */
-public class FindStallCommandTest {
+public class FindLocationCommandTest {
     private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
     private Model expectedModel = new ModelManager(getTypicalAddressBook(), new UserPrefs());
 
     @Test
     public void equals() {
-        NameContainsKeywordsPredicate firstPredicate =
-                new NameContainsKeywordsPredicate(Collections.singletonList("first"));
-        NameContainsKeywordsPredicate secondPredicate =
-                new NameContainsKeywordsPredicate(Collections.singletonList("second"));
+        LocationContainsKeywordsPredicate firstPredicate =
+                new LocationContainsKeywordsPredicate(Collections.singletonList("first"));
+        LocationContainsKeywordsPredicate secondPredicate =
+                new LocationContainsKeywordsPredicate(Collections.singletonList("second"));
 
-        FindStallCommand findFirstCommand = new FindStallCommand(firstPredicate);
-        FindStallCommand findSecondCommand = new FindStallCommand(secondPredicate);
+        FindLocationCommand findFirstCommand = new FindLocationCommand(firstPredicate);
+        FindLocationCommand findSecondCommand = new FindLocationCommand(secondPredicate);
 
         // same object -> returns true
         assertTrue(findFirstCommand.equals(findFirstCommand));
 
         // same values -> returns true
-        FindStallCommand findFirstCommandCopy = new FindStallCommand(firstPredicate);
+        FindLocationCommand findFirstCommandCopy = new FindLocationCommand(firstPredicate);
         assertTrue(findFirstCommand.equals(findFirstCommandCopy));
 
         // different types -> returns false
@@ -50,7 +51,7 @@ public class FindStallCommandTest {
         // null -> returns false
         assertFalse(findFirstCommand.equals(null));
 
-        // different stall -> returns false
+        // different location -> returns false
         assertFalse(findFirstCommand.equals(findSecondCommand));
     }
 
@@ -58,8 +59,8 @@ public class FindStallCommandTest {
     public void execute_zeroKeywords_noStallFound() {
         // EP: No keywords
         String expectedMessage = String.format(MESSAGE_STALLS_LISTED_OVERVIEW, 0);
-        NameContainsKeywordsPredicate predicate = preparePredicate(" ");
-        FindStallCommand command = new FindStallCommand(predicate);
+        LocationContainsKeywordsPredicate predicate = preparePredicate(" ");
+        FindLocationCommand command = new FindLocationCommand(predicate);
         expectedModel.updateFilteredStallList(predicate);
         assertCommandSuccess(command, model, expectedMessage, expectedModel);
         assertEquals(Collections.emptyList(), model.getFilteredStallList());
@@ -69,25 +70,25 @@ public class FindStallCommandTest {
     public void execute_multipleKeywords_multipleStallsFound() {
         // EP: Multiple keywords
         String expectedMessage = String.format(MESSAGE_STALLS_LISTED_OVERVIEW, 3);
-        NameContainsKeywordsPredicate predicate = preparePredicate("Rice Drinks Cooking");
-        FindStallCommand command = new FindStallCommand(predicate);
+        LocationContainsKeywordsPredicate predicate = preparePredicate("deck wall");
+        FindLocationCommand command = new FindLocationCommand(predicate);
         expectedModel.updateFilteredStallList(predicate);
         assertCommandSuccess(command, model, expectedMessage, expectedModel);
-        assertEquals(Arrays.asList(AUNTIES_COOKING, DRINKS_STALL, ECONOMIC_RICE), model.getFilteredStallList());
+        assertEquals(Arrays.asList(AUNTIES_COOKING, BEVERAGES, CHINESE), model.getFilteredStallList());
     }
 
     @Test
     public void toStringMethod() {
-        NameContainsKeywordsPredicate predicate = new NameContainsKeywordsPredicate(Arrays.asList("keyword"));
-        FindStallCommand findStallCommand = new FindStallCommand(predicate);
-        String expected = FindStallCommand.class.getCanonicalName() + "{predicate=" + predicate + "}";
-        assertEquals(expected, findStallCommand.toString());
+        LocationContainsKeywordsPredicate predicate = new LocationContainsKeywordsPredicate(Arrays.asList("keyword"));
+        FindLocationCommand findLocationCommand = new FindLocationCommand(predicate);
+        String expected = FindLocationCommand.class.getCanonicalName() + "{predicate=" + predicate + "}";
+        assertEquals(expected, findLocationCommand.toString());
     }
 
     /**
-     * Parses {@code userInput} into a {@code NameContainsKeywordsPredicate}.
+     * Parses {@code userInput} into a {@code LocationContainsKeywordsPredicate}.
      */
-    private NameContainsKeywordsPredicate preparePredicate(String userInput) {
-        return new NameContainsKeywordsPredicate(Arrays.asList(userInput.split("\\s+")));
+    private LocationContainsKeywordsPredicate preparePredicate(String userInput) {
+        return new LocationContainsKeywordsPredicate(Arrays.asList(userInput.split("\\s+")));
     }
 }
