@@ -78,7 +78,7 @@ To learn the basics of using FoodNotes, head over to the [Features](#4-features)
 **If you are an experienced user:**:
 you can refer to the [Command summary](#6-command-summary) section for an overview of FoodNotes' commands.
 
-If you have any queries about using FoodNotes, you can check out the [FAQ](#faq) section.
+If you have any queries about using FoodNotes, you can check out the [FAQ](#7-faq) section.
 
 ## 2.2 Reading the User Guide <a id="2.2-reading-the-user-guide"></a>
 Before you jump into the next section, take a moment to familiarise yourself with the technical terms, symbols, and syntax used throughout this document. This subsection contains all the essential information you need to understand the content better.
