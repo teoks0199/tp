@@ -42,11 +42,7 @@ public class Messages {
         final StringBuilder builder = new StringBuilder();
         builder.append(stall.getName())
                 .append("; Location: ")
-                .append(stall.getLocation())
-                .append("; Menu: ")
-                .append(stall.getMenu())
-                .append("; StallReview: ")
-                .append(stall.getStallReview());
+                .append(stall.getLocation());
         return builder.toString();
     }
 

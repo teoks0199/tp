@@ -5,7 +5,7 @@ import static java.util.Objects.requireNonNull;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.model.Model;
-import seedu.address.model.stall.LocationContainsKeywordsPredicate;
+import seedu.address.model.util.LocationContainsKeywordsPredicate;
 
 /**
  * Finds and lists all stalls in FoodNotes whose location contains any of the argument keywords.

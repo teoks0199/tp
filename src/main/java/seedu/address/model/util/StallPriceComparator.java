@@ -1,6 +1,8 @@
-package seedu.address.model.stall;
+package seedu.address.model.util;
 
 import java.util.Comparator;
+
+import seedu.address.model.stall.Stall;
 
 /**
  * Compares two stalls by their average price.

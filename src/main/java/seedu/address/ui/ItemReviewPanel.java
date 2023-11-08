@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
+import javafx.scene.text.Text;
 import seedu.address.model.item.Item;
 
 /**
@@ -16,20 +17,26 @@ public class ItemReviewPanel extends UiPart<Region> {
     private HBox cardPane;
 
     @FXML
-    private Label itemReview;
+    private Text itemReview;
 
     @FXML
-    private Label itemName;
+    private Text itemName;
 
     @FXML
-    private Label itemPrice;
+    private Text itemPrice;
+
+    @FXML
+    private Label itemRating;
+
     /**
      * Creates an {@code ItemNamePanel} with the given item.
      */
     public ItemReviewPanel(Item item) {
         super(FXML);
         itemPrice.setText(item.getPriceString());
-        itemName.setText(item.getName().fullName.concat(" ").concat(item.getItemRatingString()));
+        itemName.setText(item.getName().fullName);
+        itemRating.setText(item.getItemRatingString());
         itemReview.setText(item.getItemDescriptionString());
+        itemReview.wrappingWidthProperty().bind(cardPane.widthProperty());
     }
 }
