@@ -97,6 +97,22 @@ public class ViewStallCommandTest {
     }
 
     @Test
+    public void equals_sameObject_true() {
+        Index index = Index.fromZeroBased(1);
+        ViewStallCommand viewStallCommand = new ViewStallCommand(index);
+
+        assertTrue(viewStallCommand.equals(viewStallCommand));
+    }
+
+    @Test
+    public void equals_nullObject_false() {
+        Index index = Index.fromZeroBased(1);
+        ViewStallCommand viewStallCommand = new ViewStallCommand(index);
+
+        assertFalse(viewStallCommand.equals(null));
+    }
+
+    @Test
     public void toStringMethod() {
         Index targetIndex = Index.fromOneBased(1);
         ViewStallCommand viewStallCommand = new ViewStallCommand(targetIndex);
