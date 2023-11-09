@@ -103,7 +103,7 @@ public class ParserUtil {
     public static Index parseStallIndex(String oneBasedIndex) throws ParseException {
         String trimmedIndex = oneBasedIndex.trim();
         if (!StringUtil.isNonZeroUnsignedInteger(trimmedIndex)) {
-            throw new ParseException(MESSAGE_INVALID_STALL_INDEX);
+            throw new ParseException(String.format(MESSAGE_INVALID_STALL_INDEX));
         }
         return Index.fromOneBased(Integer.parseInt(trimmedIndex));
     }

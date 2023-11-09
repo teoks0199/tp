@@ -11,6 +11,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import seedu.address.model.stall.exceptions.DuplicateStallException;
 import seedu.address.model.stall.exceptions.StallNotFoundException;
+import seedu.address.model.util.StallLocationComparator;
+import seedu.address.model.util.StallPriceComparator;
+import seedu.address.model.util.StallRatingComparator;
 
 /**
  * A list of persons that enforces uniqueness between its elements and does not allow nulls.

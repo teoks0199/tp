@@ -3,10 +3,12 @@ package seedu.address.logic.parser;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 
 import java.util.Arrays;
+import java.util.logging.Logger;
 
+import seedu.address.commons.core.LogsCenter;
 import seedu.address.logic.commands.FindItemCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.stall.MenuContainsKeywordsPredicate;
+import seedu.address.model.util.MenuContainsKeywordsPredicate;
 
 
 
@@ -15,6 +17,8 @@ import seedu.address.model.stall.MenuContainsKeywordsPredicate;
  * Parses input arguments and creates a new FindItemCommand object
  */
 public class FindItemCommandParser implements Parser<FindItemCommand> {
+
+    private final Logger logger = LogsCenter.getLogger(getClass());
 
     /**
      * Parses the given {@code String} of arguments in the context of the FindItemCommand
@@ -25,6 +29,7 @@ public class FindItemCommandParser implements Parser<FindItemCommand> {
     public FindItemCommand parse(String args) throws ParseException {
         String trimmedArgs = args.trim();
         if (trimmedArgs.isEmpty()) {
+            logger.warning("No keywords entered for find-by-item command");
             throw new ParseException(
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindItemCommand.MESSAGE_USAGE));
         }

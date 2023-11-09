@@ -123,7 +123,6 @@ public class ModelManager implements Model {
     @Override
     public void setStall(Stall target, Stall editedStall) {
         requireAllNonNull(target, editedStall);
-
         addressBook.setStall(target, editedStall);
     }
 

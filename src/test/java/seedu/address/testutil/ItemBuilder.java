@@ -36,6 +36,7 @@ public class ItemBuilder {
     public ItemBuilder(Item itemToCopy) {
         name = itemToCopy.getName();
         price = itemToCopy.getPrice();
+        itemReview = itemToCopy.getItemReview();
     }
 
     /**
@@ -62,7 +63,15 @@ public class ItemBuilder {
         return this;
     }
 
+    /**
+     * Builds the item with the given parameters.
+     *
+     * @return the item
+     */
     public Item build() {
+        if (itemReview != null) {
+            return new Item(name, price, itemReview);
+        }
         return new Item(name, price);
     }
 
