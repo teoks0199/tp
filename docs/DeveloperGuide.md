@@ -72,13 +72,13 @@ The **API** of this component is specified in [`Ui.java`](https://github.com/AY2
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
-The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, 
-`StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures 
+The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`,
+`StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures
 the commonalities between classes that represent parts of the visible GUI.
 
-The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that 
-are in the `src/main/resources/view` folder. For example, the layout of the 
-[`MainWindow`](https://github.com/AY2324S1-CS2103T-W10-4/tp/blob/master/src/main/java/seedu/address/ui/MainWindow.java) 
+The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that
+are in the `src/main/resources/view` folder. For example, the layout of the
+[`MainWindow`](https://github.com/AY2324S1-CS2103T-W10-4/tp/blob/master/src/main/java/seedu/address/ui/MainWindow.java)
 is specified in [`MainWindow.fxml`](https://github.com/AY2324S1-CS2103T-W10-4/tp/blob/master/src/main/resources/view/MainWindow.fxml)
 
 The `UI` component,
@@ -162,8 +162,8 @@ The following sequence diagram shows how the sort operation works:
 
 ![SortPriceSequenceDiagram](images/SortPriceSequenceDiagram.png)
 
-`sortStallPrice` is a method in `ModelManager` that sorts the filtered stall list by price. 
-It calls `sortByPrice` in `UniqueStallList` which sorts the list of stalls by price which makes use of 
+`sortStallPrice` is a method in `ModelManager` that sorts the filtered stall list by price.
+It calls `sortByPrice` in `UniqueStallList` which sorts the list of stalls by price which makes use of
 `StallPriceComparator` to compare the prices of the stalls.
 
 #### Design considerations:
@@ -238,6 +238,31 @@ The `MenuContainsKeywordsPredicate` is used to filter the list of stalls in Food
     * Pros: Easy to implement as parsing one keyword is more simple than parsing multiple keywords.
     * Cons: Less flexible for the user.
 --------------------------------------------------------------------------------------------------------------------
+### View stall feature
+
+#### Implementation
+
+The view stall feature is facilitated by `ViewStallCommand` that extends `Command`.
+
+The following sequence diagram shows how the find item operation works:
+
+![ViewStallDiagram](images/ViewStallDiagram.png)
+
+The `updateFilteredStallListPredicate` is used to filter the list of stalls in FoodNotes. It is created with a the name of the stall entered by the user.
+
+#### Design considerations:
+**Aspect: Details displayed:**
+
+* **Alternative 1 (current choice):** Details of the stalls (menu items and review) is only displayed when the view-stall command is entered. Otherwise, only the average price of the stall and star rating will be shown.
+  * Pros: The interface will not be cluttered with information. The menu items and detailed reviews will only be shown when users want to find out more.
+  * Cons: More cards and fxml panels will be needed, making it more complicated to implement.
+
+* **Alternative 2:** All the information is displayed in the list of stalls.
+  * Pros: Easy to implement as only one card and fxml stallPanel is required.
+  * Cons: The interface will be cluttered with information and when there is many menu items, the users will have to scroll within each card, making it less user-friendly.
+
+--------------------------------------------------------------------------------------------------------------------
+
 
 ## **Documentation, logging, testing, configuration, dev-ops**
 
