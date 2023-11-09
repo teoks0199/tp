@@ -7,6 +7,7 @@ import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_ITEM;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_STALL;
 
 import org.junit.jupiter.api.Test;
+
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
 import seedu.address.model.Model;
@@ -40,12 +41,12 @@ public class ViewItemCommandTest {
     public void execute_invalidItemIndexValidStallUnfilteredList_throwsCommandException() {
         Index validStallIndex = Index.fromOneBased(model.getFilteredStallList().size());
         Index outOfBoundItemIndex = Index.fromOneBased(
-                model.
-                getFilteredStallList()
-                .get(0)
-                .getMenu()
-                .getItemList()
-                .size() + 1);
+                model
+                        .getFilteredStallList()
+                        .get(0)
+                        .getMenu()
+                        .getItemList()
+                        .size() + 1);
         ViewItemCommand viewItemCommand = new ViewItemCommand(validStallIndex, outOfBoundItemIndex);
 
         assertCommandFailure(viewItemCommand, model, Messages.MESSAGE_INVALID_ITEM_DISPLAYED_INDEX);
@@ -62,8 +63,8 @@ public class ViewItemCommandTest {
     public void execute_invalidItemIndexInvalidStallIndexUnfliteredList_throwsCommandException() {
         Index invalidStallIndex = Index.fromOneBased(model.getFilteredStallList().size() + 1);
         Index outOfBoundItemIndex = Index.fromOneBased(
-                model.
-                        getFilteredStallList()
+                model
+                        .getFilteredStallList()
                         .get(0)
                         .getMenu()
                         .getItemList()
