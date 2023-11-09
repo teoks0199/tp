@@ -11,6 +11,7 @@ import static seedu.address.testutil.TypicalStallReviews.STALL_REVIEW_2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import seedu.address.model.AddressBook;
 import seedu.address.model.stall.Stall;
@@ -78,8 +79,10 @@ public class TypicalStalls {
      * Returns a list of typical stalls.
      */
     public static List<Stall> getTypicalStalls() {
-        return new ArrayList<>(Arrays
-                .asList(AUNTIES_COOKING, BEVERAGES, CHINESE, DRINKS_STALL, ECONOMIC_RICE, FRENCH, GOODFOOD));
+        return List.copyOf(Arrays.asList(AUNTIES_COOKING, BEVERAGES, CHINESE, DRINKS_STALL, ECONOMIC_RICE, FRENCH, GOODFOOD)
+                .stream()
+                .map(stall -> new StallBuilder(stall).build())
+                .collect(Collectors.toList()));
     }
 
     /**
