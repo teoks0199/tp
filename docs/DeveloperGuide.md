@@ -280,15 +280,15 @@ The `updateFilteredStallListPredicate` is used to filter the list of stalls in F
 
 **Target user profile**:
 
-* student foodie from NUS
-* has a need to remember reviews of many food stores and food items
-* has a tight budget
-* prefer desktop apps over other types
-* can type fast
-* prefers typing to mouse interactions
-* is reasonably comfortable using CLI apps
+* Student foodie from NUS
+* Has the need to remember reviews of many food stores and food items
+* Has a tight budget
+* Prefers desktop apps over other types
+* Can type fast
+* Prefers typing to mouse interactions
+* Is comfortable using CLI apps
 
-**Value proposition**: manage contacts faster than a typical mouse/GUI driven app
+**Value proposition**: Manage and view food reviews faster than a typical mouse/GUI driven app
 
 
 ### User stories
@@ -511,7 +511,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 ### Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
-* **Private contact detail**: A contact detail that is not meant to be shared with others
+* **Card**: Used to display information including texts and images, in a structured and organised way.
+* **GUI**: Graphical User Interface
+* **Jar file**: A Java Archive file used to distribute and run Java applications
+
 
 --------------------------------------------------------------------------------------------------------------------
 
