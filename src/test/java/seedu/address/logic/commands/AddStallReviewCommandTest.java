@@ -8,13 +8,11 @@ import static seedu.address.testutil.TypicalStalls.getTypicalAddressBook;
 
 import org.junit.jupiter.api.Test;
 import seedu.address.commons.core.index.Index;
-
 import seedu.address.logic.Messages;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.stall.Stall;
-
 import seedu.address.model.stall.review.StallReview;
 import seedu.address.testutil.StallBuilder;
 import seedu.address.testutil.StallReviewBuilder;
@@ -32,7 +30,8 @@ public class AddStallReviewCommandTest {
         StallReview stallReviewToAdd = new StallReviewBuilder().build();
         AddStallReviewCommand command = new AddStallReviewCommand(stallReviewToAdd, INDEX_FIRST_STALL);
 
-        String expectedMessage = String.format(AddStallReviewCommand.MESSAGE_ADD_STALL_REVIEW_SUCCESS, Messages.format(stallReviewToAdd));
+        String expectedMessage = String.format(AddStallReviewCommand.MESSAGE_ADD_STALL_REVIEW_SUCCESS,
+                Messages.format(stallReviewToAdd));
 
 
         assertCommandSuccess(command, model, expectedMessage, CommandResult.ViewType.STALL_DETAIL, expectedModel);
