@@ -1,7 +1,6 @@
 package seedu.address.logic.commands;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_STALL;
@@ -18,10 +17,6 @@ import seedu.address.model.stall.Stall;
 import seedu.address.model.stall.review.StallReview;
 import seedu.address.testutil.StallBuilder;
 import seedu.address.testutil.StallReviewBuilder;
-import seedu.address.testutil.TypicalIndexes;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class AddStallReviewCommandTest {
 
