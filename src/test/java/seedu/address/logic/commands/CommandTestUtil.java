@@ -35,6 +35,7 @@ public class CommandTestUtil {
     public static final String VALID_LOCATION_ASIAN = "Block 312, Amy Street 1";
     public static final String VALID_LOCATION_BRITISH = "Block 123, Bobby Street 3";
     public static final String VALID_RATING = "4";
+    public static final String INVALID_RATING = "a";
     public static final String VALID_DESCRIPTION = "Good";
     public static final String NAME_DESC_ASIAN = " " + PREFIX_NAME + VALID_NAME_ASIAN;
     public static final String NAME_DESC_BRITISH = " " + PREFIX_NAME + VALID_NAME_BRITISH;
@@ -56,11 +57,18 @@ public class CommandTestUtil {
     public static final String INVALID_ITEM_PRICE_1 = "5.555";
     public static final String INVALID_ITEM_PRICE_2 = "05.00";
 
+    //Stall related
+    public static final String VALID_STALL_DESCRIPTION = "The ambience is fantastic auntie very chio.";
+
     // item index 1 is valid
     public static final String VALID_STALL_INDEX_DESC = " " + PREFIX_STALL + VALID_STALL_INDEX_1;
     // item index 1 is valid
     public static final String VALID_ITEM_INDEX_DESC = " " + PREFIX_ITEM + VALID_STALL_INDEX_1;
     public static final String VALID_PRICE_DESC = " " + PREFIX_PRICE + VALID_ITEM_PRICE_1;
+    public static final String VALID_STALL_DESC = " " + PREFIX_DESCRIPTION + VALID_STALL_DESCRIPTION;
+    public static final String VALID_STALL_RATING = " " + PREFIX_RATING + VALID_RATING;
+    public static final String INVALID_STALL_RATING = " " + PREFIX_RATING + INVALID_RATING;
+
     public static final String ITEM_DESC_NASI_LEMAK = " " + PREFIX_NAME + VALID_ITEM_NAME_NASI_LEMAK;
     public static final String ITEM_DESC_CHICKEN_RICE = " " + PREFIX_NAME + VALID_ITEM_NAME_CHICKEN_RICE;
     public static final String INVALID_ITEM_NAME_DESC = " " + PREFIX_NAME + " ";

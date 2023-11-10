@@ -6,6 +6,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
 import java.util.List;
+import java.util.Objects;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
@@ -67,5 +68,18 @@ public class AddStallReviewCommand extends Command {
         stallToAddReview.setStallReview(toAdd);
         return new CommandResult(String.format(MESSAGE_ADD_STALL_REVIEW_SUCCESS, Messages.format(toAdd)),
                 CommandResult.ViewType.STALL_DETAIL);
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (other == null || getClass() != other.getClass()) {
+            return false;
+        }
+        AddStallReviewCommand that = (AddStallReviewCommand) other;
+        return Objects.equals(toAdd, that.toAdd)
+                && Objects.equals(index, that.index);
     }
 }
