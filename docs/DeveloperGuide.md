@@ -96,16 +96,16 @@ Here's a (partial) class diagram of the `Logic` component:
 
 <img src="images/LogicClassDiagram.png" width="550"/>
 
-The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("delete 1")` API call as an example.
+The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("delete-stall s/1")` API call as an example.
 
-![Interactions Inside the Logic Component for the `delete 1` Command](images/DeleteSequenceDiagram.png)
+![Interactions Inside the Logic Component for the `delete-stall s/1` Command](images/DeleteSequenceDiagram.png)
 
 <div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `DeleteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 </div>
 
 How the `Logic` component works:
 
-1. When `Logic` is called upon to execute a command, it is passed to an `FoodNotesParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
+1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
 1. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
 1. The command can communicate with the `Model` when it is executed (e.g. to delete a stall).
 1. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
@@ -115,7 +115,7 @@ Here are the other classes in `Logic` (omitted from the class diagram above) tha
 <img src="images/ParserClasses.png" width="600"/>
 
 How the parsing works:
-* When called upon to parse a user command, the `FoodNotesParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `FoodNotesParser` returns back as a `Command` object.
+* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `FoodNotesParser` returns back as a `Command` object.
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 ### Model component
@@ -139,7 +139,7 @@ The `Model` component,
 
 The `Storage` component,
 * can save both address book data and user preference data in JSON format, and read them back into corresponding objects.
-* inherits from both `FoodNotesStorage` and `UserPrefStorage`, which means it can be treated as either one (if only the functionality of only one is needed).
+* inherits from both `AddressBookStorage` and `UserPrefStorage`, which means it can be treated as either one (if only the functionality of only one is needed).
 * depends on some classes in the `Model` component (because the `Storage` component's job is to save/retrieve objects that belong to the `Model`)
 
 ### Common classes
@@ -177,7 +177,6 @@ It calls `sortByPrice` in `UniqueStallList` which sorts the list of stalls by pr
     * Pros: Easy to implement.
     * Cons: User needs to re-sort stalls by price after every command if they want to view the sorted list.
 
-_{more aspects and alternatives to be added}_
 
 ### Add item and delete item feature
 
@@ -216,7 +215,6 @@ The following activity diagram summarizes what happens when a user executes a ne
     * Pros: Less code is needed to implement.
     * Cons: Users are restricted to only adding items when they have a review.
 
-_{more aspects and alternatives to be added}_
 
 ### Find-by-item feature
 
@@ -280,7 +278,7 @@ The `updateFilteredStallListPredicate` is used to filter the list of stalls in F
 #### Design considerations:
 **Aspect: Details displayed:**
 
-* **Alternative 1 (current choice):** Details of the stalls (menu items and review) is only displayed when the view-stall command is entered. Otherwise, only the average price of the stall and star rating will be shown.
+* **Alternative 1 (current choice):** Details of the stalls (menu items and review) are only displayed when the view-stall command is entered. Otherwise, only the average price of the stall and star rating will be shown.
   * Pros: The interface will not be cluttered with information. The menu items and detailed reviews will only be shown when users want to find out more.
   * Cons: More cards and fxml panels will be needed, making it more complicated to implement.
 
