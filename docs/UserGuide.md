@@ -154,11 +154,11 @@ This section provides a summary of the parameters used when inputting commands i
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
-5. Type the command in the _Command Box_ and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+5. Type the command in the _Command Box_ and press Enter to execute it. e.g. typing `help` and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
 
-   * `add-stall n/Japanese stall l/Deck` : Adds a stall named `Japanese stall` located at `Deck` to the list of stalls.
+   * `add-stall n/Chicken Rice l/Deck` : Adds a stall named `Chicken Rice` located at `Deck` to the list of stalls.
 
    * `view-stall s/1` : Shows the 1st stall shown in the current list.
 
@@ -275,6 +275,7 @@ Type `clear` into the _Command Box_ and press `Enter` to execute.
 Outcome:
 
 The FoodNotes database is now empty.
+</div>
 
 ----
 ## 4.2 Stall Management <a id="4.2-stall-management"></a>
@@ -438,7 +439,8 @@ You can use this command to review an existing stall, and add your own star rati
 
 **Example:**
 
-You revisited the second stall on the list and decided to give it a five star rating.
+You want to give the second stall in the list a five-star rating.
+
 <div markdown="block" class="alert alert-white">
 
 Reviewing the stall:
@@ -456,7 +458,7 @@ Outcome:
 
 ### 4.2.7 Deleting a stall review: `delete-stall-review` <a id="4.2.7-deleting-a-stall-review"></a>
 
-Change your mind? You can use this command to delete a review of an existing stall.
+Added a review to the wrong stall? You can use this command to delete a review of an existing stall.
 
 **Format:**
 
@@ -790,13 +792,13 @@ Outcome:
 
 # 5. Glossary <a id="5-glossary"></a>
 
-| Term         | Explanation                                                                                                                                                                |
-|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **FoodNotes** | Can refer to name of the application as a whole or to the app’s storage file.<br>                                                                                          |
-| **Stall**    | Refers to a specific food stall in FoodNotes.<br>                                                                                                                          |
-| **Item**     | Refers to a specific menu item from a specific stall in FoodNotes. <br>                                                                                                    |
-| **CLI**      | A Command Line Interface (CLI) is a text-based user interface that allows users to type text commands instructing the program to do specific tasks.                        |
-| **GUI**      | A Graphical User Interface (GUI) is a form of user interface that allows users to interact with the program through graphical icons instead of text-based user interfaces. |
+| Term         | Explanation                                                                                                                                                                 |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **FoodNotes** | Can refer to name of the application as a whole or to the app’s storage file.<br>                                                                                           |
+| **Stall**    | Refers to a specific food stall in FoodNotes.<br>                                                                                                                           |
+| **Item**     | Refers to a specific menu item from a specific stall in FoodNotes. <br>                                                                                                     |
+| **CLI**      | A Command Line Interface (CLI) is a text-based user interface that allows users to type text commands instructing the program to do specific tasks.                         |
+| **GUI**      | A Graphical User Interface (GUI) is a form of user interface that allows users to interact with the program through graphical icons instead of text-based user interfaces.  |
 
 
 --------------------------
@@ -838,7 +840,7 @@ Outcome:
 | **Find stalls by location** | `find-by-location` <br> e.g. `find-by-location` deck terrace |
 | **Find stalls by item**     | `find-by-item` <br> e.g. `find-by-item` chicken              |
 
-## 6.5 Item-Related Commands <a id="65-item-management-summary"></a>
+## 6.5 Item Management Commands <a id="65-item-management-summary"></a>
 
 | Features               | Format, Examples                                                                                                                              |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
