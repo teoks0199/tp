@@ -27,6 +27,7 @@ public class Item {
         requireAllNonNull(itemName, price);
         this.itemName = itemName;
         this.price = price;
+        this.itemReview = null;
     }
 
     /**
