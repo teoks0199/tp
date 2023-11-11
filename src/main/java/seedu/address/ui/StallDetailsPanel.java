@@ -13,7 +13,7 @@ import seedu.address.model.stall.Stall;
 /**
  * Panel containing the list of menu items in a stall.
  */
-public class StallDetailsPanel extends UiPart<Region> implements DetailsPanel{
+public class StallDetailsPanel extends UiPart<Region> implements DetailsPanel {
     private static final String FXML = "StallDetailsPanel.fxml";
     private final Logger logger = LogsCenter.getLogger(StallListPanel.class);
     @FXML

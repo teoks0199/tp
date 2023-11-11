@@ -12,8 +12,9 @@ import seedu.address.model.item.Item;
 /**
  * An UI component that displays information of a {@code Item}.
  */
-public class ItemReviewPanel extends UiPart<Region> implements DetailsPanel{
+public class ItemReviewPanel extends UiPart<Region> implements DetailsPanel {
     private static final String FXML = "ItemReviewPanel.fxml";
+    private static Logger logger = Logger.getLogger("ItemReviewPanel");
 
     @FXML
     private HBox cardPane;
@@ -30,7 +31,6 @@ public class ItemReviewPanel extends UiPart<Region> implements DetailsPanel{
     @FXML
     private Label itemRating;
 
-    private static Logger logger = Logger.getLogger("ItemReviewPanel");
 
     /**
      * Creates an {@code ItemReviewPanel} with the given item.
