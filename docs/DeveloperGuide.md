@@ -72,13 +72,13 @@ The **API** of this component is specified in [`Ui.java`](https://github.com/AY2
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
-The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, 
-`StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures 
+The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`,
+`StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures
 the commonalities between classes that represent parts of the visible GUI.
 
-The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that 
-are in the `src/main/resources/view` folder. For example, the layout of the 
-[`MainWindow`](https://github.com/AY2324S1-CS2103T-W10-4/tp/blob/master/src/main/java/seedu/address/ui/MainWindow.java) 
+The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that
+are in the `src/main/resources/view` folder. For example, the layout of the
+[`MainWindow`](https://github.com/AY2324S1-CS2103T-W10-4/tp/blob/master/src/main/java/seedu/address/ui/MainWindow.java)
 is specified in [`MainWindow.fxml`](https://github.com/AY2324S1-CS2103T-W10-4/tp/blob/master/src/main/resources/view/MainWindow.fxml)
 
 The `UI` component,
@@ -162,8 +162,8 @@ The following sequence diagram shows how the sort operation works:
 
 ![SortPriceSequenceDiagram](images/SortPriceSequenceDiagram.png)
 
-`sortStallPrice` is a method in `ModelManager` that sorts the filtered stall list by price. 
-It calls `sortByPrice` in `UniqueStallList` which sorts the list of stalls by price which makes use of 
+`sortStallPrice` is a method in `ModelManager` that sorts the filtered stall list by price.
+It calls `sortByPrice` in `UniqueStallList` which sorts the list of stalls by price which makes use of
 `StallPriceComparator` to compare the prices of the stalls.
 
 #### Design considerations:
@@ -265,6 +265,31 @@ The following sequence diagram shows how the add stall review operation works:
     * Cons: More troublesome for the user as they have to enter multiple fields one by one.
 
 --------------------------------------------------------------------------------------------------------------------
+### View stall feature
+
+#### Implementation
+
+The view stall feature is facilitated by `ViewStallCommand` that extends `Command`.
+
+The following sequence diagram shows how the find item operation works:
+
+![ViewStallDiagram](images/ViewStallDiagram.png)
+
+The `updateFilteredStallListPredicate` is used to filter the list of stalls in FoodNotes. It is created with a the name of the stall entered by the user.
+
+#### Design considerations:
+**Aspect: Details displayed:**
+
+* **Alternative 1 (current choice):** Details of the stalls (menu items and review) is only displayed when the view-stall command is entered. Otherwise, only the average price of the stall and star rating will be shown.
+  * Pros: The interface will not be cluttered with information. The menu items and detailed reviews will only be shown when users want to find out more.
+  * Cons: More cards and fxml panels will be needed, making it more complicated to implement.
+
+* **Alternative 2:** All the information is displayed in the list of stalls.
+  * Pros: Easy to implement as only one card and fxml stallPanel is required.
+  * Cons: The interface will be cluttered with information and when there is many menu items, the users will have to scroll within each card, making it less user-friendly.
+
+--------------------------------------------------------------------------------------------------------------------
+
 
 ## **Documentation, logging, testing, configuration, dev-ops**
 
@@ -275,6 +300,25 @@ The following sequence diagram shows how the add stall review operation works:
 * [DevOps guide](DevOps.md)
 
 --------------------------------------------------------------------------------------------------------------------
+## **Planned Enhancements**
+
+### Make it clearer to the user that a list of stall is filtered.
+**Current Implementation:**
+* **Current Issue:** Users can view a filtered list of stalls when they use a commands such as `find-by-location` and `find-by-item`. In the case where there is only 1 stall in the list and the user performs a stall deletion, the user will see a page showing an empty list of stall. This might cause confusion as the user might think that all the stalls are deleted.
+* **Example:**
+1. User entered `find-by-location Deck`.
+2. A list of stalls containing one stall is displayed.
+3. User entered `view-stall s/1` to view the details of the stall.
+4. User entered `delete-stall s/1` to remove the stall from FoodNotes.
+5. List of stall with 0 stall in displayed.
+6. The list of stall is still filtered by location which is the Deck, but it might give the wrong impression that there is 0 stall in the list now.
+
+**Proposed Solution:**
+
+We propose to enhance the filter stalls commands to display the list of stalls with a short description saying that the list is filtered.
+1. Edit the card that displays the list of stalls.
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## **Appendix: Requirements**
 
@@ -282,15 +326,15 @@ The following sequence diagram shows how the add stall review operation works:
 
 **Target user profile**:
 
-* student foodie from NUS
-* has a need to remember reviews of many food stores and food items
-* has a tight budget
-* prefer desktop apps over other types
-* can type fast
-* prefers typing to mouse interactions
-* is reasonably comfortable using CLI apps
+* Student foodie from NUS
+* Has the need to remember reviews of many food stores and food items
+* Has a tight budget
+* Prefers desktop apps over other types
+* Can type fast
+* Prefers typing to mouse interactions
+* Is comfortable using CLI apps
 
-**Value proposition**: manage contacts faster than a typical mouse/GUI driven app
+**Value proposition**: Manage and view food reviews faster than a typical mouse/GUI driven app
 
 
 ### User stories
@@ -513,7 +557,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 ### Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
-* **Private contact detail**: A contact detail that is not meant to be shared with others
+* **Card**: Used to display information including texts and images, in a structured and organised way.
+* **GUI**: Graphical User Interface
+* **Jar file**: A Java Archive file used to distribute and run Java applications
+
 
 --------------------------------------------------------------------------------------------------------------------
 
