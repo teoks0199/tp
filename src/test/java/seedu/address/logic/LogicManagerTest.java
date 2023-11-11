@@ -37,9 +37,17 @@ public class LogicManagerTest {
 
     @TempDir
     public Path temporaryFolder;
-
     private Model model = new ModelManager();
     private Logic logic;
+
+    @BeforeEach
+    public void setUp() {
+        JsonAddressBookStorage addressBookStorage =
+                new JsonAddressBookStorage(temporaryFolder.resolve("addressBook.json"));
+        JsonUserPrefsStorage userPrefsStorage = new JsonUserPrefsStorage(temporaryFolder.resolve("userPrefs.json"));
+        StorageManager storage = new StorageManager(addressBookStorage, userPrefsStorage);
+        logic = new LogicManager(model, storage);
+    }
 
     @Test
     public void execute_storageThrowsIoException_throwsCommandException() {
@@ -53,14 +61,6 @@ public class LogicManagerTest {
                 LogicManager.FILE_OPS_PERMISSION_ERROR_FORMAT, DUMMY_AD_EXCEPTION.getMessage()));
     }
 
-    @BeforeEach
-    public void setUp() {
-        JsonAddressBookStorage addressBookStorage =
-                new JsonAddressBookStorage(temporaryFolder.resolve("addressBook.json"));
-        JsonUserPrefsStorage userPrefsStorage = new JsonUserPrefsStorage(temporaryFolder.resolve("userPrefs.json"));
-        StorageManager storage = new StorageManager(addressBookStorage, userPrefsStorage);
-        logic = new LogicManager(model, storage);
-    }
 
     @Test
     public void execute_invalidCommandFormat_throwsParseException() {

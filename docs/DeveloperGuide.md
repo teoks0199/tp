@@ -51,7 +51,7 @@ The bulk of the app's work is done by the following four components:
 
 **How the architecture components interact with each other**
 
-The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user issues the command `delete 1`.
+The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user issues the command `delete-stall s/1`.
 
 <img src="images/ArchitectureSequenceDiagram.png" width="574" />
 
@@ -72,13 +72,13 @@ The **API** of this component is specified in [`Ui.java`](https://github.com/AY2
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
-The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, 
-`StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures 
+The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`,
+`StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures
 the commonalities between classes that represent parts of the visible GUI.
 
-The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that 
-are in the `src/main/resources/view` folder. For example, the layout of the 
-[`MainWindow`](https://github.com/AY2324S1-CS2103T-W10-4/tp/blob/master/src/main/java/seedu/address/ui/MainWindow.java) 
+The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that
+are in the `src/main/resources/view` folder. For example, the layout of the
+[`MainWindow`](https://github.com/AY2324S1-CS2103T-W10-4/tp/blob/master/src/main/java/seedu/address/ui/MainWindow.java)
 is specified in [`MainWindow.fxml`](https://github.com/AY2324S1-CS2103T-W10-4/tp/blob/master/src/main/resources/view/MainWindow.fxml)
 
 The `UI` component,
@@ -96,16 +96,16 @@ Here's a (partial) class diagram of the `Logic` component:
 
 <img src="images/LogicClassDiagram.png" width="550"/>
 
-The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("delete 1")` API call as an example.
+The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("delete-stall s/1")` API call as an example.
 
-![Interactions Inside the Logic Component for the `delete 1` Command](images/DeleteSequenceDiagram.png)
+![Interactions Inside the Logic Component for the `delete-stall s/1` Command](images/DeleteSequenceDiagram.png)
 
 <div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `DeleteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 </div>
 
 How the `Logic` component works:
 
-1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
+1. When `Logic` is called upon to execute a command, it is passed to an `FoodNotesParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
 1. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
 1. The command can communicate with the `Model` when it is executed (e.g. to delete a stall).
 1. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
@@ -115,7 +115,7 @@ Here are the other classes in `Logic` (omitted from the class diagram above) tha
 <img src="images/ParserClasses.png" width="600"/>
 
 How the parsing works:
-* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
+* When called upon to parse a user command, the `FoodNotesParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `FoodNotesParser` returns back as a `Command` object.
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 ### Model component
@@ -139,7 +139,7 @@ The `Model` component,
 
 The `Storage` component,
 * can save both address book data and user preference data in JSON format, and read them back into corresponding objects.
-* inherits from both `AddressBookStorage` and `UserPrefStorage`, which means it can be treated as either one (if only the functionality of only one is needed).
+* inherits from both `FoodNotesStorage` and `UserPrefStorage`, which means it can be treated as either one (if only the functionality of only one is needed).
 * depends on some classes in the `Model` component (because the `Storage` component's job is to save/retrieve objects that belong to the `Model`)
 
 ### Common classes
@@ -152,7 +152,7 @@ Classes used by multiple components are in the `seedu.address.commons` package.
 
 This section describes some noteworthy details on how certain features are implemented.
 
-### Sort Stalls Price feature
+### Sort stalls by price feature
 
 #### Implementation
 
@@ -162,8 +162,8 @@ The following sequence diagram shows how the sort operation works:
 
 ![SortPriceSequenceDiagram](images/SortPriceSequenceDiagram.png)
 
-`sortStallPrice` is a method in `ModelManager` that sorts the filtered stall list by price. 
-It calls `sortByPrice` in `UniqueStallList` which sorts the list of stalls by price which makes use of 
+`sortStallPrice` is a method in `ModelManager` that sorts the filtered stall list by price.
+It calls `sortByPrice` in `UniqueStallList` which sorts the list of stalls by price which makes use of
 `StallPriceComparator` to compare the prices of the stalls.
 
 #### Design considerations:
@@ -179,7 +179,7 @@ It calls `sortByPrice` in `UniqueStallList` which sorts the list of stalls by pr
 
 _{more aspects and alternatives to be added}_
 
-### add-item/delete-item feature
+### Add item and delete item feature
 
 #### Implementation:
 
@@ -209,7 +209,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 **Aspect: Number of fields needed to be entered by the user:**
 
 * **Alternative 1 (current choice): Only require them to enter the stall they belong to and the name of the item**
-    * Pros: Users are not restricted to only adding items when they have a review.
+    * Pros: The review field is optional and users can add items without a review.
     * Cons: Causes some fields to be null when initialised (e.g. `rating` and `review`) and more code is needed to implement.
 
 * **Alternative 2: Require all fields required to be present when adding an item:**
@@ -229,6 +229,9 @@ The following sequence diagram shows how the find item operation works:
 ![FindItemSequenceDiagram](images/FindItemSequenceDiagram.png)
 
 The `MenuContainsKeywordsPredicate` is used to filter the list of stalls in FoodNotes. It is created with a list of keywords, and it checks if the menu items of a stall contains any of the keywords.
+#### Design considerations:
+
+**Aspect: Number of fields needed to be entered by the user:**
 
 * **Alternative 1 (current choice):** Allows the user to search for stalls containing any of the keywords.
     * Pros: Users can search for multiple items at once, for example they can look for stalls that sell either "chicken" or "apple".
@@ -237,7 +240,56 @@ The `MenuContainsKeywordsPredicate` is used to filter the list of stalls in Food
 * **Alternative 2:** Only allow the user to search for one keyword at a time.
     * Pros: Easy to implement as parsing one keyword is more simple than parsing multiple keywords.
     * Cons: Less flexible for the user.
+
+
+### Add stall review feature
+
+#### Implementation
+
+The add stall review feature is facilitated by `AddStallReviewCommand` that extends `Command`.
+
+The following sequence diagram shows how the add stall review operation works:
+
+<img src="images/ReviewStallDiagram.png"/>
+
+#### Design considerations:
+
+**Aspect: Number of fields needed to be entered by the user:**
+
+* **Alternative 1 (current choice):** Allows the user to enter the stall's review, rating and description.
+    * Pros: Users can enter multiple fields for the stall's review at once, do not have to add individual fields one by one.
+    * Cons: Some users may feel that it is too troublesome to enter multiple fields at once.
+
+* **Alternative 2:** Only allow the user to enter one field at a time.
+    * Pros: Easy to implement as parsing one keyword is more simple than parsing multiple keywords.
+    * Cons: More troublesome for the user as they have to enter multiple fields one by one.
+
 --------------------------------------------------------------------------------------------------------------------
+### View stall feature
+
+#### Implementation
+
+The view stall feature is facilitated by `ViewStallCommand` that extends `Command`.
+
+The following sequence diagram shows how the find item operation works:
+
+![ViewStallDiagram](images/ViewStallDiagram.png)
+
+The `updateFilteredStallListPredicate` is used to filter the list of stalls in FoodNotes. It is created with a the name of the stall entered by the user.
+
+#### Design considerations:
+**Aspect: Details displayed:**
+
+* **Alternative 1 (current choice):** Details of the stalls (menu items and review) is only displayed when the view-stall command is entered. Otherwise, only the average price of the stall and star rating will be shown.
+  * Pros: The interface will not be cluttered with information. The menu items and detailed reviews will only be shown when users want to find out more.
+  * Cons: More cards and fxml panels will be needed, making it more complicated to implement.
+
+* **Alternative 2:** All the information is displayed in the list of stalls.
+  * Pros: Easy to implement as only one card and fxml stallPanel is required.
+  * Cons: The interface will be cluttered with information and when there is many menu items, the users will have to scroll within each card, making it less user-friendly.
+
+--------------------------------------------------------------------------------------------------------------------
+
 
 ## **Documentation, logging, testing, configuration, dev-ops**
 
@@ -248,6 +300,25 @@ The `MenuContainsKeywordsPredicate` is used to filter the list of stalls in Food
 * [DevOps guide](DevOps.md)
 
 --------------------------------------------------------------------------------------------------------------------
+## **Planned Enhancements**
+
+### Make it clearer to the user that a list of stall is filtered.
+**Current Implementation:**
+* **Current Issue:** Users can view a filtered list of stalls when they use a commands such as `find-by-location` and `find-by-item`. In the case where there is only 1 stall in the list and the user performs a stall deletion, the user will see a page showing an empty list of stall. This might cause confusion as the user might think that all the stalls are deleted.
+* **Example:**
+1. User entered `find-by-location Deck`.
+2. A list of stalls containing one stall is displayed.
+3. User entered `view-stall s/1` to view the details of the stall.
+4. User entered `delete-stall s/1` to remove the stall from FoodNotes.
+5. List of stall with 0 stall in displayed.
+6. The list of stall is still filtered by location which is the Deck, but it might give the wrong impression that there is 0 stall in the list now.
+
+**Proposed Solution:**
+
+We propose to enhance the filter stalls commands to display the list of stalls with a short description saying that the list is filtered.
+1. Edit the card that displays the list of stalls.
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## **Appendix: Requirements**
 
@@ -255,22 +326,22 @@ The `MenuContainsKeywordsPredicate` is used to filter the list of stalls in Food
 
 **Target user profile**:
 
-* student foodie from NUS
-* has a need to remember reviews of many food stores and food items
-* has a tight budget
-* prefer desktop apps over other types
-* can type fast
-* prefers typing to mouse interactions
-* is reasonably comfortable using CLI apps
+* Student foodie from NUS
+* Has the need to remember reviews of many food stores and food items
+* Has a tight budget
+* Prefers desktop apps over other types
+* Can type fast
+* Prefers typing to mouse interactions
+* Is comfortable using CLI apps
 
-**Value proposition**: manage contacts faster than a typical mouse/GUI driven app
+**Value proposition**: Manage and view food reviews faster than a typical mouse/GUI driven app
 
 
 ### User stories
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                           | I want to …​                                                             | So that I can…​                                                   |
+| Priority | As a …                            | I want to …                                                              | So that I can…                                                    |
 |----------|-----------------------------------|--------------------------------------------------------------------------|-------------------------------------------------------------------|
 | `* * *`  | new user                          | add reviews to stalls                                                    | remember what I think about the food stall.                       |
 | `* * *`  | new user                          | delete reviews from stalls                                               | delete review of the food stall if I change my mind about it      |
@@ -294,13 +365,13 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* *`    | student who often studies late    | search for food places by filtering by opening hours                     | quickly find food places to go for late-night suppers             |
 | `*`      | see how to travel to the stalls   | See how to travel to the stalls                                          | find my way easily                                                |
 | `*`      | user interested in sustainability | identify local ingredients                                               | support environmentally conscious dining choices                  |
-| `*`      | student always on the move        | receive alerts about pop ups                                             |  seize food opportunities wherever I go.                          |
+| `*`      | student always on the move        | receive alerts about pop ups                                             | seize food opportunities wherever I go.                           |
 | `*`      | Muslim student                    | know which halal certified                                               | eat halal food.                                                   |
 *{More to be added}*
 
 ### Use cases
 
-(For all use cases below, the **System** is the `FoodNotes` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is `FoodNotes` and the **Actor** is the `user`, unless specified otherwise)
 
 
 
@@ -486,7 +557,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 ### Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
-* **Private contact detail**: A contact detail that is not meant to be shared with others
+* **Card**: Used to display information including texts and images, in a structured and organised way.
+* **GUI**: Graphical User Interface
+* **Jar file**: A Java Archive file used to distribute and run Java applications
+
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -522,7 +596,7 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: List all stalls using the `list` command. Multiple stalls in the list.
 
-   1. Test case: `delete 1`<br>
+   1. Test case: `delete-stall s/1`<br>
       Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
 
    1. Test case: `delete 0`<br>

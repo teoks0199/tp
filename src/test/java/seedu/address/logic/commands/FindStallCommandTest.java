@@ -18,7 +18,7 @@ import org.junit.jupiter.api.Test;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.stall.NameContainsKeywordsPredicate;
+import seedu.address.model.util.NameContainsKeywordsPredicate;
 
 /**
  * Contains integration tests (interaction with the Model) for {@code FindStallCommand}.
@@ -56,6 +56,7 @@ public class FindStallCommandTest {
 
     @Test
     public void execute_zeroKeywords_noStallFound() {
+        // EP: No keywords
         String expectedMessage = String.format(MESSAGE_STALLS_LISTED_OVERVIEW, 0);
         NameContainsKeywordsPredicate predicate = preparePredicate(" ");
         FindStallCommand command = new FindStallCommand(predicate);
@@ -66,6 +67,7 @@ public class FindStallCommandTest {
 
     @Test
     public void execute_multipleKeywords_multipleStallsFound() {
+        // EP: Multiple keywords
         String expectedMessage = String.format(MESSAGE_STALLS_LISTED_OVERVIEW, 3);
         NameContainsKeywordsPredicate predicate = preparePredicate("Rice Drinks Cooking");
         FindStallCommand command = new FindStallCommand(predicate);

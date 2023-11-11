@@ -39,12 +39,19 @@ public class TypicalStalls {
             .withLocation("10th street").build();
     public static final Stall ECONOMIC_RICE = new StallBuilder().withName("Economic Rice")
             .withLocation("michegan ave").build();
-    public static final Stall FRENCH = new StallBuilder().withName("French").withLocation("little tokyo").build();
-    public static final Stall GOODFOOD = new StallBuilder().withName("GoodFood").withLocation("4th street").build();
+    public static final Stall FRENCH =
+            new StallBuilder().withName("French").withLocation("little tokyo").build();
+    public static final Stall GOODFOOD =
+            new StallBuilder().withName("GoodFood").withLocation("4th street").build();
 
     // Manually added
-    public static final Stall HOON = new StallBuilder().withName("Hoon Meier").withLocation("little india").build();
-    public static final Stall IDA = new StallBuilder().withName("Ida Mueller").withLocation("chicago ave").build();
+    public static final Stall HOON =
+            new StallBuilder().withName("Hoon Meier").withLocation("little india")
+                    .withMenu(VALID_MENU_1).withStallReview(STALL_REVIEW_2)
+                    .build();
+    public static final Stall IDA =
+            new StallBuilder().withName("Ida Mueller").withLocation("chicago ave")
+                    .withMenu(VALID_MENU_2).withStallReview(STALL_REVIEW_2).build();
 
     // Manually added - Stall's details found in {@code CommandTestUtil}
     public static final Stall ASIAN = new StallBuilder()
@@ -57,7 +64,7 @@ public class TypicalStalls {
     private TypicalStalls() {} // prevents instantiation
 
     /**
-     * Returns an {@code AddressBook} with all the typical persons.
+     * Returns an {@code AddressBook} with all the typical stalls.
      */
     public static AddressBook getTypicalAddressBook() {
         AddressBook ab = new AddressBook();
@@ -67,8 +74,30 @@ public class TypicalStalls {
         return ab;
     }
 
+    /**
+     * Returns a list of typical stalls.
+     */
     public static List<Stall> getTypicalStalls() {
-        return new ArrayList<>(Arrays
+        return List.copyOf(Arrays
                 .asList(AUNTIES_COOKING, BEVERAGES, CHINESE, DRINKS_STALL, ECONOMIC_RICE, FRENCH, GOODFOOD));
+    }
+
+    /**
+     * Returns an {@code AddressBook} with all the typical stalls with menu and review.
+     */
+    public static AddressBook getTypicalAddressBookWithMenuAndReview() {
+        AddressBook ab = new AddressBook();
+        for (Stall stall : getTypicalStallsWithMenuAndReview()) {
+            ab.addStall(stall);
+        }
+        return ab;
+    }
+
+    /**
+     * Returns a list of typical stalls with menu and review.
+     */
+    public static List<Stall> getTypicalStallsWithMenuAndReview() {
+        return new ArrayList<>(Arrays
+                .asList(HOON, IDA));
     }
 }

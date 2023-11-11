@@ -4,7 +4,9 @@ import java.util.logging.Logger;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
+import javafx.scene.text.Text;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.stall.Stall;
 
@@ -15,10 +17,12 @@ public class OneStallPanel extends UiPart<Region> {
     private static final String FXML = "StallDetailsPanel.fxml";
     private final Logger logger = LogsCenter.getLogger(StallListPanel.class);
     @FXML
+    private HBox cardPane;
+    @FXML
     private Label stallRating;
 
     @FXML
-    private Label stallDescription;
+    private Text stallDescription;
 
     /**
      * Creates a {@code StallListPanel} with the given {@code ObservableList}.
@@ -27,9 +31,10 @@ public class OneStallPanel extends UiPart<Region> {
         super(FXML);
         if (stall.hasStallReview()) {
             stallRating.setText("Rating: " + stall.getStallStarRating());
-            stallDescription.setText("Description: " + stall.getStallDescription());
+            stallDescription.setText(stall.getStallDescription());
+            stallDescription.wrappingWidthProperty().bind(cardPane.widthProperty());
         } else {
-            stallRating.setText("Rating: N/A");
+            stallRating.setText("Rating: No rating yet!");
             stallDescription.setText("Add a review to see it here!");
         }
     }

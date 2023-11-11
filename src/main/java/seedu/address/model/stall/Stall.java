@@ -45,6 +45,17 @@ public class Stall {
     }
 
     /**
+     * Constructor with review and no menu
+     */
+    public Stall(Name name, Location location, StallReview stallReview) {
+        requireAllNonNull(name, location, stallReview);
+        this.name = name;
+        this.location = location;
+        this.menu = new Menu();
+        this.stallReview = stallReview;
+    }
+
+    /**
      * Constructor with menu and review
      */
     public Stall(Name name, Location location, Menu menu, StallReview stallReview) {
@@ -167,10 +178,19 @@ public class Stall {
      * Deletes an item from the menu.
      * The item must already exist in the menu.
      */
-
     public void deleteItem(Index itemIndex) {
         menu.removeItem(itemIndex);
 
+    }
+
+    /**
+     * Gets an item from the menu.
+     *
+     * @param itemIndex index of item to get
+     * @return item at index
+     */
+    public Item getItem(Index itemIndex) {
+        return menu.getItem(itemIndex);
     }
 
     public void deleteReview() {
@@ -219,6 +239,8 @@ public class Stall {
         return new ToStringBuilder(this)
                 .add("name", name)
                 .add("location", location)
+                .add("menu", menu)
+                .add("stallReview", stallReview)
                 .toString();
     }
 }

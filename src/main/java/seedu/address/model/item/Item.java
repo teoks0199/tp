@@ -27,6 +27,7 @@ public class Item {
         requireAllNonNull(itemName, price);
         this.itemName = itemName;
         this.price = price;
+        this.itemReview = null;
     }
 
     /**
@@ -107,7 +108,7 @@ public class Item {
 
     /**
      * Returns true if both items have the same itemName.
-     * This defines a weaker notion of equality between two stalls.
+     * This defines a weaker notion of equality between two items.
      */
     public boolean isSameItem(Item otherItem) {
         if (otherItem == this) {
@@ -115,8 +116,7 @@ public class Item {
         }
 
         return otherItem != null
-                && otherItem.getName().equals(getName())
-                && otherItem.getPrice().equals(getPrice());
+                && otherItem.getName().equals(getName());
     }
 
     /**

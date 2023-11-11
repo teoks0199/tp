@@ -70,7 +70,7 @@ public class MenuTest {
     @Test
     public void hasItem_itemWithSameIdentityFieldsInMenu_returnsFalse() {
         menu.addItem(FRIED_RICE);
-        Item editedFriedRice = new ItemBuilder(FRIED_RICE).withPrice(VALID_ITEM_PRICE_2).build();
+        Item editedFriedRice = new ItemBuilder(FRIED_RICE).withName("Chicken Rice").build();
         assertFalse(menu.hasItem(editedFriedRice));
     }
 

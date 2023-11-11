@@ -10,7 +10,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class Price {
     public static final String MESSAGE_CONSTRAINTS =
         "Price should be a non-negative number with 2 decimal places. "
-                + "Remove leading 0s if the price is 1.00 and above."
+                + "Remove leading 0s if the price is 1.00 and above. "
                 + "Only have 1 leading 0 if the price is less than 1.00, eg. 0.50";
 
     public static final String VALIDATION_REGEX = "^(0\\.\\d{2}|[1-9]\\d*\\.\\d{2})$";
