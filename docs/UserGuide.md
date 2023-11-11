@@ -403,7 +403,11 @@ Outcome:
 You can use this command to edit an existing stall, and update its name, location. If the stall has a review,
 you may edit its rating and/or description.
 
+<div markdown="block" class="alert alert-info">
+
 :information_source: You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the stall already has an existing review.
+
+</div>
 
 **Format:**
 
@@ -713,7 +717,9 @@ Outcome:
 
 You can use this command to edit an existing item, and update its name, location, rating and/or description.
 
+<div markdown="block" class="alert alert-info">
 :information_source: You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the item already has an existing review.
+</div>
 
 **Format:**
 
