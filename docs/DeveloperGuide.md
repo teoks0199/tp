@@ -105,7 +105,7 @@ The sequence diagram below illustrates the interactions within the `Logic` compo
 
 How the `Logic` component works:
 
-1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
+1. When `Logic` is called upon to execute a command, it is passed to an `FoodNotesParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
 1. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
 1. The command can communicate with the `Model` when it is executed (e.g. to delete a stall).
 1. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
@@ -115,7 +115,7 @@ Here are the other classes in `Logic` (omitted from the class diagram above) tha
 <img src="images/ParserClasses.png" width="600"/>
 
 How the parsing works:
-* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
+* When called upon to parse a user command, the `FoodNotesParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `FoodNotesParser` returns back as a `Command` object.
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 ### Model component
@@ -139,7 +139,7 @@ The `Model` component,
 
 The `Storage` component,
 * can save both address book data and user preference data in JSON format, and read them back into corresponding objects.
-* inherits from both `AddressBookStorage` and `UserPrefStorage`, which means it can be treated as either one (if only the functionality of only one is needed).
+* inherits from both `FoodNotesStorage` and `UserPrefStorage`, which means it can be treated as either one (if only the functionality of only one is needed).
 * depends on some classes in the `Model` component (because the `Storage` component's job is to save/retrieve objects that belong to the `Model`)
 
 ### Common classes
@@ -152,7 +152,7 @@ Classes used by multiple components are in the `seedu.address.commons` package.
 
 This section describes some noteworthy details on how certain features are implemented.
 
-### Sort Stalls Price feature
+### Sort stalls by price feature
 
 #### Implementation
 
@@ -179,7 +179,7 @@ It calls `sortByPrice` in `UniqueStallList` which sorts the list of stalls by pr
 
 _{more aspects and alternatives to be added}_
 
-### add-item/delete-item feature
+### Add item and delete item feature
 
 #### Implementation:
 
@@ -209,7 +209,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 **Aspect: Number of fields needed to be entered by the user:**
 
 * **Alternative 1 (current choice): Only require them to enter the stall they belong to and the name of the item**
-    * Pros: Users are not restricted to only adding items when they have a review.
+    * Pros: The review field is optional and users can add items without a review.
     * Cons: Causes some fields to be null when initialised (e.g. `rating` and `review`) and more code is needed to implement.
 
 * **Alternative 2: Require all fields required to be present when adding an item:**
@@ -229,6 +229,9 @@ The following sequence diagram shows how the find item operation works:
 ![FindItemSequenceDiagram](images/FindItemSequenceDiagram.png)
 
 The `MenuContainsKeywordsPredicate` is used to filter the list of stalls in FoodNotes. It is created with a list of keywords, and it checks if the menu items of a stall contains any of the keywords.
+#### Design considerations:
+
+#### Aspect: Number of fields needed to be entered by the user:
 
 * **Alternative 1 (current choice):** Allows the user to search for stalls containing any of the keywords.
     * Pros: Users can search for multiple items at once, for example they can look for stalls that sell either "chicken" or "apple".
@@ -237,6 +240,30 @@ The `MenuContainsKeywordsPredicate` is used to filter the list of stalls in Food
 * **Alternative 2:** Only allow the user to search for one keyword at a time.
     * Pros: Easy to implement as parsing one keyword is more simple than parsing multiple keywords.
     * Cons: Less flexible for the user.
+
+
+### Add stall review feature
+
+#### Implementation
+
+The add stall review feature is facilitated by `AddStallReviewCommand` that extends `Command`.
+
+The following sequence diagram shows how the add stall review operation works:
+
+<img src="images/ReviewStallDiagram.png"/>
+
+#### Design considerations:
+
+#### Aspect: Number of fields needed to be entered by the user:
+
+* **Alternative 1 (current choice):** Allows the user to enter the stall's review, rating and description.
+    * Pros: Users can enter multiple fields for the stall's review at once, do not have to add individual fields one by one.
+    * Cons: Some users may feel that it is too troublesome to enter multiple fields at once.
+
+* **Alternative 2:** Only allow the user to enter one field at a time.
+    * Pros: Easy to implement as parsing one keyword is more simple than parsing multiple keywords.
+    * Cons: More troublesome for the user as they have to enter multiple fields one by one.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Documentation, logging, testing, configuration, dev-ops**
