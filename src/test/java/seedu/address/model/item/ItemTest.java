@@ -25,9 +25,9 @@ public class ItemTest {
         Item editedAlice = new ItemBuilder(FRIED_RICE).withName(VALID_ITEM_NAME_NASI_LEMAK).build();
         assertFalse(FRIED_RICE.isSameItem(editedAlice));
 
-        // name differs in case, all other attributes same -> returns false
+        // name differs in case, all other attributes same -> returns true
         Item editedBob = new ItemBuilder(NASI_LEMAK).withName(VALID_ITEM_NAME_NASI_LEMAK.toLowerCase()).build();
-        assertFalse(NASI_LEMAK.isSameItem(editedBob));
+        assertTrue(NASI_LEMAK.isSameItem(editedBob));
 
         // name has trailing spaces, all other attributes same -> returns false
         String nameWithTrailingSpaces = VALID_ITEM_NAME_NASI_LEMAK + " ";
