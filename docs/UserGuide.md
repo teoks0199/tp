@@ -18,7 +18,7 @@ title: User Guide
       * 4.1.1 [Viewing help :`help`](#4.1.1-viewing-help)
       * 4.1.2 [Exiting from the application :`exit`](#4.1.2-exiting-from-the-application)
       * 4.1.3 [Clearing the FoodNotes database :`clear`](#4.1.3-clearing-foodnotes)
-   - 4.2 [Stall Management](#4.2-stall-management) 
+   - 4.2 [Stall Management](#4.2-stall-management)
       * 4.2.1 [Listing all stalls :`list`](#4.2.1-listing-all-stalls)
       * 4.2.2 [Viewing a stall :`view-stall`](#4.2.2-viewing-a-stall)
       * 4.2.3 [Adding a stall :`add-stall`](#4.2.3-adding-a-stall)
@@ -71,8 +71,7 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 
 1. The [Quick start](#3-quick-start) section provides instructions for you on how to get started.
 2. Once you have set up FoodNotes, you can check out the [Screen layout](#2.2.1-gui-terminology) section to get familiar 
-with the different components of FoodNotes. 
-To learn the basics of using FoodNotes, head over to the [Features](#4-features) section.
+with the different components of FoodNotes. To learn the basics of using FoodNotes, head over to the [Features](#4-features) section.
 
 **If you are an experienced user:**
 
@@ -95,6 +94,8 @@ What the main components of the GUI do:
 * _Result Display_: This is where FoodNotes displays guiding messages.
 
 * _Command Box_: This is where you type your commands.
+
+* _Command List_: This is where the list of valid commands is displayed.
 
 ### 2.2.2 Icons <a id="2.2.2-icons"></a>
 
@@ -606,8 +607,15 @@ You wish to find stalls that sells chicken rice. You can use the command as foll
 Outcome:
 1. The _Result Display_ will display a success message.
 2. You will now see the matching stalls in the _Data Display_, as illustrated in the screenshot below.
+3. When you enter `view-stall s/1`, you will be able to see 'chicken rice' in the list of menu items.
 
-![ListOutcome](images/userGuide/find-by-item.png)
+<table>
+  <tr>
+    <td><img src="images/userGuide/find-by-item.png" alt="find-by-name"></td>
+    <td><img src="images/userGuide/view-chicken-rice.png" alt="view-chicken-rice"></td>
+  </tr>
+</table>
+
 
 <div markdown="block" class="alert alert-info">
 
@@ -639,7 +647,7 @@ which includes the price, rating and description of the item.
 
 <div markdown="block" class="alert alert-white">
 
-Viewing a specific item:
+Viewing the first item from the first stall:
 
 1. Type `view-item s/1 i/1` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -650,7 +658,7 @@ Outcome:
 1. You can now see the details of the specific item you entered.
 </div>
 
-![ListOutcome](images/userGuide/viewItemOutcome.png)
+![ListOutcome](images/userGuide/view-item.png)
 
 ### 4.5.2 Adding an item : `add-item` <a id="4.5.2-adding-an-item"></a>
 
@@ -664,7 +672,7 @@ Tried a new menu item from the stall? You can use this command to add this new i
 
 <div markdown="block" class="alert alert-white">
 
-Adding a new item:
+You wish to add a new item name 'Pork Chop' with the price of $5.50 to the first stall in the list
 
 1. Type `add-item s/1 n/Pork Chop p/5.50` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -675,7 +683,7 @@ Outcome:
 1. You have now added a new item with the specified name and price.
 </div>
 
-![ListOutcome](images/userGuide/addItemOutcome.png)
+![ListOutcome](images/userGuide/add-item.png)
 
 ### 4.5.3 Deleting an item : `delete-item` <a id="4.5.3-deleting-an-item"></a>
 
@@ -715,7 +723,7 @@ You can use this command to edit an existing item, and update its name, location
 
 <div markdown="block" class="alert alert-white">
 
-Editing the name and location of the first stall from the list:
+You wish to edit the price of the sixth item in the first stall, as there is a change in price to Pork Chop that you have added previously.
 
 1. Type `edit-item s/1 i/1 n/Chicken Cutlet p/4.00` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -776,7 +784,6 @@ Outcome:
 1. You have now deleted the review of the first menu item of the first stall, and the menu will be updated.
 </div>
 
-![ListOutcome](images/userGuide/deleteItemReviewOutcome.png)
 
 --------------------------------------------------------------------------------------------------------------------
 
