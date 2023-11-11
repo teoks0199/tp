@@ -16,7 +16,7 @@ Given below are my contributions to the project.
     * **Justification:** This feature improves the product significantly because it allows the user to add items to a stall, which is a core feature of FoodNotes.
     * **Highlights:** This enhancement affects existing commands and commands to be added in the future as any change to the fields of a stall or item will change how it is added. It required an in-depth analysis of design alternatives, for example how to handle adding reviews if they don't already exist, as it is not compulsory for stalls or items to have reviews in FoodNotes.
     * **Credits:** The ability to have optional parameters while adding was adapted from the `AddCommand` class in the original AB3.
-  
+
 
 * **New Feature**: Added the ability to sort stalls by location or rating in FoodNotes.
   * **PR(s):** [#101](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/101)
@@ -33,7 +33,7 @@ Given below are my contributions to the project.
     * **Credits:** This design is adapted from the original AB3 UI.
 
 
-* **Code contributed:** 
+* **Code contributed:**
   * View my code contributions on RepoSense [here](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code&since=2023-09-22&tabOpen=true&tabType=authorship&tabAuthor=Ruizhi2001&tabRepo=AY2324S1-CS2103T-W10-4%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code&authorshipIsBinaryFileTypeChecked=false&authorshipIsIgnoredFilesChecked=false).
 
 
