@@ -8,11 +8,35 @@
     {%- include header.html -%}
 
     <main class="page-content" aria-label="Content">
-      <div class="wrapper">
+      {%- if page.show-toc -%}
+        <aside class="toc">
+            {% include toc.html html=content %}
+          </aside>
+          <a class="back-to-top" href="#">↑</a>
+        {% endif %}
+      <div id="content-wrapper">
         {{ content }}
       </div>
+
     </main>
 
-  </body>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var backToTopButton = document.querySelector(".back-to-top");
 
-</html>
+        window.onscroll = function() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopButton.style.display = "block";
+          } else {
+              backToTopButton.style.display = "none";
+          }
+        };
+
+        backToTopButton.onclick = function() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        };
+    });
+    </script>
+    </body>
+    </html>
