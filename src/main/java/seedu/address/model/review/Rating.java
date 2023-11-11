@@ -7,7 +7,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  * Represents a Review's rating in the review list.
  * Guarantees: immutable; is valid as declared in {@link #isValidRating(String)}
  */
-public class Rating {
+public class Rating implements Comparable<Rating>{
     public static final String MESSAGE_CONSTRAINTS =
             "Rating should be an integer from 1 to 5, inclusive";
 
@@ -40,6 +40,15 @@ public class Rating {
             }
         }
         return starRating.toString();
+    }
+
+    @Override
+    public int compareTo(Rating other) {
+        if (other == null) {
+            // null is considered to be the largest value
+            return -1;
+        }
+        return Integer.compare(Integer.parseInt(rating), Integer.parseInt(other.rating));
     }
 
     @Override
