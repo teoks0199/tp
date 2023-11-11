@@ -548,8 +548,8 @@ You need to type in the entire word instead of part of the word for it to find t
 **Command format:** `find-by-name NAME_KEYWORD`
 
 **Example:**
-You wish to find stalls that serve Japanese and Western noodles. You can use the command as follows:
-1. Type `find-by-name Japanese Western noodles` in the _Command Box_.
+You wish to find stalls that have 'Japanese' or 'Western' or 'Noodles' in their names. You can use the command as follows:
+1. Type `find-by-name Japanese Western Noodles` in the _Command Box_.
 2. Press `Enter` to execute.
 
 Outcome:

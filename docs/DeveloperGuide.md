@@ -375,181 +375,153 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 
 
-**Use case: Add a stall**
+**Use case: UC01 - Add a stall**
 
 **MSS**
 
-1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
-3.  User requests to add a stall to the list
-4.  FoodNotes add the stall
+1. User requests to add a stall to FoodNotes.
+2. FoodNotes adds the stall to the list of stalls.
 
     Use case ends.
 
 **Extensions**
 
-* 3a. The stall name and location is not specified
+* 1a. The stall name or location is not specified.
 
-    * 3a1. FoodNotes shows an error message.
+    * 1a1. FoodNotes shows an error message.
 
-      Use case resumes at step 2.
+      Use case resumes at step 1.
 
-**Use case: Add a review to a stall**
+**Use case: UC02 - Add a review to a stall**
 
 **MSS**
 
-1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
-3.  User requests to add a review to a stall
-4.  FoodNotes adds a review to the stall
+1. User requests to add a review to a stall
+2. FoodNotes adds a review to the stall
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The list of stalls is empty.
+* 1a. The list of stalls is empty.
+  * 1a1. FoodNotes shows an error message.
+  * 1a2. <ins>User adds a stall (UC01).</ins>
 
-  Use case ends.
+    Use case resumes at step 1.
 
-* 3a. The given index is invalid.
+* 1a. The given index is invalid.
 
-    * 3a1. FoodNotes shows an error message.
+    * 1a1. FoodNotes shows an error message.
 
-      Use case resumes at step 2.
+      Use case resumes at step 1.
 
-* 3b. The star rating or description is not specified
+* 1b. The star rating or description is not specified
 
-    * 3a1. FoodNotes shows an error message.
+    * 1b1. FoodNotes shows an error message.
 
-      Use case resumes at step 2.
+      Use case resumes at step 1.
 
-**Use case: Delete a review from stall**
+**Use case: UC03 - Delete a review from stall**
 
 **MSS**
 
-1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
-3.  User requests to view a stall
-4.  FoodNotes shows the review and menu of the stall
-5.  User requests to delete the review
-6.  FoodNotes deletes the review
+1. User requests to delete the review from a stall.
+2. FoodNotes deletes the review from the specified stall.
 
     Use case ends.
 
 **Extensions**
 
-* 3a. The given index is invalid.
+* 1a. The given index is invalid.
 
-    * 3a1. FoodNotes shows an error message.
+  * 1a1. FoodNotes shows an error message.
 
-      Use case resumes at step 2.
+    Use case resumes at step 1.
 
-* 4a. There are no reviews.
+* 1b. The stall has no review.
+  * 1b1. FoodNotes shows an error message.
 
-  Use case ends.
+    Use case ends.
 
-**Use case: Add a menu item to a stall**
+**Use case: UC04 - Add an item to a stall**
 
 **MSS**
 
-1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
-3.  User requests to add a menu item to a stall
-4.  FoodNotes add the menu item
+1. User requests to add an item to a stall.
+2. FoodNotes adds the item to the specified stall.
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The list of stalls is empty.
+* 1a. The list of stalls is empty.
+  * 1a1. FoodNotes shows an error message.
+  * 1a2. <ins>User adds a stall (UC01).</ins>
 
-  Use case ends.
+    Use case resumes at step 1.
 
-* 3a. The given index is invalid
+* 1b. The given stall index, item name or price is invalid.
+    * 1b1. FoodNotes shows an error message.
 
-    * 3a1. FoodNotes shows an error message.
+      Use case resumes at step 1.
+  
+* 1c. The stall index, item name or price is not specified.
+    * 1c1. FoodNotes shows an error message.
 
-      Use case resumes at step 2.
-
-**Use case: Add a review to a menu item**
+      Use case resumes at step 1.
+  
+**Use case: UC05 - Delete an item from a stall**
 
 **MSS**
 
-1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
-3.  User requests to view a stall
-4.  FoodNotes shows the menu items and review of the stall
-5.  User requests to add a review to a menu item in the stall
-6.  FoodNotes add review to the menu item
+1. User requests to delete an item from a specific stall.
+2. FoodNotes deletes the specified item from the specified stall.
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The list of stalls is empty.
+* 1a. The given stall index or item index is invalid.
+  * 1a1. FoodNotes shows an error message.
+  
+  Use case resumes at step 1.
 
-  Use case ends.
+* 1b. The stall index or item index is not specified.
+    * 1b1. FoodNotes shows an error message.
 
-* 3a. The given index is invalid.
+    Use case resumes at step 1.
 
-    * 3a1. FoodNotes shows an error message.
-
-      Use case resumes at step 2.
-
-* 4a. The star rating or description is not specified
-
-    * 4a1. FoodNotes shows an error message.
-
-      Use case resumes at step 2.
-
-**Use case: Delete a menu item from stall**
+**Use case: UC06 - Add a review to an item**
 
 **MSS**
 
-1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
-3.  User requests to view a stall
-4.  FoodNotes shows the review and menu of the stall
-5.  User requests to delete a menu item
-6.  FoodNotes deletes the menu item
+1. User requests to add a review to an item in a specific stall.
+2. FoodNotes adds the review to the specified item in the specified stall.
 
     Use case ends.
 
 **Extensions**
 
-* 4a. There are no menu items.
+* 1a. The given stall index, item index, rating or description is invalid.
 
-  Use case ends.
+    * 1a1. FoodNotes shows an error message.
 
-* 5a. The given index is invalid.
+      Use case resumes at step 1.
 
-    * 5a1. FoodNotes shows an error message.
+* 1b. The stall index, item index, rating or description is not specified.
 
-      Use case resumes at step 4.
+    * 1b1. FoodNotes shows an error message.
 
-**Use Case: View All Stalls**
+      Use case resumes at step 1.
 
-**MSS**
-
-1. User requests to view all stalls using the command `list`.
-2. FoodNote retrieves and displays a list of all available stalls, including their names and locations.
-3. User reviews the list of stalls.
-
-   Use case ends.
-
-**Extensions**
-
-* 1a. No stalls are available in the database:
-    * FoodNote displays a message indicating that there are no stalls available.
-
-  Use case ends.
+    
 
 *{More to be added}*
 
 ### Non-Functional Requirements
 
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
-2.  Should be able to hold up to 1000 stalls without a noticeable sluggishness in performance for typical usage.
+2.  Should be able to hold up to 100 stalls without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 
 *{More to be added}*
