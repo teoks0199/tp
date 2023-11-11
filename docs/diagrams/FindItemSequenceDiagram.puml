@@ -46,7 +46,6 @@ MenuContainsKeywordsPredicate --> FindItemCommandParser : predicate
 
 deactivate MenuContainsKeywordsPredicate
 MenuContainsKeywordsPredicate -[hidden]-> FindItemCommandParser : result
-destroy MenuContainsKeywordsPredicate
 
 create FindItemCommand
 FindItemCommandParser -> FindItemCommand : FindItemCommand(predicate)
@@ -57,7 +56,6 @@ deactivate FindItemCommand
 FindItemCommandParser --> AddressBookParser: f
 deactivate FindItemCommandParser
 FindItemCommandParser -[hidden]-> AddressBookParser : result
-destroy FindItemCommandParser
 
 AddressBookParser --> LogicManager : f
 deactivate AddressBookParser
@@ -83,7 +81,6 @@ deactivate CommandResult
 FindItemCommand --> LogicManager : result
 deactivate FindItemCommand
 FindItemCommand -[hidden]-> LogicManager : result
-destroy FindItemCommand
 
 
 
