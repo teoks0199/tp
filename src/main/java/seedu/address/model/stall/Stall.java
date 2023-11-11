@@ -178,10 +178,19 @@ public class Stall {
      * Deletes an item from the menu.
      * The item must already exist in the menu.
      */
-
     public void deleteItem(Index itemIndex) {
         menu.removeItem(itemIndex);
 
+    }
+
+    /**
+     * Gets an item from the menu.
+     *
+     * @param itemIndex index of item to get
+     * @return item at index
+     */
+    public Item getItem(Index itemIndex) {
+        return menu.getItem(itemIndex);
     }
 
     public void deleteReview() {
