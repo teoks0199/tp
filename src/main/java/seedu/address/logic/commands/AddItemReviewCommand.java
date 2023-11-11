@@ -1,6 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
@@ -15,6 +16,7 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.item.Item;
 import seedu.address.model.item.review.ItemReview;
+import seedu.address.model.stall.Menu;
 import seedu.address.model.stall.Stall;
 
 /**
@@ -47,7 +49,7 @@ public class AddItemReviewCommand extends Command {
      * Creates an AddItemReviewCommand to add the specified {@code ItemReview}
      */
     public AddItemReviewCommand(Index stallIndex, Index itemIndex, ItemReview itemReview) {
-        requireNonNull(itemReview);
+        requireAllNonNull(stallIndex, itemIndex, itemReview);
         this.toAdd = itemReview;
         this.stallIndex = stallIndex;
         this.itemIndex = itemIndex;
@@ -64,16 +66,17 @@ public class AddItemReviewCommand extends Command {
         }
 
         Stall stallToUpdate = lastShownList.get(stallIndex.getZeroBased());
-        List<Item> itemList = stallToUpdate.getMenu().getItemList();
+        Menu menu = stallToUpdate.getMenu();
 
 
-        if (itemIndex.getZeroBased() >= itemList.size()) {
+        if (itemIndex.getZeroBased() >= menu.numOfItem()) {
             throw new CommandException(Messages.MESSAGE_INVALID_ITEM_DISPLAYED_INDEX);
         }
 
-        Item itemToUpdate = itemList.get(itemIndex.getZeroBased());
+        Item itemToUpdate = menu.getItem(itemIndex);
 
         if (model.hasItemReview(itemToUpdate)) {
+            System.out.println(itemToUpdate.getItemReview());
             throw new CommandException(MESSAGE_DUPLICATE_ITEM_REVIEW);
         }
 
