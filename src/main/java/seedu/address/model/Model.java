@@ -201,4 +201,5 @@ public interface Model {
      * Sorts the stall list by price in ascending order.
      */
     void sortStallPrice();
+
 }
