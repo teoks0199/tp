@@ -71,26 +71,27 @@ The table below explains some important technical terms. An example will be prov
 |---------------------|----------------------------------------------------------------------------------------------------------------------------|
 | Command word | The first word of a command. It determines the action that FoodNotes should perform.                                       |
 | Parameter | The word or group of words following the command word. They are values given to a command to perform the specified action. |
-| Prefix | A prefix is a word that precedes a parameter. It is used to identify the **type of parameter** that is being inputted.     |
+| Prefix | A prefix is a word that precedes a parameter. It is used to identify the type of parameter that is being input.            |
 
 ### Input parameters
 
 This section provides a summary of the parameters used when inputting commands into the application.
 
-| Prefix | Parameter          | Meaning                                    | Input                                     |
-|--------|--------------------|--------------------------------------------|-------------------------------------------|
-| `n/`   | `STALL_NAME`       | Name of the stall                          | Characters with length of at least 1      |
-| `s/`   | `STALL_INDEX`      | Index of the stall in the list             | Integer from 1 to 2147483647 (inclusive)  |
-| `l/`   | `STALL_LOCATION`   | Location of the stall                      | Characters with length of at least 1      |
-| `n/`   | `ITEM_NAME`        | Name of the item                           | Characters with length of at least 1      |
-| `i/`   | `ITEM_INDEX`       | Index of the item in the menu              | Integer from 1 to 2147483647 (inclusive)  |
-| `p/`   | `ITEM_PRICE`       | Price of the item                          | Non-negative number with 2 decimal places |
-| `r/`   | `STALL_RATING`     | Rating of the stall                        | Integer from 1 to 5 (inclusive)           |
-| `r/`   | `ITEM_RATING`      | Rating of the item                         | Integer from 1 to 5 (inclusive)           |
-| `d/`   | `DESCRIPTION`      | Descriptive review for the stalls or items | Characters with length of at least 1      |
-| N/A    | `NAME_KEYWORD`     | Keyword of the stall name                  | Characters with length of at least 1      |
-| N/A    | `LOCATION_KEYWORD` | Keyword of the stall location              | Characters with length of at least 1      |
-| N/A    | `ITEM_KEYWORD`     | Keyword of the menu items in the stall     | Characters with length of at least 1      |
+| Prefix | Parameter           | Meaning                                | Input                                       |
+|--------|---------------------|----------------------------------------|---------------------------------------------|
+| `n/`   | `STALL_NAME`        | Name of the stall                      | Non-empty string                            |
+| `s/`   | `STALL_INDEX`       | Index of the stall in the list         | Integer from 1 to 2147483647 (inclusive)    |
+| `l/`   | `STALL_LOCATION`    | Location of the stall                  | Non-empty string                            |
+| `n/`   | `ITEM_NAME`         | Name of the item                       | Non-empty string                            |
+| `i/`   | `ITEM_INDEX`        | Index of the item in the menu          | Integer from 1 to 2147483647 (inclusive)    |
+| `p/`   | `ITEM_PRICE`        | Price of the item                      | Non-negative number with 2 decimal places   |
+| `r/`   | `STALL_RATING`      | Rating of the stall                    | Integer from 1 to 5 (inclusive)             |
+| `r/`   | `ITEM_RATING`       | Rating of the item                     | Integer from 1 to 5 (inclusive)             |
+| `d/`   | `STALL_DESCRIPTION` | Descriptive review for the stall       | Non-empty string                            |
+| `d/`   | `ITEM_DESCRIPTION`  | Descriptive review for the item        | Non-empty string                            |
+| N/A    | `NAME_KEYWORD`      | Keyword of the stall name              | Non-empty string                            |
+| N/A    | `LOCATION_KEYWORD`  | Keyword of the stall location          | Non-empty string                            |
+| N/A    | `ITEM_KEYWORD`      | Keyword of the menu items in the stall | Non-empty string                            |
 
 
 
@@ -140,9 +141,6 @@ This section provides a summary of the parameters used when inputting commands i
 This section shares with you on how to use each feature in detail.
 
 
-
-----
-
 ### General Features
 
 The commands in this section allow you to perform operations on the entire system. They include:
@@ -188,7 +186,7 @@ You can use this command to exit FoodNotes.
 
 <div markdown="block" class="alert alert-info">
 
-**:information_source: This command will exit the application immediately. All data is saved automatically and will be reloaded upon restart of the application**
+:information_source: This command will exit the application immediately. All data is saved automatically and will be reloaded upon restart of the application.
 
 </div>
 
@@ -213,7 +211,7 @@ You can use this command to clear the database in FoodNotes.
 
 <div markdown="block" class="alert alert-info">
 
-**:warning: This command will permanently delete all data stored in FoodNotes. You should make a backup of `addressbook.json` if you still want to keep your old data.**
+:warning: This command will permanently delete all data stored in FoodNotes. You should make a backup of `addressbook.json` if you still want to keep your old data.
 
 </div>
 
@@ -330,7 +328,7 @@ Outcome:
 
 :warning: **Take note:**<br>
 
-* If a stall already exist, you are not allowed to add another stall of the same name and location.
+* You are not allowed to add duplicate stalls of the same name and location (case-insensitive) to FoodNotes.
 
 
 </div>
@@ -691,6 +689,15 @@ Outcome:
 
 ![ListOutcome](images/userGuide/add-item.png)
 
+<div markdown="block" class="alert alert-info">
+
+:warning: **Take note:**<br>
+
+* You are not allowed to add duplicate items of the same name (case-insensitive) to a stall.
+
+
+</div>
+
 #### Deleting an item : `delete-item`
 
 You can use this command to delete an item from the database.
@@ -853,7 +860,7 @@ Outcome:
 | Features               | Format, Examples                                                                                                                              |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
 | **View item**          | `view-item s/STALL_INDEX i/ITEM_INDEX` <br> e.g. `view-item` s/1 i/1                                                                          |
-| **Add item**           | `add-item s/STALL_INDEX n/ITEM_NAME p/ITEM_PRICE` <br> e.g.`add-item` s/1 n/Chicken Rice l/4.50                                               |
+| **Add item**           | `add-item s/STALL_INDEX n/ITEM_NAME p/ITEM_PRICE` <br> e.g.`add-item` s/1 n/Chicken Rice p/4.50                                               |
 | **Delete item**        | `delete-item s/STALL_INDEX i/ITEM_INDEX` <br> e.g. `delete-item` s/1 i/1                                                                      |
 | **Edit item**          | `edit-item s/STALL_INDEX i/ITEM_INDEX [n/ITEM_NAME] [p/ITEM_PRICE] [r/ITEM_RATING] [d/ITEM_DESCRIPTION]` <br> e.g. `edit-item` s/1 i/1 p/5.00 |
 | **Review item**        | `review-item s/STALL_INDEX i/ITEM_INDEX r/ITEM_RATING d/ITEM_DESCRIPTION` <br> e.g. `review-item` s/1 i/1 r/5 d/Flavorful                     |                                                                                                                                                             |

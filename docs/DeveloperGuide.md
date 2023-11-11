@@ -336,32 +336,38 @@ We propose to enhance the filter stalls commands to display the list of stalls w
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a...                           | I want to...                                                             | So that I can...                                                  |
-|----------|-----------------------------------|--------------------------------------------------------------------------|-------------------------------------------------------------------|
-| `* * *`  | new user                          | add reviews to stalls                                                    | remember what I think about the food stall.                       |
-| `* * *`  | new user                          | delete reviews from stalls                                               | delete review of the food stall if I change my mind about it      |
-| `* * *`  | new user                          | add restaurant                                                           | add restaurants if I want to                                      |
-| `* * *`  | new user                          | delete restaurant                                                        | change my mind about the restaurant                               |
-| `* * *`  | new user                          | add menu item                                                            | review specific food from a specific restaurant                   |
-| `* * *`  | new user                          | delete menu item                                                         | remove it if I changed my mind                                    |
-| `* * *`  | new user                          | view restaurants                                                         | see the list of restaurants I have saved                          |
-| `* * *`  | new user                          | view the user guide easily                                               | learn more about the product when needed                          |
-| `* * *`  | new user                          | add reviews to menu items                                                | so that I can remember what I think about the menu item           |
-| `* * *`  | new user                          | delete reviews from menu items                                           | delete review of the menu item if I change my mind about it       |
-| `* *`    | hungry university student         | browse the ‘discount’ page for nearby campus eateries offering discounts | save money on meals                                               |
-| `* *`    | busy student                      | browse the daily specials page                                           | find on-campus restaurants and quickly decide where to grab lunch |
-| `* *`    | experienced user                  | save my favorite places                                                  | easily access them                                                |
-| `* *`    | new user                          | look at menu items of each store                                         | know what I can order                                             |
-| `* *`    | vegetarian student                | filter food options to only show vegetarian choices                      | find what I can eat                                               |
-| `* *`    | student with allergies            | filter food options by allergen information                              | eat safely                                                        |
-| `* *`    | health-conscious student          | see nutritional information for menu items                               | make informed choices about what I eat                            |
-| `* *`    | new user                          | sort by the most highly rated stores                                     | see what is popular                                               |
-| `* *`    | student trying to save money      | sort food items of stores by price                                       | plan what to eat to save money                                    |
-| `* *`    | student who often studies late    | search for food places by filtering by opening hours                     | quickly find food places to go for late-night suppers             |
-| `*`      | see how to travel to the stalls   | See how to travel to the stalls                                          | find my way easily                                                |
-| `*`      | user interested in sustainability | identify local ingredients                                               | support environmentally conscious dining choices                  |
-| `*`      | student always on the move        | receive alerts about pop ups                                             | seize food opportunities wherever I go.                           |
-| `*`      | Muslim student                    | know which halal certified                                               | eat halal food.                                                   |
+| Priority | As a...                        | I want to...                                   | So that I can...                                              |
+|----------|--------------------------------|------------------------------------------------|---------------------------------------------------------------|
+| `* * *`  | new user                       | add reviews to stalls                          | remember what I think about the food stalls                   |
+| `* * *`  | new user                       | delete reviews from stalls                     | delete review of the food stall if I reviewed the wrong stall |
+| `* * *`  | new user                       | add stalls                                     | keep track of the food stalls I have tried                    |
+| `* * *`  | new user                       | delete stalls                                  | remove stalls if they no longer exists                        |
+| `* * *`  | new user                       | add menu items                                 | remember what food items a stall sells                        |
+| `* * *`  | new user                       | delete menu items                              | remove food items that a stall no longer sells                |
+| `* * *`  | new user                       | view stalls                                    | see the list of stalls I have saved                           |
+| `* * *`  | new user                       | view menu items of a stall                     | see what the stall sells                                      |
+| `* * *`  | new user                       | view a stall                                   | see the details of the stall such as its location and review  |
+| `* * *`  | new user                       | view an item                                   | see the details of the item such as its price and review      |
+| `* * *`  | new user                       | view the user guide easily                     | learn more about the product when needed                      |
+| `* * *`  | new user                       | add reviews to menu items                      | so that I can remember what I think about the item            |
+| `* * *`  | new user                       | delete reviews from menu items                 | delete review of the menu item if I reviewed the wrong item   |
+| `* *`    | new user                       | edit stall details                             | change the details of a stall if I made a mistake             |
+| `* *`    | new user                       | edit item details                              | change the details of an item if I made a mistake             |
+| `* *`    | new user                       | edit stall reviews                             | change my review of a stall if I made a mistake               |
+| `* *`    | new user                       | edit item reviews                              | change my review of an item if I made a mistake               |
+| `* *`    | budget conscious student       | sort the stalls by average price of menu       | find the cheapest stalls to dine at easily                    |
+| `* *`    | experienced user               | sort the stalls by rating                      | find the stalls I love the most                               |
+| `* *`    | experienced user               | sort the stalls by location                    | see the stalls at each location clearly                       |
+| `* *`    | experienced user               | filter the stalls by location                  | find the stalls at a specific location that I plan to visit   |
+| `* *`    | experienced user               | filter the stalls by name                      | find the specific stalls that I wish to visit                 |
+| `* *`    | experienced user               | filter the stalls by menu item                 | find the stalls that sell a dish I wish to eat                |
+| `*`      | experienced user               | save my favorite stalls                        | easily find my favourite stalls                               |
+| `*`      | vegetarian student             | filter stalls to only show vegetarian choices  | find vegetarian food that I can eat                           |
+| `*`      | student with allergies         | filter stalls by allergen information          | find food that I can eat safely                               |
+| `*`      | health-conscious student       | see nutritional information for menu items     | make informed choices about what I eat                        |
+| `*`      | student who often studies late | filter stalls by opening hours                 | quickly find food places to go for late-night suppers         |
+| `*`      | Muslim student                 | filter food options to only show halal choices | find halal food that I can eat                                |
+| `*`      | student athlete                | find stalls with high protein meals            | support my training needs                                     |
 
 
 ### Use cases
@@ -511,7 +517,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
     
 
-*{More to be added}*
+
 
 ### Non-Functional Requirements
 
