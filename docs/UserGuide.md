@@ -29,7 +29,7 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 **If you are a first time user:**
 
 1. The [Quick start](#3-quick-start) section provides instructions for you on how to get started.
-2. Once you have set up FoodNotes, you can check out the [Screen layout](#2.2.1-gui-terminology) section to get familiar 
+2. Once you have set up FoodNotes, you can check out the [Screen layout](#2.2.1-gui-terminology) section to get familiar
 with the different components of FoodNotes. To learn the basics of using FoodNotes, head over to the [Features](#4-features) section.
 
 **If you are an experienced user:**
@@ -77,7 +77,7 @@ The table below explains some important technical terms. An example will be prov
 | Parameter | The word or group of words following the command word. They are values given to a command to perform the specified action. |
 | Prefix | A prefix is a word that precedes a parameter. It is used to identify the **type of parameter** that is being inputted.     |
 
-### Input parameters 
+### Input parameters
 
 This section provides a summary of the parameters used when inputting commands into the application.
 
@@ -308,7 +308,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/viewStallOutcome.png)
 
-#### Adding a stall : `add-stall` 
+#### Adding a stall : `add-stall`
 
 You can use this command to add a new stall to FoodNotes.
 
@@ -600,7 +600,7 @@ Outcome:
 {% include page-break.html %}
 
 -----
-  
+
 ### Item Management
 This feature allows you to manage information about the items in **FoodNotes**. You can record and perform the following actions:
 
@@ -614,7 +614,7 @@ This feature allows you to manage information about the items in **FoodNotes**. 
 #### Viewing an item : `view-item`
 
 
-You can use this command to view details of a specific item from a specific stall in FoodNotes, 
+You can use this command to view details of a specific item from a specific stall in FoodNotes,
 which includes the price, rating and description of the item.
 
 **Format:**
@@ -663,7 +663,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/add-item.png)
 
-#### Deleting an item : `delete-item` 
+#### Deleting an item : `delete-item`
 
 You can use this command to delete an item from the database.
 
@@ -714,7 +714,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/editItemOutcome.png)
 
-#### Reviewing an item : `review-item` 
+#### Reviewing an item : `review-item`
 
 You can use this command to review an existing item, and add your own star rating and text description for your experience at the stall.
 
@@ -767,7 +767,7 @@ Outcome:
 --------------------------------------------------------------------------------------------------------------------
 
 
-## Glossary 
+## Glossary
 
 | Term         | Explanation                                                                                                                                                                 |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -789,7 +789,7 @@ Outcome:
 | **Exit**  | `exit`           |
 | **Clear** | `clear`          |
 
-### Stall Management Commands 
+### Stall Management Commands
 
 | Features                | Format, Examples                                                                                                                   |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------|
@@ -809,7 +809,7 @@ Outcome:
 | **Sort stalls by rating**   | `sort-stalls-rating` <br> e.g. `sort-stalls-rating`     |
 | **Sort stalls by price**    | `sort-stalls-price` <br> e.g. `sort-stalls-price`       |
 
-### Stall Finding Commands 
+### Stall Finding Commands
 
 | Features                    | Format, Examples                                             |
 |-----------------------------|--------------------------------------------------------------|
