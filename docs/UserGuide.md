@@ -1,57 +1,11 @@
 ---
 layout: page
-title: User Guide
+title: FoodNotes User Guide
+show-toc: true
 ---
-## Table of Contents <a id="toc"></a>
 
----
-1. [Introduction](#1-introduction)
-2. [About the User Guide](#2-about-the-user-guide)
-    - [2.1 Navigating the User Guide](#2.1-navigating-the-user-guide)
-    - [2.2 Reading the User Guide](#2.2-reading-the-user-guide)
-      * [2.2.1 GUI Terminology](#2.2.1-gui-terminology)
-      * [2.2.2 Icons](#2.2.2-icons)
-      * [2.2.3 Command Syntax and Usage](#2.2.3-command-syntax-and-usage)
-3. [Quick Start](#3-quick-start)
-4. [Features](#4-features)
-   - 4.1 [General](#4.1-general)
-      * 4.1.1 [Viewing help :`help`](#4.1.1-viewing-help)
-      * 4.1.2 [Exiting from the application :`exit`](#4.1.2-exiting-from-the-application)
-      * 4.1.3 [Clearing the FoodNotes database :`clear`](#4.1.3-clearing-foodnotes)
-   - 4.2 [Stall Management](#4.2-stall-management)
-      * 4.2.1 [Listing all stalls :`list`](#4.2.1-listing-all-stalls)
-      * 4.2.2 [Viewing a stall :`view-stall`](#4.2.2-viewing-a-stall)
-      * 4.2.3 [Adding a stall :`add-stall`](#4.2.3-adding-a-stall)
-      * 4.2.4 [Deleting a stall :`delete-stall`](#4.2.4-deleting-a-stall)
-      * 4.2.5 [Editing a stall :`edit-stall`](#4.2.5-editing-a-stall)
-      * 4.2.6 [Reviewing a stall :`review-stall`](#4.2.6-reviewing-a-stall)
-      * 4.2.7 [Deleting a stall review :`delete-stall-review`](#4.2.7-deleting-a-stall-review)
-   - 4.3 [Stall Sorting](#4.3-stall-sorting)
-     * 4.3.1 [Sort stalls by locations :`sort-stalls-locations`](#4.3.1-sort-stalls-by-location)
-     * 4.3.2 [Sort stalls by ratings :`sort-stalls-ratings`](#4.3.2-sort-stalls-by-rating)
-     * 4.3.3 [Sort stalls by price :`sort-stalls-price`](#4.3.3-sort-stalls-by-price)
-   - 4.4 [Stall Finding](#44-stall-finding)
-     * 4.4.1 [Find stalls by name :`find-by-name`](#4.4.1-find-stalls-by-name)
-     * 4.4.2 [Find stalls by location :`find-by-location`](#4.4.2-find-stalls-by-location)
-     * 4.4.3 [Find stalls by menu items :`find-by-item`](#4.4.3-find-stalls-by-menu-items)
-   - 4.5 [Item Management](#45-item-management)
-     * 4.5.1 [Viewing an item :`view-item`](#4.5.1-viewing-an-item)
-     * 4.5.2 [Adding an item :`add-item`](#4.5.2-adding-an-item)
-     * 4.5.3 [Deleting an item :`delete-item`](#4.5.3-deleting-an-item)
-     * 4.5.4 [Editing an item :`edit-item`](#4.5.4-editing-an-item)
-     * 4.5.5 [Reviewing an item :`review-item`](#4.5.5-reviewing-an-item)
-     * 4.5.6 [Deleting an item review :`delete-item-review`](#4.5.6-deleting-an-item-review)
-5. [Glossary](#5-glossary)
-6. [Command summary](#6-command-summary)
-   - 6.1 [General Commands](#61-general-commands-summary)
-   - 6.2 [Stall Management Commands](#62-stall-management-summary)
-   - 6.3 [Stall Sorting Commands](#63-stall-sorting-summary)
-   - 6.4 [Stall Finding Commands](#64-stall-finding-summary)
-   - 6.5 [Item Management Commands](#65-item-management-summary)
-<div style="page-break-after: always;"></div>
+Welcome to the User Guide of **FoodNotes**!
 
-# 1. Introduction <a id="1-introduction"></a>
-Welcome to the User Guide of FoodNotes!
 
 Ever find yourself forgetting the delightful dishes you savored? Hungry for a way to recall your favorite food experiences? FoodNotes has the solution.
 
@@ -63,14 +17,19 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 
 <div style="page-break-after: always;"></div>
 
+{% include page-break.html %}
 
-# 2. About the user guide <a id="2-about-the-user-guide"></a>
-## 2.1 Navigating the user guide <a id="2.1-navigating-the-user-guide"></a>
+{% include toc.md header=true show-in-toc=true ordered=true %}
+
+{% include page-break.html %}
+
+## About the user guide <a id="2-about-the-user-guide"></a>
+### Navigating the user guide <a id="2.1-navigating-the-user-guide"></a>
 
 **If you are a first time user:**
 
 1. The [Quick start](#3-quick-start) section provides instructions for you on how to get started.
-2. Once you have set up FoodNotes, you can check out the [Screen layout](#2.2.1-gui-terminology) section to get familiar 
+2. Once you have set up FoodNotes, you can check out the [Screen layout](#2.2.1-gui-terminology) section to get familiar
 with the different components of FoodNotes. To learn the basics of using FoodNotes, head over to the [Features](#4-features) section.
 
 **If you are an experienced user:**
@@ -78,10 +37,10 @@ with the different components of FoodNotes. To learn the basics of using FoodNot
 You can refer to the [Command summary](#6-command-summary) section for an overview of FoodNotes' commands.
 
 
-## 2.2 Reading the User Guide <a id="2.2-reading-the-user-guide"></a>
+### Reading the User Guide <a id="2.2-reading-the-user-guide"></a>
 Before you jump into the next section, take a moment to familiarise yourself with the technical terms, symbols, and syntax used throughout this document. This subsection contains all the essential information you need to understand the content better.
 
-### 2.2.1 Terminology related to the Graphical User Interface (GUI) <a id="2.2.1-gui-terminology"></a>
+### Terminology related to the Graphical User Interface (GUI) <a id="2.2.1-gui-terminology"></a>
 The following figure shows the GUI of FoodNotes. It is annotated with the name of the GUI components.
 
 <p align="center">
@@ -97,7 +56,7 @@ What the main components of the GUI do:
 
 * _Command List_: This is where the list of valid commands is displayed.
 
-### 2.2.2 Icons <a id="2.2.2-icons"></a>
+### Icons <a id="2.2.2-icons"></a>
 
 This section will run you through the icons used in this guide.
 
@@ -107,9 +66,7 @@ This section will run you through the icons used in this guide.
 | :warning:           | A warning sign indicates that the enclosed text is important, and usually entails details about potential errors. |
 |  :bulb:             | A light bulb indicates that the enclosed text is a tip.|
 
-<div style="page-break-after: always;"></div>
-
-### 2.2.3 Command Syntax and Usage <a id="2.2.3-command-syntax-and-usage"></a>
+### Command Syntax and Usage
 Since FoodNotes is a CLI application, knowing how to use commands is very important. The following subsection will teach you how to read and use commands in FoodNotes. All commands in FoodNotes follow similar formats as described below and examples will be provided to help you understand their usage. Examples of commands and their formats will be written in code-blocks.
 
 The table below explains some important technical terms. An example will be provided to help you visualize these terms.
@@ -120,7 +77,7 @@ The table below explains some important technical terms. An example will be prov
 | Parameter | The word or group of words following the command word. They are values given to a command to perform the specified action. |
 | Prefix | A prefix is a word that precedes a parameter. It is used to identify the **type of parameter** that is being inputted.     |
 
-### 2.2.2 Input parameters <a id="parameters"></a>
+### Input parameters
 
 This section provides a summary of the parameters used when inputting commands into the application.
 
@@ -139,10 +96,11 @@ This section provides a summary of the parameters used when inputting commands i
 | N/A    | `LOCATION_KEYWORD` | Keyword of the stall location              | Characters with length of at least 1      |
 | N/A    | `ITEM_KEYWORD`     | Keyword of the menu items in the stall     | Characters with length of at least 1      |
 
+{% include page-break.html %}
 
 --------------------------------------------------------------------------------------------------------------------
 
-## 3. Quick start <a id="3-quick-start"></a>
+## Quick start <a id="3-quick-start"></a>
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
@@ -154,11 +112,11 @@ This section provides a summary of the parameters used when inputting commands i
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
-5. Type the command in the _Command Box_ and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+5. Type the command in the _Command Box_ and press Enter to execute it. e.g. typing `help` and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
 
-   * `add-stall n/Japanese stall l/Deck` : Adds a stall named `Japanese stall` located at `Deck` to the list of stalls.
+   * `add-stall n/Chicken Rice l/Deck` : Adds a stall named `Chicken Rice` located at `Deck` to the list of stalls.
 
    * `view-stall s/1` : Shows the 1st stall shown in the current list.
 
@@ -177,15 +135,21 @@ This section provides a summary of the parameters used when inputting commands i
     3. Run the following in the terminal: `java -jar FoodNotes.jar`.
 
 
-</div>
+{% include page-break.html %}
 
 --------------------------------------------------------------------------------------------------------------------
 
-# 4. Features <a id="4-features"></a>
+## Features <a id ="4-features"></a>
+This section shares with you on how to use each feature in detail.
+
+<div markdown="block" class="alert alert-info">
+</div>
+
+{% include page-break.html %}
 
 ----
 
-## 4.1 General Features <a id="4.1-general"></a>
+### General Features
 
 The commands in this section allow you to perform operations on the entire system. They include:
 - Viewing help
@@ -193,7 +157,7 @@ The commands in this section allow you to perform operations on the entire syste
 - Clearing the FoodNotes database
 
 
-### 4.1.1 Viewing help : `help` <a id="4.1.1-viewing-help"></a>
+#### Viewing help : `help` <a id="4.1.1-viewing-help"></a>
 
 You can use this command to view the online user guide, which contains information about all the instructions in FoodNotes.
 
@@ -224,7 +188,7 @@ Outcome:
 
 </div>
 
-### 4.1.2 Exiting from the application: `exit` <a id="4.1.2-exiting-from-the-application"></a>
+#### Exiting from the application: `exit` <a id="4.1.2-exiting-from-the-application"></a>
 
 You can use this command to exit FoodNotes.
 
@@ -248,7 +212,7 @@ Outcome:
 
 The FoodNotes application window is now closed.
 
-### 4.1.3 Clearing the FoodNotes database: `clear` <a id="4.1.3-clearing-foodnotes"></a>
+#### Clearing the FoodNotes database: `clear` <a id="4.1.3-clearing-foodnotes"></a>
 
 You can use this command to clear the database in FoodNotes.
 
@@ -275,9 +239,13 @@ Type `clear` into the _Command Box_ and press `Enter` to execute.
 Outcome:
 
 The FoodNotes database is now empty.
+</div>
+
+{% include page-break.html %}
+
 
 ----
-## 4.2 Stall Management <a id="4.2-stall-management"></a>
+### Stall Management
 
 These features allow you to manage information about the stalls in FoodNotes. You can record and perform the following actions:
 - Listing all stalls
@@ -289,7 +257,9 @@ These features allow you to manage information about the stalls in FoodNotes. Yo
 - Deleting a stall review
 
 
-### 4.2.1 Listing all stalls : `list` <a id="4.2.1-listing-all-stalls"></a>
+
+-----
+#### Listing all stalls : `list`
 
 You can use this command to view the list of all the stalls in FoodNotes.
 
@@ -311,7 +281,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/listOutcome.png)
 
-### 4.2.2 Viewing a stall : `view-stall` <a id="4.2.2-viewing-a-stall"></a>
+#### Viewing a stall : `view-stall`
 
 You can use this command to view details from a specific stall from FoodNotes, which includes the menu items and review of the stall.
 
@@ -338,7 +308,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/viewStallOutcome.png)
 
-### 4.2.3 Adding a stall : `add-stall` <a id="4.2.3-adding-a-stall"></a>
+#### Adding a stall : `add-stall`
 
 You can use this command to add a new stall to FoodNotes.
 
@@ -373,7 +343,7 @@ Outcome:
 </div>
 
 
-### 4.2.4 Deleting a stall : `delete-stall` <a id="4.2.4-deleting-a-stall"></a>
+#### Deleting a stall : `delete-stall` <a id="4.2.4-deleting-a-stall"></a>
 
 The stall no longer exists? You can use this command to delete a stall from FoodNotes, making sure that your food diary is always up to date!
 
@@ -398,7 +368,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/deleteStallOutcome.png)
 
-### 4.2.5 Editing a stall : `edit-stall` <a id="4.2.5-editing-a-stall"></a>
+#### Editing a stall : `edit-stall` <a id="4.2.5-editing-a-stall"></a>
 
 You can use this command to edit an existing stall, and update its name, location. If the stall has a review,
 you may edit its rating and/or description.
@@ -411,24 +381,26 @@ you may edit its rating and/or description.
 
 **Example:**
 
-You wish to change the name and location of the first stall in the list.
+You wish to change the location of the seventh stall in the list, as the stall has relocated from Utown to Frontier.
 
 <div markdown="block" class="alert alert-white">
 
-Editing the first stall from the list:
+Editing the seventh stall from the list:
 
-1. Type `edit-stall s/1 n/Japanese Stall l/Deck` into the _Command Box_.
+
+1. Type `edit-stall s/7 l/Frontier` into the *Command Box*.
 1. Press `Enter` to execute.
 
 Outcome:
 
-1. The _Result Display_ will show a success message.
-1. You have now edited the first stall from the list.
+
+1. The *Result Display* will show a success message.
+1. You have now edited the seventh stall from the list, and the list of stalls will be updated.
 </div>
 
 ![ListOutcome](images/userGuide/editStallOutcome.png)
 
-### 4.2.6 Reviewing a stall : `review-stall` <a id="4.2.6-reviewing-a-stall"></a>
+#### Reviewing a stall : `review-stall` <a id="4.2.6-reviewing-a-stall"></a>
 
 You can use this command to review an existing stall, and add your own star rating and even some text descriptions for the stall.
 
@@ -438,7 +410,8 @@ You can use this command to review an existing stall, and add your own star rati
 
 **Example:**
 
-You revisited the second stall on the list and decided to give it a five star rating.
+You want to give the second stall in the list a five-star rating.
+
 <div markdown="block" class="alert alert-white">
 
 Reviewing the stall:
@@ -454,9 +427,9 @@ Outcome:
 
 ![ListOutcome](images/userGuide/stallReviewOutcome.png)
 
-### 4.2.7 Deleting a stall review: `delete-stall-review` <a id="4.2.7-deleting-a-stall-review"></a>
+#### Deleting a stall review: `delete-stall-review` <a id="4.2.7-deleting-a-stall-review"></a>
 
-Change your mind? You can use this command to delete a review of an existing stall.
+Added a review to the wrong stall? You can use this command to delete a review of an existing stall.
 
 **Format:**
 
@@ -478,12 +451,13 @@ Outcome:
 1. You have now deleted the review of the specified stall from the list, and the list will be updated.
 </div>
 
+{% include page-break.html %}
 ---------------------------------------------------------------------------------------------------------------------
-## 4.3 Stall Sorting <a id="4.3-stall-sorting"></a>
+### Stall Sorting
 This feature allows you to sort the stalls by their location, rating and price, so you can now easily find the stalls based on these criterias.
 
 
-### 4.3.1 Sort stalls by location: `sort-stalls-location` <a id="4.3.1-sort-stalls-by-location"></a>
+#### Sort stalls by location: `sort-stalls-location` <a id="4.3.1-sort-stalls-by-location"></a>
 
 You can use this command to sort the stalls by their location in alphabetical order.
 
@@ -499,7 +473,7 @@ You can use this command to sort the stalls by their location in alphabetical or
 
 ![ListOutcome](images/userGuide/sort-stalls-location.png)
 
-### 4.3.2 Sort stalls by rating: `sort-stalls-rating` <a id="4.3.2-sort-stalls-by-rating"></a>
+#### Sort stalls by rating: `sort-stalls-rating` <a id="4.3.2-sort-stalls-by-rating"></a>
 
 You can use this command to sort the stalls by their rating in descending order, so the stall with the highest rating will appear right at the top!
 
@@ -515,7 +489,7 @@ You can use this command to sort the stalls by their rating in descending order,
 
 ![ListOutcome](images/userGuide/sort-stalls-rating.png)
 
-### 4.3.3 Sort stalls by price: `sort-stalls-price` <a id="4.3.3-sort-stalls-by-price"></a>
+#### Sort stalls by price: `sort-stalls-price` <a id="4.3.3-sort-stalls-by-price"></a>
 
 You can use this command to sort the stalls by the average price of its menu items in ascending order, and the stall with the cheapest food options can be easily retrieved!
 
@@ -533,13 +507,14 @@ You can use this command to sort the stalls by the average price of its menu ite
 
 
 
+{% include page-break.html %}
 
 --------------------------------------------------------------------------------------------------------------------
 
-## 4.4 Stall Finding <a id="44-stall-finding"></a>
+### Stall Finding
 This feature allows you to find stalls by their name, location and menu items. Whichever small detail you can remember, you can easily find that stall.
 
-### 4.4.1 Finding stalls by name: `find-by-name`<a id="4.4.1-find-stalls-by-name"></a>
+#### Finding stalls by name: `find-by-name`<a id="4.4.1-find-stalls-by-name"></a>
 The command is a powerful tool for quickly locating specific food stalls based on their names. Even if you can only remember part of the stall name, this command can help you narrow down your choices effectively.
 You need to type in the entire word instead of part of the word for it to find the stall.
 
@@ -592,7 +567,7 @@ Outcome:
 
 </div>
 ---
-### 4.4.3 Find stalls by menu items: `find-by-item`<a id="4.4.3-find-stalls-by-menu-items"></a>
+#### Find stalls by menu items: `find-by-item`<a id="4.4.3-find-stalls-by-menu-items"></a>
 The command is a powerful tool for quickly locating specific food stalls based on the items on their menu. If you are craving for a specific dish, this command can help you narrow down your choices effectively.
 
 **Command function:** Finds all stalls whose menu items contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
@@ -623,9 +598,14 @@ Outcome:
 
 * You can enter more than one keyword, separated by a space, and all the stalls containing any of the keywords will be listed!
 </div>
+
+{% include page-break.html %}
+
 -----
-## 4.5 Item Management <a id="45-item-management"></a>
-This feature allows you to manage information about the items in FoodNotes. You can record and perform the following actions:
+
+### Item Management
+This feature allows you to manage information about the items in **FoodNotes**. You can record and perform the following actions:
+
 - Viewing an item: `view-item`
 - Adding an item: `add-item`
 - Deleting an item: `delete-item`
@@ -633,10 +613,10 @@ This feature allows you to manage information about the items in FoodNotes. You 
 - Reviewing an item: `review-item`
 - Deleting an item review: `delete-item-review`
 
-### 4.5.1 Viewing an item : `view-item` <a id="4.5.1-viewing-an-item"></a>
+#### Viewing an item : `view-item`
 
 
-You can use this command to view details of a specific item from a specific stall in FoodNotes, 
+You can use this command to view details of a specific item from a specific stall in FoodNotes,
 which includes the price, rating and description of the item.
 
 **Format:**
@@ -660,7 +640,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/view-item.png)
 
-### 4.5.2 Adding an item : `add-item` <a id="4.5.2-adding-an-item"></a>
+#### Adding an item : `add-item`
 
 Tried a new menu item from the stall? You can use this command to add this new item to FoodNotes.
 
@@ -685,7 +665,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/add-item.png)
 
-### 4.5.3 Deleting an item : `delete-item` <a id="4.5.3-deleting-an-item"></a>
+#### Deleting an item : `delete-item`
 
 You can use this command to delete an item from the database.
 
@@ -709,7 +689,7 @@ Outcome:
 </div>
 
 
-### 4.5.4 Editing an item : `edit-item` <a id="4.5.4-editing-an-item"></a>
+#### Editing an item : `edit-item`
 
 You can use this command to edit an existing item, and update its name, location, rating and/or description.
 
@@ -736,7 +716,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/editItemOutcome.png)
 
-### 4.5.5 Reviewing an item : `review-item` <a id="4.5.5-reviewing-an-item"></a>
+#### Reviewing an item : `review-item`
 
 You can use this command to review an existing item, and add your own star rating and text description for your experience at the stall.
 
@@ -761,7 +741,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/reviewItemOutcome.png)
 
-### 4.5.6 Deleting an item review: `delete-item-review` <a id="4.5.6-deleting-an-item-review"></a>
+#### Deleting an item review: `delete-item-review`
 
 You can use this command to delete a review of an existing item.
 
@@ -784,25 +764,26 @@ Outcome:
 1. You have now deleted the review of the first menu item of the first stall, and the menu will be updated.
 </div>
 
+{% include page-break.html %}
 
 --------------------------------------------------------------------------------------------------------------------
 
 
-# 5. Glossary <a id="5-glossary"></a>
+## Glossary
 
-| Term         | Explanation                                                                                                                                                                |
-|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **FoodNotes** | Can refer to name of the application as a whole or to the app’s storage file.<br>                                                                                          |
-| **Stall**    | Refers to a specific food stall in FoodNotes.<br>                                                                                                                          |
-| **Item**     | Refers to a specific menu item from a specific stall in FoodNotes. <br>                                                                                                    |
-| **CLI**      | A Command Line Interface (CLI) is a text-based user interface that allows users to type text commands instructing the program to do specific tasks.                        |
-| **GUI**      | A Graphical User Interface (GUI) is a form of user interface that allows users to interact with the program through graphical icons instead of text-based user interfaces. |
+| Term         | Explanation                                                                                                                                                                 |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **FoodNotes** | Can refer to name of the application as a whole or to the app’s storage file.<br>                                                                                           |
+| **Stall**    | Refers to a specific food stall in FoodNotes.<br>                                                                                                                           |
+| **Item**     | Refers to a specific menu item from a specific stall in FoodNotes. <br>                                                                                                     |
+| **CLI**      | A Command Line Interface (CLI) is a text-based user interface that allows users to type text commands instructing the program to do specific tasks.                         |
+| **GUI**      | A Graphical User Interface (GUI) is a form of user interface that allows users to interact with the program through graphical icons instead of text-based user interfaces.  |
 
 
 --------------------------
-# 6. Command summary <a id="6-command-summary"></a>
+## Command summary <a id ="6-command-summary"></a>
 
-## 6.1 General Commands <a id="61-general-commands-summary"></a>
+### General Commands
 
 | Features  | Format, Examples |
 |-----------|------------------|
@@ -810,7 +791,7 @@ Outcome:
 | **Exit**  | `exit`           |
 | **Clear** | `clear`          |
 
-## 6.2 Stall Management Commands <a id="62-stall-management-summary"></a>
+### Stall Management Commands
 
 | Features                | Format, Examples                                                                                                                   |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------|
@@ -822,7 +803,7 @@ Outcome:
 | **Review stall**        | `review-stall s/STALL_INDEX r/STALL_RATING d/DESCRIPTION` <br> e.g. `review-stall` s/1 r/5 d/Good food and service                 |                                                                                                                                                             |
 | **Delete stall review** | `delete-stall-review s/STALL_INDEX` <br> e.g. `delete-stall-review` s/1                                                            |
 
-## 6.3 Stall Sorting Commands <a id="63-stall-sorting-summary"></a>
+### Stall Sorting Commands
 
 | Features                    | Format, Examples                                        |
 |-----------------------------|---------------------------------------------------------|
@@ -830,7 +811,7 @@ Outcome:
 | **Sort stalls by rating**   | `sort-stalls-rating` <br> e.g. `sort-stalls-rating`     |
 | **Sort stalls by price**    | `sort-stalls-price` <br> e.g. `sort-stalls-price`       |
 
-## 6.4 Stall Finding Commands <a id="64-stall-finding-summary"></a>
+### Stall Finding Commands
 
 | Features                    | Format, Examples                                             |
 |-----------------------------|--------------------------------------------------------------|
@@ -838,7 +819,9 @@ Outcome:
 | **Find stalls by location** | `find-by-location` <br> e.g. `find-by-location` deck terrace |
 | **Find stalls by item**     | `find-by-item` <br> e.g. `find-by-item` chicken              |
 
-## 6.5 Item-Related Commands <a id="65-item-management-summary"></a>
+
+### Item-Related Commands
+
 
 | Features               | Format, Examples                                                                                                                              |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
@@ -849,5 +832,9 @@ Outcome:
 | **Review item**        | `review-item s/STALL_INDEX i/ITEM_INDEX r/ITEM_RATING d/ITEM_DESCRIPTION` <br> e.g. `review-item` s/1 i/1 r/5 d/Flavorful                     |                                                                                                                                                             |
 | **Delete item review** | `delete-item-review s/STALL_INDEX i/ITEM_INDEX` <br> e.g. `delete-item-review` s/1 i/1                                                        |
 
+{% include page-break.html %}
+
 --------------------------------------------------------------------------------------------------------------------
+
+## FAQ <a id ="faq"></a>
 
