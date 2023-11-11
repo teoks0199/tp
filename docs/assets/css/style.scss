@@ -5,8 +5,7 @@
 @import
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize",
-  "toc",
-  "foodnotes";
+  "toc";
 
 .icon {
     height: 21px;
