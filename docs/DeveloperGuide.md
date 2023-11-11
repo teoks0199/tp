@@ -302,15 +302,15 @@ The `updateFilteredStallListPredicate` is used to filter the list of stalls in F
 --------------------------------------------------------------------------------------------------------------------
 ## **Planned Enhancements**
 
-### Make it clearer to the user that a list of stall is filtered.
+### Make it clearer to the user that the list of stalls is filtered.
 **Current Implementation:**
-* **Current Issue:** Users can view a filtered list of stalls when they use a commands such as `find-by-location` and `find-by-item`. In the case where there is only 1 stall in the list and the user performs a stall deletion, the user will see a page showing an empty list of stall. This might cause confusion as the user might think that all the stalls are deleted.
+* **Current Issue:** Users can view a filtered list of stalls when they use commands such as `find-by-location` and `find-by-item`. In the case where there is only 1 stall in the list and the user performs a stall deletion, the user will see a page showing an empty list of stall. This might cause confusion as the user might think that all the stalls are deleted.
 * **Example:**
 1. User entered `find-by-location Deck`.
-2. A list of stalls containing one stall is displayed.
+2. A list of stall containing one stall is displayed.
 3. User entered `view-stall s/1` to view the details of the stall.
 4. User entered `delete-stall s/1` to remove the stall from FoodNotes.
-5. List of stall with 0 stall in displayed.
+5. List of stall with 0 stall is displayed.
 6. The list of stall is still filtered by location which is the Deck, but it might give the wrong impression that there is 0 stall in the list now.
 
 **Proposed Solution:**
