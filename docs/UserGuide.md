@@ -239,6 +239,7 @@ Type `clear` into the _Command Box_ and press `Enter` to execute.
 Outcome:
 
 The FoodNotes database is now empty.
+![ClearOutcome](images/userGuide/ClearCommandOutcome.png)
 </div>
 
 {% include page-break.html %}
@@ -255,7 +256,6 @@ These features allow you to manage information about the stalls in FoodNotes. Yo
 - Editing a stall
 - Reviewing a stall
 - Deleting a stall review
-
 
 
 -----
