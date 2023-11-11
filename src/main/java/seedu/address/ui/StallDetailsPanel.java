@@ -13,7 +13,7 @@ import seedu.address.model.stall.Stall;
 /**
  * Panel containing the list of menu items in a stall.
  */
-public class OneStallPanel extends UiPart<Region> {
+public class StallDetailsPanel extends UiPart<Region> implements DetailsPanel{
     private static final String FXML = "StallDetailsPanel.fxml";
     private final Logger logger = LogsCenter.getLogger(StallListPanel.class);
     @FXML
@@ -27,7 +27,7 @@ public class OneStallPanel extends UiPart<Region> {
     /**
      * Creates a {@code StallListPanel} with the given {@code ObservableList}.
      */
-    public OneStallPanel(Stall stall) {
+    public StallDetailsPanel(Stall stall) {
         super(FXML);
         if (stall.hasStallReview()) {
             stallRating.setText("Rating: " + stall.getStallStarRating());

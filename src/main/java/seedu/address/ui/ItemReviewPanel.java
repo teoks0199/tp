@@ -1,5 +1,7 @@
 package seedu.address.ui;
 
+import java.util.logging.Logger;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -10,7 +12,7 @@ import seedu.address.model.item.Item;
 /**
  * An UI component that displays information of a {@code Item}.
  */
-public class ItemReviewPanel extends UiPart<Region> {
+public class ItemReviewPanel extends UiPart<Region> implements DetailsPanel{
     private static final String FXML = "ItemReviewPanel.fxml";
 
     @FXML
@@ -28,8 +30,10 @@ public class ItemReviewPanel extends UiPart<Region> {
     @FXML
     private Label itemRating;
 
+    private static Logger logger = Logger.getLogger("ItemReviewPanel");
+
     /**
-     * Creates an {@code ItemNamePanel} with the given item.
+     * Creates an {@code ItemReviewPanel} with the given item.
      */
     public ItemReviewPanel(Item item) {
         super(FXML);
@@ -40,5 +44,6 @@ public class ItemReviewPanel extends UiPart<Region> {
         assert item.getItemDescriptionString() != null;
         itemReview.setText(item.getItemDescriptionString());
         itemReview.wrappingWidthProperty().bind(cardPane.widthProperty());
+        logger.info("ItemReviewPanel created");
     }
 }
