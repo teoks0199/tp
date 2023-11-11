@@ -6,6 +6,9 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_ASIAN;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BRITISH;
 import static seedu.address.testutil.TypicalMenus.VALID_MENU_1;
 import static seedu.address.testutil.TypicalMenus.VALID_MENU_2;
+import static seedu.address.testutil.TypicalMenus.VALID_MENU_3;
+import static seedu.address.testutil.TypicalMenus.VALID_MENU_4;
+import static seedu.address.testutil.TypicalStallReviews.STALL_REVIEW_1;
 import static seedu.address.testutil.TypicalStallReviews.STALL_REVIEW_2;
 
 import java.util.ArrayList;
@@ -28,6 +31,12 @@ public class TypicalStalls {
 
     public static final Stall CHICKEN_RICE = new StallBuilder().withName("Chicken Rice")
             .withLocation("Deck").withMenu(VALID_MENU_1).build();
+
+    public static final Stall DUCK_RICE = new StallBuilder().withName("Duck Rice")
+            .withLocation("Deck").withMenu(VALID_MENU_4).withStallReview(STALL_REVIEW_1).build();
+
+    public static final Stall NOODLES = new StallBuilder().withName("Fish Ball Noodles")
+            .withLocation("Deck").withMenu(VALID_MENU_3).withStallReview(STALL_REVIEW_2).build();
 
     public static final Stall AUNTIES_COOKING = new StallBuilder().withName("Auntie's Cooking")
             .withLocation("Deck").build();

@@ -16,7 +16,7 @@ import seedu.address.model.stall.Stall;
 /**
  * Panel containing the list of menu items.
  */
-public class ItemListPanel extends UiPart<Region> {
+public class ItemListPanel extends UiPart<Region> implements ListPanel {
     private static final String FXML = "LeftListPanel.fxml";
     private final Logger logger = LogsCenter.getLogger(ItemListPanel.class);
 

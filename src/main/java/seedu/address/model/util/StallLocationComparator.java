@@ -10,6 +10,8 @@ import seedu.address.model.stall.Stall;
 public class StallLocationComparator implements Comparator<Stall> {
     @Override
     public int compare(Stall stall1, Stall stall2) {
-        return stall1.getLocationString().toUpperCase().compareTo(stall2.getLocationString().toUpperCase());
+        String upperCasedStall1LocationString = stall1.getLocationString().toUpperCase();
+        String upperCasedStall2LocationString = stall2.getLocationString().toUpperCase();
+        return upperCasedStall1LocationString.toUpperCase().compareTo(upperCasedStall2LocationString);
     }
 }

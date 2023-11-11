@@ -15,8 +15,8 @@ Class "<<interface>>\nStorage" as Storage
 Class StorageManager
 
 package "FoodNotes Storage" #F4F6F6{
-Class "<<interface>>\nFoodNotesStorage" as FoodNotesStorage
-Class JsonFoodNotesStorage
+Class "<<interface>>\nAddressBookStorage" as AddressBookStorage
+Class JsonAddressBookStorage
 Class JsonSerializableFoodNotes
 Class JsonAdaptedStall
 Class JsonAdaptedItem
@@ -30,14 +30,14 @@ HiddenOutside ..> Storage
 
 StorageManager .up.|> Storage
 StorageManager -up-> "1" UserPrefsStorage
-StorageManager -up-> "1" FoodNotesStorage
+StorageManager -up-> "1" AddressBookStorage
 
 Storage -left-|> UserPrefsStorage
-Storage -right-|> FoodNotesStorage
+Storage -right-|> AddressBookStorage
 
 JsonUserPrefsStorage .up.|> UserPrefsStorage
-JsonFoodNotesStorage .up.|> FoodNotesStorage
-JsonFoodNotesStorage ..> JsonSerializableFoodNotes
+JsonAddressBookStorage .up.|> AddressBookStorage
+JsonAddressBookStorage ..> JsonSerializableFoodNotes
 JsonSerializableFoodNotes --> "*" JsonAdaptedStall
 JsonAdaptedStall --> "1" JsonSerializableMenu
 JsonSerializableMenu --> "*" JsonAdaptedItem

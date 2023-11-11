@@ -59,6 +59,9 @@ public class Item {
         return itemReview;
     }
 
+    /**
+     * Returns the item rating string.
+     */
     public String getItemRatingString() {
         if (itemReview == null) {
             return "No ratings yet.";
@@ -67,6 +70,9 @@ public class Item {
         }
     }
 
+    /**
+     * Returns the item description string.
+     */
     public String getItemDescriptionString() {
         if (itemReview == null) {
             return "No review yet.";

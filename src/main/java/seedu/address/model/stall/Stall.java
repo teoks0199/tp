@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.item.Item;
+import seedu.address.model.review.Rating;
 import seedu.address.model.stall.review.StallReview;
 
 /**
@@ -68,6 +69,13 @@ public class Stall {
 
     public AveragePrice getAveragePrice() {
         return menu.getAveragePrice();
+    }
+
+    public Rating getRating() {
+        if (stallReview == null) {
+            return null;
+        }
+        return stallReview.getRating();
     }
 
     public String getAveragePriceString() {
