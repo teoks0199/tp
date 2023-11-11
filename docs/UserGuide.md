@@ -151,7 +151,7 @@ The commands in this section allow you to perform operations on the entire syste
 - Exiting from the application
 - Clearing the FoodNotes database
 
----
+
 #### Viewing help : `help`
 
 You can use this command to view the online user guide, which contains information about all the instructions in FoodNotes.
@@ -184,6 +184,7 @@ Outcome:
 </div>
 
 #### Exiting from the application: `exit`
+
 You can use this command to exit FoodNotes.
 
 <div markdown="block" class="alert alert-info">
@@ -368,7 +369,11 @@ Outcome:
 You can use this command to edit an existing stall, and update its name, location. If the stall has a review,
 you may edit its rating and/or description.
 
+<div markdown="block" class="alert alert-info">
+
 :information_source: You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the stall already has an existing review.
+
+</div>
 
 **Format:**
 
@@ -376,19 +381,21 @@ you may edit its rating and/or description.
 
 **Example:**
 
-You wish to change the name and location of the first stall in the list.
+You wish to change the location of the seventh stall in the list, as the stall has relocated from Utown to Frontier.
 
 <div markdown="block" class="alert alert-white">
 
-Editing the first stall from the list:
+Editing the seventh stall from the list:
 
-1. Type `edit-stall s/1 n/Japanese Stall l/Deck` into the _Command Box_.
+
+1. Type `edit-stall s/7 l/Frontier` into the *Command Box*.
 1. Press `Enter` to execute.
 
 Outcome:
 
-1. The _Result Display_ will show a success message.
-1. You have now edited the first stall from the list.
+
+1. The *Result Display* will show a success message.
+1. You have now edited the seventh stall from the list, and the list of stalls will be updated.
 </div>
 
 ![ListOutcome](images/userGuide/editStallOutcome.png)
@@ -452,11 +459,11 @@ This feature allows you to sort the stalls by their location, rating and price, 
 
 ---------------------------------------------------------------------------------------------------------------------
 
-#### Sorting all stalls by location: `sort-stalls-location`
+#### Sort stalls by location: `sort-stalls-location`
 
 You can use this command to sort the stalls by their location in alphabetical order.
 
-**Format:** 
+**Format:**
 `sort-stalls-location`
 
 **Example:**
@@ -482,7 +489,7 @@ Sorting the stalls by location:
 
 You can use this command to sort the stalls by their rating in descending order, so the stall with the highest rating will appear right at the top!
 
-**Format:** 
+**Format:**
 `sort-stalls-rating`
 
 **Example:**
@@ -505,7 +512,7 @@ Sorting stalls by rating:
 
 You can use this command to sort the stalls by the average price of its menu items in ascending order, and the stall with the cheapest food options can be easily retrieved!
 
-**Format:** 
+**Format:**
 `sort-stalls-price`
 
 **Example:**
@@ -531,8 +538,6 @@ You wish to view the stalls' average price in ascending order.
 
 This feature allows you to find stalls by their name, location and menu items. Whichever small detail you can remember, you can easily find that stall.
 
---------------------------------------------------------------------------------------------------------------------
-
 #### Finding stalls by name: `find-by-name`
 The command is a powerful tool for quickly locating specific food stalls based on their names. Even if you can only remember part of the stall name, this command can help you narrow down your choices effectively.
 You need to type in the entire word instead of part of the word for it to find the stall.
@@ -542,8 +547,8 @@ You need to type in the entire word instead of part of the word for it to find t
 **Command format:** `find-by-name NAME_KEYWORD`
 
 **Example:**
-You wish to find stalls that serve Japanese and Western noodles. You can use the command as follows:
-1. Type `find-by-name Japanese Western noodles` in the _Command Box_.
+You wish to find stalls that have 'Japanese' or 'Western' or 'Noodles' in their names. You can use the command as follows:
+1. Type `find-by-name Japanese Western Noodles` in the _Command Box_.
 2. Press `Enter` to execute.
 
 Outcome:
@@ -711,7 +716,9 @@ Outcome:
 
 You can use this command to edit an existing item, and update its name, location, rating and/or description.
 
+<div markdown="block" class="alert alert-info">
 :information_source: You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the item already has an existing review.
+</div>
 
 **Format:**
 

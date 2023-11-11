@@ -4,7 +4,7 @@ skinparam ArrowFontStyle plain
 
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
-participant ":FoodNotesParser" as FoodNotesParser LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
 participant ":AddStallReviewCommandParser"  as AddStallReviewCommandParser LOGIC_COLOR
 participant "r:AddStallReviewCommand" as AddStallReviewCommand LOGIC_COLOR
 participant ":CommandResult" as CommandResult LOGIC_COLOR
@@ -16,17 +16,17 @@ participant ":Model" as Model MODEL_COLOR
 activate LogicManager
 
 
-LogicManager -> FoodNotesParser : parseCommand(review-stall s/1 r/1 d/auntie)
-activate FoodNotesParser
+LogicManager -> AddressBookParser : parseCommand(review-stall s/1 r/1 d/auntie)
+activate AddressBookParser
 
 create AddStallReviewCommandParser
-FoodNotesParser -> AddStallReviewCommandParser
+AddressBookParser -> AddStallReviewCommandParser
 activate AddStallReviewCommandParser
 
-AddStallReviewCommandParser --> FoodNotesParser
+AddStallReviewCommandParser --> AddressBookParser
 deactivate AddStallReviewCommandParser
 
-FoodNotesParser -> AddStallReviewCommandParser : parse("s/1 r/1 d/auntie")
+AddressBookParser -> AddStallReviewCommandParser : parse("s/1 r/1 d/auntie")
 activate AddStallReviewCommandParser
 
 create AddStallReviewCommand
@@ -36,15 +36,15 @@ activate AddStallReviewCommand
 AddStallReviewCommand --> AddStallReviewCommandParser : r
 deactivate AddStallReviewCommand
 
-AddStallReviewCommandParser --> FoodNotesParser: r
+AddStallReviewCommandParser --> AddressBookParser: r
 deactivate AddStallReviewCommandParser
 'Hidden arrow to position the destroy marker below the end of the activation bar.
-AddStallReviewCommandParser -[hidden]-> FoodNotesParser: r
+AddStallReviewCommandParser -[hidden]-> AddressBookParser: r
 destroy AddStallReviewCommandParser
 
 
-FoodNotesParser --> LogicManager : r
-deactivate FoodNotesParser
+AddressBookParser --> LogicManager : r
+deactivate AddressBookParser
 
 LogicManager -> AddStallReviewCommand : execute()
 activate AddStallReviewCommand

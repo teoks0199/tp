@@ -57,7 +57,7 @@ public class ItemName {
         }
 
         ItemName otherItemName = (ItemName) other;
-        return fullName.equals(otherItemName.fullName);
+        return fullName.toLowerCase().equals(otherItemName.fullName.toLowerCase());
     }
 
     @Override

@@ -8,7 +8,7 @@ end box
 
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
-participant ":FoodNotesParser" as FoodNotesParser LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
 participant ":ViewStallCommandParser" as ViewStallCommandParser LOGIC_COLOR
 participant "f:ViewStallCommand" as ViewStallCommand LOGIC_COLOR
 participant ":CommandResult" as CommandResult LOGIC_COLOR
@@ -20,18 +20,18 @@ end box
 MainWindow -> LogicManager : execute("view-stall s/1")
 activate LogicManager
 
-LogicManager -> FoodNotesParser : parseCommand("view-stall s/1")")
-activate FoodNotesParser
+LogicManager -> AddressBookParser : parseCommand("view-stall s/1")")
+activate AddressBookParser
 
 create ViewStallCommandParser
-FoodNotesParser -> ViewStallCommandParser :ViewStallCommandParser()
+AddressBookParser -> ViewStallCommandParser :ViewStallCommandParser()
 activate ViewStallCommandParser
 
 
-ViewStallCommandParser --> FoodNotesParser
+ViewStallCommandParser --> AddressBookParser
 deactivate ViewStallCommandParser
 
-FoodNotesParser -> ViewStallCommandParser :parse("s/1")
+AddressBookParser -> ViewStallCommandParser :parse("s/1")
 activate ViewStallCommandParser
 
 
@@ -39,16 +39,15 @@ activate ViewStallCommandParser
 create ViewStallCommand
 ViewStallCommandParser -> ViewStallCommand : ViewStallCommand(predicate)
 activate ViewStallCommand
-ViewStallCommand --> ViewStallCommandParser : v
+ViewStallCommand --> ViewStallCommandParser : f
 deactivate ViewStallCommand
 
-ViewStallCommandParser --> FoodNotesParser: v
+ViewStallCommandParser --> AddressBookParser: f
 deactivate ViewStallCommandParser
-ViewStallCommandParser -[hidden]-> FoodNotesParser : result
-destroy ViewStallCommandParser
+ViewStallCommandParser -[hidden]-> AddressBookParser : result
 
-FoodNotesParser --> LogicManager : v
-deactivate FoodNotesParser
+AddressBookParser --> LogicManager : f
+deactivate AddressBookParser
 
 LogicManager -> ViewStallCommand : execute()
 activate ViewStallCommand

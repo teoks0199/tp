@@ -25,7 +25,7 @@
             <VBox HBox.hgrow="ALWAYS">
                 <Label text="Stall Sorting" />
                 <Text text="sort-stalls-location" />
-                <Text text="sort-stalls-ratings" />
+                <Text text="sort-stalls-rating" />
                 <Text text="sort-stalls-price" />
                 <padding>
                     <Insets bottom="5.0" />
