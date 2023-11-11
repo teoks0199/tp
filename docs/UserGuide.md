@@ -140,8 +140,6 @@ This section provides a summary of the parameters used when inputting commands i
 ## Features
 This section shares with you on how to use each feature in detail.
 
-{% include page-break.html %}
-
 ----
 
 ### General Features
@@ -189,7 +187,7 @@ You can use this command to exit FoodNotes.
 
 <div markdown="block" class="alert alert-info">
 
-**:information_source: This command will exit the application immediately. All data is saved automatically and will be reloaded upon restart of the application**
+:information_source: This command will exit the application immediately. All data is saved automatically and will be reloaded upon restart of the application.
 
 </div>
 
@@ -214,7 +212,7 @@ You can use this command to clear the database in FoodNotes.
 
 <div markdown="block" class="alert alert-info">
 
-**:warning: This command will permanently delete all data stored in FoodNotes. You should make a backup of `addressbook.json` if you still want to keep your old data.**
+:warning: This command will permanently delete all data stored in FoodNotes. You should make a backup of `addressbook.json` if you still want to keep your old data.
 
 </div>
 
