@@ -22,7 +22,7 @@ Given below are my contributions to the project.
   * **PR(s):** [#101](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/101)
   * **What it does:** Allows the user to sort stalls by location or rating.
   * **Justification:** This feature improves the product significantly because it allows the user to sort stalls, which is a core feature of FoodNotes.
-  * **Highlights:** This enhancement does not affect existing commands and commands to be added in the future as it is a standalone feature.
+  * **Highlights:** This enhancement required the creation of new comparator classes such as `StallLocationComparator` and `StallRatingComparator` to handle the sorting of different types of search queries.
 
 
 * **Bug fixing**: Fixed UI bugs in FoodNotes.

@@ -78,7 +78,7 @@ public class TypicalStalls {
      * Returns a list of typical stalls.
      */
     public static List<Stall> getTypicalStalls() {
-        return new ArrayList<>(Arrays
+        return List.copyOf(Arrays
                 .asList(AUNTIES_COOKING, BEVERAGES, CHINESE, DRINKS_STALL, ECONOMIC_RICE, FRENCH, GOODFOOD));
     }
 

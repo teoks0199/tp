@@ -35,7 +35,9 @@ public class ItemReviewPanel extends UiPart<Region> {
         super(FXML);
         itemPrice.setText(item.getPriceString());
         itemName.setText(item.getName().fullName);
+        assert item.getItemRatingString() != null;
         itemRating.setText(item.getItemRatingString());
+        assert item.getItemDescriptionString() != null;
         itemReview.setText(item.getItemDescriptionString());
         itemReview.wrappingWidthProperty().bind(cardPane.widthProperty());
     }
