@@ -414,19 +414,19 @@ you may edit its rating and/or description.
 
 **Example:**
 
-You wish to change the name and location of the first stall in the list.
+You wish to change the location of the seventh stall in the list, as the stall has relocated from Utown to Frontier.
 
 <div markdown="block" class="alert alert-white">
 
-Editing the first stall from the list:
+Editing the seventh stall from the list:
 
-1. Type `edit-stall s/1 n/Japanese Stall l/Deck` into the *Command Box*.
+1. Type `edit-stall s/7 l/Frontier` into the *Command Box*.
 1. Press `Enter` to execute.
 
 Outcome:
 
 1. The *Result Display* will show a success message.
-1. You have now edited the first stall from the list, and the list of stalls will be updated.
+1. You have now edited the seventh stall from the list, and the list of stalls will be updated.
 </div>
 
 ![ListOutcome](images/userGuide/editStallOutcome.png)
