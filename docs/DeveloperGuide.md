@@ -470,7 +470,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 1c1. FoodNotes shows an error message.
 
       Use case resumes at step 1.
-  
+
 **Use case: UC05 - Delete an item from a stall**
 
 **MSS**
@@ -484,7 +484,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 1a. The given stall index or item index is invalid.
   * 1a1. FoodNotes shows an error message.
-  
+
   Use case resumes at step 1.
 
 * 1b. The stall index or item index is not specified.
@@ -515,7 +515,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 1.
 
-    
+
 
 
 
