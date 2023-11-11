@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import seedu.address.testutil.StallReviewBuilder;
 
 public class StallReviewTest {
+
     @Test
     public void equals() {
         // same values -> returns true
