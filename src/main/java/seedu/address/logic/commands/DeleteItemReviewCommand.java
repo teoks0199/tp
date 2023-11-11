@@ -1,6 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ITEM;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
@@ -29,8 +30,8 @@ public class DeleteItemReviewCommand extends Command {
             + PREFIX_STALL + "1 "
             + PREFIX_ITEM + "1 ";
 
-    private static final String MESSAGE_SUCCESS = "You have deleted a review for the %1$s at %2$s.";
-    private static final String MESSAGE_ITEM_REVIEW_NOT_FOUND = "This item does not have a review.";
+    public static final String MESSAGE_SUCCESS = "You have deleted a review for the %1$s at %2$s.";
+    public static final String MESSAGE_ITEM_REVIEW_NOT_FOUND = "This item does not have a review.";
 
     private final Index stallIndex;
     private final Index itemIndex;
@@ -39,6 +40,7 @@ public class DeleteItemReviewCommand extends Command {
      * Creates an DeleteItemReviewCommand to delete the specified {@code ItemReview}
      */
     public DeleteItemReviewCommand(Index stallIndex, Index itemIndex) {
+        requireAllNonNull(stallIndex, itemIndex);
         this.stallIndex = stallIndex;
         this.itemIndex = itemIndex;
     }
