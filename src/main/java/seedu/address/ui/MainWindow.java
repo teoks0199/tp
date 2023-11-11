@@ -1,5 +1,6 @@
 package seedu.address.ui;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javafx.event.ActionEvent;
@@ -35,7 +36,7 @@ public class MainWindow extends UiPart<Stage> {
 
     // Independent Ui parts residing in this Ui container
     private StallListPanel stallListPanel;
-    private OneStallPanel oneStallPanel;
+    private StallDetailsPanel oneStallPanel;
     private ResultDisplay resultDisplay;
     private HelpWindow helpWindow;
 
@@ -133,6 +134,7 @@ public class MainWindow extends UiPart<Stage> {
 
         PanelOfCommands panelOfCommands = new PanelOfCommands();
         rightMainPanel.getChildren().add(panelOfCommands.getRoot());
+        logger.log(Level.INFO, "MainWindow is correctly rendered");
     }
 
     void backToHomePage() {
@@ -199,7 +201,7 @@ public class MainWindow extends UiPart<Stage> {
         leftMainPanel.getChildren().clear();
         leftMainPanel.getChildren().add(itemListPanel.getRoot());
 
-        oneStallPanel = new OneStallPanel(logic.getFilteredStall());
+        oneStallPanel = new StallDetailsPanel(logic.getFilteredStall());
         rightMainPanel.getChildren().clear();
         rightMainPanel.getChildren().add(oneStallPanel.getRoot());
     }

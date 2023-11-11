@@ -15,6 +15,7 @@ Class UserPrefs
 Class UniqueStallList
 Class UniqueItemList
 Class Stall
+Class Price
 Class StallReview
 Class StallRating
 Class StallDescription
@@ -46,6 +47,7 @@ AddressBook *--> "1" UniqueStallList
 UniqueStallList --> "~* all" Stall
 Stall *--> "1" Name
 Stall *-down->  "0...1" StallReview
+Item *-down-> "1" Price
 
 Stall *---> "0...1" Menu
 StallReview *--> "1" StallRating

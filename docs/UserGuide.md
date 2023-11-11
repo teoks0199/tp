@@ -13,9 +13,6 @@ FoodNotes is a quick, simple and beautiful food diary made specifically for you,
 
 This application is optimised for use via a Command Line Interface (CLI) this means that you operate the application by typing commands into a _Command Box_. If you are fast at typing, you can manage your food reviews faster than other Graphical User Interface (GUI) applications; GUI applications allow users to interact with the application through graphical icons such as buttons.
 FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems.
-<div markdown="block" class="index">
-
-<div style="page-break-after: always;"></div>
 
 {% include page-break.html %}
 
@@ -28,9 +25,9 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 
 **If you are a first time user:**
 
-1. The [Quick start](#3-quick-start) section provides instructions for you on how to get started.
-2. Once you have set up FoodNotes, you can check out the [Screen layout](#2.2.1-gui-terminology) section to get familiar
-with the different components of FoodNotes. To learn the basics of using FoodNotes, head over to the [Features](#4-features) section.
+1. The [Quick start](#quick-start) section provides instructions for you on how to get started.
+2. Once you have set up FoodNotes, you can check out the [Layout Screen](#terminology-related-to-the-graphical-user-interface--gui-) section to get familiar
+with the different components of FoodNotes. To learn the basics of using FoodNotes, head over to the [Features](#features) section.
 
 **If you are an experienced user:**
 
@@ -122,7 +119,7 @@ This section provides a summary of the parameters used when inputting commands i
 
    * `list` : Lists all stalls.
 
-6. Refer to the [Features](#4-features) below for details of each command.
+6. Refer to the [Features](#features) below for details of each command.
 
 <div markdown="block" class="alert alert-info">
 
@@ -134,6 +131,7 @@ This section provides a summary of the parameters used when inputting commands i
     2. Navigate to the location where `FoodNotes.jar` is saved via the terminal. (_Unsure how to navigate?_ You can try running this in your terminal: `cd Downloads`.)
     3. Run the following in the terminal: `java -jar FoodNotes.jar`.
 
+</div>
 
 {% include page-break.html %}
 
@@ -141,9 +139,6 @@ This section provides a summary of the parameters used when inputting commands i
 
 ## Features
 This section shares with you on how to use each feature in detail.
-
-<div markdown="block" class="alert alert-info">
-</div>
 
 {% include page-break.html %}
 
@@ -211,6 +206,7 @@ Type `exit` into the _Command Box_ and press `Enter` to execute.
 Outcome:
 
 The FoodNotes application window is now closed.
+</div>
 
 #### Clearing the FoodNotes database: `clear`
 
@@ -239,6 +235,7 @@ Type `clear` into the _Command Box_ and press `Enter` to execute.
 Outcome:
 
 The FoodNotes database is now empty.
+![ClearOutcome](images/userGuide/ClearCommandOutcome.png)
 </div>
 
 {% include page-break.html %}
@@ -255,7 +252,6 @@ These features allow you to manage information about the stalls in FoodNotes. Yo
 - Editing a stall
 - Reviewing a stall
 - Deleting a stall review
-
 
 
 -----
@@ -373,7 +369,11 @@ Outcome:
 You can use this command to edit an existing stall, and update its name, location. If the stall has a review,
 you may edit its rating and/or description.
 
+<div markdown="block" class="alert alert-info">
+
 :information_source: You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the stall already has an existing review.
+
+</div>
 
 **Format:**
 
@@ -452,16 +452,26 @@ Outcome:
 </div>
 
 {% include page-break.html %}
+
 ---------------------------------------------------------------------------------------------------------------------
 ### Stall Sorting
 This feature allows you to sort the stalls by their location, rating and price, so you can now easily find the stalls based on these criterias.
 
+---------------------------------------------------------------------------------------------------------------------
 
 #### Sort stalls by location: `sort-stalls-location`
 
 You can use this command to sort the stalls by their location in alphabetical order.
 
-**Command format:** `sort-stalls-location`
+**Format:**
+`sort-stalls-location`
+
+**Example:**
+
+You wish to sort the stalls by their location in alphabetical order.
+<div markdown="block" class="alert alert-white">
+
+Sorting the stalls by location:
 
 1. Type `sort-stalls-location` in the _Command Box_.
 2. press `Enter` to execute.
@@ -471,14 +481,22 @@ You can use this command to sort the stalls by their location in alphabetical or
 2. You will now see that the stalls are sorted by location in alphabetical order in the _Data Display_, as illustrated
    in the screenshot below.
 
+</div>
+
 ![ListOutcome](images/userGuide/sort-stalls-location.png)
 
 #### Sort stalls by rating: `sort-stalls-rating`
 
 You can use this command to sort the stalls by their rating in descending order, so the stall with the highest rating will appear right at the top!
 
-**Command format:** `sort-stalls-rating`
+**Format:**
+`sort-stalls-rating`
 
+**Example:**
+You wish to view the stalls' rating in descending order.
+<div markdown="block" class="alert alert-white">
+
+Sorting stalls by rating:
 1. Type `sort-stalls-rating` in the _Command Box_.
 2. press `Enter` to execute.
 
@@ -486,6 +504,7 @@ You can use this command to sort the stalls by their rating in descending order,
 1. The _Result Display_ will display a success message.
 2. You will now see that the stalls are sorted by rating in descending order in the _Data Display_, as illustrated
    in the screenshot below.
+</div>
 
 ![ListOutcome](images/userGuide/sort-stalls-rating.png)
 
@@ -493,7 +512,12 @@ You can use this command to sort the stalls by their rating in descending order,
 
 You can use this command to sort the stalls by the average price of its menu items in ascending order, and the stall with the cheapest food options can be easily retrieved!
 
-**Command format:** sort-stalls-price
+**Format:**
+`sort-stalls-price`
+
+**Example:**
+You wish to view the stalls' average price in ascending order.
+<div markdown="block" class="alert alert-white">
 
 1. Type `sort-stalls-price` in the _Command Box_.
 2. press `Enter` to execute.
@@ -502,16 +526,16 @@ You can use this command to sort the stalls by the average price of its menu ite
 1. The _Result Display_ will display a success message.
 2. You will now see that the stalls are sorted by average price in ascending order in the _Data Display_, as illustrated
    in the screenshot below.
+</div>
 
 ![ListOutcome](images/userGuide/sort-stalls-price.png)
-
-
 
 {% include page-break.html %}
 
 --------------------------------------------------------------------------------------------------------------------
 
 ### Stall Finding
+
 This feature allows you to find stalls by their name, location and menu items. Whichever small detail you can remember, you can easily find that stall.
 
 #### Finding stalls by name: `find-by-name`
@@ -615,7 +639,6 @@ This feature allows you to manage information about the items in **FoodNotes**. 
 
 #### Viewing an item : `view-item`
 
-
 You can use this command to view details of a specific item from a specific stall in FoodNotes,
 which includes the price, rating and description of the item.
 
@@ -693,7 +716,9 @@ Outcome:
 
 You can use this command to edit an existing item, and update its name, location, rating and/or description.
 
+<div markdown="block" class="alert alert-info">
 :information_source: You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the item already has an existing review.
+</div>
 
 **Format:**
 
@@ -767,7 +792,6 @@ Outcome:
 {% include page-break.html %}
 
 --------------------------------------------------------------------------------------------------------------------
-
 
 ## Glossary
 
