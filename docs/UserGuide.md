@@ -1,7 +1,6 @@
 ---
 layout: page
 title: FoodNotes User Guide
-show-toc: true
 ---
 
 Welcome to the User Guide of **FoodNotes**!
