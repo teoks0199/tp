@@ -51,7 +51,7 @@ The bulk of the app's work is done by the following four components:
 
 **How the architecture components interact with each other**
 
-The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user issues the command `delete 1`.
+The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user issues the command `delete-stall s/1`.
 
 <img src="images/ArchitectureSequenceDiagram.png" width="574" />
 
@@ -229,7 +229,7 @@ The following sequence diagram shows how the find item operation works:
 The `MenuContainsKeywordsPredicate` is used to filter the list of stalls in FoodNotes. It is created with a list of keywords, and it checks if the menu items of a stall contains any of the keywords.
 #### Design considerations:
 
-#### Aspect: Number of fields needed to be entered by the user:
+**Aspect: Number of fields needed to be entered by the user:**
 
 * **Alternative 1 (current choice):** Allows the user to search for stalls containing any of the keywords.
     * Pros: Users can search for multiple items at once, for example they can look for stalls that sell either "chicken" or "apple".
@@ -252,7 +252,7 @@ The following sequence diagram shows how the add stall review operation works:
 
 #### Design considerations:
 
-#### Aspect: Number of fields needed to be entered by the user:
+**Aspect: Number of fields needed to be entered by the user:**
 
 * **Alternative 1 (current choice):** Allows the user to enter the stall's review, rating and description.
     * Pros: Users can enter multiple fields for the stall's review at once, do not have to add individual fields one by one.
@@ -339,7 +339,7 @@ We propose to enhance the filter stalls commands to display the list of stalls w
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                           | I want to …​                                                             | So that I can…​                                                   |
+| Priority | As a …                            | I want to …                                                              | So that I can…                                                    |
 |----------|-----------------------------------|--------------------------------------------------------------------------|-------------------------------------------------------------------|
 | `* * *`  | new user                          | add reviews to stalls                                                    | remember what I think about the food stall.                       |
 | `* * *`  | new user                          | delete reviews from stalls                                               | delete review of the food stall if I change my mind about it      |
@@ -363,13 +363,13 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* *`    | student who often studies late    | search for food places by filtering by opening hours                     | quickly find food places to go for late-night suppers             |
 | `*`      | see how to travel to the stalls   | See how to travel to the stalls                                          | find my way easily                                                |
 | `*`      | user interested in sustainability | identify local ingredients                                               | support environmentally conscious dining choices                  |
-| `*`      | student always on the move        | receive alerts about pop ups                                             |  seize food opportunities wherever I go.                          |
+| `*`      | student always on the move        | receive alerts about pop ups                                             | seize food opportunities wherever I go.                           |
 | `*`      | Muslim student                    | know which halal certified                                               | eat halal food.                                                   |
 *{More to be added}*
 
 ### Use cases
 
-(For all use cases below, the **System** is the `FoodNotes` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is `FoodNotes` and the **Actor** is the `user`, unless specified otherwise)
 
 
 

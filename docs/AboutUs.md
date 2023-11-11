@@ -33,7 +33,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 <img src="images/ruizhi2001.png" width="200px">
 
-[[github](https://github.com/Ruizhi2001)] 
+[[github](https://github.com/Ruizhi2001)]
 [[portfolio](team/ruizhi2001.md)]
 
 * Role: Developer
