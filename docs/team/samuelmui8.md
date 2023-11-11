@@ -30,6 +30,9 @@ Given below are my contributions to the project.
 * **Code contributed**:
   * [RepoSense link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=samuelmui8&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code&since=2023-09-22&tabOpen=true&tabType=authorship&tabAuthor=samuelmui8&tabRepo=AY2324S1-CS2103T-W10-4%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code&authorshipIsBinaryFileTypeChecked=false&authorshipIsIgnoredFilesChecked=false)
 
+* **Contributions to team-based tasks**:
+  * Update the project website from the original AB3 to suit the needs of FoodNotes and update site-wide settings. (Pull requests [#49](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/49), [#271](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/271))
+
 * **Project management**:
   * Released v1.3.trial along with the jar file on GitHub.
 
@@ -39,16 +42,18 @@ Given below are my contributions to the project.
     * Wrote additional tests for the storage components, increasing coverage from 54% to 58% (Pull request [#124](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/124))
 
 * **Documentation**:
-* User Guide:
-    * Added documentation for stall sorting features in section 4.3 of the UG.
-    * Added screenshots for stall finding features in section 4.4 of the UG.
+  * User Guide:
+      * Added documentation for stall sorting features in section 4.3 of the UG. (Pull request [#136](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/136))
+      * Added screenshots for stall finding features in section 4.4 of the UG. (Pull request [#146](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/146/files))
   * Developer Guide:
-    * Added implementation details of the `sort-stalls-price` feature.
+    * Added implementation details of the `sort-stalls-price` feature. (Pull request [#85](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/85))
+    * Wrote and formatted user stories. (Pull request [#278](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/278))
+    * Wrote the section on use cases. (Pull request [#270](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/270))
 
 * **Community**:
   * PRs reviewed (with non-trivial review comments): [#27](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/27),
   [#41](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/41), [#57](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/57),
   [#65](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/65), [#97](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/97)
-  * Reported bugs and suggestions for other teams in the class (examples: [#1](https://github.com/samuelmui8/ped/issues/1),
-  [#2](https://github.com/samuelmui8/ped/issues/2), [#3](https://github.com/samuelmui8/ped/issues/3), [#4](https://github.com/samuelmui8/ped/issues/4),
-  [#5](https://github.com/samuelmui8/ped/issues/5), [#6](https://github.com/samuelmui8/ped/issues/6))
+  * Peer evaluated iPs and provided feedback on canvas.
+    * iPs reviewed: [iP-1](https://github.com/flexibo/ip), [iP-2](https://github.com/amosting/ip)
+  * Reported bugs and provided suggestions for team F.A.K.E.J.A.R.V.I.S. during PED ([Issue Tracker](https://github.com/samuelmui8/ped/issues))
