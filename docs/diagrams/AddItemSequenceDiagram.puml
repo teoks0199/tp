@@ -42,7 +42,6 @@ deactivate AddItemCommandParser
 'Hidden arrow to position the destroy marker below the end of the activation bar.
 AddItemCommandParser -[hidden]-> AddressBookParser
 
-
 AddressBookParser --> LogicManager : a
 deactivate AddressBookParser
 

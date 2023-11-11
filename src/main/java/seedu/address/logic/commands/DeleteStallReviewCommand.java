@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STALL;
 
 import java.util.List;
+import java.util.Objects;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.ToStringBuilder;
@@ -62,18 +63,16 @@ public class DeleteStallReviewCommand extends Command {
 
     @Override
     public boolean equals(Object other) {
-        if (other == this) {
+        if (this == other) {
             return true;
         }
-
-        // instanceof handles nulls
-        if (!(other instanceof DeleteStallCommand)) {
+        if (other == null || getClass() != other.getClass()) {
             return false;
         }
-
-        DeleteStallReviewCommand otherDeleteStallReviewCommand = (DeleteStallReviewCommand) other;
-        return targetIndex.equals(otherDeleteStallReviewCommand.targetIndex);
+        DeleteStallReviewCommand that = (DeleteStallReviewCommand) other;
+        return Objects.equals(targetIndex, that.targetIndex);
     }
+
 
     @Override
     public String toString() {

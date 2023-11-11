@@ -32,10 +32,10 @@ public class StallTest {
                 new StallBuilder(AUNTIES_COOKING).withName(VALID_NAME_BRITISH).build();
         assertFalse(AUNTIES_COOKING.isSameStall(editedAuntiesCooking));
 
-        // name differs in case, all other attributes same -> returns false
+        // name differs in case, all other attributes same -> returns true
         Stall editedBritish =
                 new StallBuilder(BRITISH).withName(VALID_NAME_BRITISH.toLowerCase()).build();
-        assertFalse(BRITISH.isSameStall(editedBritish));
+        assertTrue(BRITISH.isSameStall(editedBritish));
 
         // name has trailing spaces, all other attributes same -> returns false
         String nameWithTrailingSpaces = VALID_NAME_BRITISH + " ";

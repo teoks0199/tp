@@ -57,7 +57,7 @@ public class Location {
         }
 
         Location otherLocation = (Location) other;
-        return locationName.equals(otherLocation.locationName);
+        return locationName.toLowerCase().equals(otherLocation.locationName.toLowerCase());
     }
 
     @Override
