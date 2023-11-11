@@ -61,11 +61,11 @@ generate the table of contents and will NOT output the markdown given to it
 {% capture deprecation_warnings %}{% endcapture %}
 
 {% if include.baseurl %}
-{% capture deprecation_warnings %}{{ deprecation_warnings }}<!-- jekyll-toc :: "baseurl" has been deprecated, use "base_url" instead -->{{ newline }}{% endcapture %}
+{% capture deprecation_warnings %}{{ deprecation_warnings }}<!-- jekyll-toc.md :: "baseurl" has been deprecated, use "base_url" instead -->{{ newline }}{% endcapture %}
 {% endif %}
 
 {% if include.skipNoIDs %}
-{% capture deprecation_warnings %}{{ deprecation_warnings }}<!-- jekyll-toc :: "skipNoIDs" has been deprecated, use "skip_no_ids" instead -->{{ newline }}{% endcapture %}
+{% capture deprecation_warnings %}{{ deprecation_warnings }}<!-- jekyll-toc.md :: "skipNoIDs" has been deprecated, use "skip_no_ids" instead -->{{ newline }}{% endcapture %}
 {% endif %}
 
 {% capture jekyll_toc %}{% endcapture %}

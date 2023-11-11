@@ -151,7 +151,7 @@ The commands in this section allow you to perform operations on the entire syste
 - Exiting from the application
 - Clearing the FoodNotes database
 
----
+
 #### Viewing help : `help`
 
 You can use this command to view the online user guide, which contains information about all the instructions in FoodNotes.
@@ -184,6 +184,7 @@ Outcome:
 </div>
 
 #### Exiting from the application: `exit`
+
 You can use this command to exit FoodNotes.
 
 <div markdown="block" class="alert alert-info">
@@ -458,11 +459,11 @@ This feature allows you to sort the stalls by their location, rating and price, 
 
 ---------------------------------------------------------------------------------------------------------------------
 
-#### Sorting all stalls by location: `sort-stalls-location`
+#### Sort stalls by location: `sort-stalls-location`
 
 You can use this command to sort the stalls by their location in alphabetical order.
 
-**Format:** 
+**Format:**
 `sort-stalls-location`
 
 **Example:**
@@ -488,7 +489,7 @@ Sorting the stalls by location:
 
 You can use this command to sort the stalls by their rating in descending order, so the stall with the highest rating will appear right at the top!
 
-**Format:** 
+**Format:**
 `sort-stalls-rating`
 
 **Example:**
@@ -511,7 +512,7 @@ Sorting stalls by rating:
 
 You can use this command to sort the stalls by the average price of its menu items in ascending order, and the stall with the cheapest food options can be easily retrieved!
 
-**Format:** 
+**Format:**
 `sort-stalls-price`
 
 **Example:**
@@ -536,8 +537,6 @@ You wish to view the stalls' average price in ascending order.
 ### Stall Finding
 
 This feature allows you to find stalls by their name, location and menu items. Whichever small detail you can remember, you can easily find that stall.
-
---------------------------------------------------------------------------------------------------------------------
 
 #### Finding stalls by name: `find-by-name`
 The command is a powerful tool for quickly locating specific food stalls based on their names. Even if you can only remember part of the stall name, this command can help you narrow down your choices effectively.
