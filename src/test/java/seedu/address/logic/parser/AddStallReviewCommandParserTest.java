@@ -13,6 +13,7 @@ import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_STALL;
 import static seedu.address.testutil.TypicalStallReviews.STALL_REVIEW_3;
 
 import org.junit.jupiter.api.Test;
+
 import seedu.address.logic.commands.AddStallReviewCommand;
 
 public class AddStallReviewCommandParserTest {
