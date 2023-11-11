@@ -467,7 +467,7 @@ Sorting the stalls by location:
 Outcome:
 
 1. The _Result Display_ will display a success message.
-2. You will now see that the stalls are sorted by location in alphabetical order in the _Data Display_, as illustrated
+2. You will now see that the stalls are sorted by location in alphabetical order in the _Left Display_, as illustrated
    in the screenshot below.
 
 </div>
@@ -493,7 +493,7 @@ Sorting stalls by rating:
 Outcome:
 
 1. The _Result Display_ will display a success message.
-2. You will now see that the stalls are sorted by rating in descending order in the _Data Display_, as illustrated
+2. You will now see that the stalls are sorted by rating in descending order in the _Left Display_, as illustrated
    in the screenshot below.
 </div>
 
@@ -518,7 +518,7 @@ Sorting stalls by price:
 Outcome:
 
 1. The _Result Display_ will display a success message.
-2. You will now see that the stalls are sorted by average price in ascending order in the _Data Display_, as illustrated
+2. You will now see that the stalls are sorted by average price in ascending order in the _Left Display_, as illustrated
    in the screenshot below.
 </div>
 
@@ -550,7 +550,7 @@ Finding stalls by name:
 Outcome:
 
 1. The _Result Display_ will display a success message.
-2. You will now see the matching stalls in the _Data Display_, as illustrated in the screenshot below.
+2. You will now see the matching stalls in the _Left Display_, as illustrated in the screenshot below.
 
 ![ListOutcome](images/userGuide/find-by-name.png)
 
@@ -579,7 +579,7 @@ finding stalls by location:
 Outcome:
 
 1. The _Result Display_ will display a success message.
-2. You will now see the matching stalls in the _Data Display_, as illustrated in the screenshot below.
+2. You will now see the matching stalls in the _Left Display_, as illustrated in the screenshot below.
 
 ![ListOutcome](images/userGuide/find-by-location.png)
 
@@ -608,7 +608,7 @@ finding stalls by menu items:
 Outcome:
 
 1. The _Result Display_ will display a success message.
-2. You will now see the matching stalls in the _Data Display_, as illustrated in the screenshot below.
+2. You will now see the matching stalls in the _Left Display_, as illustrated in the screenshot below.
 3. When you enter `view-stall s/1`, you will be able to see 'chicken rice' in the list of menu items.
 
 <table>
@@ -661,7 +661,7 @@ Viewing the first item from the first stall:
 Outcome:
 
 1. The _Result Display_ will show a success message.
-1. You can now see the details of the specific item you entered.
+1. You can now see the details of the specific item you entered in.
 </div>
 
 ![ListOutcome](images/userGuide/view-item.png)
