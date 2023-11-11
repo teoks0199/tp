@@ -51,5 +51,4 @@ public class StallPriceComparatorTest {
         Stall stall2 = new StallBuilder().build();
         assertTrue(comparator.compare(stall1, stall2) == 0);
     }
-    
 }
