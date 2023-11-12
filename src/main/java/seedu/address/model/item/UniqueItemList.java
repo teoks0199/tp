@@ -15,9 +15,9 @@ import seedu.address.model.item.exceptions.ItemNotFoundException;
 import seedu.address.model.stall.AveragePrice;
 
 /**
- * A list of persons that enforces uniqueness between its elements and does not allow nulls.
- * An item is considered unique by comparing using {@code item#isSamePerson(item)}. As such, adding and updating of
- * persons uses item#isSamePerson(item) for equality to ensure that the item being added or updated is
+ * A list of items that enforces uniqueness between its elements and does not allow nulls.
+ * An item is considered unique by comparing using {@code item#isSameItem(item)}. As such, adding and updating of
+ * items uses item#isSameItems(item) for equality to ensure that the item being added or updated is
  * unique in terms of identity in the UniqueitemList. However, the removal of an item uses item#equals(Object)
  * to ensure that the item with exactly the same fields will be removed.
  *
