@@ -465,7 +465,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 1b1. FoodNotes shows an error message.
 
       Use case resumes at step 1.
-  
+
 * 1c. The stall index, item name or price is not specified.
     * 1c1. FoodNotes shows an error message.
 
