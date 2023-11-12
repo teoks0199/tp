@@ -560,6 +560,7 @@ Outcome:
 * You can enter more than one keyword, separated by a space, and all the stalls containing any of the keywords will be listed!
 
 </div>
+
 ---
 #### Find stalls by location: `find-by-location`
 The command is a powerful tool for quickly locating specific food stalls based on their locations. If you want to find the nearest food options, this command can help you narrow down your choices effectively.
@@ -579,6 +580,7 @@ Outcome:
 
 1. The _Result Display_ will display a success message.
 2. You will now see the matching stalls in the _Left Display_, as illustrated in the screenshot below.
+</div>
 
 ![ListOutcome](images/userGuide/find-by-location.png)
 
@@ -589,6 +591,7 @@ Outcome:
 * You can enter more than one keyword, separated by a space, and all the stalls containing any of the keywords will be listed!
 
 </div>
+
 ---
 #### Find stalls by menu items: `find-by-item`
 The command is a powerful tool for quickly locating specific food stalls based on the items on their menu. If you are craving for a specific dish, this command can help you narrow down your choices effectively.
@@ -609,6 +612,7 @@ Outcome:
 1. The _Result Display_ will display a success message.
 2. You will now see the matching stalls in the _Left Display_, as illustrated in the screenshot below.
 3. When you enter `view-stall s/1`, you will be able to see 'chicken rice' in the list of menu items.
+</div>
 
 <table>
   <tr>
