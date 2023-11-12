@@ -27,12 +27,12 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 **If you are a first time user:**
 
 1. The [Quick Start](#quick-start) section provides instructions for you on how to get started.
-2. Once you have set up FoodNotes, you can check out the [Layout Screen](#terminology-related-to-the-graphical-user-interface--gui-) section to get familiar
+2. Once you have set up FoodNotes, you can check out the [Layout Screen](#terminology-related-to-the-graphical-user-interface-gui) section to get familiar
 with the different components of FoodNotes. To learn the basics of using FoodNotes, head over to the [Features](#features) section.
 
 **If you are an experienced user:**
 
-You can refer to the [Command summary](#6-command-summary) section for an overview of FoodNotes' commands.
+You can refer to the [Command summary](#command-summary) section for an overview of FoodNotes' commands.
 
 
 ### Reading the User Guide
@@ -549,6 +549,7 @@ Outcome:
 
 1. The _Result Display_ will display a success message.
 2. You will now see the matching stalls in the _Left Display_, as illustrated in the screenshot below.
+</div>
 
 ![ListOutcome](images/userGuide/find-by-name.png)
 
