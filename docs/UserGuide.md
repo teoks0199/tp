@@ -3,6 +3,8 @@ layout: page
 title: FoodNotes User Guide
 ---
 
+## Introduction
+
 Welcome to the User Guide of **FoodNotes**!
 
 
@@ -13,18 +15,18 @@ FoodNotes is a quick, simple and beautiful food diary made specifically for you,
 This application is optimised for use via a Command Line Interface (CLI) this means that you operate the application by typing commands into a _Command Box_. If you are fast at typing, you can manage your food reviews faster than other Graphical User Interface (GUI) applications; GUI applications allow users to interact with the application through graphical icons such as buttons.
 FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems.
 
-{% include page-break.html %}
+
 
 {% include toc.md header=true show-in-toc=true ordered=true %}
 
-{% include page-break.html %}
+
 
 ## About the user guide
 ### Navigating the user guide
 
 **If you are a first time user:**
 
-1. The [Quick start](#quick-start) section provides instructions for you on how to get started.
+1. The [Quick Start](#quick-start) section provides instructions for you on how to get started.
 2. Once you have set up FoodNotes, you can check out the [Layout Screen](#terminology-related-to-the-graphical-user-interface--gui-) section to get familiar
 with the different components of FoodNotes. To learn the basics of using FoodNotes, head over to the [Features](#features) section.
 
@@ -44,13 +46,11 @@ The following figure shows the GUI of FoodNotes. It is annotated with the name o
 </p>
 What the main components of the GUI do:
 
-* _Data Display_: This is where FoodNotes displays the information of the page that you are viewing.
+* _Right and Left Display_: This is where FoodNotes displays the information of the page that you are viewing.
 
 * _Result Display_: This is where FoodNotes displays guiding messages.
 
 * _Command Box_: This is where you type your commands.
-
-* _Right Display_: This is where the list of valid commands or stall/item information is displayed.
 
 ### Icons
 
@@ -93,11 +93,11 @@ This section provides a summary of the parameters used when inputting commands i
 | N/A    | `LOCATION_KEYWORD`  | Keyword of the stall location          | Non-empty string                            |
 | N/A    | `ITEM_KEYWORD`      | Keyword of the menu items in the stall | Non-empty string                            |
 
-{% include page-break.html %}
+
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Quick start
+## Quick Start
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
@@ -133,14 +133,13 @@ This section provides a summary of the parameters used when inputting commands i
 
 </div>
 
-{% include page-break.html %}
+
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Features
 This section shares with you on how to use each feature in detail.
 
-----
 
 ### General Features
 
@@ -236,7 +235,7 @@ The FoodNotes database is now empty.
 ![ClearOutcome](images/userGuide/ClearCommandOutcome.png)
 </div>
 
-{% include page-break.html %}
+
 
 
 ----
@@ -251,8 +250,6 @@ These features allow you to manage information about the stalls in FoodNotes. Yo
 - Reviewing a stall
 - Deleting a stall review
 
-
------
 #### Listing all stalls : `list`
 
 You can use this command to view the list of all the stalls in FoodNotes.
@@ -346,7 +343,7 @@ The stall no longer exists? You can use this command to delete a stall from Food
 `delete-stall s/STALL_INDEX`
 
 **Example:**
-
+You realised a stall has closed down and you want to delete it from FoodNotes.
 <div markdown="block" class="alert alert-white">
 
 Deleting the third stall from the list:
@@ -378,19 +375,15 @@ you may edit its rating and/or description.
 `edit-stall s/STALL_INDEX [n/STALL_NAME] [l/LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION] `
 
 **Example:**
-
 You wish to change the location of the seventh stall in the list, as the stall has relocated from Utown to Frontier.
-
 <div markdown="block" class="alert alert-white">
 
 Editing the seventh stall from the list:
-
 
 1. Type `edit-stall s/7 l/Frontier` into the *Command Box*.
 1. Press `Enter` to execute.
 
 Outcome:
-
 
 1. The *Result Display* will show a success message.
 1. You have now edited the seventh stall from the list, and the list of stalls will be updated.
@@ -407,9 +400,7 @@ You can use this command to review an existing stall, and add your own star rati
 `review-stall s/STALL_INDEX r/STALL_RATING d/STALL_DESCRIPTION`
 
 **Example:**
-
 You want to give the second stall in the list a five-star rating.
-
 <div markdown="block" class="alert alert-white">
 
 Reviewing the stall:
@@ -434,7 +425,6 @@ Added a review to the wrong stall? You can use this command to delete a review o
 `delete-stall-review s/STALL_INDEX`
 
 **Example:**
-
 You decide to delete the review for the second stall in the list.
 <div markdown="block" class="alert alert-white">
 
@@ -449,13 +439,12 @@ Outcome:
 1. You have now deleted the review of the specified stall from the list, and the list will be updated.
 </div>
 
-{% include page-break.html %}
+
 
 ---------------------------------------------------------------------------------------------------------------------
 ### Stall Sorting
 This feature allows you to sort the stalls by their location, rating and price, so you can now easily find the stalls based on these criterias.
 
----------------------------------------------------------------------------------------------------------------------
 
 #### Sort stalls by location: `sort-stalls-location`
 
@@ -465,7 +454,6 @@ You can use this command to sort the stalls by their location in alphabetical or
 `sort-stalls-location`
 
 **Example:**
-
 You wish to sort the stalls by their location in alphabetical order.
 <div markdown="block" class="alert alert-white">
 
@@ -474,9 +462,10 @@ Sorting the stalls by location:
 1. Type `sort-stalls-location` in the _Command Box_.
 2. press `Enter` to execute.
 
-**Outcome:**
+Outcome:
+
 1. The _Result Display_ will display a success message.
-2. You will now see that the stalls are sorted by location in alphabetical order in the _Data Display_, as illustrated
+2. You will now see that the stalls are sorted by location in alphabetical order in the _Left Display_, as illustrated
    in the screenshot below.
 
 </div>
@@ -495,12 +484,14 @@ You wish to view the stalls' rating in descending order.
 <div markdown="block" class="alert alert-white">
 
 Sorting stalls by rating:
+
 1. Type `sort-stalls-rating` in the _Command Box_.
 2. press `Enter` to execute.
 
-**Outcome:**
+Outcome:
+
 1. The _Result Display_ will display a success message.
-2. You will now see that the stalls are sorted by rating in descending order in the _Data Display_, as illustrated
+2. You will now see that the stalls are sorted by rating in descending order in the _Left Display_, as illustrated
    in the screenshot below.
 </div>
 
@@ -517,18 +508,21 @@ You can use this command to sort the stalls by the average price of its menu ite
 You wish to view the stalls' average price in ascending order.
 <div markdown="block" class="alert alert-white">
 
+Sorting stalls by price:
+
 1. Type `sort-stalls-price` in the _Command Box_.
 2. press `Enter` to execute.
 
-**Outcome:**
+Outcome:
+
 1. The _Result Display_ will display a success message.
-2. You will now see that the stalls are sorted by average price in ascending order in the _Data Display_, as illustrated
+2. You will now see that the stalls are sorted by average price in ascending order in the _Left Display_, as illustrated
    in the screenshot below.
 </div>
 
 ![ListOutcome](images/userGuide/sort-stalls-price.png)
 
-{% include page-break.html %}
+
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -540,18 +534,21 @@ This feature allows you to find stalls by their name, location and menu items. W
 The command is a powerful tool for quickly locating specific food stalls based on their names. Even if you can only remember part of the stall name, this command can help you narrow down your choices effectively.
 You need to type in the entire word instead of part of the word for it to find the stall.
 
-**Command function:** Finds all stalls whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
-
-**Command format:** `find-by-name NAME_KEYWORD`
+**Format:** `find-by-name NAME_KEYWORD`
 
 **Example:**
-You wish to find stalls that have 'Japanese' or 'Western' or 'Noodles' in their names. You can use the command as follows:
+You wish to find stalls that have 'Japanese' or 'Western' or 'Noodles' in their names.
+<div markdown="block" class="alert alert-white">
+
+Finding stalls by name:
+
 1. Type `find-by-name Japanese Western Noodles` in the _Command Box_.
 2. Press `Enter` to execute.
 
 Outcome:
+
 1. The _Result Display_ will display a success message.
-2. You will now see the matching stalls in the _Data Display_, as illustrated in the screenshot below.
+2. You will now see the matching stalls in the _Left Display_, as illustrated in the screenshot below.
 
 ![ListOutcome](images/userGuide/find-by-name.png)
 
@@ -563,21 +560,24 @@ Outcome:
 
 </div>
 ---
-### 4.4.2 Find stalls by location: `find-by-location`
+#### Find stalls by location: `find-by-location`
 The command is a powerful tool for quickly locating specific food stalls based on their locations. If you want to find the nearest food options, this command can help you narrow down your choices effectively.
 
-**Command function:** Finds all stalls whose location contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
-
-**Command format:** `find-by-location LOCATION_KEYWORD`
+**Format:** `find-by-location LOCATION_KEYWORD`
 
 **Example:**
-You wish to find stalls that are located at the Deck. You can use the command as follows:
+You wish to find stalls that are located at the Deck.
+<div markdown="block" class="alert alert-white">
+
+finding stalls by location:
+
 1. Type `find-by-location deck` in the _Command Box_.
 2. Press `Enter` to execute.
 
 Outcome:
+
 1. The _Result Display_ will display a success message.
-2. You will now see the matching stalls in the _Data Display_, as illustrated in the screenshot below.
+2. You will now see the matching stalls in the _Left Display_, as illustrated in the screenshot below.
 
 ![ListOutcome](images/userGuide/find-by-location.png)
 
@@ -592,18 +592,21 @@ Outcome:
 #### Find stalls by menu items: `find-by-item`
 The command is a powerful tool for quickly locating specific food stalls based on the items on their menu. If you are craving for a specific dish, this command can help you narrow down your choices effectively.
 
-**Command function:** Finds all stalls whose menu items contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
-
-**Command format:** `find-by-item ITEM_KEYWORD`
+**Format:** `find-by-item ITEM_KEYWORD`
 
 **Example:**
-You wish to find stalls that sells chicken rice. You can use the command as follows:
+You wish to find stalls that sells chicken rice.
+<div markdown="block" class="alert alert-white">
+
+finding stalls by menu items:
+
 1. Type `find-by-item chicken rice` in the _Command Box_.
 2. Press `Enter` to execute.
 
 Outcome:
+
 1. The _Result Display_ will display a success message.
-2. You will now see the matching stalls in the _Data Display_, as illustrated in the screenshot below.
+2. You will now see the matching stalls in the _Left Display_, as illustrated in the screenshot below.
 3. When you enter `view-stall s/1`, you will be able to see 'chicken rice' in the list of menu items.
 
 <table>
@@ -621,7 +624,7 @@ Outcome:
 * You can enter more than one keyword, separated by a space, and all the stalls containing any of the keywords will be listed!
 </div>
 
-{% include page-break.html %}
+
 
 -----
 
@@ -645,7 +648,7 @@ which includes the price, rating and description of the item.
 `view-item s/STALL_INDEX i/ITEM_INDEX`
 
 **Example:**
-
+You want to view the first item in the first stall.
 <div markdown="block" class="alert alert-white">
 
 Viewing the first item from the first stall:
@@ -656,7 +659,7 @@ Viewing the first item from the first stall:
 Outcome:
 
 1. The _Result Display_ will show a success message.
-1. You can now see the details of the specific item you entered.
+1. You can now see the details of the specific item you entered in.
 </div>
 
 ![ListOutcome](images/userGuide/view-item.png)
@@ -670,10 +673,10 @@ Tried a new menu item from the stall? You can use this command to add this new i
 `add-item s/STALL_INDEX n/ITEM_NAME p/ITEM_PRICE`
 
 **Example:**
-
+You wish to add a new item name 'Pork Chop' with the price of $5.50 to the first stall in the list
 <div markdown="block" class="alert alert-white">
 
-You wish to add a new item name 'Pork Chop' with the price of $5.50 to the first stall in the list
+Adding a new item to the first stall:
 
 1. Type `add-item s/1 n/Pork Chop p/5.50` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -704,7 +707,7 @@ You can use this command to delete an item from the database.
 `delete-item s/STALL_INDEX i/ITEM_INDEX`
 
 **Example:**
-
+You wish to delete the third item from the first stall.
 <div markdown="block" class="alert alert-white">
 
 Deleting the third item from the menu:
@@ -732,10 +735,10 @@ You can use this command to edit an existing item, and update its name, location
 `edit-item s/STALL_INDEX i/ITEM_INDEX [n/ITEM_NAME] [p/ITEM_PRICE] [r/ITEM_RATING] [d/ITEM_DESCRIPTION] `
 
 **Example:**
-
+You wish to edit the price of the sixth item in the first stall, as there is a change in price to Pork Chop that you have added previously.
 <div markdown="block" class="alert alert-white">
 
-You wish to edit the price of the sixth item in the first stall, as there is a change in price to Pork Chop that you have added previously.
+Editing the sixth item from the first stall:
 
 1. Type `edit-item s/1 i/1 n/Chicken Cutlet p/4.00` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -757,7 +760,7 @@ You can use this command to review an existing item, and add your own star ratin
 `review-item s/STALL_INDEX i/ITEM_INDEX r/ITEM_RATING d/ITEM_DESCRIPTION`
 
 **Example:**
-
+You wish to review the first item in the first stall after visiting the stall.
 <div markdown="block" class="alert alert-white">
 
 Reviewing the item:
@@ -782,7 +785,7 @@ You can use this command to delete a review of an existing item.
 `delete-item-review s/STALL_INDEX i/ITEM_INDEX`
 
 **Example:**
-
+You decide to delete the review for the first item in the first stall.
 <div markdown="block" class="alert alert-white">
 
 Deleting the review:
@@ -796,7 +799,7 @@ Outcome:
 1. You have now deleted the review of the first menu item of the first stall, and the menu will be updated.
 </div>
 
-{% include page-break.html %}
+
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -863,7 +866,7 @@ Outcome:
 | **Review item**        | `review-item s/STALL_INDEX i/ITEM_INDEX r/ITEM_RATING d/ITEM_DESCRIPTION` <br> e.g. `review-item` s/1 i/1 r/5 d/Flavorful                     |                                                                                                                                                             |
 | **Delete item review** | `delete-item-review s/STALL_INDEX i/ITEM_INDEX` <br> e.g. `delete-item-review` s/1 i/1                                                        |
 
-{% include page-break.html %}
+
 
 --------------------------------------------------------------------------------------------------------------------
 
