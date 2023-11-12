@@ -12,11 +12,11 @@ Given below are my contributions to the project.
 * **New Feature**: Added the ability to sort stalls by average price in FoodNotes.
     * What it does: Allows the user to sort stalls by average price in ascending order to find the cheapest stalls.
     * Justification: This feature improves the product significantly because it allows the user to find the cheapest stalls easily,
-  considering that our target users are students who are on a budget.
-    * Highlights: This enhancement required the creation of a new `Comparator` class, `StallAveragePriceComparator`,
-  to handle the sorting of stalls by average price, a new attribute, `averagePrice`, in the `Stall` class
-  and a new `Price` class to represent the price of each menu item.
-    * Credits:
+  our target users who are students are likely to be more budget conscious and would find this feature useful.
+    * Highlights: This enhancement required the creation of a new `Comparator` class, `StallPriceComparator`,
+  to handle the sorting of stalls in the model by average price. It also required a new method, `getAveragePrice`, in the `Stall` class 
+  to dynamically calculate the average price of the stall when necessary and a new `Price` class to represent the price of each menu item.
+    
 
 * **New Feature**: Added the ability to review menu items in FoodNotes.
   * What it does: Allows the user to review menu items in a stall.
@@ -39,6 +39,7 @@ Given below are my contributions to the project.
 * **Enhancements to existing features**:
     * Adapted the existing storage features to support the new classes that are added into FoodNotes, by writing new
   storage components such as `JsonAdaptedItemReview`, `JsonAdaptedStallReview` and `JsonSerializableMenu`. (Pull requests [#83](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/83),  [#90](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/90))
+  This was particularly challenging because the existing storage components were not designed to support the nested nature of our new classes, where `AddressBook` contains a list of `Stall` objects which itself contains a list of `Item` objects.
     * Wrote additional tests for the storage components, increasing coverage from 54% to 58% (Pull request [#124](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/124))
 
 * **Documentation**:
