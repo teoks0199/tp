@@ -20,49 +20,49 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [About the User Guide](#about-the-user-guide)
-    - 2.1 [Navigating the User Guide](#navigating-the-user-guide)
-    - 2.2 [Reading the User Guide](#reading-the-user-guide)
-    - 2.3 [Terminology related to the GUI](#terminology-related-to-the-gui)
-    - 2.4 [Icons](#icons)
-    - 2.5 [Command Syntax and Usage](#command-syntax-and-usage)
-    - 2.6 [Input parameters](#input-parameters)
-3. [Quick Start](#quick-start)
-4. [Features](#features)
-    - 4.1 [General Features](#general-features)
-        * 4.1.1 [Viewing help](#viewing-help)
-        * 4.1.2 [Exiting the application](#exiting-the-application)
-        * 4.1.3 [Clearing the database](#clearing-the-database)
-    - 4.2 [Stall Management](#stall-management)
-        * 4.2.1 [Listing all stalls](#listing-all-stalls)
-        * 4.2.2 [Viewing a stall](#viewing-a-stall)
-        * 4.2.3 [Adding a stall](#adding-a-stall)
-        * 4.2.4 [Deleting a stall](#deleting-a-stall)
-        * 4.2.5 [Editing a stall](#editing-a-stall)
-        * 4.2.6 [Reviewing a stall](#reviewing-a-stall)
-        * 4.2.7 [Deleting a stall review](#deleting-a-stall-review)
-    - 4.3 [Stall Sorting](#stall-sorting)
-        * 4.3.1 [Sorting stalls by location](#sorting-stalls-by-location)
-        * 4.3.2 [Sorting stalls by rating](#sorting-stalls-by-rating)
-        * 4.3.3 [Sorting stalls by price](#sorting-stalls-by-price)
-    - 4.4 [Stall Finding](#stall-finding)
-        * 4.4.1 [Finding stalls by name](#finding-stalls-by-name)
-        * 4.4.2 [Finding stalls by location](#finding-stalls-by-location)
-        * 4.4.3 [Finding stalls by item](#finding-stalls-by-item)
-    - 4.5 [Item Management](#item-management)
-        * 4.5.1 [Viewing an item](#viewing-an-item)
-        * 4.5.2 [Adding an item](#adding-an-item)
-        * 4.5.3 [Deleting an item](#deleting-an-item)
-        * 4.5.4 [Editing an item](#editing-an-item)
-        * 4.5.5 [Reviewing an item](#reviewing-an-item)
-        * 4.5.6 [Deleting an item review](#deleting-an-item-review)
-5. [Glossary](#glossary)
-6. [Command Summary](#command-summary)
-   - 6.1 [General Commands](#general-commands)
-   - 6.2 [Stall Management Commands](#stall-management-commands)
-   - 6.3 [Stall Sorting Commands](#stall-sorting-commands)
-   - 6.4 [Stall Finding Commands](#stall-finding-commands)
-   - 6.5 [Item Management Commands](#item-management-commands)
+2. [About the User Guide](#about-the-user-guide) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;2.1 [Navigating the User Guide](#navigating-the-user-guide) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;2.2 [Reading the User Guide](#reading-the-user-guide) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;2.3 [Terminology related to the GUI](#terminology-related-to-the-gui) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;2.4 [Icons](#icons) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;2.5 [Command Syntax and Usage](#command-syntax-and-usage) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;2.6 [Input parameters](#input-parameters) <br>
+3. [Quick Start](#quick-start) <br>
+4. [Features](#features) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;4.1 [General Features](#general-features) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1.1 [Viewing help `help`](#viewing-help) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1.2 [Exiting the application `exit`](#exiting-the-application) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1.3 [Clearing the database `clear`](#clearing-the-database) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;4.2 [Stall Management](#stall-management) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.1 [Listing all stalls `list`](#listing-all-stalls) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.2 [Viewing a stall `view-stall`](#viewing-a-stall) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.3 [Adding a stall `add-stall`](#adding-a-stall) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.4 [Deleting a stall `delete-stall`](#deleting-a-stall) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.5 [Editing a stall `edit-stall`](#editing-a-stall) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.6 [Reviewing a stall `review-stall`](#reviewing-a-stall) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.7 [Deleting a stall review `delete-stall-review`](#deleting-a-stall-review) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;4.3 [Stall Sorting](#stall-sorting) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.3.1 [Sorting stalls by location `sort-stalls-location`](#sorting-stalls-by-location) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.3.2 [Sorting stalls by rating `sort-stalls-rating`](#sorting-stalls-by-rating) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.3.3 [Sorting stalls by price `sort-stalls-price`](#sorting-stalls-by-price) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;4.4 [Stall Finding](#stall-finding) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.1 [Finding stalls by name `find-by-name`](#finding-stalls-by-name) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.2 [Finding stalls by location `find-by-location`](#finding-stalls-by-location) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.3 [Finding stalls by item `find-by-item`](#finding-stalls-by-item) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;4.5 [Item Management](#item-management) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.5.1 [Viewing an item `view-item`](#viewing-an-item) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.5.2 [Adding an item `add-item`](#adding-an-item) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.5.3 [Deleting an item `delete-item`](#deleting-an-item) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.5.4 [Editing an item `edit-item`](#editing-an-item) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.5.5 [Reviewing an item `review-item`](#reviewing-an-item) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.5.6 [Deleting an item review `delete-item-review`](#deleting-an-item-review) <br>
+5. [Glossary](#glossary) <br>
+6. [Command Summary](#command-summary) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;6.1 [General Commands](#general-commands) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;6.2 [Stall Management Commands](#stall-management-commands) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;6.3 [Stall Sorting Commands](#stall-sorting-commands) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;6.4 [Stall Finding Commands](#stall-finding-commands) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;6.5 [Item Management Commands](#item-management-commands) <br>
 
 
 ---
