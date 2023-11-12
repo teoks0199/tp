@@ -17,8 +17,11 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 
 
 
-{% include toc.md header=true show-in-toc=true ordered=true %}
+## Table of Contents
+* Table of Contents
+  {:toc}
 
+---
 
 
 ## About the user guide
