@@ -160,6 +160,8 @@ public class Stall {
     /**
      * Returns true if both stalls have the same identity and data fields.
      * This defines a stronger notion of equality between two stalls.
+     * @param item item to be checked
+     * @return true if an item with the same identity as {@code item} exists in the menu.
      */
     public boolean hasItem(Item item) {
         return menu.hasItem(item);
@@ -168,6 +170,7 @@ public class Stall {
     /**
      * Adds an item to the menu.
      * The item must not already exist in the menu.
+     * @param item item to be added
      */
     public void addItem(Item item) {
         menu.addItem(item);
@@ -176,6 +179,7 @@ public class Stall {
     /**
      * Deletes an item from the menu.
      * The item must already exist in the menu.
+     * @param itemIndex index of item to delete
      */
     public void deleteItem(Index itemIndex) {
         menu.removeItem(itemIndex);

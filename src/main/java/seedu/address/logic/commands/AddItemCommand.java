@@ -39,6 +39,8 @@ public class AddItemCommand extends Command {
 
     /**
      * Creates an AddItemCommand to add the specified {@code Item}
+     * @param item Item to be added to the menu
+     * @param stallIndex Index of the stall to add the item to
      */
     public AddItemCommand(Index stallIndex, Item item) {
         requireNonNull(item);

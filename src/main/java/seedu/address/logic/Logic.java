@@ -42,7 +42,6 @@ public interface Logic {
     /** Returns an unmodifiable view of the filtered list of items */
     ObservableList<Item> getFilteredItemList();
 
-
     int getFilteredStallIndex();
 
     /**

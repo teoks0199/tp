@@ -34,11 +34,12 @@ public class ItemName {
 
     /**
      * Returns true if a given string is a valid name.
+     * @param name Name to be checked
+     * @returns true if the name is valid
      */
-    public static boolean isValidItemName(String test) {
-        return test.matches(VALIDATION_REGEX);
+    public static boolean isValidItemName(String name) {
+        return name.matches(VALIDATION_REGEX);
     }
-
 
     @Override
     public String toString() {

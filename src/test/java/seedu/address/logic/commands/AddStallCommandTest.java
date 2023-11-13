@@ -167,11 +167,6 @@ public class AddStallCommandTest {
         }
 
         @Override
-        public Index getStallIndex(Stall stall) {
-            throw new AssertionError("This method should not be called.");
-        }
-
-        @Override
         public ObservableList<Stall> getFilteredStallList() {
             throw new AssertionError("This method should not be called.");
         }
