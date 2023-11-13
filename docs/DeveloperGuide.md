@@ -105,8 +105,8 @@ The sequence diagram below illustrates the interactions within the `Logic` compo
 
 How the `Logic` component works:
 
-1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
-1. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
+1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `DeleteStallCommandParser`) and uses it to parse the command.
+1. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteStallCommand`) which is executed by the `LogicManager`.
 1. The command can communicate with the `Model` when it is executed (e.g. to delete a stall).
 1. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
 
@@ -115,8 +115,8 @@ Here are the other classes in `Logic` (omitted from the class diagram above) tha
 <img src="images/ParserClasses.png" width="600"/>
 
 How the parsing works:
-* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
-* All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
+* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddStallCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddStallCommand`) which the `AddressBookParser` returns back as a `Command` object.
+* All `XYZCommandParser` classes (e.g., `AddStallCommandParser`, `DeleteStallCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 ### Model component
 **API** : [`Model.java`](https://github.com/AY2324S1-CS2103T-W10-4/tp/blob/master/src/main/java/seedu/address/model/Model.java)
@@ -204,11 +204,11 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 **Aspect: Number of fields needed to be entered by the user:**
 
-* **Alternative 1 (current choice): Only require them to enter the stall they belong to and the name of the item**
+* **Alternative 1 (Current choice):** Only require them to enter the stall they belong to, the name of the item and the price
     * Pros: The review field is optional and users can add items without a review.
     * Cons: Causes some fields to be null when initialised (e.g. `rating` and `review`) and more code is needed to implement.
 
-* **Alternative 2: Require all fields required to be present when adding an item:**
+* **Alternative 2:** Require all fields required to be present when adding an item:
     * Pros: Less code is needed to implement.
     * Cons: Users are restricted to only adding items when they have a review.
 
