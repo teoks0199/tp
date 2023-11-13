@@ -72,7 +72,7 @@ The **API** of this component is specified in [`Ui.java`](https://github.com/AY2
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
-The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`,
+The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `StallListPanel`,
 `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures
 the commonalities between classes that represent parts of the visible GUI.
 
@@ -86,7 +86,7 @@ The `UI` component,
 * executes user commands using the `Logic` component.
 * listens for changes to `Model` data so that the UI can be updated with the modified data.
 * keeps a reference to the `Logic` component, because the `UI` relies on the `Logic` to execute commands.
-* depends on some classes in the `Model` component, as it displays `Person` object residing in the `Model`.
+* depends on some classes in the `Model` component, as it displays `Stall` object residing in the `Model`.
 
 ### Logic component
 
@@ -166,7 +166,7 @@ The following sequence diagram shows how the sort operation works:
 It calls `sortByPrice` in `UniqueStallList` which sorts the list of stalls by price which makes use of
 `StallPriceComparator` to compare the prices of the stalls.
 
-#### Design considerations:
+#### Design considerations
 **Aspect: How sort stalls price executes:**
 
 * **Alternative 1 (Current choice):** Saves the sorted list of stalls in FoodNotes.
@@ -180,7 +180,7 @@ It calls `sortByPrice` in `UniqueStallList` which sorts the list of stalls by pr
 
 ### Add item and delete item feature
 
-#### Implementation:
+#### Implementation
 
 The add-item/delete-item mechanism is facilitated by `ModelManager`. It extends `Model`, stored internally as an `UniqueItemLis`.
 
@@ -200,7 +200,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 <img src="images/AddItemActivityDiagram.png" width="250" />
 
-#### Design considerations:
+#### Design considerations
 
 **Aspect: Number of fields needed to be entered by the user:**
 
@@ -224,7 +224,7 @@ The following sequence diagram shows how the find item operation works:
 ![FindItemSequenceDiagram](images/FindItemSequenceDiagram.png)
 
 The `MenuContainsKeywordsPredicate` is used to filter the list of stalls in FoodNotes. It is created with a list of keywords, and it checks if the menu items of a stall contains any of the keywords.
-#### Design considerations:
+#### Design considerations
 
 **Aspect: Number of fields needed to be entered by the user:**
 
@@ -247,7 +247,7 @@ The following sequence diagram shows how the add stall review operation works:
 
 <img src="images/ReviewStallDiagram.png"/>
 
-#### Design considerations:
+#### Design considerations
 
 **Aspect: Number of fields needed to be entered by the user:**
 
@@ -272,7 +272,7 @@ The following sequence diagram shows how the find item operation works:
 
 The `updateFilteredStallListPredicate` is used to filter the list of stalls in FoodNotes. It is created with a the name of the stall entered by the user.
 
-#### Design considerations:
+#### Design considerations
 **Aspect: Details displayed:**
 
 * **Alternative 1 (current choice):** Details of the stalls (menu items and review) are only displayed when the view-stall command is entered. Otherwise, only the average price of the stall and star rating will be shown.
@@ -298,7 +298,7 @@ The `updateFilteredStallListPredicate` is used to filter the list of stalls in F
 ## **Planned Enhancements**
 
 ### Make it clearer to the user that the list of stalls is filtered.
-**Current Implementation:**
+**Current Implementation**
 * **Current Issue:** Users can view a filtered list of stalls when they use commands such as `find-by-location` and `find-by-item`. In the case where there is only 1 stall in the list and the user performs a stall deletion, the user will see a page showing an empty list of stall. This might cause confusion as the user might think that all the stalls are deleted.
 * **Example:**
 1. User enters `find-by-location Deck`.
@@ -602,7 +602,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Deleting a stall while all stalls are being shown
 
-   1. Prerequisites: List all stalls using the `list` command. Multiple stalls in the list.
+   1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command. 
 
    2. Test case: `delete-stall s/1`<br>
      Expected: First stall is deleted from the list. Details of the deleted stall shown in the _Result Display_. List of stalls in the _Left Display_ is updated.
@@ -632,7 +632,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Reviewing a stall while the stall details are being shown.
 
-   1. Prerequisites: View the stall using the `view-stall` command.
+   1. Prerequisites: At least one unreviewed stall in the list. View the stall using the `view-stall` command.
 
    2. Test case: `review-stall s/1 r/4 d/The food here is really good`<br>
      Expected: The _Result Display_ shows a success message. The stall details in the _Right Display_ is updated with the star ratings and review descriptions.
@@ -663,7 +663,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Deleting a menu item while the stall details are shown
 
-   1. Prerequisites: At least one stall in the list. At least one item in that stall. View the stall details with the `view-stall` command. The menu items of the stall is displayed in the _Left Display_..
+   1. Prerequisites: At least one stall in the list. At least one item in that stall. View the stall details with the `view-stall` command. The menu items of the stall is displayed in the _Left Display_.
 
    2. Test case: `delete-item s/1 i/1`<br>
      Expected: First item is deleted from the list. Details of the deleted item shown in the _Result Display_. List of items in the _Left Display_ is updated.
@@ -693,7 +693,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Sorting the stalls by locations while all stalls are shown.
 
-   1.  Multiple stalls in the list. Prerequisites: List all stalls using the `list` command.
+   1.  Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
 
    2. Test case: `sort-stalls-location`<br>
       Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ is sorted by alphabetical order based on their location.
