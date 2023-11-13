@@ -28,6 +28,7 @@ public class Price {
         checkArgument(isValidPrice(price), MESSAGE_CONSTRAINTS);
         this.price = price;
         this.priceDouble = Double.parseDouble(price);
+        assert priceDouble >= 0;
     }
 
     public static boolean isValidPrice(String test) {
