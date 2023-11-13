@@ -126,6 +126,11 @@ public class ModelManager implements Model {
         addressBook.setStall(target, editedStall);
     }
 
+    @Override
+    public Index getStallIndex(Stall stall) {
+        return Index.fromZeroBased(addressBook.getStallIndex(stall));
+    }
+
     //=========== Filtered Stall List Accessors =============================================================
 
     /**

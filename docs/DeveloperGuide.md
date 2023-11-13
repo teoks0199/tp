@@ -531,8 +531,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
 2.  Should be able to hold up to 100 stalls without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
-4. A user should not experience any noticeable sluggishness in performance when sorting or searching for stalls.
-5. The data of the application is stored locally.
 
 *{More to be added}*
 
@@ -604,7 +602,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Deleting a stall while all stalls are being shown
 
-   1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
+   1. Prerequisites: List all stalls using the `list` command. Multiple stalls in the list.
 
    2. Test case: `delete-stall s/1`<br>
       Expected: First stall is deleted from the list. Details of the deleted stall shown in the _Result Display_. List of stalls in the _Left Display_ is updated.
@@ -619,7 +617,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Viewing a stall while all stalls are being shown
 
-   1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
+   1. Prerequisites: List all stalls using the `list` command. Multiple stalls in the list.
 
    2. Test case: `view-stall s/1`<br>
       Expected: _Result Display_ shows a success message. Details of the stall is shown on the _Left Display_.
@@ -634,7 +632,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Reviewing a stall while the stall details are being shown.
 
-   1. Prerequisites: At least one stall in the list. View the stall using the `view-stall` command.
+   1. Prerequisites: View the stall using the `view-stall` command.
 
    2. Test case: `review-stall s/1 r/4 d/The food here is really good`<br>
       Expected: The _Result Display_ shows a success message. The stall details in the _Right Display_ is updated with the star ratings and review descriptions.
@@ -650,7 +648,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Adding a menu item while the stall details are shown
 
-   1. Prerequisites: At least one stall in the list. View the stall details with the `view-stall` command. The menu items of the stall is displayed in the left panel.
+   1. Prerequisites: View the stall details with the `view-stall` command. The menu items of the stall is displayed in the _Left Display_.
 
    2. Test case: `add-item s/1 n/Pork Chop p/4.50`<br>
       Expected: _Result Display_ shows a success message. The menu item is added the list of menu items in the _Left Display_.
@@ -665,7 +663,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Deleting a menu item while the stall details are shown
 
-   1. Prerequisites: At least one stall in the list. At least one item in that stall. View the stall details with the `view-stall` command. The menu items of the stall is displayed in the left panel.
+   1. Prerequisites: View the stall details with the `view-stall` command. The menu items of the stall is displayed in the _Left Display_.
 
    2. Test case: `delete-item s/1 i/1`<br>
       Expected: First item is deleted from the list. Details of the deleted item shown in the _Result Display_. List of items in the _Left Display_ is updated.
@@ -680,7 +678,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Viewing a menu item while the stall details are shown
 
-   1. Prerequisites: At least one stall in the list. At least one item in that stall. View the stall details with the `view-stall` command. The menu items of the stall is displayed in the left panel.
+   1. Prerequisites: View the stall details with the `view-stall` command. The menu items of the stall is displayed in the _Left Display_.
 
    2. Test case: `view-item s/1`<br>
       Expected: _Result Display_ shows a success message. Details of the item are shown on the _Right Display_.
@@ -695,7 +693,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Sorting the stalls by locations while all stalls are shown.
 
-   1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
+   1. Prerequisites: List all stalls using the `list` command. Multiple stalls in the list.
 
    2. Test case: `sort-stalls-location`<br>
       Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ is sorted by alphabetical order based on their location.
@@ -705,7 +703,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Sorting the stalls by rating while all stalls are shown
 
-   1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
+   1. Prerequisites: List all stalls using the `list` command. Multiple stalls in the list.
 
    2. Test case: `sort-stalls-rating`<br>
       Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ is sorted in descending order based on ratings.
@@ -715,7 +713,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Sorting the stalls by price while all stalls are shown
 
-   1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
+   1. Prerequisites: List all stalls using the `list` command. Multiple stalls in the list.
 
    2. Test case: `sort-stalls-price`<br>
       Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ is sorted in ascending order based on average price.
@@ -725,7 +723,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Finding the stalls that contain the keyword in the name.
 
-   1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
+   1. Prerequisites: List all stalls using the `list` command. Multiple stalls in the list.
 
    2. Test case: `find-by-name japanese`<br>
       Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ contains all the stalls with the name containing the keyword 'japanese' (case-insensitive).
@@ -740,7 +738,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Finding the stalls that contain the keyword in the location.
 
-   1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
+   1. Prerequisites: List all stalls using the `list` command. Multiple stalls in the list.
 
    2. Test case: `find-by-location utown`<br>
       Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ contains all the stalls with the location containing the keyword 'utown' (case-insensitive).
@@ -755,16 +753,16 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Finding the stalls that contain the keyword in their menu items.
 
-   1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
+   1. Prerequisites: List all stalls using the `list` command. Multiple stalls in the list.
 
    2. Test case: `find-by-item chicken`<br>
-   Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ contains all the stalls whose menu items contain the keyword 'chicken' (case-insensitive).
+      Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ contains all the stalls whose menu items contain the keyword 'chicken' (case-insensitive).
 
    3. Test case: `find-by-item chicken pork`<br>
-     Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ contains all the stalls whose menu items contain the keyword 'chicken' or 'pork' (case-insensitive).
+      Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ contains all the stalls whose menu items contain the keyword 'chicken' or 'pork' (case-insensitive).
 
    4. Other incorrect find commands to try: `find-by-item`
-     Expected: No stall is found. Error details shown in the _Result Display_.
+      Expected: No stall is found. Error details shown in the _Result Display_.
 
 ### Help
 1. Test case: `help`<br>

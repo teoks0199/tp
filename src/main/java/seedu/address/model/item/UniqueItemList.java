@@ -71,8 +71,6 @@ public class UniqueItemList implements Iterable<Item> {
 
     /**
      * Returns true if the list contains an equivalent item as the given argument.
-     * @param toCheck item to check
-     * @return true if list contains item
      */
     public boolean contains(Item toCheck) {
         requireNonNull(toCheck);
@@ -82,7 +80,6 @@ public class UniqueItemList implements Iterable<Item> {
     /**
      * Adds an item to the list.
      * The item must not already exist in the list.
-     * @param toAdd item to add
      */
     public void add(Item toAdd) {
         requireNonNull(toAdd);
@@ -96,8 +93,6 @@ public class UniqueItemList implements Iterable<Item> {
      * Replaces the item {@code target} in the list with {@code editeditem}.
      * {@code target} must exist in the list.
      * The item identity of {@code editeditem} must not be the same as another existing item in the list.
-     * @param target item to replace
-     * @param editeditem item to replace with
      */
     public void setItem(Item target, Item editeditem) {
         requireAllNonNull(target, editeditem);
@@ -117,7 +112,6 @@ public class UniqueItemList implements Iterable<Item> {
     /**
      * Removes the equivalent item from the list.
      * The item must exist in the list.
-     * @param itemIndex index of item to remove
      */
     public void remove(Index itemIndex) {
         Item toRemove = internalList.get(itemIndex.getZeroBased());
@@ -135,7 +129,6 @@ public class UniqueItemList implements Iterable<Item> {
     /**
      * Replaces the contents of this list with {@code items}.
      * {@code items} must not contain duplicate items.
-     * @param items items to replace with
      */
     public void setItems(List<Item> items) {
         requireAllNonNull(items);
@@ -148,7 +141,6 @@ public class UniqueItemList implements Iterable<Item> {
 
     /**
      * Returns the backing list as an unmodifiable {@code ObservableList}.
-     * @return backing list
      */
     public ObservableList<Item> asUnmodifiableObservableList() {
         return internalUnmodifiableList;
@@ -186,8 +178,6 @@ public class UniqueItemList implements Iterable<Item> {
 
     /**
      * Returns true if {@code items} contains only unique items.
-     * @param items items to check
-     * @return true if items are unique
      */
     private boolean itemsAreUnique(List<Item> items) {
         for (int i = 0; i < items.size() - 1; i++) {
@@ -202,8 +192,6 @@ public class UniqueItemList implements Iterable<Item> {
 
     /**
      * Returns true if any item in the list contains any of the keywords.
-     * @param keywords keywords to check
-     * @return true if any item contains any of the keywords
      */
     public boolean containsKeywords(List<String> keywords) {
         for (int i = 0; i < internalList.size(); i++) {
