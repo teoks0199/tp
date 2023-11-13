@@ -602,7 +602,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Deleting a stall while all stalls are being shown
 
-   1. Prerequisites: List all stalls using the `list` command. Multiple stalls in the list.
+   1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command. 
 
    2. Test case: `delete-stall s/1`<br>
      Expected: First stall is deleted from the list. Details of the deleted stall shown in the _Result Display_. List of stalls in the _Left Display_ is updated.
@@ -632,7 +632,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Reviewing a stall while the stall details are being shown.
 
-   1. Prerequisites: View the stall using the `view-stall` command.
+   1. Prerequisites: At least one unreviewed stall in the list. View the stall using the `view-stall` command.
 
    2. Test case: `review-stall s/1 r/4 d/The food here is really good`<br>
      Expected: The _Result Display_ shows a success message. The stall details in the _Right Display_ is updated with the star ratings and review descriptions.
@@ -663,7 +663,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Deleting a menu item while the stall details are shown
 
-   1. Prerequisites: At least one stall in the list. At least one item in that stall. View the stall details with the `view-stall` command. The menu items of the stall is displayed in the _Left Display_..
+   1. Prerequisites: At least one stall in the list. At least one item in that stall. View the stall details with the `view-stall` command. The menu items of the stall is displayed in the _Left Display_.
 
    2. Test case: `delete-item s/1 i/1`<br>
      Expected: First item is deleted from the list. Details of the deleted item shown in the _Result Display_. List of items in the _Left Display_ is updated.
@@ -693,7 +693,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Sorting the stalls by locations while all stalls are shown.
 
-   1.  Multiple stalls in the list. Prerequisites: List all stalls using the `list` command.
+   1.  Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
 
    2. Test case: `sort-stalls-location`<br>
       Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ is sorted by alphabetical order based on their location.
