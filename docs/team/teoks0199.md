@@ -36,16 +36,21 @@ Given below are my contributions to the project.
 
 * **Documentation**:
   * User Guide:
+    * PR(s): [#138](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/138), [#142](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/142), [#144](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/144)
     * Added documentation for item management features in section 4.5 of the UG.
     * Added command summary for all features in section 6 of the UG.
   * Developer Guide:
+    * PR(s): [#84](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/84)
     * Added implementation details of the `find-by-item` feature.
     * Added `FindItemSequenceDiagram`.
     * Updated UML diagrams for `ArchitectureSequenceDiagram`, `CommitActivityDiagram`, `LogicClassDiagram`, `ParserClasses`, `StorageClassDiagram`, `UiClassDiagram`.
+      
 
 * **Community**:
   * PRs reviewed (with non-trivial review comments): [#60](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/60), [#63](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/63), [#72](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/72), [#101](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/101)
-  * Reported bugs and suggestions for other teams in the class (examples: [#1](https://github.com/teoks0199/ped/issues/1), [#2](https://github.com/teoks0199/ped/issues/2), [#3](https://github.com/teoks0199/ped/issues/4), [#4](https://github.com/teoks0199/ped/issues/5), [#5](https://github.com/teoks0199/ped/issues/7), [#6](https://github.com/teoks0199/ped/issues/9))
+  * Reported bugs and suggestions for other teams in the class: [PE-D Issue Tracker](https://github.com/teoks0199/ped/issues)
+  * Peer evaluated iPs and gave insightful feedback to peers on Canvas.
+    * iPs reviewed: [iP-1](https://github.com/ldinghan/ip/releases), [iP-2](https://github.com/nicleongyj/Taskmaster/releases)
   * Some parts of Storage, such as `JsonAdaptedStall`  and `JsonAdaptedItem`, were written by me. My teammates pulled my implementation from my forked repo before committing to the main repo.
 
 
