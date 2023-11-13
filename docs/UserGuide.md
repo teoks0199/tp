@@ -355,7 +355,7 @@ You can use this command to add a new stall to FoodNotes.
 
 **Format:**
 
-`add-stall n/STALL_NAME l/LOCATION`
+`add-stall n/STALL_NAME l/STALL_LOCATION`
 
 **Example:**
 You just visited the newly opened Subway at Utown and wish to add it to FoodNotes.
@@ -425,7 +425,7 @@ You must specify at least one of the optional parameters, and you can only edit 
 
 **Format:**
 
-`edit-stall s/STALL_INDEX [n/STALL_NAME] [l/LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION] `
+`edit-stall s/STALL_INDEX [n/STALL_NAME] [l/STALL_LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION] `
 
 **Example:**
 You wish to change the location of the Western stall in the list, as the stall has relocated from Utown to Deck.
@@ -904,15 +904,15 @@ Outcome:
 
 ### 6.2 Stall Management Commands <a id="stall-management-commands"></a>
 
-| Features                | Format, Examples                                                                                                                   |
-|-------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| **List**                | `list` <br> e.g. `list`                                                                                                            |
-| **View stall**          | `view-stall s/STALL_INDEX` <br> e.g. `view-stall` s/1                                                                              |
-| **Add stall**           | `add-stall n/STALL_NAME l/LOCATION` <br> e.g.`add-stall` n/Japanese Stall l/Deck                                                   |
-| **Delete stall**        | `delete-stall s/STALL_INDEX` <br> e.g. `delete-stall` s/1                                                                          |
-| **Edit stall**          | `edit-stall s/STALL_INDEX [n/STALL_NAME] [l/LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION]` <br> e.g. `edit-stall` s/1 l/Terrace |
-| **Review stall**        | `review-stall s/STALL_INDEX r/STALL_RATING d/DESCRIPTION` <br> e.g. `review-stall` s/1 r/5 d/Good food and service                 |                                                                                                                                                             |
-| **Delete stall review** | `delete-stall-review s/STALL_INDEX` <br> e.g. `delete-stall-review` s/1                                                            |
+| Features                | Format, Examples                                                                                                                         |
+|-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| **List**                | `list` <br> e.g. `list`                                                                                                                  |
+| **View stall**          | `view-stall s/STALL_INDEX` <br> e.g. `view-stall` s/1                                                                                    |
+| **Add stall**           | `add-stall n/STALL_NAME l/STALL_LOCATION` <br> e.g.`add-stall` n/Japanese Stall l/Deck                                                   |
+| **Delete stall**        | `delete-stall s/STALL_INDEX` <br> e.g. `delete-stall` s/1                                                                                |
+| **Edit stall**          | `edit-stall s/STALL_INDEX [n/STALL_NAME] [l/STALL_LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION]` <br> e.g. `edit-stall` s/1 l/Terrace |
+| **Review stall**        | `review-stall s/STALL_INDEX r/STALL_RATING d/DESCRIPTION` <br> e.g. `review-stall` s/1 r/5 d/Good food and service                       |                                                                                                                                                             |
+| **Delete stall review** | `delete-stall-review s/STALL_INDEX` <br> e.g. `delete-stall-review` s/1                                                                  |
 
 ### 6.3 Stall Sorting Commands <a id="stall-sorting-commands"></a>
 
