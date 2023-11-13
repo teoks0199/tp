@@ -33,8 +33,11 @@ Given below are my contributions to the project.
 * **Contributions to team-based tasks**:
   * Update the project website from the original AB3 to suit the needs of FoodNotes and update site-wide settings. (PRs [#49](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/49), [#271](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/271))
 
+<div style="page-break-after: always;"></div>
+
 * **Project management**:
   * Released v1.3.trial along with the jar file on GitHub.
+  * Released v1.4 along with the jar file on GitHub.
 
 * **Enhancements to existing features**:
     * Adapted the existing storage features to support the new classes that are added into FoodNotes, by writing new
