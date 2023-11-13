@@ -75,11 +75,6 @@ public class DeleteItemCommand extends Command {
                 .format(stallToDeleteFrom)), CommandResult.ViewType.STALL_DETAIL);
     }
 
-    /**
-     * Returns true if both DeleteItemCommands have the same itemIndex and stallIndex.
-     * @param other The other DeleteItemCommand to compare to.
-     * @return True if both DeleteItemCommands have the same itemIndex.
-     */
     @Override
     public boolean equals(Object other) {
         if (other == this) {

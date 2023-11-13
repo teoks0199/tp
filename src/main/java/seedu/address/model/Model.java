@@ -74,6 +74,10 @@ public interface Model {
      */
     void addStall(Stall stall);
 
+    /**
+     * Returns the index of the given stall.
+     */
+    public Index getStallIndex(Stall stall);
 
     /**
      * Get stall that is filtered out
@@ -83,13 +87,11 @@ public interface Model {
 
     /**
      * Returns the filtered stall.
-     * @param stallIndex index of the stall
      */
     Stall getFilteredStall(Index stallIndex);
 
     /**
      * Returns the filtered stall index.
-     * @return filtered stall index integer
      */
     int getFilteredStallIndex();
 
@@ -110,15 +112,11 @@ public interface Model {
      */
     Item getFilteredItem(Index stallIndex, Index itemIndex);
 
-    /**
-     * Returns the desired filtered item
-     * @return filtered item
-     * */
+    /** Returns the desired filtered item */
     Item getFilteredItem();
 
     /**
      * Sets the item.
-     * @param item item to be set
      */
     void setFilteredItem(Item item);
 
@@ -130,9 +128,6 @@ public interface Model {
 
     /**
      * Returns true if an item with the same identity as {@code item} exists in the menu.
-     * @param stallIndex index of the stall
-     * @param item item to be checked
-     * @return true if an item with the same identity as {@code item} exists in the menu.
      */
     boolean hasItem(Stall stallIndex, Item item);
 
@@ -144,8 +139,6 @@ public interface Model {
     /**
      * Adds the given item.
      * {@code item} must not already exist in the menu.
-     * @param stallIndex index of the stall
-     * @param item item to be added
      */
     void addItem(Index stallIndex, Item item);
 
@@ -159,8 +152,6 @@ public interface Model {
     /**
      * Deletes the given item.
      * The item must exist in the stall menu.
-     * @param stallIndex index of the stall
-     * @param itemIndex index of the item
      */
     void deleteItem(Index stallIndex, Index itemIndex);
 
@@ -168,8 +159,6 @@ public interface Model {
      * Adds the given item review.
      *
      * {@code itemReview} must not already exist in the item.
-     * @param itemIndex index of the item
-     * @param itemReview item review to be added
      */
     void setItemReview(Item itemIndex, ItemReview itemReview);
 
@@ -177,13 +166,11 @@ public interface Model {
      * Deletes the given item review.
      *
      * {@code itemReview} must exist in the item.
-     * @param itemIndex index of the item
      */
     void deleteItemReview(Item itemIndex);
 
     /**
      * Sets the item list to be that of the chosen stall
-     * @param stallIndex index of the chosen stall
      */
     void setFilteredItemList(Index stallIndex);
 
@@ -206,7 +193,6 @@ public interface Model {
 
     /**
      * Get the item list that is filtered by stall.
-     * @return filtered item list.
      * @throws NullPointerException if {@code predicate} is null.
      */
     ObservableList<Item> getFilteredItemList();
