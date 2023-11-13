@@ -195,8 +195,7 @@ If double-clicking `FoodNotes.jar` does not work,
 --------------------------------------------------------------------------------------------------------------------
 
 ## 4. Features <a id="features"></a>
-This section shares how to use each feature in detail with you.
-
+Now that you have started up FoodNotes, you are ready to start using its features! This section contains the details for every feature that is available in FoodNotes.
 
 ### 4.1 General Features <a id="general-features"></a>
 
@@ -302,7 +301,7 @@ Type `clear` into the _Command Box_ and press `Enter` to execute.
 Outcome:
 
 The FoodNotes database is now empty.
-![ClearOutcome](images/userGuide/clearCommandOutcome.png)
+![ClearOutcome](images/userGuide/ClearCommandOutcome.png)
 </div>
 
 
