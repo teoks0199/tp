@@ -6,7 +6,7 @@ title: FoodNotes User Guide
 <a name="introduction"></a>
 ## Introduction
 
-Welcome to the User Guide of **FoodNotes**!
+Welcome to the User Guide of FoodNotes!
 
 
 Ever find yourself forgetting the delightful dishes you savored? Hungry for a way to recall your favorite food experiences? FoodNotes has the solution.
@@ -968,7 +968,7 @@ Outcome:
 | **Find stalls by item**     | `find-by-item` <br> e.g. `find-by-item` chicken              |
 
 
-### 6.5 Item-Management Commands <a id="item-management-commands"></a>
+### 6.5 Item Management Commands <a id="item-management-commands"></a>
 
 
 | Features               | Format, Examples                                                                                                                              |
