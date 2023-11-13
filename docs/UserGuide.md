@@ -601,8 +601,7 @@ You can use this command to quickly locate specific food stalls based on their n
 :information_source: **Info:**<br>
 If you have a "Japanese Stall" in FoodNotes, you can find it using `find-by-name japanese`
 as the `find` commands are case-insensitive.
-However, `find-by-name japan` will not return any results as "japan" is not an exact match for "japanese",
-and partial or incomplete matches won't trigger any response.
+However, partial or incomplete matches won't count as a match, thus`find-by-name japan` will not return any results as "japan" is not an exact match for "japanese".
 </div>
 
 **Example:**
