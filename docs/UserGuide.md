@@ -165,7 +165,7 @@ This section provides a summary of the parameters used when inputting commands i
    * `list` : Lists all stalls.
 6. Refer to the [Features](#features) below for details of each command. 
 
-<div markdown="block" class="alert alert-">
+<div markdown="block" class="alert alert-success">
 
 :bulb: **Tip:**<br>
 
@@ -595,7 +595,7 @@ You can use this command to quickly locate specific food stalls based on their n
 
 **Format:** `find-by-name NAME_KEYWORD`
 
-<div markdown="block" class="alert alert-warning">
+<div markdown="block" class="alert alert-info">
 
 
 :information_source: **Info:**<br>
@@ -622,7 +622,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/find-by-name.png)
 
-<div markdown="block" class="alert alert-warning">
+<div markdown="block" class="alert alert-success">
 
 :bulb: **Tip:**<br>
 
@@ -653,7 +653,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/find-by-location.png)
 
-<div markdown="block" class="alert alert-warning">
+<div markdown="block" class="alert alert-success">
 
 :bulb: **Tip:**<br>
 
@@ -685,7 +685,7 @@ Outcome:
 ![ListOutcome](images/userGuide/find-by-item.png)
 
 
-<div markdown="block" class="alert alert-warning">
+<div markdown="block" class="alert alert-success">
 
 :bulb: **Tip:**<br>
 
