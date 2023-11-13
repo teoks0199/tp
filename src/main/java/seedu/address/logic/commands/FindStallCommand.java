@@ -22,6 +22,9 @@ public class FindStallCommand extends Command {
 
     private final NameContainsKeywordsPredicate predicate;
 
+    /**
+     * Constructs a {@code FindStallCommand} with the given {@code NameContainsKeywordsPredicate}.
+     */
     public FindStallCommand(NameContainsKeywordsPredicate predicate) {
         this.predicate = predicate;
     }
@@ -34,6 +37,11 @@ public class FindStallCommand extends Command {
                 String.format(Messages.MESSAGE_STALLS_LISTED_OVERVIEW, model.getFilteredStallList().size()));
     }
 
+    /**
+     * Returns true if both FindStallCommand have the same predicate.
+     * @param other FindStallCommand to compare with
+     * @return true if both FindStallCommand have the same predicate
+     */
     @Override
     public boolean equals(Object other) {
         if (other == this) {
@@ -49,6 +57,10 @@ public class FindStallCommand extends Command {
         return predicate.equals(otherFindStallCommand.predicate);
     }
 
+    /**
+     * Returns a String representation of FindStallCommand.
+     * @return String representation of FindStallCommand
+     */
     @Override
     public String toString() {
         return new ToStringBuilder(this)

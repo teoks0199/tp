@@ -130,6 +130,9 @@ public class EditItemCommand extends Command {
     /**
      * Creates and returns a {@code Item} with the details of {@code itemToEdit}
      * edited with {@code editItemDescriptor}.
+     * @param itemToEdit item to edit
+     * @param editItemDescriptor details to edit the item with
+     * @return Item with details edited
      */
     private static Item createEditedItem(Item itemToEdit, EditItemDescriptor editItemDescriptor) {
         assert itemToEdit != null : "itemToEdit should not be null at this point";
@@ -189,7 +192,6 @@ public class EditItemCommand extends Command {
 
         /**
          * Copy constructor.
-         * A defensive copy of {@code tags} is used internally.
          */
         public EditItemDescriptor(EditItemDescriptor toCopy) {
             setItemName(toCopy.name);
@@ -205,42 +207,83 @@ public class EditItemCommand extends Command {
             return CollectionUtil.isAnyNonNull(name, price, rating, description);
         }
 
+        /**
+         * Returns true if item review is edited.
+         */
         public boolean isReviewEdited() {
             return CollectionUtil.isAnyNonNull(rating, description);
         }
 
+        /**
+         * Sets {@code name} to this object's {@code name}.
+         * @param name
+         */
         public void setItemName(ItemName name) {
             this.name = name;
         }
 
+        /**
+         * Returns an optional of {@code name} if it is not null, else returns an empty optional.
+         * @return Optional of {@code name} if it is not null, else returns an empty optional.
+         */
         public Optional<ItemName> getItemName() {
             return Optional.ofNullable(name);
         }
 
+        /**
+         * Sets {@code price} to this object's {@code price}.
+         * @param price
+         */
         public void setPrice(Price price) {
             this.price = price;
         }
 
+        /**
+         * Returns an optional of {@code price} if it is not null, else returns an empty optional.
+         * @return Optional of {@code price} if it is not null, else returns an empty optional.
+         */
         public Optional<Price> getPrice() {
             return Optional.ofNullable(price);
         }
 
+        /**
+         * Sets {@code rating} to this object's {@code rating}.
+         * @param rating
+         */
         public void setRating(Rating rating) {
             this.rating = rating;
         }
 
+        /**
+         * Returns an optional of {@code rating} if it is not null, else returns an empty optional.
+         * @return Optional of {@code rating} if it is not null, else returns an empty optional.
+         */
         public Optional<Rating> getRating() {
             return Optional.ofNullable(rating);
         }
 
+        /**
+         * Sets {@code description} to this object's {@code description}.
+         * @param description
+         */
         public void setDescription(Description description) {
             this.description = description;
         }
 
+        /**
+         * Returns an optional of {@code description} if it is not null, else returns an empty optional.
+         * @return Optional of {@code description} if it is not null, else returns an empty optional.
+         */
         public Optional<Description> getDescription() {
             return Optional.ofNullable(description);
         }
 
+        /**
+         * Returns true if both edit item descriptors have the same fields.
+         * This defines a stronger notion of equality between two edit item descriptors.
+         * @param other
+         * @return True if both edit item descriptors have the same fields.
+         */
         @Override
         public boolean equals(Object other) {
             if (other == this) {
@@ -259,6 +302,10 @@ public class EditItemCommand extends Command {
                     && Objects.equals(description, otherEditItemDescriptor.description);
         }
 
+        /**
+         * Returns the string representation of this object.
+         * @return String representation of this object.
+         */
         @Override
         public String toString() {
             return new ToStringBuilder(this)

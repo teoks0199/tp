@@ -112,6 +112,9 @@ public class EditStallCommand extends Command {
     /**
      * Creates and returns a {@code Stall} with the details of {@code stallToEdit}
      * edited with {@code editStallDescriptor}.
+     * @param stallToEdit Stall to edit.
+     * @param editStallDescriptor Edit stall descriptor.
+     * @return Stall with the details of stallToEdit edited with editStallDescriptor.
      */
     private static Stall createEditedStall(Stall stallToEdit, EditStallDescriptor editStallDescriptor) {
         assert stallToEdit != null : "stallToEdit should not be null at this point";
@@ -172,7 +175,6 @@ public class EditStallCommand extends Command {
 
         /**
          * Copy constructor.
-         * A defensive copy of {@code tags} is used internally.
          */
         public EditStallDescriptor(EditStallDescriptor toCopy) {
             setName(toCopy.name);
@@ -189,51 +191,95 @@ public class EditStallCommand extends Command {
             return CollectionUtil.isAnyNonNull(name, location, rating, description);
         }
 
+        /**
+         * Returns true if stall review is edited.
+         */
         public boolean isReviewEdited() {
             return CollectionUtil.isAnyNonNull(rating, description);
         }
 
+        /**
+         * Sets {@code name} to this object's {@code name}.
+         */
         public void setName(Name name) {
             this.name = name;
         }
 
+        /**
+         * Returns an optional of {@code name} if it is not null, else returns an empty optional.
+         * @return Optional of {@code name} if it is not null, else returns an empty optional.
+         */
         public Optional<Name> getName() {
             return Optional.ofNullable(name);
         }
 
+        /**
+         * Sets {@code location} to this object's {@code location}.
+         */
         public void setLocation(Location location) {
             this.location = location;
         }
 
+        /**
+         * Returns an optional of {@code location} if it is not null, else returns an empty optional.
+         * @return Optional of {@code location} if it is not null, else returns an empty optional.
+         */
         public Optional<Location> getLocation() {
             return Optional.ofNullable(location);
         }
 
+        /**
+         * Sets {@code rating} to this object's {@code rating}.
+         */
         public void setRating(Rating rating) {
             this.rating = rating;
         }
 
+        /**
+         * Returns an optional of {@code rating} if it is not null, else returns an empty optional.
+         * @return Optional of {@code rating} if it is not null, else returns an empty optional.
+         */
         public Optional<Rating> getRating() {
             return Optional.ofNullable(rating);
         }
 
+        /**
+         * Sets {@code description} to this object's {@code description}.
+         */
         public void setDescription(Description description) {
             this.description = description;
         }
 
+        /**
+         * Returns an optional of {@code description} if it is not null, else returns an empty optional.
+         * @return Optional of {@code description} if it is not null, else returns an empty optional.
+         */
         public Optional<Description> getDescription() {
             return Optional.ofNullable(description);
         }
 
+        /**
+         * Sets {@code menu} to this object's {@code menu}.
+         */
         public void setMenu(Menu menu) {
             this.menu = menu;
         }
 
+        /**
+         * Returns an optional of {@code menu} if it is not null, else returns an empty optional.
+         * @return Optional of {@code menu} if it is not null, else returns an empty optional.
+         */
         public Optional<Menu> getMenu() {
             return Optional.ofNullable(menu);
         }
 
 
+        /**
+         * Returns true if both edit stall descriptors have the same fields.
+         * This defines a stronger notion of equality between two edit stall descriptors.
+         * @param other Edit stall descriptor to compare with.
+         * @return True if both edit stall descriptors have the same fields, false otherwise.
+         */
         @Override
         public boolean equals(Object other) {
             if (other == this) {
@@ -252,6 +298,10 @@ public class EditStallCommand extends Command {
                     && Objects.equals(description, otherEditStallDescriptor.description);
         }
 
+        /**
+         * Returns the string representation of this object.
+         * @return String representation of this object.
+         */
         @Override
         public String toString() {
             return new ToStringBuilder(this)

@@ -23,7 +23,8 @@ public class FindItemCommandParser implements Parser<FindItemCommand> {
     /**
      * Parses the given {@code String} of arguments in the context of the FindItemCommand
      * and returns a FindItemCommand object for execution.
-     *
+     * @param args user input
+     * @return FindItemCommand object
      * @throws ParseException if the user input does not conform the expected format
      */
     public FindItemCommand parse(String args) throws ParseException {

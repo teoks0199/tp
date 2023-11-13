@@ -20,7 +20,8 @@ public class FindStallCommandParser implements Parser<FindStallCommand> {
     /**
      * Parses the given {@code String} of arguments in the context of the FindStallCommand
      * and returns a FindStallCommand object for execution.
-     *
+     * @param args user input
+     * @return FindStallCommand object
      * @throws ParseException if the user input does not conform the expected format
      */
     public FindStallCommand parse(String args) throws ParseException {
