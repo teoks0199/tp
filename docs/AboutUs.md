@@ -17,7 +17,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 [[portfolio](team/samuelmui8.md)]
 
 * Role: Developer
-* Responsibilities: Testing
+* Responsibilities: Backend
 
 ### Teo Kai Sheng
 

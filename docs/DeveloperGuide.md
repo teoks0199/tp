@@ -115,7 +115,7 @@ Here are the other classes in `Logic` (omitted from the class diagram above) tha
 <img src="images/ParserClasses.png" width="600"/>
 
 How the parsing works:
-* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `FoodNotesParser` returns back as a `Command` object.
+* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 ### Model component
@@ -190,9 +190,6 @@ The following sequence diagram shows how the add-item operation works:
 
 ![AddItemSequenceDiagram](images/AddItemSequenceDiagram.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `AddItemCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-
-</div>
 
 The `delete-item` command does the opposite — it calls `Model#deleteItem()`, which deletes the specified item from its specified stall.
 
@@ -304,12 +301,12 @@ The `updateFilteredStallListPredicate` is used to filter the list of stalls in F
 **Current Implementation:**
 * **Current Issue:** Users can view a filtered list of stalls when they use commands such as `find-by-location` and `find-by-item`. In the case where there is only 1 stall in the list and the user performs a stall deletion, the user will see a page showing an empty list of stall. This might cause confusion as the user might think that all the stalls are deleted.
 * **Example:**
-1. User entered `find-by-location Deck`.
-2. A list of stall containing one stall is displayed.
-3. User entered `view-stall s/1` to view the details of the stall.
-4. User entered `delete-stall s/1` to remove the stall from FoodNotes.
-5. List of stall with 0 stall is displayed.
-6. The list of stall is still filtered by location which is the Deck, but it might give the wrong impression that there is 0 stall in the list now.
+1. User enters `find-by-location Deck`.
+2. A list of stalls containing one stall is displayed.
+3. User enters `view-stall s/1` to view the details of the stall.
+4. User enters `delete-stall s/1` to remove the stall from FoodNotes.
+5. List of stalls with no stalls is displayed.
+6. The list of stalls is still filtered by location which is the Deck, but it might give the wrong impression that there are no more stalls in FoodNotes.
 
 **Proposed Solution:**
 
@@ -339,33 +336,39 @@ We propose to enhance the filter stalls commands to display the list of stalls w
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …                            | I want to …                                                              | So that I can…                                                    |
-|----------|-----------------------------------|--------------------------------------------------------------------------|-------------------------------------------------------------------|
-| `* * *`  | new user                          | add reviews to stalls                                                    | remember what I think about the food stall.                       |
-| `* * *`  | new user                          | delete reviews from stalls                                               | delete review of the food stall if I change my mind about it      |
-| `* * *`  | new user                          | add restaurant                                                           | add restaurants if I want to                                      |
-| `* * *`  | new user                          | delete restaurant                                                        | change my mind about the restaurant                               |
-| `* * *`  | new user                          | add menu item                                                            | review specific food from a specific restaurant                   |
-| `* * *`  | new user                          | delete menu item                                                         | remove it if I changed my mind                                    |
-| `* * *`  | new user                          | view restaurants                                                         | see the list of restaurants I have saved                          |
-| `* * *`  | new user                          | view the user guide easily                                               | learn more about the product when needed                          |
-| `* * *`  | new user                          | add reviews to menu items                                                | so that I can remember what I think about the menu item           |
-| `* * *`  | new user                          | delete reviews from menu items                                           | delete review of the menu item if I change my mind about it       |
-| `* *`    | hungry university student         | browse the ‘discount’ page for nearby campus eateries offering discounts | save money on meals                                               |
-| `* *`    | busy student                      | browse the daily specials page                                           | find on-campus restaurants and quickly decide where to grab lunch |
-| `* *`    | experienced user                  | save my favorite places                                                  | easily access them                                                |
-| `* *`    | new user                          | look at menu items of each store                                         | know what I can order                                             |
-| `* *`    | vegetarian student                | filter food options to only show vegetarian choices                      | find what I can eat                                               |
-| `* *`    | student with allergies            | filter food options by allergen information                              | eat safely                                                        |
-| `* *`    | health-conscious student          | see nutritional information for menu items                               | make informed choices about what I eat                            |
-| `* *`    | new user                          | sort by the most highly rated stores                                     | see what is popular                                               |
-| `* *`    | student trying to save money      | sort food items of stores by price                                       | plan what to eat to save money                                    |
-| `* *`    | student who often studies late    | search for food places by filtering by opening hours                     | quickly find food places to go for late-night suppers             |
-| `*`      | see how to travel to the stalls   | See how to travel to the stalls                                          | find my way easily                                                |
-| `*`      | user interested in sustainability | identify local ingredients                                               | support environmentally conscious dining choices                  |
-| `*`      | student always on the move        | receive alerts about pop ups                                             | seize food opportunities wherever I go.                           |
-| `*`      | Muslim student                    | know which halal certified                                               | eat halal food.                                                   |
-*{More to be added}*
+| Priority | As a...                        | I want to...                                   | So that I can...                                                  |
+|----------|--------------------------------|------------------------------------------------|-------------------------------------------------------------------|
+| `* * *`  | new user                       | add reviews to stalls                          | remember what I think about the food stalls                       |
+| `* * *`  | new user                       | delete reviews from stalls                     | delete the review of the food stall if I reviewed the wrong stall |
+| `* * *`  | new user                       | add stalls                                     | keep track of the food stalls I have tried                        |
+| `* * *`  | new user                       | delete stalls                                  | remove stalls if they no longer exist                             |
+| `* * *`  | new user                       | add menu items                                 | remember what food items a stall sells                            |
+| `* * *`  | new user                       | delete menu items                              | remove food items that a stall no longer sells                    |
+| `* * *`  | new user                       | view stalls                                    | see the list of stalls I have saved                               |
+| `* * *`  | new user                       | view menu items of a stall                     | see what the stall sells                                          |
+| `* * *`  | new user                       | view a stall                                   | see the details of the stall such as its location and review      |
+| `* * *`  | new user                       | view an item                                   | see the details of the item such as its price and review          |
+| `* * *`  | new user                       | view the user guide easily                     | learn more about the product when needed                          |
+| `* * *`  | new user                       | add reviews to menu items                      | so that I can remember what I think about the item                |
+| `* * *`  | new user                       | delete reviews from menu items                 | delete review of the menu item if I reviewed the wrong item       |
+| `* *`    | new user                       | edit stall details                             | change the details of a stall if I made a mistake                 |
+| `* *`    | new user                       | edit item details                              | change the details of an item if I made a mistake                 |
+| `* *`    | new user                       | edit stall reviews                             | change my review of a stall if I made a mistake                   |
+| `* *`    | new user                       | edit item reviews                              | change my review of an item if I made a mistake                   |
+| `* *`    | budget conscious student       | sort the stalls by average price of menu       | find the cheapest stalls to dine at easily                        |
+| `* *`    | experienced user               | sort the stalls by rating                      | find the stalls I love the most                                   |
+| `* *`    | experienced user               | sort the stalls by location                    | see the stalls at each location clearly                           |
+| `* *`    | experienced user               | filter the stalls by location                  | find the stalls at a specific location that I plan to visit       |
+| `* *`    | experienced user               | filter the stalls by name                      | find the specific stalls that I wish to visit                     |
+| `* *`    | experienced user               | filter the stalls by menu item                 | find the stalls that sell a dish I wish to eat                    |
+| `*`      | experienced user               | save my favorite stalls                        | easily find my favourite stalls                                   |
+| `*`      | vegetarian student             | filter stalls to only show vegetarian choices  | find vegetarian food that I can eat                               |
+| `*`      | student with allergies         | filter stalls by allergen information          | find food that I can eat safely                                   |
+| `*`      | health-conscious student       | see nutritional information for menu items     | make informed choices about what I eat                            |
+| `*`      | student who often studies late | filter stalls by opening hours                 | quickly find food places to go for late-night suppers             |
+| `*`      | Muslim student                 | filter food options to only show halal choices | find halal food that I can eat                                    |
+| `*`      | student athlete                | find stalls with high protein meals            | support my training needs                                         |
+
 
 ### Use cases
 
@@ -373,181 +376,160 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 
 
-**Use case: Add a stall**
+**Use case: UC01 - Add a stall**
 
 **MSS**
 
-1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
-3.  User requests to add a stall to the list
-4.  FoodNotes add the stall
+1. User requests to add a stall to FoodNotes.
+2. FoodNotes adds the stall to the list of stalls.
 
     Use case ends.
 
 **Extensions**
 
-* 3a. The stall name and location is not specified
+* 1a. The stall name or location is not specified.
 
-    * 3a1. FoodNotes shows an error message.
+    * 1a1. FoodNotes shows an error message.
 
-      Use case resumes at step 2.
+      Use case resumes at step 1.
+  
+* 1b. The stall name or location is invalid.
 
-**Use case: Add a review to a stall**
+    * 1b1. FoodNotes shows an error message.
+
+      Use case resumes at step 1.
+
+**Use case: UC02 - Add a review to a stall**
 
 **MSS**
 
-1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
-3.  User requests to add a review to a stall
-4.  FoodNotes adds a review to the stall
+1. User requests to add a review to a stall
+2. FoodNotes adds a review to the specified stall
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The list of stalls is empty.
+* 1a. The list of stalls is empty.
+  * 1a1. FoodNotes shows an error message.
+  * 1a2. <ins>User adds a stall (UC01).</ins>
 
-  Use case ends.
+    Use case resumes at step 1.
 
-* 3a. The given index is invalid.
+* 1a. The given stall index, star rating or description is invalid.
 
-    * 3a1. FoodNotes shows an error message.
+    * 1a1. FoodNotes shows an error message.
 
-      Use case resumes at step 2.
+      Use case resumes at step 1.
 
-* 3b. The star rating or description is not specified
+* 1b. The stall index, star rating or description is not specified
 
-    * 3a1. FoodNotes shows an error message.
+    * 1b1. FoodNotes shows an error message.
 
-      Use case resumes at step 2.
+      Use case resumes at step 1.
 
-**Use case: Delete a review from stall**
+**Use case: UC03 - Delete a review from stall**
 
 **MSS**
 
-1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
-3.  User requests to view a stall
-4.  FoodNotes shows the review and menu of the stall
-5.  User requests to delete the review
-6.  FoodNotes deletes the review
+1. User requests to delete the review from a stall.
+2. FoodNotes deletes the review from the specified stall.
 
     Use case ends.
 
 **Extensions**
 
-* 3a. The given index is invalid.
+* 1a. The given stall index is invalid.
 
-    * 3a1. FoodNotes shows an error message.
+  * 1a1. FoodNotes shows an error message.
 
-      Use case resumes at step 2.
+    Use case resumes at step 1.
 
-* 4a. There are no reviews.
+* 1b. The stall has no review.
 
-  Use case ends.
+  * 1b1. FoodNotes shows an error message.
 
-**Use case: Add a menu item to a stall**
+    Use case ends.
+
+**Use case: UC04 - Add an item to a stall**
 
 **MSS**
 
-1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
-3.  User requests to add a menu item to a stall
-4.  FoodNotes add the menu item
+1. User requests to add an item to a stall.
+2. FoodNotes adds the item to the specified stall.
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The list of stalls is empty.
+* 1a. The list of stalls is empty.
+  * 1a1. FoodNotes shows an error message.
+  * 1a2. <ins>User adds a stall (UC01).</ins>
 
-  Use case ends.
+    Use case resumes at step 1.
 
-* 3a. The given index is invalid
+* 1b. The given stall index, item name or price is invalid.
+    * 1b1. FoodNotes shows an error message.
 
-    * 3a1. FoodNotes shows an error message.
+      Use case resumes at step 1.
 
-      Use case resumes at step 2.
+* 1c. The stall index, item name or price is not specified.
+    * 1c1. FoodNotes shows an error message.
 
-**Use case: Add a review to a menu item**
+      Use case resumes at step 1.
+
+**Use case: UC05 - Delete an item from a stall**
 
 **MSS**
 
-1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
-3.  User requests to view a stall
-4.  FoodNotes shows the menu items and review of the stall
-5.  User requests to add a review to a menu item in the stall
-6.  FoodNotes add review to the menu item
+1. User requests to delete an item from a specific stall.
+2. FoodNotes deletes the specified item from the specified stall.
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The list of stalls is empty.
+* 1a. The given stall index or item index is invalid.
+  * 1a1. FoodNotes shows an error message.
 
-  Use case ends.
+  Use case resumes at step 1.
 
-* 3a. The given index is invalid.
+* 1b. The stall index or item index is not specified.
+    * 1b1. FoodNotes shows an error message.
 
-    * 3a1. FoodNotes shows an error message.
+    Use case resumes at step 1.
 
-      Use case resumes at step 2.
-
-* 4a. The star rating or description is not specified
-
-    * 4a1. FoodNotes shows an error message.
-
-      Use case resumes at step 2.
-
-**Use case: Delete a menu item from stall**
+**Use case: UC06 - Add a review to an item**
 
 **MSS**
 
-1.  User requests to list stalls
-2.  FoodNotes shows a list of stalls
-3.  User requests to view a stall
-4.  FoodNotes shows the review and menu of the stall
-5.  User requests to delete a menu item
-6.  FoodNotes deletes the menu item
+1. User requests to add a review to an item in a specific stall.
+2. FoodNotes adds the review to the specified item in the specified stall.
 
     Use case ends.
 
 **Extensions**
 
-* 4a. There are no menu items.
+* 1a. The given stall index, item index, rating or description is invalid.
 
-  Use case ends.
+    * 1a1. FoodNotes shows an error message.
 
-* 5a. The given index is invalid.
+      Use case resumes at step 1.
 
-    * 5a1. FoodNotes shows an error message.
+* 1b. The stall index, item index, rating or description is not specified.
 
-      Use case resumes at step 4.
+    * 1b1. FoodNotes shows an error message.
 
-**Use Case: View All Stalls**
+      Use case resumes at step 1.
 
-**MSS**
 
-1. User requests to view all stalls using the command `list`.
-2. FoodNote retrieves and displays a list of all available stalls, including their names and locations.
-3. User reviews the list of stalls.
 
-   Use case ends.
 
-**Extensions**
-
-* 1a. No stalls are available in the database:
-    * FoodNote displays a message indicating that there are no stalls available.
-
-  Use case ends.
-
-*{More to be added}*
 
 ### Non-Functional Requirements
 
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
-2.  Should be able to hold up to 1000 stalls without a noticeable sluggishness in performance for typical usage.
+2.  Should be able to hold up to 100 stalls without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 
 *{More to be added}*
@@ -600,9 +582,9 @@ testers are expected to do more *exploratory* testing.
    Expected: Pasta Express located in Deck is added to the list. The result display shows a success message. The list of the stalls on the left panel is updated.
 
 1. Test case: `add-stall n/Indian Shop`<br>
-   Expected: No stall is deleted. Error details shown in the result display.
+   Expected: No stall is added. Error details shown in the result display.
 
-1. Other incorrect add commands to try: `add-stall`, `add-stall n/abc l/Deck l/Frontier`, `...` (Stall exists at multiple locations)<br>
+1. Other incorrect add commands to try: `add-stall`, `add-stall n/abc l/Deck l/Frontier`, `...` <br>
    Expected: Similar to previous.
 
 ### Deleting a stall
@@ -630,7 +612,7 @@ testers are expected to do more *exploratory* testing.
      Expected: Result display shows a success message. Details of the stall is shown on the left panel.
 
   1. Test case: `view-stall s/0`<br>
-     Expected: No stall is deleted. Error details shown in the result display.
+     Expected: No stall is shown. Error details shown in the result display.
 
   1. Other incorrect view commands to try: `view-stall`, `view-stall s/x`, `...` (where x is larger than the list size)<br>
      Expected: Similar to previous.
@@ -645,7 +627,7 @@ testers are expected to do more *exploratory* testing.
      Expected: The result display shows a success message. The stall details in the right panel is updated with the star ratings and review descriptions.
 
   1. Test case: `review-stall s/1 r/4`<br>
-     Expected: No stall review is added. Error details shown in the result display.
+     Expected: No stall description is added. Error details shown in the result display.
 
   1. Other incorrect review commands to try: `review-stall s/1 r/3 r/5`(duplicate prefix), `review-stall s/1 d/xyz`, `...` (missing rating)<br>
      Expected: Similar to previous.
@@ -666,19 +648,19 @@ testers are expected to do more *exploratory* testing.
    1. Other incorrect add commands to try: `add-item`, `add-item s/x n/x p/1.00`, `...` (where x is larger than the list size)<br>
       Expected: Similar to previous.
 
-### Deleting a menu item to a stall
+### Deleting a menu item from a stall
 
 1. Deleting a menu item while the stall details are shown
 
   1. Prerequisites: View the stall details with the `view-stall` command. The menu items of the stall is displayed in the left panel.
 
-  1. Test case: `delete-item s/1`<br>
+  1. Test case: `delete-item s/1 i/1`<br>
      Expected: First item is deleted from the list. Details of the deleted item shown in the result display. List of items in the left panel is updated.
 
-  1. Test case: `delete-item s/0`<br>
+  1. Test case: `delete-item s/0 i/1`<br>
      Expected: No item is deleted. Error details shown in the result display.
 
-  1. Other incorrect delete commands to try: `delete-item`, `delete-item s/x`, `...` (where x is larger than the list size)<br>
+  1. Other incorrect delete commands to try: `delete-item`, `delete-item s/1 i/0`, `delete-item s/x i/x`, `...` (where x is larger than the list size)<br>
      Expected: Similar to previous.
 
 ### Viewing a menu item to a stall
@@ -705,8 +687,6 @@ testers are expected to do more *exploratory* testing.
   1. Test case: `sort-stalls-location`<br>
      Expected: Result display shows a success message. The list displayed in the left panel is sorted by alphabetical order based on their location.
 
-  1. Test case: `sort-stalls-location deck`<br>
-     Expected: Stalls are not sorted. Error details shown in the result display.
 
 ### Sorting the stalls by location
 
@@ -717,8 +697,6 @@ testers are expected to do more *exploratory* testing.
    1. Test case: `sort-stalls-rating`<br>
       Expected: Result display shows a success message. The list displayed in the left panel is sorted in descending order based on ratings.
 
-   1. Test case: `sort-stalls-rating 1`<br>
-      Expected: Stalls are not sorted. Error details shown in the result display.
 
 ### Sorting the stalls by price
 
@@ -727,10 +705,8 @@ testers are expected to do more *exploratory* testing.
   1. Prerequisites: List all stalls using the `list` command. Multiple stalls in the list.
 
   1. Test case: `sort-stalls-price`<br>
-     Expected: Result display shows a success message. The list displayed in the left panel is sorted in descending order based on ratings.
+     Expected: Result display shows a success message. The list displayed in the left panel is sorted in ascending order based on average price.
 
-  1. Test case: `sort-stalls-price 1.00`<br>
-     Expected: Stalls are not sorted. Error details shown in the result display.
 
 ### Filter stalls by stall name
 
@@ -738,11 +714,11 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: List all stalls using the `list` command. Multiple stalls in the list.
 
-   1. Test case: `find-by-name Subway`<br>
-      Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls with the name containing the keyword 'Subway'.
+   1. Test case: `find-by-name japanese`<br>
+      Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls with the name containing the keyword 'japanese' (case-insensitive).
 
-   1. Test case: `find-by-name Subway Express`<br>
-       Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls with the name containing the keyword 'Subway' or 'Express'.
+   1. Test case: `find-by-name japanese western`<br>
+       Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls with the name containing the keyword 'japanese' or 'western' (case-insensitive).
 
    1. Other incorrect find commands to try: `find-by-name`
       Expected: No stall is found. Error details shown in the result display.
@@ -753,11 +729,11 @@ testers are expected to do more *exploratory* testing.
 
   1. Prerequisites: List all stalls using the `list` command. Multiple stalls in the list.
 
-  1. Test case: `find-by-location Utown`<br>
-     Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls with the location containing the keyword 'Utown'.
+  1. Test case: `find-by-location utown`<br>
+     Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls with the location containing the keyword 'utown' (case-insensitive).
 
-  1. Test case: `find-by-location Utown Frontier`<br>
-     Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls with the location containing the keyword 'Utown' or 'Frontier'.
+  1. Test case: `find-by-location utown frontier`<br>
+     Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls with the location containing the keyword 'utown' or 'frontier' (case-insensitive).
 
   1. Other incorrect find commands to try: `find-by-location`
      Expected: No stall is found. Error details shown in the result display.
@@ -768,11 +744,11 @@ testers are expected to do more *exploratory* testing.
 
   1. Prerequisites: List all stalls using the `list` command. Multiple stalls in the list.
 
-  1. Test case: `find-by-item Chicken`<br>
-     Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls with the name containing the menu item 'Chicken'.
+  1. Test case: `find-by-item chicken`<br>
+     Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls whose menu items contain the keyword 'chicken' (case-insensitive).
 
-  1. Test case: `find-by-item Chicken Pork`<br>
-     Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls with the name containing the keyword 'Chicken' or 'Pork'.
+  1. Test case: `find-by-item chicken pork`<br>
+     Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls whose menu items contain the keyword 'chicken' or 'pork' (case-insensitive).
 
   1. Other incorrect find commands to try: `find-by-item`
      Expected: No stall is found. Error details shown in the result display.
@@ -791,5 +767,5 @@ testers are expected to do more *exploratory* testing.
 1. Dealing with missing/corrupted data files
 
    1. To simulate a corrupted file, you can edit addressbook.json directly and introduce some texts that does not follow the correct format.
-   2. To fix the issue, delete addressbook.json from the data folder and re-launch the app. FoodNotes will now only contain the original pre-loaded information.
+   2. To reset the preloaded data, delete addressbook.json from the data folder and re-launch the app. FoodNotes will now only contain the original pre-loaded information.
 
