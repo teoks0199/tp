@@ -169,11 +169,11 @@ This section provides a summary of the parameters used when inputting commands i
 
 :bulb: **Tip:**<br>
 
-* If double-clicking `FoodNotes.jar` does not work,
+If double-clicking `FoodNotes.jar` does not work,
 
-    1. Search for "Command Prompt" or "Terminal" on your computer.
-    2. Navigate to the location where `FoodNotes.jar` is saved via the terminal. (_Unsure how to navigate?_ You can try running this in your terminal: `cd Downloads`.)
-    3. Run the following in the terminal: `java -jar FoodNotes.jar`.
+1. Search for "Command Prompt" or "Terminal" on your computer.
+2. Navigate to the location where `FoodNotes.jar` is saved via the terminal. (_Unsure how to navigate?_ You can try running this in your terminal: `cd Downloads`.)
+3. Run the following in the terminal: `java -jar FoodNotes.jar`.
 
 </div>
 
@@ -199,7 +199,8 @@ You can use this command to view the online user guide, which contains informati
 
 <div markdown="block" class="alert alert-info">
 
-:information_source: Ensure that you have a stable internet connection and have a web browser on your computer in order to access the user guide.
+:information_source: **Info:**<br>
+Ensure that you have a stable internet connection and have a web browser on your computer in order to access the user guide.
 
 </div>
 
@@ -231,7 +232,8 @@ You can use this command to exit FoodNotes.
 
 <div markdown="block" class="alert alert-info">
 
-:information_source: This command will exit the application immediately. All data is saved automatically and will be reloaded upon restart of the application.
+:information_source: **Info:**<br>
+This command will exit the application immediately. All data is saved automatically and will be reloaded upon restart of the application.
 
 </div>
 
@@ -256,7 +258,9 @@ You can use this command to clear the database in FoodNotes.
 
 <div markdown="block" class="alert alert-info">
 
-:warning: This command will permanently delete all data stored in FoodNotes. You should make a backup of `addressbook.json` if you still want to keep your old data.
+:warning: **Warning:**<br>
+
+This command will permanently delete all data stored in FoodNotes. You should make a backup of `addressbook.json` if you still want to keep your old data.
 
 </div>
 
@@ -351,7 +355,7 @@ You can use this command to add a new stall to FoodNotes.
 
 **Format:**
 
-`add-stall n/STALL_NAME l/LOCATION`
+`add-stall n/STALL_NAME l/STALL_LOCATION`
 
 **Example:**
 You just visited the newly opened Subway at Utown and wish to add it to FoodNotes.
@@ -373,7 +377,7 @@ Outcome:
 
 <div markdown="block" class="alert alert-info">
 
-:warning: **Take note:**<br>
+:information_source: **Info:**<br>
 
 * You are not allowed to add duplicate stalls of the same name and location (case-insensitive) to FoodNotes.
 
@@ -414,13 +418,14 @@ you may edit its rating and/or description.
 
 <div markdown="block" class="alert alert-info">
 
-:information_source: You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the stall already has an existing review.
+:information_source: **Info:**<br>
+You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the stall already has an existing review.
 
 </div>
 
 **Format:**
 
-`edit-stall s/STALL_INDEX [n/STALL_NAME] [l/LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION] `
+`edit-stall s/STALL_INDEX [n/STALL_NAME] [l/STALL_LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION] `
 
 **Example:**
 You wish to change the location of the Western stall in the list, as the stall has relocated from Utown to Deck.
@@ -589,7 +594,8 @@ You can use this command to quickly locate specific food stalls based on their n
 
 <div markdown="block" class="alert alert-info">
 
-:information_source: You need to type in the entire word instead of part of the word for it to find the stall.
+:information_source: **Info:**<br> 
+You need to type in the entire word instead of part of the word for it to find the stall.
 
 </div>
 
@@ -664,7 +670,7 @@ You wish to find stalls that sells chicken rice.
 
 finding stalls by menu items:
 
-1. Type `find-by-item chicken rice` in the _Command Box_.
+1. Type `find-by-item chicken` in the _Command Box_.
 2. Press `Enter` to execute.
 
 Outcome:
@@ -690,12 +696,12 @@ Outcome:
 ### 4.5 Item Management <a id="item-management"></a>
 These features allow you to manage information about the items in FoodNotes. You can record and perform the following actions:
 
-- Viewing an item: `view-item`
-- Adding an item: `add-item`
-- Deleting an item: `delete-item`
-- Editing an item: `edit-item`
-- Reviewing an item: `review-item`
-- Deleting an item review: `delete-item-review`
+- Viewing an item
+- Adding an item
+- Deleting an item
+- Editing an item 
+- Reviewing an item
+- Deleting an item review
 
 #### 4.5.1 Viewing an item : `view-item` <a id="viewing-an-item"></a>
 
@@ -752,7 +758,7 @@ Outcome:
 
 <div markdown="block" class="alert alert-info">
 
-:warning: **Take note:**<br>
+:information_source: **Info:**<br>
 
 * You are not allowed to add duplicate items of the same name (case-insensitive) to a stall.
 
@@ -791,7 +797,8 @@ Outcome:
 You can use this command to edit an existing item, and update its name, location, rating and/or description.
 
 <div markdown="block" class="alert alert-info">
-:information_source: You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the item already has an existing review.
+:information_source: **Info:**<br> 
+You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the item already has an existing review.
 </div>
 
 **Format:**
@@ -897,15 +904,15 @@ Outcome:
 
 ### 6.2 Stall Management Commands <a id="stall-management-commands"></a>
 
-| Features                | Format, Examples                                                                                                                   |
-|-------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| **List**                | `list` <br> e.g. `list`                                                                                                            |
-| **View stall**          | `view-stall s/STALL_INDEX` <br> e.g. `view-stall` s/1                                                                              |
-| **Add stall**           | `add-stall n/STALL_NAME l/LOCATION` <br> e.g.`add-stall` n/Japanese Stall l/Deck                                                   |
-| **Delete stall**        | `delete-stall s/STALL_INDEX` <br> e.g. `delete-stall` s/1                                                                          |
-| **Edit stall**          | `edit-stall s/STALL_INDEX [n/STALL_NAME] [l/LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION]` <br> e.g. `edit-stall` s/1 l/Terrace |
-| **Review stall**        | `review-stall s/STALL_INDEX r/STALL_RATING d/DESCRIPTION` <br> e.g. `review-stall` s/1 r/5 d/Good food and service                 |                                                                                                                                                             |
-| **Delete stall review** | `delete-stall-review s/STALL_INDEX` <br> e.g. `delete-stall-review` s/1                                                            |
+| Features                | Format, Examples                                                                                                                         |
+|-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| **List**                | `list` <br> e.g. `list`                                                                                                                  |
+| **View stall**          | `view-stall s/STALL_INDEX` <br> e.g. `view-stall` s/1                                                                                    |
+| **Add stall**           | `add-stall n/STALL_NAME l/STALL_LOCATION` <br> e.g.`add-stall` n/Japanese Stall l/Deck                                                   |
+| **Delete stall**        | `delete-stall s/STALL_INDEX` <br> e.g. `delete-stall` s/1                                                                                |
+| **Edit stall**          | `edit-stall s/STALL_INDEX [n/STALL_NAME] [l/STALL_LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION]` <br> e.g. `edit-stall` s/1 l/Terrace |
+| **Review stall**        | `review-stall s/STALL_INDEX r/STALL_RATING d/DESCRIPTION` <br> e.g. `review-stall` s/1 r/5 d/Good food and service                       |                                                                                                                                                             |
+| **Delete stall review** | `delete-stall-review s/STALL_INDEX` <br> e.g. `delete-stall-review` s/1                                                                  |
 
 ### 6.3 Stall Sorting Commands <a id="stall-sorting-commands"></a>
 
