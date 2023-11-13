@@ -24,6 +24,9 @@ public class FindItemCommand extends Command {
 
     private final MenuContainsKeywordsPredicate predicate;
 
+    /**
+     * Constructs a {@code FindItemCommand} with the given {@code MenuContainsKeywordsPredicate}.
+     */
     public FindItemCommand(MenuContainsKeywordsPredicate predicate) {
         this.predicate = predicate;
     }
@@ -36,6 +39,11 @@ public class FindItemCommand extends Command {
                 String.format(Messages.MESSAGE_STALLS_LISTED_OVERVIEW, model.getFilteredStallList().size()));
     }
 
+    /**
+     * Returns true if both FindItemCommand have the same predicate.
+     * @param other FindItemCommand to compare with
+     * @return true if both FindItemCommand have the same predicate
+     */
     @Override
     public boolean equals(Object other) {
         if (other == this) {
@@ -51,6 +59,9 @@ public class FindItemCommand extends Command {
         return predicate.equals(otherFindItemCommand.predicate);
     }
 
+    /**
+     * Returns a String representation of FindItemCommand.
+     */
     @Override
     public String toString() {
         return new ToStringBuilder(this)

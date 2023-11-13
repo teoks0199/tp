@@ -22,6 +22,9 @@ public class FindLocationCommand extends Command {
 
     private final LocationContainsKeywordsPredicate predicate;
 
+    /**
+     * Constructs a {@code FindLocationCommand} with the given {@code LocationContainsKeywordsPredicate}.
+     */
     public FindLocationCommand(LocationContainsKeywordsPredicate predicate) {
         this.predicate = predicate;
     }
@@ -34,6 +37,11 @@ public class FindLocationCommand extends Command {
                 String.format(Messages.MESSAGE_STALLS_LISTED_OVERVIEW, model.getFilteredStallList().size()));
     }
 
+    /**
+     * Returns true if both FindLocationCommand have the same predicate.
+     * @param other FindLocationCommand to compare with
+     * @return true if both FindLocationCommand have the same predicate
+     */
     @Override
     public boolean equals(Object other) {
         if (other == this) {
@@ -49,6 +57,10 @@ public class FindLocationCommand extends Command {
         return predicate.equals(otherFindLocationCommand.predicate);
     }
 
+    /**
+     * Returns the String representation of this FindLocationCommand.
+     * @return String representation of this FindLocationCommand.
+     */
     @Override
     public String toString() {
         return new ToStringBuilder(this)

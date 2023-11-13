@@ -21,7 +21,8 @@ public class FindLocationCommandParser implements Parser<FindLocationCommand> {
     /**
      * Parses the given {@code String} of arguments in the context of the FindLocationCommand
      * and returns a FindLocationCommand object for execution.
-     *
+     * @param args user input
+     * @return FindLocationCommand object
      * @throws ParseException if the user input does not conform the expected format
      */
     public FindLocationCommand parse(String args) throws ParseException {

@@ -93,11 +93,12 @@ The following figure shows the GUI of FoodNotes. It is annotated with the name o
 </p>
 What the main components of the GUI do:
 
-* _Left and Right Display_: This is where FoodNotes displays the information of the page that you are viewing.
+* _Command Box_: This is where you type your commands.
 
 * _Result Display_: This is where FoodNotes displays guiding messages.
 
-* _Command Box_: This is where you type your commands.
+* _Left and Right Display_: This is where FoodNotes displays the information of the page that you are viewing.
+
 
 ### 2.4 Icons <a id="icons"></a>
 
@@ -359,6 +360,7 @@ You can use this command to add a new stall to FoodNotes.
 `add-stall n/STALL_NAME l/STALL_LOCATION`
 
 **Example:**
+
 You just visited the newly opened Subway at Utown and wish to add it to FoodNotes.
 <div markdown="block" class="alert alert-white">
 
@@ -395,6 +397,7 @@ You can use this command to delete a stall from FoodNotes, making sure that your
 `delete-stall s/STALL_INDEX`
 
 **Example:**
+
 A stall has closed down, and you want to delete it from FoodNotes.
 <div markdown="block" class="alert alert-white">
 
@@ -429,6 +432,7 @@ You must specify at least one of the optional parameters, and you can only edit 
 `edit-stall s/STALL_INDEX [n/STALL_NAME] [l/STALL_LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION] `
 
 **Example:**
+
 You wish to change the location of the Western Stall in the list, as the stall has relocated from Utown to Deck.
 <div markdown="block" class="alert alert-white">
 
@@ -455,6 +459,7 @@ You can use this command to review an existing stall, and add your own star rati
 `review-stall s/STALL_INDEX r/STALL_RATING d/STALL_DESCRIPTION`
 
 **Example:**
+
 You want to give Japanese Stall a five-star rating as you love their cutlets.
 <div markdown="block" class="alert alert-white">
 
@@ -481,6 +486,7 @@ You can use this command to delete a review of an existing stall.
 `delete-stall-review s/STALL_INDEX`
 
 **Example:**
+
 You decide to delete the review for the Western Stall as you accidentally reviewed the wrong stall.
 <div markdown="block" class="alert alert-white">
 
@@ -511,9 +517,11 @@ These features allow you to sort stalls in FoodNotes. The sorting features inclu
 You can use this command to sort the stalls by their location in alphabetical order.
 
 **Format:**
+
 `sort-stalls-location`
 
 **Example:**
+
 You wish to sort the stalls by their location in alphabetical order.
 <div markdown="block" class="alert alert-white">
 
@@ -536,9 +544,11 @@ Outcome:
 You can use this command to sort the stalls by their rating in descending order, so the stalls with the highest ratings will appear at the top!
 
 **Format:**
+
 `sort-stalls-rating`
 
 **Example:**
+
 You wish to view the stalls' rating in descending order.
 <div markdown="block" class="alert alert-white">
 
@@ -560,9 +570,11 @@ Outcome:
 You can use this command to sort the stalls by the average price of its menu items in ascending order, so the cheapest stalls will appear at the top!
 
 **Format:**
+
 `sort-stalls-price`
 
 **Example:**
+
 You wish to view the stalls' average price in ascending order.
 <div markdown="block" class="alert alert-white">
 
@@ -593,7 +605,9 @@ These features allow you to find stalls in FoodNotes. The finding features inclu
 #### 4.4.1 Finding stalls by name: `find-by-name` <a name="finding-stalls-by-name"></a>
 You can use this command to quickly locate specific food stalls based on their names. Even if you can only remember part of the stall name, this command can help you narrow down your choices effectively.
 
-**Format:** `find-by-name NAME_KEYWORD`
+**Format:** 
+
+`find-by-name NAME_KEYWORD`
 
 <div markdown="block" class="alert alert-info">
 
@@ -601,11 +615,11 @@ You can use this command to quickly locate specific food stalls based on their n
 :information_source: **Info:**<br>
 If you have a "Japanese Stall" in FoodNotes, you can find it using `find-by-name japanese`
 as the `find` commands are case-insensitive.
-However, `find-by-name japan` will not return any results as "japan" is not an exact match for "japanese",
-and partial or incomplete matches won't trigger any response.
+However, partial or incomplete matches won't count as a match, thus`find-by-name japan` will not return any results as "japan" is not an exact match for "japanese".
 </div>
 
 **Example:**
+
 You wish to find stalls that have 'Japanese' or 'Western' or 'Noodles' in their names.
 <div markdown="block" class="alert alert-white">
 
@@ -634,9 +648,12 @@ Outcome:
 #### 4.4.2 Finding stalls by location: `find-by-location` <a id="finding-stalls-by-location"></a>
 You can use this command to quickly locate specific food stalls based on their locations. If you want to find the nearest food options, this command can help you narrow down your choices effectively.
 
-**Format:** `find-by-location LOCATION_KEYWORD`
+**Format:** 
+
+`find-by-location LOCATION_KEYWORD`
 
 **Example:**
+
 You wish to find stalls that are located at the Deck.
 <div markdown="block" class="alert alert-white">
 
@@ -665,9 +682,12 @@ Outcome:
 #### 4.4.3 Finding stalls by item: `find-by-item` <a id="finding-stalls-by-item"></a>
 You can use this command to quickly locate specific food stalls based on the items on their menu. If you are craving for a specific dish, this command can help you narrow down your choices effectively.
 
-**Format:** `find-by-item ITEM_KEYWORD`
+**Format:** 
+
+`find-by-item ITEM_KEYWORD`
 
 **Example:**
+
 You wish to find stalls that have chicken in their menu.
 <div markdown="block" class="alert alert-white">
 
@@ -716,6 +736,7 @@ which includes the price, rating and description of the item.
 `view-item s/STALL_INDEX i/ITEM_INDEX`
 
 **Example:**
+
 You want to view more about Chicken Katsu Curry from Japanese stall.
 <div markdown="block" class="alert alert-white">
 
@@ -741,6 +762,7 @@ You can use this command to add your new favourite food item to your favourite s
 `add-item s/STALL_INDEX n/ITEM_NAME p/ITEM_PRICE`
 
 **Example:**
+
 You want to add a new item name 'Pork Chop' with the price of $5.50 to Japanese stall.
 <div markdown="block" class="alert alert-white">
 
@@ -776,6 +798,7 @@ You can use this command to delete an item from the database.
 `delete-item s/STALL_INDEX i/ITEM_INDEX`
 
 **Example:**
+
 You wish to delete item "mochi" from Western Stall.
 <div markdown="block" class="alert alert-white">
 
@@ -809,6 +832,7 @@ You must specify at least one of the optional parameters, and you can only edit 
 `edit-item s/STALL_INDEX i/ITEM_INDEX [n/ITEM_NAME] [p/ITEM_PRICE] [r/ITEM_RATING] [d/ITEM_DESCRIPTION] `
 
 **Example:**
+
 You wish to edit the price of tiramisu from the Western Stall as the price has increased.
 <div markdown="block" class="alert alert-white">
 
@@ -836,6 +860,7 @@ You can use this command to review an existing item, and add your own star ratin
 `review-item s/STALL_INDEX i/ITEM_INDEX r/ITEM_RATING d/ITEM_DESCRIPTION`
 
 **Example:**
+
 You wish to review the chicken cutlet from the Japanese Stall as it was delicious.
 <div markdown="block" class="alert alert-white">
 
@@ -863,6 +888,7 @@ You can use this command to delete a review of an existing item.
 `delete-item-review s/STALL_INDEX i/ITEM_INDEX`
 
 **Example:**
+
 You decide to delete the review for tiramisu from Western Stall as you accidentally reviewed the wrong item.
 <div markdown="block" class="alert alert-white">
 
