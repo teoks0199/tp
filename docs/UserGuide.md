@@ -209,6 +209,10 @@ Ensure that you have a stable internet connection and have a web browser on your
 
 `help`
 
+**Example:**
+
+In this example, you want to view the user guide of FoodNotes.
+
 <div markdown="block" class="alert alert-white">
 
 Requesting for help:
@@ -241,6 +245,10 @@ This command will exit the application immediately. All data is saved automatica
 **Format:**
 
 `exit`
+
+**Example:**
+
+In this example, you want to exit FoodNotes.
 
 <div markdown="block" class="alert alert-white">
 
