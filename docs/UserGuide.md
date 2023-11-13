@@ -93,11 +93,12 @@ The following figure shows the GUI of FoodNotes. It is annotated with the name o
 </p>
 What the main components of the GUI do:
 
-* _Left and Right Display_: This is where FoodNotes displays the information of the page that you are viewing.
+* _Command Box_: This is where you type your commands.
 
 * _Result Display_: This is where FoodNotes displays guiding messages.
 
-* _Command Box_: This is where you type your commands.
+* _Left and Right Display_: This is where FoodNotes displays the information of the page that you are viewing.
+
 
 ### 2.4 Icons <a id="icons"></a>
 
