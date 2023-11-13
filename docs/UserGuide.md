@@ -428,16 +428,15 @@ Outcome:
 You can use this command to edit an existing stall, and update its name, location. If the stall has a review,
 you may edit its rating and/or description.
 
-<div markdown="block" class="alert alert-info">
-
-:information_source: **Info:**<br>
-You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the stall already has an existing review.
-
-</div>
-
 **Format:**
 
 `edit-stall s/STALL_INDEX [n/STALL_NAME] [l/STALL_LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION] `
+
+<div markdown="block" class="alert alert-info">
+:information_source: **Info:**<br> 
+Parameters in the square brackets are optional, but you must specify at least one of them. 
+In addition, you can only edit ratings and descriptions if the stall already has an existing review.
+</div>
 
 **Example:**
 
@@ -830,14 +829,15 @@ Outcome:
 
 You can use this command to edit an existing item, and update its name, location, rating and/or description.
 
-<div markdown="block" class="alert alert-info">
-:information_source: **Info:**<br> 
-You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the item already has an existing review.
-</div>
-
 **Format:**
 
 `edit-item s/STALL_INDEX i/ITEM_INDEX [n/ITEM_NAME] [p/ITEM_PRICE] [r/ITEM_RATING] [d/ITEM_DESCRIPTION] `
+
+<div markdown="block" class="alert alert-info">
+:information_source: **Info:**<br> 
+Parameters in the square brackets are optional, but you must specify at least one of them. 
+In addition, you can only edit ratings and descriptions if the item already has an existing review.
+</div>
 
 **Example:**
 
