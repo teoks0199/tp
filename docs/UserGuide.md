@@ -93,7 +93,7 @@ The following figure shows the GUI of FoodNotes. It is annotated with the name o
 </p>
 What the main components of the GUI do:
 
-* _Right and Left Display_: This is where FoodNotes displays the information of the page that you are viewing.
+* _Left and Right Display_: This is where FoodNotes displays the information of the page that you are viewing.
 
 * _Result Display_: This is where FoodNotes displays guiding messages.
 
@@ -277,7 +277,7 @@ Type `clear` into the _Command Box_ and press `Enter` to execute.
 Outcome:
 
 The FoodNotes database is now empty.
-![ClearOutcome](images/userGuide/ClearCommandOutcome.png)
+![ClearOutcome](images/userGuide/clearCommandOutcome.png)
 </div>
 
 
