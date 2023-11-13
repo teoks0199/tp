@@ -31,6 +31,7 @@ public class Rating implements Comparable<Rating> {
     }
 
     private String starRating(int rating) {
+        assert rating >= 1 && rating <= 5;
         StringBuilder starRating = new StringBuilder();
         for (int i = 0; i < 5; i++) {
             if (i < rating) {
