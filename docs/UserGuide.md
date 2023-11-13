@@ -6,7 +6,7 @@ title: FoodNotes User Guide
 <a name="introduction"></a>
 ## Introduction
 
-Welcome to the User Guide of **FoodNotes**!
+Welcome to the User Guide of FoodNotes!
 
 
 Ever find yourself forgetting the delightful dishes you savored? Hungry for a way to recall your favorite food experiences? FoodNotes has the solution.
@@ -209,6 +209,10 @@ Ensure that you have a stable internet connection and have a web browser on your
 
 `help`
 
+**Example:**
+
+In this example, you want to view the user guide of FoodNotes.
+
 <div markdown="block" class="alert alert-white">
 
 Requesting for help:
@@ -241,6 +245,10 @@ This command will exit the application immediately. All data is saved automatica
 **Format:**
 
 `exit`
+
+**Example:**
+
+In this example, you want to exit FoodNotes.
 
 <div markdown="block" class="alert alert-white">
 
@@ -420,16 +428,15 @@ Outcome:
 You can use this command to edit an existing stall, and update its name, location. If the stall has a review,
 you may edit its rating and/or description.
 
-<div markdown="block" class="alert alert-info">
-
-:information_source: **Info:**<br>
-You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the stall already has an existing review.
-
-</div>
-
 **Format:**
 
 `edit-stall s/STALL_INDEX [n/STALL_NAME] [l/STALL_LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION] `
+
+<div markdown="block" class="alert alert-info">
+:information_source: **Info:**<br> 
+Parameters in the square brackets are optional, but you must specify at least one of them. 
+In addition, you can only edit ratings and descriptions if the stall already has an existing review.
+</div>
 
 **Example:**
 
@@ -822,14 +829,15 @@ Outcome:
 
 You can use this command to edit an existing item, and update its name, location, rating and/or description.
 
-<div markdown="block" class="alert alert-info">
-:information_source: **Info:**<br> 
-You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the item already has an existing review.
-</div>
-
 **Format:**
 
 `edit-item s/STALL_INDEX i/ITEM_INDEX [n/ITEM_NAME] [p/ITEM_PRICE] [r/ITEM_RATING] [d/ITEM_DESCRIPTION] `
+
+<div markdown="block" class="alert alert-info">
+:information_source: **Info:**<br> 
+Parameters in the square brackets are optional, but you must specify at least one of them. 
+In addition, you can only edit ratings and descriptions if the item already has an existing review.
+</div>
 
 **Example:**
 
@@ -960,7 +968,7 @@ Outcome:
 | **Find stalls by item**     | `find-by-item` <br> e.g. `find-by-item` chicken              |
 
 
-### 6.5 Item-Management Commands <a id="item-management-commands"></a>
+### 6.5 Item Management Commands <a id="item-management-commands"></a>
 
 
 | Features               | Format, Examples                                                                                                                              |
