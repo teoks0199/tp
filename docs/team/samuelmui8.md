@@ -14,9 +14,9 @@ Given below are my contributions to the project.
     * Justification: This feature improves the product significantly because it allows the user to find the cheapest stalls easily,
   our target users who are students are likely to be more budget conscious and would find this feature useful.
     * Highlights: This enhancement required the creation of a new `Comparator` class, `StallPriceComparator`,
-  to handle the sorting of stalls in the model by average price. It also required a new method, `getAveragePrice`, in the `Stall` class 
+  to handle the sorting of stalls in the model by average price. It also required a new method, `getAveragePrice`, in the `Stall` class
   to dynamically calculate the average price of the stall when necessary and a new `Price` class to represent the price of each menu item.
-    
+
 
 * **New Feature**: Added the ability to add/delete reviews for menu items in FoodNotes. (PR [#66](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/66))
   * What it does: Allows the user to review menu items in a stall or remove a review from an item.

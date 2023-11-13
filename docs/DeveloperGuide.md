@@ -784,3 +784,4 @@ If double-clicking `FoodNotes.jar` does not work,
 2. Dealing with missing data files
    1. To simulate a missing data file, you can delete `addressbook.json` from the data folder.
    2. In the event of a missing data file, FoodNotes will automatically create a new data file with the preloaded data.
+   
