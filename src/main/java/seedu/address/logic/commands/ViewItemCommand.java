@@ -12,6 +12,7 @@ import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.item.Item;
+import seedu.address.model.stall.Menu;
 import seedu.address.model.stall.Stall;
 
 /**
@@ -54,9 +55,9 @@ public class ViewItemCommand extends Command {
         }
 
         Stall stallToViewFrom = lastShownList.get(stallIndex.getZeroBased());
-        List<Item> menu = stallToViewFrom.getMenu().getItemList();
+        Menu menu = stallToViewFrom.getMenu();
 
-        if (itemIndex.getZeroBased() >= menu.size()) {
+        if (itemIndex.getZeroBased() >= menu.numOfItem()) {
             throw new CommandException(Messages.MESSAGE_INVALID_ITEM_DISPLAYED_INDEX);
         }
 

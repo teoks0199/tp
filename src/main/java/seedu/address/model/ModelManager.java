@@ -226,7 +226,6 @@ public class ModelManager implements Model {
     public void setItemReview(Item item, ItemReview itemReview) {
         requireNonNull(item);
         requireNonNull(itemReview);
-
         item.setItemReview(itemReview);
     }
 
@@ -244,7 +243,8 @@ public class ModelManager implements Model {
     @Override
     public Item getFilteredItem(Index stallIndex, Index itemIndex) {
         requireAllNonNull(stallIndex, itemIndex);
-        return getFilteredStall(stallIndex).getMenu().getItem(itemIndex);
+        setFilteredStall(stallIndex);
+        return filteredStall.getItem(itemIndex);
     }
 
     @Override
@@ -256,7 +256,8 @@ public class ModelManager implements Model {
     @Override
     public void setFilteredItemList(Index stallIndex) {
         requireNonNull(stallIndex);
-        filteredItemList = filteredStalls.get(stallIndex.getZeroBased()).getMenuList();
+        setFilteredStall(stallIndex);
+        filteredItemList = filteredStall.getMenuList();
     }
 
     @Override

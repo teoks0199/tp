@@ -165,7 +165,7 @@ This section provides a summary of the parameters used when inputting commands i
    * `list` : Lists all stalls.
 6. Refer to the [Features](#features) below for details of each command. 
 
-<div markdown="block" class="alert alert-info">
+<div markdown="block" class="alert alert-">
 
 :bulb: **Tip:**<br>
 
@@ -197,7 +197,7 @@ The commands in this section allow you to perform operations on the entire syste
 
 You can use this command to view the online user guide, which contains information about all the instructions in FoodNotes.
 
-<div markdown="block" class="alert alert-warning">
+<div markdown="block" class="alert alert-info">
 
 :information_source: **Info:**<br>
 Ensure that you have a stable internet connection and have a web browser on your computer in order to access the user guide.
@@ -230,7 +230,7 @@ Outcome:
 
 You can use this command to exit FoodNotes.
 
-<div markdown="block" class="alert alert-warning">
+<div markdown="block" class="alert alert-info">
 
 :information_source: **Info:**<br>
 This command will exit the application immediately. All data is saved automatically and will be reloaded upon restart of the application.
@@ -376,7 +376,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/addStallOutcome.png)
 
-<div markdown="block" class="alert alert-warning">
+<div markdown="block" class="alert alert-info">
 
 :information_source: **Info:**<br>
 
@@ -417,7 +417,7 @@ Outcome:
 You can use this command to edit an existing stall, and update its name, location. If the stall has a review,
 you may edit its rating and/or description.
 
-<div markdown="block" class="alert alert-warning">
+<div markdown="block" class="alert alert-info">
 
 :information_source: **Info:**<br>
 You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the stall already has an existing review.
@@ -593,7 +593,6 @@ These features allow you to find stalls in FoodNotes. The finding features inclu
 #### 4.4.1 Finding stalls by name: `find-by-name` <a name="finding-stalls-by-name"></a>
 You can use this command to quickly locate specific food stalls based on their names. Even if you can only remember part of the stall name, this command can help you narrow down your choices effectively.
 
-
 **Format:** `find-by-name NAME_KEYWORD`
 
 <div markdown="block" class="alert alert-warning">
@@ -623,7 +622,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/find-by-name.png)
 
-<div markdown="block" class="alert alert-info">
+<div markdown="block" class="alert alert-warning">
 
 :bulb: **Tip:**<br>
 
@@ -654,7 +653,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/find-by-location.png)
 
-<div markdown="block" class="alert alert-info">
+<div markdown="block" class="alert alert-warning">
 
 :bulb: **Tip:**<br>
 
@@ -686,7 +685,7 @@ Outcome:
 ![ListOutcome](images/userGuide/find-by-item.png)
 
 
-<div markdown="block" class="alert alert-info">
+<div markdown="block" class="alert alert-warning">
 
 :bulb: **Tip:**<br>
 
@@ -760,7 +759,7 @@ Outcome:
 
 ![ListOutcome](images/userGuide/add-item.png)
 
-<div markdown="block" class="alert alert-warning">
+<div markdown="block" class="alert alert-info">
 
 :information_source: **Info:**<br>
 
@@ -800,7 +799,7 @@ Outcome:
 
 You can use this command to edit an existing item, and update its name, location, rating and/or description.
 
-<div markdown="block" class="alert alert-warning">
+<div markdown="block" class="alert alert-info">
 :information_source: **Info:**<br> 
 You must specify at least one of the optional parameters, and you can only edit ratings and descriptions if the item already has an existing review.
 </div>
