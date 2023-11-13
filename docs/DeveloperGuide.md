@@ -678,7 +678,7 @@ If double-clicking `FoodNotes.jar` does not work,
 
 1. Viewing a menu item while the stall details are shown
 
-   1. Prerequisites: View the stall details with the `view-stall` command. The menu items of the stall is displayed in the _Left Display_.
+   1. Prerequisites:  At least one stall in the list. At least one item in that stall. View the stall details with the `view-stall` command. The menu items of the stall is displayed in the _Left Display_.
 
    2. Test case: `view-item s/1`<br>
       Expected: _Result Display_ shows a success message. Details of the item are shown on the _Right Display_.
