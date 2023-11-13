@@ -153,7 +153,7 @@ This section provides a summary of the parameters used when inputting commands i
 3. Copy the file to the folder you want to use as the _home folder_ for your FoodNotes.
 
 4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar foodnotes.jar` command to run the application.<br>
-   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
+   A GUI similar to the screenshot below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
 5. Type the command in the _Command Box_ and press Enter to execute it. e.g. typing `help` and pressing Enter will open the help window.<br>
@@ -221,7 +221,7 @@ Requesting for help:
 Outcome:
 
 1. Your browser will now show the user guide of FoodNotes.
-2. You can now access information about all commands in FoodNotes via the browser.
+2. You can now access information about all commands in FoodNotes via the user guide.
 
 </div>
 
@@ -290,7 +290,7 @@ The FoodNotes database is now empty.
 ----
 ### 4.2 Stall Management <a id="stall-management"></a>
 
-These features allow you to manage information about the stalls in FoodNotes. You can record and perform the following actions:
+These features allow you to manage information about the stalls in FoodNotes. The stall management features include:
 - Listing all stalls
 - Viewing a stall
 - Adding a stall
@@ -315,8 +315,8 @@ Type `list` into the _Command Box_ and press `Enter` to execute.
 
 Outcome:
 
-1. The Result Display will show a success message.
-1. You can now see all your stalls in the _Left Display_.
+1. The _Result Display_ will show you a success message.
+2. The _Left Display_ will show you the list of stalls.
 </div>
 
 ![ListOutcome](images/userGuide/listOutcome.png)
@@ -342,9 +342,10 @@ Viewing a specific stall:
 
 Outcome:
 
-1. The _Result Display_ will show a success message.
-2. You can now see the details of the first stall in the _Right Display_.
-3. The _Left Display_ will show the list of items from the stall.
+1. The _Result Display_ will show you a success message.
+2. The _Left Display_ will show you the list of menu items from the stall.
+3. The _Right Display_ will show you the details of the stall.
+
 </div>
 
 ![ListOutcome](images/userGuide/viewStallOutcome.png)
@@ -368,9 +369,9 @@ Adding a new stall:
 
 Outcome:
 
-1. The _Result Display_ will show a success message.
+1. The _Result Display_ will show you a success message.
 1. You have now added a new stall with the specified name and location.
-2. List of stalls will be updated in the _Left Display_.
+2. The _Left Display_ will show you the updated list of stalls.
 </div>
 
 ![ListOutcome](images/userGuide/addStallOutcome.png)
@@ -387,14 +388,14 @@ Outcome:
 
 #### 4.2.4 Deleting a stall : `delete-stall` <a id="deleting-a-stall"></a>
 
-You can use this command to delete a stall from FoodNotes, making sure that your food diary is always up to date.
+You can use this command to delete a stall from FoodNotes, making sure that your food diary is always up-to-date.
 
 **Format:**
 
 `delete-stall s/STALL_INDEX`
 
 **Example:**
-You realised a stall has closed down and you want to delete it from FoodNotes.
+A stall has closed down, and you want to delete it from FoodNotes.
 <div markdown="block" class="alert alert-white">
 
 Deleting a specific stall:
@@ -404,9 +405,9 @@ Deleting a specific stall:
 
 Outcome:
 
-1. The _Result Display_ will show a success message.
+1. The _Result Display_ will show you a success message.
 1. You have now deleted the third stall from the list.
-2. The _Left Display_ will show the updated list of stalls.
+2. The _Left Display_ will show you the updated list of stalls.
 </div>
 
 ![ListOutcome](images/userGuide/deleteStallOutcome.png)
@@ -428,19 +429,19 @@ You must specify at least one of the optional parameters, and you can only edit 
 `edit-stall s/STALL_INDEX [n/STALL_NAME] [l/STALL_LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION] `
 
 **Example:**
-You wish to change the location of the Western stall in the list, as the stall has relocated from Utown to Deck.
+You wish to change the location of the Western Stall in the list, as the stall has relocated from Utown to Deck.
 <div markdown="block" class="alert alert-white">
 
 Editing a specific stall:
 
-1. Type `edit-stall s/1 l/Frontier` into the *Command Box*.
+1. Type `edit-stall s/1 l/Deck` into the *Command Box*.
 1. Press `Enter` to execute.
 
 Outcome:
 
-1. The *Result Display* will show a success message.
+1. The _Result Display_ will show you a success message.
 1. You have now edited the first stall from the list, and the list of stalls will be updated.
-2. The _Left Display_ will show the stall Name with the updated information.
+2. The _Left and Right Display_ will show you the stall's updated information.
 </div>
 
 ![ListOutcome](images/userGuide/editStallOutcome.png)
@@ -459,14 +460,14 @@ You want to give Japanese Stall a five-star rating as you love their cutlets.
 
 Reviewing a specific stall:
 
-1. Type `review-stall s/2 r/5 d/Their cutlets are amazing and crispy` into the _Command Box_.
+1. Type `review-stall s/2 r/5 d/Their cutlets are amazing and crispy.` into the _Command Box_.
 1. Press `Enter` to execute.
 
 Outcome:
 
-1. The _Result Display_ will show a success message.
-1. You have now reviewed the specific stall from the list, and the star ratings will be reflected.
-2. The _Right Display_ will show the new detailed review of the Stall.
+1. The _Result Display_ will show you a success message.
+1. You have now reviewed the second stall in the list.
+2. The _Right Display_ will show you the star rating and detailed review of the stall.
 </div>
 
 ![ListOutcome](images/userGuide/stallReviewOutcome.png)
@@ -480,7 +481,7 @@ You can use this command to delete a review of an existing stall.
 `delete-stall-review s/STALL_INDEX`
 
 **Example:**
-You decide to delete the review for the Western stall as you changed your mind.
+You decide to delete the review for the Western Stall as you accidentally reviewed the wrong stall.
 <div markdown="block" class="alert alert-white">
 
 Deleting a specific stall review:
@@ -490,9 +491,9 @@ Deleting a specific stall review:
 
 Outcome:
 
-1. The _Result Display_ will show a success message.
-1. You have now deleted the review of the specified stall from the list, and the list will be updated.
-2. The _Right Display_ will show that the review has been deleted.
+1. The _Result Display_ will show you a success message.
+1. You have now deleted the review of the first stall in the list.
+2. The _Right Display_ will show you that the review has been deleted.
 </div>
 
 ![ListOutcome](images/userGuide/deleteStallReviewOutcome.png)
@@ -500,7 +501,7 @@ Outcome:
 
 ---------------------------------------------------------------------------------------------------------------------
 ### 4.3 Stall Sorting <a id="stall-sorting"></a>
-These features allow you to sort stalls in FoodNotes. You can record and perform the following actions:
+These features allow you to sort stalls in FoodNotes. The sorting features include:
 - Sorting stalls by location
 - Sorting stalls by rating
 - Sorting stalls by price
@@ -523,7 +524,7 @@ Sorting the stalls by location:
 
 Outcome:
 
-1. The _Result Display_ will display a success message.
+1. The _Result Display_ will show you a success message.
 2. You will now see that the stalls are sorted by location in alphabetical order in the _Left Display_.
 
 </div>
@@ -532,7 +533,7 @@ Outcome:
 
 #### 4.3.2 Sorting stalls by rating: `sort-stalls-rating` <a id="sorting-stalls-by-rating"></a>
 
-You can use this command to sort the stalls by their rating in descending order, so the stall with the highest rating will appear right at the top!
+You can use this command to sort the stalls by their rating in descending order, so the stalls with the highest ratings will appear at the top!
 
 **Format:**
 `sort-stalls-rating`
@@ -548,7 +549,7 @@ Sorting stalls by rating:
 
 Outcome:
 
-1. The _Result Display_ will display a success message.
+1. The _Result Display_ will show you a success message.
 2. You will now see that the stalls are sorted by rating in descending order in the _Left Display_.
 </div>
 
@@ -556,7 +557,7 @@ Outcome:
 
 #### 4.3.3 Sorting stalls by price: `sort-stalls-price` <a id="sorting-stalls-by-price"></a>
 
-You can use this command to sort the stalls by the average price of its menu items in ascending order, and the stall with the cheapest food options can be easily retrieved!
+You can use this command to sort the stalls by the average price of its menu items in ascending order, so the cheapest stalls will appear at the top!
 
 **Format:**
 `sort-stalls-price`
@@ -572,7 +573,7 @@ Sorting stalls by price:
 
 Outcome:
 
-1. The _Result Display_ will display a success message.
+1. The _Result Display_ will show you a success message.
 2. You will now see that the stalls are sorted by average price in ascending order in the _Left Display_.
 </div>
 
@@ -584,7 +585,7 @@ Outcome:
 
 ### 4.4 Stall Finding <a id="stall-finding"></a>
 
-These features allow you to find stalls in FoodNotes. You can record and perform the following actions:
+These features allow you to find stalls in FoodNotes. The finding features include:
 - Finding stalls by name
 - Finding stalls by location
 - Finding stalls by item
@@ -592,6 +593,7 @@ These features allow you to find stalls in FoodNotes. You can record and perform
 #### 4.4.1 Finding stalls by name: `find-by-name` <a name="finding-stalls-by-name"></a>
 You can use this command to quickly locate specific food stalls based on their names. Even if you can only remember part of the stall name, this command can help you narrow down your choices effectively.
 
+<<<<<<< HEAD
 <div markdown="block" class="alert alert-info">
 
 :information_source: **Info:**<br> 
@@ -599,8 +601,20 @@ You need to type in the entire word instead of part of the word for it to find t
 
 </div>
 
+=======
+>>>>>>> master
 
 **Format:** `find-by-name NAME_KEYWORD`
+
+<div markdown="block" class="alert alert-warning">
+
+
+:information_source: **Info:**<br>
+If you have a "Japanese Stall" in FoodNotes, you can find it using `find-by-name japanese`
+as the `find` commands are case-insensitive.
+However, `find-by-name japan` will not return any results as "japan" is not an exact match for "japanese",
+and partial or incomplete matches won't trigger any response.
+</div>
 
 **Example:**
 You wish to find stalls that have 'Japanese' or 'Western' or 'Noodles' in their names.
@@ -613,7 +627,7 @@ Finding stalls by name:
 
 Outcome:
 
-1. The _Result Display_ will display a success message indicating the number of matches found.
+1. The _Result Display_ will show you a success message indicating the number of matches found.
 2. You will now see the matching stalls in the _Left Display_.
 </div>
 
@@ -644,7 +658,7 @@ finding stalls by location:
 
 Outcome:
 
-1. The _Result Display_ will display a success message indicating the number of matches found.
+1. The _Result Display_ will show you a success message indicating the number of matches found.
 2. You will now see the matching stalls in the _Left Display_.
 </div>
 
@@ -665,7 +679,7 @@ You can use this command to quickly locate specific food stalls based on the ite
 **Format:** `find-by-item ITEM_KEYWORD`
 
 **Example:**
-You wish to find stalls that sells chicken rice.
+You wish to find stalls that have chicken in their menu.
 <div markdown="block" class="alert alert-white">
 
 finding stalls by menu items:
@@ -675,7 +689,7 @@ finding stalls by menu items:
 
 Outcome:
 
-1. The _Result Display_ will display a success message.
+1. The _Result Display_ will show you a success message indicating the number of matches found.
 2. You will now see the matching stalls in the _Left Display_.
 </div>
 
@@ -694,7 +708,7 @@ Outcome:
 -----
 
 ### 4.5 Item Management <a id="item-management"></a>
-These features allow you to manage information about the items in FoodNotes. You can record and perform the following actions:
+These features allow you to manage information about the items in FoodNotes. The item management features include:
 
 - Viewing an item
 - Adding an item
@@ -723,8 +737,8 @@ Viewing a specific item from a specific stall:
 
 Outcome:
 
-1. The _Result Display_ will show a success message.
-1. The _Right Display_ will show the details of item.
+1. The _Result Display_ will show you a success message.
+1. The _Right Display_ will show you the details of item.
 </div>
 
 ![ListOutcome](images/userGuide/view-item.png)
@@ -748,10 +762,10 @@ Adding an item to a specific stall:
 
 Outcome:
 
-1. The _Result Display_ will show a success message.
+1. The _Result Display_ will show you a success message.
 2. You have now added a new item with the specified name and price.
-3. The _Left Display_ will show the updated list of items from the stall.
-4. The _Right Display_ will show the new item with the updated information.
+3. The _Left Display_ will show you the updated list of items from the stall.
+4. The _Right Display_ will show you the new item.
 </div>
 
 ![ListOutcome](images/userGuide/add-item.png)
@@ -783,9 +797,9 @@ Deleting a specific item from a specifc stall:
 
 Outcome:
 
-1. The _Result Display_ will show a success message.
+1. The _Result Display_ will show you a success message.
 1. You have now deleted the first menu item of the first stall.
-2. The _Left Display_ will show the updated list of items from the stall.
+2. The _Left Display_ will show you the updated list of items from the stall.
 </div>
 
 ![ListOutcome](images/userGuide/deleteItemOutcome.png)
@@ -806,7 +820,7 @@ You must specify at least one of the optional parameters, and you can only edit 
 `edit-item s/STALL_INDEX i/ITEM_INDEX [n/ITEM_NAME] [p/ITEM_PRICE] [r/ITEM_RATING] [d/ITEM_DESCRIPTION] `
 
 **Example:**
-You wish to edit the price of tiramisu from Western Stall as you entered it wrongly previously.
+You wish to edit the price of tiramisu from the Western Stall as the price has increased.
 <div markdown="block" class="alert alert-white">
 
 Editing a specific item from a specific stall:
@@ -816,9 +830,9 @@ Editing a specific item from a specific stall:
 
 Outcome:
 
-1. The _Result Display_ will show a success message.
+1. The _Result Display_ will show you a success message.
 2. You have now edited the first menu item of the first stall.
-3. The _Right Display_ will show the item with the updated information.
+3. The _Right Display_ will show you the item with the updated information.
 </div>
 
 ![ListOutcome](images/userGuide/editItemOutcome.png)
@@ -843,9 +857,9 @@ Reviewing a specific item from a specific stall
 
 Outcome:
 
-1. The _Result Display_ will show a success message.
-1. You have now reviewed the first menu item of the first stall, and the star ratings will be reflected.
-2. The _Right Display_ will show the new detailed review of the item.
+1. The _Result Display_ will show you a success message.
+1. You have now reviewed the first menu item of the first stall.
+2. The _Right Display_ will show you the star rating and detailed review of the item.
 </div>
 
 ![ListOutcome](images/userGuide/reviewItemOutcome.png)
@@ -860,7 +874,7 @@ You can use this command to delete a review of an existing item.
 `delete-item-review s/STALL_INDEX i/ITEM_INDEX`
 
 **Example:**
-You decide to delete the review for tiramisu from Western Stall as you entered it wrongly previously.
+You decide to delete the review for tiramisu from Western Stall as you accidentally reviewed the wrong item.
 <div markdown="block" class="alert alert-white">
 
 Deleting a specific item review from a specific stall :
@@ -870,9 +884,9 @@ Deleting a specific item review from a specific stall :
 
 Outcome:
 
-1. The _Result Display_ will show a success message.
+1. The _Result Display_ will show you a success message.
 2. You have now deleted the review of the first menu item of the first stall, and the menu will be updated.
-3. The _Right Display_ will show that the review has been deleted.
+3. The _Right Display_ will show you that the review has been deleted.
 </div>
 
 ![ListOutcome](images/userGuide/deleteItemReviewOutcome.png)
