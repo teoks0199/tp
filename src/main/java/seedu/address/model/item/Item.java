@@ -119,7 +119,7 @@ public class Item {
      * Returns true if both items have the same itemName.
      * This defines a weaker notion of equality between two items.
      * @param otherItem the other item to compare to.
-     * Returns true if both items have the same itemName.
+     * @returns true if both items have the same itemName.
      */
     public boolean isSameItem(Item otherItem) {
         if (otherItem == this) {

@@ -416,15 +416,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
     Use case resumes at step 1.
 
-* 1a. The given stall index, star rating or description is invalid.
+* 1b. The given stall index, star rating or description is invalid.
 
-    * 1a1. FoodNotes shows an error message.
+    * 1b1. FoodNotes shows an error message.
 
       Use case resumes at step 1.
 
-* 1b. The stall index, star rating or description is not specified
+* 1c. The stall index, star rating or description is not specified
 
-    * 1b1. FoodNotes shows an error message.
+    * 1c1. FoodNotes shows an error message.
 
       Use case resumes at step 1.
 
@@ -542,9 +542,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * **Card**: Used to display information including texts and images, in a structured and organised way.
 * **GUI**: Graphical User Interface
 * **Jar file**: A Java Archive file used to distribute and run Java applications
-* **Result display**: The component in the main window that displays the success/error messages to users whenever a command is entered.
-* **Left panel**: The component in the main window that displays the list of stalls in FoodNotes. When filtering commands such as `find-by-location` are used, the left panel will display the filtered list of stalls.
-* **Right panel**: The component in the main window that displays the list of valid commands to be used in FoodNotes. When `view-stall` or `view-item` commands are used, the right panel will display the details of the stall/menu item.
+* **Result Display**: The component in the main window that displays the success/error messages to users whenever a command is entered.
+* **Left Display**: The component in the main window that displays the list of stalls in FoodNotes. When filtering commands such as `find-by-location` are used, the _Left Display_ will display the filtered list of stalls.
+* **Right Display**: The component in the main window that displays the list of valid commands to be used in FoodNotes. When `view-stall` or `view-item` commands are used, the _Right Display_ will display the details of the stall/menu item.
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -564,30 +564,41 @@ testers are expected to do more *exploratory* testing.
 
    1. Download the jar file and copy into an empty folder
 
-   1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   2. Double-click the jar file Expected: Shows the GUI with a set of sample stalls. The window size may not be optimal.
 
-1. Saving window preferences
+2. Saving window preferences
 
-   1. Resize the window to an optimum size. Move the window to a different location. Close the window.
+   1. Resize the window to an optimal size. Move the window to a different location. Close the window.
 
-   1. Re-launch the app by double-clicking the jar file.<br>
+   2. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.
+   
+<div markdown="block" class="alert alert-success">
 
+:bulb: **Tip:**<br>
+
+If double-clicking `FoodNotes.jar` does not work,
+
+1. Search for "Command Prompt" or "Terminal" on your computer.
+2. Navigate to the location where `FoodNotes.jar` is saved via the terminal.
+3. Run the following in the terminal: `java -jar FoodNotes.jar`.
+
+</div>
 
 ### Adding a stall
 
 1. Adding a stall to FoodNotes.
 
-1. Prerequisites: None.
+   1. Prerequisites: None.
 
-1. Test case: `add-stall n/Pasta Express l/Deck`<br>
-   Expected: Pasta Express located in Deck is added to the list. The result display shows a success message. The list of the stalls on the left panel is updated.
+   2. Test case: `add-stall n/Pasta Express l/Deck`<br>
+      Expected: Pasta Express located in Deck is added to the list. The _Result Display_ shows a success message. The list of the stalls on the _Left Display_ is updated.
 
-1. Test case: `add-stall n/Indian Shop`<br>
-   Expected: No stall is added. Error details shown in the result display.
+   3. Test case: `add-stall n/Indian Shop`<br>
+      Expected: No stall is added. Error details shown in the _Result Display_.
 
-1. Other incorrect add commands to try: `add-stall`, `add-stall n/abc l/Deck l/Frontier`, `...` <br>
-   Expected: Similar to previous.
+   4. Other incorrect add commands to try: `add-stall`, `add-stall n/abc l/Deck l/Frontier`, `...` <br>
+      Expected: Similar to previous.
 
 ### Deleting a stall
 
@@ -595,44 +606,44 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
 
-   1. Test case: `delete-stall s/1`<br>
-      Expected: First stall is deleted from the list. Details of the deleted stall shown in the result display. List of stalls in the left panel is updated.
+   2. Test case: `delete-stall s/1`<br>
+      Expected: First stall is deleted from the list. Details of the deleted stall shown in the _Result Display_. List of stalls in the _Left Display_ is updated.
 
-   1. Test case: `delete-stall s/0`<br>
-      Expected: No stall is deleted. Error details shown in the result display.
+   3. Test case: `delete-stall s/0`<br>
+      Expected: No stall is deleted. Error details shown in the _Result Display_.
 
-   1. Other incorrect delete commands to try: `delete-stall`, `delete-stall s/x`, `...` (where x is larger than the list size)<br>
+   4. Other incorrect delete commands to try: `delete-stall`, `delete-stall s/x`, `...` (where x is larger than the list size)<br>
       Expected: Similar to previous.
 
 ### Viewing a stall
 
 1. Viewing a stall while all stalls are being shown
 
-  1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
+   1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
 
-  1. Test case: `view-stall s/1`<br>
-     Expected: Result display shows a success message. Details of the stall is shown on the left panel.
+   2. Test case: `view-stall s/1`<br>
+      Expected: _Result Display_ shows a success message. Details of the stall is shown on the _Left Display_.
 
-  1. Test case: `view-stall s/0`<br>
-     Expected: No stall is shown. Error details shown in the result display.
+   3. Test case: `view-stall s/0`<br>
+      Expected: No stall is shown. Error details shown in the _Result Display_.
 
-  1. Other incorrect view commands to try: `view-stall`, `view-stall s/x`, `...` (where x is larger than the list size)<br>
-     Expected: Similar to previous.
+   4. Other incorrect view commands to try: `view-stall`, `view-stall s/x`, `...` (where x is larger than the list size)<br>
+      Expected: Similar to previous.
 
 ### Reviewing a stall
 
 1. Reviewing a stall while the stall details are being shown.
 
-  1. Prerequisites: At least one stall in the list. View the stall using the `view-stall` command.
+   1. Prerequisites: At least one stall in the list. View the stall using the `view-stall` command.
 
-  1. Test case: `review-stall s/1 r/4 d/The food here is really good`<br>
-     Expected: The result display shows a success message. The stall details in the right panel is updated with the star ratings and review descriptions.
+   2. Test case: `review-stall s/1 r/4 d/The food here is really good`<br>
+      Expected: The _Result Display_ shows a success message. The stall details in the _Right Display_ is updated with the star ratings and review descriptions.
 
-  1. Test case: `review-stall s/1 r/4`<br>
-     Expected: No stall description is added. Error details shown in the result display.
+   3. Test case: `review-stall s/1 r/4`<br>
+      Expected: No stall description is added. Error details shown in the _Result Display_.
 
-  1. Other incorrect review commands to try: `review-stall s/1 r/3 r/5`(duplicate prefix), `review-stall s/1 d/xyz`, `...` (missing rating)<br>
-     Expected: Similar to previous.
+   4. Other incorrect review commands to try: `review-stall s/1 r/3 r/5`(duplicate prefix), `review-stall s/1 d/xyz`, `...` (missing rating)<br>
+      Expected: Similar to previous.
 
 
 ### Adding a menu item to a stall
@@ -641,29 +652,29 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: At least one stall in the list. View the stall details with the `view-stall` command. The menu items of the stall is displayed in the left panel.
 
-   1. Test case: `add-item s/1 n/Pork Chop p/4.50`<br>
-      Expected: Result display shows a success message. The menu item is added the list of menu items in the left panel.
+   2. Test case: `add-item s/1 n/Pork Chop p/4.50`<br>
+      Expected: _Result Display_ shows a success message. The menu item is added the list of menu items in the _Left Display_.
 
-   1. Test case: `add-item s/1 n/PorkChop p/$4.00`<br>
-      Expected: No item is added. Error details shown in the result display.
+   3. Test case: `add-item s/1 n/PorkChop p/$4.00`<br>
+      Expected: No item is added. Error details shown in the _Result Display_.
 
-   1. Other incorrect add commands to try: `add-item`, `add-item s/x n/x p/1.00`, `...` (where x is larger than the list size)<br>
+   4. Other incorrect add commands to try: `add-item`, `add-item s/x n/x p/y`, `...` (where x is larger than the list size, y is not a positive double with 2 decimal places in the specified format)<br>
       Expected: Similar to previous.
 
 ### Deleting a menu item from a stall
 
 1. Deleting a menu item while the stall details are shown
 
-  1. Prerequisites: At least one stall in the list. At least one item in that stall. View the stall details with the `view-stall` command. The menu items of the stall is displayed in the left panel.
+   1. Prerequisites: At least one stall in the list. At least one item in that stall. View the stall details with the `view-stall` command. The menu items of the stall is displayed in the left panel.
 
-  1. Test case: `delete-item s/1 i/1`<br>
-     Expected: First item is deleted from the list. Details of the deleted item shown in the result display. List of items in the left panel is updated.
+   2. Test case: `delete-item s/1 i/1`<br>
+      Expected: First item is deleted from the list. Details of the deleted item shown in the _Result Display_. List of items in the _Left Display_ is updated.
 
-  1. Test case: `delete-item s/0 i/1`<br>
-     Expected: No item is deleted. Error details shown in the result display.
+   3. Test case: `delete-item s/0 i/1`<br>
+      Expected: No item is deleted. Error details shown in the _Result Display_.
 
-  1. Other incorrect delete commands to try: `delete-item`, `delete-item s/1 i/0`, `delete-item s/x i/x`, `...` (where x is larger than the list size)<br>
-     Expected: Similar to previous.
+   4. Other incorrect delete commands to try: `delete-item`, `delete-item s/1 i/0`, `delete-item s/x i/x`, `...` (where x is larger than the list size)<br>
+      Expected: Similar to previous.
 
 ### Viewing a menu item to a stall
 
@@ -671,89 +682,89 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: At least one stall in the list. At least one item in that stall. View the stall details with the `view-stall` command. The menu items of the stall is displayed in the left panel.
 
-   1. Test case: `view-item s/1`<br>
-      Expected: Result display shows a success message. Details of the item are shown on the right panel.
+   2. Test case: `view-item s/1`<br>
+      Expected: _Result Display_ shows a success message. Details of the item are shown on the _Right Display_.
 
-   1. Test case: `view-item s/0`<br>
-      Expected: No item details are shown. Error details shown in the result display.
+   3. Test case: `view-item s/0`<br>
+      Expected: No item details are shown. Error details shown in the _Result Display_.
 
-   1. Other incorrect delete commands to try: `view-item`, `view-item s/x`, `...` (where x is larger than the list size)<br>
+   4. Other incorrect delete commands to try: `view-item`, `view-item s/x`, `...` (where x is larger than the list size)<br>
       Expected: Similar to previous.
 
 ### Sorting the stalls by location
 
 1. Sorting the stalls by locations while all stalls are shown.
 
-  1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
+   1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
 
-  1. Test case: `sort-stalls-location`<br>
-     Expected: Result display shows a success message. The list displayed in the left panel is sorted by alphabetical order based on their location.
+   2. Test case: `sort-stalls-location`<br>
+      Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ is sorted by alphabetical order based on their location.
 
 
-### Sorting the stalls by location
+### Sorting the stalls by rating
 
 1. Sorting the stalls by rating while all stalls are shown
 
    1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
 
-   1. Test case: `sort-stalls-rating`<br>
-      Expected: Result display shows a success message. The list displayed in the left panel is sorted in descending order based on ratings.
+   2. Test case: `sort-stalls-rating`<br>
+      Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ is sorted in descending order based on ratings.
 
 
 ### Sorting the stalls by price
 
 1. Sorting the stalls by price while all stalls are shown
 
-  1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
+   1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
 
-  1. Test case: `sort-stalls-price`<br>
-     Expected: Result display shows a success message. The list displayed in the left panel is sorted in ascending order based on average price.
+   2. Test case: `sort-stalls-price`<br>
+      Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ is sorted in ascending order based on average price.
 
 
-### Filter stalls by stall name
+### Finding stalls by stall name
 
-1. Filtering out the stalls that contains the keyword in the name.
+1. Finding the stalls that contain the keyword in the name.
 
    1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
 
-   1. Test case: `find-by-name japanese`<br>
-      Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls with the name containing the keyword 'japanese' (case-insensitive).
+   2. Test case: `find-by-name japanese`<br>
+      Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ contains all the stalls with the name containing the keyword 'japanese' (case-insensitive).
 
-   1. Test case: `find-by-name japanese western`<br>
-       Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls with the name containing the keyword 'japanese' or 'western' (case-insensitive).
+   3. Test case: `find-by-name japanese western`<br>
+       Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ contains all the stalls with the name containing the keyword 'japanese' or 'western' (case-insensitive).
 
-   1. Other incorrect find commands to try: `find-by-name`
-      Expected: No stall is found. Error details shown in the result display.
+   4. Other incorrect find commands to try: `find-by-name`
+      Expected: No stall is found. Error details shown in the _Result Display_.
 
-### Filter stalls by stall location
+### Finding stalls by stall location
 
-1. Filtering out the stalls that contains the keyword in the location.
+1. Finding the stalls that contain the keyword in the location.
 
-  1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
+   1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
 
-  1. Test case: `find-by-location utown`<br>
-     Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls with the location containing the keyword 'utown' (case-insensitive).
+   2. Test case: `find-by-location utown`<br>
+      Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ contains all the stalls with the location containing the keyword 'utown' (case-insensitive).
 
-  1. Test case: `find-by-location utown frontier`<br>
-     Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls with the location containing the keyword 'utown' or 'frontier' (case-insensitive).
+   3. Test case: `find-by-location utown frontier`<br>
+      Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ contains all the stalls with the location containing the keyword 'utown' or 'frontier' (case-insensitive).
 
-  1. Other incorrect find commands to try: `find-by-location`
-     Expected: No stall is found. Error details shown in the result display.
+   4. Other incorrect find commands to try: `find-by-location`
+      Expected: No stall is found. Error details shown in the _Result Display_.
 
-### Filter stalls by item name
+### Finding stalls by item name
 
-1. Filtering out the stalls that contains the keyword in the menu items.
+1. Finding the stalls that contain the keyword in their menu items.
 
-  1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
+   1. Prerequisites: Multiple stalls in the list. List all stalls using the `list` command.
 
-  1. Test case: `find-by-item chicken`<br>
-     Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls whose menu items contain the keyword 'chicken' (case-insensitive).
+   2. Test case: `find-by-item chicken`<br>
+   Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ contains all the stalls whose menu items contain the keyword 'chicken' (case-insensitive).
 
-  1. Test case: `find-by-item chicken pork`<br>
-     Expected: Result display shows a success message. The list displayed in the left panel contains all the stalls whose menu items contain the keyword 'chicken' or 'pork' (case-insensitive).
+   3. Test case: `find-by-item chicken pork`<br>
+     Expected: _Result Display_ shows a success message. The list displayed in the _Left Display_ contains all the stalls whose menu items contain the keyword 'chicken' or 'pork' (case-insensitive).
 
-  1. Other incorrect find commands to try: `find-by-item`
-     Expected: No stall is found. Error details shown in the result display.
+   4. Other incorrect find commands to try: `find-by-item`
+     Expected: No stall is found. Error details shown in the _Result Display_.
 
 ### Help
 1. Test case: `help`<br>
@@ -766,8 +777,13 @@ testers are expected to do more *exploratory* testing.
 
 ### Saving data
 
-1. Dealing with missing/corrupted data files
+1. Dealing with corrupted data files
 
-   1. To simulate a corrupted file, you can edit addressbook.json directly and introduce some texts that does not follow the correct format.
-   2. To reset the preloaded data, delete addressbook.json from the data folder and re-launch the app. FoodNotes will now only contain the original pre-loaded information.
+   1. To simulate a corrupted file, you can edit `addressbook.json` directly and introduce some texts that does not follow the correct format.
+   2. In the event of a corrupted data file, FoodNotes will automatically create a new data file with the no data. The user can then add new stalls to the data file.
+   3. If the user wishes to have the preloaded data, they can delete the corrupted data file and upon launch, FoodNotes will automatically create a new data file with the preloaded data.
 
+2. Dealing with missing data files
+   1. To simulate a missing data file, you can delete `addressbook.json` from the data folder.
+   2. In the event of a missing data file, FoodNotes will automatically create a new data file with the preloaded data.
+   

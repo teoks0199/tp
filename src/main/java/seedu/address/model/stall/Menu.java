@@ -60,7 +60,7 @@ public class Menu implements ReadOnlyMenu {
     //// item-level operations
 
     /**
-     * Returns true if a stall with the same identity as {@code item} exists in the menu.
+     * Returns true if an item with the same identity as {@code item} exists in the menu.
      */
     public boolean hasItem(Item item) {
         requireNonNull(item);
@@ -108,6 +108,11 @@ public class Menu implements ReadOnlyMenu {
         return this.items.isEmpty();
     }
 
+    /**
+     * Returns the average price of all items in the menu.
+     *
+     * @return AveragePrice object
+     */
     public AveragePrice getAveragePrice() {
         return this.items.getAveragePrice();
     }

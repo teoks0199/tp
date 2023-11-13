@@ -27,7 +27,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 [[portfolio](team/teoks0199.md)]
 
 * Role: Developer
-* Responsibilities: UI
+* Responsibilities: Backend
 
 ### Lim RuiZhi
 

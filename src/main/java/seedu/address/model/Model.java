@@ -206,8 +206,8 @@ public interface Model {
 
     /**
      * Get the item list that is filtered by stall.
+     * @return filtered item list.
      * @throws NullPointerException if {@code predicate} is null.
-     * @return filtered item list
      */
     ObservableList<Item> getFilteredItemList();
 

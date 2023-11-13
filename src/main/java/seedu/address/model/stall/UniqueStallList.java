@@ -72,10 +72,6 @@ public class UniqueStallList implements Iterable<Stall> {
         internalList.set(index, editedStall);
     }
 
-    public int getStallIndex(Stall stall) {
-        return internalList.indexOf(stall);
-    }
-
     /**
      * Sorts the stalls in the list by rating.
      */
