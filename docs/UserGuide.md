@@ -16,7 +16,7 @@ FoodNotes is a quick, simple and beautiful food diary made specifically for you,
 This application is optimised for use via a Command Line Interface (CLI) this means that you operate the application by typing commands into a _Command Box_. If you are fast at typing, you can manage your food reviews faster than other Graphical User Interface (GUI) applications; GUI applications allow users to interact with the application through graphical icons such as buttons.
 FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems.
 
-
+<div style="page-break-after: always;"></div>
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -157,6 +157,8 @@ This section provides a summary of the parameters used when inputting commands i
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## 3. Quick Start <a id="quick-start"></a>
 
 1. Ensure you have Java `11` or above installed in your Computer.
@@ -193,6 +195,8 @@ If double-clicking `FoodNotes.jar` does not work,
 
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## 4. Features <a id="features"></a>
 Now that you have started up FoodNotes, you are ready to start using its features! This section contains the details for every feature that is available in FoodNotes.
@@ -308,6 +312,9 @@ The FoodNotes database is now empty.
 
 
 ----
+
+<div style="page-break-after: always;"></div>
+
 ### 4.2 Stall Management <a id="stall-management"></a>
 
 These features allow you to manage information about the stalls in FoodNotes. The stall management features include:
@@ -524,6 +531,9 @@ Outcome:
 
 
 ---------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
+
 ### 4.3 Stall Sorting <a id="stall-sorting"></a>
 These features allow you to sort stalls in FoodNotes. The sorting features include:
 - Sorting stalls by location
@@ -612,6 +622,8 @@ Outcome:
 
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ### 4.4 Stall Finding <a id="stall-finding"></a>
 
@@ -733,6 +745,8 @@ Outcome:
 
 
 -----
+
+<div style="page-break-after: always;"></div>
 
 ### 4.5 Item Management <a id="item-management"></a>
 These features allow you to manage information about the items in FoodNotes. The item management features include:
@@ -928,6 +942,8 @@ Outcome:
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## 5. Glossary <a id="glossary"></a>
 
 | Term         | Explanation                                                                                                                                                                 |
@@ -940,6 +956,9 @@ Outcome:
 
 
 --------------------------
+
+<div style="page-break-after: always;"></div>
+
 ## 6. Command summary <a id="command-summary"></a>
 
 ### 6.1 General Commands <a id="general-commands"></a>
