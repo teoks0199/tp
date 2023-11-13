@@ -674,11 +674,11 @@ If double-clicking `FoodNotes.jar` does not work,
    4. Other incorrect delete commands to try: `delete-item`, `delete-item s/1 i/0`, `delete-item s/x i/x`, `...` (where x is larger than the list size)<br>
      Expected: Similar to previous.
 
-### Viewing a menu item to a stall
+### Viewing a menu item in a stall
 
 1. Viewing a menu item while the stall details are shown
 
-   1. Prerequisites: View the stall details with the `view-stall` command. The menu items of the stall is displayed in the _Left Display_.
+   1. Prerequisites:  At least one stall in the list. At least one item in that stall. View the stall details with the `view-stall` command. The menu items of the stall is displayed in the _Left Display_.
 
    2. Test case: `view-item s/1`<br>
       Expected: _Result Display_ shows a success message. Details of the item are shown on the _Right Display_.
