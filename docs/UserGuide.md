@@ -67,6 +67,7 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 
 ---
 
+<div style="page-break-after: always;"></div>
 
 ## 2. About the user guide <a id="about-the-user-guide"></a>
 This section contains information about the how to read the user guide, essentially your guide to the guide!
@@ -313,7 +314,6 @@ The FoodNotes database is now empty.
 
 ----
 
-<div style="page-break-after: always;"></div>
 
 ### 4.2 Stall Management <a id="stall-management"></a>
 
@@ -532,8 +532,6 @@ Outcome:
 
 ---------------------------------------------------------------------------------------------------------------------
 
-<div style="page-break-after: always;"></div>
-
 ### 4.3 Stall Sorting <a id="stall-sorting"></a>
 These features allow you to sort stalls in FoodNotes. The sorting features include:
 - Sorting stalls by location
@@ -622,8 +620,6 @@ Outcome:
 
 
 --------------------------------------------------------------------------------------------------------------------
-
-<div style="page-break-after: always;"></div>
 
 ### 4.4 Stall Finding <a id="stall-finding"></a>
 
@@ -745,8 +741,6 @@ Outcome:
 
 
 -----
-
-<div style="page-break-after: always;"></div>
 
 ### 4.5 Item Management <a id="item-management"></a>
 These features allow you to manage information about the items in FoodNotes. The item management features include:
