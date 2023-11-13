@@ -4,9 +4,9 @@ title: FoodNotes User Guide
 ---
 
 <a name="introduction"></a>
-## Introduction
+## 1. Introduction
 
-Welcome to the User Guide of **FoodNotes**!
+Welcome to the User Guide of FoodNotes!
 
 
 Ever find yourself forgetting the delightful dishes you savored? Hungry for a way to recall your favorite food experiences? FoodNotes has the solution.
@@ -23,10 +23,10 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 2. [About the User Guide](#about-the-user-guide) <br>
    &nbsp;&nbsp;&nbsp;&nbsp;2.1 [Navigating the User Guide](#navigating-the-user-guide) <br>
    &nbsp;&nbsp;&nbsp;&nbsp;2.2 [Reading the User Guide](#reading-the-user-guide) <br>
-   &nbsp;&nbsp;&nbsp;&nbsp;2.3 [Terminology related to the GUI](#terminology-related-to-the-gui) <br>
-   &nbsp;&nbsp;&nbsp;&nbsp;2.4 [Icons](#icons) <br>
-   &nbsp;&nbsp;&nbsp;&nbsp;2.5 [Command Syntax and Usage](#command-syntax-and-usage) <br>
-   &nbsp;&nbsp;&nbsp;&nbsp;2.6 [Input parameters](#input-parameters) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.1 [Terminology related to the GUI](#terminology-related-to-the-gui) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.2 [Icons](#icons) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.3 [Command Syntax and Usage](#command-syntax-and-usage) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;2.3 [Input parameters](#input-parameters) <br>
 3. [Quick Start](#quick-start) <br>
 4. [Features](#features) <br>
    &nbsp;&nbsp;&nbsp;&nbsp;4.1 [General Features](#general-features) <br>
@@ -69,6 +69,8 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 
 
 ## 2. About the user guide <a id="about-the-user-guide"></a>
+This section contains information about the how to read the user guide, essentially your guide to the guide!
+
 ### 2.1 Navigating the user guide <a id="navigating-the-user-guide"></a>
 
 **If you are a first time user:**
@@ -83,9 +85,9 @@ You can refer to the [Command summary](#command-summary) section for an overview
 
 
 ### 2.2 Reading the User Guide <a id="reading-the-user-guide"></a>
-Before you jump into the next section, take a moment to familiarise yourself with the technical terms, symbols, and syntax used throughout this document. This subsection contains all the essential information you need to understand the content better.
+Before you jump into the next sections, take a moment to familiarise yourself with the technical terms, icons, and syntax used throughout this document. This subsection contains all the essential information you need to understand the content better.
 
-### 2.3 Terminology related to the Graphical User Interface (GUI) <a id="terminology-related-to-the-gui"></a>
+#### 2.2.1 Terminology related to the Graphical User Interface (GUI) <a id="terminology-related-to-the-gui"></a>
 The following figure shows the GUI of FoodNotes. It is annotated with the name of the GUI components.
 
 <p align="center">
@@ -100,7 +102,7 @@ What the main components of the GUI do:
 * _Left and Right Display_: This is where FoodNotes displays the information of the page that you are viewing.
 
 
-### 2.4 Icons <a id="icons"></a>
+#### 2.2.2 Icons <a id="icons"></a>
 
 This section will run you through the icons used in this guide.
 
@@ -110,7 +112,7 @@ This section will run you through the icons used in this guide.
 | :warning:           | A warning sign indicates that the enclosed text is important, and usually entails details about potential errors. |
 |  :bulb:             | A light bulb indicates that the enclosed text is a tip.|
 
-### 2.5 Command Syntax and Usage <a id="command-syntax-and-usage"></a>
+#### 2.2.3 Command Syntax and Usage <a id="command-syntax-and-usage"></a>
 Since FoodNotes is a CLI application, knowing how to use commands is very important. The following subsection will teach you how to read and use commands in FoodNotes. All commands in FoodNotes follow similar formats as described below and examples will be provided to help you understand their usage. Examples of commands and their formats will be written in code-blocks.
 
 The table below explains some important technical terms. An example will be provided to help you visualize these terms.
@@ -121,7 +123,17 @@ The table below explains some important technical terms. An example will be prov
 | Parameter | The word or group of words following the command word. They are values given to a command to perform the specified action. |
 | Prefix | A prefix is a word that precedes a parameter. It is used to identify the type of parameter that is being input.            |
 
-### 2.6 Input parameters <a id="input-parameters"></a>
+**Example Command:**
+
+`add-stall n/Chicken Rice l/Deck`
+
+Command word: `add-stall`
+
+Parameters: `n/Chicken Rice` and `l/Deck`
+
+Prefixes: `n/` and `l/`
+
+### 2.3 Input parameters <a id="input-parameters"></a>
 
 This section provides a summary of the parameters used when inputting commands into the application.
 
@@ -183,7 +195,7 @@ If double-clicking `FoodNotes.jar` does not work,
 --------------------------------------------------------------------------------------------------------------------
 
 ## 4. Features <a id="features"></a>
-This section shares with you on how to use each feature in detail.
+This section shares how to use each feature in detail with you.
 
 
 ### 4.1 General Features <a id="general-features"></a>
@@ -960,7 +972,7 @@ Outcome:
 | **Find stalls by item**     | `find-by-item` <br> e.g. `find-by-item` chicken              |
 
 
-### 6.5 Item-Management Commands <a id="item-management-commands"></a>
+### 6.5 Item Management Commands <a id="item-management-commands"></a>
 
 
 | Features               | Format, Examples                                                                                                                              |
