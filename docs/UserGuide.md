@@ -593,7 +593,6 @@ These features allow you to find stalls in FoodNotes. The finding features inclu
 #### 4.4.1 Finding stalls by name: `find-by-name` <a name="finding-stalls-by-name"></a>
 You can use this command to quickly locate specific food stalls based on their names. Even if you can only remember part of the stall name, this command can help you narrow down your choices effectively.
 
-<<<<<<< HEAD
 <div markdown="block" class="alert alert-info">
 
 :information_source: **Info:**<br> 
@@ -601,8 +600,6 @@ You need to type in the entire word instead of part of the word for it to find t
 
 </div>
 
-=======
->>>>>>> master
 
 **Format:** `find-by-name NAME_KEYWORD`
 
