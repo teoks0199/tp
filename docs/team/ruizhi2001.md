@@ -65,7 +65,7 @@ Given below are my contributions to the project.
        * Updated UML diagrams for `BetterModelClassDiagram`, `ModelClassDiagram`
   * User Guide:
     1. Update Table of Contents and hyperlinks in UserGuide.
-       * PR(s): [#145](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/145) [#292](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/292)
+       * PR(s): [#145](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/145), [#292](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/292)
 
 * **Community**:
   * PRs reviewed (with non-trivial review comments): [#60](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/60), [#65](https://github.com/AY2324S1-CS2103T-W10-4/tp/pull/65)
