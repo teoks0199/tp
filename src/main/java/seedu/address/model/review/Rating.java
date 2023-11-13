@@ -49,7 +49,7 @@ public class Rating implements Comparable<Rating> {
             // null is considered to be the largest value
             return -1;
         }
-        return Integer.compare(Integer.parseInt(rating), Integer.parseInt(other.rating));
+        return Integer.compare(Integer.parseInt(other.rating), Integer.parseInt(rating));
     }
 
     @Override
