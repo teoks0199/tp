@@ -17,7 +17,7 @@ public class StallRatingComparatorTest {
         StallRatingComparator comparator = new StallRatingComparator();
         Stall stall1 = new StallBuilder(DUCK_RICE).build();
         Stall stall2 = new StallBuilder(NOODLES).build();
-        assertTrue(comparator.compare(stall1, stall2) > 0);
+        assertTrue(comparator.compare(stall2, stall1) > 0);
     }
 
     @Test
@@ -25,7 +25,7 @@ public class StallRatingComparatorTest {
         StallRatingComparator comparator = new StallRatingComparator();
         Stall stall1 = new StallBuilder(NOODLES).build();
         Stall stall2 = new StallBuilder(DUCK_RICE).build();
-        assertTrue(comparator.compare(stall1, stall2) < 0);
+        assertTrue(comparator.compare(stall2, stall1) < 0);
     }
 
     @Test

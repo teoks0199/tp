@@ -61,6 +61,7 @@ public class Item {
 
     /**
      * Returns the item rating string.
+     * @return the item rating string.
      */
     public String getItemRatingString() {
         if (itemReview == null) {
@@ -72,6 +73,7 @@ public class Item {
 
     /**
      * Returns the item description string.
+     * @return the item description string.
      */
     public String getItemDescriptionString() {
         if (itemReview == null) {
@@ -105,7 +107,7 @@ public class Item {
     }
 
     /**
-     * Returns true if the item has an item review.
+     * @return true if the item has an item review.
      */
     public boolean hasItemReview() {
         return this.itemReview != null;
@@ -115,6 +117,8 @@ public class Item {
     /**
      * Returns true if both items have the same itemName.
      * This defines a weaker notion of equality between two items.
+     * @param otherItem the other item to compare to.
+     * @returns true if both items have the same itemName.
      */
     public boolean isSameItem(Item otherItem) {
         if (otherItem == this) {
@@ -128,6 +132,8 @@ public class Item {
     /**
      * Returns true if both items have the same identity and data fields.
      * This defines a stronger notion of equality between two items.
+     * @param other the other item to compare to.
+     * @return true if both items have the same identity and data fields.
      */
     @Override
     public boolean equals(Object other) {

@@ -87,9 +87,6 @@ public class AddressBook implements ReadOnlyAddressBook {
         stalls.setStall(target, editedStall);
     }
 
-    public int getStallIndex(Stall stall) {
-        return stalls.getStallIndex(stall);
-    }
 
     /**
      * Removes {@code key} from this {@code AddressBook}.
