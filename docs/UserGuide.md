@@ -178,7 +178,7 @@ Positive integers are whole numbers greater than zero, e.g. 1, 2, 3, 4, 5, etc.
 
 4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar foodnotes.jar` command to run the application.<br>
    A GUI similar to the screenshot below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/Ui.png)
+   ![SampleData](images/sampledata.png)
 
 5. Type the command in the _Command Box_ and press Enter to execute it. e.g. typing `help` and pressing Enter will open the help window.<br>
    Some example commands you can try:
@@ -241,6 +241,8 @@ You want to view the user guide of FoodNotes.
 
 1. Type `help` into the _Command Box_ and press `Enter` to execute.
 2. A new window will appear as shown below. Click on the `Copy URL` button to copy the URL containing the FoodNotes user guide.
+
+   ![HelpOutcome](images/userGuide/helpCommandOutcome.png)
 
 3. Open your preferred web browser on your computer and paste the link into the address bar.
 4. Press `Enter` to load the website.
@@ -310,6 +312,9 @@ Type `clear` into the _Command Box_ and press `Enter` to execute.
 Outcome:
 
 The FoodNotes database is now empty.
+
+![ClearOutcome](images/userGuide/clearCommandOutcome.png)
+
 </div>
 
 ![ClearOutcome](images/userGuide/ClearCommandOutcome.png)
@@ -351,7 +356,7 @@ Outcome:
 2. The _Left Display_ will show you the list of stalls.
 </div>
 
-![ListOutcome](images/userGuide/listOutcome.png)
+![ListOutcome](images/userGuide/listCommandOutcome.png)
 
 #### 4.2.2 Viewing a specific stall : `view-stall` <a id="viewing-a-stall"></a>
 
