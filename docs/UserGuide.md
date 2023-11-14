@@ -56,13 +56,12 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.5.4 [Editing an item `edit-item`](#editing-an-item) <br>
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.5.5 [Reviewing an item `review-item`](#reviewing-an-item) <br>
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.5.6 [Deleting an item review `delete-item-review`](#deleting-an-item-review) <br>
-5. [Glossary](#glossary) <br>
-6. [Command Summary](#command-summary) <br>
-   &nbsp;&nbsp;&nbsp;&nbsp;6.1 [General Commands](#general-commands) <br>
-   &nbsp;&nbsp;&nbsp;&nbsp;6.2 [Stall Management Commands](#stall-management-commands) <br>
-   &nbsp;&nbsp;&nbsp;&nbsp;6.3 [Stall Sorting Commands](#stall-sorting-commands) <br>
-   &nbsp;&nbsp;&nbsp;&nbsp;6.4 [Stall Finding Commands](#stall-finding-commands) <br>
-   &nbsp;&nbsp;&nbsp;&nbsp;6.5 [Item Management Commands](#item-management-commands) <br>
+5. [Command Summary](#command-summary) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;5.1 [General Commands](#general-commands) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;5.2 [Stall Management Commands](#stall-management-commands) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;5.3 [Stall Sorting Commands](#stall-sorting-commands) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;5.4 [Stall Finding Commands](#stall-finding-commands) <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;5.5 [Item Management Commands](#item-management-commands) <br>
 
 
 ---
@@ -138,23 +137,28 @@ Prefixes: `n/` and `l/`
 
 This section provides a summary of the parameters used when inputting commands into the application.
 
-| Prefix | Parameter           | Meaning                                | Input                                       |
-|--------|---------------------|----------------------------------------|---------------------------------------------|
-| `n/`   | `STALL_NAME`        | Name of the stall                      | Non-empty string                            |
-| `s/`   | `STALL_INDEX`       | Index of the stall in the list         | Integer from 1 to 2147483647 (inclusive)    |
-| `l/`   | `STALL_LOCATION`    | Location of the stall                  | Non-empty string                            |
-| `n/`   | `ITEM_NAME`         | Name of the item                       | Non-empty string                            |
-| `i/`   | `ITEM_INDEX`        | Index of the item in the menu          | Integer from 1 to 2147483647 (inclusive)    |
-| `p/`   | `ITEM_PRICE`        | Price of the item                      | Non-negative number with 2 decimal places   |
-| `r/`   | `STALL_RATING`      | Rating of the stall                    | Integer from 1 to 5 (inclusive)             |
-| `r/`   | `ITEM_RATING`       | Rating of the item                     | Integer from 1 to 5 (inclusive)             |
-| `d/`   | `STALL_DESCRIPTION` | Descriptive review for the stall       | Non-empty string                            |
-| `d/`   | `ITEM_DESCRIPTION`  | Descriptive review for the item        | Non-empty string                            |
-| N/A    | `NAME_KEYWORD`      | Keyword of the stall name              | Non-empty string                            |
-| N/A    | `LOCATION_KEYWORD`  | Keyword of the stall location          | Non-empty string                            |
-| N/A    | `ITEM_KEYWORD`      | Keyword of the menu items in the stall | Non-empty string                            |
+| Prefix | Parameter           | Meaning                                | Input                                             |
+|--------|---------------------|----------------------------------------|---------------------------------------------------|
+| `n/`   | `STALL_NAME`        | Name of the stall                      | 1 or more characters                              |
+| `s/`   | `STALL_INDEX`       | Index of the stall in the list         | Positive integer from 1 to 2147483647 (inclusive) |
+| `l/`   | `STALL_LOCATION`    | Location of the stall                  | 1 or more characters                              |
+| `n/`   | `ITEM_NAME`         | Name of the item                       | 1 or more characters                              |
+| `i/`   | `ITEM_INDEX`        | Index of the item in the menu          | Positive integer from 1 to 2147483647 (inclusive) |
+| `p/`   | `ITEM_PRICE`        | Price of the item                      | Non-negative number with 2 decimal places         |
+| `r/`   | `STALL_RATING`      | Rating of the stall                    | Positive integer from 1 to 5 (inclusive)          |
+| `r/`   | `ITEM_RATING`       | Rating of the item                     | Positive integer from 1 to 5 (inclusive)          |
+| `d/`   | `STALL_DESCRIPTION` | Descriptive review for the stall       | 1 or more characters                              |
+| `d/`   | `ITEM_DESCRIPTION`  | Descriptive review for the item        | 1 or more characters                              |
+| N/A    | `NAME_KEYWORD`      | Keyword of the stall name              | 1 or more characters                              |
+| N/A    | `LOCATION_KEYWORD`  | Keyword of the stall location          | 1 or more characters                              |
+| N/A    | `ITEM_KEYWORD`      | Keyword of the menu items in the stall | 1 or more characters                              |
 
+<div markdown="block" class="alert alert-info">
 
+:information_source: **Info:**<br>
+Character refers to any letter, number, symbol or space e.g. `a`, `A`, `1`, `!`, `@`, etc.
+Positive integers are whole numbers greater than zero, e.g. 1, 2, 3, 4, 5, etc.
+</div>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -938,24 +942,9 @@ Outcome:
 
 <div style="page-break-after: always;"></div>
 
-## 5. Glossary <a id="glossary"></a>
+## 5. Command summary <a id="command-summary"></a>
 
-| Term         | Explanation                                                                                                                                                                 |
-|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **FoodNotes** | Can refer to name of the application as a whole or to the app’s storage file.<br>                                                                                           |
-| **Stall**    | Refers to a specific food stall in FoodNotes.<br>                                                                                                                           |
-| **Item**     | Refers to a specific menu item from a specific stall in FoodNotes. <br>                                                                                                     |
-| **CLI**      | A Command Line Interface (CLI) is a text-based user interface that allows users to type text commands instructing the program to do specific tasks.                         |
-| **GUI**      | A Graphical User Interface (GUI) is a form of user interface that allows users to interact with the program through graphical icons instead of text-based user interfaces.  |
-
-
---------------------------
-
-<div style="page-break-after: always;"></div>
-
-## 6. Command summary <a id="command-summary"></a>
-
-### 6.1 General Commands <a id="general-commands"></a>
+### 5.1 General Commands <a id="general-commands"></a>
 
 | Features  | Format, Examples |
 |-----------|------------------|
@@ -963,7 +952,7 @@ Outcome:
 | **Exit**  | `exit`           |
 | **Clear** | `clear`          |
 
-### 6.2 Stall Management Commands <a id="stall-management-commands"></a>
+### 5.2 Stall Management Commands <a id="stall-management-commands"></a>
 
 | Features                | Format, Examples                                                                                                                         |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
@@ -975,7 +964,7 @@ Outcome:
 | **Review stall**        | `review-stall s/STALL_INDEX r/STALL_RATING d/DESCRIPTION` <br> e.g. `review-stall` s/1 r/5 d/Good food and service                       |                                                                                                                                                             |
 | **Delete stall review** | `delete-stall-review s/STALL_INDEX` <br> e.g. `delete-stall-review` s/1                                                                  |
 
-### 6.3 Stall Sorting Commands <a id="stall-sorting-commands"></a>
+### 5.3 Stall Sorting Commands <a id="stall-sorting-commands"></a>
 
 | Features                    | Format, Examples                                        |
 |-----------------------------|---------------------------------------------------------|
@@ -983,7 +972,7 @@ Outcome:
 | **Sort stalls by rating**   | `sort-stalls-rating` <br> e.g. `sort-stalls-rating`     |
 | **Sort stalls by price**    | `sort-stalls-price` <br> e.g. `sort-stalls-price`       |
 
-### 6.4 Stall Finding Commands <a id="stall-finding-commands"></a>
+### 5.4 Stall Finding Commands <a id="stall-finding-commands"></a>
 
 | Features                    | Format, Examples                                             |
 |-----------------------------|--------------------------------------------------------------|
@@ -992,7 +981,7 @@ Outcome:
 | **Find stalls by item**     | `find-by-item` <br> e.g. `find-by-item` chicken              |
 
 
-### 6.5 Item Management Commands <a id="item-management-commands"></a>
+### 5.5 Item Management Commands <a id="item-management-commands"></a>
 
 
 | Features               | Format, Examples                                                                                                                              |
