@@ -235,15 +235,15 @@ Ensure that you have a stable internet connection and have a web browser on your
 
 **Example:**
 
-In this example, you want to view the user guide of FoodNotes.
-
 <div markdown="block" class="alert alert-white">
 
-Requesting for help:
+You want to view the user guide of FoodNotes.
 
 1. Type `help` into the _Command Box_ and press `Enter` to execute.
 2. A new window will appear as shown below. Click on the `Copy URL` button to copy the URL containing the FoodNotes user guide.
+
    ![HelpOutcome](images/userGuide/helpCommandOutcome.png)
+
 3. Open your preferred web browser on your computer and paste the link into the address bar.
 4. Press `Enter` to load the website.
 
@@ -253,6 +253,8 @@ Outcome:
 2. You can now access information about all commands in FoodNotes via the user guide.
 
 </div>
+
+![HelpOutcome](images/userGuide/helpOutcome.png)
 
 <a id="exiting-the-application"></a>
 #### 4.1.2 Exiting from the application: `exit`
@@ -272,11 +274,9 @@ This command will exit the application immediately. All data is saved automatica
 
 **Example:**
 
-In this example, you want to exit FoodNotes.
-
 <div markdown="block" class="alert alert-white">
 
-Exiting the application:
+You want to exit FoodNotes.
 
 Type `exit` into the _Command Box_ and press `Enter` to execute.
 
@@ -303,20 +303,21 @@ This command will permanently delete all data stored in FoodNotes. You should ma
 
 **Example:**
 
-In this example, you want to clear all data stored in FoodNotes.
-
 <div markdown="block" class="alert alert-white">
 
-Exiting the application:
+You want to clear all data stored in FoodNotes.
 
 Type `clear` into the _Command Box_ and press `Enter` to execute.
 
 Outcome:
 
 The FoodNotes database is now empty.
+
 ![ClearOutcome](images/userGuide/clearCommandOutcome.png)
+
 </div>
 
+![ClearOutcome](images/userGuide/ClearCommandOutcome.png)
 
 
 
@@ -342,11 +343,12 @@ You can use this command to view the list of all the stalls in FoodNotes.
 
 `list`
 
+**Example:**
 
 <div markdown="block" class="alert alert-white">
 
-Listing all your stalls:
-Type `list` into the _Command Box_ and press `Enter` to execute.
+You wish to view all the stalls in FoodNotes.
+1. Type `list` into the _Command Box_ and press `Enter` to execute.
 
 Outcome:
 
@@ -358,7 +360,7 @@ Outcome:
 
 #### 4.2.2 Viewing a specific stall : `view-stall` <a id="viewing-a-stall"></a>
 
-You can use this command to view details from a specific stall from FoodNotes, which includes the menu items and review of the stall.
+You can use this command to view details from a specific stall from FoodNotes and take a look at its menu items and review of the stall.
 
 **Format:**
 
@@ -366,11 +368,9 @@ You can use this command to view details from a specific stall from FoodNotes, w
 
 **Example:**
 
-You wish to view more details of Japanese Stall.
-
 <div markdown="block" class="alert alert-white">
 
-Viewing a specific stall:
+You wish to view more details of the Japanese stall, which is the first stall in the list.
 
 1. Type `view-stall s/1` into the _Command Box_.
 2. Press `Enter` to execute.
@@ -395,10 +395,10 @@ You can use this command to add a new stall to FoodNotes.
 
 **Example:**
 
-You just visited the newly opened Subway at Utown and wish to add it to FoodNotes.
+
 <div markdown="block" class="alert alert-white">
 
-Adding a new stall:
+You just visited the newly opened Subway at Utown and wish to add it to FoodNotes.
 
 1. Type `add-stall n/Subway l/Utown` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -432,10 +432,10 @@ You can use this command to delete a stall from FoodNotes, making sure that your
 
 **Example:**
 
-A stall has closed down, and you want to delete it from FoodNotes.
+
 <div markdown="block" class="alert alert-white">
 
-Deleting a specific stall:
+Western Stall has closed down, and you want to delete it from FoodNotes.
 
 1. Type `delete-stall s/3` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -466,10 +466,10 @@ In addition, you can only edit ratings and descriptions if the stall already has
 
 **Example:**
 
-You wish to change the location of the Western Stall in the list, as the stall has relocated from Utown to Deck.
 <div markdown="block" class="alert alert-white">
 
-Editing a specific stall:
+You wish to change the location of the Western Stall in the list, as the stall has relocated from Utown to Deck.
+
 
 1. Type `edit-stall s/1 l/Deck` into the *Command Box*.
 1. Press `Enter` to execute.
@@ -493,10 +493,8 @@ You can use this command to review an existing stall, and add your own star rati
 
 **Example:**
 
-You want to give Japanese Stall a five-star rating as you love their cutlets.
 <div markdown="block" class="alert alert-white">
-
-Reviewing a specific stall:
+You want to give the Japanese Stall a five-star rating as you love their cutlets.
 
 1. Type `review-stall s/2 r/5 d/Their cutlets are amazing and crispy.` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -520,10 +518,10 @@ You can use this command to delete a review of an existing stall.
 
 **Example:**
 
-You decide to delete the review for the Western Stall as you accidentally reviewed the wrong stall.
 <div markdown="block" class="alert alert-white">
 
-Deleting a specific stall review:
+You decide to delete the review for the Western Stall as you accidentally reviewed the wrong stall.
+
 
 1. Type `delete-stall-review s/1` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -556,10 +554,9 @@ You can use this command to sort the stalls by their location in alphabetical or
 
 **Example:**
 
-You wish to sort the stalls by their location in alphabetical order.
 <div markdown="block" class="alert alert-white">
 
-Sorting the stalls by location:
+You wish to sort the stalls by their location in alphabetical order.
 
 1. Type `sort-stalls-location` in the _Command Box_.
 2. press `Enter` to execute.
@@ -583,10 +580,9 @@ You can use this command to sort the stalls by their rating in descending order,
 
 **Example:**
 
-You wish to view the stalls' rating in descending order.
 <div markdown="block" class="alert alert-white">
 
-Sorting stalls by rating:
+You wish to sort the stalls by their rating in descending order.
 
 1. Type `sort-stalls-rating` in the _Command Box_.
 2. press `Enter` to execute.
@@ -609,10 +605,10 @@ You can use this command to sort the stalls by the average price of its menu ite
 
 **Example:**
 
-You wish to view the stalls' average price in ascending order.
 <div markdown="block" class="alert alert-white">
 
-Sorting stalls by price:
+You wish to sort the stalls by their average price in ascending order.
+
 
 1. Type `sort-stalls-price` in the _Command Box_.
 2. press `Enter` to execute.
@@ -654,10 +650,9 @@ However, partial or incomplete matches won't count as a match, thus`find-by-name
 
 **Example:**
 
-You wish to find stalls that have 'Japanese' or 'Western' or 'Noodles' in their names.
 <div markdown="block" class="alert alert-white">
 
-Finding stalls by name:
+You wish to find stalls that have 'Japanese' or 'Western' or 'Noodles' in their names.
 
 1. Type `find-by-name Japanese Western Noodles` in the _Command Box_.
 2. Press `Enter` to execute.
@@ -688,10 +683,9 @@ You can use this command to quickly locate specific food stalls based on their l
 
 **Example:**
 
-You wish to find stalls that are located at the Deck.
 <div markdown="block" class="alert alert-white">
 
-finding stalls by location:
+You wish to find stalls that are located at the Deck.
 
 1. Type `find-by-location deck` in the _Command Box_.
 2. Press `Enter` to execute.
@@ -722,10 +716,9 @@ You can use this command to quickly locate specific food stalls based on the ite
 
 **Example:**
 
-You wish to find stalls that have chicken in their menu.
 <div markdown="block" class="alert alert-white">
 
-finding stalls by menu items:
+You wish to find stalls that have chicken in their menu.
 
 1. Type `find-by-item chicken` in the _Command Box_.
 2. Press `Enter` to execute.
@@ -771,10 +764,9 @@ which includes the price, rating and description of the item.
 
 **Example:**
 
-You want to view more about Chicken Katsu Curry from Japanese stall.
 <div markdown="block" class="alert alert-white">
 
-Viewing a specific item from a specific stall:
+You want to view more about Chicken Katsu Curry from the Japanese stall.
 
 1. Type `view-item s/1 i/1` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -797,10 +789,9 @@ You can use this command to add your new favourite food item to your favourite s
 
 **Example:**
 
-You want to add a new item name 'Pork Chop' with the price of $5.50 to Japanese stall.
 <div markdown="block" class="alert alert-white">
 
-Adding an item to a specific stall:
+You want to add a new menu item named 'Pork Chop' with a price of $5.50 to the menu of the Japanese stall.
 
 1. Type `add-item s/1 n/Pork Chop p/5.50` into the _Command Box_.
 2. Press `Enter` to execute.
@@ -833,10 +824,9 @@ You can use this command to delete an item from the database.
 
 **Example:**
 
-You wish to delete item "mochi" from Western Stall.
 <div markdown="block" class="alert alert-white">
 
-Deleting a specific item from a specifc stall:
+You wish to delete item "mochi" from Western Stall.
 
 1. Type `delete-item s/1 i/1` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -868,10 +858,9 @@ In addition, you can only edit ratings and descriptions if the item already has 
 
 **Example:**
 
-You wish to edit the price of tiramisu from the Western Stall as the price has increased.
 <div markdown="block" class="alert alert-white">
 
-Editing a specific item from a specific stall:
+You wish to edit the price of tiramisu from the Western Stall as the price has increased.
 
 1. Type `edit-item s/1 i/1 p/20.10` into the _Command Box_.
 2. Press `Enter` to execute.
@@ -896,10 +885,9 @@ You can use this command to review an existing item, and add your own star ratin
 
 **Example:**
 
-You wish to review the chicken cutlet from the Japanese Stall as it was delicious.
 <div markdown="block" class="alert alert-white">
 
-Reviewing a specific item from a specific stall
+You wish to review the chicken cutlet from the Japanese Stall as it was delicious.
 
 1. Type `review-item s/1 i/1 r/4 d/Very Flavourful` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -924,10 +912,9 @@ You can use this command to delete a review of an existing item.
 
 **Example:**
 
-You decide to delete the review for tiramisu from Western Stall as you accidentally reviewed the wrong item.
 <div markdown="block" class="alert alert-white">
 
-Deleting a specific item review from a specific stall :
+You decide to delete the review for tiramisu from Western Stall as you accidentally reviewed the wrong item.
 
 1. Type `delete-item-review s/1 i/1` into the _Command Box_.
 2. Press `Enter` to execute.
