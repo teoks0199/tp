@@ -178,7 +178,7 @@ Positive integers are whole numbers greater than zero, e.g. 1, 2, 3, 4, 5, etc.
 
 4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar foodnotes.jar` command to run the application.<br>
    A GUI similar to the screenshot below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![SampleData](images/sampledata.png)
+   ![PreloadedStalls](images/preloadedStalls.png)
 
 5. Type the command in the _Command Box_ and press Enter to execute it. e.g. typing `help` and pressing Enter will open the help window.<br>
    Some example commands you can try:
