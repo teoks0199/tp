@@ -63,7 +63,7 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
    &nbsp;&nbsp;&nbsp;&nbsp;5.3 [Stall Sorting Commands](#stall-sorting-commands) <br>
    &nbsp;&nbsp;&nbsp;&nbsp;5.4 [Stall Finding Commands](#stall-finding-commands) <br>
    &nbsp;&nbsp;&nbsp;&nbsp;5.5 [Item Management Commands](#item-management-commands) <br>
-
+6. [FAQ](#faq) <br>
 
 ---
 
@@ -996,7 +996,21 @@ Outcome:
 | **Edit item**          | `edit-item s/STALL_INDEX i/ITEM_INDEX [n/ITEM_NAME] [p/ITEM_PRICE] [r/ITEM_RATING] [d/ITEM_DESCRIPTION]` <br> e.g. `edit-item` s/1 i/1 p/5.00 |
 | **Review item**        | `review-item s/STALL_INDEX i/ITEM_INDEX r/ITEM_RATING d/ITEM_DESCRIPTION` <br> e.g. `review-item` s/1 i/1 r/5 d/Flavorful                     |                                                                                                                                                             |
 | **Delete item review** | `delete-item-review s/STALL_INDEX i/ITEM_INDEX` <br> e.g. `delete-item-review` s/1 i/1                                                        |
+## 6. FAQ<a id="faq"></a>
 
+**Q:** Can I use FoodNotes without prior experience with CLI (Command Line Interface) applications? <br>
+**A:** Yes, FoodNotes is designed to be user-friendly, even for those unfamiliar with CLI applications. The user guide includes explanations of all commands and their syntax, making it accessible for beginners. 
 
+**Q:** How do I transfer my data to another Computer? <br>
+**A:** Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous FoodNotes home folder.
+
+**Q:** How can I export or backup my FoodNotes data? <br>
+**A:** Currently, FoodNotes does not support direct data export or backup. We recommend manually backing up the database file from the application directory.
+
+**Q:** Do I need to manually save my data? <br>
+**A:** No, FoodNotes automatically saves your data after any command that changes the data. There is no need for you to save manually.
+
+**Q:** Can I run FoodNotes on my mobile device? <br>
+**A:** No, FoodNotes is currently only available for Windows, Mac and Linux operating systems.
 
 --------------------------------------------------------------------------------------------------------------------
