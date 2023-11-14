@@ -70,7 +70,7 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 <div style="page-break-after: always;"></div>
 
 ## 2. About the user guide <a id="about-the-user-guide"></a>
-This section is your guide to the user guide! It gives you all the information you need to easily navigate and get the most out of the user guide. 
+This section is your guide to the user guide! It gives you all the information you need to easily navigate and get the most out of the user guide.
 ### 2.1 Navigating the user guide <a id="navigating-the-user-guide"></a>
 
 **If you are a first time user:**
@@ -88,12 +88,12 @@ You can refer to the [Command summary](#command-summary) section for an overview
 Before you jump into the upcoming sections, take a moment to familiarise yourself with the technical terms, icons, and syntax used throughout this document. This subsection contains all the essential information you need to understand the content better.
 
 #### 2.2.1 Terminology related to the Graphical User Interface (GUI) <a id="terminology-related-to-the-gui"></a>
-The following figure shows the GUI of FoodNotes. It is annotated with the name of the GUI components.
+Let's introduce you to FoodNotes' user interface! The following image showcases the different components and their respective functions in FoodNotes.
 
 <p align="center">
 <img src="images/userGuide/Frame.png" alt="Layout of GUI">
 </p>
-What the main components of the GUI do:
+What the main components do:
 
 * _Command Box_: This is where you type your commands.
 
@@ -114,7 +114,7 @@ This section will run you through the icons used in this guide.
 
 
 #### 2.2.3 Command Syntax and Usage <a id="command-syntax-and-usage"></a>
-Since FoodNotes is a CLI application, knowing how to use commands is crucial. The following subsection will teach you how to read and use commands in FoodNotes. All commands in FoodNotes follow similar formats as illustrated in the table below and examples will be provided to help you understand their usage. 
+Since FoodNotes is a CLI application, knowing how to use commands is crucial. The following subsection will guide you on how to read and use commands in FoodNotes. All commands in FoodNotes follow similar formats as illustrated in the table below and examples will be provided to help you understand their usage.
 
 
 |**Technical Term** | **Meaning**                                                                                                                                          |
@@ -187,7 +187,7 @@ Positive integers are whole numbers greater than zero, e.g. 1, 2, 3, 4, 5, etc.
    * `view-stall s/1` : Shows the 1st stall shown in the current list.
 
    * `list` : Lists all stalls.
-6. Refer to the [Features](#features) below for details of each command. 
+6. Refer to the [Features](#features) below for details of each command.
 
 <div markdown="block" class="alert alert-success">
 
@@ -208,7 +208,7 @@ If double-clicking `FoodNotes.jar` does not work,
 <div style="page-break-after: always;"></div>
 
 ## 4. Features <a id="features"></a>
-Now that you have started up FoodNotes, you are ready to start using its features! This section contains the details for every feature that is available in FoodNotes.
+Now that you have started up FoodNotes, you are ready to start using its features! This section unveils the array of features FoodNotes has to offer.
 
 ### 4.1 General Features <a id="general-features"></a>
 
@@ -232,9 +232,7 @@ Ensure that you have a stable internet connection and have a web browser on your
 **Format:**
 
 `help`
-
 **Example:**
-
 <div markdown="block" class="alert alert-white">
 
 You want to view the user guide of FoodNotes.
@@ -271,9 +269,7 @@ This command will exit the application immediately. All data is saved automatica
 **Format:**
 
 `exit`
-
 **Example:**
-
 <div markdown="block" class="alert alert-white">
 
 You want to exit FoodNotes.
@@ -285,9 +281,9 @@ Outcome:
 The FoodNotes application window is now closed.
 </div>
 
-#### 4.1.3 Clearing the FoodNotes database: `clear` <a id="clearing-the-database"></a>
+#### 4.1.3 Clearing all the stalls in FoodNotes: `clear` <a id="clearing-the-database"></a>
 
-You can use this command to clear the database in FoodNotes.
+You can use this command to clear all existing stalls in FoodNotes.
 
 <div markdown="block" class="alert alert-danger">
 
@@ -300,7 +296,6 @@ This command will permanently delete all data stored in FoodNotes. You should ma
 **Format:**
 
 `clear`
-
 **Example:**
 
 <div markdown="block" class="alert alert-white">
@@ -326,7 +321,7 @@ The FoodNotes database is now empty.
 
 ### 4.2 Stall Management <a id="stall-management"></a>
 
-These features allow you to manage information about the stalls in FoodNotes. The stall management features include:
+Explore FoodNotes' stall management features designed to simplify your experience. The stall management features include:
 - Listing all stalls
 - Viewing a stall
 - Adding a stall
@@ -337,7 +332,7 @@ These features allow you to manage information about the stalls in FoodNotes. Th
 
 #### 4.2.1 Listing all stalls : `list` <a id="listing-all-stalls"></a>
 
-You can use this command to view the list of all the stalls in FoodNotes.
+You can use this one-word command to view the list of all the stalls in FoodNotes..
 
 **Format:**
 
@@ -395,10 +390,9 @@ You can use this command to add a new stall to FoodNotes.
 
 **Example:**
 
-
 <div markdown="block" class="alert alert-white">
 
-You just visited the newly opened Subway at Utown and wish to add it to FoodNotes.
+You just visited the newly opened Subway at Utown and are eager to add it to FoodNotes.
 
 1. Type `add-stall n/Subway l/Utown` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -416,7 +410,7 @@ Outcome:
 
 :information_source: **Info:**<br>
 
-* You are not allowed to add duplicate stalls of the same name and location (case-insensitive) to FoodNotes.
+* Let's keep it unique! Avoid adding duplicate stalls with the same name and location (case-insensitive) to FoodNotes.
 
 
 </div>
@@ -451,7 +445,7 @@ Outcome:
 
 #### 4.2.5 Editing a specific stall : `edit-stall` <a id="editing-a-stall"></a>
 
-You can use this command to edit an existing stall, and update its name, location. If the stall has a review,
+You can use this command to edit an existing stall, and update its name and/or location. If the stall has a review,
 you may edit its rating and/or description.
 
 **Format:**
@@ -459,8 +453,8 @@ you may edit its rating and/or description.
 `edit-stall s/STALL_INDEX [n/STALL_NAME] [l/STALL_LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION] `
 
 <div markdown="block" class="alert alert-info">
-:information_source: **Info:**<br> 
-Parameters in the square brackets are optional, but you must specify at least one of them. 
+:information_source: **Info:**<br>
+Parameters in the square brackets are optional, but you must specify at least one of them.
 In addition, you can only edit ratings and descriptions if the stall already has an existing review.
 </div>
 
@@ -485,7 +479,7 @@ Outcome:
 
 #### 4.2.6 Reviewing a stall : `review-stall` <a id="reviewing-a-stall"></a>
 
-You can use this command to review an existing stall, and add your own star rating and even some text descriptions for the stall.
+You can use this command to add some personal touch to your food diary! Add star rating and even some text descriptions for the stall.
 
 **Format:**
 
@@ -635,7 +629,7 @@ These features allow you to find stalls in FoodNotes. The finding features inclu
 #### 4.4.1 Finding stalls by name: `find-by-name` <a name="finding-stalls-by-name"></a>
 You can use this command to quickly locate specific food stalls based on their names. Even if you can only remember part of the stall name, this command can help you narrow down your choices effectively.
 
-**Format:** 
+**Format:**
 
 `find-by-name NAME_KEYWORD`
 
@@ -677,7 +671,7 @@ Outcome:
 #### 4.4.2 Finding stalls by location: `find-by-location` <a id="finding-stalls-by-location"></a>
 You can use this command to quickly locate specific food stalls based on their locations. If you want to find the nearest food options, this command can help you narrow down your choices effectively.
 
-**Format:** 
+**Format:**
 
 `find-by-location LOCATION_KEYWORD`
 
@@ -710,7 +704,7 @@ Outcome:
 #### 4.4.3 Finding stalls by item: `find-by-item` <a id="finding-stalls-by-item"></a>
 You can use this command to quickly locate specific food stalls based on the items on their menu. If you are craving for a specific dish, this command can help you narrow down your choices effectively.
 
-**Format:** 
+**Format:**
 
 `find-by-item ITEM_KEYWORD`
 
@@ -749,7 +743,7 @@ These features allow you to manage information about the items in FoodNotes. The
 - Viewing an item
 - Adding an item
 - Deleting an item
-- Editing an item 
+- Editing an item
 - Reviewing an item
 - Deleting an item review
 
@@ -851,8 +845,8 @@ You can use this command to edit an existing item, and update its name, location
 `edit-item s/STALL_INDEX i/ITEM_INDEX [n/ITEM_NAME] [p/ITEM_PRICE] [r/ITEM_RATING] [d/ITEM_DESCRIPTION] `
 
 <div markdown="block" class="alert alert-info">
-:information_source: **Info:**<br> 
-Parameters in the square brackets are optional, but you must specify at least one of them. 
+:information_source: **Info:**<br>
+Parameters in the square brackets are optional, but you must specify at least one of them.
 In addition, you can only edit ratings and descriptions if the item already has an existing review.
 </div>
 
