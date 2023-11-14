@@ -354,6 +354,27 @@ We propose to enhance the command box to be resizable so that the user can see t
 **Proposed Solution:**
 We propose to enhance the input validation for price to ensure that the user is unable to enter an unrealistically large price for the menu item, by setting a maximum price they can enter, perhaps at 1000.00.
  
+
+### 5. Improve the rating system to accept decimals.
+**Current Implementation**
+* **Current Issue:** The user is unable to enter a rating with a decimal.
+* **Example:**
+1. User enters the command: `review-stall s/1 r/4.5 d/Great ambience` to review a stall.
+2. This produces an error message.
+3. It is hard to capture the subtle differences between different stalls and menu items with just 5 possible ratings, 1-5.
+
+**Proposed Solution:**
+We propose to enhance the rating system to accept decimals, so that the user can capture the subtle differences between different stalls and menu items, with greater flexibility in their ratings.
+
+### 6. Allow bidirectional sorting of stalls.
+**Current Implementation**
+* **Current Issue:** The user can only sort the list of stalls in the order specified by the command, ratings are sorted in descending order and price in ascending order.
+* **Example:**
+1. User enters the command: `sort-by-price` to sort the list of stalls by price in ascending order.
+2. User is unable to sort the list of stalls by price in descending order.
+
+**Proposed Solution:**
+We propose to enhance the sorting of the list of stalls to allow the user to sort the list of stalls in either ascending or descending order.
 --------------------------------------------------------------------------------------------------------------------
 
 <div style="page-break-after: always;"></div>
