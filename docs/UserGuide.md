@@ -88,12 +88,12 @@ You can refer to the [Command summary](#command-summary) section for an overview
 Before you jump into the upcoming sections, take a moment to familiarise yourself with the technical terms, icons, and syntax used throughout this document. This subsection contains all the essential information you need to understand the content better.
 
 #### 2.2.1 Terminology related to the Graphical User Interface (GUI) <a id="terminology-related-to-the-gui"></a>
-The following figure shows the GUI of FoodNotes. It is annotated with the name of the GUI components.
+Let's introduce you to FoodNotes' user interface! The following image showcases the different components and their respective functions in FoodNotes.
 
 <p align="center">
 <img src="images/userGuide/Frame.png" alt="Layout of GUI">
 </p>
-What the main components of the GUI do:
+What the main components do:
 
 * _Command Box_: This is where you type your commands.
 
