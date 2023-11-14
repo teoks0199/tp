@@ -331,6 +331,15 @@ We propose to enhance the filter stalls commands to display the list of stalls w
 We propose to enhance the sorting of the list of stalls to sort the stalls with the same values for that attribute by alphabetical order of their name.
 1. Edit the comparators for the various attributes to include a secondary comparator that compares the stalls by alphabetical order of their name.
 
+### 3. Improve the command box to be resizable.
+**Current Implementation**
+* **Current Issue:** The command box is not resizable and the user is unable to see the whole command they have entered the command box at the same time if it is too long especially when they are curating long reviews for stalls or items.
+* **Example:**
+1. User enters the command: `review-stall s/1 r/3 d/I think this Japanese stall has very good service. In addition, they serve very tasty food as well. Moreover, the surroundings and ambiance are very pleasent. Overall, it is a very nice place to dine in.` to review a stall.
+
+**Proposed Solution:**
+We propose to enhance the command box to be resizable so that the user can see the whole command they have entered the command box at the same time if it is long.
+1. Edit the command box to be resizable.
 --------------------------------------------------------------------------------------------------------------------
 
 <div style="page-break-after: always;"></div>
