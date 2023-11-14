@@ -116,6 +116,13 @@ This section will run you through the icons used in this guide.
 #### 2.2.3 Command Syntax and Usage <a id="command-syntax-and-usage"></a>
 Since FoodNotes is a CLI application, knowing how to use commands is crucial. The following subsection will teach you how to read and use commands in FoodNotes. All commands in FoodNotes follow similar formats as illustrated in the table below and examples will be provided to help you understand their usage. 
 
+<div markdown="block" class="alert alert-success">
+
+:bulb: **Tip:**<br>
+Below is a simple visualisation of the command format. 
+<img src="images/userGuide/commandIns.png">
+
+</div>
 
 |**Technical Term** | **Meaning**                                                                                                                                          |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -315,9 +322,6 @@ The FoodNotes database is now empty.
 
 ![ClearOutcome](images/userGuide/clearCommandOutcome.png)
 
-</div>
-
-![ClearOutcome](images/userGuide/ClearCommandOutcome.png)
 
 
 
@@ -777,7 +781,7 @@ Outcome:
 1. The _Right Display_ will show you the details of item.
 </div>
 
-![ListOutcome](images/userGuide/view-item.png)
+![ListOutcome](images/userGuide/viewItemCommandOutcome.png)
 
 #### 4.5.2 Adding an item : `add-item` <a id="adding-an-item"></a>
 
@@ -872,7 +876,7 @@ Outcome:
 3. The _Right Display_ will show you the item with the updated information.
 </div>
 
-![ListOutcome](images/userGuide/editItemOutcome.png)
+![ListOutcome](images/userGuide/edit-item.png)
 
 
 #### 4.5.5 Reviewing an item : `review-item` <a id="reviewing-an-item"></a>
