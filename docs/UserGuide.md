@@ -13,7 +13,8 @@ Ever find yourself forgetting the delightful dishes you savored? Hungry for a wa
 
 FoodNotes is a quick, simple and beautiful food diary made specifically for you, NUS student foodies. With FoodNotes, you can add stalls that you want to keep track of and manage your reviews for them.
 
-This application is optimised for use via a Command Line Interface (CLI) this means that you operate the application by typing commands into a _Command Box_. If you are fast at typing, you can manage your food reviews faster than other Graphical User Interface (GUI) applications; GUI applications allow users to interact with the application through graphical icons such as buttons.
+This application is optimised for use via a Command Line Interface (CLI). This means that you operate the application by typing commands into a _Command Box_. If you are fast at typing, FoodNotes can help you manage your food reviews faster than other Graphical User Interface (GUI) applications; GUI applications allow users to interact with the application through graphical icons such as buttons.
+
 FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems.
 
 <div style="page-break-after: always;"></div>
@@ -69,8 +70,7 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 <div style="page-break-after: always;"></div>
 
 ## 2. About the user guide <a id="about-the-user-guide"></a>
-This section contains information about the how to read the user guide, essentially your guide to the guide!
-
+This section is your guide to the user guide! It gives you all the information you need to easily navigate and get the most out of the user guide. 
 ### 2.1 Navigating the user guide <a id="navigating-the-user-guide"></a>
 
 **If you are a first time user:**
@@ -85,7 +85,7 @@ You can refer to the [Command summary](#command-summary) section for an overview
 
 
 ### 2.2 Reading the User Guide <a id="reading-the-user-guide"></a>
-Before you jump into the next sections, take a moment to familiarise yourself with the technical terms, icons, and syntax used throughout this document. This subsection contains all the essential information you need to understand the content better.
+Before you jump into the upcoming sections, take a moment to familiarise yourself with the technical terms, icons, and syntax used throughout this document. This subsection contains all the essential information you need to understand the content better.
 
 #### 2.2.1 Terminology related to the Graphical User Interface (GUI) <a id="terminology-related-to-the-gui"></a>
 The following figure shows the GUI of FoodNotes. It is annotated with the name of the GUI components.
@@ -97,7 +97,7 @@ What the main components of the GUI do:
 
 * _Command Box_: This is where you type your commands.
 
-* _Result Display_: This is where FoodNotes displays guiding messages.
+* _Result Display_: This is where FoodNotes displays the result of your commands.
 
 * _Left and Right Display_: This is where FoodNotes displays the information of the page that you are viewing.
 
@@ -106,22 +106,25 @@ What the main components of the GUI do:
 
 This section will run you through the icons used in this guide.
 
-| Icon                | Meaning                                                          |
-|---------------------|------------------------------------------------------------------|
-| :information_source: | An information icon indicates that the enclosed text are notes regarding this section. |
-| :warning:           | A warning sign indicates that the enclosed text is important, and usually entails details about potential errors. |
-|  :bulb:             | A light bulb indicates that the enclosed text is a tip.|
+| Icon                 | Meaning                                                                                                                        |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| :information_source: | An information icon signals that the enclosed text contains notes about how to use FoodNotes.                                  |
+| :bulb:               | A light bulb icon signals that the enclosed text contains tips that you might find useful.                                     |
+| :warning:            | A warning icon signals that the enclosed text contains warnings about potentially dangerous actions you should be cautious of. |
+
 
 #### 2.2.3 Command Syntax and Usage <a id="command-syntax-and-usage"></a>
-Since FoodNotes is a CLI application, knowing how to use commands is very important. The following subsection will teach you how to read and use commands in FoodNotes. All commands in FoodNotes follow similar formats as described below and examples will be provided to help you understand their usage. Examples of commands and their formats will be written in code-blocks.
+Since FoodNotes is a CLI application, knowing how to use commands is crucial. The following subsection will teach you how to read and use commands in FoodNotes. All commands in FoodNotes follow similar formats as illustrated in the table below and examples will be provided to help you understand their usage. 
 
-The table below explains some important technical terms. An example will be provided to help you visualize these terms.
 
-|**Technical Term** | **Meaning**                                                                                                                |
-|---------------------|----------------------------------------------------------------------------------------------------------------------------|
-| Command word | The first word of a command. It determines the action that FoodNotes should perform.                                       |
-| Parameter | The word or group of words following the command word. They are values given to a command to perform the specified action. |
-| Prefix | A prefix is a word that precedes a parameter. It is used to identify the type of parameter that is being input.            |
+|**Technical Term** | **Meaning**                                                                                                                                          |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Command word | The first word of a command. It determines the action that FoodNotes should perform.                                                                 |
+| Prefix | The prefix precedes a parameter. It is used to identify the type of the parameter that is being input. |
+| Parameter | The information following the prefix. This information is then used to update FoodNotes.                                                             |
+
+
+Here is an example to help you visualize these terms.
 
 **Example Command:**
 
@@ -129,9 +132,10 @@ The table below explains some important technical terms. An example will be prov
 
 Command word: `add-stall`
 
-Parameters: `n/Chicken Rice` and `l/Deck`
-
 Prefixes: `n/` and `l/`
+
+Parameters: `Chicken Rice` and `Deck`
+
 
 ### 2.3 Input parameters <a id="input-parameters"></a>
 
@@ -140,7 +144,7 @@ This section provides a summary of the parameters used when inputting commands i
 | Prefix | Parameter           | Meaning                                | Input                                             |
 |--------|---------------------|----------------------------------------|---------------------------------------------------|
 | `n/`   | `STALL_NAME`        | Name of the stall                      | 1 or more characters                              |
-| `s/`   | `STALL_INDEX`       | Index of the stall in the list         | Positive integer from 1 to 2147483647 (inclusive) |
+| `s/`   | `STALL_INDEX`       | Index of the stall in FoodNotes        | Positive integer from 1 to 2147483647 (inclusive) |
 | `l/`   | `STALL_LOCATION`    | Location of the stall                  | 1 or more characters                              |
 | `n/`   | `ITEM_NAME`         | Name of the item                       | 1 or more characters                              |
 | `i/`   | `ITEM_INDEX`        | Index of the item in the menu          | Positive integer from 1 to 2147483647 (inclusive) |
