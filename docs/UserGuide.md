@@ -327,7 +327,7 @@ Explore FoodNotes' stall management features designed to simplify your experienc
 
 #### 4.2.1 Listing all stalls : `list` <a id="listing-all-stalls"></a>
 
-You can use this one-word command to view the list of all the stalls in FoodNotes at your fingertips.
+You can use this one-word command to view the list of all the stalls in FoodNotes..
 
 **Format:**
 
@@ -387,7 +387,7 @@ You can use this command to add a new stall to FoodNotes.
 
 <div markdown="block" class="alert alert-white">
 
-You just visited the newly opened Subway at Utown and eager to add it to FoodNotes.
+You just visited the newly opened Subway at Utown and are eager to add it to FoodNotes.
 
 1. Type `add-stall n/Subway l/Utown` into the _Command Box_.
 1. Press `Enter` to execute.
