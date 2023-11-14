@@ -304,7 +304,7 @@ The `updateFilteredStallListPredicate` is used to filter the list of stalls in F
 --------------------------------------------------------------------------------------------------------------------
 ## **Planned Enhancements**
 
-### Make it clearer to the user that the list of stalls is filtered.
+### 1. Make it clearer to the user that the list of stalls is filtered.
 **Current Implementation**
 * **Current Issue:** Users can view a filtered list of stalls when they use commands such as `find-by-location` and `find-by-item`. In the case where there is only 1 stall in the list and the user performs a stall deletion, the user will see a page showing an empty list of stall. This might cause confusion as the user might think that all the stalls are deleted.
 * **Example:**
@@ -318,8 +318,28 @@ The `updateFilteredStallListPredicate` is used to filter the list of stalls in F
 **Proposed Solution:**
 
 We propose to enhance the filter stalls commands to display the list of stalls with a short description saying that the list is filtered.
-1. Edit the card that displays the list of stalls.
+1. Edit the _Left display_ that displays the list of stalls to have an indicator to show if it is sorted.
 
+### 2. Improve the sorting of the list of stalls.
+**Current Implementation**
+* **Current Issue:** After sorting by the various fields stalls with the same values for that attribute are not sorted in any particular order. This makes it more difficult for the user to find the stall they are looking for.
+* **Example:**
+1. User enters `sort-by-location` to sort the list of stalls by location.
+2. The list of stalls is sorted by location but stalls with the same location are not sorted in any particular order.
+
+**Proposed Solution:**
+We propose to enhance the sorting of the list of stalls to sort the stalls with the same values for that attribute by alphabetical order of their name.
+1. Edit the comparators for the various attributes to include a secondary comparator that compares the stalls by alphabetical order of their name.
+
+### 3. Improve the command box to be resizable.
+**Current Implementation**
+* **Current Issue:** The command box is not resizable and the user is unable to see the whole command they have entered the command box at the same time if it is too long especially when they are curating long reviews for stalls or items.
+* **Example:**
+1. User enters the command: `review-stall s/1 r/3 d/I think this Japanese stall has very good service. In addition, they serve very tasty food as well. Moreover, the surroundings and ambiance are very pleasent. Overall, it is a very nice place to dine in.` to review a stall.
+
+**Proposed Solution:**
+We propose to enhance the command box to be resizable so that the user can see the whole command they have entered the command box at the same time if it is long.
+1. Edit the command box to be resizable.
 --------------------------------------------------------------------------------------------------------------------
 
 <div style="page-break-after: always;"></div>
