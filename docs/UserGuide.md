@@ -63,7 +63,7 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
    &nbsp;&nbsp;&nbsp;&nbsp;5.3 [Stall Sorting Commands](#stall-sorting-commands) <br>
    &nbsp;&nbsp;&nbsp;&nbsp;5.4 [Stall Finding Commands](#stall-finding-commands) <br>
    &nbsp;&nbsp;&nbsp;&nbsp;5.5 [Item Management Commands](#item-management-commands) <br>
-
+6. [FAQ](#faq) <br>
 
 ---
 
@@ -124,18 +124,13 @@ Since FoodNotes is a CLI application, knowing how to use commands is crucial. Th
 | Parameter | The information following the prefix. This information is then used to update FoodNotes.                                                             |
 
 
-Here is an example to help you visualize these terms.
+<div markdown="block" class="alert alert-success">
 
-**Example Command:**
+:bulb: **Tip:**<br>
+Here is a simple visualisation of the command format.
+<img src="images/userGuide/commandIns.png">
 
-`add-stall n/Chicken Rice l/Deck`
-
-Command word: `add-stall`
-
-Prefixes: `n/` and `l/`
-
-Parameters: `Chicken Rice` and `Deck`
-
+</div>
 
 ### 2.3 Input parameters <a id="input-parameters"></a>
 
@@ -168,7 +163,7 @@ Positive integers are whole numbers greater than zero, e.g. 1, 2, 3, 4, 5, etc.
 
 <div style="page-break-after: always;"></div>
 
-## 3. Quick Start <a id="quick-start"></a>
+## 3. Quick Start (macOS) <a id="quick-start"></a>
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
@@ -176,18 +171,23 @@ Positive integers are whole numbers greater than zero, e.g. 1, 2, 3, 4, 5, etc.
 
 3. Copy the file to the folder you want to use as the _home folder_ for your FoodNotes.
 
-4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar foodnotes.jar` command to run the application.<br>
-   A GUI similar to the screenshot below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/Ui.png)
+   ![steps](images/UserGuide/steps.png)
+4. Enter your _home-folder_ and right-click on the downloaded jar file as shown.
+5. Select on the "New iTerm2 Tab here" option, (or any other terminal option you have) to open a terminal window in the folder.
+   ![run](images/UserGuide/run.png)
+6. Run the command `java -jar FoodNotes.jar` in the terminal window.
 
-5. Type the command in the _Command Box_ and press Enter to execute it. e.g. typing `help` and pressing Enter will open the help window.<br>
+7. FoodNotes will now launch and show a list of preloaded stalls.
+   ![preloadStalls](images/UserGuide/preloadStalls.png)
+8. You are now ready to use FoodNotes!
+9. Type your commands in the _Command Box_ and press Enter to execute it. e.g. typing `help` and pressing Enter will open the help window.<br>
    Some example commands you can try:
    * `add-stall n/Chicken Rice l/Deck` : Adds a stall named `Chicken Rice` located at `Deck` to the list of stalls.
 
    * `view-stall s/1` : Shows the 1st stall shown in the current list.
 
    * `list` : Lists all stalls.
-6. Refer to the [Features](#features) below for details of each command.
+6. Refer to the [Features](#features) below for more details of each command.
 
 <div markdown="block" class="alert alert-success">
 
@@ -241,6 +241,8 @@ You want to view the user guide of FoodNotes.
 1. Type `help` into the _Command Box_ and press `Enter` to execute.
 2. A new window will appear as shown below. Click on the `Copy URL` button to copy the URL containing the FoodNotes user guide.
 
+   ![HelpOutcome](images/userGuide/helpCommandOutcome.png)
+
 3. Open your preferred web browser on your computer and paste the link into the address bar.
 4. Press `Enter` to load the website.
 
@@ -250,8 +252,6 @@ Outcome:
 2. You can now access information about all commands in FoodNotes via the user guide.
 
 </div>
-
-![HelpOutcome](images/userGuide/helpOutcome.png)
 
 <a id="exiting-the-application"></a>
 #### 4.1.2 Exiting from the application: `exit`
@@ -308,9 +308,9 @@ Type `clear` into the _Command Box_ and press `Enter` to execute.
 Outcome:
 
 The FoodNotes database is now empty.
-</div>
 
-![ClearOutcome](images/userGuide/ClearCommandOutcome.png)
+![ClearOutcome](images/userGuide/clearCommandOutcome.png)
+
 
 
 
@@ -349,7 +349,7 @@ Outcome:
 2. The _Left Display_ will show you the list of stalls.
 </div>
 
-![ListOutcome](images/userGuide/listOutcome.png)
+![ListOutcome](images/userGuide/listCommandOutcome.png)
 
 #### 4.2.2 Viewing a specific stall : `view-stall` <a id="viewing-a-stall"></a>
 
@@ -769,7 +769,7 @@ Outcome:
 1. The _Right Display_ will show you the details of item.
 </div>
 
-![ListOutcome](images/userGuide/view-item.png)
+![ListOutcome](images/userGuide/viewItemCommandOutcome.png)
 
 #### 4.5.2 Adding an item : `add-item` <a id="adding-an-item"></a>
 
@@ -864,7 +864,7 @@ Outcome:
 3. The _Right Display_ will show you the item with the updated information.
 </div>
 
-![ListOutcome](images/userGuide/editItemOutcome.png)
+![ListOutcome](images/userGuide/edit-item.png)
 
 
 #### 4.5.5 Reviewing an item : `review-item` <a id="reviewing-an-item"></a>
@@ -975,7 +975,21 @@ Outcome:
 | **Edit item**          | `edit-item s/STALL_INDEX i/ITEM_INDEX [n/ITEM_NAME] [p/ITEM_PRICE] [r/ITEM_RATING] [d/ITEM_DESCRIPTION]` <br> e.g. `edit-item` s/1 i/1 p/5.00 |
 | **Review item**        | `review-item s/STALL_INDEX i/ITEM_INDEX r/ITEM_RATING d/ITEM_DESCRIPTION` <br> e.g. `review-item` s/1 i/1 r/5 d/Flavorful                     |                                                                                                                                                             |
 | **Delete item review** | `delete-item-review s/STALL_INDEX i/ITEM_INDEX` <br> e.g. `delete-item-review` s/1 i/1                                                        |
+## 6. FAQ<a id="faq"></a>
 
+**Q:** Can I use FoodNotes without prior experience with CLI (Command Line Interface) applications? <br>
+**A:** Yes, FoodNotes is designed to be user-friendly, even for those unfamiliar with CLI applications. The user guide includes explanations of all commands and their syntax, making it accessible for beginners. 
 
+**Q:** How do I transfer my data to another Computer? <br>
+**A:** Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous FoodNotes home folder.
+
+**Q:** How can I export or backup my FoodNotes data? <br>
+**A:** Currently, FoodNotes does not support direct data export or backup. We recommend manually backing up the database file from the application directory.
+
+**Q:** Do I need to manually save my data? <br>
+**A:** No, FoodNotes automatically saves your data after any command that changes the data. There is no need for you to save manually.
+
+**Q:** Can I run FoodNotes on my mobile device? <br>
+**A:** No, FoodNotes is currently only available for Windows, Mac and Linux operating systems.
 
 --------------------------------------------------------------------------------------------------------------------
