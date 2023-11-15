@@ -171,14 +171,14 @@ Positive integers are whole numbers greater than zero, e.g. 1, 2, 3, 4, 5, etc.
 
 3. Copy the file to the folder you want to use as the _home folder_ for your FoodNotes.
 
-   ![steps](images/UserGuide/steps.png)
+   ![steps](images/userGuide/steps.png)
 4. Enter your _home-folder_ and right-click on the downloaded jar file as shown.
 5. Select on the "New iTerm2 Tab here" option, (or any other terminal option you have) to open a terminal window in the folder.
-   ![run](images/UserGuide/run.png)
+   ![run](images/userGuide/run.png)
 6. Run the command `java -jar FoodNotes.jar` in the terminal window.
 
 7. FoodNotes will now launch and show a list of preloaded stalls.
-   ![preloadStalls](images/UserGuide/preloadStalls.png)
+   ![preloadStalls](images/userGuide/preloadStalls.png)
 8. You are now ready to use FoodNotes!
 9. Type your commands in the _Command Box_ and press Enter to execute it. e.g. typing `help` and pressing Enter will open the help window.<br>
    Some example commands you can try:
@@ -975,6 +975,7 @@ Outcome:
 | **Edit item**          | `edit-item s/STALL_INDEX i/ITEM_INDEX [n/ITEM_NAME] [p/ITEM_PRICE] [r/ITEM_RATING] [d/ITEM_DESCRIPTION]` <br> e.g. `edit-item` s/1 i/1 p/5.00 |
 | **Review item**        | `review-item s/STALL_INDEX i/ITEM_INDEX r/ITEM_RATING d/ITEM_DESCRIPTION` <br> e.g. `review-item` s/1 i/1 r/5 d/Flavorful                     |                                                                                                                                                             |
 | **Delete item review** | `delete-item-review s/STALL_INDEX i/ITEM_INDEX` <br> e.g. `delete-item-review` s/1 i/1                                                        |
+
 ## 6. FAQ<a id="faq"></a>
 
 **Q:** Can I use FoodNotes without prior experience with CLI (Command Line Interface) applications? <br>
