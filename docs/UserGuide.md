@@ -259,8 +259,6 @@ Outcome:
 
 </div>
 
-![HelpOutcome](images/userGuide/helpOutcome.png)
-
 <a id="exiting-the-application"></a>
 #### 4.1.2 Exiting from the application: `exit`
 
