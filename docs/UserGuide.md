@@ -70,7 +70,7 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
 <div style="page-break-after: always;"></div>
 
 ## 2. About the user guide <a id="about-the-user-guide"></a>
-This section is your guide to the user guide! It gives you all the information you need to easily navigate and get the most out of the user guide. 
+This section is your guide to the user guide! It gives you all the information you need to easily navigate and get the most out of the user guide.
 ### 2.1 Navigating the user guide <a id="navigating-the-user-guide"></a>
 
 **If you are a first time user:**
@@ -88,12 +88,12 @@ You can refer to the [Command summary](#command-summary) section for an overview
 Before you jump into the upcoming sections, take a moment to familiarise yourself with the technical terms, icons, and syntax used throughout this document. This subsection contains all the essential information you need to understand the content better.
 
 #### 2.2.1 Terminology related to the Graphical User Interface (GUI) <a id="terminology-related-to-the-gui"></a>
-The following figure shows the GUI of FoodNotes. It is annotated with the name of the GUI components.
+Let's introduce you to FoodNotes' user interface! The following image showcases the different components and their respective functions in FoodNotes.
 
 <p align="center">
 <img src="images/userGuide/Frame.png" alt="Layout of GUI">
 </p>
-What the main components of the GUI do:
+What the main components do:
 
 * _Command Box_: This is where you type your commands.
 
@@ -114,7 +114,7 @@ This section will run you through the icons used in this guide.
 
 
 #### 2.2.3 Command Syntax and Usage <a id="command-syntax-and-usage"></a>
-Since FoodNotes is a CLI application, knowing how to use commands is crucial. The following subsection will teach you how to read and use commands in FoodNotes. All commands in FoodNotes follow similar formats as illustrated in the table below and examples will be provided to help you understand their usage. 
+Since FoodNotes is a CLI application, knowing how to use commands is crucial. The following subsection will guide you on how to read and use commands in FoodNotes. All commands in FoodNotes follow similar formats as illustrated in the table below and examples will be provided to help you understand their usage.
 
 
 |**Technical Term** | **Meaning**                                                                                                                                          |
@@ -124,18 +124,13 @@ Since FoodNotes is a CLI application, knowing how to use commands is crucial. Th
 | Parameter | The information following the prefix. This information is then used to update FoodNotes.                                                             |
 
 
-Here is an example to help you visualize these terms.
+<div markdown="block" class="alert alert-success">
 
-**Example Command:**
+:bulb: **Tip:**<br>
+Here is a simple visualisation of the command format.
+<img src="images/userGuide/commandIns.png">
 
-`add-stall n/Chicken Rice l/Deck`
-
-Command word: `add-stall`
-
-Prefixes: `n/` and `l/`
-
-Parameters: `Chicken Rice` and `Deck`
-
+</div>
 
 ### 2.3 Input parameters <a id="input-parameters"></a>
 
@@ -168,7 +163,7 @@ Positive integers are whole numbers greater than zero, e.g. 1, 2, 3, 4, 5, etc.
 
 <div style="page-break-after: always;"></div>
 
-## 3. Quick Start <a id="quick-start"></a>
+## 3. Quick Start (macOS) <a id="quick-start"></a>
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
@@ -176,18 +171,23 @@ Positive integers are whole numbers greater than zero, e.g. 1, 2, 3, 4, 5, etc.
 
 3. Copy the file to the folder you want to use as the _home folder_ for your FoodNotes.
 
-4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar foodnotes.jar` command to run the application.<br>
-   A GUI similar to the screenshot below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/Ui.png)
+   ![preloadStalls](images/UserGuide/steps.png)
+4. Enter your _home-folder_ and right-click on the downloaded jar file as shown.
+5. Select on the "New iTerm2 Tab here" option, (or any other terminal option you have) to open a terminal window in the folder.
+   ![preloadStalls](images/UserGuide/run.png)
+6. Run the command `java -jar FoodNotes.jar` in the terminal window.
 
-5. Type the command in the _Command Box_ and press Enter to execute it. e.g. typing `help` and pressing Enter will open the help window.<br>
+7. FoodNotes will now launch and show a list of preloaded stalls.
+   ![preloadStalls](images/UserGuide/preloadStalls.png)
+8. You are now ready to use FoodNotes!
+9. Type your commands in the _Command Box_ and press Enter to execute it. e.g. typing `help` and pressing Enter will open the help window.<br>
    Some example commands you can try:
    * `add-stall n/Chicken Rice l/Deck` : Adds a stall named `Chicken Rice` located at `Deck` to the list of stalls.
 
    * `view-stall s/1` : Shows the 1st stall shown in the current list.
 
    * `list` : Lists all stalls.
-6. Refer to the [Features](#features) below for details of each command. 
+6. Refer to the [Features](#features) below for more details of each command.
 
 <div markdown="block" class="alert alert-success">
 
@@ -208,7 +208,7 @@ If double-clicking `FoodNotes.jar` does not work,
 <div style="page-break-after: always;"></div>
 
 ## 4. Features <a id="features"></a>
-Now that you have started up FoodNotes, you are ready to start using its features! This section contains the details for every feature that is available in FoodNotes.
+Now that you have started up FoodNotes, you are ready to start using its features! This section unveils the array of features FoodNotes has to offer.
 
 ### 4.1 General Features <a id="general-features"></a>
 
@@ -232,18 +232,16 @@ Ensure that you have a stable internet connection and have a web browser on your
 **Format:**
 
 `help`
-
 **Example:**
-
-In this example, you want to view the user guide of FoodNotes.
-
 <div markdown="block" class="alert alert-white">
 
-Requesting for help:
+You want to view the user guide of FoodNotes.
 
 1. Type `help` into the _Command Box_ and press `Enter` to execute.
 2. A new window will appear as shown below. Click on the `Copy URL` button to copy the URL containing the FoodNotes user guide.
-   ![HelpOutcome](images/userGuide/helpOutcome.png)
+
+   ![HelpOutcome](images/userGuide/helpCommandOutcome.png)
+
 3. Open your preferred web browser on your computer and paste the link into the address bar.
 4. Press `Enter` to load the website.
 
@@ -269,14 +267,10 @@ This command will exit the application immediately. All data is saved automatica
 **Format:**
 
 `exit`
-
 **Example:**
-
-In this example, you want to exit FoodNotes.
-
 <div markdown="block" class="alert alert-white">
 
-Exiting the application:
+You want to exit FoodNotes.
 
 Type `exit` into the _Command Box_ and press `Enter` to execute.
 
@@ -285,9 +279,9 @@ Outcome:
 The FoodNotes application window is now closed.
 </div>
 
-#### 4.1.3 Clearing the FoodNotes database: `clear` <a id="clearing-the-database"></a>
+#### 4.1.3 Clearing all the stalls in FoodNotes: `clear` <a id="clearing-the-database"></a>
 
-You can use this command to clear the database in FoodNotes.
+You can use this command to clear all existing stalls in FoodNotes.
 
 <div markdown="block" class="alert alert-danger">
 
@@ -300,22 +294,19 @@ This command will permanently delete all data stored in FoodNotes. You should ma
 **Format:**
 
 `clear`
-
 **Example:**
-
-In this example, you want to clear all data stored in FoodNotes.
 
 <div markdown="block" class="alert alert-white">
 
-Exiting the application:
+You want to clear all data stored in FoodNotes.
 
 Type `clear` into the _Command Box_ and press `Enter` to execute.
 
 Outcome:
 
 The FoodNotes database is now empty.
-![ClearOutcome](images/userGuide/ClearCommandOutcome.png)
-</div>
+
+![ClearOutcome](images/userGuide/clearCommandOutcome.png)
 
 
 
@@ -325,7 +316,7 @@ The FoodNotes database is now empty.
 
 ### 4.2 Stall Management <a id="stall-management"></a>
 
-These features allow you to manage information about the stalls in FoodNotes. The stall management features include:
+Explore FoodNotes' stall management features designed to simplify your experience. The stall management features include:
 - Listing all stalls
 - Viewing a stall
 - Adding a stall
@@ -336,17 +327,18 @@ These features allow you to manage information about the stalls in FoodNotes. Th
 
 #### 4.2.1 Listing all stalls : `list` <a id="listing-all-stalls"></a>
 
-You can use this command to view the list of all the stalls in FoodNotes.
+You can use this one-word command to view the list of all the stalls in FoodNotes..
 
 **Format:**
 
 `list`
 
+**Example:**
 
 <div markdown="block" class="alert alert-white">
 
-Listing all your stalls:
-Type `list` into the _Command Box_ and press `Enter` to execute.
+You wish to view all the stalls in FoodNotes.
+1. Type `list` into the _Command Box_ and press `Enter` to execute.
 
 Outcome:
 
@@ -354,11 +346,11 @@ Outcome:
 2. The _Left Display_ will show you the list of stalls.
 </div>
 
-![ListOutcome](images/userGuide/listOutcome.png)
+![ListOutcome](images/userGuide/listCommandOutcome.png)
 
 #### 4.2.2 Viewing a specific stall : `view-stall` <a id="viewing-a-stall"></a>
 
-You can use this command to view details from a specific stall from FoodNotes, which includes the menu items and review of the stall.
+You can use this command to view details from a specific stall from FoodNotes and take a look at its menu items and review of the stall.
 
 **Format:**
 
@@ -366,11 +358,9 @@ You can use this command to view details from a specific stall from FoodNotes, w
 
 **Example:**
 
-You wish to view more details of Japanese Stall.
-
 <div markdown="block" class="alert alert-white">
 
-Viewing a specific stall:
+You wish to view more details of the Japanese stall, which is the first stall in the list.
 
 1. Type `view-stall s/1` into the _Command Box_.
 2. Press `Enter` to execute.
@@ -395,10 +385,9 @@ You can use this command to add a new stall to FoodNotes.
 
 **Example:**
 
-You just visited the newly opened Subway at Utown and wish to add it to FoodNotes.
 <div markdown="block" class="alert alert-white">
 
-Adding a new stall:
+You just visited the newly opened Subway at Utown and are eager to add it to FoodNotes.
 
 1. Type `add-stall n/Subway l/Utown` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -416,7 +405,7 @@ Outcome:
 
 :information_source: **Info:**<br>
 
-* You are not allowed to add duplicate stalls of the same name and location (case-insensitive) to FoodNotes.
+* Let's keep it unique! Avoid adding duplicate stalls with the same name and location (case-insensitive) to FoodNotes.
 
 
 </div>
@@ -432,10 +421,10 @@ You can use this command to delete a stall from FoodNotes, making sure that your
 
 **Example:**
 
-A stall has closed down, and you want to delete it from FoodNotes.
+
 <div markdown="block" class="alert alert-white">
 
-Deleting a specific stall:
+Western Stall has closed down, and you want to delete it from FoodNotes.
 
 1. Type `delete-stall s/3` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -451,7 +440,7 @@ Outcome:
 
 #### 4.2.5 Editing a specific stall : `edit-stall` <a id="editing-a-stall"></a>
 
-You can use this command to edit an existing stall, and update its name, location. If the stall has a review,
+You can use this command to edit an existing stall, and update its name and/or location. If the stall has a review,
 you may edit its rating and/or description.
 
 **Format:**
@@ -459,17 +448,17 @@ you may edit its rating and/or description.
 `edit-stall s/STALL_INDEX [n/STALL_NAME] [l/STALL_LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION] `
 
 <div markdown="block" class="alert alert-info">
-:information_source: **Info:**<br> 
-Parameters in the square brackets are optional, but you must specify at least one of them. 
+:information_source: **Info:**<br>
+Parameters in the square brackets are optional, but you must specify at least one of them.
 In addition, you can only edit ratings and descriptions if the stall already has an existing review.
 </div>
 
 **Example:**
 
-You wish to change the location of the Western Stall in the list, as the stall has relocated from Utown to Deck.
 <div markdown="block" class="alert alert-white">
 
-Editing a specific stall:
+You wish to change the location of the Western Stall in the list, as the stall has relocated from Utown to Deck.
+
 
 1. Type `edit-stall s/1 l/Deck` into the *Command Box*.
 1. Press `Enter` to execute.
@@ -485,7 +474,7 @@ Outcome:
 
 #### 4.2.6 Reviewing a stall : `review-stall` <a id="reviewing-a-stall"></a>
 
-You can use this command to review an existing stall, and add your own star rating and even some text descriptions for the stall.
+You can use this command to add some personal touch to your food diary! Add star rating and even some text descriptions for the stall.
 
 **Format:**
 
@@ -493,10 +482,8 @@ You can use this command to review an existing stall, and add your own star rati
 
 **Example:**
 
-You want to give Japanese Stall a five-star rating as you love their cutlets.
 <div markdown="block" class="alert alert-white">
-
-Reviewing a specific stall:
+You want to give the Japanese Stall a five-star rating as you love their cutlets.
 
 1. Type `review-stall s/2 r/5 d/Their cutlets are amazing and crispy.` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -520,10 +507,10 @@ You can use this command to delete a review of an existing stall.
 
 **Example:**
 
-You decide to delete the review for the Western Stall as you accidentally reviewed the wrong stall.
 <div markdown="block" class="alert alert-white">
 
-Deleting a specific stall review:
+You decide to delete the review for the Western Stall as you accidentally reviewed the wrong stall.
+
 
 1. Type `delete-stall-review s/1` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -556,10 +543,9 @@ You can use this command to sort the stalls by their location in alphabetical or
 
 **Example:**
 
-You wish to sort the stalls by their location in alphabetical order.
 <div markdown="block" class="alert alert-white">
 
-Sorting the stalls by location:
+You wish to sort the stalls by their location in alphabetical order.
 
 1. Type `sort-stalls-location` in the _Command Box_.
 2. press `Enter` to execute.
@@ -583,10 +569,9 @@ You can use this command to sort the stalls by their rating in descending order,
 
 **Example:**
 
-You wish to view the stalls' rating in descending order.
 <div markdown="block" class="alert alert-white">
 
-Sorting stalls by rating:
+You wish to sort the stalls by their rating in descending order.
 
 1. Type `sort-stalls-rating` in the _Command Box_.
 2. press `Enter` to execute.
@@ -609,10 +594,10 @@ You can use this command to sort the stalls by the average price of its menu ite
 
 **Example:**
 
-You wish to view the stalls' average price in ascending order.
 <div markdown="block" class="alert alert-white">
 
-Sorting stalls by price:
+You wish to sort the stalls by their average price in ascending order.
+
 
 1. Type `sort-stalls-price` in the _Command Box_.
 2. press `Enter` to execute.
@@ -639,7 +624,7 @@ These features allow you to find stalls in FoodNotes. The finding features inclu
 #### 4.4.1 Finding stalls by name: `find-by-name` <a name="finding-stalls-by-name"></a>
 You can use this command to quickly locate specific food stalls based on their names. Even if you can only remember part of the stall name, this command can help you narrow down your choices effectively.
 
-**Format:** 
+**Format:**
 
 `find-by-name NAME_KEYWORD`
 
@@ -654,10 +639,9 @@ However, partial or incomplete matches won't count as a match, thus`find-by-name
 
 **Example:**
 
-You wish to find stalls that have 'Japanese' or 'Western' or 'Noodles' in their names.
 <div markdown="block" class="alert alert-white">
 
-Finding stalls by name:
+You wish to find stalls that have 'Japanese' or 'Western' or 'Noodles' in their names.
 
 1. Type `find-by-name Japanese Western Noodles` in the _Command Box_.
 2. Press `Enter` to execute.
@@ -682,16 +666,15 @@ Outcome:
 #### 4.4.2 Finding stalls by location: `find-by-location` <a id="finding-stalls-by-location"></a>
 You can use this command to quickly locate specific food stalls based on their locations. If you want to find the nearest food options, this command can help you narrow down your choices effectively.
 
-**Format:** 
+**Format:**
 
 `find-by-location LOCATION_KEYWORD`
 
 **Example:**
 
-You wish to find stalls that are located at the Deck.
 <div markdown="block" class="alert alert-white">
 
-finding stalls by location:
+You wish to find stalls that are located at the Deck.
 
 1. Type `find-by-location deck` in the _Command Box_.
 2. Press `Enter` to execute.
@@ -716,16 +699,15 @@ Outcome:
 #### 4.4.3 Finding stalls by item: `find-by-item` <a id="finding-stalls-by-item"></a>
 You can use this command to quickly locate specific food stalls based on the items on their menu. If you are craving for a specific dish, this command can help you narrow down your choices effectively.
 
-**Format:** 
+**Format:**
 
 `find-by-item ITEM_KEYWORD`
 
 **Example:**
 
-You wish to find stalls that have chicken in their menu.
 <div markdown="block" class="alert alert-white">
 
-finding stalls by menu items:
+You wish to find stalls that have chicken in their menu.
 
 1. Type `find-by-item chicken` in the _Command Box_.
 2. Press `Enter` to execute.
@@ -756,7 +738,7 @@ These features allow you to manage information about the items in FoodNotes. The
 - Viewing an item
 - Adding an item
 - Deleting an item
-- Editing an item 
+- Editing an item
 - Reviewing an item
 - Deleting an item review
 
@@ -771,10 +753,9 @@ which includes the price, rating and description of the item.
 
 **Example:**
 
-You want to view more about Chicken Katsu Curry from Japanese stall.
 <div markdown="block" class="alert alert-white">
 
-Viewing a specific item from a specific stall:
+You want to view more about Chicken Katsu Curry from the Japanese stall.
 
 1. Type `view-item s/1 i/1` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -785,7 +766,7 @@ Outcome:
 1. The _Right Display_ will show you the details of item.
 </div>
 
-![ListOutcome](images/userGuide/view-item.png)
+![ListOutcome](images/userGuide/viewItemCommandOutcome.png)
 
 #### 4.5.2 Adding an item : `add-item` <a id="adding-an-item"></a>
 
@@ -797,10 +778,9 @@ You can use this command to add your new favourite food item to your favourite s
 
 **Example:**
 
-You want to add a new item name 'Pork Chop' with the price of $5.50 to Japanese stall.
 <div markdown="block" class="alert alert-white">
 
-Adding an item to a specific stall:
+You want to add a new menu item named 'Pork Chop' with a price of $5.50 to the menu of the Japanese stall.
 
 1. Type `add-item s/1 n/Pork Chop p/5.50` into the _Command Box_.
 2. Press `Enter` to execute.
@@ -833,10 +813,9 @@ You can use this command to delete an item from the database.
 
 **Example:**
 
-You wish to delete item "mochi" from Western Stall.
 <div markdown="block" class="alert alert-white">
 
-Deleting a specific item from a specifc stall:
+You wish to delete item "mochi" from Western Stall.
 
 1. Type `delete-item s/1 i/1` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -861,17 +840,16 @@ You can use this command to edit an existing item, and update its name, location
 `edit-item s/STALL_INDEX i/ITEM_INDEX [n/ITEM_NAME] [p/ITEM_PRICE] [r/ITEM_RATING] [d/ITEM_DESCRIPTION] `
 
 <div markdown="block" class="alert alert-info">
-:information_source: **Info:**<br> 
-Parameters in the square brackets are optional, but you must specify at least one of them. 
+:information_source: **Info:**<br>
+Parameters in the square brackets are optional, but you must specify at least one of them.
 In addition, you can only edit ratings and descriptions if the item already has an existing review.
 </div>
 
 **Example:**
 
-You wish to edit the price of tiramisu from the Western Stall as the price has increased.
 <div markdown="block" class="alert alert-white">
 
-Editing a specific item from a specific stall:
+You wish to edit the price of tiramisu from the Western Stall as the price has increased.
 
 1. Type `edit-item s/1 i/1 p/20.10` into the _Command Box_.
 2. Press `Enter` to execute.
@@ -883,7 +861,7 @@ Outcome:
 3. The _Right Display_ will show you the item with the updated information.
 </div>
 
-![ListOutcome](images/userGuide/editItemOutcome.png)
+![ListOutcome](images/userGuide/edit-item.png)
 
 
 #### 4.5.5 Reviewing an item : `review-item` <a id="reviewing-an-item"></a>
@@ -896,10 +874,9 @@ You can use this command to review an existing item, and add your own star ratin
 
 **Example:**
 
-You wish to review the chicken cutlet from the Japanese Stall as it was delicious.
 <div markdown="block" class="alert alert-white">
 
-Reviewing a specific item from a specific stall
+You wish to review the chicken cutlet from the Japanese Stall as it was delicious.
 
 1. Type `review-item s/1 i/1 r/4 d/Very Flavourful` into the _Command Box_.
 1. Press `Enter` to execute.
@@ -924,10 +901,9 @@ You can use this command to delete a review of an existing item.
 
 **Example:**
 
-You decide to delete the review for tiramisu from Western Stall as you accidentally reviewed the wrong item.
 <div markdown="block" class="alert alert-white">
 
-Deleting a specific item review from a specific stall :
+You decide to delete the review for tiramisu from Western Stall as you accidentally reviewed the wrong item.
 
 1. Type `delete-item-review s/1 i/1` into the _Command Box_.
 2. Press `Enter` to execute.
