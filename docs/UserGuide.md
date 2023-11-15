@@ -175,7 +175,7 @@ Positive integers are whole numbers greater than zero, e.g. 1, 2, 3, 4, 5, etc.
 
 <div style="page-break-after: always;"></div>
 
-## 3. Quick Start <a id="quick-start"></a>
+## 3. Quick Start (macOS) <a id="quick-start"></a>
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
@@ -183,18 +183,23 @@ Positive integers are whole numbers greater than zero, e.g. 1, 2, 3, 4, 5, etc.
 
 3. Copy the file to the folder you want to use as the _home folder_ for your FoodNotes.
 
-4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar foodnotes.jar` command to run the application.<br>
-   A GUI similar to the screenshot below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![PreloadedStalls](images/preloadedStalls.png)
+   ![preloadStalls](images/UserGuide/steps.png)
+4. Enter your _home-folder_ and right-click on the downloaded jar file as shown.
+5. Select on the "New iTerm2 Tab here" option, (or any other terminal option you have) to open a terminal window in the folder.
+   ![preloadStalls](images/UserGuide/run.png)
+6. Run the command `java -jar FoodNotes.jar` in the terminal window.
 
-5. Type the command in the _Command Box_ and press Enter to execute it. e.g. typing `help` and pressing Enter will open the help window.<br>
+7. FoodNotes will now launch and show a list of preloaded stalls.
+   ![preloadStalls](images/UserGuide/preloadStalls.png)
+8. You are now ready to use FoodNotes!
+9. Type your commands in the _Command Box_ and press Enter to execute it. e.g. typing `help` and pressing Enter will open the help window.<br>
    Some example commands you can try:
    * `add-stall n/Chicken Rice l/Deck` : Adds a stall named `Chicken Rice` located at `Deck` to the list of stalls.
 
    * `view-stall s/1` : Shows the 1st stall shown in the current list.
 
    * `list` : Lists all stalls.
-6. Refer to the [Features](#features) below for details of each command.
+6. Refer to the [Features](#features) below for more details of each command.
 
 <div markdown="block" class="alert alert-success">
 
