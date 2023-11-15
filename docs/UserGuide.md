@@ -315,7 +315,7 @@ The FoodNotes database is now empty.
 
 ![ClearOutcome](images/userGuide/clearCommandOutcome.png)
 
-
+</div>
 
 ----
 
@@ -979,12 +979,14 @@ Outcome:
 | **Review item**        | `review-item s/STALL_INDEX i/ITEM_INDEX r/ITEM_RATING d/ITEM_DESCRIPTION` <br> e.g. `review-item` s/1 i/1 r/5 d/Flavorful                     |                                                                                                                                                             |
 | **Delete item review** | `delete-item-review s/STALL_INDEX i/ITEM_INDEX` <br> e.g. `delete-item-review` s/1 i/1                                                        |
 
+<div style="page-break-after: always;"></div>
+
 ## 6. FAQ<a id="faq"></a>
 
 **Q:** **Can I use FoodNotes without prior experience with CLI (Command Line Interface) applications?** <br>
 **A:** Yes, FoodNotes is designed to be user-friendly, even for those unfamiliar with CLI applications. The user guide includes explanations of all commands and their syntax, making it accessible for beginners. 
 
-**Q:** **How do I transfer my data to another Computer?** <br>
+**Q:** **How do I transfer my data to another computer?** <br>
 **A:** Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous FoodNotes home folder.
 
 **Q:** **How can I export or backup my FoodNotes data?** <br>
