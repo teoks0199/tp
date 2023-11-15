@@ -940,6 +940,7 @@ Outcome:
 
 ### 5.2 Stall Management Commands <a id="stall-management-commands"></a>
 
+
 | Features                | Format, Examples                                                                                                                         |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | **List**                | `list` <br> e.g. `list`                                                                                                                  |
@@ -949,6 +950,7 @@ Outcome:
 | **Edit stall**          | `edit-stall s/STALL_INDEX [n/STALL_NAME] [l/STALL_LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION]` <br> e.g. `edit-stall` s/1 l/Terrace |
 | **Review stall**        | `review-stall s/STALL_INDEX r/STALL_RATING d/DESCRIPTION` <br> e.g. `review-stall` s/1 r/5 d/Good food and service                       |                                                                                                                                                             |
 | **Delete stall review** | `delete-stall-review s/STALL_INDEX` <br> e.g. `delete-stall-review` s/1                                                                  |
+
 
 ### 5.3 Stall Sorting Commands <a id="stall-sorting-commands"></a>
 
