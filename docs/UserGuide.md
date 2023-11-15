@@ -232,6 +232,7 @@ Ensure that you have a stable internet connection and have a web browser on your
 **Format:**
 
 `help`
+
 **Example:**
 <div markdown="block" class="alert alert-white">
 
@@ -267,6 +268,7 @@ This command will exit the application immediately. All data is saved automatica
 **Format:**
 
 `exit`
+
 **Example:**
 <div markdown="block" class="alert alert-white">
 
@@ -294,6 +296,7 @@ This command will permanently delete all data stored in FoodNotes. You should ma
 **Format:**
 
 `clear`
+
 **Example:**
 
 <div markdown="block" class="alert alert-white">
