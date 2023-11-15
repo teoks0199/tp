@@ -101,6 +101,7 @@ What the main components do:
 
 * _Left and Right Display_: This is where FoodNotes displays the information of the page that you are viewing.
 
+<div style="page-break-after: always;"></div>
 
 #### 2.2.2 Icons <a id="icons"></a>
 
@@ -131,6 +132,8 @@ Here is a simple visualisation of the command format.
 <img src="images/userGuide/commandIns.png">
 
 </div>
+
+<div style="page-break-after: always;"></div>
 
 ### 2.3 Input parameters <a id="input-parameters"></a>
 
