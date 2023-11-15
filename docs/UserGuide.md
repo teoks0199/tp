@@ -738,6 +738,8 @@ Outcome:
 
 -----
 
+<div style="page-break-after: always;"></div>
+
 ### 4.5 Item Management <a id="item-management"></a>
 These features allow you to manage information about the items in FoodNotes. The item management features include:
 
@@ -966,6 +968,7 @@ Outcome:
 | **Find stalls by location** | `find-by-location` <br> e.g. `find-by-location` deck terrace |
 | **Find stalls by item**     | `find-by-item` <br> e.g. `find-by-item` chicken              |
 
+<div style="page-break-after: always;"></div>
 
 ### 5.5 Item Management Commands <a id="item-management-commands"></a>
 
