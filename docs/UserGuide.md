@@ -171,10 +171,10 @@ Positive integers are whole numbers greater than zero, e.g. 1, 2, 3, 4, 5, etc.
 
 3. Copy the file to the folder you want to use as the _home folder_ for your FoodNotes.
 
-   ![preloadStalls](images/UserGuide/steps.png)
+   ![steps](images/UserGuide/steps.png)
 4. Enter your _home-folder_ and right-click on the downloaded jar file as shown.
 5. Select on the "New iTerm2 Tab here" option, (or any other terminal option you have) to open a terminal window in the folder.
-   ![preloadStalls](images/UserGuide/run.png)
+   ![run](images/UserGuide/run.png)
 6. Run the command `java -jar FoodNotes.jar` in the terminal window.
 
 7. FoodNotes will now launch and show a list of preloaded stalls.
