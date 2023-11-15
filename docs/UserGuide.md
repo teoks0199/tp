@@ -163,13 +163,20 @@ Positive integers are whole numbers greater than zero, e.g. 1, 2, 3, 4, 5, etc.
 
 <div style="page-break-after: always;"></div>
 
-## 3. Quick Start (macOS) <a id="quick-start"></a>
+## 3. Quick Start <a id="quick-start"></a>
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
 2. Download the latest `FoodNotes.jar` from [here](https://github.com/AY2324S1-CS2103T-W10-4/tp/releases/download/v1.3.1/FoodNotes.jar).
 
 3. Copy the file to the folder you want to use as the _home folder_ for your FoodNotes.
+<div markdown="block" class="alert alert-info">
+
+:information_source: **Info:**<br>
+The illustration shown below is for Mac OS. The procedure for Windows is similar and the steps apply.
+
+</div> 
+
    ![steps](images/userGuide/steps.png)
 4. Enter your _home-folder_ and right-click on the downloaded jar file as shown.
 5. Select on the "New iTerm2 Tab here" option, (or any other terminal option you have) to open a terminal window in the folder.
@@ -974,19 +981,19 @@ Outcome:
 
 ## 6. FAQ<a id="faq"></a>
 
-**Q:** Can I use FoodNotes without prior experience with CLI (Command Line Interface) applications? <br>
+**Q:** **Can I use FoodNotes without prior experience with CLI (Command Line Interface) applications?** <br>
 **A:** Yes, FoodNotes is designed to be user-friendly, even for those unfamiliar with CLI applications. The user guide includes explanations of all commands and their syntax, making it accessible for beginners. 
 
-**Q:** How do I transfer my data to another Computer? <br>
+**Q:** **How do I transfer my data to another Computer?** <br>
 **A:** Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous FoodNotes home folder.
 
-**Q:** How can I export or backup my FoodNotes data? <br>
+**Q:** **How can I export or backup my FoodNotes data?** <br>
 **A:** Currently, FoodNotes does not support direct data export or backup. We recommend manually backing up the database file from the application directory.
 
-**Q:** Do I need to manually save my data? <br>
+**Q:** **Do I need to manually save my data?** <br>
 **A:** No, FoodNotes automatically saves your data after any command that changes the data. There is no need for you to save manually.
 
-**Q:** Can I run FoodNotes on my mobile device? <br>
+**Q:** **Can I run FoodNotes on my mobile device?** <br>
 **A:** No, FoodNotes is currently only available for Windows, Mac and Linux operating systems.
 
 --------------------------------------------------------------------------------------------------------------------
