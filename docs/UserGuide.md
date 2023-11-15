@@ -750,6 +750,9 @@ These features allow you to manage information about the items in FoodNotes. The
 - Reviewing an item
 - Deleting an item review
 
+<br>
+<br>
+
 #### 4.5.1 Viewing an item : `view-item` <a id="viewing-an-item"></a>
 
 You can use this command to view details of a specific item from a specific stall in FoodNotes,
@@ -942,6 +945,7 @@ Outcome:
 
 ### 5.2 Stall Management Commands <a id="stall-management-commands"></a>
 
+
 | Features                | Format, Examples                                                                                                                         |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | **List**                | `list` <br> e.g. `list`                                                                                                                  |
@@ -949,8 +953,9 @@ Outcome:
 | **Add stall**           | `add-stall n/STALL_NAME l/STALL_LOCATION` <br> e.g.`add-stall` n/Japanese Stall l/Deck                                                   |
 | **Delete stall**        | `delete-stall s/STALL_INDEX` <br> e.g. `delete-stall` s/1                                                                                |
 | **Edit stall**          | `edit-stall s/STALL_INDEX [n/STALL_NAME] [l/STALL_LOCATION] [r/STALL_RATING] [d/STALL_DESCRIPTION]` <br> e.g. `edit-stall` s/1 l/Terrace |
-| **Review stall**        | `review-stall s/STALL_INDEX r/STALL_RATING d/DESCRIPTION` <br> e.g. `review-stall` s/1 r/5 d/Good food and service                       |                                                                                                                                                             |
+| **Review stall**        | `review-stall s/STALL_INDEX r/STALL_RATING d/DESCRIPTION` <br> e.g. `review-stall` s/1 r/5 d/Good food and service                       |
 | **Delete stall review** | `delete-stall-review s/STALL_INDEX` <br> e.g. `delete-stall-review` s/1                                                                  |
+
 
 ### 5.3 Stall Sorting Commands <a id="stall-sorting-commands"></a>
 
@@ -968,7 +973,9 @@ Outcome:
 | **Find stalls by location** | `find-by-location` <br> e.g. `find-by-location` deck terrace |
 | **Find stalls by item**     | `find-by-item` <br> e.g. `find-by-item` chicken              |
 
+
 <div style="page-break-after: always;"></div>
+
 
 ### 5.5 Item Management Commands <a id="item-management-commands"></a>
 
@@ -979,7 +986,7 @@ Outcome:
 | **Add item**           | `add-item s/STALL_INDEX n/ITEM_NAME p/ITEM_PRICE` <br> e.g.`add-item` s/1 n/Chicken Rice p/4.50                                               |
 | **Delete item**        | `delete-item s/STALL_INDEX i/ITEM_INDEX` <br> e.g. `delete-item` s/1 i/1                                                                      |
 | **Edit item**          | `edit-item s/STALL_INDEX i/ITEM_INDEX [n/ITEM_NAME] [p/ITEM_PRICE] [r/ITEM_RATING] [d/ITEM_DESCRIPTION]` <br> e.g. `edit-item` s/1 i/1 p/5.00 |
-| **Review item**        | `review-item s/STALL_INDEX i/ITEM_INDEX r/ITEM_RATING d/ITEM_DESCRIPTION` <br> e.g. `review-item` s/1 i/1 r/5 d/Flavorful                     |                                                                                                                                                             |
+| **Review item**        | `review-item s/STALL_INDEX i/ITEM_INDEX r/ITEM_RATING d/ITEM_DESCRIPTION` <br> e.g. `review-item` s/1 i/1 r/5 d/Flavorful                     |
 | **Delete item review** | `delete-item-review s/STALL_INDEX i/ITEM_INDEX` <br> e.g. `delete-item-review` s/1 i/1                                                        |
 
 <div style="page-break-after: always;"></div>
