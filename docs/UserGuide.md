@@ -749,6 +749,7 @@ These features allow you to manage information about the items in FoodNotes. The
 - Deleting an item review
 
 <br>
+<br>
 
 #### 4.5.1 Viewing an item : `view-item` <a id="viewing-an-item"></a>
 
@@ -971,7 +972,7 @@ Outcome:
 | **Find stalls by item**     | `find-by-item` <br> e.g. `find-by-item` chicken              |
 
 <br>
-
+<br>
 ### 5.5 Item Management Commands <a id="item-management-commands"></a>
 
 
