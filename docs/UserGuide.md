@@ -183,10 +183,10 @@ Positive integers are whole numbers greater than zero, e.g. 1, 2, 3, 4, 5, etc.
 
 3. Copy the file to the folder you want to use as the _home folder_ for your FoodNotes.
 
-   ![preloadStalls](images/UserGuide/steps.png)
+   ![steps12](images/UserGuide/steps.png)
 4. Enter your _home-folder_ and right-click on the downloaded jar file as shown.
 5. Select on the "New iTerm2 Tab here" option, (or any other terminal option you have) to open a terminal window in the folder.
-   ![preloadStalls](images/UserGuide/run.png)
+   ![running command](images/UserGuide/run.png)
 6. Run the command `java -jar FoodNotes.jar` in the terminal window.
 
 7. FoodNotes will now launch and show a list of preloaded stalls.
@@ -212,7 +212,6 @@ If double-clicking `FoodNotes.jar` does not work,
 3. Run the following in the terminal: `java -jar FoodNotes.jar`.
 
 </div>
-
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -534,7 +533,7 @@ Outcome:
 2. The _Right Display_ will show you that the review has been deleted.
 </div>
 
-![ListOutcome](images/userGuide/deleteStallReviewOutcome.png)
+![ListOutcome](images/userGuide/delete-stall-review.jpeg)
 
 
 ---------------------------------------------------------------------------------------------------------------------
@@ -839,7 +838,7 @@ Outcome:
 2. The _Left Display_ will show you the updated list of items from the stall.
 </div>
 
-![ListOutcome](images/userGuide/deleteItemOutcome.png)
+![ListOutcome](images/userGuide/delete-item.jpeg)
 
 
 
@@ -873,7 +872,7 @@ Outcome:
 3. The _Right Display_ will show you the item with the updated information.
 </div>
 
-![ListOutcome](images/userGuide/edit-item.png)
+![ListOutcome](images/userGuide/edit-item.jpeg)
 
 
 #### 4.5.5 Reviewing an item : `review-item` <a id="reviewing-an-item"></a>
@@ -927,7 +926,7 @@ Outcome:
 3. The _Right Display_ will show you that the review has been deleted.
 </div>
 
-![ListOutcome](images/userGuide/deleteItemReviewOutcome.png)
+![ListOutcome](images/userGuide/delete-item-review.png)
 
 
 --------------------------------------------------------------------------------------------------------------------
