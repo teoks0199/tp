@@ -116,13 +116,6 @@ This section will run you through the icons used in this guide.
 #### 2.2.3 Command Syntax and Usage <a id="command-syntax-and-usage"></a>
 Since FoodNotes is a CLI application, knowing how to use commands is crucial. The following subsection will guide you on how to read and use commands in FoodNotes. All commands in FoodNotes follow similar formats as illustrated in the table below and examples will be provided to help you understand their usage.
 
-<div markdown="block" class="alert alert-success">
-
-:bulb: **Tip:**<br>
-Below is a simple visualisation of the command format. 
-<img src="images/userGuide/commandIns.png">
-
-</div>
 
 |**Technical Term** | **Meaning**                                                                                                                                          |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -131,18 +124,13 @@ Below is a simple visualisation of the command format.
 | Parameter | The information following the prefix. This information is then used to update FoodNotes.                                                             |
 
 
-Here is an example to help you visualize these terms.
+<div markdown="block" class="alert alert-success">
 
-**Example Command:**
+:bulb: **Tip:**<br>
+Here is a simple visualisation of the command format.
+<img src="images/userGuide/commandIns.png">
 
-`add-stall n/Chicken Rice l/Deck`
-
-Command word: `add-stall`
-
-Prefixes: `n/` and `l/`
-
-Parameters: `Chicken Rice` and `Deck`
-
+</div>
 
 ### 2.3 Input parameters <a id="input-parameters"></a>
 
