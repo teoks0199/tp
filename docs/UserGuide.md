@@ -750,9 +750,6 @@ These features allow you to manage information about the items in FoodNotes. The
 - Reviewing an item
 - Deleting an item review
 
-<br>
-<br>
-
 #### 4.5.1 Viewing an item : `view-item` <a id="viewing-an-item"></a>
 
 You can use this command to view details of a specific item from a specific stall in FoodNotes,
