@@ -63,7 +63,7 @@ FoodNotes is available for the Linux, Unix, Windows and Mac OS operating systems
    &nbsp;&nbsp;&nbsp;&nbsp;5.3 [Stall Sorting Commands](#stall-sorting-commands) <br>
    &nbsp;&nbsp;&nbsp;&nbsp;5.4 [Stall Finding Commands](#stall-finding-commands) <br>
    &nbsp;&nbsp;&nbsp;&nbsp;5.5 [Item Management Commands](#item-management-commands) <br>
-
+6. [FAQ](#faq) <br>
 
 ---
 
@@ -116,13 +116,6 @@ This section will run you through the icons used in this guide.
 #### 2.2.3 Command Syntax and Usage <a id="command-syntax-and-usage"></a>
 Since FoodNotes is a CLI application, knowing how to use commands is crucial. The following subsection will guide you on how to read and use commands in FoodNotes. All commands in FoodNotes follow similar formats as illustrated in the table below and examples will be provided to help you understand their usage.
 
-<div markdown="block" class="alert alert-success">
-
-:bulb: **Tip:**<br>
-Below is a simple visualisation of the command format. 
-<img src="images/userGuide/commandIns.png">
-
-</div>
 
 |**Technical Term** | **Meaning**                                                                                                                                          |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -131,18 +124,13 @@ Below is a simple visualisation of the command format.
 | Parameter | The information following the prefix. This information is then used to update FoodNotes.                                                             |
 
 
-Here is an example to help you visualize these terms.
+<div markdown="block" class="alert alert-success">
 
-**Example Command:**
+:bulb: **Tip:**<br>
+Here is a simple visualisation of the command format.
+<img src="images/userGuide/commandIns.png">
 
-`add-stall n/Chicken Rice l/Deck`
-
-Command word: `add-stall`
-
-Prefixes: `n/` and `l/`
-
-Parameters: `Chicken Rice` and `Deck`
-
+</div>
 
 ### 2.3 Input parameters <a id="input-parameters"></a>
 
@@ -182,15 +170,13 @@ Positive integers are whole numbers greater than zero, e.g. 1, 2, 3, 4, 5, etc.
 2. Download the latest `FoodNotes.jar` from [here](https://github.com/AY2324S1-CS2103T-W10-4/tp/releases/download/v1.3.1/FoodNotes.jar).
 
 3. Copy the file to the folder you want to use as the _home folder_ for your FoodNotes.
-
-   ![steps12](images/UserGuide/steps.png)
+   ![steps](images/userGuide/steps.png)
 4. Enter your _home-folder_ and right-click on the downloaded jar file as shown.
 5. Select on the "New iTerm2 Tab here" option, (or any other terminal option you have) to open a terminal window in the folder.
-   ![running command](images/UserGuide/run.png)
+   ![run](images/userGuide/run.png)
 6. Run the command `java -jar FoodNotes.jar` in the terminal window.
-
 7. FoodNotes will now launch and show a list of preloaded stalls.
-   ![preloadStalls](images/UserGuide/preloadStalls.png)
+   ![preloadStalls](images/userGuide/preloadStalls.png)
 8. You are now ready to use FoodNotes!
 9. Type your commands in the _Command Box_ and press Enter to execute it. e.g. typing `help` and pressing Enter will open the help window.<br>
    Some example commands you can try:
@@ -199,7 +185,7 @@ Positive integers are whole numbers greater than zero, e.g. 1, 2, 3, 4, 5, etc.
    * `view-stall s/1` : Shows the 1st stall shown in the current list.
 
    * `list` : Lists all stalls.
-6. Refer to the [Features](#features) below for more details of each command.
+10. Refer to the [Features](#features) below for more details of each command.
 
 <div markdown="block" class="alert alert-success">
 
@@ -243,6 +229,7 @@ Ensure that you have a stable internet connection and have a web browser on your
 **Format:**
 
 `help`
+
 **Example:**
 <div markdown="block" class="alert alert-white">
 
@@ -278,6 +265,7 @@ This command will exit the application immediately. All data is saved automatica
 **Format:**
 
 `exit`
+
 **Example:**
 <div markdown="block" class="alert alert-white">
 
@@ -305,6 +293,7 @@ This command will permanently delete all data stored in FoodNotes. You should ma
 **Format:**
 
 `clear`
+
 **Example:**
 
 <div markdown="block" class="alert alert-white">
@@ -318,7 +307,6 @@ Outcome:
 The FoodNotes database is now empty.
 
 ![ClearOutcome](images/userGuide/clearCommandOutcome.png)
-
 
 
 
@@ -984,6 +972,21 @@ Outcome:
 | **Review item**        | `review-item s/STALL_INDEX i/ITEM_INDEX r/ITEM_RATING d/ITEM_DESCRIPTION` <br> e.g. `review-item` s/1 i/1 r/5 d/Flavorful                     |                                                                                                                                                             |
 | **Delete item review** | `delete-item-review s/STALL_INDEX i/ITEM_INDEX` <br> e.g. `delete-item-review` s/1 i/1                                                        |
 
+## 6. FAQ<a id="faq"></a>
 
+**Q:** Can I use FoodNotes without prior experience with CLI (Command Line Interface) applications? <br>
+**A:** Yes, FoodNotes is designed to be user-friendly, even for those unfamiliar with CLI applications. The user guide includes explanations of all commands and their syntax, making it accessible for beginners. 
+
+**Q:** How do I transfer my data to another Computer? <br>
+**A:** Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous FoodNotes home folder.
+
+**Q:** How can I export or backup my FoodNotes data? <br>
+**A:** Currently, FoodNotes does not support direct data export or backup. We recommend manually backing up the database file from the application directory.
+
+**Q:** Do I need to manually save my data? <br>
+**A:** No, FoodNotes automatically saves your data after any command that changes the data. There is no need for you to save manually.
+
+**Q:** Can I run FoodNotes on my mobile device? <br>
+**A:** No, FoodNotes is currently only available for Windows, Mac and Linux operating systems.
 
 --------------------------------------------------------------------------------------------------------------------
